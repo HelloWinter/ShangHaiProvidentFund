@@ -43,7 +43,7 @@
 }
 
 - (void)request:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
-    
+    [super request:service didFailLoadWithError:error];
 }
 
 #pragma mark - override
