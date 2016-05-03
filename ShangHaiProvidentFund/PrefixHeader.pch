@@ -16,5 +16,6 @@
 #import "Macro.h"
 #import "UIView+CDViewAdditions.h"
 #import "MJExtension.h"
+#import "NSArray+CDArrayAdditions.h"
 
 #endif

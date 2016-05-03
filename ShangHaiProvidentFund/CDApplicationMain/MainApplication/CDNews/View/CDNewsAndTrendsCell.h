@@ -8,6 +8,10 @@
 
 #import "CDBaseTableViewCell.h"
 
+@class CDNewsItem;
+
 @interface CDNewsAndTrendsCell : CDBaseTableViewCell
+
+- (void)setupCellItem:(CDNewsItem *)item;
 
 @end

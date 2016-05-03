@@ -17,6 +17,15 @@ extern NSString *const CDBaseURLString;
 /* ---------------------------------------------------------------- */
 
 /**
+ *  返回完整的接口地址
+ *
+ *  @param api 接口路径
+ *
+ *  @return (NSString *)
+ */
+NSString* CDURLWithAPI(NSString* api);
+
+/**
  *  设备屏幕缩放比例
  *
  *  @return (CGFloat)
@@ -68,14 +77,7 @@ typedef NS_ENUM(NSUInteger, CurrentDeviceScreenModel){
  */
 CurrentDeviceScreenModel currentScreenModel();
 
-/**
- *  返回完整的接口地址
- *
- *  @param api 接口路径
- *
- *  @return (NSString *)
- */
-NSString* CDURLWithAPI(NSString* api);
+
 
 /**
  *  十六进制颜色转换

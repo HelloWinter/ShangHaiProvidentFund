@@ -177,34 +177,6 @@
     [self.view endEditing:YES];
 }
 
-/**
- *  如果要兼容iOS6及之前系统，可手动管理view的frame
- */
-- (void)resizeViewFrame{
-    CGRect frame = self.view.frame;
-    if (!self.navigationController.navigationBarHidden) {
-        frame.size.height = frame.size.height - self.navigationController.navigationBar.height -20;
-    }
-    if (!self.navigationController.toolbarHidden) {
-        frame.size.height = frame.size.height - self.navigationController.toolbar.height;
-    }
-    if (!self.tabBarController.tabBar.hidden && !self.hidesBottomBarWhenPushed) {
-        frame.size.height = frame.size.height - self.tabBarController.tabBar.height;
-    }
-    self.view.frame=frame;
-    
-    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
-        [self setEdgesForExtendedLayout:UIRectEdgeNone];
-    }
-    if ([self respondsToSelector:@selector(setExtendedLayoutIncludesOpaqueBars:)]) {
-        [self setExtendedLayoutIncludesOpaqueBars:NO];
-    }
-    //ScrollView不能在viewController划到顶解决办法
-    if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)]){
-        [self setAutomaticallyAdjustsScrollViewInsets:NO];
-    }
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

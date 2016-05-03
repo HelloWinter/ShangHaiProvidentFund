@@ -94,27 +94,27 @@
     return [[UITableViewCell alloc]init];
 }
 
-#pragma mark - SCYBaseNetworkServiceDelegate
-//- (void)requestDidFinished:(SCYBaseNetworkService *)service {
-//    [super requestDidFinished:service];
-//    if (self.showDragView) {
-//        [self.refreshControl endRefreshing];
-//    }
-//}
-//
-//- (void)requestDidCancel:(SCYBaseNetworkService *)service {
-//    [super requestDidCancel:service];
-//    if (self.showDragView) {
-//        [self.refreshControl endRefreshing];
-//    }
-//}
-//
-//- (void)request:(SCYBaseNetworkService *)service didFailLoadWithError:(NSError *)error {
-//    [super request:service didFailLoadWithError:error];
-//    if (self.showDragView) {
-//        [self.refreshControl endRefreshing];
-//    }
-//}
+#pragma mark - CDJSONBaseNetworkServiceDelegate
+- (void)requestDidFinished:(CDJSONBaseNetworkService *)service {
+    [super requestDidFinished:service];
+    if (self.showDragView) {
+        [self.refreshControl endRefreshing];
+    }
+}
+
+- (void)requestDidCancel:(CDJSONBaseNetworkService *)service {
+    [super requestDidCancel:service];
+    if (self.showDragView) {
+        [self.refreshControl endRefreshing];
+    }
+}
+
+- (void)request:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error {
+    [super request:service didFailLoadWithError:error];
+    if (self.showDragView) {
+        [self.refreshControl endRefreshing];
+    }
+}
 
 #pragma mark - Public
 - (void)startPullRefresh {

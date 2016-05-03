@@ -108,6 +108,7 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
         [_webView setFrame:self.view.bounds];
         [_webView setNavigationDelegate:self];
         [_webView setMultipleTouchEnabled:YES];
+        _webView.allowsLinkPreview=YES;
         [_webView.scrollView setAlwaysBounceVertical:YES];
         [_webView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:0 context:CDWebBrowserContext];
     }

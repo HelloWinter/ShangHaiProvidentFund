@@ -25,7 +25,6 @@ NSString* CDURLWithAPI(NSString* api) {
     return [NSString stringWithFormat:@"%@%@",CDBaseURLString,api];
 }
 
-
 CGFloat CDScale() {
     return [UIScreen mainScreen].scale;
 }
