@@ -6,8 +6,11 @@
 //  Copyright © 2016年 cheng dong. All rights reserved.
 //
 
-#import "CDJSONBaseNetworkService.h"
+#import "CDBaseTableViewCell.h"
+@class CDAboutUsItem;
 
-@interface CDAboutUsCell : CDJSONBaseNetworkService
+@interface CDAboutUsCell : CDBaseTableViewCell
+
+- (void)setupCellItem:(CDAboutUsItem *)item;
 
 @end

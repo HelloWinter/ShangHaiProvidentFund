@@ -12,6 +12,7 @@
 #import "CDNewsAndTrendsItem.h"
 #import "CDNewsItem.h"
 #import "CDBaseWKWebViewController.h"
+#import "SCYBaseWebViewController.h"
 
 @interface CDNewsAndTrendsController ()
 
@@ -75,6 +76,7 @@
     
     CDNewsAndTrendsItem *item = [self.arrData cd_safeObjectAtIndex:indexPath.row];
     NSString *urlStr=[NSString stringWithFormat:@"/gjjManager/newsByIdServlet?id=%@",item.news.newsid];
+//    [self pushToWebViewControllerWithURLString:CDURLWithAPI(urlStr)];
     [self pushToWKWebViewControllerWithURLString:CDURLWithAPI(urlStr)];
 }
 
@@ -98,6 +100,13 @@
 #pragma mark - Events
 - (void)pushToWKWebViewControllerWithURLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[CDBaseWKWebViewController webViewWithURL:[NSURL URLWithString:urlstr]];
+    webViewController.title=@"上海住房公积金网";
+    [self.navigationController pushViewController:webViewController animated:YES];
+}
+
+- (void)pushToWebViewControllerWithURLString:(NSString *)urlstr{
+    SCYBaseWebViewController *webViewController=[SCYBaseWebViewController webViewControllerWithURL:[NSURL URLWithString:urlstr]];
+    webViewController.title=@"上海住房公积金网";
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 

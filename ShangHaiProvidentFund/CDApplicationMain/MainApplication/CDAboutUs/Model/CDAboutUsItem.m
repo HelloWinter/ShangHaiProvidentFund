@@ -10,4 +10,12 @@
 
 @implementation CDAboutUsItem
 
++ (instancetype)itemWithImgName:(NSString *)imgName title:(NSString *)titleText detail:(NSString *)detailText{
+    CDAboutUsItem *item=[[self alloc]init];
+    item.imgName=imgName;
+    item.titleText=titleText;
+    item.detailText=detailText;
+    return item;
+}
+
 @end

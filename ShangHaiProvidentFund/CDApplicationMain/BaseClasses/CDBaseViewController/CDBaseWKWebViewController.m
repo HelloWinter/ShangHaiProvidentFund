@@ -68,10 +68,10 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
 - (instancetype)init{
     self =[super init];
     if (self) {
-        self.showURLInNavigationBar = YES;
-        self.showPageTitleInNavigationBar = YES;
+        self.showURLInNavigationBar = NO;
+        self.showPageTitleInNavigationBar = NO;
         self.hidesBottomBarWhenPushed=YES;
-        self.progressViewTintColor=[UIColor redColor];
+        self.progressViewTintColor=[UIColor greenColor];
     }
     return self;
 }
@@ -108,7 +108,6 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
         [_webView setFrame:self.view.bounds];
         [_webView setNavigationDelegate:self];
         [_webView setMultipleTouchEnabled:YES];
-        _webView.allowsLinkPreview=YES;
         [_webView.scrollView setAlwaysBounceVertical:YES];
         [_webView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:0 context:CDWebBrowserContext];
     }

@@ -117,7 +117,7 @@
 
 /* 请求完成 */
 - (void)p_taskDidFinish:(NSURLSessionTask *)task responseObject:(id)responseObject {
-    CDPRINT(@">>> URL:%@ response data:%@ ", task.currentRequest.URL,responseObject);
+//    CDPRINT(@">>> URL:%@ response data:%@ ", task.currentRequest.URL,responseObject);
     if (self.task.state == NSURLSessionTaskStateCompleted) {
         [self successfulGetResponse:responseObject];
         self.task = nil;

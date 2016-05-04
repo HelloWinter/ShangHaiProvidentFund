@@ -74,6 +74,7 @@
     self.view.backgroundColor=colorForHex(@"#f5f5f5");
     [self setExtendedLayoutIncludesOpaqueBars:YES];
     [self cd_addTapGestureRecognizerIfNeeded];
+    [self setupBackBarButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -84,7 +85,6 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     //使用自定义返回按钮时添加返回手势
-    /*
     if (self.navigationController && [[self.navigationController viewControllers] count] > 1) {
         //自定义leftBarButtonItem返回手势失效的处理办法
         self.navigationController.interactivePopGestureRecognizer.enabled=YES;
@@ -93,7 +93,6 @@
         self.navigationController.interactivePopGestureRecognizer.enabled=NO;
         self.navigationController.interactivePopGestureRecognizer.delegate = nil;
     }
-     */
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -138,12 +137,7 @@
 - (void)setupBackBarButton{
     if (self.navigationController && [[self.navigationController viewControllers] count] > 1) {
         if (!self.navigationItem.leftBarButtonItem) {
-//            [self cd_showBackButton];
-            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
-                                                     initWithImage:[UIImage imageNamed:@"navigation_backOff"]
-                                                     style:UIBarButtonItemStylePlain
-                                                     target:self
-                                                     action:@selector(cd_backOffAction)];
+            [self cd_showBackButton];
         }
     }
 }
@@ -168,7 +162,8 @@
 - (void)cd_addTapGestureRecognizerIfNeeded {
     if (_hideKeyboradWhenTouch) {
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cd_hideKeyboard)];
-        tapGesture.delegate = self;
+        tapGesture.numberOfTapsRequired=1;
+        tapGesture.cancelsTouchesInView=NO;
         [self.view addGestureRecognizer:tapGesture];
     }
 }

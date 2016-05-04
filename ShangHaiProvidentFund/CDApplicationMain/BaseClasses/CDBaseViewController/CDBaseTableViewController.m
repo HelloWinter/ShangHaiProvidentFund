@@ -69,10 +69,10 @@
 
 - (UITableView *)tableView{
     if (_tableView == nil) {
-//        CGRect rect=self.view.bounds;
-//        if (self.showDragView && !self.navigationController.navigationBarHidden) {
-            CGRect rect=CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-64);
-//        }
+        CGRect rect=self.view.bounds;
+        if (self.showDragView && !self.navigationController.navigationBarHidden) {
+            rect=CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-64);
+        }
         _tableView = [[UITableView alloc] initWithFrame:rect style:_tableViewStyle];
         _tableView.dataSource=self;
         _tableView.delegate = self;

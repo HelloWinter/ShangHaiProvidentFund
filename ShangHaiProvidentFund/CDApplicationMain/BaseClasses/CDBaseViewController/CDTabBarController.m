@@ -52,7 +52,7 @@
     CDConvenientToolsController *threeVC = [[CDConvenientToolsController alloc]init];
     [self setUpOneChildViewController:threeVC image:[UIImage imageNamed:@"tab_product_normal"] title:@"便民工具"];
     
-    CDAboutUsController *fourVC = [[CDAboutUsController alloc]init];
+    CDAboutUsController *fourVC = [[CDAboutUsController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
     [self setUpOneChildViewController:fourVC image:[UIImage imageNamed:@"tab_settingicon"] title:@"关于我们"];
 }
 
