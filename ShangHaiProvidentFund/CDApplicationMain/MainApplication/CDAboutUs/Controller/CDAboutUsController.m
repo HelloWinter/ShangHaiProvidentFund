@@ -108,7 +108,20 @@
         }
             break;
         case 1:{
-            
+            switch (indexPath.row) {
+                case 1:
+                    [self showCallTelephoneAlert];
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;
+                    
+                default:
+                    break;
+            }
         }
             break;
         case 2:{
@@ -137,7 +150,38 @@
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 
-//
+- (void)showCallTelephoneAlert{
+    UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"提示" message:@"客服工作时间:周一至周六9:00-17:00(除法定假日外)\n现在是否拨打电话?" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *actionCancel=[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    UIAlertAction *actionCall=[UIAlertAction actionWithTitle:@"拨打" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        [self callThePhoneNum:@"12329"];
+    }];
+    [alert addAction:actionCancel];
+    [alert addAction:actionCall];
+    [self presentViewController:alert animated:YES completion:NULL];
+}
 
+- (void)callThePhoneNum:(NSString *)phoneNum{
+    if ([CDDeviceModel isEqualToString:@"iPhone"]){
+        NSURL *telUrl=[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phoneNum]];
+        if ([[UIApplication sharedApplication]canOpenURL:telUrl]) {
+            [[UIApplication sharedApplication] openURL:telUrl];
+        }else{
+            [self showAlertControllerWithTitle:@"提示" message:@"号码有误"];
+        }
+    }else {
+        NSString *strAlert=[NSString stringWithFormat:@"您的设备 %@ 不支持电话功能！",CDDeviceModel];
+        [self showAlertControllerWithTitle:@"提示" message:strAlert];
+    }
+}
+
+- (void)showAlertControllerWithTitle:(NSString *)title message:(NSString *)message{
+    UIAlertController *alert=[UIAlertController alertControllerWithTitle:title message:message preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *actionCancel=[UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    [alert addAction:actionCancel];
+    [CDKeyWindow.rootViewController presentViewController:alert animated:YES completion:NULL];
+}
 
 @end
