@@ -132,7 +132,6 @@
                     [self pushToWKWebViewControllerWithTitle:@"上海公积金微博" URLString:strUrl];
                 }
                     break;
-                    
                 default:
                     break;
             }

@@ -10,4 +10,9 @@
 
 @interface CDMineAccountItem : CDBaseItem
 
+@property (nonatomic, copy) NSString *imgName;
+@property (nonatomic, copy) NSString *title;
+
++ (instancetype)itemWithImageName:(NSString *)imgname title:(NSString *)title;
+
 @end

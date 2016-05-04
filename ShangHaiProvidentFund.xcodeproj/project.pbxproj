@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14F925701CDA378A003FE794 /* CDMineAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F9256F1CDA378A003FE794 /* CDMineAccountModel.m */; };
 		6E463CD01CD9841300527950 /* SCYBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E463CCF1CD9841300527950 /* SCYBaseWebViewController.m */; };
 		6E463CDF1CD9ABD000527950 /* CDAboutUsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E463CDE1CD9ABD000527950 /* CDAboutUsModel.m */; };
 		6E463CE21CD9AE7D00527950 /* CDBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E463CE11CD9AE7D00527950 /* CDBaseModel.m */; };
@@ -63,7 +64,7 @@
 		6E6ADC251CD8BF5E00838B61 /* CDAboutUsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC241CD8BF5E00838B61 /* CDAboutUsItem.m */; };
 		6E6ADC281CD8BF7C00838B61 /* CDAboutUsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC271CD8BF7C00838B61 /* CDAboutUsService.m */; };
 		6E6ADC2B1CD8BF9100838B61 /* CDAboutUsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC2A1CD8BF9100838B61 /* CDAboutUsCell.m */; };
-		6E6ADC2E1CD8BFBC00838B61 /* CDConvenientItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC2D1CD8BFBC00838B61 /* CDConvenientItem.m */; };
+		6E6ADC2E1CD8BFBC00838B61 /* CDConvenientModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC2D1CD8BFBC00838B61 /* CDConvenientModel.m */; };
 		6E6ADC311CD8BFE000838B61 /* CDConvenientToolsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC301CD8BFE000838B61 /* CDConvenientToolsService.m */; };
 		6E6ADC341CD8C00C00838B61 /* CDConvenientToolsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC331CD8C00C00838B61 /* CDConvenientToolsCell.m */; };
 		6E6ADC371CD8C02E00838B61 /* CDMineAccountItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC361CD8C02E00838B61 /* CDMineAccountItem.m */; };
@@ -74,6 +75,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14F9256E1CDA378A003FE794 /* CDMineAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMineAccountModel.h; sourceTree = "<group>"; };
+		14F9256F1CDA378A003FE794 /* CDMineAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMineAccountModel.m; sourceTree = "<group>"; };
 		2C26B27EDC9106E8977865CD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6E463CCE1CD9841300527950 /* SCYBaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYBaseWebViewController.h; sourceTree = "<group>"; };
 		6E463CCF1CD9841300527950 /* SCYBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYBaseWebViewController.m; sourceTree = "<group>"; };
@@ -187,8 +190,8 @@
 		6E6ADC271CD8BF7C00838B61 /* CDAboutUsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsService.m; sourceTree = "<group>"; };
 		6E6ADC291CD8BF9100838B61 /* CDAboutUsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsCell.h; sourceTree = "<group>"; };
 		6E6ADC2A1CD8BF9100838B61 /* CDAboutUsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsCell.m; sourceTree = "<group>"; };
-		6E6ADC2C1CD8BFBC00838B61 /* CDConvenientItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientItem.h; sourceTree = "<group>"; };
-		6E6ADC2D1CD8BFBC00838B61 /* CDConvenientItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientItem.m; sourceTree = "<group>"; };
+		6E6ADC2C1CD8BFBC00838B61 /* CDConvenientModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientModel.h; sourceTree = "<group>"; };
+		6E6ADC2D1CD8BFBC00838B61 /* CDConvenientModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientModel.m; sourceTree = "<group>"; };
 		6E6ADC2F1CD8BFE000838B61 /* CDConvenientToolsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientToolsService.h; sourceTree = "<group>"; };
 		6E6ADC301CD8BFE000838B61 /* CDConvenientToolsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientToolsService.m; sourceTree = "<group>"; };
 		6E6ADC321CD8C00C00838B61 /* CDConvenientToolsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientToolsCell.h; sourceTree = "<group>"; };
@@ -569,6 +572,8 @@
 			children = (
 				6E6ADC351CD8C02E00838B61 /* CDMineAccountItem.h */,
 				6E6ADC361CD8C02E00838B61 /* CDMineAccountItem.m */,
+				14F9256E1CDA378A003FE794 /* CDMineAccountModel.h */,
+				14F9256F1CDA378A003FE794 /* CDMineAccountModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -603,8 +608,8 @@
 		6E6ADBFF1CD8A8BF00838B61 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6E6ADC2C1CD8BFBC00838B61 /* CDConvenientItem.h */,
-				6E6ADC2D1CD8BFBC00838B61 /* CDConvenientItem.m */,
+				6E6ADC2C1CD8BFBC00838B61 /* CDConvenientModel.h */,
+				6E6ADC2D1CD8BFBC00838B61 /* CDConvenientModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -839,7 +844,7 @@
 				6E6ADB971CD89F7C00838B61 /* UILabel+CDLBAdditions.m in Sources */,
 				6E6ADBDC1CD8A0BD00838B61 /* CDPointActivityIndicator.m in Sources */,
 				6E6ADB8F1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.m in Sources */,
-				6E6ADC2E1CD8BFBC00838B61 /* CDConvenientItem.m in Sources */,
+				6E6ADC2E1CD8BFBC00838B61 /* CDConvenientModel.m in Sources */,
 				6E6ADC3A1CD8C04700838B61 /* CDMineAccountService.m in Sources */,
 				6E6ADB881CD89F7C00838B61 /* NSArray+CDArrayAdditions.m in Sources */,
 				6E6ADB581CD89E8E00838B61 /* CDTabBarController.m in Sources */,
@@ -864,6 +869,7 @@
 				6E463CDF1CD9ABD000527950 /* CDAboutUsModel.m in Sources */,
 				6E6ADB101CD892B200838B61 /* main.m in Sources */,
 				6E6ADB8C1CD89F7C00838B61 /* NSDate+CDDateAddition.m in Sources */,
+				14F925701CDA378A003FE794 /* CDMineAccountModel.m in Sources */,
 				6E463CE61CD9D7F700527950 /* CDButtonTableFooterView.m in Sources */,
 				6E6ADC151CD8AC9B00838B61 /* SFHFKeychainUtils.m in Sources */,
 				6E6ADB561CD89E8E00838B61 /* CDNavigationController.m in Sources */,

@@ -10,4 +10,11 @@
 
 @implementation CDMineAccountItem
 
++ (instancetype)itemWithImageName:(NSString *)imgname title:(NSString *)title{
+    CDMineAccountItem *item=[[self alloc]init];
+    item.imgName=imgname;
+    item.title=title;
+    return item;
+}
+
 @end
