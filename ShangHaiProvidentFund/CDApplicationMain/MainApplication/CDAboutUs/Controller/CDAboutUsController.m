@@ -12,6 +12,7 @@
 #import "CDAboutUsCell.h"
 #import "CDBaseWKWebViewController.h"
 #import "CDButtonTableFooterView.h"
+#import "CDHelpInfoViewController.h"
 
 @interface CDAboutUsController ()
 
@@ -95,7 +96,8 @@
         case 0:{
             switch (indexPath.row) {
                 case 0:{
-                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
+                    NSString *jsCode=@"var element=document.getElementsByTagName('link')[0];var parentElement=element.parentNode;if(parentElement){parentElement.removeChild(element);}";
+                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
                 }
                     break;
                 case 1:{
@@ -113,7 +115,7 @@
                     [self showCallTelephoneAlert];
                     break;
                 case 2:
-                    
+                    [self pushToHelpInfoController];
                     break;
                 case 3:
                     
@@ -129,7 +131,8 @@
                 case 0:{
                     NSString *strUrl=@"http://m.weibo.cn/u/3547969482";
                     strUrl=[strUrl stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)];
-                    [self pushToWKWebViewControllerWithTitle:@"上海公积金微博" URLString:strUrl];
+//                    NSString *jsCode=@"var element=document.getElementsByClassName('download-wrapper')[0];var parentElement=element.parentNode;if(parentElement){parentElement.removeChild(element);}";
+                    [self pushToWKWebViewControllerWithTitle:@"上海公积金微博" javaScriptCode:nil URLString:strUrl];
                 }
                     break;
                 default:
@@ -143,10 +146,16 @@
 }
 
 #pragma mark - Events
-- (void)pushToWKWebViewControllerWithTitle:(NSString *)title URLString:(NSString *)urlstr{
+- (void)pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[CDBaseWKWebViewController webViewWithURL:[NSURL URLWithString:urlstr]];
     webViewController.title=title;
+    webViewController.javaScriptCode=jsCode;
     [self.navigationController pushViewController:webViewController animated:YES];
+}
+
+- (void)pushToHelpInfoController{
+    CDHelpInfoViewController *controller=[[CDHelpInfoViewController alloc]init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)showCallTelephoneAlert{

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14F823E61CDB81E500C011AE /* CDHelpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F823E51CDB81E500C011AE /* CDHelpInfoViewController.m */; };
 		14F925701CDA378A003FE794 /* CDMineAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F9256F1CDA378A003FE794 /* CDMineAccountModel.m */; };
 		6E463CD01CD9841300527950 /* SCYBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E463CCF1CD9841300527950 /* SCYBaseWebViewController.m */; };
 		6E463CDF1CD9ABD000527950 /* CDAboutUsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E463CDE1CD9ABD000527950 /* CDAboutUsModel.m */; };
@@ -76,6 +77,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14F823E41CDB81E500C011AE /* CDHelpInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDHelpInfoViewController.h; sourceTree = "<group>"; };
+		14F823E51CDB81E500C011AE /* CDHelpInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDHelpInfoViewController.m; sourceTree = "<group>"; };
 		14F9256E1CDA378A003FE794 /* CDMineAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMineAccountModel.h; sourceTree = "<group>"; };
 		14F9256F1CDA378A003FE794 /* CDMineAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMineAccountModel.m; sourceTree = "<group>"; };
 		2C26B27EDC9106E8977865CD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -642,6 +645,8 @@
 			children = (
 				6E6ADC0F1CD8AA9B00838B61 /* CDAboutUsController.h */,
 				6E6ADC101CD8AA9B00838B61 /* CDAboutUsController.m */,
+				14F823E41CDB81E500C011AE /* CDHelpInfoViewController.h */,
+				14F823E51CDB81E500C011AE /* CDHelpInfoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -853,6 +858,7 @@
 				6E6ADC2E1CD8BFBC00838B61 /* CDConvenientModel.m in Sources */,
 				6E6ADC3A1CD8C04700838B61 /* CDMineAccountService.m in Sources */,
 				6E6ADB881CD89F7C00838B61 /* NSArray+CDArrayAdditions.m in Sources */,
+				14F823E61CDB81E500C011AE /* CDHelpInfoViewController.m in Sources */,
 				6E6ADB581CD89E8E00838B61 /* CDTabBarController.m in Sources */,
 				6E6ADB591CD89E8E00838B61 /* CDBaseTableViewController.m in Sources */,
 				6E6ADB131CD892B200838B61 /* AppDelegate.m in Sources */,

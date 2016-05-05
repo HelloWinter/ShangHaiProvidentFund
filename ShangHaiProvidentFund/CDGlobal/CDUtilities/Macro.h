@@ -226,4 +226,6 @@ description:__VA_ARGS__];                                                    \
  */
 #define CDScreenScale ([UIScreen mainScreen].scale)
 
+#define LEFT_RIGHT_MARGIN 15
+
 #endif
