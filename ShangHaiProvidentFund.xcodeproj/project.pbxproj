@@ -13,6 +13,8 @@
 		6E463CE21CD9AE7D00527950 /* CDBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E463CE11CD9AE7D00527950 /* CDBaseModel.m */; };
 		6E463CE61CD9D7F700527950 /* CDButtonTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E463CE41CD9D7F700527950 /* CDButtonTableFooterView.m */; };
 		6E463CE71CD9D7F700527950 /* CDButtonTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E463CE51CD9D7F700527950 /* CDButtonTableFooterView.xib */; };
+		6E4D90B01CDB133E0019B011 /* CDBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D90AF1CDB133E0019B011 /* CDBaseCollectionViewController.m */; };
+		6E4D90B31CDB334A0019B011 /* CDConvenientToolsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D90B21CDB334A0019B011 /* CDConvenientToolsItem.m */; };
 		6E6ADB101CD892B200838B61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB0F1CD892B200838B61 /* main.m */; };
 		6E6ADB131CD892B200838B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB121CD892B200838B61 /* AppDelegate.m */; };
 		6E6ADB191CD892B200838B61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6ADB171CD892B200838B61 /* Main.storyboard */; };
@@ -67,7 +69,6 @@
 		6E6ADC2E1CD8BFBC00838B61 /* CDConvenientModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC2D1CD8BFBC00838B61 /* CDConvenientModel.m */; };
 		6E6ADC311CD8BFE000838B61 /* CDConvenientToolsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC301CD8BFE000838B61 /* CDConvenientToolsService.m */; };
 		6E6ADC341CD8C00C00838B61 /* CDConvenientToolsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC331CD8C00C00838B61 /* CDConvenientToolsCell.m */; };
-		6E6ADC371CD8C02E00838B61 /* CDMineAccountItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC361CD8C02E00838B61 /* CDMineAccountItem.m */; };
 		6E6ADC3A1CD8C04700838B61 /* CDMineAccountService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC391CD8C04700838B61 /* CDMineAccountService.m */; };
 		6E6ADC3D1CD8C06C00838B61 /* CDMineAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC3C1CD8C06C00838B61 /* CDMineAccountCell.m */; };
 		6E6ADC401CD8C09200838B61 /* CDNewsAndTrendsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC3F1CD8C09200838B61 /* CDNewsAndTrendsCell.m */; };
@@ -87,6 +88,10 @@
 		6E463CE31CD9D7F700527950 /* CDButtonTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDButtonTableFooterView.h; sourceTree = "<group>"; };
 		6E463CE41CD9D7F700527950 /* CDButtonTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDButtonTableFooterView.m; sourceTree = "<group>"; };
 		6E463CE51CD9D7F700527950 /* CDButtonTableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDButtonTableFooterView.xib; sourceTree = "<group>"; };
+		6E4D90AE1CDB133E0019B011 /* CDBaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseCollectionViewController.h; sourceTree = "<group>"; };
+		6E4D90AF1CDB133E0019B011 /* CDBaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseCollectionViewController.m; sourceTree = "<group>"; };
+		6E4D90B11CDB334A0019B011 /* CDConvenientToolsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientToolsItem.h; sourceTree = "<group>"; };
+		6E4D90B21CDB334A0019B011 /* CDConvenientToolsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientToolsItem.m; sourceTree = "<group>"; };
 		6E6ADB0B1CD892B200838B61 /* ShangHaiProvidentFund.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShangHaiProvidentFund.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6ADB0F1CD892B200838B61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6E6ADB111CD892B200838B61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -196,8 +201,6 @@
 		6E6ADC301CD8BFE000838B61 /* CDConvenientToolsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientToolsService.m; sourceTree = "<group>"; };
 		6E6ADC321CD8C00C00838B61 /* CDConvenientToolsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientToolsCell.h; sourceTree = "<group>"; };
 		6E6ADC331CD8C00C00838B61 /* CDConvenientToolsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientToolsCell.m; sourceTree = "<group>"; };
-		6E6ADC351CD8C02E00838B61 /* CDMineAccountItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMineAccountItem.h; sourceTree = "<group>"; };
-		6E6ADC361CD8C02E00838B61 /* CDMineAccountItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMineAccountItem.m; sourceTree = "<group>"; };
 		6E6ADC381CD8C04700838B61 /* CDMineAccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMineAccountService.h; sourceTree = "<group>"; };
 		6E6ADC391CD8C04700838B61 /* CDMineAccountService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMineAccountService.m; sourceTree = "<group>"; };
 		6E6ADC3B1CD8C06C00838B61 /* CDMineAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMineAccountCell.h; sourceTree = "<group>"; };
@@ -379,6 +382,8 @@
 				6E6ADB4D1CD89E8E00838B61 /* CDTabBarController.m */,
 				6E6ADB4E1CD89E8E00838B61 /* CDBaseTableViewController.h */,
 				6E6ADB4F1CD89E8E00838B61 /* CDBaseTableViewController.m */,
+				6E4D90AE1CDB133E0019B011 /* CDBaseCollectionViewController.h */,
+				6E4D90AF1CDB133E0019B011 /* CDBaseCollectionViewController.m */,
 			);
 			path = CDBaseViewController;
 			sourceTree = "<group>";
@@ -570,8 +575,6 @@
 		6E6ADBFB1CD8A8B800838B61 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6E6ADC351CD8C02E00838B61 /* CDMineAccountItem.h */,
-				6E6ADC361CD8C02E00838B61 /* CDMineAccountItem.m */,
 				14F9256E1CDA378A003FE794 /* CDMineAccountModel.h */,
 				14F9256F1CDA378A003FE794 /* CDMineAccountModel.m */,
 			);
@@ -608,6 +611,8 @@
 		6E6ADBFF1CD8A8BF00838B61 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6E4D90B11CDB334A0019B011 /* CDConvenientToolsItem.h */,
+				6E4D90B21CDB334A0019B011 /* CDConvenientToolsItem.m */,
 				6E6ADC2C1CD8BFBC00838B61 /* CDConvenientModel.h */,
 				6E6ADC2D1CD8BFBC00838B61 /* CDConvenientModel.m */,
 			);
@@ -822,6 +827,7 @@
 				6E6ADB3A1CD89E8700838B61 /* CDBaseService.m in Sources */,
 				6E6ADBD81CD8A0BD00838B61 /* CDAutoHideMessageHUD.m in Sources */,
 				6E6ADB891CD89F7C00838B61 /* NSData+Base64.m in Sources */,
+				6E4D90B01CDB133E0019B011 /* CDBaseCollectionViewController.m in Sources */,
 				6E6ADC251CD8BF5E00838B61 /* CDAboutUsItem.m in Sources */,
 				6E6ADC281CD8BF7C00838B61 /* CDAboutUsService.m in Sources */,
 				6E6ADC111CD8AA9B00838B61 /* CDAboutUsController.m in Sources */,
@@ -852,13 +858,13 @@
 				6E6ADB131CD892B200838B61 /* AppDelegate.m in Sources */,
 				6E463CE21CD9AE7D00527950 /* CDBaseModel.m in Sources */,
 				6E6ADB8D1CD89F7C00838B61 /* NSDictionary+CDDictionaryAdditions.m in Sources */,
+				6E4D90B31CDB334A0019B011 /* CDConvenientToolsItem.m in Sources */,
 				6E6ADC1C1CD8B35B00838B61 /* CDBaseItem.m in Sources */,
 				6E6ADC341CD8C00C00838B61 /* CDConvenientToolsCell.m in Sources */,
 				6E6ADB541CD89E8E00838B61 /* CDBaseViewController.m in Sources */,
 				6E463CD01CD9841300527950 /* SCYBaseWebViewController.m in Sources */,
 				6E6ADC0B1CD8AA5400838B61 /* CDMineAccountController.m in Sources */,
 				6E6ADBF01CD8A22600838B61 /* CDGlobalHTTPSessionManager.m in Sources */,
-				6E6ADC371CD8C02E00838B61 /* CDMineAccountItem.m in Sources */,
 				6E6ADB5E1CD89F1C00838B61 /* ODRefreshControl.m in Sources */,
 				6E6ADB3C1CD89E8700838B61 /* CDNetworkMonitor.m in Sources */,
 				6E6ADC1F1CD8B3DE00838B61 /* CDNewsAndTrendsItem.m in Sources */,

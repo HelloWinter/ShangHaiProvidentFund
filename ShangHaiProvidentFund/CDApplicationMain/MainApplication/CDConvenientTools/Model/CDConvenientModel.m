@@ -7,7 +7,7 @@
 //
 
 #import "CDConvenientModel.h"
-#import "CDMineAccountItem.h"
+#import "CDConvenientToolsItem.h"
 
 @implementation CDConvenientModel
 
@@ -20,14 +20,14 @@
 }
 
 - (void)setupArrdata{
-    CDMineAccountItem *item0=[CDMineAccountItem itemWithImageName:@"" title:@"业务网点"];
-    CDMineAccountItem *item1=[CDMineAccountItem itemWithImageName:@"" title:@"业务办理"];
-    CDMineAccountItem *item2=[CDMineAccountItem itemWithImageName:@"" title:@"历年缴存表"];
-    CDMineAccountItem *item3=[CDMineAccountItem itemWithImageName:@"" title:@"缴存计算"];
-    CDMineAccountItem *item4=[CDMineAccountItem itemWithImageName:@"" title:@"额度试算"];
-    CDMineAccountItem *item5=[CDMineAccountItem itemWithImageName:@"" title:@"还款计算"];
-    CDMineAccountItem *item6=[CDMineAccountItem itemWithImageName:@"" title:@"更多计算"];
-    CDMineAccountItem *item7=[CDMineAccountItem itemWithImageName:@"" title:@"叫号信息"];
+    CDConvenientToolsItem *item0=[CDConvenientToolsItem itemWithImageName:@"convenient_tool1" title:@"业务网点"];
+    CDConvenientToolsItem *item1=[CDConvenientToolsItem itemWithImageName:@"convenient_tool2" title:@"业务办理"];
+    CDConvenientToolsItem *item2=[CDConvenientToolsItem itemWithImageName:@"convenient_tool3" title:@"历年缴存表"];
+    CDConvenientToolsItem *item3=[CDConvenientToolsItem itemWithImageName:@"convenient_tool4" title:@"缴存计算"];
+    CDConvenientToolsItem *item4=[CDConvenientToolsItem itemWithImageName:@"convenient_tool5" title:@"额度试算"];
+    CDConvenientToolsItem *item5=[CDConvenientToolsItem itemWithImageName:@"convenient_tool6" title:@"还款计算"];
+    CDConvenientToolsItem *item6=[CDConvenientToolsItem itemWithImageName:@"convenient_tool7" title:@"更多计算"];
+    CDConvenientToolsItem *item7=[CDConvenientToolsItem itemWithImageName:@"convenient_tool8" title:@"叫号信息"];
     [self.arrData addObjectsFromArray:@[item0,item1,item2,item3,item4,item5,item6,item7]];
 }
 

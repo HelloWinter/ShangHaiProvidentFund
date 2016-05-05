@@ -1,5 +1,5 @@
 //
-//  CDMineAccountItem.h
+//  CDConvenientToolsItem.h
 //  ShangHaiProvidentFund
 //
 //  Created by cdd on 16/5/3.
@@ -8,7 +8,7 @@
 
 #import "CDBaseItem.h"
 
-@interface CDMineAccountItem : CDBaseItem
+@interface CDConvenientToolsItem : CDBaseItem
 
 @property (nonatomic, copy) NSString *imgName;
 @property (nonatomic, copy) NSString *title;

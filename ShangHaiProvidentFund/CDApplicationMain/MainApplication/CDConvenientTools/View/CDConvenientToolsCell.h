@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class CDConvenientToolsItem;
+
 @interface CDConvenientToolsCell : UICollectionViewCell
+
+- (void)setupCellItem:(CDConvenientToolsItem *)item;
 
 @end

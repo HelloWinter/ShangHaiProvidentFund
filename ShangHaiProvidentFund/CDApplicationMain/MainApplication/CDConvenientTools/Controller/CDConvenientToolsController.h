@@ -6,8 +6,8 @@
 //  Copyright © 2016年 cheng dong. All rights reserved.
 //
 
-#import "CDBaseViewController.h"
+#import "CDBaseCollectionViewController.h"
 
-@interface CDConvenientToolsController : CDBaseViewController
+@interface CDConvenientToolsController : CDBaseCollectionViewController
 
 @end
