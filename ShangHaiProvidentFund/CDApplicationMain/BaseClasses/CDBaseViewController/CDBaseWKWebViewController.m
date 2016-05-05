@@ -157,6 +157,14 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     [self updateNavTitle];
     [self updateNavgationLeftBtn];
+    
+    
+    
+    if (self.javaScriptCode) {
+        [webView evaluateJavaScript:self.javaScriptCode completionHandler:^(id _Nullable handle, NSError * _Nullable error) {
+            NSLog(@"删除成功");
+        }];
+    }
 }
 
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation

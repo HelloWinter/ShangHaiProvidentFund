@@ -17,6 +17,7 @@
         self.textLabel.numberOfLines=0;
         self.textLabel.lineBreakMode=NSLineBreakByWordWrapping;
         self.textLabel.textColor=[UIColor darkGrayColor];
+        self.textLabel.font=[UIFont systemFontOfSize:15];
         self.detailTextLabel.textColor=[UIColor darkGrayColor];
         self.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     }

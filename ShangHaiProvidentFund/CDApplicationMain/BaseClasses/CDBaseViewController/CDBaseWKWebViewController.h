@@ -13,9 +13,12 @@
 #import "CDBaseViewController.h"
 #import <WebKit/WebKit.h>
 
+
 @interface CDBaseWKWebViewController : CDBaseViewController
 
 @property (nonatomic, strong, readonly) WKWebView *webView;
+
+@property (nonatomic, copy) NSString *javaScriptCode;
 
 + (instancetype)webViewWithURL:(NSURL *)url;
 
