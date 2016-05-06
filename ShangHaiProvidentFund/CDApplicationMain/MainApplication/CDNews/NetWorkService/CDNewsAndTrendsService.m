@@ -21,6 +21,7 @@
 }
 
 - (void)requestDidFinish:(id)rootData{
+    [super requestDidFinish:rootData];
     NSArray *arr=(NSArray *)rootData;
     _arrData=[CDNewsAndTrendsItem mj_objectArrayWithKeyValuesArray:arr];
 }

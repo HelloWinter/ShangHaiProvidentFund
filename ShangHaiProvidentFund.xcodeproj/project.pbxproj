@@ -16,6 +16,8 @@
 		6E463CE71CD9D7F700527950 /* CDButtonTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E463CE51CD9D7F700527950 /* CDButtonTableFooterView.xib */; };
 		6E4D90B01CDB133E0019B011 /* CDBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D90AF1CDB133E0019B011 /* CDBaseCollectionViewController.m */; };
 		6E4D90B31CDB334A0019B011 /* CDConvenientToolsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D90B21CDB334A0019B011 /* CDConvenientToolsItem.m */; };
+		6E67A79A1CDCA6BC00436E93 /* CDLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E67A7991CDCA6BC00436E93 /* CDLoadMoreCell.m */; };
+		6E67A79D1CDCA72600436E93 /* CDLoadMoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E67A79C1CDCA72600436E93 /* CDLoadMoreItem.m */; };
 		6E6ADB101CD892B200838B61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB0F1CD892B200838B61 /* main.m */; };
 		6E6ADB131CD892B200838B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB121CD892B200838B61 /* AppDelegate.m */; };
 		6E6ADB191CD892B200838B61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6ADB171CD892B200838B61 /* Main.storyboard */; };
@@ -95,6 +97,10 @@
 		6E4D90AF1CDB133E0019B011 /* CDBaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseCollectionViewController.m; sourceTree = "<group>"; };
 		6E4D90B11CDB334A0019B011 /* CDConvenientToolsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientToolsItem.h; sourceTree = "<group>"; };
 		6E4D90B21CDB334A0019B011 /* CDConvenientToolsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientToolsItem.m; sourceTree = "<group>"; };
+		6E67A7981CDCA6BC00436E93 /* CDLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoadMoreCell.h; sourceTree = "<group>"; };
+		6E67A7991CDCA6BC00436E93 /* CDLoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLoadMoreCell.m; sourceTree = "<group>"; };
+		6E67A79B1CDCA72600436E93 /* CDLoadMoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoadMoreItem.h; sourceTree = "<group>"; };
+		6E67A79C1CDCA72600436E93 /* CDLoadMoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLoadMoreItem.m; sourceTree = "<group>"; };
 		6E6ADB0B1CD892B200838B61 /* ShangHaiProvidentFund.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShangHaiProvidentFund.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6ADB0F1CD892B200838B61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6E6ADB111CD892B200838B61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -349,6 +355,8 @@
 			children = (
 				6E6ADB2C1CD89E7C00838B61 /* CDBaseTableViewCell.h */,
 				6E6ADB2D1CD89E7C00838B61 /* CDBaseTableViewCell.m */,
+				6E67A7981CDCA6BC00436E93 /* CDLoadMoreCell.h */,
+				6E67A7991CDCA6BC00436E93 /* CDLoadMoreCell.m */,
 			);
 			path = CDBaseView;
 			sourceTree = "<group>";
@@ -699,6 +707,8 @@
 			children = (
 				6E6ADC1A1CD8B35B00838B61 /* CDBaseItem.h */,
 				6E6ADC1B1CD8B35B00838B61 /* CDBaseItem.m */,
+				6E67A79B1CDCA72600436E93 /* CDLoadMoreItem.h */,
+				6E67A79C1CDCA72600436E93 /* CDLoadMoreItem.m */,
 			);
 			path = CDBaseItem;
 			sourceTree = "<group>";
@@ -830,6 +840,7 @@
 				6E6ADB3B1CD89E8700838B61 /* CDJSONBaseNetworkService.m in Sources */,
 				6E6ADB2E1CD89E7C00838B61 /* CDBaseTableViewCell.m in Sources */,
 				6E6ADB3A1CD89E8700838B61 /* CDBaseService.m in Sources */,
+				6E67A79A1CDCA6BC00436E93 /* CDLoadMoreCell.m in Sources */,
 				6E6ADBD81CD8A0BD00838B61 /* CDAutoHideMessageHUD.m in Sources */,
 				6E6ADB891CD89F7C00838B61 /* NSData+Base64.m in Sources */,
 				6E4D90B01CDB133E0019B011 /* CDBaseCollectionViewController.m in Sources */,
@@ -888,6 +899,7 @@
 				6E6ADB551CD89E8E00838B61 /* CDBaseWKWebViewController.m in Sources */,
 				6E6ADB901CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.m in Sources */,
 				6E6ADC3D1CD8C06C00838B61 /* CDMineAccountCell.m in Sources */,
+				6E67A79D1CDCA72600436E93 /* CDLoadMoreItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

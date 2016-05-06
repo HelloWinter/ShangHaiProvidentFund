@@ -62,7 +62,6 @@
     [CDNetworkRequestManager removeService:self];
     
 //    NSDictionary *paramsDic = [self packParameters:params];
-
     
     NSString *paramsString = params==nil ? @"" : [params cd_TransformToParamStringWithMethod:(kHttpRequestTypeGET)];
     self.cacheURLStringID=[NSString stringWithFormat:@"%@%@",urlString,paramsString];
@@ -127,19 +126,17 @@
  *  所有接口必传的参数在此封装
  */
 - (NSMutableDictionary *)packParameters:(NSMutableDictionary *)params {
-//    NSMutableDictionary *paraDic = params ? [params mutableCopy] : [[NSMutableDictionary alloc] init];
-    //    [paraDic setObject:[CDJSONUtilities CDJSON_DefaultSource] forKey:@"source"];
-    //    [paraDic setObject:CDJSONAppVersion forKey:@"appVersion"];
-    //    [paraDic setObject:CDJSONAppVersion forKey:@"releaseVersion"];
-    //    [paraDic setObject:(CDJSONAccessToken() ?: @"") forKey:@"accessToken"];
-    //    [paraDic setObject:(CDJSONAppId() ?: @"") forKey:@"appId"];
-//    return paraDic;
-    return params;
+    NSMutableDictionary *paraDic = params ? [params mutableCopy] : [[NSMutableDictionary alloc] init];
+//    [paraDic setObject:[CDUtilities cd_DefaultSource] forKey:@"source"];
+//    [paraDic setObject:CDAppVersion forKey:@"appVersion"];
+//    [paraDic setObject:(CDAccessToken() ?: @"") forKey:@"accessToken"];
+//    [paraDic setObject:(CDAppId() ?: @"") forKey:@"appId"];
+    return paraDic;
 }
 
 /* 请求完成 */
 - (void)p_taskDidFinish:(NSURLSessionTask *)task responseObject:(id)responseObject {
-//    CDPRINT(@">>> URL:%@ response data:%@ ", task.currentRequest.URL,responseObject);
+    CDPRINT(@">>> URL:%@ response data:%@ ", task.currentRequest.URL,responseObject);
     if (self.task.state == NSURLSessionTaskStateCompleted) {
         [self successfulGetResponse:responseObject];
         self.task = nil;

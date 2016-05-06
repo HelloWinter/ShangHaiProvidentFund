@@ -66,14 +66,13 @@
     return cell;
 }
 
-#pragma mark - mark
+#pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 75;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     CDNewsAndTrendsItem *item = [self.arrData cd_safeObjectAtIndex:indexPath.row];
     NSString *urlStr=[NSString stringWithFormat:@"/gjjManager/newsByIdServlet?id=%@",item.news.newsid];
     [self pushToWKWebViewControllerWithURLString:CDURLWithAPI(urlStr)];
@@ -102,6 +101,22 @@
     webViewController.title=@"上海住房公积金网";
     webViewController.javaScriptCode=@"var element=document.getElementsByTagName('link')[0];var parentElement=element.parentNode;if(parentElement){parentElement.removeChild(element);}";
     [self.navigationController pushViewController:webViewController animated:YES];
+}
+
+- (void)refreshArrData{
+//    CDNewsAndTrendsItem *itemArrData = [self.arrData cd_safeObjectAtIndex:0];
+//    CDNewsAndTrendsItem *itemServiceData = [self.newsAndTrendsService.arrData cd_safeObjectAtIndex:0];
+//    if ([itemArrData.news.newsid isEqualToString:];) {
+//        
+//    }
+    if (self.arrData.count<self.newsAndTrendsService.arrData.count) {
+        NSInteger subCount=self.newsAndTrendsService.arrData.count-self.arrData.count;
+        [self.arrData addObjectsFromArray:[self.newsAndTrendsService.arrData subarrayWithRange:NSMakeRange(self.arrData.count,subCount>=20 ? 20 : subCount)]];
+        
+    }else{
+        
+    }
+    
 }
 
 //- (void)pushToWebViewControllerWithURLString:(NSString *)urlstr{
