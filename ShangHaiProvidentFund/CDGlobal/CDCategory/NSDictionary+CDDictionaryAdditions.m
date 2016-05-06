@@ -30,10 +30,10 @@
     return (ob);
 }
 
-- (NSMutableString *)cd_transformToString{
+- (NSString *)cd_TransformToParamStringWithMethod:(HttpRequestType)method{
     NSMutableString *str=[[NSMutableString alloc]init];
     for (int i=0; i<self.allKeys.count; i++) {
-        [str appendFormat:@"%@%@=%@",(i==0 ? @"?" : @"&"),[self.allKeys cd_safeObjectAtIndex:i],[self.allValues cd_safeObjectAtIndex:i]];
+        [str appendFormat:@"%@%@=%@",(i==0 ? (method==kHttpRequestTypeGET ? @"?" : @"") : @"&"),[self.allKeys cd_safeObjectAtIndex:i],[self.allValues cd_safeObjectAtIndex:i]];
     }
     return str;
 }

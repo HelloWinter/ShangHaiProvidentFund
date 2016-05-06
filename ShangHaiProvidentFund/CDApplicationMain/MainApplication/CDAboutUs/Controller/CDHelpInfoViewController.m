@@ -40,7 +40,9 @@
 - (UIImageView *)imgView{
     if(_imgView == nil){
         _imgView = [[UIImageView alloc]init];
-        
+        _imgView.image=[UIImage imageNamed:@"shgjj_logo"];
+        _imgView.frame=CGRectMake(0, 90, 109, 19);
+        _imgView.centerX=self.view.width*0.5;
     }
     return _imgView;
 }
@@ -48,9 +50,10 @@
 - (UILabel *)lbVersion{
     if(_lbVersion == nil){
         _lbVersion = [[UILabel alloc]init];
-        _lbVersion.frame=CGRectMake(LEFT_RIGHT_MARGIN, 150, self.view.width-LEFT_RIGHT_MARGIN*2, 20);
+        _lbVersion.frame=CGRectMake(LEFT_RIGHT_MARGIN, self.imgView.bottom+10, self.view.width-LEFT_RIGHT_MARGIN*2, 20);
         _lbVersion.textColor=[UIColor darkGrayColor];
         _lbVersion.textAlignment=NSTextAlignmentCenter;
+        _lbVersion.font=[UIFont systemFontOfSize:13];
         _lbVersion.text=[NSString stringWithFormat:@"当前版本 V%@",CDAppVersion];
     }
     return _lbVersion;

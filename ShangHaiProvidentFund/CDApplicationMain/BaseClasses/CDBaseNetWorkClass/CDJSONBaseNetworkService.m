@@ -10,11 +10,15 @@
 #import "CDPointActivityIndicator.h"
 #import "CDNetworkRequestManager.h"
 #import "CDGlobalHTTPSessionManager.h"
+#import <YYCache/YYCache.h>
+#import "NSDictionary+CDDictionaryAdditions.h"
 
 @interface CDJSONBaseNetworkService ()
 
 @property (nonatomic, strong) NSURLSessionDataTask *task;
 @property (nonatomic, strong) CDGlobalHTTPSessionManager *manager;
+@property (nonatomic, copy) NSString *cacheURLStringID;//cacheurlstring
+@property (nonatomic, strong) YYCache *cache;
 
 @end
 
@@ -30,6 +34,8 @@
         _delegate = delegate;
         _httpRequestMethod = kHttpRequestTypePOST;
         _showLoginController=YES;
+        _isNeedCache=NO;
+        _isIgnoreCache=YES;
     }
     return self;
 }
@@ -41,6 +47,13 @@
     return _manager;
 }
 
+- (YYCache *)cache{
+    if (_cache==nil) {
+        _cache=[YYCache cacheWithName:self.cacheURLStringID];
+    }
+    return _cache;
+}
+
 - (void)request:(NSString *)urlString params:(id)params {
     [self.task cancel];
     self.task=nil;
@@ -48,11 +61,20 @@
     
     [CDNetworkRequestManager removeService:self];
     
-    NSDictionary *paramsDic = [self packParameters:params];
+//    NSDictionary *paramsDic = [self packParameters:params];
+
+    
+    NSString *paramsString = params==nil ? @"" : [params cd_TransformToParamStringWithMethod:(kHttpRequestTypeGET)];
+    self.cacheURLStringID=[NSString stringWithFormat:@"%@%@",urlString,paramsString];
+    
+    if (!self.isIgnoreCache  && [self.cache containsObjectForKey:self.cacheURLStringID]) {
+        [self successfulGetResponse:[self.cache objectForKey:self.cacheURLStringID]];
+        return;
+    }
     
     switch (_httpRequestMethod) {
         case kHttpRequestTypePOST: {
-            self.task = [self.manager POST:urlString parameters:paramsDic progress:^(NSProgress * _Nonnull uploadProgress) {
+            self.task = [self.manager POST:urlString parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 NSError *error=nil;
@@ -71,7 +93,7 @@
         }   break;
             
         case kHttpRequestTypeGET: {
-            self.task = [self.manager GET:urlString parameters:paramsDic progress:^(NSProgress * _Nonnull downloadProgress) {
+            self.task = [self.manager GET:urlString parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 NSError *error=nil;
@@ -93,7 +115,7 @@
     //打印请求信息
     NSString *requestMethod=_httpRequestMethod==kHttpRequestTypePOST ? @"POST":@"GET";
     CDPRINT(@">>> %@ request url:%@",requestMethod,urlString);
-    CDPRINT(@">>> %@ request parameters:\n%@",requestMethod,paramsDic);
+    CDPRINT(@">>> %@ request parameters:\n%@",requestMethod,params);
     [CDNetworkRequestManager addService:self];
 }
 
@@ -172,7 +194,12 @@
  *  子类可覆写，把请求到的数据转换成模型
  */
 - (void)requestDidFinish:(id)rootData {
-    
+    if (self.isNeedCache && self.cacheURLStringID) {
+        if (!self.isIgnoreCache  && [self.cache containsObjectForKey:self.cacheURLStringID]) {
+            return;
+        }
+        [self.cache setObject:rootData forKey:self.cacheURLStringID];
+    }
 }
 
 @end

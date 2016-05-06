@@ -12,6 +12,6 @@
 
 @property (nonatomic, copy, readonly) NSArray *arrData;
 
-- (void)loadNewsAndTrendsShowIndicator:(BOOL)show;
+- (void)loadNewsAndTrendsIgnoreCache:(BOOL)ignore showIndicator:(BOOL)show;
 
 @end

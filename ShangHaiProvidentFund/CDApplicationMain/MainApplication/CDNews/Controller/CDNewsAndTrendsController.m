@@ -33,7 +33,7 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    [self.newsAndTrendsService loadNewsAndTrendsShowIndicator:YES];
+    [self.newsAndTrendsService loadNewsAndTrendsIgnoreCache:NO showIndicator:YES];
 }
 
 - (NSMutableArray *)arrData{
@@ -92,7 +92,7 @@
 
 #pragma mark - override
 - (void)startPullRefresh{
-    [self.newsAndTrendsService loadNewsAndTrendsShowIndicator:NO];
+    [self.newsAndTrendsService loadNewsAndTrendsIgnoreCache:YES showIndicator:NO];
 }
 
 

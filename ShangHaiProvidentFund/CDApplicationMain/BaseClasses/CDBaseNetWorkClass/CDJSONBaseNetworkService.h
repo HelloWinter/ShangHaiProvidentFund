@@ -63,6 +63,16 @@
 @property (nonatomic, assign) BOOL showLoginController;
 
 /**
+ *  是否忽略缓存,重新请求,默认YES
+ */
+@property (nonatomic, assign) BOOL isIgnoreCache;
+
+/**
+ *  是否缓存数据,默认NO
+ */
+@property (nonatomic, assign) BOOL isNeedCache;
+
+/**
  *  初始化方法
  *
  *  @param delegate 代理协议

@@ -12,7 +12,9 @@
 
 @implementation CDNewsAndTrendsService
 
-- (void)loadNewsAndTrendsShowIndicator:(BOOL)show{
+- (void)loadNewsAndTrendsIgnoreCache:(BOOL)ignore showIndicator:(BOOL)show{
+    self.isNeedCache=YES;
+    self.isIgnoreCache=ignore;
     self.showLodingIndicator=show;
     self.httpRequestMethod=kHttpRequestTypeGET;
     [self request:CDURLWithAPI(@"/gjjManager/mobileNews?") params:nil];

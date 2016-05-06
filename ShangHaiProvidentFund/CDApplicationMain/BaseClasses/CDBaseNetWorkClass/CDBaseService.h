@@ -8,10 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, HttpRequestType) {
-    kHttpRequestTypePOST,
-    kHttpRequestTypeGET
-};
 
 @interface CDBaseService : NSObject{
 @protected
