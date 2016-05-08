@@ -29,7 +29,10 @@
     [self.navigationBar setTintColor:[UIColor whiteColor]];
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:18.0f]}];
     //带有分割线
-    [self.navigationBar setBarTintColor:ColorFromHexRGB(0x01b2d3)];//
+//    [self.navigationBar setBarTintColor:ColorFromHexRGB(0x01b2d3)];//
+    //不带有分割线
+    self.navigationBar.shadowImage = [[UIImage alloc]init];
+    [self.navigationBar setBackgroundImage:[UIImage cd_imageWithColor:ColorFromHexRGB(0x01b2d3)] forBarMetrics:UIBarMetricsDefault];
 }
 
 @end

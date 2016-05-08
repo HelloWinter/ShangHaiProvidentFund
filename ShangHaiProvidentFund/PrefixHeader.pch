@@ -17,6 +17,8 @@
 #import "UIView+CDViewAdditions.h"
 #import "MJExtension.h"
 #import "NSArray+CDArrayAdditions.h"
+#import "NSMutableDictionary+CDMutableDictAdditions.h"
 #import "CDAutoHideMessageHUD.h"
+#import "CDAPPURLConfigure.h"
 
 #endif

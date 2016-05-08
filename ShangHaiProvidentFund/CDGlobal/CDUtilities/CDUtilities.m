@@ -11,20 +11,6 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <LocalAuthentication/LocalAuthentication.h>
 
-#ifdef DEBUG
-
-NSString *const CDBaseURLString = @"http://person.shgjj.com";
-
-#else
-
-NSString *const CDBaseURLString = @"http://person.shgjj.com";
-
-#endif
-
-NSString* CDURLWithAPI(NSString* api) {
-    return [NSString stringWithFormat:@"%@%@",CDBaseURLString,api];
-}
-
 CGFloat CDScale() {
     return [UIScreen mainScreen].scale;
 }

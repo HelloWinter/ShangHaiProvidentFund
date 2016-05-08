@@ -8,6 +8,28 @@
 
 #import "CDAPPURLConfigure.h"
 
+#ifdef DEBUG
+
+NSString *const CDBaseURLString = @"http://person.shgjj.com";
+
+NSString *const CDBaseWebURLString = @"http://www.shgjj.com";
+
+#else
+
+NSString *const CDBaseURLString = @"http://person.shgjj.com";
+
+NSString *const CDBaseWebURLString = @"http://www.shgjj.com";
+
+#endif
+
+NSString* CDURLWithAPI(NSString* api) {
+    return [NSString stringWithFormat:@"%@%@",CDBaseURLString,api];
+}
+
+NSString* CDWebURLWithAPI(NSString* api) {
+    return [NSString stringWithFormat:@"%@%@",CDBaseWebURLString,api];
+}
+
 @implementation CDAPPURLConfigure
 
 @end

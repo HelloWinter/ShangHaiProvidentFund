@@ -13,6 +13,8 @@
 #import "CDBaseWKWebViewController.h"
 #import "CDButtonTableFooterView.h"
 #import "CDHelpInfoViewController.h"
+#import "CDOpinionsSuggestionsController.h"
+//#import "CDMineAccountController.h"
 
 @interface CDAboutUsController ()
 
@@ -101,7 +103,7 @@
                 }
                     break;
                 case 1:{
-                    
+                    [self pushToOpinionsSuggestionsController];
                 }
                     break;
                 default:
@@ -111,14 +113,14 @@
             break;
         case 1:{
             switch (indexPath.row) {
-                case 1:
+                case 0:
                     [self showCallTelephoneAlert];
                     break;
-                case 2:
+                case 1:
                     [self pushToHelpInfoController];
                     break;
-                case 3:
-                    
+                case 2:
+//                    [self pushToMineAccountVC];
                     break;
                     
                 default:
@@ -158,6 +160,11 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+- (void)pushToOpinionsSuggestionsController{
+    CDOpinionsSuggestionsController *controller=[[CDOpinionsSuggestionsController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 - (void)showCallTelephoneAlert{
     UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"提示" message:@"客服工作时间:周一至周六9:00-17:00(除法定假日外)\n现在是否拨打电话?" preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *actionCancel=[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
@@ -191,5 +198,11 @@
     [alert addAction:actionCancel];
     [CDKeyWindow.rootViewController presentViewController:alert animated:YES completion:NULL];
 }
+
+//- (void)pushToMineAccountVC{
+//    CDMineAccountController *controller=[[CDMineAccountController alloc]init];
+//    controller.hidesBottomBarWhenPushed=YES;
+//    [self.navigationController pushViewController:controller animated:YES];
+//}
 
 @end

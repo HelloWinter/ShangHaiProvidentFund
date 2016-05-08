@@ -10,6 +10,7 @@
 #import "CDConvenientToolsCell.h"
 #import "CDConvenientToolsItem.h"
 #import "CDMineAccountModel.h"
+#import "CDBaseWKWebViewController.h"
 
 static NSString *cellIdentifier=@"cellIdentifier";
 
@@ -63,7 +64,7 @@ static NSString *cellIdentifier=@"cellIdentifier";
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(0, 7, 7, 7);
+    return UIEdgeInsetsMake(7, 7, 7, 7);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
@@ -73,10 +74,27 @@ static NSString *cellIdentifier=@"cellIdentifier";
 #pragma mark - UICollectionViewDelegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    switch (indexPath.row) {
+        case 6:{
+            [self pushToWKWebViewControllerWithTitle:@"公益短信" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/sms/app_apply.html")];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 -(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
+}
+
+#pragma mark - Events
+- (void)pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
+    CDBaseWKWebViewController *webViewController=[CDBaseWKWebViewController webViewWithURL:[NSURL URLWithString:urlstr]];
+    webViewController.title=title;
+    webViewController.javaScriptCode=jsCode;
+    [self.navigationController pushViewController:webViewController animated:YES];
 }
 
 @end

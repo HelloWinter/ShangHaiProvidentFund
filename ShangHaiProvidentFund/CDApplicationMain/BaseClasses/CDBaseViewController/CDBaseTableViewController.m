@@ -69,11 +69,13 @@
 
 - (UITableView *)tableView{
     if (_tableView == nil) {
-        CGRect rect=self.view.bounds;
-        if (self.showDragView && !self.navigationController.navigationBarHidden) {
-            rect=CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-64);
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:_tableViewStyle];
+        if (!self.hidesBottomBarWhenPushed) {
+            _tableView.height-=49;
         }
-        _tableView = [[UITableView alloc] initWithFrame:rect style:_tableViewStyle];
+        if (!self.navigationController.navigationBarHidden) {//self.showDragView && 
+            _tableView.height-=64;
+        }
         _tableView.dataSource=self;
         _tableView.delegate = self;
         _tableView.backgroundView = nil;
@@ -92,6 +94,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [[UITableViewCell alloc]init];
+}
+
+#pragma mark - KeyBoardNotification
+- (void)keyboardWillShow:(NSNotification *)notification{
+    [super keyboardWillShow:notification];
+    UIEdgeInsets insets=self.tableView.contentInset;
+    insets.bottom=_keyboardBounds.size.height;
+    self.tableView.contentInset = insets;
+    self.tableView.scrollIndicatorInsets = insets;
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification{
+    [super keyboardWillHide:notification];
+    [UIView animateWithDuration:_keybardAnmiatedTimeinterval animations:^{
+        UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+        self.tableView.contentInset = contentInsets;
+        self.tableView.scrollIndicatorInsets = contentInsets;
+    }];
 }
 
 #pragma mark - CDJSONBaseNetworkServiceDelegate

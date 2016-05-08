@@ -41,7 +41,7 @@
     if(_imgView == nil){
         _imgView = [[UIImageView alloc]init];
         _imgView.image=[UIImage imageNamed:@"shgjj_logo"];
-        _imgView.frame=CGRectMake(0, 90, 109, 19);
+        _imgView.frame=CGRectMake(0, 20, 109, 19);
         _imgView.centerX=self.view.width*0.5;
     }
     return _imgView;

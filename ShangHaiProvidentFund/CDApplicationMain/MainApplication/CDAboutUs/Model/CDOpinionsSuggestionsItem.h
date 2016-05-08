@@ -10,4 +10,10 @@
 
 @interface CDOpinionsSuggestionsItem : CDBaseItem
 
+@property (nonatomic, copy) NSString *paramname;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *value;
+@property (nonatomic, copy) NSString *hint;
+@property (nonatomic, copy) NSString *paramsubmit;
+
 @end

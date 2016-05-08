@@ -10,20 +10,11 @@
 #import <UIKit/UIKit.h>
 #import <CoreMotion/CoreMotion.h>
 
-extern NSString *const CDBaseURLString;
+
 
 /* ---------------------------------------------------------------- */
 /** 公共C方法 **/
 /* ---------------------------------------------------------------- */
-
-/**
- *  返回完整的接口地址
- *
- *  @param api 接口路径
- *
- *  @return (NSString *)
- */
-NSString* CDURLWithAPI(NSString* api);
 
 /**
  *  设备屏幕缩放比例

@@ -1,10 +1,62 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="networkPointIdentifier" rowHeight="100" id="iEZ-ZF-TJM" customClass="CDNetWorkPointCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iEZ-ZF-TJM" id="iHa-Hz-g3v">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公积金管理部" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKt-P5-Alx">
+                        <rect key="frame" x="8" y="8" width="202" height="25"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="管理部地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5p-am-zD1">
+                        <rect key="frame" x="8" y="32" width="304" height="25"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="当前人数:暂无数据" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ie2-UM-JfO">
+                        <rect key="frame" x="210" y="8" width="102" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="102" id="jPj-Xd-uO5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="leadingMargin" secondItem="v5p-am-zD1" secondAttribute="leading" id="6YO-OL-87l"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="rKt-P5-Alx" secondAttribute="leading" id="Dxx-Sc-8Bb"/>
+                    <constraint firstItem="v5p-am-zD1" firstAttribute="top" secondItem="rKt-P5-Alx" secondAttribute="bottom" constant="-1" id="Ji9-98-WG2"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ie2-UM-JfO" secondAttribute="trailing" id="QHp-23-j6X"/>
+                    <constraint firstAttribute="topMargin" secondItem="rKt-P5-Alx" secondAttribute="top" id="Soa-mH-IGM"/>
+                    <constraint firstItem="ie2-UM-JfO" firstAttribute="leading" secondItem="rKt-P5-Alx" secondAttribute="trailing" id="ky5-dO-s7H"/>
+                    <constraint firstAttribute="topMargin" secondItem="ie2-UM-JfO" secondAttribute="top" id="qGT-Vo-K8h"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="v5p-am-zD1" secondAttribute="bottom" id="syL-qY-ywR"/>
+                    <constraint firstItem="rKt-P5-Alx" firstAttribute="height" secondItem="ie2-UM-JfO" secondAttribute="height" id="t9m-gj-m7b"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="v5p-am-zD1" secondAttribute="trailing" id="vxv-wQ-gM6"/>
+                    <constraint firstItem="rKt-P5-Alx" firstAttribute="height" secondItem="v5p-am-zD1" secondAttribute="height" id="wr0-au-fSy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lbAddress" destination="v5p-am-zD1" id="R01-gJ-tOQ"/>
+                <outlet property="lbCurrentNum" destination="ie2-UM-JfO" id="vE9-eO-tU6"/>
+                <outlet property="lbManagementDepartment" destination="rKt-P5-Alx" id="Pbv-WA-nwn"/>
+            </connections>
+            <point key="canvasLocation" x="558" y="305"/>
+        </tableViewCell>
     </objects>
 </document>

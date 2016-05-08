@@ -10,4 +10,8 @@
 
 @interface CDNetworkPointService : CDJSONBaseNetworkService
 
+@property (nonatomic, copy, readonly) NSArray *arrData;
+
+- (void)loadNetworkPointIgnoreCache:(BOOL)ignore ShowIndicator:(BOOL)show;
+
 @end

@@ -8,6 +8,10 @@
 
 #import "CDBaseTextFieldCell.h"
 
+@class CDOpinionsSuggestionsItem;
+
 @interface CDOpinionsSuggestionsFieldCell : CDBaseTextFieldCell
+
+- (void)setupItem:(CDOpinionsSuggestionsItem *)item indexPath:(NSIndexPath *)path;
 
 @end

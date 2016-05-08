@@ -12,7 +12,8 @@
 #import "CDNewsAndTrendsItem.h"
 #import "CDNewsItem.h"
 #import "CDBaseWKWebViewController.h"
-//#import "SCYBaseWebViewController.h"
+#import "CDLoadMoreItem.h"
+#import "CDLoadMoreCell.h"
 
 @interface CDNewsAndTrendsController ()
 
@@ -26,7 +27,7 @@
 - (instancetype)init{
     self =[super init];
     if (self) {
-        
+        self.showDragView=NO;
     }
     return self;
 }
@@ -56,33 +57,55 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellIdentifier=@"cellIdentifier";
-    CDNewsAndTrendsCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell) {
-        cell=[[CDNewsAndTrendsCell alloc]initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:cellIdentifier];
+    CDBaseItem *item = [self.arrData cd_safeObjectAtIndex:indexPath.row];
+    if ([item isKindOfClass:[CDNewsAndTrendsItem class]]) {
+        CDNewsAndTrendsItem *newsItem =(CDNewsAndTrendsItem *)item;
+        static NSString *cellIdentifier=@"cellIdentifier";
+        CDNewsAndTrendsCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (!cell) {
+            cell=[[CDNewsAndTrendsCell alloc]initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:cellIdentifier];
+        }
+        [cell setupCellItem:newsItem.news];
+        return cell;
+    }else if([item isKindOfClass:[CDLoadMoreItem class]]){
+        CDLoadMoreItem *moreItem =(CDLoadMoreItem *)item;
+        static NSString *moreCellIdentifier=@"moreCellIdentifier";
+        CDLoadMoreCell *cell=[tableView dequeueReusableCellWithIdentifier:moreCellIdentifier];
+        if (!cell) {
+            cell=[[CDLoadMoreCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:moreCellIdentifier];
+        }
+        [cell setupCellItem:moreItem];
+        return cell;
+    }else{
+        return [[UITableViewCell alloc]init];
     }
-    CDNewsAndTrendsItem *item = [self.arrData cd_safeObjectAtIndex:indexPath.row];
-    [cell setupCellItem:item.news];
-    return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    CDBaseItem *item = [self.arrData cd_safeObjectAtIndex:indexPath.row];
+    if ([item isKindOfClass:[CDLoadMoreItem class]]){
+        return 44;
+    }
     return 75;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    CDNewsAndTrendsItem *item = [self.arrData cd_safeObjectAtIndex:indexPath.row];
-    NSString *urlStr=[NSString stringWithFormat:@"/gjjManager/newsByIdServlet?id=%@",item.news.newsid];
-    [self pushToWKWebViewControllerWithURLString:CDURLWithAPI(urlStr)];
+    CDBaseItem *item = [self.arrData cd_safeObjectAtIndex:indexPath.row];
+    if ([item isKindOfClass:[CDNewsAndTrendsItem class]]) {
+        CDNewsAndTrendsItem *newsitem = (CDNewsAndTrendsItem *)item;
+        NSString *urlStr=[NSString stringWithFormat:@"/gjjManager/newsByIdServlet?id=%@",newsitem.news.newsid];
+        [self pushToWKWebViewControllerWithURLString:CDURLWithAPI(urlStr)];
+    }else if ([item isKindOfClass:[CDLoadMoreItem class]]){
+        [self refreshTableViewFromTop:NO];
+    }
 }
 
 #pragma mark - CDJSONBaseNetworkServiceDelegate
 - (void)requestDidFinished:(CDJSONBaseNetworkService *)service{
-    [self.arrData removeAllObjects];
-    [self.arrData addObjectsFromArray:[self.newsAndTrendsService.arrData subarrayWithRange:NSMakeRange(0, 20)]];
-    [self.tableView reloadData];
+    [super requestDidFinished:service];
+    [self refreshTableViewFromTop:YES];
 }
 
 - (void)request:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
@@ -94,7 +117,6 @@
     [self.newsAndTrendsService loadNewsAndTrendsIgnoreCache:YES showIndicator:NO];
 }
 
-
 #pragma mark - Events
 - (void)pushToWKWebViewControllerWithURLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[CDBaseWKWebViewController webViewWithURL:[NSURL URLWithString:urlstr]];
@@ -103,20 +125,24 @@
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 
+- (void)refreshTableViewFromTop:(BOOL)isFromTop{
+    if (isFromTop) {
+        [self.arrData removeAllObjects];
+    }else{
+        [self.arrData removeLastObject];
+    }
+    [self refreshArrData];
+    [self.tableView reloadData];
+}
+
 - (void)refreshArrData{
-//    CDNewsAndTrendsItem *itemArrData = [self.arrData cd_safeObjectAtIndex:0];
-//    CDNewsAndTrendsItem *itemServiceData = [self.newsAndTrendsService.arrData cd_safeObjectAtIndex:0];
-//    if ([itemArrData.news.newsid isEqualToString:];) {
-//        
-//    }
     if (self.arrData.count<self.newsAndTrendsService.arrData.count) {
         NSInteger subCount=self.newsAndTrendsService.arrData.count-self.arrData.count;
         [self.arrData addObjectsFromArray:[self.newsAndTrendsService.arrData subarrayWithRange:NSMakeRange(self.arrData.count,subCount>=20 ? 20 : subCount)]];
-        
-    }else{
-        
+        if (subCount>20) {
+            [self.arrData addObject:[CDLoadMoreItem itemWithTitle:@"更多资讯" showIndicator:NO]];
+        }
     }
-    
 }
 
 //- (void)pushToWebViewControllerWithURLString:(NSString *)urlstr{

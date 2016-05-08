@@ -235,4 +235,6 @@ description:__VA_ARGS__];                                                    \
 
 #define CORNER_RADIUS  6
 
+#define CELL_MARGIN 8
+
 #endif

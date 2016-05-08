@@ -8,6 +8,12 @@
 
 #import "CDBaseTableViewCell.h"
 
+@class CDOpinionsSuggestionsItem;
+
 @interface CDOpinionsSuggestionsViewCell : CDBaseTableViewCell
+
++ (instancetype)textViewCell;
+
+- (void)setupCellItem:(CDOpinionsSuggestionsItem *)item indexPath:(NSIndexPath *)path;
 
 @end

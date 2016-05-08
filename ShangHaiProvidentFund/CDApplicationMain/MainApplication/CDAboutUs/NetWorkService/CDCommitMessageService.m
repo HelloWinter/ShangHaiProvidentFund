@@ -17,8 +17,11 @@
     [self request:CDURLWithAPI(@"/gjjManager/feedBackServlet") params:dict];
 }
 
-- (void)requestDidFinish:(NSDictionary *)rootData{
-    
+- (void)requestDidFinish:(id)rootData{
+    [super requestDidFinish:rootData];
+    if ([rootData isKindOfClass:[NSDictionary class]]) {
+        _type=[rootData objectForKey:@"type"];
+    }
 }
 
 @end

@@ -8,6 +8,15 @@
 
 #import "CDBaseTableViewCell.h"
 
-@interface CDBaseTextFieldCell : CDBaseTableViewCell
+@interface CDBaseTextFieldCell : CDBaseTableViewCell{
+@protected
+    UITextField *_textField;
+}
+
+- (void)setupLeftView:(UIView *)left rightView:(UIView *)right placeHolder:(NSString *)placeHolder indexPath:(NSIndexPath *)path;
+
+- (void)cellTextFieldBecomeFirstResponder;
+
+- (NSString *)cellText;
 
 @end

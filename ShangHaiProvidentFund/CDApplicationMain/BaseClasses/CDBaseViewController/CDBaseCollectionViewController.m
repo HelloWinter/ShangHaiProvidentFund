@@ -61,6 +61,12 @@
         [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
         flowLayout.headerReferenceSize=CGSizeMake(self.view.width, 7);
         _collectionView =[[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
+        if (!self.hidesBottomBarWhenPushed) {
+            _collectionView.height-=49;
+        }
+        if (!self.navigationController.navigationBarHidden) {//self.showDragView &&
+            _collectionView.height-=64;
+        }
         _collectionView.backgroundColor=[UIColor groupTableViewBackgroundColor];
         _collectionView.dataSource=self;
         _collectionView.delegate=self;

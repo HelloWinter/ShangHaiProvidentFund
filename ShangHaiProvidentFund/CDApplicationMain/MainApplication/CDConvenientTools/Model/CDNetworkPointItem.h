@@ -10,4 +10,9 @@
 
 @interface CDNetworkPointItem : CDBaseItem
 
+@property (nonatomic, copy) NSString *districts;
+@property (nonatomic, copy) NSString *point;
+@property (nonatomic, copy) NSString *address;
+@property (nonatomic, copy) NSString *num;
+
 @end

@@ -72,7 +72,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=colorForHex(@"#f5f5f5");
-    [self setExtendedLayoutIncludesOpaqueBars:YES];
+//    [self setExtendedLayoutIncludesOpaqueBars:YES];
     [self cd_addTapGestureRecognizerIfNeeded];
     [self setupBackBarButton];
 }
@@ -103,6 +103,23 @@
 - (BOOL)prefersStatusBarHidden{
     // iOS7后,[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];已经不起作用了
     return self.statusBarHidden;
+}
+
+#pragma mark - CDJSONBaseNetworkServiceDelegate
+- (void)requestDidStart:(CDJSONBaseNetworkService *)service{
+    
+}
+
+- (void)requestDidFinished:(CDJSONBaseNetworkService *)service{
+    
+}
+
+- (void)request:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
+    
+}
+
+- (void)requestDidCancel:(CDJSONBaseNetworkService *)service{
+    
 }
 
 #pragma mark - UINavigationControllerDelegate

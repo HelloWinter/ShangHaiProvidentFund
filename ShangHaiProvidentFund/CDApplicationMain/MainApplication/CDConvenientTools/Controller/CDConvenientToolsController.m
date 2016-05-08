@@ -10,6 +10,8 @@
 #import "CDConvenientToolsCell.h"
 #import "CDConvenientToolsItem.h"
 #import "CDConvenientModel.h"
+#import "CDNetworkPointController.h"
+#import "CDBaseWKWebViewController.h"
 
 static NSString *cellIdentifier=@"cellIdentifier";
 
@@ -73,11 +75,47 @@ static NSString *cellIdentifier=@"cellIdentifier";
 #pragma mark - UICollectionViewDelegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    switch (indexPath.row) {
+        case 0:
+            [self pushToNetworkPointController];
+            break;
+        case 1:{
+            NSString *jsCode=@"var element=document.getElementsByTagName('link')[0];var parentElement=element.parentNode;if(parentElement){parentElement.removeChild(element);}";
+            [self pushToWKWebViewControllerWithTitle:@"业务办理" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=blgg")];
+        }
+            break;
+        case 2:{
+            [self pushToWKWebViewControllerWithTitle:@"公积金缴存额上下限/比例表" javaScriptCode:nil URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=jcll")];
+        }
+            break;
+        case 3:
+            [self pushToWKWebViewControllerWithTitle:@"住房公积金缴存计算" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/app/wap/tools_paid_app.html")];
+            break;
+        case 7:
+            [self pushToWKWebViewControllerWithTitle:@"叫号信息" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/2010/mindex.html")];
+            break;
+            
+        default:
+            break;
+    }
+    
 }
 
 -(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
 }
 
+#pragma mark - Events
+- (void)pushToNetworkPointController{
+    CDNetworkPointController *controller=[[CDNetworkPointController alloc]init];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
+    CDBaseWKWebViewController *webViewController=[CDBaseWKWebViewController webViewWithURL:[NSURL URLWithString:urlstr]];
+    webViewController.title=title;
+    webViewController.javaScriptCode=jsCode;
+    [self.navigationController pushViewController:webViewController animated:YES];
+}
 
 @end

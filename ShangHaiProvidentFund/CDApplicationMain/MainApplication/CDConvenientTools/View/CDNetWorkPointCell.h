@@ -8,6 +8,12 @@
 
 #import "CDBaseTableViewCell.h"
 
+@class CDNetworkPointItem;
+
 @interface CDNetWorkPointCell : CDBaseTableViewCell
+
++ (instancetype)netWorkPointCell;
+
+- (void)setupCellItem:(CDNetworkPointItem *)item;
 
 @end

@@ -103,7 +103,7 @@
  */
 //- (NSMutableDictionary *)packParameters:(NSMutableDictionary *)params;
 
-- (void)requestDidFinish:(NSDictionary *)rootData;
+- (void)requestDidFinish:(id)rootData;
 
 @end
 

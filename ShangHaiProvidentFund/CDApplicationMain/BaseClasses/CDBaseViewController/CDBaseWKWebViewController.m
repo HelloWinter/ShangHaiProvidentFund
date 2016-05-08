@@ -106,6 +106,9 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
             _webView = [[WKWebView alloc] init];
         }
         [_webView setFrame:self.view.bounds];
+        if (!self.navigationController.navigationBarHidden) {
+            _webView.height-=64;
+        }
         [_webView setNavigationDelegate:self];
         [_webView setMultipleTouchEnabled:YES];
         [_webView.scrollView setAlwaysBounceVertical:YES];

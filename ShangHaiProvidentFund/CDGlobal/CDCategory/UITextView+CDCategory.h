@@ -10,4 +10,6 @@
 
 @interface UITextView (CDCategory)
 
+@property (nonatomic, strong) NSIndexPath *indexPath;
+
 @end
