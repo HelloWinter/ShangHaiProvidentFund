@@ -1,13 +1,13 @@
 //
-//  CDAboutUsService.h
+//  CDRepayInfoService.h
 //  ShangHaiProvidentFund
 //
-//  Created by cdd on 16/5/3.
+//  Created by Cheng on 16/5/8.
 //  Copyright © 2016年 cheng dong. All rights reserved.
 //
 
 #import "CDJSONBaseNetworkService.h"
 
-@interface CDAboutUsService : CDJSONBaseNetworkService
+@interface CDRepayInfoService : CDJSONBaseNetworkService
 
 @end

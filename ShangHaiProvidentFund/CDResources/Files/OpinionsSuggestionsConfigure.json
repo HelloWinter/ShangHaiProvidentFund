@@ -1,0 +1,28 @@
+[{
+  "paramname" : "姓名:",
+  "type" : "0",
+  "value" : "",
+  "hint" : "请输入姓名",
+  "paramsubmit" : "author"
+},
+{
+  "paramname" : "邮箱:",
+  "type" : "0",
+  "value" : "",
+  "hint" : "请输入邮箱",
+  "paramsubmit" : "email"
+},
+{
+  "paramname" : "手机号:",
+  "type" : "0",
+  "value" : "",
+  "hint" : "请输入手机号",
+  "paramsubmit" : "telephone"
+},
+{
+  "paramname" : "留言:",
+  "type" : "1",
+  "value" : "",
+  "hint" : "请留下您的宝贵意见(500字以内)",
+  "paramsubmit" : "content"
+}]
