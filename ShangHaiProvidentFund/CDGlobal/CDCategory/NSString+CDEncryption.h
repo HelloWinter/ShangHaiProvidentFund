@@ -24,6 +24,10 @@
  */
 - (NSString *)cd_sha1HexDigest;
 
+- (NSString *)cd_AESencryptWithKey:(NSString*)key iv:(NSString *)Iv;
+
+- (NSString *)cd_AESdecryptWithKey:(NSString *)key iv:(NSString *)Iv;
+
 @end
 
 @interface NSString (CDDateTransform)

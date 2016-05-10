@@ -10,4 +10,9 @@
 
 @interface CDAccountDetailItem : CDBaseItem
 
+@property (nonatomic, copy) NSString *summary;
+@property (nonatomic, copy) NSString *unitname;
+@property (nonatomic, copy) NSString *time;
+@property (nonatomic, copy) NSString *surplus_def_hp;
+
 @end

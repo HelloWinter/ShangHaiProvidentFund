@@ -8,6 +8,8 @@
 
 #import "NSString+CDEncryption.h"
 #import <CommonCrypto/CommonDigest.h>
+#import "GTMBase64.h"
+#import "NSData+CDDataAddition.h"
 
 @implementation NSString (CDEncryption)
 
@@ -37,6 +39,19 @@
         [output appendString:strtemp];
     }
     return output;
+}
+
+- (NSString *)cd_AESencryptWithKey:(NSString*)key iv:(NSString *)Iv{
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *encryptedData = [data cd_encryptionWithKey:key iv:Iv];
+    return [GTMBase64 encodeBase64Data:encryptedData];
+}
+
+- (NSString *)cd_AESdecryptWithKey:(NSString *)key iv:(NSString *)Iv{
+    NSData *decodeBase64Data=[GTMBase64 decodeString:self];
+    NSData *decryData = [decodeBase64Data cd_decryptionWithKey:key iv:Iv];
+    NSString *str = [[NSString alloc] initWithData:decryData encoding:NSUTF8StringEncoding];
+    return str;
 }
 
 @end

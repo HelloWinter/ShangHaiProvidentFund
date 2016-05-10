@@ -1,0 +1,14 @@
+[{
+  "paramname" : "用户名:",
+  "type" : "0",
+  "value" : "",
+  "hint" : "请输入用户名",
+  "paramsubmit" : "username"
+},
+{
+  "paramname" : "密码:",
+  "type" : "0",
+  "value" : "",
+  "hint" : "请输入密码",
+  "paramsubmit" : "passwd"
+}]

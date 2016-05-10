@@ -1,0 +1,49 @@
+[{
+  "paramname" : "用户名:",
+  "type" : "0",
+  "value" : "",
+  "hint" : "英文或数字(最多12位)",
+  "paramsubmit" : "username"
+},
+{
+  "paramname" : "公积金账号:",
+  "type" : "0",
+  "value" : "",
+  "hint" : "0或1开头205结尾的12位数字",
+  "paramsubmit" : "account"
+},
+{
+  "paramname" : "身份证号:",
+  "type" : "0",
+  "value" : "",
+  "hint" : "请输入18位身份证号",
+  "paramsubmit" : "idcard"
+},
+{
+  "paramname" : "密码:",
+  "type" : "0",
+  "value" : "",
+  "hint" : "请输入6-15位密码",
+  "paramsubmit" : "pwd"
+},
+{
+  "paramname" : "确认密码:",
+  "type" : "0",
+  "value" : "",
+  "hint" : "请重复输入密码",
+  "paramsubmit" : "repwd"
+},
+{
+  "paramname" : "手机号:",
+  "type" : "0",
+  "value" : "",
+  "hint" : "请输入需要绑定的手机号",
+  "paramsubmit" : "mobile"
+},
+{
+  "paramname" : "验证码:",
+  "type" : "2",
+  "value" : "",
+  "hint" : "请输入验证码",
+  "paramsubmit" : "yzm"
+}]
