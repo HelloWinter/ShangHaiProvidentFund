@@ -12,6 +12,8 @@
 
 @interface CDNewsAndTrendsCell : CDBaseTableViewCell
 
++ (instancetype)newsAndTrendsCell;
+
 - (void)setupCellItem:(CDNewsItem *)item;
 
 @end

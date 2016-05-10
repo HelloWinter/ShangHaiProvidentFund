@@ -9,24 +9,24 @@
 #import "CDNewsAndTrendsCell.h"
 #import "CDNewsItem.h"
 
+@interface CDNewsAndTrendsCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *lbTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lbTime;
+
+
+@end
+
 @implementation CDNewsAndTrendsCell
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        self.textLabel.numberOfLines=0;
-        self.textLabel.lineBreakMode=NSLineBreakByWordWrapping;
-        self.textLabel.textColor=[UIColor darkGrayColor];
-        self.textLabel.font=[UIFont systemFontOfSize:15];
-        self.detailTextLabel.textColor=[UIColor darkGrayColor];
-        self.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-    }
-    return self;
++ (instancetype)newsAndTrendsCell{
+    CDNewsAndTrendsCell *cell=[[[NSBundle mainBundle]loadNibNamed:@"CDNewsAndTrendsCell" owner:nil options:nil]lastObject];
+    return cell;
 }
 
 - (void)setupCellItem:(CDNewsItem *)item{
-    self.textLabel.text=item.title;
-    self.detailTextLabel.text=item.pubDate;
+    self.lbTitle.text=item.title;
+    self.lbTime.text=item.pubDate;
 }
 
 @end

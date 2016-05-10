@@ -27,7 +27,6 @@
 - (instancetype)init{
     self =[super init];
     if (self) {
-        self.showDragView=NO;
     }
     return self;
 }
@@ -60,10 +59,10 @@
     CDBaseItem *item = [self.arrData cd_safeObjectAtIndex:indexPath.row];
     if ([item isKindOfClass:[CDNewsAndTrendsItem class]]) {
         CDNewsAndTrendsItem *newsItem =(CDNewsAndTrendsItem *)item;
-        static NSString *cellIdentifier=@"cellIdentifier";
-        CDNewsAndTrendsCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        static NSString *newsCellIdentifier=@"newsCellIdentifier";
+        CDNewsAndTrendsCell *cell=[tableView dequeueReusableCellWithIdentifier:newsCellIdentifier];
         if (!cell) {
-            cell=[[CDNewsAndTrendsCell alloc]initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:cellIdentifier];
+            cell=[CDNewsAndTrendsCell newsAndTrendsCell];
         }
         [cell setupCellItem:newsItem.news];
         return cell;
@@ -87,7 +86,7 @@
     if ([item isKindOfClass:[CDLoadMoreItem class]]){
         return 44;
     }
-    return 75;
+    return 76;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
