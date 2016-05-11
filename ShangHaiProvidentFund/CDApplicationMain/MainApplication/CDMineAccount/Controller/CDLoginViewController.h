@@ -8,6 +8,17 @@
 
 #import "CDBaseTableViewController.h"
 
+@protocol CDLoginViewControllerDelegate <NSObject>
+
+@optional
+- (void)userDidLogin;
+
+- (void)userCanceledLogin;
+
+@end
+
 @interface CDLoginViewController : CDBaseTableViewController
+
+@property (nonatomic, weak) id<CDLoginViewControllerDelegate> delegate;
 
 @end

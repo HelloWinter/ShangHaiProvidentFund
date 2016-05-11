@@ -210,6 +210,12 @@ void addLaunchTimes();
  */
 NSString *CDURLScheme();
 
+///////////////////////////////////////////////////
+void CDSaveUserLogined(BOOL logined);
+
+BOOL CDIsUserLogined();
+///////////////////////////////////////////////////
+
 @interface CDUtilities : NSObject
 
 /**

@@ -11,15 +11,14 @@
 #import "CDAboutUsModel.h"
 #import "CDAboutUsCell.h"
 #import "CDBaseWKWebViewController.h"
-#import "CDButtonTableFooterView.h"
+
 #import "CDHelpInfoViewController.h"
 #import "CDOpinionsSuggestionsController.h"
-//#import "CDMineAccountController.h"
 
 @interface CDAboutUsController ()
 
 @property (nonatomic, strong) CDAboutUsModel *aboutUsModel;
-@property (nonatomic, strong) CDButtonTableFooterView *footerView;
+
 
 @end
 
@@ -36,7 +35,7 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    self.tableView.tableFooterView=self.footerView;
+    
 }
 
 - (CDAboutUsModel *)aboutUsModel{
@@ -44,17 +43,6 @@
         _aboutUsModel=[[CDAboutUsModel alloc]init];
     }
     return _aboutUsModel;
-}
-
-- (CDButtonTableFooterView *)footerView{
-    if (_footerView==nil) {
-        _footerView=[CDButtonTableFooterView footerView];
-        [_footerView setupBtnTitle:@"登录"];
-        _footerView.buttonClickBlock=^(UIButton *sender){
-            
-        };
-    }
-    return _footerView;
 }
 
 #pragma mark - UITableViewDataSource

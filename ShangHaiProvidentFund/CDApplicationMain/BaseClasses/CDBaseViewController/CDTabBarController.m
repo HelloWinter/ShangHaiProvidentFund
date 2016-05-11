@@ -13,6 +13,7 @@
 #import "CDMineAccountController.h"
 #import "CDConvenientToolsController.h"
 #import "CDAboutUsController.h"
+#import "CDQueryAccountInfoController.h"
 
 @interface CDTabBarController ()
 
@@ -46,14 +47,14 @@
     CDNewsAndTrendsController *oneVC = [[CDNewsAndTrendsController alloc]init];
     [self setUpOneChildViewController:oneVC image:[UIImage imageNamed:@"tab_home_normal"] title:@"新闻动态"];
     
-    CDMineAccountController *twoVC = [[CDMineAccountController alloc]init];
-    [self setUpOneChildViewController:twoVC image:[UIImage imageNamed:@"tab_mine_normal"] title:@"账户查询"];
-    
     CDConvenientToolsController *threeVC = [[CDConvenientToolsController alloc]init];
     [self setUpOneChildViewController:threeVC image:[UIImage imageNamed:@"tab_product_normal"] title:@"便民工具"];
     
-    CDAboutUsController *fourVC = [[CDAboutUsController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
-    [self setUpOneChildViewController:fourVC image:[UIImage imageNamed:@"tab_settingicon"] title:@"关于我们"];
+    CDQueryAccountInfoController *twoVC = [[CDQueryAccountInfoController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    [self setUpOneChildViewController:twoVC image:[UIImage imageNamed:@"tab_mine_normal"] title:@"账户查询"];
+    
+//    CDAboutUsController *fourVC = [[CDAboutUsController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+//    [self setUpOneChildViewController:fourVC image:[UIImage imageNamed:@"tab_settingicon"] title:@"关于我们"];
 }
 
 - (void)setupMineCenterChildViewController:(UIViewController *)viewController image:(UIImage *)image selectedImage:(UIImage *)selectimage title:(NSString *)title{

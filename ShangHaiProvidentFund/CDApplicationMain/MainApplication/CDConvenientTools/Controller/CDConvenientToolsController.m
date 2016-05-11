@@ -94,6 +94,9 @@ static NSString *cellIdentifier=@"cellIdentifier";
         case 7:
             [self pushToWKWebViewControllerWithTitle:@"叫号信息" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/2010/mindex.html")];
             break;
+        case 8:
+            [self pushToWKWebViewControllerWithTitle:@"公益短信" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/sms/app_apply.html")];
+            break;
             
         default:
             break;

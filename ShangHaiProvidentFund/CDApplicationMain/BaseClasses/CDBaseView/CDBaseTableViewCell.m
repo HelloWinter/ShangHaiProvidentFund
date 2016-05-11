@@ -18,7 +18,7 @@
 }
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {
-    return 48;
+    return 44;
 }
 
 - (void)setupCell{
