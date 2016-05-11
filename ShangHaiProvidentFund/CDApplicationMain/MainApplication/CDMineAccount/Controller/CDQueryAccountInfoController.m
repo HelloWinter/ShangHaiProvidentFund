@@ -133,7 +133,7 @@
     CDLoginViewController *controller=[[CDLoginViewController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
     controller.delegate=self;
     CDNavigationController *nav=[[CDNavigationController alloc]initWithRootViewController:controller];
-    [self presentViewController:nav animated:YES completion:nil];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

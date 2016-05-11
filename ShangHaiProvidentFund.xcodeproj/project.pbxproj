@@ -34,6 +34,8 @@
 		14D13B6B1CE2307E00D73F1A /* CDRepayInfoChrItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D13B6A1CE2307E00D73F1A /* CDRepayInfoChrItem.m */; };
 		14D13B6E1CE231CF00D73F1A /* CDPayCalculatorService.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D13B6D1CE231CF00D73F1A /* CDPayCalculatorService.m */; };
 		14D13B711CE2320800D73F1A /* CDPayCalculatorItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D13B701CE2320800D73F1A /* CDPayCalculatorItem.m */; };
+		14F768031CE36AAB00C2A8F3 /* CDBottomButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F768021CE36AAB00C2A8F3 /* CDBottomButtonView.m */; };
+		14F768051CE36AC300C2A8F3 /* CDBottomButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F768041CE36AC300C2A8F3 /* CDBottomButtonView.xib */; };
 		14F823E61CDB81E500C011AE /* CDHelpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F823E51CDB81E500C011AE /* CDHelpInfoViewController.m */; };
 		14F925701CDA378A003FE794 /* CDMineAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F9256F1CDA378A003FE794 /* CDMineAccountModel.m */; };
 		14FDD0A71CDDB3EF0093ABC3 /* OpinionsSuggestionsConfigure.json in Resources */ = {isa = PBXBuildFile; fileRef = 14FDD0A61CDDB3EF0093ABC3 /* OpinionsSuggestionsConfigure.json */; };
@@ -177,6 +179,9 @@
 		14D13B6D1CE231CF00D73F1A /* CDPayCalculatorService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPayCalculatorService.m; sourceTree = "<group>"; };
 		14D13B6F1CE2320800D73F1A /* CDPayCalculatorItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPayCalculatorItem.h; sourceTree = "<group>"; };
 		14D13B701CE2320800D73F1A /* CDPayCalculatorItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPayCalculatorItem.m; sourceTree = "<group>"; };
+		14F768011CE36AAB00C2A8F3 /* CDBottomButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBottomButtonView.h; sourceTree = "<group>"; };
+		14F768021CE36AAB00C2A8F3 /* CDBottomButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBottomButtonView.m; sourceTree = "<group>"; };
+		14F768041CE36AC300C2A8F3 /* CDBottomButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDBottomButtonView.xib; sourceTree = "<group>"; };
 		14F823E41CDB81E500C011AE /* CDHelpInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDHelpInfoViewController.h; sourceTree = "<group>"; };
 		14F823E51CDB81E500C011AE /* CDHelpInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDHelpInfoViewController.m; sourceTree = "<group>"; };
 		14F9256E1CDA378A003FE794 /* CDMineAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMineAccountModel.h; sourceTree = "<group>"; };
@@ -819,6 +824,9 @@
 				6E5C69751CE30A3E00F17AD0 /* CDAccountBasicInfoCell.h */,
 				6E5C69761CE30A3E00F17AD0 /* CDAccountBasicInfoCell.m */,
 				6E5C69781CE30C9A00F17AD0 /* CDAccountBasicInfoCell.xib */,
+				14F768011CE36AAB00C2A8F3 /* CDBottomButtonView.h */,
+				14F768021CE36AAB00C2A8F3 /* CDBottomButtonView.m */,
+				14F768041CE36AC300C2A8F3 /* CDBottomButtonView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1018,6 +1026,7 @@
 				14FDD0A71CDDB3EF0093ABC3 /* OpinionsSuggestionsConfigure.json in Resources */,
 				6E463CE71CD9D7F700527950 /* CDButtonTableFooterView.xib in Resources */,
 				14D13B531CE22CE500D73F1A /* registConfigure.json in Resources */,
+				14F768051CE36AC300C2A8F3 /* CDBottomButtonView.xib in Resources */,
 				14D13B521CE22CE500D73F1A /* loginConfigure.json in Resources */,
 				14FDD0BE1CDDE3350093ABC3 /* CDOpinionsSuggestionsViewCell.xib in Resources */,
 				6E5C69791CE30C9A00F17AD0 /* CDAccountBasicInfoCell.xib in Resources */,
@@ -1145,6 +1154,7 @@
 				14D13B711CE2320800D73F1A /* CDPayCalculatorItem.m in Sources */,
 				6E6ADB131CD892B200838B61 /* AppDelegate.m in Sources */,
 				6E463CE21CD9AE7D00527950 /* CDBaseModel.m in Sources */,
+				14F768031CE36AAB00C2A8F3 /* CDBottomButtonView.m in Sources */,
 				6E6ADB8D1CD89F7C00838B61 /* NSDictionary+CDDictionaryAdditions.m in Sources */,
 				6E4D90B31CDB334A0019B011 /* CDConvenientToolsItem.m in Sources */,
 				6E6ADC1C1CD8B35B00838B61 /* CDBaseItem.m in Sources */,
