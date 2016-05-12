@@ -10,4 +10,6 @@
 
 @implementation CDDynamicdetailItem
 
+MJExtensionCodingImplementation
+
 @end

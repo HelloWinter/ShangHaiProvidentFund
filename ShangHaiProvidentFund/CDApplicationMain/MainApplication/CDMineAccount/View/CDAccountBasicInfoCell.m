@@ -27,7 +27,7 @@
 }
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object{
-    return 80;
+    return 60;
 }
 
 - (void)setupCellItem:(CDAccountInfoItem *)item isLogined:(BOOL)islogined{

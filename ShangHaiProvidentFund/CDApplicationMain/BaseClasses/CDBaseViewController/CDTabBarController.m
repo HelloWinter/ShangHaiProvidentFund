@@ -10,9 +10,8 @@
 #import "CDNavigationController.h"
 #import "UIImage+CDImageAdditions.h"
 #import "CDNewsAndTrendsController.h"
-#import "CDMineAccountController.h"
 #import "CDConvenientToolsController.h"
-#import "CDAboutUsController.h"
+
 #import "CDQueryAccountInfoController.h"
 
 @interface CDTabBarController ()
@@ -52,9 +51,6 @@
     
     CDQueryAccountInfoController *twoVC = [[CDQueryAccountInfoController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
     [self setUpOneChildViewController:twoVC image:[UIImage imageNamed:@"tab_mine_normal"] title:@"账户查询"];
-    
-//    CDAboutUsController *fourVC = [[CDAboutUsController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
-//    [self setUpOneChildViewController:fourVC image:[UIImage imageNamed:@"tab_settingicon"] title:@"关于我们"];
 }
 
 - (void)setupMineCenterChildViewController:(UIViewController *)viewController image:(UIImage *)image selectedImage:(UIImage *)selectimage title:(NSString *)title{

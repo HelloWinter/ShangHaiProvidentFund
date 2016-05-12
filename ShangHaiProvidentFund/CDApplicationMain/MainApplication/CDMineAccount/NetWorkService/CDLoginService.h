@@ -8,6 +8,13 @@
 
 #import "CDJSONBaseNetworkService.h"
 
+
+@class CDLoginModel;
+
 @interface CDLoginService : CDJSONBaseNetworkService
+
+@property (nonatomic, strong, readonly) CDLoginModel *loginModel;
+
+- (void)loadWithParams:(NSDictionary *)params showIndicator:(BOOL)show;
 
 @end

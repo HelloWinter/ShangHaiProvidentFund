@@ -62,6 +62,8 @@
 		6E5C69771CE30A3E00F17AD0 /* CDAccountBasicInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C69761CE30A3E00F17AD0 /* CDAccountBasicInfoCell.m */; };
 		6E5C69791CE30C9A00F17AD0 /* CDAccountBasicInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E5C69781CE30C9A00F17AD0 /* CDAccountBasicInfoCell.xib */; };
 		6E5C697F1CE34F9300F17AD0 /* CDLoginConfigureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C697E1CE34F9300F17AD0 /* CDLoginConfigureModel.m */; };
+		6E5E5E2E1CE43C9C00E2C025 /* CDLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E5E2D1CE43C9C00E2C025 /* CDLoginModel.m */; };
+		6E5E5E311CE4684E00E2C025 /* CDQueryAccountBasicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E5E301CE4684E00E2C025 /* CDQueryAccountBasicItem.m */; };
 		6E66E9F21CE02DD700111C2C /* CDNewsAndTrendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E66E9F11CE02DD700111C2C /* CDNewsAndTrendsCell.xib */; };
 		6E66EA171CE0631700111C2C /* CDTitleImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E66EA161CE0631700111C2C /* CDTitleImageButton.m */; };
 		6E67A79A1CDCA6BC00436E93 /* CDLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E67A7991CDCA6BC00436E93 /* CDLoadMoreCell.m */; };
@@ -230,6 +232,10 @@
 		6E5C69781CE30C9A00F17AD0 /* CDAccountBasicInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDAccountBasicInfoCell.xib; sourceTree = "<group>"; };
 		6E5C697D1CE34F9300F17AD0 /* CDLoginConfigureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoginConfigureModel.h; sourceTree = "<group>"; };
 		6E5C697E1CE34F9300F17AD0 /* CDLoginConfigureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLoginConfigureModel.m; sourceTree = "<group>"; };
+		6E5E5E2C1CE43C9C00E2C025 /* CDLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoginModel.h; sourceTree = "<group>"; };
+		6E5E5E2D1CE43C9C00E2C025 /* CDLoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLoginModel.m; sourceTree = "<group>"; };
+		6E5E5E2F1CE4684E00E2C025 /* CDQueryAccountBasicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQueryAccountBasicItem.h; sourceTree = "<group>"; };
+		6E5E5E301CE4684E00E2C025 /* CDQueryAccountBasicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQueryAccountBasicItem.m; sourceTree = "<group>"; };
 		6E66E9F11CE02DD700111C2C /* CDNewsAndTrendsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDNewsAndTrendsCell.xib; sourceTree = "<group>"; };
 		6E66EA151CE0631700111C2C /* CDTitleImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDTitleImageButton.h; sourceTree = "<group>"; };
 		6E66EA161CE0631700111C2C /* CDTitleImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTitleImageButton.m; sourceTree = "<group>"; };
@@ -779,6 +785,8 @@
 				6E5C69701CE2F80500F17AD0 /* CDQueryAccountInfoModel.m */,
 				6E5C697D1CE34F9300F17AD0 /* CDLoginConfigureModel.h */,
 				6E5C697E1CE34F9300F17AD0 /* CDLoginConfigureModel.m */,
+				6E5E5E2F1CE4684E00E2C025 /* CDQueryAccountBasicItem.h */,
+				6E5E5E301CE4684E00E2C025 /* CDQueryAccountBasicItem.m */,
 				140BE9D41CDF68D400577831 /* CDAccountInfoItem.h */,
 				140BE9D51CDF68D400577831 /* CDAccountInfoItem.m */,
 				140BE9D71CDF68F500577831 /* CDAccountDetailItem.h */,
@@ -791,6 +799,8 @@
 				14D13B671CE2305400D73F1A /* CDRepayInfoBasicItem.m */,
 				14D13B691CE2307E00D73F1A /* CDRepayInfoChrItem.h */,
 				14D13B6A1CE2307E00D73F1A /* CDRepayInfoChrItem.m */,
+				6E5E5E2C1CE43C9C00E2C025 /* CDLoginModel.h */,
+				6E5E5E2D1CE43C9C00E2C025 /* CDLoginModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1138,6 +1148,7 @@
 				14FDD0B91CDDD3F90093ABC3 /* CDOpinionsSuggestionsFieldCell.m in Sources */,
 				6E6ADB8F1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.m in Sources */,
 				6E5C69741CE2FD3800F17AD0 /* CDQueryAccountInfoCell.m in Sources */,
+				6E5E5E2E1CE43C9C00E2C025 /* CDLoginModel.m in Sources */,
 				14D13B6E1CE231CF00D73F1A /* CDPayCalculatorService.m in Sources */,
 				6E6ADC2E1CD8BFBC00838B61 /* CDConvenientModel.m in Sources */,
 				14D13B621CE22F3900D73F1A /* CDAccountManageController.m in Sources */,
@@ -1178,6 +1189,7 @@
 				140BE9E21CDF699100577831 /* CDRegistGetVerCodeService.m in Sources */,
 				6E463CDF1CD9ABD000527950 /* CDAboutUsModel.m in Sources */,
 				6E6ADB101CD892B200838B61 /* main.m in Sources */,
+				6E5E5E311CE4684E00E2C025 /* CDQueryAccountBasicItem.m in Sources */,
 				140BE9DF1CDF694700577831 /* CDDynamicdetailItem.m in Sources */,
 				6E6ADB8C1CD89F7C00838B61 /* NSDate+CDDateAddition.m in Sources */,
 				14F925701CDA378A003FE794 /* CDMineAccountModel.m in Sources */,

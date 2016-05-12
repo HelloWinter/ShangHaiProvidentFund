@@ -29,6 +29,7 @@
     if (self) {
         self.title=@"关于我们";
         self.showDragView=NO;
+        self.hidesBottomBarWhenPushed=YES;
     }
     return self;
 }
@@ -86,8 +87,16 @@
         case 0:{
             switch (indexPath.row) {
                 case 0:{
-                    NSString *jsCode=@"var element=document.getElementsByTagName('link')[0];var parentElement=element.parentNode;if(parentElement){parentElement.removeChild(element);}";
-                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
+//                    NSString *jsCode=@"var element=document.getElementsByTagName('link')[0];var parentElement=element.parentNode;if(parentElement){parentElement.removeChild(element);}";
+//                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
+                    
+                    
+                    NSString *jsCode1=[self removeHTMLNodeWith:@"element" className:@"ctitle"];
+                    NSString *jsCode2=[self removeHTMLNodeWith:@"element1" className:@"nav"];
+                    NSString *jscode = [NSString stringWithFormat:@"%@%@",jsCode1,jsCode2];
+//                    @"var element = document.getElementsByTagName('ctitle')[0];element.parentNode.removeChild(element);";
+                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jscode URLString:CDWebURLWithAPI(@"/html/wap/more/79839.html")];
+//                    http://www.shgjj.com
                 }
                     break;
                 case 1:{
@@ -185,6 +194,10 @@
     }];
     [alert addAction:actionCancel];
     [CDKeyWindow.rootViewController presentViewController:alert animated:YES completion:NULL];
+}
+
+- (NSString *)removeHTMLNodeWith:(NSString *)elementName className:(NSString *)className{
+    return [NSString stringWithFormat:@"var %@ = document.getElementsByClassName('%@')[0];element.parentNode.removeChild(%@);",elementName,className,elementName];
 }
 
 //- (void)pushToMineAccountVC{

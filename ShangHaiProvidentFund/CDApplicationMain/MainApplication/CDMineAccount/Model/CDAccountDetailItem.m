@@ -10,4 +10,6 @@
 
 @implementation CDAccountDetailItem
 
+MJExtensionCodingImplementation
+
 @end

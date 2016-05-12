@@ -15,6 +15,10 @@
 #import "CDButtonTableFooterView.h"
 #import "CDLoginViewController.h"
 #import "CDNavigationController.h"
+#import "CDLoginModel.h"
+#import "UIBarButtonItem+CDCategory.h"
+#import "CDAboutUsController.h"
+//#import "CDMineAccountController.h"
 
 @interface CDQueryAccountInfoController ()<CDLoginViewControllerDelegate>
 
@@ -35,7 +39,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self showRightBarBtn];
     [self refreshTableFooterView];
+    [self reloadTableViewSection0];
 }
 
 - (CDQueryAccountInfoModel *)queryAccountInfoModel{
@@ -112,12 +118,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    if (!CDIsUserLogined()) {
+        [self presentLoginViewController];
+        return;
+    }
 }
 
 #pragma mark - CDLoginViewControllerDelegate
 - (void)userDidLogin{
-    
+    [self reloadTableViewSection0];
 }
 
 - (void)userCanceledLogin{
@@ -125,6 +134,17 @@
 }
 
 #pragma mark - Events{
+- (void)showRightBarBtn{
+//    shareScheme_questionMark //
+    
+    UIBarButtonItem *btn=[UIBarButtonItem cd_barButtonWidth:30 Title:nil ImageName:@"tab_settingicon" Target:self Action:@selector(rightBarBtnClick)];
+    [self.navigationItem setRightBarButtonItem:btn];
+}
+
+- (void)rightBarBtnClick{
+    [self pushToAboutUsController];
+}
+
 - (void)refreshTableFooterView{
     self.tableView.tableFooterView=CDIsUserLogined() ? nil : self.footerView;
 }
@@ -135,6 +155,33 @@
     CDNavigationController *nav=[[CDNavigationController alloc]initWithRootViewController:controller];
     [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
+
+- (void)reloadTableViewSection0{
+    if (CDIsUserLogined()) {
+        NSString *file=[CDAPPURLConfigure filePathforLoginInfo];
+        if (file) {
+            CDLoginModel *model = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
+            CDAccountInfoItem *accountInfoItem=[model.basic firstObject];
+            NSArray *arr=[self.queryAccountInfoModel.arrData cd_safeObjectAtIndex:0];
+            CDBaseItem *item=[arr cd_safeObjectAtIndex:0];
+            if ([item isKindOfClass:[CDAccountInfoItem class]]) {
+                CDAccountInfoItem *accountItem=(CDAccountInfoItem *)item;
+                accountItem.name=accountInfoItem.name;
+                accountItem.surplus_def=accountInfoItem.surplus_def;
+                accountItem.state=accountInfoItem.state;
+            }
+        }
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:(UITableViewRowAnimationFade)];
+    }
+}
+
+- (void)pushToAboutUsController{
+    CDAboutUsController *fourVC = [[CDAboutUsController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    [self.navigationController pushViewController:fourVC animated:YES];
+}
+
+
+//[self setUpOneChildViewController:fourVC image:[UIImage imageNamed:@"tab_settingicon"] title:@"关于我们"];
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

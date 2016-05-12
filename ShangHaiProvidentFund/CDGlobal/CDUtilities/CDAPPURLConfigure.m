@@ -32,4 +32,8 @@ NSString* CDWebURLWithAPI(NSString* api) {
 
 @implementation CDAPPURLConfigure
 
++ (NSString *)filePathforLoginInfo{
+    return [CDCachesPath stringByAppendingPathComponent:@"info.data"];
+}
+
 @end

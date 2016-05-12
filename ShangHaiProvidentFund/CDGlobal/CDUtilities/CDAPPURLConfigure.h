@@ -23,4 +23,6 @@ NSString* CDWebURLWithAPI(NSString* api);
 
 @interface CDAPPURLConfigure : NSObject
 
++ (NSString *)filePathforLoginInfo;
+
 @end

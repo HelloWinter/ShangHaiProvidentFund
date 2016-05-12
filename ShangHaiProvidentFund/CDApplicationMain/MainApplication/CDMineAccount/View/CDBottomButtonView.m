@@ -39,12 +39,6 @@
     [self addSubview:self.btnRegist];
 }
 
-//+ (instancetype)bottomButtonView{
-//    CDBottomButtonView *view=[[[NSBundle mainBundle]loadNibNamed:@"CDBottomButtonView" owner:nil options:nil]lastObject];
-//    
-//    return view;
-//}
-
 - (void)layoutSubviews{
     [super layoutSubviews];
     self.btnForgetPSW.frame=CGRectMake(0, 0, self.width*0.5, self.height);
