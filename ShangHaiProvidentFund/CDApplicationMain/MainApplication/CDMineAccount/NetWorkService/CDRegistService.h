@@ -10,4 +10,6 @@
 
 @interface CDRegistService : CDJSONBaseNetworkService
 
+- (void)loadWithParams:(NSDictionary *)params showIndicator:(BOOL)show;
+
 @end

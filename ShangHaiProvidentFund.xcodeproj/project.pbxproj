@@ -38,6 +38,7 @@
 		14F768051CE36AC300C2A8F3 /* CDBottomButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F768041CE36AC300C2A8F3 /* CDBottomButtonView.xib */; };
 		14F823E61CDB81E500C011AE /* CDHelpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F823E51CDB81E500C011AE /* CDHelpInfoViewController.m */; };
 		14F925701CDA378A003FE794 /* CDMineAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F9256F1CDA378A003FE794 /* CDMineAccountModel.m */; };
+		14FB0C981CE4BE0B00AE8EE6 /* CDRegistConfigureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB0C971CE4BE0B00AE8EE6 /* CDRegistConfigureModel.m */; };
 		14FDD0A71CDDB3EF0093ABC3 /* OpinionsSuggestionsConfigure.json in Resources */ = {isa = PBXBuildFile; fileRef = 14FDD0A61CDDB3EF0093ABC3 /* OpinionsSuggestionsConfigure.json */; };
 		14FDD0AA1CDDB43D0093ABC3 /* CDOpinionsSuggestionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0A91CDDB43D0093ABC3 /* CDOpinionsSuggestionsModel.m */; };
 		14FDD0AD1CDDB5580093ABC3 /* CDOpinionsSuggestionsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0AC1CDDB5580093ABC3 /* CDOpinionsSuggestionsItem.m */; };
@@ -188,6 +189,8 @@
 		14F823E51CDB81E500C011AE /* CDHelpInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDHelpInfoViewController.m; sourceTree = "<group>"; };
 		14F9256E1CDA378A003FE794 /* CDMineAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMineAccountModel.h; sourceTree = "<group>"; };
 		14F9256F1CDA378A003FE794 /* CDMineAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMineAccountModel.m; sourceTree = "<group>"; };
+		14FB0C961CE4BE0B00AE8EE6 /* CDRegistConfigureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRegistConfigureModel.h; sourceTree = "<group>"; };
+		14FB0C971CE4BE0B00AE8EE6 /* CDRegistConfigureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRegistConfigureModel.m; sourceTree = "<group>"; };
 		14FDD0A61CDDB3EF0093ABC3 /* OpinionsSuggestionsConfigure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OpinionsSuggestionsConfigure.json; sourceTree = "<group>"; };
 		14FDD0A81CDDB43D0093ABC3 /* CDOpinionsSuggestionsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpinionsSuggestionsModel.h; sourceTree = "<group>"; };
 		14FDD0A91CDDB43D0093ABC3 /* CDOpinionsSuggestionsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpinionsSuggestionsModel.m; sourceTree = "<group>"; };
@@ -785,6 +788,8 @@
 				6E5C69701CE2F80500F17AD0 /* CDQueryAccountInfoModel.m */,
 				6E5C697D1CE34F9300F17AD0 /* CDLoginConfigureModel.h */,
 				6E5C697E1CE34F9300F17AD0 /* CDLoginConfigureModel.m */,
+				14FB0C961CE4BE0B00AE8EE6 /* CDRegistConfigureModel.h */,
+				14FB0C971CE4BE0B00AE8EE6 /* CDRegistConfigureModel.m */,
 				6E5E5E2F1CE4684E00E2C025 /* CDQueryAccountBasicItem.h */,
 				6E5E5E301CE4684E00E2C025 /* CDQueryAccountBasicItem.m */,
 				140BE9D41CDF68D400577831 /* CDAccountInfoItem.h */,
@@ -1140,6 +1145,7 @@
 				140BE9C71CDF412C00577831 /* CDNetworkPointService.m in Sources */,
 				14D13B4F1CE2158F00D73F1A /* GTMBase64.m in Sources */,
 				140BE9D31CDF686500577831 /* CDLoginService.m in Sources */,
+				14FB0C981CE4BE0B00AE8EE6 /* CDRegistConfigureModel.m in Sources */,
 				6E6ADB911CD89F7C00838B61 /* NSString+Base64.m in Sources */,
 				140BE9CD1CDF4B8700577831 /* CDAPPURLConfigure.m in Sources */,
 				6E6ADB971CD89F7C00838B61 /* UILabel+CDLBAdditions.m in Sources */,

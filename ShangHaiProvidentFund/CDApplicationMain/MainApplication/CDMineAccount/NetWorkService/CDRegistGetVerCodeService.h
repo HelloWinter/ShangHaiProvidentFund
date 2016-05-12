@@ -6,8 +6,12 @@
 //  Copyright © 2016年 cheng dong. All rights reserved.
 //
 
+//获取注册验证码
+
 #import "CDJSONBaseNetworkService.h"
 
 @interface CDRegistGetVerCodeService : CDJSONBaseNetworkService
+
+- (void)loadWithMobileNum:(NSString *)mobileNum showIndicator:(BOOL)show;
 
 @end

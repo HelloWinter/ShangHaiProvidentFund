@@ -87,16 +87,14 @@
         case 0:{
             switch (indexPath.row) {
                 case 0:{
-//                    NSString *jsCode=@"var element=document.getElementsByTagName('link')[0];var parentElement=element.parentNode;if(parentElement){parentElement.removeChild(element);}";
-//                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
+                    NSString *jsCode=[self removeHTMLNodeWith:@"element" tagName:@"link"];
+                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
                     
-                    
-                    NSString *jsCode1=[self removeHTMLNodeWith:@"element" className:@"ctitle"];
-                    NSString *jsCode2=[self removeHTMLNodeWith:@"element1" className:@"nav"];
-                    NSString *jscode = [NSString stringWithFormat:@"%@%@",jsCode1,jsCode2];
-//                    @"var element = document.getElementsByTagName('ctitle')[0];element.parentNode.removeChild(element);";
-                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jscode URLString:CDWebURLWithAPI(@"/html/wap/more/79839.html")];
-//                    http://www.shgjj.com
+//                    NSString *jsCode1=[self removeHTMLNodeWith:@"element" className:@"ctitle"];
+//                    NSString *jsCode2=[self removeHTMLNodeWith:@"element1" className:@"nav"];
+//                    NSString *jsCode3=[self removeHTMLNodeWith:@"element2" tagName:@"script"];
+//                    NSString *jscode = [NSString stringWithFormat:@"%@%@%@",jsCode1,jsCode2,jsCode3];
+//                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jscode URLString:CDWebURLWithAPI(@"/html/wap/more/79839.html")];
                 }
                     break;
                 case 1:{
@@ -130,7 +128,6 @@
                 case 0:{
                     NSString *strUrl=@"http://m.weibo.cn/u/3547969482";
                     strUrl=[strUrl stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)];
-//                    NSString *jsCode=@"var element=document.getElementsByClassName('download-wrapper')[0];var parentElement=element.parentNode;if(parentElement){parentElement.removeChild(element);}";
                     [self pushToWKWebViewControllerWithTitle:@"上海公积金微博" javaScriptCode:nil URLString:strUrl];
                 }
                     break;
@@ -200,10 +197,8 @@
     return [NSString stringWithFormat:@"var %@ = document.getElementsByClassName('%@')[0];element.parentNode.removeChild(%@);",elementName,className,elementName];
 }
 
-//- (void)pushToMineAccountVC{
-//    CDMineAccountController *controller=[[CDMineAccountController alloc]init];
-//    controller.hidesBottomBarWhenPushed=YES;
-//    [self.navigationController pushViewController:controller animated:YES];
-//}
+- (NSString *)removeHTMLNodeWith:(NSString *)elementName tagName:(NSString *)className{
+    return [NSString stringWithFormat:@"var %@ = document.getElementsByTagName('%@')[0];element.parentNode.removeChild(%@);",elementName,className,elementName];
+}
 
 @end

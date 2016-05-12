@@ -16,6 +16,8 @@
 #import "UITextField+cellIndexPath.h"
 #import "NSString+CDEncryption.h"
 #import "CDLoginModel.h"
+#import "CDBaseWKWebViewController.h"
+#import "CDRegistViewController.h"
 
 @interface CDLoginViewController ()
 
@@ -85,11 +87,12 @@
         _bottomButtonView = [[CDBottomButtonView alloc]init];
         _bottomButtonView.frame=CGRectMake(0, 0, 160, 20);
         _bottomButtonView.center=CGPointMake(self.view.width*0.5, self.tableView.bottom-30);
+        __weak typeof(self) weakSelf=self;
         _bottomButtonView.forgotPSWBlock=^(){
-            
+            [weakSelf pushToWKWebViewControllerWithTitle:@"遗忘密码" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/sms/forget-pass.html")];
         };
         _bottomButtonView.registBlock=^(){
-            
+            [weakSelf pushToRegistViewController];
         };
     }
     return _bottomButtonView;
@@ -170,6 +173,18 @@
             [_delegate userCanceledLogin];
         }
     }];
+}
+
+- (void)pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
+    CDBaseWKWebViewController *webViewController=[CDBaseWKWebViewController webViewWithURL:[NSURL URLWithString:urlstr]];
+    webViewController.title=title;
+    webViewController.javaScriptCode=jsCode;
+    [self.navigationController pushViewController:webViewController animated:YES];
+}
+
+- (void)pushToRegistViewController{
+    CDRegistViewController *controller=[[CDRegistViewController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
