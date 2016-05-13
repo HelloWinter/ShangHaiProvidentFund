@@ -28,6 +28,7 @@
 }
 
 - (void)setupItem:(CDOpinionsSuggestionsItem *)item indexPath:(NSIndexPath *)path{
+    _textField.secureTextEntry=[item.security isEqualToString:@"1"] ? YES : NO;
     _textField.text=item.value;
     self.label.text=item.paramname;
     [super setupLeftView:self.label rightView:nil placeHolder:item.hint indexPath:path];

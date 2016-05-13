@@ -35,6 +35,7 @@
     if (self) {
         self.title=@"登录";
         self.showDragView=NO;
+        self.hideKeyboradWhenTouch=YES;
     }
     return self;
 }

@@ -3,6 +3,7 @@
   "type" : "0",
   "value" : "",
   "hint" : "请输入用户名",
+  "security" : "0",
   "paramsubmit" : "username"
 },
 {
@@ -10,5 +11,6 @@
   "type" : "0",
   "value" : "",
   "hint" : "请输入密码",
+  "security" : "1",
   "paramsubmit" : "passwd"
 }]

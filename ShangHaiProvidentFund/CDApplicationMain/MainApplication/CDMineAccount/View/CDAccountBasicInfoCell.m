@@ -22,7 +22,7 @@
 
 + (instancetype)basicInfoCell{
     CDAccountBasicInfoCell *cell=[[[NSBundle mainBundle]loadNibNamed:@"CDAccountBasicInfoCell" owner:nil options:nil]lastObject];
-    cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -34,7 +34,7 @@
     if (islogined) {
         self.lbBalance.hidden=self.lbAccountState.hidden=NO;
         self.lbName.text=item.name ? : @"--";
-        self.lbBalance.text=[NSString stringWithFormat:@"账户余额：%@",item.surplus_def];
+        self.lbBalance.text=[NSString stringWithFormat:@"余额：%@",item.surplus_def];
         self.lbAccountState.text=[NSString stringWithFormat:@"账户状态：%@",item.state];
     }else{
         self.lbName.text=@"未登录";

@@ -11,14 +11,16 @@
 #import "CDAboutUsModel.h"
 #import "CDAboutUsCell.h"
 #import "CDBaseWKWebViewController.h"
-
+#import "CDButtonTableFooterView.h"
 #import "CDHelpInfoViewController.h"
 #import "CDOpinionsSuggestionsController.h"
+#import "CDLoginViewController.h"
+#import "CDNavigationController.h"
 
-@interface CDAboutUsController ()
+@interface CDAboutUsController ()<CDLoginViewControllerDelegate>
 
 @property (nonatomic, strong) CDAboutUsModel *aboutUsModel;
-
+@property (nonatomic, strong) CDButtonTableFooterView *footerView;
 
 @end
 
@@ -36,7 +38,7 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    
+    self.tableView.tableFooterView=self.footerView;
 }
 
 - (CDAboutUsModel *)aboutUsModel{
@@ -44,6 +46,19 @@
         _aboutUsModel=[[CDAboutUsModel alloc]init];
     }
     return _aboutUsModel;
+}
+
+- (CDButtonTableFooterView *)footerView{
+    if (_footerView==nil) {
+        _footerView=[CDButtonTableFooterView footerView];
+        [_footerView setupBtnTitle:(CDIsUserLogined() ? @"退出登录" : @"登录")];
+        [_footerView setupBtnBackgroundColor:(CDIsUserLogined() ? ColorFromHexRGB(0xfe6565) : ColorFromHexRGB(0x36c362))];
+        __weak typeof(self) weakSelf=self;
+        _footerView.buttonClickBlock=^(UIButton *sender){
+            [weakSelf footerViewButtonClicked];
+        };
+    }
+    return _footerView;
 }
 
 #pragma mark - UITableViewDataSource
@@ -86,15 +101,32 @@
     switch (indexPath.section) {
         case 0:{
             switch (indexPath.row) {
-                case 0:{
-                    NSString *jsCode=[self removeHTMLNodeWith:@"element" tagName:@"link"];
-                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
+                case 0:
+                    [self pushToWKWebViewControllerWithTitle:@"遗忘密码" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/sms/forget-pass.html")];
+                    break;
+                case 1:
+                    [self pushToWKWebViewControllerWithTitle:@"手机取回用户名和密码" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/sms/get-pass.html")];
+                    break;
+                case 2:
+                    [self pushToWKWebViewControllerWithTitle:@"个人公积金账号查询" javaScriptCode:nil URLString:@"http://m.shgjj.com/verifier/verifier/index"];
+                    break;
                     
-//                    NSString *jsCode1=[self removeHTMLNodeWith:@"element" className:@"ctitle"];
-//                    NSString *jsCode2=[self removeHTMLNodeWith:@"element1" className:@"nav"];
+                default:
+                    break;
+            }
+        }
+            break;
+        case 1:{
+            switch (indexPath.row) {
+                case 0:{
+//                    NSString *jsCode=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element" tagName:@"link"];
+//                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
+                    
+                    NSString *jsCode1=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element" className:@"ctitle"];
+                    NSString *jsCode2=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element1" className:@"nav"];
 //                    NSString *jsCode3=[self removeHTMLNodeWith:@"element2" tagName:@"script"];
-//                    NSString *jscode = [NSString stringWithFormat:@"%@%@%@",jsCode1,jsCode2,jsCode3];
-//                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jscode URLString:CDWebURLWithAPI(@"/html/wap/more/79839.html")];
+                    NSString *jscode = [NSString stringWithFormat:@"%@%@",jsCode1,jsCode2];
+                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jscode URLString:CDWebURLWithAPI(@"/html/wap/more/79839.html")];
                 }
                     break;
                 case 1:{
@@ -106,7 +138,7 @@
             }
         }
             break;
-        case 1:{
+        case 2:{
             switch (indexPath.row) {
                 case 0:
                     [self showCallTelephoneAlert];
@@ -123,7 +155,7 @@
             }
         }
             break;
-        case 2:{
+        case 3:{
             switch (indexPath.row) {
                 case 0:{
                     NSString *strUrl=@"http://m.weibo.cn/u/3547969482";
@@ -139,6 +171,16 @@
         default:
             break;
     }
+}
+
+#pragma mark - CDLoginViewControllerDelegate
+- (void)userDidLogin{
+    [[NSNotificationCenter defaultCenter]postNotificationName:kUserLoginStateChangedNotification object:nil];
+    [self refreshFooterView];
+}
+
+- (void)userCanceledLogin{
+    
 }
 
 #pragma mark - Events
@@ -157,6 +199,13 @@
 - (void)pushToOpinionsSuggestionsController{
     CDOpinionsSuggestionsController *controller=[[CDOpinionsSuggestionsController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)presentLoginViewController{
+    CDLoginViewController *controller=[[CDLoginViewController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    controller.delegate=self;
+    CDNavigationController *nav=[[CDNavigationController alloc]initWithRootViewController:controller];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)showCallTelephoneAlert{
@@ -193,12 +242,21 @@
     [CDKeyWindow.rootViewController presentViewController:alert animated:YES completion:NULL];
 }
 
-- (NSString *)removeHTMLNodeWith:(NSString *)elementName className:(NSString *)className{
-    return [NSString stringWithFormat:@"var %@ = document.getElementsByClassName('%@')[0];element.parentNode.removeChild(%@);",elementName,className,elementName];
+
+
+- (void)footerViewButtonClicked{
+    if (CDIsUserLogined()) {
+        CDSaveUserLogined(NO);
+        [[NSNotificationCenter defaultCenter]postNotificationName:kUserLoginStateChangedNotification object:nil];
+        [self refreshFooterView];
+    }else{
+        [self presentLoginViewController];
+    }
 }
 
-- (NSString *)removeHTMLNodeWith:(NSString *)elementName tagName:(NSString *)className{
-    return [NSString stringWithFormat:@"var %@ = document.getElementsByTagName('%@')[0];element.parentNode.removeChild(%@);",elementName,className,elementName];
+- (void)refreshFooterView{
+    [self.footerView setupBtnTitle:(CDIsUserLogined() ? @"退出登录" : @"登录")];
+    [self.footerView setupBtnBackgroundColor:(CDIsUserLogined() ? ColorFromHexRGB(0xfe6565) : ColorFromHexRGB(0x36c362))];
 }
 
 @end

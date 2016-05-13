@@ -631,7 +631,14 @@ BOOL CDIsUserLogined() {
         }
         CDPRINT(@"%@",error.localizedDescription);
     }
-    
+}
+
++ (NSString *)jsCodeDeleteHTMLNodeWith:(NSString *)elementName className:(NSString *)className{
+    return [NSString stringWithFormat:@"var %@ = document.getElementsByClassName('%@')[0];%@.parentNode.removeChild(%@);",elementName,className,elementName,elementName];
+}
+
++ (NSString *)jsCodeDeleteHTMLNodeWith:(NSString *)elementName tagName:(NSString *)tagName{
+    return [NSString stringWithFormat:@"var %@ = document.getElementsByTagName('%@')[0];%@.parentNode.removeChild(%@);",elementName,tagName,elementName,elementName];
 }
 
 @end

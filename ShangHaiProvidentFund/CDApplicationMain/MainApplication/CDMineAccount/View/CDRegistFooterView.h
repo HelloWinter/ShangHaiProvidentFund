@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^CDShowProtocolBlock)();
+typedef void(^CDRegistBlock)();
+typedef void(^CDShowProblemBlock)();
+
 @interface CDRegistFooterView : UIView
+
+@property (nonatomic, copy) CDShowProtocolBlock showProtocolBlock;
+@property (nonatomic, copy) CDRegistBlock registBlock;
+@property (nonatomic, copy) CDShowProblemBlock showProblemBlock;
 
 @end

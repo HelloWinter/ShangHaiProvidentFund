@@ -12,18 +12,17 @@
 #import "CDQueryAccountInfoModel.h"
 #import "CDAccountInfoItem.h"
 #import "CDAccountBasicInfoCell.h"
-#import "CDButtonTableFooterView.h"
+
 #import "CDLoginViewController.h"
 #import "CDNavigationController.h"
 #import "CDLoginModel.h"
 #import "UIBarButtonItem+CDCategory.h"
 #import "CDAboutUsController.h"
-//#import "CDMineAccountController.h"
 
 @interface CDQueryAccountInfoController ()<CDLoginViewControllerDelegate>
 
 @property (nonatomic, strong) CDQueryAccountInfoModel *queryAccountInfoModel;
-@property (nonatomic, strong) CDButtonTableFooterView *footerView;
+
 
 @end
 
@@ -39,8 +38,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(userLoginStateChanged:) name:kUserLoginStateChangedNotification object:nil];
     [self showRightBarBtn];
-    [self refreshTableFooterView];
     [self reloadTableViewSection0];
 }
 
@@ -49,18 +48,6 @@
         _queryAccountInfoModel=[[CDQueryAccountInfoModel alloc]init];
     }
     return _queryAccountInfoModel;
-}
-
-- (CDButtonTableFooterView *)footerView{
-    if (_footerView==nil) {
-        _footerView=[CDButtonTableFooterView footerView];
-        [_footerView setupBtnTitle:@"登录"];
-        __weak typeof(self) weakSelf=self;
-        _footerView.buttonClickBlock=^(UIButton *sender){
-            [weakSelf presentLoginViewController];
-        };
-    }
-    return _footerView;
 }
 
 #pragma mark - UITableViewDataSource
@@ -133,20 +120,20 @@
     
 }
 
+#pragma mark - NSNotification
+- (void)userLoginStateChanged:(NSNotification *)noti{
+    [self reloadTableViewSection0];
+}
+
 #pragma mark - Events{
 - (void)showRightBarBtn{
 //    shareScheme_questionMark //
-    
     UIBarButtonItem *btn=[UIBarButtonItem cd_barButtonWidth:30 Title:nil ImageName:@"tab_settingicon" Target:self Action:@selector(rightBarBtnClick)];
     [self.navigationItem setRightBarButtonItem:btn];
 }
 
 - (void)rightBarBtnClick{
     [self pushToAboutUsController];
-}
-
-- (void)refreshTableFooterView{
-    self.tableView.tableFooterView=CDIsUserLogined() ? nil : self.footerView;
 }
 
 - (void)presentLoginViewController{
@@ -171,17 +158,14 @@
                 accountItem.state=accountInfoItem.state;
             }
         }
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:(UITableViewRowAnimationFade)];
     }
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:(UITableViewRowAnimationFade)];
 }
 
 - (void)pushToAboutUsController{
     CDAboutUsController *fourVC = [[CDAboutUsController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
     [self.navigationController pushViewController:fourVC animated:YES];
 }
-
-
-//[self setUpOneChildViewController:fourVC image:[UIImage imageNamed:@"tab_settingicon"] title:@"关于我们"];
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

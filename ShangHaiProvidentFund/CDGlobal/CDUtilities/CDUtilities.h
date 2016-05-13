@@ -245,4 +245,8 @@ BOOL CDIsUserLogined();
  */
 + (void)authenticateUserTouchID:(void (^)(void)) completion;
 
++ (NSString *)jsCodeDeleteHTMLNodeWith:(NSString *)elementName className:(NSString *)className;
+
++ (NSString *)jsCodeDeleteHTMLNodeWith:(NSString *)elementName tagName:(NSString *)tagName;
+
 @end

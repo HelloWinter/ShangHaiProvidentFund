@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, copy) NSString *value;
 @property (nonatomic, copy) NSString *hint;
+@property (nonatomic, copy) NSString *security;
 @property (nonatomic, copy) NSString *paramsubmit;
 
 @end

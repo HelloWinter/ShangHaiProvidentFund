@@ -237,4 +237,6 @@ description:__VA_ARGS__];                                                    \
 
 #define CELL_MARGIN 8
 
+#define kUserLoginStateChangedNotification @"kUserLoginStateChangedNotification"
+
 #endif
