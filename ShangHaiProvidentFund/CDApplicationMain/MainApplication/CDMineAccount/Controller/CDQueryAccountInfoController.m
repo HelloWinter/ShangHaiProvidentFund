@@ -12,7 +12,7 @@
 #import "CDQueryAccountInfoModel.h"
 #import "CDAccountInfoItem.h"
 #import "CDAccountBasicInfoCell.h"
-
+#import "CDAccountDetailController.h"
 #import "CDLoginViewController.h"
 #import "CDNavigationController.h"
 #import "CDLoginModel.h"
@@ -109,6 +109,21 @@
         [self presentLoginViewController];
         return;
     }
+    switch (indexPath.section) {
+        case 1:
+            [self pushToAccountDetailController];
+            break;
+        case 2:
+            
+            break;
+        case 3:
+            
+            break;
+            
+        default:
+            break;
+    }
+    
 }
 
 #pragma mark - CDLoginViewControllerDelegate
@@ -165,6 +180,11 @@
 - (void)pushToAboutUsController{
     CDAboutUsController *fourVC = [[CDAboutUsController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
     [self.navigationController pushViewController:fourVC animated:YES];
+}
+
+- (void)pushToAccountDetailController{
+    CDAccountDetailController *controller=[[CDAccountDetailController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

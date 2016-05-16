@@ -57,6 +57,12 @@
 		6E463CE71CD9D7F700527950 /* CDButtonTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E463CE51CD9D7F700527950 /* CDButtonTableFooterView.xib */; };
 		6E4D90B01CDB133E0019B011 /* CDBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D90AF1CDB133E0019B011 /* CDBaseCollectionViewController.m */; };
 		6E4D90B31CDB334A0019B011 /* CDConvenientToolsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D90B21CDB334A0019B011 /* CDConvenientToolsItem.m */; };
+		6E53C8451CE9CF4D00202F53 /* SCYProvidentFundDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53C8441CE9CF4D00202F53 /* SCYProvidentFundDetailHeaderView.m */; };
+		6E53C84B1CE9CF9500202F53 /* CDSlidePageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53C8481CE9CF9500202F53 /* CDSlidePageHeaderView.m */; };
+		6E53C84C1CE9CF9500202F53 /* CDSlidePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53C84A1CE9CF9500202F53 /* CDSlidePageView.m */; };
+		6E53C84F1CE9CFFF00202F53 /* SCYHeaderTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53C84E1CE9CFFF00202F53 /* SCYHeaderTitleView.m */; };
+		6E53C8561CE9D07B00202F53 /* SCYProvidentFundDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53C8541CE9D07B00202F53 /* SCYProvidentFundDetailCell.m */; };
+		6E53C8571CE9D07B00202F53 /* SCYProvidentFundDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E53C8551CE9D07B00202F53 /* SCYProvidentFundDetailCell.xib */; };
 		6E5BF8411CE5BCE6008E1DE6 /* CDRegistFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BF8401CE5BCE6008E1DE6 /* CDRegistFooterView.m */; };
 		6E5C696E1CE2F7B900F17AD0 /* CDQueryAccountInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C696D1CE2F7B900F17AD0 /* CDQueryAccountInfoController.m */; };
 		6E5C69711CE2F80500F17AD0 /* CDQueryAccountInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C69701CE2F80500F17AD0 /* CDQueryAccountInfoModel.m */; };
@@ -225,6 +231,17 @@
 		6E4D90AF1CDB133E0019B011 /* CDBaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseCollectionViewController.m; sourceTree = "<group>"; };
 		6E4D90B11CDB334A0019B011 /* CDConvenientToolsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientToolsItem.h; sourceTree = "<group>"; };
 		6E4D90B21CDB334A0019B011 /* CDConvenientToolsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientToolsItem.m; sourceTree = "<group>"; };
+		6E53C8431CE9CF4D00202F53 /* SCYProvidentFundDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYProvidentFundDetailHeaderView.h; sourceTree = "<group>"; };
+		6E53C8441CE9CF4D00202F53 /* SCYProvidentFundDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYProvidentFundDetailHeaderView.m; sourceTree = "<group>"; };
+		6E53C8471CE9CF9500202F53 /* CDSlidePageHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDSlidePageHeaderView.h; sourceTree = "<group>"; };
+		6E53C8481CE9CF9500202F53 /* CDSlidePageHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDSlidePageHeaderView.m; sourceTree = "<group>"; };
+		6E53C8491CE9CF9500202F53 /* CDSlidePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDSlidePageView.h; sourceTree = "<group>"; };
+		6E53C84A1CE9CF9500202F53 /* CDSlidePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDSlidePageView.m; sourceTree = "<group>"; };
+		6E53C84D1CE9CFFF00202F53 /* SCYHeaderTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYHeaderTitleView.h; sourceTree = "<group>"; };
+		6E53C84E1CE9CFFF00202F53 /* SCYHeaderTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYHeaderTitleView.m; sourceTree = "<group>"; };
+		6E53C8531CE9D07B00202F53 /* SCYProvidentFundDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYProvidentFundDetailCell.h; sourceTree = "<group>"; };
+		6E53C8541CE9D07B00202F53 /* SCYProvidentFundDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYProvidentFundDetailCell.m; sourceTree = "<group>"; };
+		6E53C8551CE9D07B00202F53 /* SCYProvidentFundDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCYProvidentFundDetailCell.xib; sourceTree = "<group>"; };
 		6E5BF83F1CE5BCE6008E1DE6 /* CDRegistFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRegistFooterView.h; sourceTree = "<group>"; };
 		6E5BF8401CE5BCE6008E1DE6 /* CDRegistFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRegistFooterView.m; sourceTree = "<group>"; };
 		6E5C696C1CE2F7B900F17AD0 /* CDQueryAccountInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQueryAccountInfoController.h; sourceTree = "<group>"; };
@@ -421,6 +438,17 @@
 				74A81EE738543DD0D373540C /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E53C8461CE9CF9500202F53 /* CDSlidePageView */ = {
+			isa = PBXGroup;
+			children = (
+				6E53C8471CE9CF9500202F53 /* CDSlidePageHeaderView.h */,
+				6E53C8481CE9CF9500202F53 /* CDSlidePageHeaderView.m */,
+				6E53C8491CE9CF9500202F53 /* CDSlidePageView.h */,
+				6E53C84A1CE9CF9500202F53 /* CDSlidePageView.m */,
+			);
+			path = CDSlidePageView;
 			sourceTree = "<group>";
 		};
 		6E66EA141CE062FC00111C2C /* CDTitleImageButton */ = {
@@ -649,6 +677,7 @@
 		6E6ADBA11CD8A0BD00838B61 /* CDCustomModule */ = {
 			isa = PBXGroup;
 			children = (
+				6E53C8461CE9CF9500202F53 /* CDSlidePageView */,
 				6E66EA141CE062FC00111C2C /* CDTitleImageButton */,
 				6E6ADBA21CD8A0BD00838B61 /* CDAutoHideMessageHUD */,
 				6E6ADBAA1CD8A0BD00838B61 /* CDCustomActivityIndicator */,
@@ -837,6 +866,13 @@
 			children = (
 				6E6ADC3B1CD8C06C00838B61 /* CDMineAccountCell.h */,
 				6E6ADC3C1CD8C06C00838B61 /* CDMineAccountCell.m */,
+				6E53C8531CE9D07B00202F53 /* SCYProvidentFundDetailCell.h */,
+				6E53C8541CE9D07B00202F53 /* SCYProvidentFundDetailCell.m */,
+				6E53C8551CE9D07B00202F53 /* SCYProvidentFundDetailCell.xib */,
+				6E53C84D1CE9CFFF00202F53 /* SCYHeaderTitleView.h */,
+				6E53C84E1CE9CFFF00202F53 /* SCYHeaderTitleView.m */,
+				6E53C8431CE9CF4D00202F53 /* SCYProvidentFundDetailHeaderView.h */,
+				6E53C8441CE9CF4D00202F53 /* SCYProvidentFundDetailHeaderView.m */,
 				6E5C69721CE2FD3800F17AD0 /* CDQueryAccountInfoCell.h */,
 				6E5C69731CE2FD3800F17AD0 /* CDQueryAccountInfoCell.m */,
 				6E5BF83F1CE5BCE6008E1DE6 /* CDRegistFooterView.h */,
@@ -1040,6 +1076,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E6ADB1B1CD892B200838B61 /* Assets.xcassets in Resources */,
+				6E53C8571CE9D07B00202F53 /* SCYProvidentFundDetailCell.xib in Resources */,
 				6E6ADB191CD892B200838B61 /* Main.storyboard in Resources */,
 				14FDD0C61CDE37DB0093ABC3 /* CDNetWorkPointCell.xib in Resources */,
 				6E66E9F21CE02DD700111C2C /* CDNewsAndTrendsCell.xib in Resources */,
@@ -1115,6 +1152,7 @@
 				14D13B651CE22FA800D73F1A /* CDLoanProgressController.m in Sources */,
 				6E6ADB3B1CD89E8700838B61 /* CDJSONBaseNetworkService.m in Sources */,
 				6E6ADB2E1CD89E7C00838B61 /* CDBaseTableViewCell.m in Sources */,
+				6E53C8451CE9CF4D00202F53 /* SCYProvidentFundDetailHeaderView.m in Sources */,
 				140BE9D91CDF68F500577831 /* CDAccountDetailItem.m in Sources */,
 				6E6ADB3A1CD89E8700838B61 /* CDBaseService.m in Sources */,
 				140BE9D01CDF63D200577831 /* CDLoginViewController.m in Sources */,
@@ -1127,6 +1165,7 @@
 				14D13B6B1CE2307E00D73F1A /* CDRepayInfoChrItem.m in Sources */,
 				6E6ADC111CD8AA9B00838B61 /* CDAboutUsController.m in Sources */,
 				6E6ADC221CD8B3EB00838B61 /* CDNewsItem.m in Sources */,
+				6E53C84F1CE9CFFF00202F53 /* SCYHeaderTitleView.m in Sources */,
 				6E6ADB9B1CD89F7C00838B61 /* UIViewController+CDVCAdditions.m in Sources */,
 				6E6ADC081CD8A98C00838B61 /* CDNewsAndTrendsController.m in Sources */,
 				14FDD0AA1CDDB43D0093ABC3 /* CDOpinionsSuggestionsModel.m in Sources */,
@@ -1156,6 +1195,7 @@
 				6E6ADB971CD89F7C00838B61 /* UILabel+CDLBAdditions.m in Sources */,
 				6E6ADBDC1CD8A0BD00838B61 /* CDPointActivityIndicator.m in Sources */,
 				14FDD0B01CDDB6310093ABC3 /* CDOpinionsSuggestionsController.m in Sources */,
+				6E53C84C1CE9CF9500202F53 /* CDSlidePageView.m in Sources */,
 				14FDD0B91CDDD3F90093ABC3 /* CDOpinionsSuggestionsFieldCell.m in Sources */,
 				6E6ADB8F1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.m in Sources */,
 				6E5C69741CE2FD3800F17AD0 /* CDQueryAccountInfoCell.m in Sources */,
@@ -1172,6 +1212,7 @@
 				6E6ADB581CD89E8E00838B61 /* CDTabBarController.m in Sources */,
 				6E6ADB591CD89E8E00838B61 /* CDBaseTableViewController.m in Sources */,
 				14FDD0B31CDDD2440093ABC3 /* CDBaseTextFieldCell.m in Sources */,
+				6E53C84B1CE9CF9500202F53 /* CDSlidePageHeaderView.m in Sources */,
 				6E5C696E1CE2F7B900F17AD0 /* CDQueryAccountInfoController.m in Sources */,
 				14D13B711CE2320800D73F1A /* CDPayCalculatorItem.m in Sources */,
 				6E6ADB131CD892B200838B61 /* AppDelegate.m in Sources */,
@@ -1190,6 +1231,7 @@
 				6E6ADB3C1CD89E8700838B61 /* CDNetworkMonitor.m in Sources */,
 				6E5C69771CE30A3E00F17AD0 /* CDAccountBasicInfoCell.m in Sources */,
 				14FDD0BC1CDDE3130093ABC3 /* CDOpinionsSuggestionsViewCell.m in Sources */,
+				6E53C8561CE9D07B00202F53 /* SCYProvidentFundDetailCell.m in Sources */,
 				6E5C69711CE2F80500F17AD0 /* CDQueryAccountInfoModel.m in Sources */,
 				6E6ADC1F1CD8B3DE00838B61 /* CDNewsAndTrendsItem.m in Sources */,
 				6E6ADB9A1CD89F7C00838B61 /* UIView+Genie.m in Sources */,

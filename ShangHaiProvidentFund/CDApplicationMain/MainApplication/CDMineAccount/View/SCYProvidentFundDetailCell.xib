@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellidentifier" id="blz-Pq-S0J" customClass="SCYProvidentFundDetailCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="blz-Pq-S0J" id="fYA-WG-Gpt">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="XCd-mV-Xg6">
+                        <rect key="frame" x="0.0" y="0.0" width="70" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="lnW-C9-Qrd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="company" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="9FO-JZ-q1h">
+                        <rect key="frame" x="70" y="0.0" width="190" height="44"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="monthpay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="s6d-8b-R4H">
+                        <rect key="frame" x="260" y="0.0" width="60" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="9tx-8i-Fgv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9FO-JZ-q1h" firstAttribute="leading" secondItem="XCd-mV-Xg6" secondAttribute="trailing" id="4PP-RB-Kfe"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="s6d-8b-R4H" secondAttribute="trailing" constant="-8" id="6HN-8s-pds"/>
+                    <constraint firstItem="XCd-mV-Xg6" firstAttribute="leading" secondItem="fYA-WG-Gpt" secondAttribute="leadingMargin" constant="-8" id="89Y-ij-571"/>
+                    <constraint firstItem="9FO-JZ-q1h" firstAttribute="top" secondItem="fYA-WG-Gpt" secondAttribute="topMargin" constant="-8" id="HOK-kM-Sf5"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="9FO-JZ-q1h" secondAttribute="bottom" constant="-9" id="Wc3-Q6-5t8"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="s6d-8b-R4H" secondAttribute="bottom" constant="-9" id="XPN-Ic-v56"/>
+                    <constraint firstItem="s6d-8b-R4H" firstAttribute="top" secondItem="fYA-WG-Gpt" secondAttribute="topMargin" constant="-8" id="YKS-dn-2yz"/>
+                    <constraint firstItem="XCd-mV-Xg6" firstAttribute="top" secondItem="fYA-WG-Gpt" secondAttribute="topMargin" constant="-8" id="dJz-Fg-dFN"/>
+                    <constraint firstItem="s6d-8b-R4H" firstAttribute="leading" secondItem="9FO-JZ-q1h" secondAttribute="trailing" id="hHq-pV-2Qw"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="XCd-mV-Xg6" secondAttribute="bottom" constant="-9" id="pDz-7F-9FP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lbCompany" destination="9FO-JZ-q1h" id="cax-UW-dp5"/>
+                <outlet property="lbDate" destination="XCd-mV-Xg6" id="eKD-6D-cmu"/>
+                <outlet property="lbMonthPay" destination="s6d-8b-R4H" id="Yru-36-0yG"/>
+            </connections>
+            <point key="canvasLocation" x="424" y="370"/>
+        </tableViewCell>
+    </objects>
+</document>
