@@ -43,7 +43,7 @@
 - (UIButton *)btnProtocol{
     if (!_btnProtocol) {
         _btnProtocol =[UIButton buttonWithType:(UIButtonTypeCustom)];
-        [_btnProtocol setTitle:@"  我已阅读并同意用户协定" forState:(UIControlStateNormal)];
+        [_btnProtocol setTitle:@"  我已阅读并同意《用户协议》" forState:(UIControlStateNormal)];
         [_btnProtocol setTitleColor:ColorFromHexRGB(0xbdc0c2) forState:(UIControlStateNormal)];
         _btnProtocol.titleLabel.font=[UIFont systemFontOfSize:13];
         [_btnProtocol setImage:[UIImage imageNamed:@"checkmark"] forState:(UIControlStateNormal)];
@@ -78,7 +78,7 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.btnProtocol.frame=CGRectMake(LEFT_RIGHT_MARGIN,10, 170, 25);
+    self.btnProtocol.frame=CGRectMake(LEFT_RIGHT_MARGIN,10, 200, 25);
     self.btnRegist.frame=CGRectMake(LEFT_RIGHT_MARGIN, self.btnProtocol.bottom+10, self.width-LEFT_RIGHT_MARGIN*2, 45);
     self.btnProblem.frame=CGRectMake(self.width-130, self.btnRegist.bottom+10, 110, 30);
     

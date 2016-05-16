@@ -22,7 +22,7 @@
 
 + (instancetype)basicInfoCell{
     CDAccountBasicInfoCell *cell=[[[NSBundle mainBundle]loadNibNamed:@"CDAccountBasicInfoCell" owner:nil options:nil]lastObject];
-    cell.selectionStyle=UITableViewCellSelectionStyleNone;
+//    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     return cell;
 }
 

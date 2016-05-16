@@ -19,7 +19,10 @@
 #import "CDBaseWKWebViewController.h"
 #import "CDRegistViewController.h"
 
-@interface CDLoginViewController ()
+@interface CDLoginViewController (){
+    NSTimer *_timer;                       // 倒计时定时器
+    NSInteger _countDown;                  // 倒计时时限
+}
 
 @property (nonatomic, strong) CDButtonTableFooterView *footerView;
 @property (nonatomic, strong) CDLoginConfigureModel *loginConfigureModel;
@@ -148,6 +151,10 @@
 - (void)login{
     NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
     for (CDOpinionsSuggestionsItem *item in self.loginConfigureModel.arrData) {
+        if (item.value.length==0) {
+            [CDAutoHideMessageHUD showMessage:@"请输入必填信息"];
+            return;
+        }
         if ([item.paramsubmit isEqualToString:@"passwd"]) {
             item.value=[item.value cd_md5HexDigest];
         }
