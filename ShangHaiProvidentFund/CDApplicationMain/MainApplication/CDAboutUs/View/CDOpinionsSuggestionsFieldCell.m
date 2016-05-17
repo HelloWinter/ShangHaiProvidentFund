@@ -9,9 +9,11 @@
 #import "CDOpinionsSuggestionsFieldCell.h"
 #import "CDOpinionsSuggestionsItem.h"
 
+
 @interface CDOpinionsSuggestionsFieldCell ()
 
 @property (nonatomic, strong) UILabel *label;
+
 
 @end
 
@@ -47,5 +49,7 @@
     CGSize textsize = [self.label.text sizeWithAttributes:@{NSFontAttributeName:self.label.font}];
     self.label.frame=CGRectMake(0, 0, textsize.width, _textField.height);
 }
+
+
 
 @end

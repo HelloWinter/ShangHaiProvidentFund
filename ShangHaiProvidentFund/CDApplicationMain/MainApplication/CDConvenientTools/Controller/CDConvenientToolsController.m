@@ -12,6 +12,7 @@
 #import "CDConvenientModel.h"
 #import "CDNetworkPointController.h"
 #import "CDBaseWKWebViewController.h"
+#import "SCYMortgageCalculatorController.h"
 
 static NSString *cellIdentifier=@"cellIdentifier";
 
@@ -91,6 +92,12 @@ static NSString *cellIdentifier=@"cellIdentifier";
         case 3:
             [self pushToWKWebViewControllerWithTitle:@"住房公积金缴存计算" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/app/wap/tools_paid_app.html")];
             break;
+        case 4:
+            [self pushToWKWebViewControllerWithTitle:@"额度试算" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/app/wap/tools_ammount.html")];
+            break;
+        case 5:
+            [self pushToMortgageCalculatorController];
+            break;
         case 7:
             [self pushToWKWebViewControllerWithTitle:@"叫号信息" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/2010/mindex.html")];
             break;
@@ -119,6 +126,11 @@ static NSString *cellIdentifier=@"cellIdentifier";
     webViewController.title=title;
     webViewController.javaScriptCode=jsCode;
     [self.navigationController pushViewController:webViewController animated:YES];
+}
+
+- (void)pushToMortgageCalculatorController{
+    SCYMortgageCalculatorController *controller=[[SCYMortgageCalculatorController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

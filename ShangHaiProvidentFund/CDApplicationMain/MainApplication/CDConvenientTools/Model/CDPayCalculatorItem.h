@@ -10,8 +10,7 @@
 
 @interface CDPayCalculatorItem : CDBaseItem
 
-#warning TODO
-@property (nonatomic, copy) NSString *id;
+@property (nonatomic, copy) NSString *ID;
 @property (nonatomic, copy) NSString *years;
 @property (nonatomic, copy) NSString *rate;
 @property (nonatomic, copy) NSString *shangye;

@@ -1,14 +1,14 @@
 //
-//  SCYHeaderTitleView.m
-//  ProvidentFund
+//  CDHeaderTitleView.m
+//  ShangHaiProvidentFund
 //
-//  Created by cdd on 16/3/16.
-//  Copyright © 2016年 9188. All rights reserved.
+//  Created by cdd on 16/5/11.
+//  Copyright © 2016年 cheng dong. All rights reserved.
 //
 
-#import "SCYHeaderTitleView.h"
+#import "CDHeaderTitleView.h"
 
-@interface SCYHeaderTitleView ()
+@interface CDHeaderTitleView ()
 
 @property (strong, nonatomic) UILabel *lbDate;
 @property (strong, nonatomic) UILabel *lbDescription;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation SCYHeaderTitleView
+@implementation CDHeaderTitleView
 
 - (instancetype)init{
     self =[super init];

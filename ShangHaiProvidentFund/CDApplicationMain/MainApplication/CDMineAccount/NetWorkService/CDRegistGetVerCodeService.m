@@ -12,6 +12,7 @@
 
 - (void)loadWithMobileNum:(NSString *)mobileNum showIndicator:(BOOL)show{
     self.showLodingIndicator=show;
+    self.httpRequestMethod=kHttpRequestTypeGET;
     NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
     [dict cd_safeSetObject:mobileNum forKey:@"mobile"];
     [dict cd_safeSetObject:@"7" forKey:@"sourcetype"];
@@ -20,7 +21,8 @@
 
 - (void)requestDidFinish:(id)rootData{
     [super requestDidFinish:rootData];
-    
+    _code=[rootData objectForKey:@"code"];
+    _msg=[rootData objectForKey:@"msg"];
 }
 
 @end

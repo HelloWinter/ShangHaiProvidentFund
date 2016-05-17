@@ -1,16 +1,16 @@
 //
-//  SCYProvidentFundDetailCell.m
-//  ProvidentFund
+//  CDProvidentFundDetailCell.m
+//  ShangHaiProvidentFund
 //
-//  Created by cdd on 15/12/23.
-//  Copyright © 2015年 9188. All rights reserved.
+//  Created by cdd on 16/5/3.
+//  Copyright © 2016年 cheng dong. All rights reserved.
 //
 
-#import "SCYProvidentFundDetailCell.h"
+#import "CDProvidentFundDetailCell.h"
 #import "CDAccountDetailItem.h"
 #import "NSString+CDEncryption.h"
 
-@interface SCYProvidentFundDetailCell ()
+@interface CDProvidentFundDetailCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *lbDate;
 @property (weak, nonatomic) IBOutlet UILabel *lbCompany;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation SCYProvidentFundDetailCell
+@implementation CDProvidentFundDetailCell
 
 - (void)setCellItem:(CDAccountDetailItem *)item{
     NSString *strSubDate=item.time;

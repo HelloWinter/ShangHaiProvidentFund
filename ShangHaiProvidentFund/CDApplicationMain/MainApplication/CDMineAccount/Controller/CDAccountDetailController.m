@@ -7,10 +7,10 @@
 //
 
 #import "CDAccountDetailController.h"
-#import "SCYProvidentFundDetailHeaderView.h"
+#import "CDProvidentFundDetailHeaderView.h"
 #import "CDSlidePageHeaderView.h"
-#import "SCYHeaderTitleView.h"
-#import "SCYProvidentFundDetailCell.h"
+#import "CDHeaderTitleView.h"
+#import "CDProvidentFundDetailCell.h"
 #import "CDLoginModel.h"
 #import "CDAccountInfoItem.h"
 
@@ -21,9 +21,9 @@ static const CGFloat kHeaderTitleHeight = 28;
 @interface CDAccountDetailController ()<CDSlidePageHeaderViewDelegate>
 
 @property (nonatomic, strong) UIView *tableHeadView;
-@property (nonatomic, strong) SCYProvidentFundDetailHeaderView *detailHeaderView;
+@property (nonatomic, strong) CDProvidentFundDetailHeaderView *detailHeaderView;
 @property (nonatomic, strong) CDSlidePageHeaderView *pageHeaderView;
-@property (nonatomic, strong) SCYHeaderTitleView *headerTitleView;
+@property (nonatomic, strong) CDHeaderTitleView *headerTitleView;
 @property (nonatomic, strong) NSMutableArray *arrData;
 @property (nonatomic, assign) NSInteger selectIndex;
 @property (nonatomic, strong) CDLoginModel *loginModel;
@@ -70,9 +70,9 @@ static const CGFloat kHeaderTitleHeight = 28;
     return _arrData;
 }
 
-- (SCYProvidentFundDetailHeaderView *)detailHeaderView{
+- (CDProvidentFundDetailHeaderView *)detailHeaderView{
     if (_detailHeaderView==nil) {
-        _detailHeaderView = [[SCYProvidentFundDetailHeaderView alloc]init];
+        _detailHeaderView = [[CDProvidentFundDetailHeaderView alloc]init];
         _detailHeaderView.frame=CGRectMake(0, 0, self.view.width, kAccountInfoHeight);
     }
     return _detailHeaderView;
@@ -85,9 +85,9 @@ static const CGFloat kHeaderTitleHeight = 28;
     return _tableHeadView;
 }
 
-- (SCYHeaderTitleView *)headerTitleView{
+- (CDHeaderTitleView *)headerTitleView{
     if (_headerTitleView==nil) {
-        _headerTitleView = [[SCYHeaderTitleView alloc]initWithFrame:CGRectMake(0, kPageHeaderHeight, self.view.width, kHeaderTitleHeight)];
+        _headerTitleView = [[CDHeaderTitleView alloc]initWithFrame:CGRectMake(0, kPageHeaderHeight, self.view.width, kHeaderTitleHeight)];
         [_headerTitleView setupWithFirstDesc:@"日期" secondDesc:@"业务描述" thirdDesc:@"发生金额"];
     }
     return _headerTitleView;
@@ -113,9 +113,9 @@ static const CGFloat kHeaderTitleHeight = 28;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellidentifier = @"cellidentifier";
-    SCYProvidentFundDetailCell *cell=[tableView dequeueReusableCellWithIdentifier:cellidentifier];
+    CDProvidentFundDetailCell *cell=[tableView dequeueReusableCellWithIdentifier:cellidentifier];
     if (!cell) {
-        cell = [[[NSBundle mainBundle]loadNibNamed:@"SCYProvidentFundDetailCell" owner:nil options:nil]lastObject];
+        cell = [[[NSBundle mainBundle]loadNibNamed:@"CDProvidentFundDetailCell" owner:nil options:nil]lastObject];
     }
     [cell setCellItem:[self.arrData cd_safeObjectAtIndex:indexPath.row]];
     return cell;

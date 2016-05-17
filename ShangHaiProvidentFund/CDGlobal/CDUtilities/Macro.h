@@ -239,4 +239,7 @@ description:__VA_ARGS__];                                                    \
 
 #define kUserLoginStateChangedNotification @"kUserLoginStateChangedNotification"
 
+#define NAVIGATION_COLOR ColorFromHexRGB(0x01b2d3)
+
+
 #endif

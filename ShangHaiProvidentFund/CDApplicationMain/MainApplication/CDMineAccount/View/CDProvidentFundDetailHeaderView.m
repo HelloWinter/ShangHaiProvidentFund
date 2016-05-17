@@ -1,17 +1,17 @@
 //
-//  SCYProvidentFundDetailHeaderView.m
-//  ProvidentFund
+//  CDProvidentFundDetailHeaderView.m
+//  ShangHaiProvidentFund
 //
-//  Created by cdd on 15/12/23.
-//  Copyright © 2015年 9188. All rights reserved.
+//  Created by cdd on 16/5/11.
+//  Copyright © 2016年 cheng dong. All rights reserved.
 //
 
-#import "SCYProvidentFundDetailHeaderView.h"
+#import "CDProvidentFundDetailHeaderView.h"
 #import "CDAccountInfoItem.h"
 
 #define kTextLabelSize 13
 
-@interface SCYProvidentFundDetailHeaderView ()
+@interface CDProvidentFundDetailHeaderView ()
 
 @property (strong, nonatomic) UILabel *lbAccount;
 @property (strong, nonatomic) UILabel *lbAccountNum;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation SCYProvidentFundDetailHeaderView
+@implementation CDProvidentFundDetailHeaderView
 
 - (instancetype)init{
     self =[super init];

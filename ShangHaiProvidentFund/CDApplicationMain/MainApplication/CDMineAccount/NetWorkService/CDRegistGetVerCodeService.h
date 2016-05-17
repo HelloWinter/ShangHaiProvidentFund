@@ -12,6 +12,9 @@
 
 @interface CDRegistGetVerCodeService : CDJSONBaseNetworkService
 
+@property (nonatomic, copy) NSString *code;
+@property (nonatomic, copy) NSString *msg;
+
 - (void)loadWithMobileNum:(NSString *)mobileNum showIndicator:(BOOL)show;
 
 @end

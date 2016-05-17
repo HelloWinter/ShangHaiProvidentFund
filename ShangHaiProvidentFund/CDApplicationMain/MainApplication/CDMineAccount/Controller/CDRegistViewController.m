@@ -16,12 +16,15 @@
 #import "CDRegistFooterView.h"
 #import "CDBaseWKWebViewController.h"
 #import "UITextField+cellIndexPath.h"
+#import "CDVerificationCodeCell.h"
+#import "CDRegistGetVerCodeService.h"
 
 @interface CDRegistViewController ()
 
 @property (nonatomic, strong) CDRegistConfigureModel *registConfigureModel;
 @property (nonatomic, strong) CDRegistFooterView *footerView;
 @property (nonatomic, strong) CDRegistService *registService;
+@property (nonatomic, strong) CDRegistGetVerCodeService *getVerCodeService;
 
 @end
 
@@ -39,15 +42,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(controlTextDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
     self.tableView.height+=49;
     self.tableView.tableFooterView=self.footerView;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(controlTextDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
+}
+
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
     if (self.registService.isLoading) {
         [self.registService cancel];
+    }
+    if (self.getVerCodeService.isLoading) {
+        [self.getVerCodeService cancel];
     }
 }
 
@@ -56,6 +67,13 @@
         _registService=[[CDRegistService alloc]initWithDelegate:self];
     }
     return _registService;
+}
+
+- (CDRegistGetVerCodeService *)getVerCodeService{
+    if (_getVerCodeService==nil) {
+        _getVerCodeService=[[CDRegistGetVerCodeService alloc]initWithDelegate:self];
+    }
+    return _getVerCodeService;
 }
 
 - (CDRegistConfigureModel *)registConfigureModel{
@@ -74,7 +92,7 @@
             [weakSelf pushToWKWebViewControllerWithTitle:@"个人用户协议" javaScriptCode:nil URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yhxy")];
         };
         _footerView.registBlock=^(){
-            
+            [weakSelf regist];
         };
         _footerView.showProblemBlock=^(){
             [weakSelf showProbilemActionSheet];
@@ -89,14 +107,29 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellidentifier = @"cellidentifier";
-    CDOpinionsSuggestionsFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:cellidentifier];
-    if (nil == cell) {
-        cell = [[CDOpinionsSuggestionsFieldCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:cellidentifier];
-    }
     CDOpinionsSuggestionsItem *item=[self.registConfigureModel.arrData cd_safeObjectAtIndex:indexPath.row];
-    [cell setupItem:(item) indexPath:indexPath];
-    return cell;
+    if ([item.type isEqualToString:@"2"]) {
+        static NSString *vercellidentifier = @"vercellidentifier";
+        CDVerificationCodeCell *cell = [tableView dequeueReusableCellWithIdentifier:vercellidentifier];
+        if (nil == cell) {
+            cell = [[CDVerificationCodeCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:vercellidentifier];
+            __weak typeof(self) weakSelf=self;
+            cell.getVerCodeBlock=^BOOL(){
+                return [weakSelf getVerCode];
+            };
+        }
+        [cell setupItem:(item) indexPath:indexPath];
+        return cell;
+    }else{
+        static NSString *cellidentifier = @"cellidentifier";
+        CDOpinionsSuggestionsFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:cellidentifier];
+        if (nil == cell) {
+            cell = [[CDOpinionsSuggestionsFieldCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:cellidentifier];
+        }
+        [cell setupItem:(item) indexPath:indexPath];
+        return cell;
+    }
+    return [[UITableViewCell alloc]init];
 }
 
 #pragma mark - UITableViewDelegate
@@ -115,7 +148,13 @@
 #pragma mark - CDJSONBaseNetworkServiceDelegate
 - (void)requestDidFinished:(CDJSONBaseNetworkService *)service{
     [super requestDidFinished:service];
-    
+    if ([service isKindOfClass:[CDRegistGetVerCodeService class]]) {
+        if (![self.getVerCodeService.code isEqualToString:@"0"]) {
+            [CDAutoHideMessageHUD showMessage:self.getVerCodeService.msg];
+        }
+    }else if ([service isKindOfClass:[CDRegistService class]]){
+        
+    }
 }
 
 - (void)request:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
@@ -154,6 +193,58 @@
     [self presentViewController:alert animated:YES completion:NULL];
 }
 
+- (void)regist{
+    NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
+    NSString *psw=nil;
+    NSString *repsw=nil;
+    for (CDOpinionsSuggestionsItem *item in self.registConfigureModel.arrData) {
+        if (item.value.length==0) {
+            [CDAutoHideMessageHUD showMessage:@"请输入必填信息"];
+            return;
+        }
+        if ([item.paramsubmit isEqualToString:@"pwd"]) {
+            psw=item.value;
+        }
+        if ([item.paramsubmit isEqualToString:@"repwd"]) {
+            repsw=item.value;
+        }
+        if (![item.paramsubmit isEqualToString:@"repwd"]) {
+            [dict cd_safeSetObject:item.value forKey:item.paramsubmit];
+        }
+    }
+    if (![psw isEqualToString:repsw]) {
+        [CDAutoHideMessageHUD showMessage:@"密码不一致"];
+        return;
+    }
+    [self.registService loadWithParams:dict showIndicator:YES];
+}
+
+- (NSString *)getMobileNum{
+    for (CDOpinionsSuggestionsItem *item in self.registConfigureModel.arrData) {
+        if ([item.paramsubmit isEqualToString:@"mobile"]) {
+            if (item.value.length==0) {
+                [CDAutoHideMessageHUD showMessage:@"请输入手机号"];
+                return nil;
+            }
+            return item.value;
+        }
+    }
+    return nil;
+}
+
+- (BOOL)getVerCode{
+    NSString *mobileNum =[self getMobileNum];
+    if (!mobileNum) {
+        [CDAutoHideMessageHUD showMessage:@"请输入手机号"];
+        return NO;
+    }
+    if (mobileNum.length!=11) {
+        [CDAutoHideMessageHUD showMessage:@"手机号输入不正确"];
+        return NO;
+    }
+    [self.getVerCodeService loadWithMobileNum:mobileNum showIndicator:YES];
+    return YES;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

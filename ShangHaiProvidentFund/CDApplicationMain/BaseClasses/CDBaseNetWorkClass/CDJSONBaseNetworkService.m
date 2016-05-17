@@ -12,6 +12,7 @@
 #import "CDGlobalHTTPSessionManager.h"
 #import <YYCache/YYCache.h>
 #import "NSDictionary+CDDictionaryAdditions.h"
+#import "NSString+CDEncryption.h"
 
 @interface CDJSONBaseNetworkService ()
 
@@ -64,7 +65,7 @@
 //    NSDictionary *paramsDic = [self packParameters:params];
     
     NSString *paramsString = params==nil ? @"" : [params cd_TransformToParamStringWithMethod:(kHttpRequestTypeGET)];
-    self.cacheURLStringID=[NSString stringWithFormat:@"%@%@",urlString,paramsString];
+    self.cacheURLStringID=[[NSString stringWithFormat:@"%@%@",urlString,paramsString] cd_md5HexDigest];
     
     if (!self.isIgnoreCache  && [self.cache containsObjectForKey:self.cacheURLStringID]) {
         [self successfulGetResponse:[self.cache objectForKey:self.cacheURLStringID]];

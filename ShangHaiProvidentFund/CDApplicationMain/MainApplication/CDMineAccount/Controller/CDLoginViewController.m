@@ -45,16 +45,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(controlTextDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
     [self cd_showBackButton];
     self.tableView.height+=49;
     self.tableView.tableFooterView=self.footerView;
     [self.view addSubview:self.bottomButtonView];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(controlTextDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
+}
+
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.view endEditing:YES];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
     if (self.loginService.isLoading) {
         [self.loginService cancel];
     }
