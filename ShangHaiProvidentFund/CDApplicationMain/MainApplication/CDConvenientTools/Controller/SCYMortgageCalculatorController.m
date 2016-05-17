@@ -18,6 +18,7 @@
 #import "SCYMortgageCalculatorSourceItem.h"
 #import "SCYMortgageCalculatorResultItem.h"
 #import "UITextField+cellIndexPath.h"
+#import "CDButtonTableFooterView.h"
 
 static const CGFloat topHeight=50;
 
@@ -28,9 +29,10 @@ static const CGFloat topHeight=50;
 @property (nonatomic, assign) SCYMortgageType mortgageType;
 @property (nonatomic, strong) SCYMortgageCalculatorModel *mortgageCalculatorModel;
 @property (nonatomic, strong) SCYPopTableView *popTableView;
-@property (nonatomic, strong) UIView *section0Footer;
+//@property (nonatomic, strong) UIView *section0Footer;
 @property (nonatomic, strong) SCYMortgageCalculatorResultItem *resultItem;
 @property (nonatomic, strong) NSMutableArray *arrData;
+@property (nonatomic, strong) CDButtonTableFooterView *footerView;
 
 @end
 
@@ -75,6 +77,21 @@ static const CGFloat topHeight=50;
     [super viewWillDisappear:animated];
     [self.view endEditing:YES];
     [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+
+- (CDButtonTableFooterView *)footerView{
+    if (_footerView==nil) {
+        _footerView=[CDButtonTableFooterView footerView];
+        _footerView.size=CGSizeMake(self.tableView.width, 82);
+        _footerView.backgroundColor=[UIColor whiteColor];
+        [_footerView setupBtnTitle:@"开始计算"];
+        [_footerView setupBtnBackgroundColor:ColorFromHexRGB(0x38ca73)];
+        __weak typeof(self) weakSelf=self;
+        _footerView.buttonClickBlock=^(UIButton *sender){
+            [weakSelf startCalculator];
+        };
+    }
+    return _footerView;
 }
 
 - (SCYMortgageCalculatorModel *)mortgageCalculatorModel{
@@ -125,24 +142,24 @@ static const CGFloat topHeight=50;
     return _headerView;
 }
 
-- (UIView *)section0Footer{
-    if (_section0Footer==nil) {
-        _section0Footer=[[UIView alloc]init];
-        _section0Footer.frame=CGRectMake(0, 0, self.tableView.width, 82);
-        _section0Footer.backgroundColor=[UIColor whiteColor];
-        UIButton *button=[UIButton buttonWithType:(UIButtonTypeCustom)];
-        button.bounds=CGRectMake(0, 0, _section0Footer.width-LEFT_RIGHT_MARGIN*2, 46);
-        [button setTitle:@"开始计算" forState:(UIControlStateNormal)];
-        [button setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
-        [button setBackgroundColor:ColorFromHexRGB(0x38ca73)];
-        [button addTarget:self action:@selector(startCalculator) forControlEvents:(UIControlEventTouchUpInside)];
-        button.center=CGPointMake(_section0Footer.width*0.5f, _section0Footer.height*0.5f);
-        button.layer.cornerRadius=CORNER_RADIUS;
-        button.clipsToBounds=YES;
-        [_section0Footer addSubview:button];
-    }
-    return _section0Footer;
-}
+//- (UIView *)section0Footer{
+//    if (_section0Footer==nil) {
+//        _section0Footer=[[UIView alloc]init];
+//        _section0Footer.frame=CGRectMake(0, 0, self.tableView.width, 82);
+//        _section0Footer.backgroundColor=[UIColor whiteColor];
+//        UIButton *button=[UIButton buttonWithType:(UIButtonTypeCustom)];
+//        button.bounds=CGRectMake(0, 0, _section0Footer.width-LEFT_RIGHT_MARGIN*2, 46);
+//        [button setTitle:@"开始计算" forState:(UIControlStateNormal)];
+//        [button setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+//        [button setBackgroundColor:ColorFromHexRGB(0x38ca73)];
+//        [button addTarget:self action:@selector(startCalculator) forControlEvents:(UIControlEventTouchUpInside)];
+//        button.center=CGPointMake(_section0Footer.width*0.5f, _section0Footer.height*0.5f);
+//        button.layer.cornerRadius=CORNER_RADIUS;
+//        button.clipsToBounds=YES;
+//        [_section0Footer addSubview:button];
+//    }
+//    return _section0Footer;
+//}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -198,7 +215,7 @@ static const CGFloat topHeight=50;
         return nil;
     }
     if (section==0) {
-        return self.section0Footer;
+        return self.footerView;
     }else{
         return nil;
     }

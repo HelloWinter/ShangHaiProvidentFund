@@ -12,6 +12,8 @@
 
 @interface CDProvidentFundDetailCell : CDBaseTableViewCell
 
+- (void)setupLeftWidth:(CGFloat)left centerWidth:(CGFloat)center rightWidth:(CGFloat)right;
+
 - (void)setCellItem:(CDAccountDetailItem *)cellItem;
 
 @end
