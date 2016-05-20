@@ -76,17 +76,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CDNetworkPointItem *item=[self.networkPointService.arrData cd_safeObjectAtIndex:indexPath.row];
-    NSArray *arr=[item.point componentsSeparatedByString:@","];
-    CLLocationDegrees latitude=[[arr firstObject] doubleValue];
-    CLLocationDegrees longitude=[[arr lastObject] doubleValue];
-    CLLocationCoordinate2D coordinate=CLLocationCoordinate2DMake(latitude, longitude);
-    
+    CLLocationCoordinate2D coordinate=[self transformFrom:item.point];
     if (CDUserLocation().length!=0) {
-        NSArray *arr=[CDUserLocation() componentsSeparatedByString:@","];
-        CLLocationDegrees latitude=[[arr firstObject] doubleValue];
-        CLLocationDegrees longitude=[[arr lastObject] doubleValue];
-        CLLocationCoordinate2D startcoordinate = CLLocationCoordinate2DMake(latitude, longitude);
-        [self pushToRoutePlanningVCWithCoordinateStart:startcoordinate end:coordinate];
+        CLLocationCoordinate2D startcoordinate = [self transformFrom:CDUserLocation()];
+        [self pushToRoutePlanningVCWithCoordinateStart:startcoordinate end:coordinate name:item.districts address:item.address];
     }else{
         [self pushToAnnotationVCWithCoordinate:coordinate district:item.districts address:item.address];
     }
@@ -102,10 +95,12 @@
 /**
  *  路线规划
  */
-- (void)pushToRoutePlanningVCWithCoordinateStart:(CLLocationCoordinate2D)startcoordinate end:(CLLocationCoordinate2D)coordinate{
+- (void)pushToRoutePlanningVCWithCoordinateStart:(CLLocationCoordinate2D)startcoordinate end:(CLLocationCoordinate2D)coordinate name:(NSString *)name address:(NSString *)address{
     CDMapRouteSearchController *routePlaning=[[CDMapRouteSearchController alloc]init];
     routePlaning.startCoordinate=startcoordinate;
     routePlaning.endCoordinate  = coordinate;
+    routePlaning.destinationName=name;
+    routePlaning.destinationAddress=address;
     routePlaning.cityname=@"上海市";
     [self.navigationController pushViewController:routePlaning animated:YES];
 }
@@ -119,6 +114,13 @@
     annotationVC.districts=district;
     annotationVC.address=address;
     [self.navigationController pushViewController:annotationVC animated:YES];
+}
+
+- (CLLocationCoordinate2D)transformFrom:(NSString *)str{
+    NSArray *arr=[str componentsSeparatedByString:@","];
+    CLLocationDegrees latitude=[[arr firstObject] doubleValue];
+    CLLocationDegrees longitude=[[arr lastObject] doubleValue];
+    return CLLocationCoordinate2DMake(latitude, longitude);
 }
 
 - (void)didReceiveMemoryWarning {

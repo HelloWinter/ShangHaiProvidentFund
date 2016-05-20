@@ -82,7 +82,7 @@ static const CGFloat topHeight=50;
     [super viewWillAppear:animated];
     [self.mapView viewWillAppear];
     self.mapView.delegate = self;
-    self.routesearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+    self.routesearch.delegate = self;
     if (!self.isShowDefault) {
         self.isShowDefault=YES;
         [self busSearch];
@@ -151,12 +151,12 @@ static const CGFloat topHeight=50;
     [self resetMapView];
     
     if (error == BMK_SEARCH_NO_ERROR) {
-        BMKTransitRouteLine* plan = (BMKTransitRouteLine*)[result.routes objectAtIndex:0];
+        BMKTransitRouteLine* plan = (BMKTransitRouteLine*)[result.routes cd_safeObjectAtIndex:0];
         // 计算路线方案中的路段数目
         NSInteger size = [plan.steps count];
         int planPointCounts = 0;
         for (int i = 0; i < size; i++) {
-            BMKTransitStep* transitStep = [plan.steps objectAtIndex:i];
+            BMKTransitStep* transitStep = [plan.steps cd_safeObjectAtIndex:i];
             if(i==0){
                 RouteAnnotation* item = [self createStartAnnotationWithCoordinate:plan.starting.location];
                 [_mapView addAnnotation:item]; // 添加起点标注
@@ -178,7 +178,7 @@ static const CGFloat topHeight=50;
         BMKMapPoint * temppoints = new BMKMapPoint[planPointCounts];
         int i = 0;
         for (int j = 0; j < size; j++) {
-            BMKTransitStep* transitStep = [plan.steps objectAtIndex:j];
+            BMKTransitStep* transitStep = [plan.steps cd_safeObjectAtIndex:j];
             for(int k=0;k<transitStep.pointsCount;k++) {
                 temppoints[i].x = transitStep.points[k].x;
                 temppoints[i].y = transitStep.points[k].y;
@@ -197,12 +197,12 @@ static const CGFloat topHeight=50;
     [self resetMapView];
     
     if (error == BMK_SEARCH_NO_ERROR) {
-        BMKDrivingRouteLine* plan = (BMKDrivingRouteLine*)[result.routes objectAtIndex:0];
+        BMKDrivingRouteLine* plan = (BMKDrivingRouteLine*)[result.routes cd_safeObjectAtIndex:0];
         // 计算路线方案中的路段数目
         NSInteger size = [plan.steps count];
         int planPointCounts = 0;
         for (int i = 0; i < size; i++) {
-            BMKDrivingStep* transitStep = [plan.steps objectAtIndex:i];
+            BMKDrivingStep* transitStep = [plan.steps cd_safeObjectAtIndex:i];
             if(i==0){
                 RouteAnnotation* item = [self createStartAnnotationWithCoordinate:plan.starting.location];
                 [_mapView addAnnotation:item]; // 添加起点标注
@@ -277,7 +277,6 @@ static const CGFloat topHeight=50;
             item.degree = transitStep.direction * 30;
             item.type = 4;
             [_mapView addAnnotation:item];
-            
             //轨迹点总数累计
             planPointCounts += transitStep.pointsCount;
         }
@@ -443,7 +442,6 @@ static const CGFloat topHeight=50;
     } else {
         NSLog(@"car检索发送失败");
     }
-    
 }
 
 -(void)walkSearch
@@ -479,23 +477,18 @@ static const CGFloat topHeight=50;
     option.from = start;
     option.to = end;
     BOOL flag = [_routesearch ridingSearch:option];
-    if (flag)
-    {
+    if (flag){
         NSLog(@"骑行规划检索发送成功");
-    }
-    else
-    {
+    }else{
         NSLog(@"骑行规划检索发送失败");
     }
 }
 
 #pragma mark - 私有
-- (NSString*)getMyBundlePath1:(NSString *)filename
-{
-    
-    NSBundle * libBundle = MYBUNDLE ;
+- (NSString*)getMyBundlePath1:(NSString *)filename{
+    NSBundle * libBundle = MYBUNDLE;
     if ( libBundle && filename ){
-        NSString * s=[[libBundle resourcePath ] stringByAppendingPathComponent : filename];
+        NSString * s=[[libBundle resourcePath] stringByAppendingPathComponent:filename];
         return s;
     }
     return nil ;
@@ -505,8 +498,7 @@ static const CGFloat topHeight=50;
 {
     BMKAnnotationView* view = nil;
     switch (routeAnnotation.type) {
-        case 0:
-        {
+        case 0:{
             view = [mapview dequeueReusableAnnotationViewWithIdentifier:@"start_node"];
             if (view == nil) {
                 view = [[BMKAnnotationView alloc]initWithAnnotation:routeAnnotation reuseIdentifier:@"start_node"];
@@ -517,8 +509,7 @@ static const CGFloat topHeight=50;
             view.annotation = routeAnnotation;
         }
             break;
-        case 1:
-        {
+        case 1:{
             view = [mapview dequeueReusableAnnotationViewWithIdentifier:@"end_node"];
             if (view == nil) {
                 view = [[BMKAnnotationView alloc]initWithAnnotation:routeAnnotation reuseIdentifier:@"end_node"];
@@ -529,8 +520,7 @@ static const CGFloat topHeight=50;
             view.annotation = routeAnnotation;
         }
             break;
-        case 2:
-        {
+        case 2:{
             view = [mapview dequeueReusableAnnotationViewWithIdentifier:@"bus_node"];
             if (view == nil) {
                 view = [[BMKAnnotationView alloc]initWithAnnotation:routeAnnotation reuseIdentifier:@"bus_node"];
@@ -540,8 +530,7 @@ static const CGFloat topHeight=50;
             view.annotation = routeAnnotation;
         }
             break;
-        case 3:
-        {
+        case 3:{
             view = [mapview dequeueReusableAnnotationViewWithIdentifier:@"rail_node"];
             if (view == nil) {
                 view = [[BMKAnnotationView alloc]initWithAnnotation:routeAnnotation reuseIdentifier:@"rail_node"];
@@ -551,8 +540,7 @@ static const CGFloat topHeight=50;
             view.annotation = routeAnnotation;
         }
             break;
-        case 4:
-        {
+        case 4:{
             view = [mapview dequeueReusableAnnotationViewWithIdentifier:@"route_node"];
             if (view == nil) {
                 view = [[BMKAnnotationView alloc]initWithAnnotation:routeAnnotation reuseIdentifier:@"route_node"];
@@ -564,11 +552,9 @@ static const CGFloat topHeight=50;
             UIImage* image = [UIImage imageWithContentsOfFile:[self getMyBundlePath1:@"images/icon_direction.png"]];
             view.image = [image imageRotatedByDegrees:routeAnnotation.degree];
             view.annotation = routeAnnotation;
-            
         }
             break;
-        case 5:
-        {
+        case 5:{
             view = [mapview dequeueReusableAnnotationViewWithIdentifier:@"waypoint_node"];
             if (view == nil) {
                 view = [[BMKAnnotationView alloc]initWithAnnotation:routeAnnotation reuseIdentifier:@"waypoint_node"];
