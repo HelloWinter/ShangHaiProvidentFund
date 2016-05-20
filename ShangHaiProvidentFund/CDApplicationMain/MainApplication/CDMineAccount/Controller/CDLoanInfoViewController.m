@@ -10,6 +10,8 @@
 #import "CDProvidentFundDetailHeaderView.h"
 #import "CDHeaderTitleView.h"
 #import "CDLoginModel.h"
+#import "CDPayAccountItem.h"
+#import "CDDynamicdetailItem.h"
 
 static const CGFloat kAccountInfoHeight = 135;
 static const CGFloat kHeaderTitleHeight = 28;
@@ -41,10 +43,9 @@ static const CGFloat kHeaderTitleHeight = 28;
     [self.view addSubview:self.detailHeaderView];
     self.tableView.top=self.detailHeaderView.bottom;
     self.tableView.height=self.tableView.height-self.detailHeaderView.height;
-//    [self refreshTableHeadView];
-//    [self refreshArrDataWithSelectIndex:self.selectIndex];
-//    [self refreshHeaderViewDataWithSelectIndex:self.selectIndex];
     self.tableView.tableHeaderView=self.headerTitleView;
+    [self refreshArrData];
+    [self refreshHeaderView];
 }
 
 - (CDLoginModel *)loginModel{
@@ -73,9 +74,69 @@ static const CGFloat kHeaderTitleHeight = 28;
 - (CDHeaderTitleView *)headerTitleView{
     if (_headerTitleView==nil) {
         _headerTitleView = [[CDHeaderTitleView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, kHeaderTitleHeight)];
-        [_headerTitleView setupWithFirstDesc:@"日期" secondDesc:@"业务描述" thirdDesc:@"发生金额"];
+        _headerTitleView.cellLayoutType=CDCellLayoutTypeLoanDetail;
+        [_headerTitleView setupWithFirstDesc:@"业务描述" secondDesc:@"本金" thirdDesc:@"利息"];
     }
     return _headerTitleView;
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.arrData.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *cellidentifier = @"cellidentifier";
+    CDProvidentFundDetailCell *cell=[tableView dequeueReusableCellWithIdentifier:cellidentifier];
+    if (!cell) {
+        cell = [[CDProvidentFundDetailCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:cellidentifier];
+        cell.cellLayoutType=CDCellLayoutTypeLoanDetail;
+    }
+    [cell setupLoanDetailItem:[self.arrData cd_safeObjectAtIndex:indexPath.section]];
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    CDDynamicdetailItem *item=[self.arrData cd_safeObjectAtIndex:section];
+    return [NSString stringWithFormat:@"    %@",item.happendate ? : @"--"];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 36;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return kHeaderTitleHeight;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.01;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - Events
+- (void)refreshArrData{
+    [self.arrData removeAllObjects];
+    [self.arrData addObjectsFromArray:self.loginModel.dynamicdetail];
+    if (self.arrData.count==0) {
+        [self.tableView cd_showWatermark:@"no_detail" animated:YES Target:nil Action:nil];
+    }else{
+        [self.tableView cd_hideWatermark:YES];
+    }
+    [self.tableView reloadData];
+}
+
+- (void)refreshHeaderView{
+    CDPayAccountItem *item=[self.loginModel.account firstObject];
+    [self.detailHeaderView setupLoanInfo:item];
 }
 
 - (void)didReceiveMemoryWarning {

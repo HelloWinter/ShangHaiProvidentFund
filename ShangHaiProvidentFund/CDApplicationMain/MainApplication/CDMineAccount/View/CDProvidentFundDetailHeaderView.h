@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class CDAccountInfoItem;
+@class CDAccountInfoItem,CDPayAccountItem;
 
 @interface CDProvidentFundDetailHeaderView : UIView
 
 - (void)setupAccountInfo:(CDAccountInfoItem *)item;
+
+- (void)setupLoanInfo:(CDPayAccountItem *)item;
 
 @end

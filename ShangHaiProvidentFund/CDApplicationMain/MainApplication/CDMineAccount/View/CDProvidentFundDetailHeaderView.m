@@ -8,6 +8,7 @@
 
 #import "CDProvidentFundDetailHeaderView.h"
 #import "CDAccountInfoItem.h"
+#import "CDPayAccountItem.h"
 
 #define kTextLabelSize 13
 
@@ -39,7 +40,7 @@
         _lbAccount=[[UILabel alloc]init];
         _lbAccount.textColor=[UIColor whiteColor];
         _lbAccount.font=[UIFont boldSystemFontOfSize:20];
-        _lbAccount.text=@"账户名";
+        _lbAccount.adjustsFontSizeToFitWidth=YES;
     }
     return _lbAccount;
 }
@@ -49,7 +50,6 @@
         _lbAccountNum=[[UILabel alloc]init];
         _lbAccountNum.textColor=[UIColor whiteColor];
         _lbAccountNum.font=[UIFont systemFontOfSize:kTextLabelSize];
-        _lbAccountNum.text=@"缴纳单位:";
     }
     return _lbAccountNum;
 }
@@ -59,7 +59,6 @@
         _lbAccountState=[[UILabel alloc]init];
         _lbAccountState.textColor=[UIColor whiteColor];
         _lbAccountState.font=[UIFont systemFontOfSize:kTextLabelSize];
-        _lbAccountState.text=@"账户状态:";
     }
     return _lbAccountState;
 }
@@ -69,7 +68,6 @@
         _lbMonthPay=[[UILabel alloc]init];
         _lbMonthPay.textColor=[UIColor whiteColor];
         _lbMonthPay.font=[UIFont systemFontOfSize:kTextLabelSize];
-        _lbMonthPay.text=@"账户余额:";
     }
     return _lbMonthPay;
 }
@@ -87,6 +85,13 @@
     self.lbAccountState.text=[NSString stringWithFormat:@"账户状态:%@   账号:%@",item.state ? : @"--",item.pri_account ? : @"--"];
     self.lbMonthPay.text=[NSString stringWithFormat:@"账户余额:%@     月缴纳:%@",(item.surplus_def ? : @"--"),(item.month_pay ? : @"--")];
     self.lbAccountNum.text=[NSString stringWithFormat:@"缴纳单位:%@",item.unit_name ? : @"--"];
+}
+
+- (void)setupLoanInfo:(CDPayAccountItem *)item{
+    self.lbAccount.text=[NSString stringWithFormat:@"贷款账户:%@",item.debtaccount ? : @"--"];
+    self.lbAccountState.text=[NSString stringWithFormat:@"状态:%@   还款方式:%@",item.state ? : @"--",item.returnwaycode ? : @"--"];
+    self.lbMonthPay.text=[NSString stringWithFormat:@"贷款开户日期:%@   期限:%@月",(item.opendate ? : @"--"),(item.limit ? : @"--")];
+    self.lbAccountNum.text=[NSString stringWithFormat:@"贷款总额:%@   贷款余额:%@",item.amount ? : @"--",item.surplus ? : @"--"];
 }
 
 @end

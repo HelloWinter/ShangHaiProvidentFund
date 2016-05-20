@@ -8,8 +8,13 @@
 
 #import "AppDelegate.h"
 #import "CDTabBarController.h"
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>
 
-@interface AppDelegate ()
+@interface AppDelegate ()<BMKGeneralDelegate,BMKLocationServiceDelegate>{
+    BMKMapManager* _mapManager;
+    BMKLocationService *_locService;
+}
 
 @end
 
@@ -17,11 +22,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self setupMapManager];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     CDTabBarController *tabBarController=[[CDTabBarController alloc]init];
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
+    
+    [self startLocation];
     return YES;
 }
 
@@ -45,6 +54,55 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - BMKGeneralDelegate
+- (void)onGetNetworkState:(int)iError{
+    if (0 == iError) {
+        NSLog(@"联网成功");
+    }else{
+        NSLog(@"onGetNetworkState %d",iError);
+    }
+    
+}
+
+- (void)onGetPermissionState:(int)iError{
+    if (0 == iError) {
+        NSLog(@"授权成功");
+    }else {
+        NSLog(@"onGetPermissionState %d",iError);
+    }
+}
+
+#pragma mark - BMKLocationServiceDelegate
+//实现相关delegate 处理位置信息更新
+//处理位置坐标更新
+- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation{
+    NSString *strCoordinate=[NSString stringWithFormat:@"%f,%f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude];
+    CDSaveUserLocation(strCoordinate);
+}
+
+- (void)didFailToLocateUserWithError:(NSError *)error{
+    CDRemoveUserLocation();
+}
+
+#pragma mark - Events
+- (void)setupMapManager{
+    // 要使用百度地图，请先启动BaiduMapManager
+    _mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定generalDelegate参数
+    BOOL ret = [_mapManager start:[CDAPPURLConfigure AMapKey]  generalDelegate:self];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+}
+
+- (void)startLocation{
+    //初始化BMKLocationService
+    _locService = [[BMKLocationService alloc]init];
+    _locService.delegate = self;
+    //启动LocationService
+    [_locService startUserLocationService];
 }
 
 @end

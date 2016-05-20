@@ -10,6 +10,11 @@
 
 @implementation CDBaseTableViewCell
 
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    [self setupCell];
+}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self setupCell];

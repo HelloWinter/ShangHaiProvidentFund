@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CDProvidentFundDetailCell.h"
 
 @interface CDHeaderTitleView : UIView
+
+@property (nonatomic, assign) CDCellLayoutType cellLayoutType;
 
 - (void)setupWithFirstDesc:(NSString *)first secondDesc:(NSString *)second thirdDesc:(NSString *)third;
 

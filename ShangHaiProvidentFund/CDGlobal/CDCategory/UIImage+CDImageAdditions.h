@@ -51,4 +51,6 @@
  */
 - (UIImage *)cd_blurredImageWithRadius:(CGFloat)radius iterations:(NSUInteger)iterations tintColor:(UIColor *)tintColor;
 
+- (UIImage*)imageRotatedByDegrees:(CGFloat)degrees;
+
 @end

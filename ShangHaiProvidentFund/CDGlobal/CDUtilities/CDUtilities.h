@@ -210,11 +210,7 @@ void addLaunchTimes();
  */
 NSString *CDURLScheme();
 
-///////////////////////////////////////////////////
-void CDSaveUserLogined(BOOL logined);
 
-BOOL CDIsUserLogined();
-///////////////////////////////////////////////////
 
 @interface CDUtilities : NSObject
 
@@ -245,8 +241,20 @@ BOOL CDIsUserLogined();
  */
 + (void)authenticateUserTouchID:(void (^)(void)) completion;
 
+/**
+ *  快速创建删除网页节点的JavaScript代码
+ *
+ *  @param elementName 要生成的元素名
+ *  @param className   网页中要删除的节点的class名
+ */
 + (NSString *)jsCodeDeleteHTMLNodeWith:(NSString *)elementName className:(NSString *)className;
 
+/**
+ *  快速创建删除网页节点的JavaScript代码
+ *
+ *  @param elementName 要生成的元素名
+ *  @param tagName   网页中要删除的节点的标签名
+ */
 + (NSString *)jsCodeDeleteHTMLNodeWith:(NSString *)elementName tagName:(NSString *)tagName;
 
 @end

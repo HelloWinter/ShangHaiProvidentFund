@@ -88,6 +88,7 @@ static const CGFloat kHeaderTitleHeight = 28;
 - (CDHeaderTitleView *)headerTitleView{
     if (_headerTitleView==nil) {
         _headerTitleView = [[CDHeaderTitleView alloc]initWithFrame:CGRectMake(0, kPageHeaderHeight, self.view.width, kHeaderTitleHeight)];
+        _headerTitleView.cellLayoutType=CDCellLayoutTypeAccountDetail;
         [_headerTitleView setupWithFirstDesc:@"日期" secondDesc:@"业务描述" thirdDesc:@"发生金额"];
     }
     return _headerTitleView;
@@ -115,9 +116,10 @@ static const CGFloat kHeaderTitleHeight = 28;
     static NSString *cellidentifier = @"cellidentifier";
     CDProvidentFundDetailCell *cell=[tableView dequeueReusableCellWithIdentifier:cellidentifier];
     if (!cell) {
-        cell = [[[NSBundle mainBundle]loadNibNamed:@"CDProvidentFundDetailCell" owner:nil options:nil]lastObject];
+        cell = [[CDProvidentFundDetailCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:cellidentifier];
+        cell.cellLayoutType=CDCellLayoutTypeAccountDetail;
     }
-    [cell setCellItem:[self.arrData cd_safeObjectAtIndex:indexPath.row]];
+    [cell setupAccountDetailItem:[self.arrData cd_safeObjectAtIndex:indexPath.row]];
     return cell;
 }
 
@@ -170,7 +172,6 @@ static const CGFloat kHeaderTitleHeight = 28;
         CDAccountInfoItem *item=[self.loginModel.supply firstObject];
         [self.detailHeaderView setupAccountInfo:item];
     }
-    
 }
 
 - (void)refreshTableHeadView{

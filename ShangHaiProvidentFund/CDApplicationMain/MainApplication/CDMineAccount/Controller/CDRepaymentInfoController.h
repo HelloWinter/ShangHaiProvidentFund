@@ -14,4 +14,6 @@
 
 @interface CDRepaymentInfoController : CDBaseTableViewController
 
+@property (nonatomic, copy) NSString *accountNum;
+
 @end

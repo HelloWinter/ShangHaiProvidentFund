@@ -29,7 +29,6 @@ static const CGFloat topHeight=50;
 @property (nonatomic, assign) SCYMortgageType mortgageType;
 @property (nonatomic, strong) SCYMortgageCalculatorModel *mortgageCalculatorModel;
 @property (nonatomic, strong) SCYPopTableView *popTableView;
-//@property (nonatomic, strong) UIView *section0Footer;
 @property (nonatomic, strong) SCYMortgageCalculatorResultItem *resultItem;
 @property (nonatomic, strong) NSMutableArray *arrData;
 @property (nonatomic, strong) CDButtonTableFooterView *footerView;
@@ -142,25 +141,6 @@ static const CGFloat topHeight=50;
     return _headerView;
 }
 
-//- (UIView *)section0Footer{
-//    if (_section0Footer==nil) {
-//        _section0Footer=[[UIView alloc]init];
-//        _section0Footer.frame=CGRectMake(0, 0, self.tableView.width, 82);
-//        _section0Footer.backgroundColor=[UIColor whiteColor];
-//        UIButton *button=[UIButton buttonWithType:(UIButtonTypeCustom)];
-//        button.bounds=CGRectMake(0, 0, _section0Footer.width-LEFT_RIGHT_MARGIN*2, 46);
-//        [button setTitle:@"开始计算" forState:(UIControlStateNormal)];
-//        [button setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
-//        [button setBackgroundColor:ColorFromHexRGB(0x38ca73)];
-//        [button addTarget:self action:@selector(startCalculator) forControlEvents:(UIControlEventTouchUpInside)];
-//        button.center=CGPointMake(_section0Footer.width*0.5f, _section0Footer.height*0.5f);
-//        button.layer.cornerRadius=CORNER_RADIUS;
-//        button.clipsToBounds=YES;
-//        [_section0Footer addSubview:button];
-//    }
-//    return _section0Footer;
-//}
-
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
@@ -214,33 +194,20 @@ static const CGFloat topHeight=50;
     if (!self.mortgageCalculatorService.isLoaded) {
         return nil;
     }
-    if (section==0) {
-        return self.footerView;
-    }else{
-        return nil;
-    }
+    return (section==0) ? self.footerView : nil;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section==1) {
-        return 160;
-    }
-    return 46;
+    return indexPath.section==1 ? 160 : 46;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section==0) {
-        return 0.01;
-    }
-    return 13;
+    return section==0 ? 0.01 : 13;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if (section==0) {
-        return 82;
-    }
-    return 0.01;
+    return (section==0) ? 82 : 0.01;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -268,7 +235,6 @@ static const CGFloat topHeight=50;
 
 - (void)request:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
     [super request:service didFailLoadWithError:error];
-    
 }
 
 #pragma mark - override

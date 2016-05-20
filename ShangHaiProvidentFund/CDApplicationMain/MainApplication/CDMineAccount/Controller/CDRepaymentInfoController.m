@@ -7,31 +7,113 @@
 //
 
 #import "CDRepaymentInfoController.h"
+#import "CDRepayInfoService.h"
+#import "CDBaseTableViewCell.h"
+#import "CDAboutUsItem.h"
 
 @interface CDRepaymentInfoController ()
+
+@property (nonatomic, strong) CDRepayInfoService *repayInfoService;
 
 @end
 
 @implementation CDRepaymentInfoController
 
+- (instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle{
+    self = [super initWithTableViewStyle:tableViewStyle];
+    if (self) {
+        self.title=@"冲还贷信息";
+        self.hidesBottomBarWhenPushed=YES;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.repayInfoService loadWithAccountNum:self.accountNum ignoreCache:NO showIndicator:YES];
 }
+
+- (CDRepayInfoService *)repayInfoService{
+    if (_repayInfoService==nil) {
+        _repayInfoService=[[CDRepayInfoService alloc]initWithDelegate:self];
+    }
+    return _repayInfoService;
+}
+
+#pragma mark - override
+- (void)startPullRefresh{
+    [self.repayInfoService loadWithAccountNum:self.accountNum ignoreCache:YES showIndicator:NO];
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.repayInfoService.arrData.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    NSArray *arr=[self.repayInfoService.arrData cd_safeObjectAtIndex:section];
+    return arr.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *cellidentifier = @"cellidentifier";
+    CDBaseTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellidentifier];
+    if (!cell) {
+        cell = [[CDBaseTableViewCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:cellidentifier];
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+        cell.textLabel.font=[UIFont systemFontOfSize:13];
+        cell.detailTextLabel.font=[UIFont systemFontOfSize:13];
+    }
+    NSArray *arr=[self.repayInfoService.arrData cd_safeObjectAtIndex:indexPath.section];
+    CDAboutUsItem *item=[arr cd_safeObjectAtIndex:indexPath.row];
+    cell.textLabel.text=item.titleText;
+    cell.detailTextLabel.text=item.detailText.length!=0 ? item.detailText : @"无";
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 40;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (section==0) {
+        return @"   基本信息";
+    }else if (section==1){
+        return @"   参与还贷人员信息";
+    }
+    return @"";
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 30;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.01;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - 
+- (void)requestDidFinished:(CDJSONBaseNetworkService *)service{
+    [super requestDidFinished:service];
+    if ([self.repayInfoService.returnCode isEqualToString:@"0"]) {
+        [self.tableView reloadData];
+    }else if ([self.repayInfoService.returnCode isEqualToString:@"1"]){
+        [CDAutoHideMessageHUD showMessage:@"没有查询到冲还贷信息"];
+//        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (void)request:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
+    [super request:service didFailLoadWithError:error];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -7,3 +7,5 @@ platform :ios, '8.0'
 pod 'AFNetworking', '~> 3.0'
 
 pod 'YYCache'
+
+pod 'BaiduMapKit' #百度地图SDK

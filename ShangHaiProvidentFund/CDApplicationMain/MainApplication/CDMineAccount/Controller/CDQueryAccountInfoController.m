@@ -18,6 +18,8 @@
 #import "CDLoginModel.h"
 #import "UIBarButtonItem+CDCategory.h"
 #import "CDAboutUsController.h"
+#import "CDLoanInfoViewController.h"
+#import "CDRepaymentInfoController.h"
 
 @interface CDQueryAccountInfoController ()<CDLoginViewControllerDelegate>
 
@@ -113,8 +115,18 @@
         case 1:
             [self pushToAccountDetailController];
             break;
-        case 2:
-            
+        case 2:{
+            switch (indexPath.row) {
+                case 0:
+                    [self pushToLoanDetailController];
+                    break;
+                case 1:
+                    [self pushToRepaymentInfoController];
+                    break;
+                default:
+                    break;
+            }
+        }
             break;
         case 3:
             
@@ -184,6 +196,26 @@
 
 - (void)pushToAccountDetailController{
     CDAccountDetailController *controller=[[CDAccountDetailController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)pushToLoanDetailController{
+    NSString *file=[CDAPPURLConfigure filePathforLoginInfo];
+    CDLoginModel *model = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
+    if (model.account.count==0 || model.dynamicdetail.count==0) {
+        [CDAutoHideMessageHUD showMessage:@"您没有贷款信息"];
+        return;
+    }
+    CDLoanInfoViewController *controller=[[CDLoanInfoViewController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)pushToRepaymentInfoController{
+    CDRepaymentInfoController *controller= [[CDRepaymentInfoController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    NSString *file=[CDAPPURLConfigure filePathforLoginInfo];
+    CDLoginModel *model = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
+    CDAccountInfoItem *accountInfoItem=[model.basic firstObject];
+    controller.accountNum=accountInfoItem.pri_account;
     [self.navigationController pushViewController:controller animated:YES];
 }
 

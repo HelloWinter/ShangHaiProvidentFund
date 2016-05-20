@@ -29,7 +29,6 @@
  */
 - (void)refresh;
 
-
 - (void)loadHTMLString:(NSString *)HTMLString;
 
 @end

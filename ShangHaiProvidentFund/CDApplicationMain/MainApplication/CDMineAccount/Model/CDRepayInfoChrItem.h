@@ -12,7 +12,7 @@
 
 @property (nonatomic, copy) NSString *begin_date;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *hk_order;
+@property (nonatomic, strong) NSNumber *hk_order;
 @property (nonatomic, copy) NSString *relation_code;
 
 @end

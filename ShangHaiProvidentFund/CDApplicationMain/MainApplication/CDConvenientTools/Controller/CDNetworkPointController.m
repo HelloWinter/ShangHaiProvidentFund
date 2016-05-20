@@ -10,6 +10,8 @@
 #import "CDNetworkPointItem.h"
 #import "CDNetworkPointService.h"
 #import "CDNetWorkPointCell.h"
+#import "CDMapAnnotationController.h"
+#import "CDMapRouteSearchController.h"
 
 @interface CDNetworkPointController ()
 
@@ -23,6 +25,7 @@
     self = [super init];
     if (self) {
         self.title=@"住房公积金管理中心网点";
+        self.hidesBottomBarWhenPushed=YES;
     }
     return self;
 }
@@ -72,12 +75,50 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    CDNetworkPointItem *item=[self.networkPointService.arrData cd_safeObjectAtIndex:indexPath.row];
+    NSArray *arr=[item.point componentsSeparatedByString:@","];
+    CLLocationDegrees latitude=[[arr firstObject] doubleValue];
+    CLLocationDegrees longitude=[[arr lastObject] doubleValue];
+    CLLocationCoordinate2D coordinate=CLLocationCoordinate2DMake(latitude, longitude);
+    
+    if (CDUserLocation().length!=0) {
+        NSArray *arr=[CDUserLocation() componentsSeparatedByString:@","];
+        CLLocationDegrees latitude=[[arr firstObject] doubleValue];
+        CLLocationDegrees longitude=[[arr lastObject] doubleValue];
+        CLLocationCoordinate2D startcoordinate = CLLocationCoordinate2DMake(latitude, longitude);
+        [self pushToRoutePlanningVCWithCoordinateStart:startcoordinate end:coordinate];
+    }else{
+        [self pushToAnnotationVCWithCoordinate:coordinate district:item.districts address:item.address];
+    }
     
 }
 
 #pragma mark - override
 - (void)startPullRefresh{
     [self.networkPointService loadNetworkPointIgnoreCache:YES ShowIndicator:NO];
+}
+
+#pragma mark - Events
+/**
+ *  路线规划
+ */
+- (void)pushToRoutePlanningVCWithCoordinateStart:(CLLocationCoordinate2D)startcoordinate end:(CLLocationCoordinate2D)coordinate{
+    CDMapRouteSearchController *routePlaning=[[CDMapRouteSearchController alloc]init];
+    routePlaning.startCoordinate=startcoordinate;
+    routePlaning.endCoordinate  = coordinate;
+    routePlaning.cityname=@"上海市";
+    [self.navigationController pushViewController:routePlaning animated:YES];
+}
+
+/**
+ *  地图标注
+ */
+- (void)pushToAnnotationVCWithCoordinate:(CLLocationCoordinate2D)coordinate district:(NSString *)district address:(NSString *)address{
+    CDMapAnnotationController *annotationVC=[[CDMapAnnotationController alloc]init];
+    annotationVC.coordinate=coordinate;
+    annotationVC.districts=district;
+    annotationVC.address=address;
+    [self.navigationController pushViewController:annotationVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

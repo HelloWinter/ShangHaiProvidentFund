@@ -241,5 +241,4 @@ description:__VA_ARGS__];                                                    \
 
 #define NAVIGATION_COLOR ColorFromHexRGB(0x01b2d3)
 
-
 #endif

@@ -39,8 +39,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.tableFooterView=self.footerView;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(controlTextDidChange:) name:UITextViewTextDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(controlTextDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (CDButtonTableFooterView *)footerView{
@@ -98,11 +107,7 @@
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     CDOpinionsSuggestionsItem *item=[self.opinionsSuggestionsModel.arrData cd_safeObjectAtIndex:indexPath.row];
-    if ([item.type isEqualToString:@"1"]) {
-        return 100;
-    }else{
-        return 46;
-    }
+    return ([item.type isEqualToString:@"1"]) ? 100 : 46;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

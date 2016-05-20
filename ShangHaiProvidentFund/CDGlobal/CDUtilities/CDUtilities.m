@@ -530,21 +530,6 @@ NSString *CDURLScheme() {
     return scheme;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////
-
-static NSString *const kUserLoginedKey = @"kUserLoginedKey";
-
-void CDSaveUserLogined(BOOL logined) {
-    [[NSUserDefaults standardUserDefaults] setBool:logined forKey:kUserLoginedKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-BOOL CDIsUserLogined() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:kUserLoginedKey];
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////
-
 @implementation CDUtilities
 
 + (NSString *)transformToStringDateFromTimestamp:(NSTimeInterval)timestamp WithDateFormat:(NSString *)dateFormat{

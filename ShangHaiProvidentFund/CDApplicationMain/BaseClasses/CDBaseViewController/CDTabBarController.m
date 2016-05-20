@@ -31,7 +31,7 @@
     [self.tabBar setTintColor:[UIColor whiteColor]];
     //去除顶部的线
     [self.tabBar setShadowImage:[UIImage new]];
-    [self.tabBar setBackgroundImage:[UIImage cd_imageWithColor:colorForHex(@"#01b2d3")]];
+    [self.tabBar setBackgroundImage:[UIImage cd_imageWithColor:NAVIGATION_COLOR]];
 //    [[UITabBar appearance]setShadowImage:[UIImage new]];
 //    [[UITabBar appearance]setBackgroundImage:[UIImage imageNamed:@"minecenter_headbackground"]];
     

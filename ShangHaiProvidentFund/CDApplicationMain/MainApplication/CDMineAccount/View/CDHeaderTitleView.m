@@ -71,12 +71,17 @@
     return _lbAccountChange;
 }
 
-
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.lbDate.frame=CGRectMake(0, 0, 60, self.height);
-    self.lbDescription.frame=CGRectMake(self.lbDate.right, 0, self.width-120, self.height);
-    self.lbAccountChange.frame=CGRectMake(self.lbDescription.right, 0, 60, self.height);
+    if (self.cellLayoutType==CDCellLayoutTypeAccountDetail) {
+        self.lbDate.frame=CGRectMake(0, 0, 70, self.height);
+        self.lbDescription.frame=CGRectMake(self.lbDate.right, 0, self.width-130, self.height);
+        self.lbAccountChange.frame=CGRectMake(self.lbDescription.right, 0, 60, self.height);
+    }else if (self.cellLayoutType==CDCellLayoutTypeLoanDetail){
+        self.lbDate.frame=CGRectMake(0, 0, self.width-130, self.height);
+        self.lbDescription.frame=CGRectMake(self.lbDate.right, 0, 70, self.height);
+        self.lbAccountChange.frame=CGRectMake(self.lbDescription.right, 0, 60, self.height);
+    }
 }
 
 - (void)setupWithFirstDesc:(NSString *)first secondDesc:(NSString *)second thirdDesc:(NSString *)third{

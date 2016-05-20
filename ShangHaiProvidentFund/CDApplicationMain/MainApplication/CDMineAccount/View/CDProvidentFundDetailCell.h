@@ -8,12 +8,19 @@
 
 #import "CDBaseTableViewCell.h"
 
-@class CDAccountDetailItem;
+typedef NS_ENUM(NSUInteger,CDCellLayoutType){
+    CDCellLayoutTypeAccountDetail,
+    CDCellLayoutTypeLoanDetail
+};
+
+@class CDAccountDetailItem,CDDynamicdetailItem;
 
 @interface CDProvidentFundDetailCell : CDBaseTableViewCell
 
-- (void)setupLeftWidth:(CGFloat)left centerWidth:(CGFloat)center rightWidth:(CGFloat)right;
+@property (nonatomic, assign) CDCellLayoutType cellLayoutType;
 
-- (void)setCellItem:(CDAccountDetailItem *)cellItem;
+- (void)setupAccountDetailItem:(CDAccountDetailItem *)cellItem;
+
+- (void)setupLoanDetailItem:(CDDynamicdetailItem *)cellItem;
 
 @end

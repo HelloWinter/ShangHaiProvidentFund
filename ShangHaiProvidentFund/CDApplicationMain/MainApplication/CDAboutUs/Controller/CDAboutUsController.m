@@ -242,8 +242,6 @@
     [CDKeyWindow.rootViewController presentViewController:alert animated:YES completion:NULL];
 }
 
-
-
 - (void)footerViewButtonClicked{
     if (CDIsUserLogined()) {
         CDSaveUserLogined(NO);

@@ -21,8 +21,22 @@ NSString* CDURLWithAPI(NSString* api);
 
 NSString* CDWebURLWithAPI(NSString* api);
 
+///////////////////////////////////////////////////
+void CDSaveUserLogined(BOOL logined);
+
+BOOL CDIsUserLogined();
+///////////////////////////////////////////////////
+void CDSaveUserLocation(NSString *location);
+
+NSString *CDUserLocation();
+
+void CDRemoveUserLocation();
+///////////////////////////////////////////////////
+
 @interface CDAPPURLConfigure : NSObject
 
 + (NSString *)filePathforLoginInfo;
+
++ (NSString *)AMapKey;
 
 @end

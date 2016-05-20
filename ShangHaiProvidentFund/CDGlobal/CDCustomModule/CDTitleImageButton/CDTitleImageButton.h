@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger,CDBtnType) {
+    /**
+     *  图片在上，文字在下
+     */
     CDBtnTypeUpImageDownTitle,
+    /**
+     *  图片在右，文字在左
+     */
     CDBtnTypeRightImageLeftTitle,
 };
 

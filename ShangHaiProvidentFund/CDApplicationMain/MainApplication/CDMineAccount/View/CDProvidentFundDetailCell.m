@@ -9,6 +9,7 @@
 #import "CDProvidentFundDetailCell.h"
 #import "CDAccountDetailItem.h"
 #import "NSString+CDEncryption.h"
+#import "CDDynamicdetailItem.h"
 
 @interface CDProvidentFundDetailCell ()
 
@@ -16,9 +17,10 @@
 @property (strong, nonatomic) UILabel *lbCompany;
 @property (strong, nonatomic) UILabel *lbMonthPay;
 
-@property (nonatomic, assign) CGFloat leftWidth;
-@property (nonatomic, assign) CGFloat centerWidth;
-@property (nonatomic, assign) CGFloat rightWidth;
+
+//@property (nonatomic, assign) CGFloat leftWidth;
+//@property (nonatomic, assign) CGFloat centerWidth;
+//@property (nonatomic, assign) CGFloat rightWidth;
 
 @end
 
@@ -32,13 +34,6 @@
         [self.contentView addSubview:self.lbMonthPay];
     }
     return self;
-}
-
-- (void)setupLeftWidth:(CGFloat)left centerWidth:(CGFloat)center rightWidth:(CGFloat)right{
-    CGFloat width=left+center+right;
-    self.leftWidth=left/width*self.contentView.width;
-    self.centerWidth=center/width*self.contentView.width;
-    self.rightWidth=self.contentView.width-self.leftWidth-self.rightWidth;
 }
 
 - (UILabel *)lbDate{
@@ -71,19 +66,26 @@
     return _lbMonthPay;
 }
 
-- (void)setCellItem:(CDAccountDetailItem *)item{
-    NSString *strSubDate=item.time;
+- (void)setupAccountDetailItem:(CDAccountDetailItem *)cellItem{
+    NSString *strSubDate=cellItem.time;
     strSubDate = [strSubDate stringByReplacingOccurrencesOfString:@"年" withString:@""];
     strSubDate = [strSubDate stringByReplacingOccurrencesOfString:@"月" withString:@""];
     strSubDate = [strSubDate stringByReplacingOccurrencesOfString:@"日" withString:@""];
-    self.lbDate.text=strSubDate;
-    self.lbCompany.text=item.summary ? : @"";
-    NSString *strAmount=item.surplus_def_hp;
-    if ([strAmount hasSuffix:@"元"]) {
-        NSRange range=[strAmount rangeOfString:@"元"];
-        strAmount=[strAmount substringToIndex:range.location];
-    }
-    self.lbMonthPay.text=strAmount;
+    NSString *strAmount=[self removeYUAN:cellItem.surplus_def_hp];
+    [self setupLeftText:strSubDate centerText:(cellItem.summary ? : @"--") rightText:strAmount];
+}
+
+- (void)setupLoanDetailItem:(CDDynamicdetailItem *)cellItem{
+    NSString *strDesc=cellItem.summary.length!=0 ? cellItem.summary : @"--";
+    NSString *strAmount=[self removeYUAN:cellItem.corpushappen];
+    NSString *strInterest=[self removeYUAN:cellItem.interesthappen];
+    [self setupLeftText:strDesc centerText:strAmount rightText:strInterest];
+}
+
+- (void)setupLeftText:(NSString *)left centerText:(NSString *)center rightText:(NSString *)right{
+    self.lbDate.text=left;
+    self.lbCompany.text=center;
+    self.lbMonthPay.text=right;
 }
 
 - (void)layoutSubviews{
@@ -94,10 +96,23 @@
     [self.lbCompany.layer setBorderWidth:0.5f];
     [self.lbMonthPay.layer setBorderColor:ColorFromHexRGB(0xe0e0e0).CGColor];
     [self.lbMonthPay.layer setBorderWidth:0.5f];
-    
-    self.lbDate.frame=CGRectMake(0, 0, self.leftWidth, self.height);
-    self.lbCompany.frame=CGRectMake(self.lbDate.right, 0, self.centerWidth, self.height);
-    self.lbMonthPay.frame=CGRectMake(self.lbCompany.right, 0, self.rightWidth, self.height);
+    if (self.cellLayoutType==CDCellLayoutTypeAccountDetail) {
+        self.lbDate.frame=CGRectMake(0, 0, 70, self.height);
+        self.lbCompany.frame=CGRectMake(self.lbDate.right, 0, self.contentView.width-130, self.height);
+        self.lbMonthPay.frame=CGRectMake(self.lbCompany.right, 0, 60, self.height);
+    }else if (self.cellLayoutType==CDCellLayoutTypeLoanDetail){
+        self.lbDate.frame=CGRectMake(0, 0, self.contentView.width-130, self.height);
+        self.lbCompany.frame=CGRectMake(self.lbDate.right, 0, 70, self.height);
+        self.lbMonthPay.frame=CGRectMake(self.lbCompany.right, 0, 60, self.height);
+    }
+}
+
+- (NSString *)removeYUAN:(NSString *)strAmount{
+    if ([strAmount hasSuffix:@"元"]) {
+        NSRange range=[strAmount rangeOfString:@"元"];
+        strAmount=[strAmount substringToIndex:range.location];
+    }
+    return strAmount;
 }
 
 @end

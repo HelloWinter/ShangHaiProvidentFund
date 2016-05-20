@@ -32,7 +32,7 @@
 //    [self.navigationBar setBarTintColor:ColorFromHexRGB(0x01b2d3)];//
     //不带有分割线
     self.navigationBar.shadowImage = [[UIImage alloc]init];
-    [self.navigationBar setBackgroundImage:[UIImage cd_imageWithColor:ColorFromHexRGB(0x01b2d3)] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setBackgroundImage:[UIImage cd_imageWithColor:NAVIGATION_COLOR] forBarMetrics:UIBarMetricsDefault];
 }
 
 @end
