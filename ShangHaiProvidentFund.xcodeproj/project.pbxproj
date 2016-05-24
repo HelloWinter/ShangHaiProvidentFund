@@ -1126,6 +1126,7 @@
 		6E6ADB031CD892B200838B61 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CD;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "cheng dong";
 				TargetAttributes = {

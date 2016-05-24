@@ -25,7 +25,6 @@
 
 @property (nonatomic, strong) CDQueryAccountInfoModel *queryAccountInfoModel;
 
-
 @end
 
 @implementation CDQueryAccountInfoController
