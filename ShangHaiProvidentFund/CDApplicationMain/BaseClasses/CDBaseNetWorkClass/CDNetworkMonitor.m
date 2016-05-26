@@ -17,16 +17,16 @@
     [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         switch (status){
             case AFNetworkReachabilityStatusUnknown: // 未知网络
-                CDPRINT(@"未知网络");
+                CDLog(@"未知网络");
                 break;
             case AFNetworkReachabilityStatusNotReachable: // 没有网络(断网)
                 [CDAutoHideMessageHUD showMessage:@"无网络"];
                 break;
             case AFNetworkReachabilityStatusReachableViaWWAN: // 手机自带网络
-                CDPRINT(@"手机自带网络");
+                CDLog(@"手机自带网络");
                 break;
             case AFNetworkReachabilityStatusReachableViaWiFi: // WIFI
-                CDPRINT(@"WIFI");
+                CDLog(@"WIFI");
                 break;
         }
     }];

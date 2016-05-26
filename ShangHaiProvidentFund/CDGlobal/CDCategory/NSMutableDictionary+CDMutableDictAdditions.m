@@ -12,7 +12,7 @@
 
 - (void)cd_safeSetObject:(id)anObject forKey:(id <NSCopying>)aKey {
     if(!aKey || !anObject) {
-        NSLog(@"--- setObject:forKey: key and object must not nil");
+        CDLog(@"--- setObject:forKey: key and object must not nil");
     } else {
         [self setObject:anObject forKey:aKey];
     }

@@ -21,11 +21,11 @@
 
 - (id)cd_safeObjectAtIndex:(NSUInteger)index{
     if(self.count == 0) {
-        CDPRINT(@"--- array have no objects ---");
+        CDLog(@"--- array have no objects ---");
         return (nil);
     }
     if(index > MAX(self.count - 1, 0)) {
-        CDPRINT(@"--- index:%li out of array range ---", (long)index);
+        CDLog(@"--- index:%li out of array range ---", (long)index);
         return (nil);
     }
     return ([self objectAtIndex:index]);

@@ -347,7 +347,7 @@ NSString *CDKeyChainUUID(){
                                        updateExisting:YES
                                                 error:&error ];
         if (!saved) {
-            CDPRINT(@"保存时出错：%@", error);
+            CDLog(@"保存时出错：%@", error);
         }
         error = nil;
         return str;
@@ -392,7 +392,7 @@ void startMotion(id target,SEL action){
     CMMotionManager* motion = shareMotion();
     if ([motion isDeviceMotionAvailable] == YES) {
         [motion startDeviceMotionUpdates];
-        CDPRINT(@"motionStart!");
+        CDLog(@"motionStart!");
         [motion setDeviceMotionUpdateInterval:0.2];
         
         __block typeof(target) blockTarget = target;
@@ -409,7 +409,7 @@ void startMotion(id target,SEL action){
             a.z = ABS(acceleration.z);
             
             static NSInteger rotateCount = 0;
-            //            CDPRINT(@"x:%f,y:%f,z:%f",a.x,a.y,a.z);
+            //            CDLog(@"x:%f,y:%f,z:%f",a.x,a.y,a.z);
             if ((a.x>devicevalue &&a.x<10)||a.y>devicevalue||a.z>devicevalue){
                 if (rotateCount==0){
                     if (blockTarget && [blockTarget respondsToSelector:action]){
@@ -435,7 +435,7 @@ void startMotion(id target,SEL action){
 void stopMotion(){
     if (shareMotion().deviceMotionActive){
         [shareMotion() stopDeviceMotionUpdates];
-        CDPRINT(@"motionStoped!");
+        CDLog(@"motionStoped!");
     }
 }
 
@@ -570,20 +570,20 @@ NSString *CDURLScheme() {
                     completion();
                 }
             } else {
-                CDPRINT(@"%@",error.localizedDescription);
+                CDLog(@"%@",error.localizedDescription);
                 switch (error.code) {
                     case LAErrorSystemCancel:{
-                        CDPRINT(@"指纹验证被系统取消");
+                        CDLog(@"指纹验证被系统取消");
                         //切换到其他APP，系统取消验证Touch ID
                         break;
                     }
                     case LAErrorUserCancel:{
-                        CDPRINT(@"指纹验证被用户取消");
+                        CDLog(@"指纹验证被用户取消");
                         //用户取消验证Touch ID
                         break;
                     }
                     case LAErrorUserFallback:{
-                        CDPRINT(@"选择输入密码");
+                        CDLog(@"选择输入密码");
                         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                             //用户选择输入密码，切换主线程处理
                         }];
@@ -602,19 +602,19 @@ NSString *CDURLScheme() {
         //不支持指纹识别，LOG出错误详情
         switch (error.code) {
             case LAErrorTouchIDNotEnrolled:{
-                CDPRINT(@"TouchID is not enrolled");
+                CDLog(@"TouchID is not enrolled");
                 break;
             }
             case LAErrorPasscodeNotSet:{
-                CDPRINT(@"A passcode has not been set");
+                CDLog(@"A passcode has not been set");
                 break;
             }
             default:{
-                CDPRINT(@"TouchID not available");
+                CDLog(@"TouchID not available");
                 break;
             }
         }
-        CDPRINT(@"%@",error.localizedDescription);
+        CDLog(@"%@",error.localizedDescription);
     }
 }
 

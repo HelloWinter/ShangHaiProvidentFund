@@ -114,8 +114,8 @@
     
     //打印请求信息
     NSString *requestMethod=_httpRequestMethod==kHttpRequestTypePOST ? @"POST":@"GET";
-    CDPRINT(@">>> %@ request url:%@",requestMethod,urlString);
-    CDPRINT(@">>> %@ request parameters:\n%@",requestMethod,params);
+    CDLog(@">>> %@ request url:%@",requestMethod,urlString);
+    CDLog(@">>> %@ request parameters:\n%@",requestMethod,params);
     [CDNetworkRequestManager addService:self];
 }
 
@@ -137,7 +137,7 @@
 
 /* 请求完成 */
 - (void)p_taskDidFinish:(NSURLSessionTask *)task responseObject:(id)responseObject {
-    CDPRINT(@">>> URL:%@ response data:%@ ", task.currentRequest.URL,responseObject);
+    CDLog(@">>> URL:%@ response data:%@ ", task.currentRequest.URL,responseObject);
     if (self.task.state == NSURLSessionTaskStateCompleted) {
         [self successfulGetResponse:responseObject];
         self.task = nil;
@@ -147,7 +147,7 @@
 
 /* 请求失败 */
 - (void)p_taskDidFail:(NSURLSessionTask *)task error:(NSError *)error {
-    CDPRINT(@">>> response error:%@",[error localizedDescription]);// URL:%@ , task.currentRequest.URL
+    CDLog(@">>> response error:%@",[error localizedDescription]);// URL:%@ , task.currentRequest.URL
     if (self.task.state == NSURLSessionTaskStateCompleted || self.task.state == NSURLSessionTaskStateCanceling) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(request:didFailLoadWithError:)]) {
             [self.delegate request:self didFailLoadWithError:error];

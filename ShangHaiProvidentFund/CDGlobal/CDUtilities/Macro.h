@@ -16,10 +16,10 @@ typedef NS_ENUM(NSUInteger, HttpRequestType) {
 
 
 #ifdef DEBUG //调试状态下打开LOG
-#define CDPRINT(...)  NSLog(__VA_ARGS__)
+#define CDLog(...)  NSLog(__VA_ARGS__)
 
 #else
-#define CDPRINT(...)
+#define CDLog(...)
 
 #endif
 

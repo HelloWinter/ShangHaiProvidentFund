@@ -162,7 +162,7 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
     [self updateNavgationLeftBtn];
     if (self.javaScriptCode) {
         [webView evaluateJavaScript:self.javaScriptCode completionHandler:^(id _Nullable handle, NSError * _Nullable error) {
-//            NSLog(@"js调用了");
+//            CDLog(@"js调用了");
         }];
     }
 }

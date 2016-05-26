@@ -309,7 +309,7 @@ static const CGFloat topHeight=50;
  *@param error 错误号，@see BMKSearchErrorCode
  */
 - (void)onGetRidingRouteResult:(BMKRouteSearch *)searcher result:(BMKRidingRouteResult *)result errorCode:(BMKSearchErrorCode)error {
-    NSLog(@"onGetRidingRouteResult error:%d", (int)error);
+    CDLog(@"onGetRidingRouteResult error:%d", (int)error);
     NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
     [_mapView removeAnnotations:array];
     array = [NSArray arrayWithArray:_mapView.overlays];
@@ -418,9 +418,9 @@ static const CGFloat topHeight=50;
     BOOL flag = [_routesearch transitSearch:transitRouteSearchOption];
     
     if(flag){
-        NSLog(@"bus检索发送成功");
+        CDLog(@"bus检索发送成功");
     }else{
-        NSLog(@"bus检索发送失败");
+        CDLog(@"bus检索发送失败");
     }
 }
 
@@ -438,9 +438,9 @@ static const CGFloat topHeight=50;
     drivingRouteSearchOption.to = end;
     BOOL flag = [_routesearch drivingSearch:drivingRouteSearchOption];
     if(flag){
-        NSLog(@"car检索发送成功");
+        CDLog(@"car检索发送成功");
     } else {
-        NSLog(@"car检索发送失败");
+        CDLog(@"car检索发送失败");
     }
 }
 
@@ -459,9 +459,9 @@ static const CGFloat topHeight=50;
     walkingRouteSearchOption.to = end;
     BOOL flag = [_routesearch walkingSearch:walkingRouteSearchOption];
     if(flag){
-        NSLog(@"walk检索发送成功");
+        CDLog(@"walk检索发送成功");
     } else {
-        NSLog(@"walk检索发送失败");
+        CDLog(@"walk检索发送失败");
     }
 }
 
@@ -478,9 +478,9 @@ static const CGFloat topHeight=50;
     option.to = end;
     BOOL flag = [_routesearch ridingSearch:option];
     if (flag){
-        NSLog(@"骑行规划检索发送成功");
+        CDLog(@"骑行规划检索发送成功");
     }else{
-        NSLog(@"骑行规划检索发送失败");
+        CDLog(@"骑行规划检索发送失败");
     }
 }
 

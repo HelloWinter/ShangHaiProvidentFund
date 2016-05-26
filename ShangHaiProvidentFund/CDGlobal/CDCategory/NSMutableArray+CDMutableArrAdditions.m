@@ -22,7 +22,7 @@
 
 - (void)cd_safeAddObject:(id)anObject{
     if(!anObject) {
-        NSLog(@"--- addObject:object must not nil ---");
+        CDLog(@"--- addObject:object must not nil ---");
         return;
     }
     [self addObject:anObject];
@@ -30,11 +30,11 @@
 
 - (void)cd_safeInsertObject:(id)anObject atIndex:(NSUInteger)index{
     if(index > MAX(self.count - 1, 0)) {
-        NSLog(@"--- insertObject:atIndex: out of array range ---");
+        CDLog(@"--- insertObject:atIndex: out of array range ---");
         return;
     }
     if(!anObject) {
-        NSLog(@"--- insertObject:atIndex: object must not nil ---");
+        CDLog(@"--- insertObject:atIndex: object must not nil ---");
         return;
     }
     [self insertObject:anObject atIndex:index];
@@ -42,7 +42,7 @@
 
 - (void)cd_safeRemoveObjectAtIndex:(NSUInteger)index{
     if(index > MAX(self.count - 1, 0)) {
-        NSLog(@"--- removeObjectAtIndex: out of array range ---");
+        CDLog(@"--- removeObjectAtIndex: out of array range ---");
         return;
     }
     [self removeObjectAtIndex:index];
@@ -50,11 +50,11 @@
 
 - (void)cd_safeReplaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject{
     if(index > MAX(self.count - 1, 0)) {
-        NSLog(@"--- replaceObjectAtIndex:atIndex: out of array range ---");
+        CDLog(@"--- replaceObjectAtIndex:atIndex: out of array range ---");
         return;
     }
     if(!anObject) {
-        NSLog(@"--- replaceObjectAtIndex:atIndex: object must not nil ---");
+        CDLog(@"--- replaceObjectAtIndex:atIndex: object must not nil ---");
         return;
     }
     [self replaceObjectAtIndex:index withObject:anObject];
@@ -62,11 +62,11 @@
 
 - (id)cd_safeObjectAtIndex:(NSUInteger)index{
     if(self.count == 0) {
-        NSLog(@"--- mutableArray have no objects ---");
+        CDLog(@"--- mutableArray have no objects ---");
         return (nil);
     }
     if(index > MAX(self.count - 1, 0)) {
-        NSLog(@"--- index:%li out of mutableArray range ---", (long)index);
+        CDLog(@"--- index:%li out of mutableArray range ---", (long)index);
         return (nil);
     }
     return ([self objectAtIndex:index]);

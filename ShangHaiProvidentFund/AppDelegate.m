@@ -59,18 +59,18 @@
 #pragma mark - BMKGeneralDelegate
 - (void)onGetNetworkState:(int)iError{
     if (0 == iError) {
-        NSLog(@"联网成功");
+        CDLog(@"联网成功");
     }else{
-        NSLog(@"onGetNetworkState %d",iError);
+        CDLog(@"onGetNetworkState %d",iError);
     }
     
 }
 
 - (void)onGetPermissionState:(int)iError{
     if (0 == iError) {
-        NSLog(@"授权成功");
+        CDLog(@"授权成功");
     }else {
-        NSLog(@"onGetPermissionState %d",iError);
+        CDLog(@"onGetPermissionState %d",iError);
     }
 }
 
@@ -93,7 +93,7 @@
     // 如果要关注网络及授权验证事件，请设定generalDelegate参数
     BOOL ret = [_mapManager start:[CDAPPURLConfigure AMapKey]  generalDelegate:self];
     if (!ret) {
-        NSLog(@"manager start failed!");
+        CDLog(@"manager start failed!");
     }
 }
 
