@@ -15,7 +15,7 @@
 - (instancetype)init{
     self =[super init];
     if (self) {
-        NSString *filepath=[[NSBundle mainBundle]pathForResource:@"loanconfigure.dat" ofType:nil];
+        NSString *filepath=[[NSBundle mainBundle]pathForResource:@"mortgageCalculator.conf" ofType:nil];
         NSData *data=[NSData dataWithContentsOfFile:filepath];
         
         NSError *decryptedError=nil;

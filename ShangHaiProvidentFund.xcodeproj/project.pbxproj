@@ -65,7 +65,7 @@
 		6E1A215D1CEB285F00D21143 /* SCYMortgageCalculatorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1A21561CEB285F00D21143 /* SCYMortgageCalculatorModel.m */; };
 		6E1A215E1CEB285F00D21143 /* SCYMortgageCalculatorResultItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1A21581CEB285F00D21143 /* SCYMortgageCalculatorResultItem.m */; };
 		6E1A215F1CEB285F00D21143 /* SCYMortgageCalculatorSourceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1A215A1CEB285F00D21143 /* SCYMortgageCalculatorSourceItem.m */; };
-		6E1A21611CEB2AC000D21143 /* loanconfigure.dat in Resources */ = {isa = PBXBuildFile; fileRef = 6E1A21601CEB2AC000D21143 /* loanconfigure.dat */; };
+		6E1A21611CEB2AC000D21143 /* mortgageCalculator.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */; };
 		6E463CDF1CD9ABD000527950 /* CDAboutUsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E463CDE1CD9ABD000527950 /* CDAboutUsModel.m */; };
 		6E463CE21CD9AE7D00527950 /* CDBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E463CE11CD9AE7D00527950 /* CDBaseModel.m */; };
 		6E463CE61CD9D7F700527950 /* CDButtonTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E463CE41CD9D7F700527950 /* CDButtonTableFooterView.m */; };
@@ -89,6 +89,20 @@
 		6E5C697F1CE34F9300F17AD0 /* CDLoginConfigureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C697E1CE34F9300F17AD0 /* CDLoginConfigureModel.m */; };
 		6E5E5E2E1CE43C9C00E2C025 /* CDLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E5E2D1CE43C9C00E2C025 /* CDLoginModel.m */; };
 		6E5E5E311CE4684E00E2C025 /* CDQueryAccountBasicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E5E301CE4684E00E2C025 /* CDQueryAccountBasicItem.m */; };
+		6E64E5EB1CF7E8780061E67C /* extractmeasurement.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E64E5E91CF7E8780061E67C /* extractmeasurement.json */; };
+		6E64E5EC1CF7E8780061E67C /* loanmeasurement.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E64E5EA1CF7E8780061E67C /* loanmeasurement.json */; };
+		6E64E5EF1CF7EB510061E67C /* SCYLoanConfigureItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E64E5EE1CF7EB510061E67C /* SCYLoanConfigureItem.m */; };
+		6E64E5F21CF7EB710061E67C /* SCYPageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E64E5F11CF7EB710061E67C /* SCYPageItem.m */; };
+		6E64E5F51CF7EB960061E67C /* SCYButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E64E5F41CF7EB960061E67C /* SCYButtonItem.m */; };
+		6E64E5FA1CF7EBAD0061E67C /* SCYSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E64E5F71CF7EBAD0061E67C /* SCYSectionItem.m */; };
+		6E64E5FB1CF7EBAD0061E67C /* SCYActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E64E5F91CF7EBAD0061E67C /* SCYActionItem.m */; };
+		6E64E6001CF7ED370061E67C /* SCYSubItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E64E5FD1CF7ED370061E67C /* SCYSubItem.m */; };
+		6E64E6011CF7ED370061E67C /* SCYRowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E64E5FF1CF7ED370061E67C /* SCYRowItem.m */; };
+		6E64E6091CF8177D0061E67C /* extractguide.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E64E6071CF8177D0061E67C /* extractguide.json */; };
+		6E64E60A1CF8177D0061E67C /* loanguide.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E64E6081CF8177D0061E67C /* loanguide.json */; };
+		6E64E60D1CF819260061E67C /* CDMeasurementGuideModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E64E60C1CF819260061E67C /* CDMeasurementGuideModel.m */; };
+		6E64E6101CF819600061E67C /* SCYLinkItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E64E60F1CF819600061E67C /* SCYLinkItem.m */; };
+		6E64E6141CF81DD70061E67C /* SCYMeasurementResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E64E6131CF81DD70061E67C /* SCYMeasurementResultController.m */; };
 		6E66E9F21CE02DD700111C2C /* CDNewsAndTrendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E66E9F11CE02DD700111C2C /* CDNewsAndTrendsCell.xib */; };
 		6E66EA171CE0631700111C2C /* CDTitleImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E66EA161CE0631700111C2C /* CDTitleImageButton.m */; };
 		6E67A79A1CDCA6BC00436E93 /* CDLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E67A7991CDCA6BC00436E93 /* CDLoadMoreCell.m */; };
@@ -264,7 +278,7 @@
 		6E1A21581CEB285F00D21143 /* SCYMortgageCalculatorResultItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYMortgageCalculatorResultItem.m; sourceTree = "<group>"; };
 		6E1A21591CEB285F00D21143 /* SCYMortgageCalculatorSourceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYMortgageCalculatorSourceItem.h; sourceTree = "<group>"; };
 		6E1A215A1CEB285F00D21143 /* SCYMortgageCalculatorSourceItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYMortgageCalculatorSourceItem.m; sourceTree = "<group>"; };
-		6E1A21601CEB2AC000D21143 /* loanconfigure.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = loanconfigure.dat; sourceTree = "<group>"; };
+		6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mortgageCalculator.conf; sourceTree = "<group>"; };
 		6E463CDD1CD9ABD000527950 /* CDAboutUsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsModel.h; sourceTree = "<group>"; };
 		6E463CDE1CD9ABD000527950 /* CDAboutUsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsModel.m; sourceTree = "<group>"; };
 		6E463CE01CD9AE7D00527950 /* CDBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseModel.h; sourceTree = "<group>"; };
@@ -309,6 +323,32 @@
 		6E5E5E2D1CE43C9C00E2C025 /* CDLoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLoginModel.m; sourceTree = "<group>"; };
 		6E5E5E2F1CE4684E00E2C025 /* CDQueryAccountBasicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQueryAccountBasicItem.h; sourceTree = "<group>"; };
 		6E5E5E301CE4684E00E2C025 /* CDQueryAccountBasicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQueryAccountBasicItem.m; sourceTree = "<group>"; };
+		6E64E5E91CF7E8780061E67C /* extractmeasurement.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = extractmeasurement.json; sourceTree = "<group>"; };
+		6E64E5EA1CF7E8780061E67C /* loanmeasurement.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loanmeasurement.json; sourceTree = "<group>"; };
+		6E64E5ED1CF7EB510061E67C /* SCYLoanConfigureItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYLoanConfigureItem.h; sourceTree = "<group>"; };
+		6E64E5EE1CF7EB510061E67C /* SCYLoanConfigureItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYLoanConfigureItem.m; sourceTree = "<group>"; };
+		6E64E5F01CF7EB710061E67C /* SCYPageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYPageItem.h; sourceTree = "<group>"; };
+		6E64E5F11CF7EB710061E67C /* SCYPageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYPageItem.m; sourceTree = "<group>"; };
+		6E64E5F31CF7EB960061E67C /* SCYButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYButtonItem.h; sourceTree = "<group>"; };
+		6E64E5F41CF7EB960061E67C /* SCYButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYButtonItem.m; sourceTree = "<group>"; };
+		6E64E5F61CF7EBAD0061E67C /* SCYSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYSectionItem.h; sourceTree = "<group>"; };
+		6E64E5F71CF7EBAD0061E67C /* SCYSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYSectionItem.m; sourceTree = "<group>"; };
+		6E64E5F81CF7EBAD0061E67C /* SCYActionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYActionItem.h; sourceTree = "<group>"; };
+		6E64E5F91CF7EBAD0061E67C /* SCYActionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYActionItem.m; sourceTree = "<group>"; };
+		6E64E5FC1CF7ED370061E67C /* SCYSubItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYSubItem.h; sourceTree = "<group>"; };
+		6E64E5FD1CF7ED370061E67C /* SCYSubItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYSubItem.m; sourceTree = "<group>"; };
+		6E64E5FE1CF7ED370061E67C /* SCYRowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYRowItem.h; sourceTree = "<group>"; };
+		6E64E5FF1CF7ED370061E67C /* SCYRowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYRowItem.m; sourceTree = "<group>"; };
+		6E64E6021CF7F3EF0061E67C /* ShangHaiProvidentFund-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShangHaiProvidentFund-Bridging-Header.h"; sourceTree = "<group>"; };
+		6E64E6071CF8177D0061E67C /* extractguide.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = extractguide.json; sourceTree = "<group>"; };
+		6E64E6081CF8177D0061E67C /* loanguide.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loanguide.json; sourceTree = "<group>"; };
+		6E64E60B1CF819260061E67C /* CDMeasurementGuideModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMeasurementGuideModel.h; sourceTree = "<group>"; };
+		6E64E60C1CF819260061E67C /* CDMeasurementGuideModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMeasurementGuideModel.m; sourceTree = "<group>"; };
+		6E64E60E1CF819600061E67C /* SCYLinkItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYLinkItem.h; sourceTree = "<group>"; };
+		6E64E60F1CF819600061E67C /* SCYLinkItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYLinkItem.m; sourceTree = "<group>"; };
+		6E64E6111CF81B3C0061E67C /* CDLoanExtractConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoanExtractConfigure.h; sourceTree = "<group>"; };
+		6E64E6121CF81DD70061E67C /* SCYMeasurementResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYMeasurementResultController.h; sourceTree = "<group>"; };
+		6E64E6131CF81DD70061E67C /* SCYMeasurementResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYMeasurementResultController.m; sourceTree = "<group>"; };
 		6E66E9F11CE02DD700111C2C /* CDNewsAndTrendsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDNewsAndTrendsCell.xib; sourceTree = "<group>"; };
 		6E66EA151CE0631700111C2C /* CDTitleImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDTitleImageButton.h; sourceTree = "<group>"; };
 		6E66EA161CE0631700111C2C /* CDTitleImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTitleImageButton.m; sourceTree = "<group>"; };
@@ -466,7 +506,11 @@
 		14FDD0A51CDDB38E0093ABC3 /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				6E1A21601CEB2AC000D21143 /* loanconfigure.dat */,
+				6E64E6071CF8177D0061E67C /* extractguide.json */,
+				6E64E6081CF8177D0061E67C /* loanguide.json */,
+				6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */,
+				6E64E5E91CF7E8780061E67C /* extractmeasurement.json */,
+				6E64E5EA1CF7E8780061E67C /* loanmeasurement.json */,
 				14D13B501CE22CE500D73F1A /* loginConfigure.json */,
 				14D13B511CE22CE500D73F1A /* registConfigure.json */,
 				14FDD0A61CDDB3EF0093ABC3 /* OpinionsSuggestionsConfigure.json */,
@@ -954,6 +998,9 @@
 				6E4788781CEEBEAF008E0BA0 /* CDMapAnnotationController.mm */,
 				6E47887A1CEEF4B7008E0BA0 /* CDMapRouteSearchController.h */,
 				6E47887B1CEEF4B7008E0BA0 /* CDMapRouteSearchController.mm */,
+				6E64E6121CF81DD70061E67C /* SCYMeasurementResultController.h */,
+				6E64E6131CF81DD70061E67C /* SCYMeasurementResultController.m */,
+				6E64E6021CF7F3EF0061E67C /* ShangHaiProvidentFund-Bridging-Header.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -961,6 +1008,20 @@
 		6E6ADBFF1CD8A8BF00838B61 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6E64E5ED1CF7EB510061E67C /* SCYLoanConfigureItem.h */,
+				6E64E5EE1CF7EB510061E67C /* SCYLoanConfigureItem.m */,
+				6E64E5F01CF7EB710061E67C /* SCYPageItem.h */,
+				6E64E5F11CF7EB710061E67C /* SCYPageItem.m */,
+				6E64E5F61CF7EBAD0061E67C /* SCYSectionItem.h */,
+				6E64E5F71CF7EBAD0061E67C /* SCYSectionItem.m */,
+				6E64E5F81CF7EBAD0061E67C /* SCYActionItem.h */,
+				6E64E5F91CF7EBAD0061E67C /* SCYActionItem.m */,
+				6E64E5F31CF7EB960061E67C /* SCYButtonItem.h */,
+				6E64E5F41CF7EB960061E67C /* SCYButtonItem.m */,
+				6E64E5FC1CF7ED370061E67C /* SCYSubItem.h */,
+				6E64E5FD1CF7ED370061E67C /* SCYSubItem.m */,
+				6E64E5FE1CF7ED370061E67C /* SCYRowItem.h */,
+				6E64E5FF1CF7ED370061E67C /* SCYRowItem.m */,
 				6E1A21511CEB285F00D21143 /* SCYLoanRateItem.h */,
 				6E1A21521CEB285F00D21143 /* SCYLoanRateItem.m */,
 				6E1A21531CEB285F00D21143 /* SCYMortgageCalculatorCellItem.h */,
@@ -979,6 +1040,11 @@
 				140BE9C91CDF420700577831 /* CDNetworkPointItem.m */,
 				14D13B6F1CE2320800D73F1A /* CDPayCalculatorItem.h */,
 				14D13B701CE2320800D73F1A /* CDPayCalculatorItem.m */,
+				6E64E60B1CF819260061E67C /* CDMeasurementGuideModel.h */,
+				6E64E60C1CF819260061E67C /* CDMeasurementGuideModel.m */,
+				6E64E60E1CF819600061E67C /* SCYLinkItem.h */,
+				6E64E60F1CF819600061E67C /* SCYLinkItem.m */,
+				6E64E6111CF81B3C0061E67C /* CDLoanExtractConfigure.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1127,6 +1193,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CD;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "cheng dong";
 				TargetAttributes = {
@@ -1161,14 +1228,18 @@
 			files = (
 				6E6ADB1B1CD892B200838B61 /* Assets.xcassets in Resources */,
 				6E6ADB191CD892B200838B61 /* Main.storyboard in Resources */,
+				6E64E6091CF8177D0061E67C /* extractguide.json in Resources */,
 				14FDD0C61CDE37DB0093ABC3 /* CDNetWorkPointCell.xib in Resources */,
 				6E66E9F21CE02DD700111C2C /* CDNewsAndTrendsCell.xib in Resources */,
 				6E1A214A1CEB20DE00D21143 /* SCYMortgageCalculatorResultCell.xib in Resources */,
+				6E64E60A1CF8177D0061E67C /* loanguide.json in Resources */,
 				14FDD0A71CDDB3EF0093ABC3 /* OpinionsSuggestionsConfigure.json in Resources */,
+				6E64E5EC1CF7E8780061E67C /* loanmeasurement.json in Resources */,
 				6E463CE71CD9D7F700527950 /* CDButtonTableFooterView.xib in Resources */,
 				14D13B531CE22CE500D73F1A /* registConfigure.json in Resources */,
 				14F768051CE36AC300C2A8F3 /* CDBottomButtonView.xib in Resources */,
-				6E1A21611CEB2AC000D21143 /* loanconfigure.dat in Resources */,
+				6E1A21611CEB2AC000D21143 /* mortgageCalculator.conf in Resources */,
+				6E64E5EB1CF7E8780061E67C /* extractmeasurement.json in Resources */,
 				14D13B521CE22CE500D73F1A /* loginConfigure.json in Resources */,
 				14FDD0BE1CDDE3350093ABC3 /* CDOpinionsSuggestionsViewCell.xib in Resources */,
 				6E5C69791CE30C9A00F17AD0 /* CDAccountBasicInfoCell.xib in Resources */,
@@ -1243,6 +1314,7 @@
 				6E6ADB3A1CD89E8700838B61 /* CDBaseService.m in Sources */,
 				140BE9D01CDF63D200577831 /* CDLoginViewController.m in Sources */,
 				6E67A79A1CDCA6BC00436E93 /* CDLoadMoreCell.m in Sources */,
+				6E64E5F21CF7EB710061E67C /* SCYPageItem.m in Sources */,
 				6E6ADBD81CD8A0BD00838B61 /* CDAutoHideMessageHUD.m in Sources */,
 				6E6ADB891CD89F7C00838B61 /* NSData+Base64.m in Sources */,
 				6E4D90B01CDB133E0019B011 /* CDBaseCollectionViewController.m in Sources */,
@@ -1253,6 +1325,7 @@
 				6E1A21271CEAF48E00D21143 /* CDVerificationCodeCell.m in Sources */,
 				6E6ADC111CD8AA9B00838B61 /* CDAboutUsController.m in Sources */,
 				6E6ADC221CD8B3EB00838B61 /* CDNewsItem.m in Sources */,
+				6E64E5F51CF7EB960061E67C /* SCYButtonItem.m in Sources */,
 				6E53C84F1CE9CFFF00202F53 /* CDHeaderTitleView.m in Sources */,
 				6E6ADB9B1CD89F7C00838B61 /* UIViewController+CDVCAdditions.m in Sources */,
 				6E6ADC081CD8A98C00838B61 /* CDNewsAndTrendsController.m in Sources */,
@@ -1261,6 +1334,7 @@
 				14FDD0AA1CDDB43D0093ABC3 /* CDOpinionsSuggestionsModel.m in Sources */,
 				14D13B591CE22DFE00D73F1A /* CDAccountDetailController.m in Sources */,
 				6E6ADB8B1CD89F7C00838B61 /* NSData+CommonCrypto.m in Sources */,
+				6E64E60D1CF819260061E67C /* CDMeasurementGuideModel.m in Sources */,
 				6E6ADB8A1CD89F7C00838B61 /* NSData+CDDataAddition.m in Sources */,
 				6E6ADB8E1CD89F7C00838B61 /* NSFileManager+CDFileManager.m in Sources */,
 				14FDD0B61CDDD33E0093ABC3 /* UITextField+cellIndexPath.m in Sources */,
@@ -1289,6 +1363,7 @@
 				14FDD0B01CDDB6310093ABC3 /* CDOpinionsSuggestionsController.m in Sources */,
 				6E53C84C1CE9CF9500202F53 /* CDSlidePageView.m in Sources */,
 				14FDD0B91CDDD3F90093ABC3 /* CDOpinionsSuggestionsFieldCell.m in Sources */,
+				6E64E6011CF7ED370061E67C /* SCYRowItem.m in Sources */,
 				6E6ADB8F1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.m in Sources */,
 				6E5C69741CE2FD3800F17AD0 /* CDQueryAccountInfoCell.m in Sources */,
 				6E5E5E2E1CE43C9C00E2C025 /* CDLoginModel.m in Sources */,
@@ -1296,6 +1371,7 @@
 				14D13B6E1CE231CF00D73F1A /* CDPayCalculatorService.m in Sources */,
 				6E6ADC2E1CD8BFBC00838B61 /* CDConvenientModel.m in Sources */,
 				14D13B621CE22F3900D73F1A /* CDAccountManageController.m in Sources */,
+				6E64E6001CF7ED370061E67C /* SCYSubItem.m in Sources */,
 				14D13B561CE22DAA00D73F1A /* CDRegistViewController.m in Sources */,
 				140BE9CA1CDF420700577831 /* CDNetworkPointItem.m in Sources */,
 				6E6ADC3A1CD8C04700838B61 /* CDMineAccountService.m in Sources */,
@@ -1333,6 +1409,7 @@
 				6E1A214C1CEB20DE00D21143 /* SCYPopTableView.m in Sources */,
 				6E6ADC181CD8AFF300838B61 /* CDNewsAndTrendsService.m in Sources */,
 				14FDD0C41CDE37BE0093ABC3 /* CDNetWorkPointCell.m in Sources */,
+				6E64E6141CF81DD70061E67C /* SCYMeasurementResultController.m in Sources */,
 				140BE9C41CDF40FB00577831 /* CDNetworkPointController.m in Sources */,
 				6E6ADC311CD8BFE000838B61 /* CDConvenientToolsService.m in Sources */,
 				6E6ADB981CD89F7C00838B61 /* UITableView+CDTableViewAddition.m in Sources */,
@@ -1343,11 +1420,15 @@
 				140BE9DF1CDF694700577831 /* CDDynamicdetailItem.m in Sources */,
 				6E6ADB8C1CD89F7C00838B61 /* NSDate+CDDateAddition.m in Sources */,
 				14F925701CDA378A003FE794 /* CDMineAccountModel.m in Sources */,
+				6E64E6101CF819600061E67C /* SCYLinkItem.m in Sources */,
 				6E1A215F1CEB285F00D21143 /* SCYMortgageCalculatorSourceItem.m in Sources */,
+				6E64E5FA1CF7EBAD0061E67C /* SCYSectionItem.m in Sources */,
 				6E463CE61CD9D7F700527950 /* CDButtonTableFooterView.m in Sources */,
 				6E1A215D1CEB285F00D21143 /* SCYMortgageCalculatorModel.m in Sources */,
 				6E1A21491CEB20DE00D21143 /* SCYMortgageCalculatorResultCell.m in Sources */,
+				6E64E5EF1CF7EB510061E67C /* SCYLoanConfigureItem.m in Sources */,
 				6E6ADC151CD8AC9B00838B61 /* SFHFKeychainUtils.m in Sources */,
+				6E64E5FB1CF7EBAD0061E67C /* SCYActionItem.m in Sources */,
 				6E6ADB561CD89E8E00838B61 /* CDNavigationController.m in Sources */,
 				6E6ADB551CD89E8E00838B61 /* CDBaseWKWebViewController.m in Sources */,
 				14FDD0AD1CDDB5580093ABC3 /* CDOpinionsSuggestionsItem.m in Sources */,
@@ -1462,8 +1543,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ShangHaiProvidentFund/PrefixHeader.pch";
 				INFOPLIST_FILE = ShangHaiProvidentFund/Info.plist;
@@ -1472,6 +1555,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ProvidentFund.ShangHai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ShangHaiProvidentFund/CDApplicationMain/MainApplication/CDConvenientTools/Controller/ShangHaiProvidentFund-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1481,8 +1566,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ShangHaiProvidentFund/PrefixHeader.pch";
 				INFOPLIST_FILE = ShangHaiProvidentFund/Info.plist;
@@ -1491,6 +1578,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ProvidentFund.ShangHai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ShangHaiProvidentFund/CDApplicationMain/MainApplication/CDConvenientTools/Controller/ShangHaiProvidentFund-Bridging-Header.h";
 			};
 			name = Release;
 		};

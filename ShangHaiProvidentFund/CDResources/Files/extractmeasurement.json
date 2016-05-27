@@ -1,0 +1,236 @@
+{
+    "code": 1,
+    "desc": "ok",
+    "results": {
+        "action": [
+            {
+                "actionKey": "action0",
+                "actionType": "section",
+                "data": [
+                    {
+                        "sectionTitle": "",
+                        "sectionData": [
+                            {
+                                "itemkey": "fund",
+                                "itemtype": 0,
+                                "itemvalue": "",
+                                "itemdesc": "实际购房款",
+                                "editunit": "万元",
+                                "editunitvalue": 10000,
+                                "editemptytip": "实际购房款不能为空!"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "actionKey": "action1",
+                "actionType": "section",
+                "data": [
+                    {
+                        "sectionTitle": "",
+                        "sectionData": [
+                            {
+                                "itemkey": "chummage",
+                                "itemtype": 0,
+                                "itemvalue": "",
+                                "itemdesc": "每月房租",
+                                "editunit": "元",
+                                "editunitvalue": 1,
+                                "editemptytip": "每月房租不能为空!"
+                            }
+                        ]
+                    },
+                    {
+                        "sectionTitle": "已连续在本市缴纳",
+                        "sectionData": [
+                            {
+                                "itemkey": "isfullThree",
+                                "itemtype": 2,
+                                "itemvalue": "0",
+                                "itemdesc": "",
+                                "radioorientation": 0,
+                                "radiosubitemsdata": [
+                                    {
+                                        "subitemvalue": "0",
+                                        "subitemshow": "未满3个月",
+                                        "actionKey": ""
+                                    },
+                                    {
+                                        "subitemvalue": "1",
+                                        "subitemshow": "已满3个月",
+                                        "actionKey": ""
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "actionKey": "action2",
+                "actionType": "section",
+                "data": [
+                    {
+                        "sectionTitle": "您的户口",
+                        "sectionData": [
+                            {
+                                "itemkey": "isSH",
+                                "itemtype": 2,
+                                "itemvalue": "0",
+                                "itemdesc": "",
+                                "radioorientation": 0,
+                                "radiosubitemsdata": [
+                                    {
+                                        "subitemvalue": "0",
+                                        "subitemshow": "上海户口",
+                                        "actionKey": ""
+                                    },
+                                    {
+                                        "subitemvalue": "1",
+                                        "subitemshow": "外省户口",
+                                        "actionKey": ""
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "sectionTitle": "您的工作状况",
+                        "sectionData": [
+                            {
+                                "itemkey": "workType",
+                                "itemtype": 2,
+                                "itemvalue": "0",
+                                "itemdesc": "",
+                                "radioorientation": 0,
+                                "radiosubitemsdata": [
+                                    {
+                                        "subitemvalue": "0",
+                                        "subitemshow": "已离职",
+                                        "actionKey": ""
+                                    },
+                                    {
+                                        "subitemvalue": "1",
+                                        "subitemshow": "已退休",
+                                        "actionKey": "actionreired"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "actionKey": "actionreired",
+                "actionType": "section",
+                "data": [
+                    {
+                        "sectionTitle": "是否已达到法定退休年龄",
+                        "sectionData": [
+                            {
+                                "itemkey": "isRetired",
+                                "itemtype": 2,
+                                "itemvalue": "0",
+                                "itemdesc": "",
+                                "radioorientation": 0,
+                                "radiosubitemsdata": [
+                                    {
+                                        "subitemvalue": "0",
+                                        "subitemshow": "已达到",
+                                        "actionKey": ""
+                                    },
+                                    {
+                                        "subitemvalue": "1",
+                                        "subitemshow": "未达到",
+                                        "actionKey": ""
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "actionKey": "action3",
+                "actionType": "section",
+                "data": [
+                    {
+                        "sectionTitle": "选择冲还贷方法",
+                        "sectionData": [
+                            {
+                                "itemkey": "repayType",
+                                "itemtype": 2,
+                                "itemvalue": "0",
+                                "itemdesc": "",
+                                "radioorientation": 0,
+                                "radiosubitemsdata": [
+                                    {
+                                        "subitemvalue": "0",
+                                        "subitemshow": "一次性还款法",
+                                        "actionKey": ""
+                                    },
+                                    {
+                                        "subitemvalue": "1",
+                                        "subitemshow": "逐月还款法",
+                                        "actionKey": ""
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "data": [
+            {
+                "sectionTitle": "",
+                "sectionData": [
+                    {
+                        "itemkey": "gjjBalance",
+                        "itemtype": 0,
+                        "itemvalue": "",
+                        "itemdesc": "公积金余额",
+                        "editunit": "元",
+                        "editunitvalue": 1,
+                        "editemptytip": "公积金余额不能为空!"
+                    }
+                ]
+            },
+            {
+                "sectionTitle": "提取用途",
+                "sectionData": [
+                    {
+                        "itemkey": "gjjPT",
+                        "itemtype": 2,
+                        "itemvalue": "1",
+                        "itemdesc": "",
+                        "radioorientation": 0,
+                        "radiosubitemsdata": [
+                            {
+                                "subitemvalue": "1",
+                                "subitemshow": "买房",
+                                "actionKey": "action0"
+                            },
+                            {
+                                "subitemvalue": "2",
+                                "subitemshow": "租房",
+                                "actionKey": "action1"
+                            },
+                            {
+                                "subitemvalue": "3",
+                                "subitemshow": "离职/退休",
+                                "actionKey": "action2"
+                            },
+                            {
+                                "subitemvalue": "4",
+                                "subitemshow": "还贷款",
+                                "actionKey": "action3"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
