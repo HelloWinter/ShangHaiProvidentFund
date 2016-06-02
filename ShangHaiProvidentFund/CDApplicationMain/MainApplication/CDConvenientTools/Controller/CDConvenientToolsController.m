@@ -13,8 +13,6 @@
 #import "CDNetworkPointController.h"
 #import "CDBaseWKWebViewController.h"
 #import "SCYMortgageCalculatorController.h"
-#import "SCYMeasurementResultController.h"
-#import "CDLoanExtractConfigure.h"
 
 static NSString *cellIdentifier=@"cellIdentifier";
 
@@ -83,7 +81,7 @@ static NSString *cellIdentifier=@"cellIdentifier";
             [self pushToNetworkPointController];
             break;
         case 1:{
-            NSString *jsCode=@"var element=document.getElementsByTagName('link')[0];var parentElement=element.parentNode;if(parentElement){parentElement.removeChild(element);}";
+            NSString *jsCode=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element" tagName:@"link"];
             [self pushToWKWebViewControllerWithTitle:@"业务办理" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=blgg")];
         }
             break;
@@ -96,7 +94,6 @@ static NSString *cellIdentifier=@"cellIdentifier";
             break;
         case 4:
             [self pushToWKWebViewControllerWithTitle:@"额度试算" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/app/wap/tools_ammount.html")];
-//            [self pushToMeasurementGuideControllerWithType:(SCYGuideMeasurementTypeLoan)];
             break;
         case 5:
             [self pushToMortgageCalculatorController];
@@ -135,13 +132,5 @@ static NSString *cellIdentifier=@"cellIdentifier";
     SCYMortgageCalculatorController *controller=[[SCYMortgageCalculatorController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
     [self.navigationController pushViewController:controller animated:YES];
 }
-
-- (void)pushToMeasurementGuideControllerWithType:(SCYGuideMeasurementType)type{
-    SCYMeasurementResultController *controller=[[SCYMeasurementResultController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
-    controller.guideMeasurementType=type;
-    [self.navigationController pushViewController:controller animated:YES];
-}
-
-
 
 @end
