@@ -8,8 +8,8 @@
 
 #import "CDPointActivityIndicator.h"
 
-#define ANIMATION_DURATION_SECS 0.5
-#define VIEW_WIDTH_HEIGHT 60
+static const NSTimeInterval kANIMATION_DURATION_SECS = 0.5;
+static const CGFloat kVIEW_WIDTH_HEIGHT = 60;
 
 @interface CDPointActivityIndicator (){
     NSTimer *_timer;
@@ -30,9 +30,9 @@
     static dispatch_once_t once;
     static CDPointActivityIndicator *sharedView;
     dispatch_once(&once, ^ {
-        CGFloat X = ([[UIScreen mainScreen] bounds].size.width-VIEW_WIDTH_HEIGHT)*0.5;
-        CGFloat Y = ([[UIScreen mainScreen] bounds].size.height-VIEW_WIDTH_HEIGHT)*0.5;
-        sharedView = [[CDPointActivityIndicator alloc] initWithFrame:CGRectMake(X, Y, VIEW_WIDTH_HEIGHT, VIEW_WIDTH_HEIGHT)];
+        CGFloat X = ([[UIScreen mainScreen] bounds].size.width-kVIEW_WIDTH_HEIGHT)*0.5;
+        CGFloat Y = ([[UIScreen mainScreen] bounds].size.height-kVIEW_WIDTH_HEIGHT)*0.5;
+        sharedView = [[CDPointActivityIndicator alloc] initWithFrame:CGRectMake(X, Y, kVIEW_WIDTH_HEIGHT, kVIEW_WIDTH_HEIGHT)];
     });
     return sharedView;
 }
@@ -91,7 +91,7 @@
         }
         if (!_isAnimating){
             _isAnimating = YES;
-            _timer = [NSTimer timerWithTimeInterval:ANIMATION_DURATION_SECS target:self selector:@selector(animateNextStep) userInfo:nil repeats:YES];
+            _timer = [NSTimer timerWithTimeInterval:kANIMATION_DURATION_SECS target:self selector:@selector(animateNextStep) userInfo:nil repeats:YES];
             [[NSRunLoop currentRunLoop]addTimer:_timer forMode:NSRunLoopCommonModes];
             [_timer fire];
         }
@@ -121,35 +121,35 @@
     switch (_stepNumber){
         case 0:
             [CATransaction begin];
-            [CATransaction setAnimationDuration:ANIMATION_DURATION_SECS];
+            [CATransaction setAnimationDuration:kANIMATION_DURATION_SECS];
             _firstDot.frame = _secondPoint;
             _thirdDot.frame = _fourthPoint;
             [CATransaction commit];
             break;
         case 1:
             [CATransaction begin];
-            [CATransaction setAnimationDuration:ANIMATION_DURATION_SECS];
+            [CATransaction setAnimationDuration:kANIMATION_DURATION_SECS];
             _secondDot.frame = _thirdPoint;
             _thirdDot.frame = _firstPoint;
             [CATransaction commit];
             break;
         case 2:
             [CATransaction begin];
-            [CATransaction setAnimationDuration:ANIMATION_DURATION_SECS];
+            [CATransaction setAnimationDuration:kANIMATION_DURATION_SECS];
             _firstDot.frame = _fourthPoint;
             _thirdDot.frame = _secondPoint;
             [CATransaction commit];
             break;
         case 3:
             [CATransaction begin];
-            [CATransaction setAnimationDuration:ANIMATION_DURATION_SECS];
+            [CATransaction setAnimationDuration:kANIMATION_DURATION_SECS];
             _secondDot.frame = _firstPoint;
             _thirdDot.frame = _thirdPoint;
             [CATransaction commit];
             break;
         case 4:
             [CATransaction begin];
-            [CATransaction setAnimationDuration:ANIMATION_DURATION_SECS];
+            [CATransaction setAnimationDuration:kANIMATION_DURATION_SECS];
             _firstDot.frame = _secondPoint;
             _thirdDot.frame = _fourthPoint;
             [CATransaction commit];

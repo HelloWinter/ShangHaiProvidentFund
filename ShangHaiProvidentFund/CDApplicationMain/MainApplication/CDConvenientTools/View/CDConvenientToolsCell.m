@@ -9,7 +9,8 @@
 #import "CDConvenientToolsCell.h"
 #import "CDConvenientToolsItem.h"
 
-#define MARGIN 4.0
+
+static const CGFloat kMARGIN=4.0;
 
 @interface CDConvenientToolsCell ()
 
@@ -36,8 +37,8 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.imageView.frame=CGRectMake(MARGIN, MARGIN, self.width-MARGIN*2, (self.width-MARGIN*2)*3*0.25);
-    self.lbTitle.frame=CGRectMake(MARGIN, self.imageView.bottom, self.width-MARGIN*2, 18);
+    self.imageView.frame=CGRectMake(kMARGIN, kMARGIN, self.width-kMARGIN*2, (self.width-kMARGIN*2)*3*0.25);
+    self.lbTitle.frame=CGRectMake(kMARGIN, self.imageView.bottom, self.width-kMARGIN*2, 18);
 }
 
 - (UIImageView *)imageView{

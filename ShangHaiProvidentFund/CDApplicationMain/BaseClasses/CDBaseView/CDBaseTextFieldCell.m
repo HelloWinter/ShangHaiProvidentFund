@@ -9,7 +9,6 @@
 #import "CDBaseTextFieldCell.h"
 #import "UITextField+cellIndexPath.h"
 
-//#define MARGIN 8
 
 @interface CDBaseTextFieldCell ()<UITextFieldDelegate>
 

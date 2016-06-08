@@ -231,11 +231,11 @@ description:__VA_ARGS__];                                                    \
  */
 #define CDScreenScale ([UIScreen mainScreen].scale)
 
-#define LEFT_RIGHT_MARGIN 15
+#define LEFT_RIGHT_MARGIN (15)
 
-#define CORNER_RADIUS  6
+#define CORNER_RADIUS  (6)
 
-#define CELL_MARGIN 8
+#define CELL_MARGIN (8)
 
 #define kUserLoginStateChangedNotification @"kUserLoginStateChangedNotification"
 

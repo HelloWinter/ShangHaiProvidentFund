@@ -9,11 +9,11 @@
 #import "CDAutoHideMessageHUD.h"
 #import <objc/runtime.h>
 
-#define ANIMATION_DURATION_SEC 0.5
-#define VIEW_MAX_WIDTH 260
-#define VIEW_MAX_HEIGHT 120
-#define VIEW_MIN_WIDTH 60
-#define VIEW_MIN_HEIGHT 30
+static const NSTimeInterval kANIMATION_DURATION_SEC = 0.5;
+static const CGFloat kVIEW_MAX_WIDTH = 260;
+static const CGFloat kVIEW_MAX_HEIGHT = 120;
+//static const CGFloat kVIEW_MIN_WIDTH = 60;
+static const CGFloat kVIEW_MIN_HEIGHT = 30;
 
 static char CDAutoHideMessageHUDKey;
 
@@ -47,21 +47,21 @@ static char CDAutoHideMessageHUDKey;
         [view bringSubviewToFront:label];
         
         CGSize lbSize=CGSizeZero;
-        CGRect rect = [msg boundingRectWithSize:CGSizeMake(VIEW_MAX_WIDTH-20, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:14]} context:nil];
+        CGRect rect = [msg boundingRectWithSize:CGSizeMake(kVIEW_MAX_WIDTH-20, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:14]} context:nil];
         lbSize=CGSizeMake(CGRectGetWidth(rect), CGRectGetHeight(rect));
         lbSize.width+=20;
-//        lbSize.width = MIN(VIEW_MAX_WIDTH, MAX(VIEW_MIN_WIDTH, lbSize.width+20));
-        lbSize.height = MIN(VIEW_MAX_HEIGHT, MAX(VIEW_MIN_HEIGHT, lbSize.height+20));
+//        lbSize.width = MIN(kVIEW_MAX_WIDTH, MAX(kVIEW_MIN_WIDTH, lbSize.width+20));
+        lbSize.height = MIN(kVIEW_MAX_HEIGHT, MAX(kVIEW_MIN_HEIGHT, lbSize.height+20));
         label.bounds = CGRectMake(0, 0, ceilf(lbSize.width), ceilf(lbSize.height));
         label.center = CGPointMake(view.bounds.size.width * 0.5f, view.bounds.size.height * 0.75f);
         label.text = msg;
         
         __weak __typeof(UILabel *) weakLabel=label;
-        [UIView animateWithDuration:ANIMATION_DURATION_SEC animations:^{
+        [UIView animateWithDuration:kANIMATION_DURATION_SEC animations:^{
             weakLabel.alpha=1;
         } completion:^(BOOL finished){
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [UIView animateWithDuration:ANIMATION_DURATION_SEC animations:^{
+                [UIView animateWithDuration:kANIMATION_DURATION_SEC animations:^{
                     weakLabel.alpha=0;
                 } completion:^(BOOL finished) {
                     [weakLabel removeFromSuperview];

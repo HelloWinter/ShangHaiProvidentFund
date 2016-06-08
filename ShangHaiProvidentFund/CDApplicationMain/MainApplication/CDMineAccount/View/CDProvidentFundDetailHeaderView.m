@@ -10,7 +10,7 @@
 #import "CDAccountInfoItem.h"
 #import "CDPayAccountItem.h"
 
-#define kTextLabelSize 13
+static const CGFloat kTextLabelSize = 13;
 
 @interface CDProvidentFundDetailHeaderView ()
 
