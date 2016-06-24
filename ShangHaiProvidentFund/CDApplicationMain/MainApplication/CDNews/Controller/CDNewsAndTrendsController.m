@@ -19,6 +19,7 @@
 
 @property (nonatomic, strong) CDNewsAndTrendsService *newsAndTrendsService;
 @property (nonatomic, strong) NSMutableArray *arrData;
+@property (nonatomic, strong) NSMutableArray *arrCellHeight;
 
 @end
 
@@ -43,6 +44,13 @@
     return _arrData;
 }
 
+- (NSMutableArray *)arrCellHeight{
+    if (_arrCellHeight==nil) {
+        _arrCellHeight=[[NSMutableArray alloc]init];
+    }
+    return _arrCellHeight;
+}
+
 - (CDNewsAndTrendsService *)newsAndTrendsService{
     if (_newsAndTrendsService==nil) {
         _newsAndTrendsService=[[CDNewsAndTrendsService alloc]initWithDelegate:self];
@@ -62,7 +70,7 @@
         static NSString *newsCellIdentifier=@"newsCellIdentifier";
         CDNewsAndTrendsCell *cell=[tableView dequeueReusableCellWithIdentifier:newsCellIdentifier];
         if (!cell) {
-            cell=[CDNewsAndTrendsCell newsAndTrendsCell];
+            cell=[[CDNewsAndTrendsCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:newsCellIdentifier];
         }
         [cell setupCellItem:newsItem.news];
         return cell;
@@ -75,18 +83,25 @@
         }
         [cell setupCellItem:moreItem];
         return cell;
-    }else{
-        return [[UITableViewCell alloc]init];
     }
+    return [[UITableViewCell alloc]init];
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CDBaseItem *item = [self.arrData cd_safeObjectAtIndex:indexPath.row];
-    if ([item isKindOfClass:[CDLoadMoreItem class]]){
-        return 44;
+    NSNumber *height = [self.arrCellHeight cd_safeObjectAtIndex:indexPath.row];
+    if (height) {
+        return [height floatValue];
+    }else{
+        CDBaseItem *item = [self.arrData cd_safeObjectAtIndex:indexPath.row];
+        CGFloat cellHeight=44;
+        if ([item isKindOfClass:[CDNewsAndTrendsItem class]]) {
+            CDNewsAndTrendsItem *mitem=(CDNewsAndTrendsItem *)item;
+            cellHeight = [CDNewsAndTrendsCell tableView:tableView rowHeightForObject:mitem.news];
+        }
+        [self.arrCellHeight addObject:[NSNumber numberWithFloat:cellHeight]];
+        return cellHeight;
     }
-    return 76;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -127,8 +142,10 @@
 - (void)refreshTableViewFromTop:(BOOL)isFromTop{
     if (isFromTop) {
         [self.arrData removeAllObjects];
+        [self.arrCellHeight removeAllObjects];
     }else{
         [self.arrData removeLastObject];
+        [self.arrCellHeight removeLastObject];
     }
     [self refreshArrData];
     [self.tableView reloadData];
@@ -143,11 +160,5 @@
         }
     }
 }
-
-//- (void)pushToWebViewControllerWithURLString:(NSString *)urlstr{
-//    SCYBaseWebViewController *webViewController=[SCYBaseWebViewController webViewControllerWithURL:[NSURL URLWithString:urlstr]];
-//    webViewController.title=@"上海住房公积金网";
-//    [self.navigationController pushViewController:webViewController animated:YES];
-//}
 
 @end

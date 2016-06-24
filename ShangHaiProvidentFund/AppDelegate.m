@@ -63,7 +63,6 @@
     }else{
         CDLog(@"onGetNetworkState %d",iError);
     }
-    
 }
 
 - (void)onGetPermissionState:(int)iError{

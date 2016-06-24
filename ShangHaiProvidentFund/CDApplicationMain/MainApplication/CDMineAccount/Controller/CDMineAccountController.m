@@ -79,7 +79,6 @@ static NSString *cellIdentifier=@"cellIdentifier";
             [self pushToWKWebViewControllerWithTitle:@"公益短信" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/sms/app_apply.html")];
         }
             break;
-            
         default:
             break;
     }

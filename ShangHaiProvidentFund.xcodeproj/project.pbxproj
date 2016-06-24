@@ -89,7 +89,6 @@
 		6E5C697F1CE34F9300F17AD0 /* CDLoginConfigureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C697E1CE34F9300F17AD0 /* CDLoginConfigureModel.m */; };
 		6E5E5E2E1CE43C9C00E2C025 /* CDLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E5E2D1CE43C9C00E2C025 /* CDLoginModel.m */; };
 		6E5E5E311CE4684E00E2C025 /* CDQueryAccountBasicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E5E301CE4684E00E2C025 /* CDQueryAccountBasicItem.m */; };
-		6E66E9F21CE02DD700111C2C /* CDNewsAndTrendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E66E9F11CE02DD700111C2C /* CDNewsAndTrendsCell.xib */; };
 		6E66EA171CE0631700111C2C /* CDTitleImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E66EA161CE0631700111C2C /* CDTitleImageButton.m */; };
 		6E67A79A1CDCA6BC00436E93 /* CDLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E67A7991CDCA6BC00436E93 /* CDLoadMoreCell.m */; };
 		6E67A79D1CDCA72600436E93 /* CDLoadMoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E67A79C1CDCA72600436E93 /* CDLoadMoreItem.m */; };
@@ -310,7 +309,6 @@
 		6E5E5E2F1CE4684E00E2C025 /* CDQueryAccountBasicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQueryAccountBasicItem.h; sourceTree = "<group>"; };
 		6E5E5E301CE4684E00E2C025 /* CDQueryAccountBasicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQueryAccountBasicItem.m; sourceTree = "<group>"; };
 		6E64E6021CF7F3EF0061E67C /* ShangHaiProvidentFund-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShangHaiProvidentFund-Bridging-Header.h"; sourceTree = "<group>"; };
-		6E66E9F11CE02DD700111C2C /* CDNewsAndTrendsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDNewsAndTrendsCell.xib; sourceTree = "<group>"; };
 		6E66EA151CE0631700111C2C /* CDTitleImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDTitleImageButton.h; sourceTree = "<group>"; };
 		6E66EA161CE0631700111C2C /* CDTitleImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTitleImageButton.m; sourceTree = "<group>"; };
 		6E67A7981CDCA6BC00436E93 /* CDLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoadMoreCell.h; sourceTree = "<group>"; };
@@ -833,7 +831,6 @@
 			children = (
 				6E6ADC3E1CD8C09200838B61 /* CDNewsAndTrendsCell.h */,
 				6E6ADC3F1CD8C09200838B61 /* CDNewsAndTrendsCell.m */,
-				6E66E9F11CE02DD700111C2C /* CDNewsAndTrendsCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1165,7 +1162,6 @@
 				6E6ADB1B1CD892B200838B61 /* Assets.xcassets in Resources */,
 				6E6ADB191CD892B200838B61 /* Main.storyboard in Resources */,
 				14FDD0C61CDE37DB0093ABC3 /* CDNetWorkPointCell.xib in Resources */,
-				6E66E9F21CE02DD700111C2C /* CDNewsAndTrendsCell.xib in Resources */,
 				6E1A214A1CEB20DE00D21143 /* SCYMortgageCalculatorResultCell.xib in Resources */,
 				14FDD0A71CDDB3EF0093ABC3 /* OpinionsSuggestionsConfigure.json in Resources */,
 				6E463CE71CD9D7F700527950 /* CDButtonTableFooterView.xib in Resources */,
