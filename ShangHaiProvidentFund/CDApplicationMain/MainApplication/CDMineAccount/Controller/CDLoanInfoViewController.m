@@ -42,7 +42,7 @@ static const CGFloat kHeaderTitleHeight = 28;
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.detailHeaderView];
     self.tableView.top=self.detailHeaderView.bottom;
-    self.tableView.height=self.tableView.height-self.detailHeaderView.height;
+    self.tableView.height-=self.detailHeaderView.height+64;
     self.tableView.tableHeaderView=self.headerTitleView;
     [self refreshArrData];
     [self refreshHeaderView];

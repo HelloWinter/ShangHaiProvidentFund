@@ -24,6 +24,10 @@
 - (void)dealloc{
     _tableView.dataSource=nil;
     _tableView.delegate=nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
 }
 
 - (instancetype)init{
@@ -53,18 +57,28 @@
 - (void)setUpInitWithTableViewStyle:(UITableViewStyle)tableViewStyle{
     _tableViewStyle= tableViewStyle;
     self.showDragView = YES;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidHide:)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
 }
 
 - (void)viewDidLoad{
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
-    if (self.showDragView) {
-        if (!self.navigationController.navigationBarHidden) {
-            [self setEdgesForExtendedLayout:UIRectEdgeLeft | UIRectEdgeBottom | UIRectEdgeRight];
-        }
-        _refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
-        [_refreshControl addTarget:self action:@selector(startPullRefresh) forControlEvents:UIControlEventValueChanged];
-    }
+    [self setupPullRefreshView];
 }
 
 - (UITableView *)tableView{
@@ -98,20 +112,29 @@
 
 #pragma mark - KeyBoardNotification
 - (void)keyboardWillShow:(NSNotification *)notification{
-    [super keyboardWillShow:notification];
+    NSValue* keyboardboundsValue = [[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey];
+    NSValue* keybardAnimatedValue = [[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    [keyboardboundsValue getValue:&_keyboardBounds];
+    [keybardAnimatedValue getValue:&_keybardAnmiatedTimeinterval];
+    
     UIEdgeInsets insets=self.tableView.contentInset;
     insets.bottom=_keyboardBounds.size.height;
     self.tableView.contentInset = insets;
     self.tableView.scrollIndicatorInsets = insets;
 }
 
+- (void)keyboardDidShow:(NSNotification*)notification {
+}
+
 - (void)keyboardWillHide:(NSNotification *)notification{
-    [super keyboardWillHide:notification];
     [UIView animateWithDuration:_keybardAnmiatedTimeinterval animations:^{
         UIEdgeInsets contentInsets = UIEdgeInsetsZero;
         self.tableView.contentInset = contentInsets;
         self.tableView.scrollIndicatorInsets = contentInsets;
     }];
+}
+
+- (void)keyboardDidHide:(NSNotification*)notification {
 }
 
 #pragma mark - CDJSONBaseNetworkServiceDelegate
@@ -145,6 +168,17 @@
 
 - (void)endPullRefresh{
     [self.refreshControl endRefreshing];
+}
+
+#pragma mark - private
+- (void)setupPullRefreshView{
+    if (self.showDragView) {
+        if (!self.navigationController.navigationBarHidden) {
+            [self setEdgesForExtendedLayout:UIRectEdgeLeft | UIRectEdgeRight];//UIRectEdgeBottom |
+        }
+        _refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
+        [_refreshControl addTarget:self action:@selector(startPullRefresh) forControlEvents:UIControlEventValueChanged];
+    }
 }
 
 @end

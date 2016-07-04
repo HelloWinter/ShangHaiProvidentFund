@@ -15,6 +15,7 @@
 #import "CDLoadMoreItem.h"
 #import "CDLoadMoreCell.h"
 
+
 @interface CDNewsAndTrendsController ()
 
 @property (nonatomic, strong) CDNewsAndTrendsService *newsAndTrendsService;
@@ -131,7 +132,7 @@
     [self.newsAndTrendsService loadNewsAndTrendsIgnoreCache:YES showIndicator:NO];
 }
 
-#pragma mark - Events
+#pragma mark - private
 - (void)pushToWKWebViewControllerWithURLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[CDBaseWKWebViewController webViewWithURL:[NSURL URLWithString:urlstr]];
     webViewController.title=@"上海住房公积金网";

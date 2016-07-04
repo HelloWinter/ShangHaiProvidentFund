@@ -18,13 +18,6 @@
 
 @implementation CDBaseViewController
 
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
-}
-
 - (void)awakeFromNib{
     [super awakeFromNib];
     [self setupInit];
@@ -48,31 +41,11 @@
 
 - (void)setupInit{
     self.statusBarHidden=NO;
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardDidShow:)
-                                                 name:UIKeyboardDidShowNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardDidHide:)
-                                                 name:UIKeyboardDidHideNotification
-                                               object:nil];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=colorForHex(@"#f5f5f5");
-//    [self setExtendedLayoutIncludesOpaqueBars:YES];
     [self cd_addTapGestureRecognizerIfNeeded];
     [self setupBackBarButton];
 }
@@ -130,26 +103,9 @@
     }
 }
 
-#pragma mark - Keyboard NSNotification
-- (void)keyboardWillShow:(NSNotification *)notification {
-    NSValue* keyboardboundsValue = [[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey];
-    NSValue* keybardAnimatedValue = [[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey];
-    [keyboardboundsValue getValue:&_keyboardBounds];
-    [keybardAnimatedValue getValue:&_keybardAnmiatedTimeinterval];
-}
-
-- (void)keyboardDidShow:(NSNotification*)notification {
-}
-
-- (void)keyboardWillHide:(NSNotification *)notification {
-}
-
-- (void)keyboardDidHide:(NSNotification*)notification {
-}
-
 #pragma mark - Events
 /**
- *  自定义返回按钮
+ *  返回按钮
  */
 - (void)setupBackBarButton{
     if (self.navigationController && [[self.navigationController viewControllers] count] > 1) {

@@ -35,6 +35,9 @@ void CDRemoveUserLocation();
 
 @interface CDAPPURLConfigure : NSObject
 
+/**
+ *  账户信息路径
+ */
 + (NSString *)filePathforLoginInfo;
 
 + (NSString *)AMapKey;
