@@ -60,7 +60,7 @@
 - (UIButton *)getSecurityBtn{
     if (!_getSecurityBtn) {
         _getSecurityBtn = [[UIButton alloc]init];
-        UIImage *normalImg=[UIImage cd_imageWithColor:ColorFromHexRGB(0x01b2d3)];
+        UIImage *normalImg=[UIImage cd_imageWithColor:NAVIGATION_COLOR];
         UIImage *disableImg=[UIImage cd_imageWithColor:ColorFromHexRGB(0x80d8e9)];
         [_getSecurityBtn setBackgroundImage:normalImg forState:(UIControlStateNormal)];
         [_getSecurityBtn setBackgroundImage:disableImg forState:(UIControlStateDisabled)];

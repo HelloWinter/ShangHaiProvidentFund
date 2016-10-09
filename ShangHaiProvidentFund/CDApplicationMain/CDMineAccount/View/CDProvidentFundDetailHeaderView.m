@@ -26,7 +26,7 @@ static const CGFloat kTextLabelSize = 13;
 - (instancetype)init{
     self =[super init];
     if (self) {
-        self.backgroundColor=ColorFromHexRGB(0x01b2d3);
+        self.backgroundColor=NAVIGATION_COLOR;
         [self addSubview:self.lbAccount];
         [self addSubview:self.lbAccountState];
         [self addSubview:self.lbMonthPay];

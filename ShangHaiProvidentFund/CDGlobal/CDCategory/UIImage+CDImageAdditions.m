@@ -97,9 +97,7 @@
     return image;
 }
 
-- (UIImage*)imageRotatedByDegrees:(CGFloat)degrees
-{
-    
+- (UIImage*)cd_imageRotatedByDegrees:(CGFloat)degrees{
     CGFloat width = CGImageGetWidth(self.CGImage);
     CGFloat height = CGImageGetHeight(self.CGImage);
     

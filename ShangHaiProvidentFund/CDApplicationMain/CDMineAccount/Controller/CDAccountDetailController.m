@@ -98,10 +98,10 @@ static const CGFloat kHeaderTitleHeight = 28;
     if (!_pageHeaderView) {
         _pageHeaderView = [[CDSlidePageHeaderView alloc] initWithFrame:CGRectMake(0,0, self.view.width, kPageHeaderHeight)];
         _pageHeaderView.delegate = self;
-        _pageHeaderView.titleColor=[UIColor blackColor];
-        _pageHeaderView.sliderColor=ColorFromHexRGB(0x2fa6df);
-        _pageHeaderView.titles=@[@"普通公积金",@"补充公积金"];
-        [_pageHeaderView setTabSize:CGSizeMake(self.pageHeaderView.width/self.pageHeaderView.titles.count, 2)];
+        _pageHeaderView.normalColor=[UIColor blackColor];
+        _pageHeaderView.selectedColor=ColorFromHexRGB(0x2fa6df);
+        _pageHeaderView.itemTitles=@[@"普通公积金",@"补充公积金"];
+        _pageHeaderView.sliderSize=CGSizeMake(self.pageHeaderView.width/self.pageHeaderView.itemTitles.count, 2);
         [_pageHeaderView setSelectedIndex:self.selectIndex];
     }
     return _pageHeaderView;
@@ -157,9 +157,9 @@ static const CGFloat kHeaderTitleHeight = 28;
         [self.arrData addObjectsFromArray:self.loginModel.supplypridetail];
     }
     if (self.arrData.count==0) {
-        [self.tableView cd_showWatermark:@"no_detail" animated:YES Target:nil Action:nil];
+        [self.tableView showWatermark:@"no_detail" target:nil action:nil];
     }else{
-        [self.tableView cd_hideWatermark:YES];
+        [self.tableView hideWatermark];
     }
     [self.tableView reloadData];
 }

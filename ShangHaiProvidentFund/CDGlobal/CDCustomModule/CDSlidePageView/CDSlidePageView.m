@@ -51,8 +51,8 @@
 - (CDSlidePageHeaderView *)headerView{
     if (_headerView==nil) {
         _headerView=[[CDSlidePageHeaderView alloc]init];
-        _headerView.tabSize=CGSizeMake(30, 2);
-        _headerView.sliderColor=[UIColor redColor];
+        _headerView.sliderSize=CGSizeMake(30, 2);
+        _headerView.selectedColor=[UIColor redColor];
         _headerView.delegate=self;
     }
     return _headerView;
@@ -113,7 +113,7 @@
             [self.bodyView addSubview:contentView];
         }
     }
-    self.headerView.titles = titles;
+    self.headerView.itemTitles = titles;
     [self.headerView reload];
 }
 

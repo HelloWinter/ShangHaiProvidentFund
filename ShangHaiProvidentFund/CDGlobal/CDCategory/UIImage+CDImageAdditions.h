@@ -51,6 +51,13 @@
  */
 - (UIImage *)cd_blurredImageWithRadius:(CGFloat)radius iterations:(NSUInteger)iterations tintColor:(UIColor *)tintColor;
 
-- (UIImage*)imageRotatedByDegrees:(CGFloat)degrees;
+/**
+ *  旋转图片，生成新的图片
+ *
+ *  @param degrees 旋转度数
+ *
+ *  @return 新的图片
+ */
+- (UIImage*)cd_imageRotatedByDegrees:(CGFloat)degrees;
 
 @end

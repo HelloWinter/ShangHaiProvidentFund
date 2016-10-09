@@ -127,9 +127,9 @@ static const CGFloat kHeaderTitleHeight = 28;
     [self.arrData removeAllObjects];
     [self.arrData addObjectsFromArray:self.loginModel.dynamicdetail];
     if (self.arrData.count==0) {
-        [self.tableView cd_showWatermark:@"no_detail" animated:YES Target:nil Action:nil];
+        [self.tableView showWatermark:@"no_detail" target:nil action:nil];
     }else{
-        [self.tableView cd_hideWatermark:YES];
+        [self.tableView hideWatermark];
     }
     [self.tableView reloadData];
 }

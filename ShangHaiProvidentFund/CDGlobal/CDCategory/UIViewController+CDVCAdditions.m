@@ -73,12 +73,12 @@ static char kHideNavBarKey;
 
 - (void)cd_viewDidAppear:(BOOL)animated{
     [self cd_viewDidAppear:animated];
-#warning TODO 在此处加入页面统计
+//#warning TODO 可在此处加入页面统计
 }
 
 - (void)cd_viewDidDisappear:(BOOL)animated{
     [self cd_viewDidDisappear:animated];
-#warning TODO 在此处加入页面统计
+//#warning TODO 可在此处加入页面统计
 }
 
 @end

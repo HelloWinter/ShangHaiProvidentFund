@@ -16,11 +16,11 @@
  *  @param width     BarButton宽度
  *  @param title     标题
  *  @param imageName 图片名
- *  @param target    <#target description#>
- *  @param action    <#action description#>
+ *  @param target
+ *  @param action    
  *
  *  @return (UIBarButtonItem *)对象实例
  */
-+ (UIBarButtonItem *)cd_barButtonWidth:(CGFloat)width Title:(NSString *)title ImageName:(NSString *)imageName Target:(id)target Action:(SEL)action;
++ (UIBarButtonItem *)cd_barButtonWidth:(CGFloat)width title:(NSString *)title imageName:(NSString *)imageName target:(id)target action:(SEL)action;
 
 @end

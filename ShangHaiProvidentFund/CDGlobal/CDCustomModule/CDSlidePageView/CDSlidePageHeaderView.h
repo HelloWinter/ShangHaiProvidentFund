@@ -12,16 +12,34 @@
 
 @interface CDSlidePageHeaderView : UIView
 
-@property (nonatomic) CGSize tabSize;
+/**
+ *  滑动条size，default：CGSizeZero
+ */
+@property (nonatomic) CGSize sliderSize;
 
-@property (nonatomic, copy) NSArray *titles;
+/**
+ *  itemTitles
+ */
+@property (nonatomic, copy) NSArray<NSString *> *itemTitles;
 
-@property (nonatomic, strong) UIColor *titleColor;
+/**
+ *  普通状态颜色,default：lightGrayColor
+ */
+@property (nonatomic, strong) UIColor *normalColor;
 
-@property (nonatomic, strong) UIColor *sliderColor;
+/**
+ *  选中状态颜色,default：redColor
+ */
+@property (nonatomic, strong) UIColor *selectedColor;
 
+/**
+ *  选中索引，default:0
+ */
 @property (nonatomic) NSUInteger selectedIndex;
 
+/**
+ *  滑动条
+ */
 @property (nonatomic, strong, readonly) UIView *sliderView;
 
 @property (nonatomic, weak) id<CDSlidePageHeaderViewDelegate> delegate;

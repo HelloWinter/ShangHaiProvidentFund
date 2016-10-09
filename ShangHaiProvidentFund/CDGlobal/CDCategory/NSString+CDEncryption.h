@@ -24,8 +24,24 @@
  */
 - (NSString *)cd_sha1HexDigest;
 
+/**
+ *  AES加密
+ *
+ *  @param key
+ *  @param Iv
+ *
+ *  @return 加密后字符串
+ */
 - (NSString *)cd_AESencryptWithKey:(NSString*)key iv:(NSString *)Iv;
 
+/**
+ *  AES解密
+ *
+ *  @param key
+ *  @param Iv
+ *
+ *  @return 原始字符串
+ */
 - (NSString *)cd_AESdecryptWithKey:(NSString *)key iv:(NSString *)Iv;
 
 @end

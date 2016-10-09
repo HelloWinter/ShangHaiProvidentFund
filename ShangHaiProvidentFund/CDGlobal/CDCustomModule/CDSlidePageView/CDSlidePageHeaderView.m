@@ -34,9 +34,9 @@
 }
 
 - (void)setupUI{
-    _tabSize = CGSizeZero;
-    _titleColor = [UIColor lightGrayColor];
-    _sliderColor = [UIColor redColor];
+    _sliderSize = CGSizeZero;
+    _normalColor = [UIColor lightGrayColor];
+    _selectedColor = [UIColor redColor];
     _selectedIndex=0;
     [self addSubview:self.sliderView];
 }
@@ -55,9 +55,9 @@
     return _sliderView;
 }
 
-- (void)setSliderColor:(UIColor *)sliderColor{
-    _sliderColor=sliderColor;
-    self.sliderView.backgroundColor=_sliderColor;
+- (void)setSelectedColor:(UIColor *)selectedColor{
+    _selectedColor=selectedColor;
+    self.sliderView.backgroundColor=_selectedColor;
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview{
@@ -66,69 +66,62 @@
 
 - (void)reload {
     [self.buttons makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [self.buttons removeAllObjects];
-    for (int idx = 0; idx < self.titles.count; idx ++) {
-        NSString *title = self.titles[idx];
-        if (![title isKindOfClass:[NSString class]]) {
-            continue;
+    for (int idx = 0; idx < self.itemTitles.count; idx++) {
+        UIButton *button=[self.buttons cd_safeObjectAtIndex:idx];
+        if (!button) {
+            button = [UIButton buttonWithType:UIButtonTypeCustom];
+            button.titleLabel.font = [UIFont systemFontOfSize:18];
+            [button addTarget:self action:@selector(p_titleButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+            [button setTitleColor:_normalColor forState:UIControlStateNormal];
+            [button setTitleColor:_selectedColor forState:UIControlStateSelected];
+            [self.buttons addObject:button];
         }
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.titleLabel.font = [UIFont systemFontOfSize:18];
+        button.selected = (idx == _selectedIndex);
+        NSString *title = [self.itemTitles cd_safeObjectAtIndex:idx];
         [button setTitle:title forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(p_titleButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [button setTitleColor:_titleColor forState:UIControlStateNormal];
-        [button setTitleColor:_sliderColor forState:UIControlStateSelected];
-        button.selected = idx == _selectedIndex;
-        [self.buttons addObject:button];
         [self addSubview:button];
     }
+    [self setNeedsLayout];
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    
-    CGFloat width = self.width / self.titles.count;
+    CGFloat width = self.width / self.itemTitles.count;
     CGFloat height = self.height;
-    for (int idx = 0; idx < _buttons.count; idx ++) {
-        UIButton *button = _buttons[idx];
-        if (![button isKindOfClass:[UIButton class]]) {
-            continue;
-        }
-        CGFloat axisX = width *idx;
+    for (int idx = 0; idx < self.itemTitles.count; idx ++) {
+        UIButton *button = self.buttons[idx];
+        CGFloat axisX = width*idx;
         CGFloat axisY = 0;
         button.frame = CGRectMake(axisX, axisY, width, height);
     }
-    if (CGSizeEqualToSize(_tabSize, CGSizeZero)) {
-        self.sliderView.width = width;
-        self.sliderView.height = 2.0;
+    if (CGSizeEqualToSize(_sliderSize, CGSizeZero)) {
+        self.sliderView.size=CGSizeMake(width, 2.0);
     } else {
-        _tabSize.width = MIN(_tabSize.width, width);
-        _tabSize.height = MIN(_tabSize.height, self.height);
-        self.sliderView.size = _tabSize;
+        _sliderSize.width = MIN(_sliderSize.width, width);
+        _sliderSize.height = MIN(_sliderSize.height, height);
+        self.sliderView.size = _sliderSize;
     }
     self.sliderView.bottom = self.height;
-    self.sliderView.centerX = width * 0.5 + width * _selectedIndex;
+    self.sliderView.centerX = width * (_selectedIndex+0.5f);
 }
 
 - (void)p_titleButtonAction:(UIButton *)button {
-    if ([_buttons containsObject:button]) {
-        NSUInteger selectedIndex = [_buttons indexOfObject:button];
+    if ([self.buttons containsObject:button]) {
+        NSUInteger selectedIndex = [self.buttons indexOfObject:button];
         [self setSelectedIndex:selectedIndex];
     }
 }
 
 - (void)setSelectedIndex:(NSUInteger)selectedIndex {
-    if (selectedIndex >= self.buttons.count) {
-        return;
-    }
+    if (selectedIndex >= self.itemTitles.count) { return; }
     if (_selectedIndex != selectedIndex) {
         _selectedIndex = selectedIndex;
         if (_delegate && [_delegate respondsToSelector:@selector(slidePageHeaderView:willSelectButtonAtIndex:)]) {
             [_delegate slidePageHeaderView:self willSelectButtonAtIndex:_selectedIndex];
         }
         [UIView animateWithDuration:0.25 animations:^{
-            for (int idx = 0; idx < self.buttons.count; idx ++) {
-                UIButton *button = self.buttons[idx];
+            for (int idx = 0; idx < self.itemTitles.count; idx ++) {
+                UIButton *button = [self.buttons cd_safeObjectAtIndex:idx];
                 button.selected = idx == _selectedIndex;
                 if (button.selected) {
                     self.sliderView.centerX = button.centerX;

@@ -550,7 +550,7 @@ static const CGFloat topHeight=50;
             }
             
             UIImage* image = [UIImage imageWithContentsOfFile:[self getMyBundlePath1:@"images/icon_direction.png"]];
-            view.image = [image imageRotatedByDegrees:routeAnnotation.degree];
+            view.image = [image cd_imageRotatedByDegrees:routeAnnotation.degree];
             view.annotation = routeAnnotation;
         }
             break;
@@ -564,7 +564,7 @@ static const CGFloat topHeight=50;
             }
             
             UIImage* image = [UIImage imageWithContentsOfFile:[self getMyBundlePath1:@"images/icon_nav_waypoint.png"]];
-            view.image = [image imageRotatedByDegrees:routeAnnotation.degree];
+            view.image = [image cd_imageRotatedByDegrees:routeAnnotation.degree];
             view.annotation = routeAnnotation;
         }
             break;

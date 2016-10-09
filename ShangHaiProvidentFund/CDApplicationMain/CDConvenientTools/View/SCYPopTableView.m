@@ -126,32 +126,23 @@ static const CGSize kSize = {290,658*0.5};
     UIWindow *window = CDKeyWindow;
     self.centerX = window.width * 0.5;
     self.top = window.bottom;
-    [window cd_showView:self WithBackViewAlpha:0.5 Target:nil TouchAction:nil Animation:^{
+
+    [window showView:self backViewAlpha:0.5 target:nil touchAction:nil animation:^{
         self.center = CGPointMake(window.width * 0.5, (window.height) * 0.5);
-    } TimeInterval:(animated ? kAnimationDuration : 0) Fininshed:^(BOOL finished) {
+    } timeInterval:(animated ? kAnimationDuration : 0) finished:^(BOOL finished) {
         
     }];
-    
-    
-//    [window showViewWithBackView:self alpha:0.5 target:nil touchAction:nil animation:^{
-//        self.center = CGPointMake(window.width * 0.5, (window.height) * 0.5);
-//    } timeInterval:(animated ? kAnimationDuration : 0) fininshed:^(BOOL finished){
-//        
-//    }];
 }
 
 - (void)dismiss:(BOOL)animated {
     if (!self.superview) {
         return;
     }
-    [self.superview cd_hideBackViewForView:self animation:^{
+    [self.superview hideView:self animation:^{
         self.top = self.superview.bottom;
     } timeInterval:(animated ? kAnimationDuration : 0) fininshed:^(BOOL complation) {
         
     }];
-//    [self.superview hideBackViewForView:self animation:^{//self.superview==SCYKeyWindow()
-//        self.top = self.superview.bottom;
-//    } timeInterval:(animated ? kAnimationDuration : 0) fininshed:nil];
 }
 
 - (void)setupViewData:(SCYMortgageCalculatorCellItem *)item popType:(SCYPopTableViewType)type indexPath:(NSIndexPath *)path{

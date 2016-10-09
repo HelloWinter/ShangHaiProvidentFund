@@ -12,7 +12,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-@implementation UIView (CDGeometry)
+@implementation UIView (CDCategory)
 
 - (CGFloat)left {
     return self.frame.origin.x;
@@ -52,6 +52,42 @@
     CGRect frame = self.frame;
     frame.origin.y = bottom - frame.size.height;
     self.frame = frame;
+}
+
+- (CGPoint)leftTop {
+    return CGPointMake(self.left, self.top);
+}
+
+- (void)setLeftTop:(CGPoint)leftTop {
+    self.left = leftTop.x;
+    self.top = leftTop.y;
+}
+
+- (CGPoint)leftBottom {
+    return CGPointMake(self.left, self.bottom);
+}
+
+- (void)setLeftBottom:(CGPoint)leftBottom {
+    self.left = leftBottom.x;
+    self.bottom = leftBottom.y;
+}
+
+- (CGPoint)rightTop {
+    return CGPointMake(self.right, self.top);
+}
+
+- (void)setRightTop:(CGPoint)rightTop {
+    self.right = rightTop.x;
+    self.top = rightTop.y;
+}
+
+- (CGPoint)rightBottom {
+    return CGPointMake(self.right, self.bottom);
+}
+
+- (void)setRightBottom:(CGPoint)rightBottom {
+    self.right = rightBottom.x;
+    self.bottom = rightBottom.y;
 }
 
 - (CGFloat)centerX {
@@ -119,49 +155,42 @@ static const void *kBackViewIdentifier = &kBackViewIdentifier;
 
 @implementation UIView (CDBackView)
 
-- (void)cd_showView:(UIView *)view WithBackViewAlpha:(CGFloat)a Target:(id)target TouchAction:(SEL)selector{
-    UIView* backView = [[UIView alloc] initWithFrame:self.bounds];
-    backView.backgroundColor = [UIColor blackColor];
-    backView.alpha = a;
-    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:target action:selector];
-    [backView addGestureRecognizer:gesture];
-    
-    objc_setAssociatedObject(self, kBackViewIdentifier, backView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self addSubview:backView];
-    [self addSubview:view];
-}
-
-- (void)cd_showView:(UIView *)view WithBackViewAlpha:(CGFloat)a Target:(id)target TouchAction:(SEL)selector Animation:(void(^)(void))animation TimeInterval:(NSTimeInterval)interval Fininshed:(void(^)(BOOL finished))fininshed{
-    [self cd_showView:view WithBackViewAlpha:a Target:target TouchAction:selector];
+- (void)showView:(UIView *)view backViewAlpha:(CGFloat)a target:(id)target touchAction:(SEL)selector animation:(void(^)(void))animation timeInterval:(NSTimeInterval)interval finished:(void(^)(BOOL finished))fininshed{
+    [self showView:view
+     backViewAlpha:a
+            target:target
+       touchAction:selector];
     [UIView animateWithDuration:interval
                      animations:animation
                      completion:fininshed];
 }
 
-- (void)cd_hideBackViewForView:(UIView *)view
-                  animation:(void(^)(void))animation
-               timeInterval:(NSTimeInterval)interval
-                  fininshed:(void(^)(BOOL complation))fininshed{
-    __block typeof(self) block_self = self;
+- (void)showView:(UIView *)view backViewAlpha:(CGFloat)a target:(id)target touchAction:(SEL)selector{
+    UIView* backView = [[UIView alloc] initWithFrame:self.bounds];
+    backView.backgroundColor=[UIColor colorWithWhite:0 alpha:a];
+    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:target action:selector];
+    [backView addGestureRecognizer:gesture];
+    
+    [self addSubview:backView];
+    [self addSubview:view];
+    objc_setAssociatedObject(self, kBackViewIdentifier, backView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)hideView:(UIView *)view animation:(void(^)(void))animation timeInterval:(NSTimeInterval)interval fininshed:(void(^)(BOOL complation))fininshed{
     [UIView animateWithDuration:interval
                      animations:animation
                      completion:^(BOOL finish){
-                         [block_self cd_hideBackViewForView:view];
+                         [self hideView:view];
                          if (fininshed) {
                              fininshed(finish);
                          }
                      }];
 }
 
-- (void)cd_hideBackViewForView:(UIView *)view{
+- (void)hideView:(UIView *)view{
     UIView* backView = objc_getAssociatedObject(self, kBackViewIdentifier);
     [view removeFromSuperview];
     [backView removeFromSuperview];
-}
-
-- (UIView*)backView{
-    UIView* backView = objc_getAssociatedObject(self, kBackViewIdentifier);
-    return backView;
 }
 
 @end
@@ -170,58 +199,52 @@ static const void *kBackViewIdentifier = &kBackViewIdentifier;
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 static const void *kDefaultWatermarkKey = &kDefaultWatermarkKey;
-static const NSTimeInterval kAnimationDuration = 0.2;
 
 @implementation UIView (CDWatermark)
 
-- (void)cd_showWatermark:(NSString *)imageName animated:(BOOL)animated Target:(id)target Action:(SEL)action{
-    UIImageView *watermark = [self watermark:imageName];
+- (void)showDefaultWatermarkTarget:(id)target action:(SEL)action {
+    [self showWatermark:@"nonedata" target:(id)target action:(SEL)action];
+}
+
+- (void)showWatermark:(NSString *)imageName target:(id)target action:(SEL)action {
+    UIImageView *watermark = [self watermark];
     if (!watermark.superview) {
-        if (action) {
-            watermark.userInteractionEnabled=YES;
-            UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:target action:action];
+        if (target && action) {
+            watermark.userInteractionEnabled = YES;
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:target action:action];
             [watermark addGestureRecognizer:tapGesture];
         }
         [self addSubview:watermark];
-        watermark.alpha = 0;
-        [UIView animateWithDuration:(animated ? kAnimationDuration : 0) animations:^{
-            watermark.alpha = 1;
-        } completion:nil];
     }
+    UIImage *image = [UIImage imageNamed:imageName];
+    watermark.size = image.size;
+    watermark.center = CGPointMake(self.width * 0.5, self.height * 0.5);
+    watermark.image=image;
 }
 
-- (void)cd_hideWatermark:(BOOL)animated {
-    UIImageView *watermark = [self watermark:nil];
+- (void)hideWatermark {
+    UIImageView *watermark = [self watermark];
     if (watermark && watermark.superview) {
-        [UIView animateWithDuration:(animated ? kAnimationDuration : 0) animations:^{
-            watermark.alpha = 0;
-        } completion:^(BOOL finished) {
-            [watermark removeFromSuperview];
-            if (watermark.gestureRecognizers.count!=0) {
-                UIGestureRecognizer *gesrure = [watermark.gestureRecognizers objectAtIndex:0];
-                if (gesrure) {
-                    [watermark removeGestureRecognizer:gesrure];
-                }
+        if (watermark.gestureRecognizers.count!=0) {
+            UIGestureRecognizer *gesrure = [watermark.gestureRecognizers objectAtIndex:0];
+            if (gesrure) {
+                [watermark removeGestureRecognizer:gesrure];
             }
-        }];
+        }
+        [watermark removeFromSuperview];
+        objc_setAssociatedObject(self, kDefaultWatermarkKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
 }
 
-- (UIImageView *)watermark:(NSString *)name {
+- (UIImageView *)watermark{
     UIImageView *watermark = objc_getAssociatedObject(self, kDefaultWatermarkKey);
-    if (watermark) {
-        return watermark;
-    }
-    
-    if (!watermark && name.length) {
-        UIImage *image = [UIImage imageNamed:name];
-        watermark = [[UIImageView alloc] initWithImage:image];
-        watermark.size = image.size;
-        watermark.center = CGPointMake(self.width * 0.5, self.height * 0.5);
+    if (!watermark) {
+        watermark = [[UIImageView alloc] init];
         objc_setAssociatedObject(self, kDefaultWatermarkKey, watermark, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return watermark;
+    }else{
+        return watermark;
     }
-    return nil;
 }
 
 @end
@@ -229,43 +252,36 @@ static const NSTimeInterval kAnimationDuration = 0.2;
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-@implementation UIView (CDHierarchy)
+static const void *kBadgeViewIdentifier = &kBadgeViewIdentifier;
 
-- (BOOL)cd_includeSubviewInHierarchy:(UIView *)view {
-    for (UIView *subview in self.subviews) {
-        if (subview == view) {
-            return YES;
-        }
-        if ([subview cd_includeSubviewInHierarchy:view]) {
-            return YES;
-        }
+@implementation UIView (CDBadge)
+
+- (void)showBadge{
+    UIView *badgeView=objc_getAssociatedObject(self, kBadgeViewIdentifier);
+    if (badgeView==nil) {
+        CGFloat badgeWidth=8;
+        badgeView = [[UIView alloc]init];
+        badgeView.backgroundColor = [UIColor redColor];
+        badgeView.size = CGSizeMake(badgeWidth, badgeWidth);
+        badgeView.center=CGPointMake(self.width-badgeWidth*0.5, badgeWidth*0.5);
+        badgeView.layer.cornerRadius = badgeView.frame.size.width*0.5;
+        objc_setAssociatedObject(self, kBadgeViewIdentifier, badgeView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    return NO;
+    if (!badgeView.superview) {
+        [self addSubview:badgeView];
+        [self bringSubviewToFront:badgeView];
+    }
 }
 
-- (BOOL)cd_isIncludedInSuperviewHierarchy:(UIView *)view {
-    return [view cd_includeSubviewInHierarchy:self];
-}
-
-- (UIResponder *)cd_getFirstResponder {
-    for (UIView *subview in self.subviews) {
-        if (subview.isFirstResponder) {
-            return subview;
+- (void)removeBadge{
+    UIView *badgeView=objc_getAssociatedObject(self, kBadgeViewIdentifier);
+    if (badgeView) {
+        if (badgeView.superview) {
+            [badgeView removeFromSuperview];
         }
-        UIResponder *responder = [subview cd_getFirstResponder];
-        if (responder) {
-            return responder;
-        }
+        objc_setAssociatedObject(self, kBadgeViewIdentifier, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    return nil;
-}
-
-- (UITextField *)cd_getFirstResponderTextField {
-    UIResponder *textField = [self cd_getFirstResponder];
-    if ([textField isKindOfClass:[UITextField class]]) {
-        return (UITextField *)textField;
-    }
-    return nil;
+    
 }
 
 @end

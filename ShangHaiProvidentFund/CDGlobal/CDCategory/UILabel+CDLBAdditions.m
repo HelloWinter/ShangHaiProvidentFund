@@ -11,9 +11,6 @@
 @implementation UILabel (textSize)
 
 - (CGSize)cd_textSize {
-//    if ([NSString instanceMethodForSelector:@selector(sizeWithFont:)]) {
-//        return [self.text sizeWithFont:self.font];
-//    }
     if ([NSString instanceMethodForSelector:@selector(sizeWithAttributes:)]) {
         return [self.text sizeWithAttributes:@{NSFontAttributeName:self.font}];
     }

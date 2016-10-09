@@ -22,6 +22,6 @@
 /**
  *  判断日期是否是今天
  */
-- (BOOL)isToday;
+- (BOOL)cd_isToday;
 
 @end

@@ -11,7 +11,7 @@
 @interface NSData (CDDataAddition)
 
 /**
- *  AES128加密
+ *  AES加密
  *
  *  @param key 加密秘钥
  *
@@ -20,7 +20,7 @@
 - (NSData *)cd_encryptionWithKey:(NSString *)key iv:(NSString *)Iv;
 
 /**
- *  AES2128解密
+ *  AES解密
  *
  *  @param key 解密秘钥
  *

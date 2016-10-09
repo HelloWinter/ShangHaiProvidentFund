@@ -23,7 +23,7 @@
     return dateString;
 }
 
-- (BOOL)isToday{
+- (BOOL)cd_isToday{
     NSCalendar *calendar = [NSCalendar currentCalendar];
     int unit = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear;
     NSDateComponents *todayCmps = [calendar components:unit fromDate:[NSDate date]];

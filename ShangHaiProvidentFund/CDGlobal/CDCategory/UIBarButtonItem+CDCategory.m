@@ -10,7 +10,7 @@
 
 @implementation UIBarButtonItem (CDCategory)
 
-+ (UIBarButtonItem *)cd_barButtonWidth:(CGFloat)width Title:(NSString *)title ImageName:(NSString *)imageName Target:(id)target Action:(SEL)action{
++ (UIBarButtonItem *)cd_barButtonWidth:(CGFloat)width title:(NSString *)title imageName:(NSString *)imageName target:(id)target action:(SEL)action{
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     barButton.frame = CGRectMake(0, 0, width, 44);
     if (title) {

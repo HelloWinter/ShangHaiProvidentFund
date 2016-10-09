@@ -249,11 +249,11 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
  */
 - (void)updateNavgationLeftBtn{
     if (self.webView.canGoBack) {
-        UIBarButtonItem *leftItem = [UIBarButtonItem cd_barButtonWidth:20 Title:nil ImageName:@"navigation_backOff" Target:self Action:@selector(cd_backOffAction)];
-        UIBarButtonItem *leftItemClose = [UIBarButtonItem cd_barButtonWidth:40 Title:@"关闭" ImageName:nil Target:self Action:@selector(backToOriginalViewController)];
+        UIBarButtonItem *leftItem = [UIBarButtonItem cd_barButtonWidth:20 title:nil imageName:@"navigation_backOff" target:self action:@selector(cd_backOffAction)];
+        UIBarButtonItem *leftItemClose = [UIBarButtonItem cd_barButtonWidth:40 title:@"关闭" imageName:nil target:self action:@selector(backToOriginalViewController)];
         self.navigationItem.leftBarButtonItems = @[leftItem,leftItemClose];
     }else{
-        UIBarButtonItem *leftItem = [UIBarButtonItem cd_barButtonWidth:20 Title:nil ImageName:@"navigation_backOff" Target:self Action:@selector(cd_backOffAction)];
+        UIBarButtonItem *leftItem = [UIBarButtonItem cd_barButtonWidth:20 title:nil imageName:@"navigation_backOff" target:self action:@selector(cd_backOffAction)];
         self.navigationItem.leftBarButtonItem = leftItem;
     }
 }

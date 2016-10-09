@@ -117,7 +117,7 @@
 
 //如果自定义返回按钮
 - (void)cd_showBackButton{
-    UIBarButtonItem *leftItem = [UIBarButtonItem cd_barButtonWidth:20 Title:nil ImageName:@"navigation_backOff" Target:self Action:@selector(cd_backOffAction)];
+    UIBarButtonItem *leftItem = [UIBarButtonItem cd_barButtonWidth:20 title:nil imageName:@"navigation_backOff" target:self action:@selector(cd_backOffAction)];
     self.navigationItem.leftBarButtonItem = leftItem;
 }
 
