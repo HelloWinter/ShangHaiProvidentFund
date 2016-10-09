@@ -48,16 +48,6 @@
 @property (readonly, nonatomic) BOOL isLoading;
 
 /**
- *  是否取消了请求
- */
-@property (readonly, nonatomic) BOOL isCancelled;
-
-/**
- *  服务器时间
- */
-@property (nonatomic, strong, readonly) NSDate *serverDate;
-
-/**
  *  如果token无效或未登录，是否显示登录界面，默认为YES
  */
 @property (nonatomic, assign) BOOL showLoginController;

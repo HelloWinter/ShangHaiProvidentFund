@@ -22,19 +22,63 @@ static char kHideNavBarKey;
 
 @end
 
-static char kStatisticsPageTitleIndentifier;
 @implementation UIViewController (Statistics)
 
-- (NSString *)statisticsPageTitle{
-    return objc_getAssociatedObject(self, &kStatisticsPageTitleIndentifier);
++ (void)load{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Class class = [self class];
+        // When swizzling a class method, use the following:
+        // Class class = object_getClass((id)self);
+        
+        SEL originalDidAppearSelector = @selector(viewDidAppear:);
+        SEL swizzledDidAppearSelector = @selector(cd_viewDidAppear:);
+        Method originalDidAppearMethod = class_getInstanceMethod(self, originalDidAppearSelector);
+        Method swizzledDidAppearMethod = class_getInstanceMethod(self, swizzledDidAppearSelector);
+        
+        BOOL didAddDidAppearMethod = class_addMethod(class,
+                                                     originalDidAppearSelector,
+                                                     method_getImplementation(swizzledDidAppearMethod),
+                                                     method_getTypeEncoding(swizzledDidAppearMethod));
+        if (!didAddDidAppearMethod) {
+            method_exchangeImplementations(originalDidAppearMethod, swizzledDidAppearMethod);
+        }
+//        else {
+//            class_replaceMethod(class,
+//                                swizzledDidAppearSelector,
+//                                method_getImplementation(originalDidAppearMethod),
+//                                method_getTypeEncoding(originalDidAppearMethod));
+//        }
+        
+        SEL originalDidDisappearSelector = @selector(viewDidDisappear:);
+        SEL swizzledDidDisappearSelector = @selector(cd_viewDidDisappear:);
+        Method originalDidDisappearMethod = class_getInstanceMethod(self, originalDidDisappearSelector);
+        Method swizzledDidDisappearMethod = class_getInstanceMethod(self, swizzledDidDisappearSelector);
+        
+        BOOL didAddDidDisappearMethod = class_addMethod(class,
+                                                     originalDidDisappearSelector,
+                                                     method_getImplementation(swizzledDidDisappearMethod),
+                                                     method_getTypeEncoding(swizzledDidDisappearMethod));
+        if (!didAddDidDisappearMethod) {
+            method_exchangeImplementations(originalDidDisappearMethod, swizzledDidDisappearMethod);
+        }
+//        else {
+//            class_replaceMethod(class,
+//                                swizzledDidDisappearSelector,
+//                                method_getImplementation(originalDidDisappearMethod),
+//                                method_getTypeEncoding(originalDidDisappearMethod));
+//        }
+    });
 }
 
-- (void)setStatisticsPageTitle:(NSString*)title {
-    if (title.length) {
-        objc_setAssociatedObject(self, &kStatisticsPageTitleIndentifier, title, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    }else {
-        objc_setAssociatedObject(self, &kStatisticsPageTitleIndentifier, NSStringFromClass([self class]), OBJC_ASSOCIATION_COPY_NONATOMIC);
-    }
+- (void)cd_viewDidAppear:(BOOL)animated{
+    [self cd_viewDidAppear:animated];
+#warning TODO 在此处加入页面统计
+}
+
+- (void)cd_viewDidDisappear:(BOOL)animated{
+    [self cd_viewDidDisappear:animated];
+#warning TODO 在此处加入页面统计
 }
 
 @end

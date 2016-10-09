@@ -20,9 +20,4 @@
 
 @interface UIViewController (Statistics)
 
-/*!
- 第三方统计时获取页面的title(通常放在VC基类里)
- */
-@property (nonatomic, copy) NSString *statisticsPageTitle;
-
 @end

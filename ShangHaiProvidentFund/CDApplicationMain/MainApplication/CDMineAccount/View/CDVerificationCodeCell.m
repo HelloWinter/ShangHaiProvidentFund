@@ -98,6 +98,7 @@
     [self invalidTimer];
     _countDown = 59;
     _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateCountdown) userInfo:nil repeats:YES];
+    [_timer fire];
     self.getSecurityBtn.enabled = NO;
 }
 

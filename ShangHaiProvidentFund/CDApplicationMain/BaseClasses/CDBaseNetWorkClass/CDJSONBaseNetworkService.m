@@ -58,8 +58,6 @@
 - (void)request:(NSString *)urlString params:(id)params {
     [self.task cancel];
     self.task=nil;
-    _isCancelled = NO;
-    
     [CDNetworkRequestManager removeService:self];
     
 //    NSDictionary *paramsDic = [self packParameters:params];
@@ -162,7 +160,6 @@
         return;
     }
     [self.task cancel];
-    _isCancelled = YES;
     if (_delegate && [_delegate respondsToSelector:@selector(requestDidCancel:)]) {
         [_delegate requestDidCancel:self];
     }

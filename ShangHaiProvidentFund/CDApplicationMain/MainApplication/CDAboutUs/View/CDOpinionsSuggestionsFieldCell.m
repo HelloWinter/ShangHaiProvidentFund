@@ -14,7 +14,6 @@
 
 @property (nonatomic, strong) UILabel *label;
 
-
 @end
 
 @implementation CDOpinionsSuggestionsFieldCell
