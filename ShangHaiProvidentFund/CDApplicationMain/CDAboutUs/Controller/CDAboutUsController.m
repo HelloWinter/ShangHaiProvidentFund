@@ -101,11 +101,15 @@
     switch (indexPath.section) {
         case 0:{
             switch (indexPath.row) {
-                case 0:
-                    [self pushToWKWebViewControllerWithTitle:@"遗忘密码" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/sms/forget-pass.html")];
+                case 0:{
+                    NSString *strURL=CDWebURLWithAPI(@"/static/sms/forget-pass.html");
+                    [self pushToWKWebViewControllerWithTitle:@"遗忘密码" javaScriptCode:nil URLString:[strURL stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)]];//
+                }
                     break;
-                case 1:
-                    [self pushToWKWebViewControllerWithTitle:@"手机取回用户名和密码" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/sms/get-pass.html")];
+                case 1:{
+                    NSString *strURL=@"https://persons.shgjj.com/get-pass.html";//CDURLWithAPI(@"/get-pass.html");
+                    [self pushToWKWebViewControllerWithTitle:@"手机取回用户名和密码" javaScriptCode:nil URLString:[strURL stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)]];
+                }
                     break;
                 case 2:
                     [self pushToWKWebViewControllerWithTitle:@"个人公积金账号查询" javaScriptCode:nil URLString:@"http://m.shgjj.com/verifier/verifier/index"];
@@ -119,14 +123,14 @@
         case 1:{
             switch (indexPath.row) {
                 case 0:{
-//                    NSString *jsCode=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element" tagName:@"link"];
-//                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
+                    NSString *jsCode=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element" tagName:@"link"];
+                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
                     
-                    NSString *jsCode1=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element" className:@"ctitle"];
-                    NSString *jsCode2=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element1" className:@"nav"];
-//                    NSString *jsCode3=[self removeHTMLNodeWith:@"element2" tagName:@"script"];
-                    NSString *jscode = [NSString stringWithFormat:@"%@%@",jsCode1,jsCode2];
-                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jscode URLString:CDWebURLWithAPI(@"/html/wap/more/79839.html")];
+//                    NSString *jsCode1=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element" className:@"ctitle"];
+//                    NSString *jsCode2=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element1" className:@"nav"];
+////                    NSString *jsCode3=[self removeHTMLNodeWith:@"element2" tagName:@"script"];
+//                    NSString *jscode = [NSString stringWithFormat:@"%@%@",jsCode1,jsCode2];
+//                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jscode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
                 }
                     break;
                 case 1:{
