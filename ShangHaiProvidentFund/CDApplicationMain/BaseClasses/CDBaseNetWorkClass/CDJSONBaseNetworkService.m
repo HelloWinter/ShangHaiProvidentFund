@@ -18,7 +18,7 @@
 
 @property (nonatomic, strong) NSURLSessionDataTask *currentTask;
 @property (nonatomic, strong) CDGlobalHTTPSessionManager *manager;
-@property (nonatomic, copy) NSString *cacheURLStringID;//cacheurlstring
+@property (nonatomic, copy) NSString *cacheURLStringID;
 @property (nonatomic, strong) YYCache *cache;
 
 @end
@@ -71,7 +71,6 @@
         }
     }
     
-    self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
     WS(weakSelf);
     switch (_httpRequestMethod) {
         case kHttpRequestTypePOST: {
@@ -93,10 +92,7 @@
             }];
             
         }   break;
-            
         case kHttpRequestTypeGET: {
-//            NSString *str= @"http://gjj_8095.gs.9188.com/gjj/start.go?skin=2";
-            
             self.currentTask = [self.manager GET:urlString parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -113,24 +109,6 @@
                     [weakSelf taskDidFail:task error:error];
                 }
             }];
-            
-//            NSString *str= @"http://person.shgjj.com/gjjManager/mobileNews";
-//            
-//            NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-//            AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-//            NSURL *URL = [NSURL URLWithString:str];
-//            NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-//            NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-//                NSLog(@"response:%@, responseObject%@", response, responseObject);
-//                
-////                if (error) {
-////                    NSLog(@"Error: %@", error);
-////                } else {
-////                    NSLog(@"response:%@, responseObject%@", response, responseObject);
-////                }
-//            }];
-//            [dataTask resume];
-            
         }   break;
     }
     

@@ -24,8 +24,7 @@
 //        manager.securityPolicy=[CDGlobalHTTPSessionManager customSecurityPolicy];
         manager.requestSerializer = [AFHTTPRequestSerializer serializer];
 //        manager.responseSerializer = [AFJSONResponseSerializer serializer];
-//        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html",@"text/json",@"text/javascript", nil];
+        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
         
         /*
          <AFURLRequestSerialization>
