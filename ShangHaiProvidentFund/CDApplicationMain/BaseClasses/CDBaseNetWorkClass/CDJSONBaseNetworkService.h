@@ -7,8 +7,7 @@
 //
 
 
-#import "CDBaseService.h"
-//#import "AFNetworking.h"
+#import <Foundation/Foundation.h>
 
 /* ---------------------------------------------------------------- */
 /** 网络请求基类 **/
@@ -16,12 +15,27 @@
 
 @protocol CDJSONBaseNetworkServiceDelegate;
 
-@interface CDJSONBaseNetworkService : CDBaseService
+@interface CDJSONBaseNetworkService : NSObject
 
 /**
  *  代理协议
  */
 @property (nonatomic, weak, readonly) id <CDJSONBaseNetworkServiceDelegate> delegate;
+
+/**
+ *  请求完成后收到的服务端返回的返回码，1为成功，其他均为失败
+ */
+@property (nonatomic, assign) NSInteger returnCode;//, readonly
+
+/**
+ *  请求完成后收到的服务端返回的描述
+ */
+@property (nonatomic, copy) NSString *desc;//, readonly
+
+/**
+ *  服务端返回的数据
+ */
+@property (nonatomic, strong) id rootData;//, readonly
 
 /**
  *  请求方式，默认是POST
@@ -45,12 +59,7 @@
  *
  *  @return (BOOL)
  */
-@property (readonly, nonatomic) BOOL isLoading;
-
-/**
- *  如果token无效或未登录，是否显示登录界面，默认为YES
- */
-@property (nonatomic, assign) BOOL showLoginController;
+@property (nonatomic, readonly) BOOL isLoading;
 
 /**
  *  是否忽略缓存,重新请求,默认YES
@@ -58,9 +67,19 @@
 @property (nonatomic, assign) BOOL isIgnoreCache;
 
 /**
- *  是否缓存数据,默认NO
+ *  是否缓存数据（默认NO不缓存）
  */
-@property (nonatomic, assign) BOOL isNeedCache;
+@property (nonatomic, assign) BOOL toCacheData;
+
+/**
+ *  是否忽略缓存直接重新请求数据（默认NO:有缓存就先使用然后再刷新）
+ */
+@property (nonatomic, assign, getter=isIgnoreCache) BOOL ignoreCache;
+
+/**
+ *  数据是否是缓存的数据
+ */
+@property (nonatomic, assign, readonly) BOOL isUseCache;
 
 /**
  *  初始化方法
@@ -110,21 +129,21 @@
  *
  *  @param service 网络请求实例对象
  */
-- (void)requestDidStart:(CDJSONBaseNetworkService *)service;
+- (void)serviceDidStart:(CDJSONBaseNetworkService *)service;
 
 /**
  *  网络请求已经完成
  *
  *  @param service 网络请求实例对象
  */
-- (void)requestDidFinished:(CDJSONBaseNetworkService *)service;
+- (void)serviceDidFinished:(CDJSONBaseNetworkService *)service;
 
 /**
  *  网络请求已经取消，由方法cancel触发
  *
  *  @param service 网络请求实例对象
  */
-- (void)requestDidCancel:(CDJSONBaseNetworkService *)service;
+- (void)serviceDidCancel:(CDJSONBaseNetworkService *)service;
 
 /**
  *  网络请求失败
@@ -132,6 +151,6 @@
  *  @param service 网络请求实例对象
  *  @param error   错误描述
  */
-- (void)request:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error;
+- (void)service:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error;
 
 @end

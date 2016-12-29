@@ -10,6 +10,8 @@
 #import <objc/runtime.h>
 
 static char kHideNavBarKey;
+static char kNavigationBarColorKey;
+
 @implementation UIViewController (HideNavBar)
 
 - (void)setHidesNavigationBarWhenPushed:(BOOL)hidesNavigationBarWhenPushed {
@@ -18,6 +20,14 @@ static char kHideNavBarKey;
 
 - (BOOL)hidesNavigationBarWhenPushed {
     return [objc_getAssociatedObject(self, &kHideNavBarKey) boolValue];
+}
+
+- (void)setNavigationBarColor:(UIColor *)navigationBarColor {
+    objc_setAssociatedObject(self, &kNavigationBarColorKey, navigationBarColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIColor *)navigationBarColor {
+    return objc_getAssociatedObject(self, &kNavigationBarColorKey);
 }
 
 @end

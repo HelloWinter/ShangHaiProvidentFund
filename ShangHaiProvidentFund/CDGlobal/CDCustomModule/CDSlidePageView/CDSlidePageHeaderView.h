@@ -22,6 +22,13 @@
  */
 @property (nonatomic, copy) NSArray<NSString *> *itemTitles;
 
+
+/**
+ *  badgeNumbers 未读消息数组
+ */
+@property (nonatomic, copy) NSArray<NSString *> *badgeNumbers;
+
+
 /**
  *  普通状态颜色,default：lightGrayColor
  */
@@ -31,6 +38,11 @@
  *  选中状态颜色,default：redColor
  */
 @property (nonatomic, strong) UIColor *selectedColor;
+
+/**
+ *  选中状态下是否显示粗体
+ */
+@property (nonatomic, assign) BOOL isBoldFont;
 
 /**
  *  选中索引，default:0

@@ -49,6 +49,16 @@
 @interface NSString (CDDateTransform)
 
 /**
+ *  将时间戳按照给定的格式转换成时间字符串
+ *
+ *  @param timestamp    时间戳
+ *  @param dateFormat   转换的时间格式(默认为@"yyyy-MM-dd HH:mm:ss")
+ *
+ *  @return (NSString *)
+ */
++ (NSString *)cd_stringDateFromTimestamp:(NSTimeInterval)timestamp WithDateFormat:(NSString *)dateFormat;
+
+/**
  *  将时间字符串按照给定的格式转换成date
  *
  *  @param dateFormat 转换的时间格式(默认为@"yyyy-MM-dd HH:mm:ss")
@@ -112,6 +122,22 @@
  *  @return (NSString *)格式化后的数字字符串
  */
 -(NSString *)cd_numberStringFormat;
+
+/**
+ *  给定宽度，字体，返回高度
+ *
+ *  @param width PreferWidth
+ *  @param font  字体
+ */
+- (CGSize)sizeWithPreferWidth:(CGFloat)width font:(UIFont *)font;
+
+/**
+ *  给定高度，字体，返回宽度
+ *
+ *  @param height 固定高度
+ *  @param font  字体
+ */
+- (CGSize)sizeWithpreferHeight:(CGFloat)height font:(UIFont *)font;
 
 @end
 

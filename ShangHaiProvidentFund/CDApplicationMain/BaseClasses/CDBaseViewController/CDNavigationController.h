@@ -10,6 +10,10 @@
 
 @interface CDNavigationController : UINavigationController
 
+- (void)setupNavBar;
+
+- (void)setupNavBarWithTintColor:(UIColor *)tintColor titleTextColor:(UIColor *)titleTextColor backgroundColor:(UIColor *)backgroundColor;
+
 @end
 
 

@@ -21,7 +21,7 @@
 
 - (void)loadWithAccountNum:(NSString *)accountNum ignoreCache:(BOOL)ignore showIndicator:(BOOL)show{
     self.showLodingIndicator=show;
-    self.isNeedCache=YES;
+    self.toCacheData=YES;
     self.isIgnoreCache=ignore;
     self.httpRequestMethod=kHttpRequestTypeGET;
     NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
@@ -50,8 +50,8 @@
 
 - (void)requestDidFinish:(id)rootData{
     [super requestDidFinish:rootData];
-    _returnCode=[rootData objectForKey:@"CHD"];
-    if ([_returnCode isEqualToString:@"0"]) {
+    self.returnCode=[[rootData objectForKey:@"CHD"]integerValue];
+    if (self.returnCode ==0) {
         NSArray *arrbasic=[rootData objectForKey:@"basic"];
         
 //        _basic = [CDRepayInfoBasicItem mj_objectArrayWithKeyValuesArray:arrbasic];

@@ -22,6 +22,13 @@
 /**
  *  判断日期是否是今天
  */
-- (BOOL)cd_isToday;
+- (BOOL)isToday;
+
+/**
+ *  距离现在间隔时间的描述
+ *
+ *  @return @"刚刚",@"XX分钟前",@"XX小时前",@"XX天前",@"MM-dd",@"yyyy-MM-dd"
+ */
+- (NSString *)cd_timeintervalDescriptionToCurrentTime;
 
 @end

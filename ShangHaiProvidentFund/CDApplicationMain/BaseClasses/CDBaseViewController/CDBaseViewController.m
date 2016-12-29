@@ -14,6 +14,8 @@
 
 @interface CDBaseViewController ()<UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 
+@property (nonatomic, strong) UIColor *navBarCurrentColor;
+
 @end
 
 @implementation CDBaseViewController
@@ -41,6 +43,7 @@
 
 - (void)setupInit{
     self.statusBarHidden=NO;
+    self.backImageName = @"navigation_backOff";
 }
 
 - (void)viewDidLoad {
@@ -79,19 +82,19 @@
 }
 
 #pragma mark - CDJSONBaseNetworkServiceDelegate
-- (void)requestDidStart:(CDJSONBaseNetworkService *)service{
+- (void)serviceDidStart:(CDJSONBaseNetworkService *)service{
     
 }
 
-- (void)requestDidFinished:(CDJSONBaseNetworkService *)service{
+- (void)serviceDidFinished:(CDJSONBaseNetworkService *)service{
     
 }
 
-- (void)request:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
+- (void)service:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
     
 }
 
-- (void)requestDidCancel:(CDJSONBaseNetworkService *)service{
+- (void)serviceDidCancel:(CDJSONBaseNetworkService *)service{
     
 }
 
@@ -100,6 +103,13 @@
     if ([navigationController isKindOfClass:[CDNavigationController class]]) {
         CDNavigationController *cdNavigationController = (CDNavigationController *)navigationController;
         [cdNavigationController setNavigationBarHidden:viewController.hidesNavigationBarWhenPushed animated:animated];
+    }
+    if ([navigationController isKindOfClass:[CDNavigationController class]]) {
+        [navigationController setNavigationBarHidden:viewController.hidesNavigationBarWhenPushed animated:animated];
+        if (viewController.navigationBarColor && !CGColorEqualToColor(self.navBarCurrentColor.CGColor, viewController.navigationBarColor.CGColor)) {
+            self.navBarCurrentColor = viewController.navigationBarColor;
+            [navigationController.navigationBar setBackgroundImage:[UIImage cd_imageWithColor:viewController.navigationBarColor] forBarMetrics:UIBarMetricsDefault];
+        }
     }
 }
 
@@ -117,7 +127,7 @@
 
 //如果自定义返回按钮
 - (void)cd_showBackButton{
-    UIBarButtonItem *leftItem = [UIBarButtonItem cd_barButtonWidth:20 title:nil imageName:@"navigation_backOff" target:self action:@selector(cd_backOffAction)];
+    UIBarButtonItem *leftItem = [UIBarButtonItem cd_ItemWidth:20 imageName:@"navigation_backOff" target:self action:@selector(cd_backOffAction)];
     self.navigationItem.leftBarButtonItem = leftItem;
 }
 

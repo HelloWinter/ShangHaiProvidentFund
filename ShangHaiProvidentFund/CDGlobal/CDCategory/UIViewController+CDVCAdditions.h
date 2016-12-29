@@ -15,6 +15,8 @@
  */
 @property (nonatomic) BOOL hidesNavigationBarWhenPushed;
 
+@property (nonatomic, strong) UIColor *navigationBarColor;
+
 
 @end
 

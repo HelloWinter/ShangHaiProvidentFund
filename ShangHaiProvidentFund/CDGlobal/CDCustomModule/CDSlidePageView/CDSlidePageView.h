@@ -39,6 +39,8 @@
 - (UIView *)slidePageView:(CDSlidePageView *)slidePageView contentViewAtPageIndex:(NSUInteger)index;
 
 - (NSString *)slidePageView:(CDSlidePageView *)slidePageView headerTitleAtPageIndex:(NSUInteger)index;
+@optional
+- (NSString *)slidePageView:(CDSlidePageView *)slidePageView badgeNumbersAtPageIndex:(NSUInteger)index;
 
 @end
 

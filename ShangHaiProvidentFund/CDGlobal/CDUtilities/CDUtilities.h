@@ -17,13 +17,6 @@
 /* ---------------------------------------------------------------- */
 
 /**
- *  设备屏幕缩放比例
- *
- *  @return (CGFloat)
- */
-CGFloat CDScale();
-
-/**
  *  旋转视图
  *
  *  @param view     要旋转的视图
@@ -42,7 +35,11 @@ UIViewController* CDVisibalController();
 /**
  *  设备屏幕类型
  */
-typedef NS_ENUM(NSUInteger, CurrentDeviceScreenModel){
+typedef NS_ENUM(NSInteger, CurrentDeviceScreenModel){
+    /**
+     *  iPhone，iPod，iPad以外的设备
+     */
+    CurrentDeviceScreenModel_Unspecified=-1,
     /**
      *  320x480的设备(640*960)
      */
@@ -59,6 +56,10 @@ typedef NS_ENUM(NSUInteger, CurrentDeviceScreenModel){
      *  414x736
      */
     CurrentDeviceScreenModel_5_5 = 3,
+    /**
+     *  iPad
+     */
+    CurrentDeviceScreenModel_iPad = 4
 };
 
 /**
@@ -136,6 +137,13 @@ NSDictionary* sessionsForDomain(NSString* domain);
 NSString *CDKeyChainUUID();
 
 /**
+ *  从keychain获取IDFV（没有就设置）
+ *
+ *  @return IDFV字符串
+ */
+NSString *CDKeyChainIDFV();
+
+/**
  *  显示简单的alertView
  */
 void showAlertViewWithTitleAndMessage(NSString *title, NSString *message);
@@ -210,29 +218,32 @@ void addLaunchTimes();
  */
 NSString *CDURLScheme();
 
-
+/**
+ *  去应用(系统)设置界面
+ */
+void goToSettings();
 
 @interface CDUtilities : NSObject
 
-/**
- *  将时间戳按照给定的格式转换成时间字符串
- *
- *  @param timestamp    时间戳
- *  @param dateFormat   转换的时间格式(默认为@"yyyy-MM-dd HH:mm:ss")
- *
- *  @return (NSString *)
- */
-+ (NSString *)transformToStringDateFromTimestamp:(NSTimeInterval)timestamp WithDateFormat:(NSString *)dateFormat;
-
-/**
- *  计算文本大小
- *
- *  @param text 文本
- *  @param font 字体大小
- *
- *  @return (CGSize)
- */
-+ (CGSize) sizeWithText:(NSString *)text WithFont:(UIFont *)font;
+///**
+// *  将时间戳按照给定的格式转换成时间字符串
+// *
+// *  @param timestamp    时间戳
+// *  @param dateFormat   转换的时间格式(默认为@"yyyy-MM-dd HH:mm:ss")
+// *
+// *  @return (NSString *)
+// */
+//+ (NSString *)transformToStringDateFromTimestamp:(NSTimeInterval)timestamp WithDateFormat:(NSString *)dateFormat;
+//
+///**
+// *  计算文本大小
+// *
+// *  @param text 文本
+// *  @param font 字体大小
+// *
+// *  @return (CGSize)
+// */
+//+ (CGSize) sizeWithText:(NSString *)text WithFont:(UIFont *)font;
 
 /**
  *  使用TouchID校验

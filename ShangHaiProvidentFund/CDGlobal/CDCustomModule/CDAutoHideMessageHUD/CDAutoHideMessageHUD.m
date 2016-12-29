@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 
 static const NSTimeInterval kANIMATION_DURATION_SEC = 0.5;
+static const NSTimeInterval kVIEW_DURATION = 1.5;
 static const CGFloat kVIEW_MAX_WIDTH = 260;
 static const CGFloat kVIEW_MAX_HEIGHT = 120;
 //static const CGFloat kVIEW_MIN_WIDTH = 60;
@@ -21,11 +22,15 @@ static void * CDAutoHideMessageHUDKey = (void *)@"CDAutoHideMessageHUDKey";
 @implementation CDAutoHideMessageHUD
 
 + (void)showMessage:(NSString *)msg{
-    [CDAutoHideMessageHUD showMessage:msg inView:[UIApplication sharedApplication].keyWindow];
+    [CDAutoHideMessageHUD showMessage:msg inView:[UIApplication sharedApplication].keyWindow duration:kVIEW_DURATION];
 }
 
 + (void)showMessage:(NSString *)msg inView:(UIView *)view{
-    [CDAutoHideMessageHUD showMessage:msg inView:view duration:1.5f];
+    [CDAutoHideMessageHUD showMessage:msg inView:view duration:kVIEW_DURATION];
+}
+
++ (void)showMessage:(NSString *)msg duration:(NSTimeInterval)duration{
+    [CDAutoHideMessageHUD showMessage:msg inView:[UIApplication sharedApplication].keyWindow duration:duration];
 }
 
 + (void)showMessage:(NSString *)msg inView:(UIView *)view duration:(NSTimeInterval)duration{

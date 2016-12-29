@@ -13,7 +13,7 @@
 @implementation CDNewsAndTrendsService
 
 - (void)loadNewsAndTrendsIgnoreCache:(BOOL)ignore showIndicator:(BOOL)show{
-    self.isNeedCache=YES;
+    self.toCacheData=YES;
     self.isIgnoreCache=ignore;
     self.showLodingIndicator=show;
     self.httpRequestMethod=kHttpRequestTypeGET;

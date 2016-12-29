@@ -21,6 +21,10 @@
  *
  *  @return (UIBarButtonItem *)对象实例
  */
-+ (UIBarButtonItem *)cd_barButtonWidth:(CGFloat)width title:(NSString *)title imageName:(NSString *)imageName target:(id)target action:(SEL)action;
++ (UIBarButtonItem *)cd_ItemWidth:(CGFloat)width title:(NSString *)title titleColor:(UIColor *)titleColor target:(id)target action:(SEL)action;
+
++ (UIBarButtonItem *)cd_ItemWidth:(CGFloat)width imageName:(NSString *)imageName target:(id)target action:(SEL)action;
+
++ (UIBarButtonItem *)cd_ItemWidth:(CGFloat)width title:(NSString *)title titleColor:(UIColor *)titleColor imageName:(NSString *)imageName target:(id)target action:(SEL)action;
 
 @end

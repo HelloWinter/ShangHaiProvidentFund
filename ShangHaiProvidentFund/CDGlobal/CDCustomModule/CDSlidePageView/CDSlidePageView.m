@@ -83,6 +83,9 @@
         UIView *contentView  = self.contentViews[idx];
         contentView.frame = CGRectMake(idx * self.bodyView.width, 0, self.bodyView.width, self.bodyView.height);
     }
+    
+    [self.headerView setSelectedIndex:_selectedIndex];
+    [self slidePageHeaderView:self.headerView willSelectButtonAtIndex:_selectedIndex];
 }
 
 - (void)didMoveToSuperview {
@@ -102,11 +105,18 @@
     }
     
     NSMutableArray *titles = [[NSMutableArray alloc] initWithCapacity:self.numberOfPages];
+    NSMutableArray *badges = [[NSMutableArray alloc] initWithCapacity:self.numberOfPages];
+    
     for (int idx = 0; idx < self.numberOfPages; idx ++) {
         if (_dataSource && [_dataSource respondsToSelector:@selector(slidePageView:headerTitleAtPageIndex:)]) {
             NSString *title = [_dataSource slidePageView:self headerTitleAtPageIndex:idx];
             [titles addObject:title];
         }
+        if (_dataSource && [_dataSource respondsToSelector:@selector(slidePageView:badgeNumbersAtPageIndex:)]) {
+            NSString *badge = [_dataSource slidePageView:self badgeNumbersAtPageIndex:idx];
+            [badges addObject:badge];
+        }
+        
         if (_dataSource && [_dataSource respondsToSelector:@selector(slidePageView:contentViewAtPageIndex:)]) {
             UIView *contentView = [_dataSource slidePageView:self contentViewAtPageIndex:idx];
             [self.contentViews addObject:contentView];
@@ -114,6 +124,7 @@
         }
     }
     self.headerView.itemTitles = titles;
+    self.headerView.badgeNumbers = badges;
     [self.headerView reload];
 }
 
@@ -132,10 +143,6 @@
             if (_delegate && [_delegate respondsToSelector:@selector(slidePageView:willMoveToPageAtIndex:)]) {
                 [_delegate slidePageView:self willMoveToPageAtIndex:selectedIndex];
             }
-            
-            [self.headerView setSelectedIndex:selectedIndex];
-            [self.bodyView setContentOffset:CGPointMake(self.bodyView.width * selectedIndex, 0) animated:animated];
-            
             if (!animated) {
                 if (_delegate && [_delegate respondsToSelector:@selector(slidePageView:didMoveToPageAtIndex:)]) {
                     [_delegate slidePageView:self didMoveToPageAtIndex:_selectedIndex];

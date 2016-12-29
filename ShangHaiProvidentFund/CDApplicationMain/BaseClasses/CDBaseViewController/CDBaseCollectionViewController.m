@@ -86,22 +86,22 @@
 }
 
 #pragma mark - CDJSONBaseNetworkServiceDelegate
-- (void)requestDidFinished:(CDJSONBaseNetworkService *)service {
-    [super requestDidFinished:service];
+- (void)serviceDidFinished:(CDJSONBaseNetworkService *)service {
+    [super serviceDidFinished:service];
     if (self.showDragView) {
         [self.refreshControl endRefreshing];
     }
 }
 
-- (void)requestDidCancel:(CDJSONBaseNetworkService *)service {
-    [super requestDidCancel:service];
+- (void)serviceDidCancel:(CDJSONBaseNetworkService *)service {
+    [super serviceDidCancel:service];
     if (self.showDragView) {
         [self.refreshControl endRefreshing];
     }
 }
 
-- (void)request:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error {
-    [super request:service didFailLoadWithError:error];
+- (void)service:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error {
+    [super service:service didFailLoadWithError:error];
     if (self.showDragView) {
         [self.refreshControl endRefreshing];
     }

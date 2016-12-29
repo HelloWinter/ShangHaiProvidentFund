@@ -14,7 +14,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-ShangHaiProvidentFund.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>928353533005A4198EBDA5B700D37B64</key>
+		<key>9E033EDB5EC0819481B0546434FA577B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>93EE70EDA86F02E2BF82E7578D1FBB15</key>
+		<key>A316B54C67E947D23CECD230FA5BFAEF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9EAB3E42EF957541E6C3C76D35FD008E</key>
+		<key>DB5EAAD6DA26A486B4E744FF393A70BC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AFB114E2C2FC460B6291D2D43E17B23D</key>
+		<key>DE5722F0069F7937C055A0A9C838F0BE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D6D3F9B665DC952F29B1044C1F2F88CD</key>
+		<key>EE286C55BDCC19081B6345ACAD0B98B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

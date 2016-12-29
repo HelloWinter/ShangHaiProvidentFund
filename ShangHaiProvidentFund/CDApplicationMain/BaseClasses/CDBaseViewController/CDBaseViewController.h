@@ -10,11 +10,7 @@
 #import "CDJSONBaseNetworkService.h"
 
 
-@interface CDBaseViewController : UIViewController<CDJSONBaseNetworkServiceDelegate>{
-@protected
-    CGRect _keyboardBounds;
-    NSTimeInterval _keybardAnmiatedTimeinterval;
-}
+@interface CDBaseViewController : UIViewController<CDJSONBaseNetworkServiceDelegate>
 
 /**
  *  状态栏是否隐藏
@@ -25,6 +21,11 @@
  *  点击是否隐藏键盘，默认为NO
  */
 @property (nonatomic, assign) BOOL hideKeyboradWhenTouch;
+
+/**
+ *  自定义返回按钮的图片名,默认navigation_backOff
+ */
+@property (nonatomic, copy) NSString *backImageName;
 
 - (void)cd_showBackButton;
 

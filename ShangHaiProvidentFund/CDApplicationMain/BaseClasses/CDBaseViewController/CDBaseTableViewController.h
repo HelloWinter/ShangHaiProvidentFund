@@ -9,7 +9,17 @@
 
 #import "CDBaseViewController.h"
 
-@interface CDBaseTableViewController : CDBaseViewController<UITableViewDataSource,UITableViewDelegate>
+@interface CDBaseTableViewController : CDBaseViewController<UITableViewDataSource,UITableViewDelegate>{
+@protected
+    /**
+     *  弹出键盘的bounds
+     */
+    CGRect _keyboardBounds;
+    /**
+     *  弹出键盘的动画时间
+     */
+    NSTimeInterval _keybardAnmiatedTimeinterval;
+}
 
 @property (nonatomic, strong, readonly) UITableView *tableView;
 
@@ -23,5 +33,15 @@
 - (void)startPullRefresh;
 
 - (void)endPullRefresh;
+
+- (void)keyboardWillShow:(NSNotification *)notification;
+
+- (void)keyboardDidShow:(NSNotification *)notification;
+
+- (void)keyboardWillHide:(NSNotification *)notification;
+
+- (void)keyboardDidHide:(NSNotification *)notification;
+
+- (void)keyboardWillChange:(NSNotification *)notification;
 
 @end

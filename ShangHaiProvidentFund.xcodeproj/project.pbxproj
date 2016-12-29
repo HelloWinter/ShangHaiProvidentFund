@@ -113,7 +113,6 @@
 		6E6ADB191CD892B200838B61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6ADB171CD892B200838B61 /* Main.storyboard */; };
 		6E6ADB1B1CD892B200838B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E6ADB1A1CD892B200838B61 /* Assets.xcassets */; };
 		6E6ADB2E1CD89E7C00838B61 /* CDBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB2D1CD89E7C00838B61 /* CDBaseTableViewCell.m */; };
-		6E6ADB3A1CD89E8700838B61 /* CDBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB311CD89E8700838B61 /* CDBaseService.m */; };
 		6E6ADB3B1CD89E8700838B61 /* CDJSONBaseNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB331CD89E8700838B61 /* CDJSONBaseNetworkService.m */; };
 		6E6ADB3C1CD89E8700838B61 /* CDNetworkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB351CD89E8700838B61 /* CDNetworkMonitor.m */; };
 		6E6ADB3D1CD89E8700838B61 /* CDNetworkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB371CD89E8700838B61 /* CDNetworkRequestManager.m */; };
@@ -146,10 +145,25 @@
 		6E6ADBF01CD8A22600838B61 /* CDGlobalHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADBEF1CD8A22600838B61 /* CDGlobalHTTPSessionManager.m */; };
 		6E6ADC151CD8AC9B00838B61 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC141CD8AC9B00838B61 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6E6ADC1C1CD8B35B00838B61 /* CDBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC1B1CD8B35B00838B61 /* CDBaseItem.m */; };
-		A15470CCBC9E5648BBBE7CE6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A81EE738543DD0D373540C /* libPods.a */; };
+		6E73D6421E14A516009A1072 /* SCYActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6411E14A516009A1072 /* SCYActivityIndicator.m */; };
+		6E73D6461E14A5C8009A1072 /* SCYActivityIndicatorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6451E14A5C8009A1072 /* SCYActivityIndicatorButton.m */; };
+		6E73D64A1E14A5F6009A1072 /* SCYRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6491E14A5F6009A1072 /* SCYRefreshControl.m */; };
+		6E73D64E1E14A626009A1072 /* CDADLoopDisplayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D64D1E14A626009A1072 /* CDADLoopDisplayScrollView.m */; };
+		6E73D6511E14A780009A1072 /* CDUpImageDownTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6501E14A780009A1072 /* CDUpImageDownTitleButton.m */; };
+		6E73D6561E14AB1D009A1072 /* ImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6551E14AB1D009A1072 /* ImagePickerManager.m */; };
+		6E73D6591E14B235009A1072 /* UITabBar+CDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6581E14B235009A1072 /* UITabBar+CDCategory.m */; };
+		6E73D6611E14B4C0009A1072 /* SSKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E73D65B1E14B4C0009A1072 /* SSKeychain.strings */; };
+		6E73D6621E14B4C0009A1072 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D65E1E14B4C0009A1072 /* SSKeychain.m */; };
+		6E73D6631E14B4C0009A1072 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6601E14B4C0009A1072 /* SSKeychainQuery.m */; };
+		6E73D6651E14FA6C009A1072 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E73D6641E14FA6C009A1072 /* libAFNetworking.a */; };
+		6E73D6671E14FA70009A1072 /* libMJExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E73D6661E14FA70009A1072 /* libMJExtension.a */; };
+		6E73D6691E14FA73009A1072 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E73D6681E14FA73009A1072 /* libSDWebImage.a */; };
+		6E73D66B1E14FA77009A1072 /* libYYCache.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E73D66A1E14FA77009A1072 /* libYYCache.a */; };
+		F9B7F93F7A7A135D5CEEEC72 /* libPods-ShangHaiProvidentFund.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01A857102742BA70C51DC31F /* Pods-ShangHaiProvidentFund.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShangHaiProvidentFund.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.debug.xcconfig"; sourceTree = "<group>"; };
 		140BE9CB1CDF4B8700577831 /* CDAPPURLConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAPPURLConfigure.h; sourceTree = "<group>"; };
 		140BE9CC1CDF4B8700577831 /* CDAPPURLConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAPPURLConfigure.m; sourceTree = "<group>"; };
 		14D13B4C1CE2158F00D73F1A /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
@@ -161,7 +175,7 @@
 		14FDD0B51CDDD33E0093ABC3 /* UITextField+cellIndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+cellIndexPath.m"; sourceTree = "<group>"; };
 		14FDD0BF1CDDF1200093ABC3 /* UITextView+CDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+CDCategory.h"; sourceTree = "<group>"; };
 		14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+CDCategory.m"; sourceTree = "<group>"; };
-		2C26B27EDC9106E8977865CD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShangHaiProvidentFund.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mortgageCalculator.conf; sourceTree = "<group>"; };
 		6E2468531DAA2E1C00DDC80B /* loginConfigure.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginConfigure.conf; sourceTree = "<group>"; };
 		6E2468571DAA2F5500DDC80B /* registConfigure.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = registConfigure.conf; sourceTree = "<group>"; };
@@ -354,8 +368,6 @@
 		6E6ADB1F1CD892B200838B61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E6ADB2C1CD89E7C00838B61 /* CDBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseTableViewCell.h; sourceTree = "<group>"; };
 		6E6ADB2D1CD89E7C00838B61 /* CDBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseTableViewCell.m; sourceTree = "<group>"; };
-		6E6ADB301CD89E8700838B61 /* CDBaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseService.h; sourceTree = "<group>"; };
-		6E6ADB311CD89E8700838B61 /* CDBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseService.m; sourceTree = "<group>"; };
 		6E6ADB321CD89E8700838B61 /* CDJSONBaseNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDJSONBaseNetworkService.h; sourceTree = "<group>"; };
 		6E6ADB331CD89E8700838B61 /* CDJSONBaseNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDJSONBaseNetworkService.m; sourceTree = "<group>"; };
 		6E6ADB341CD89E8700838B61 /* CDNetworkMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNetworkMonitor.h; sourceTree = "<group>"; };
@@ -422,8 +434,30 @@
 		6E6ADC141CD8AC9B00838B61 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		6E6ADC1A1CD8B35B00838B61 /* CDBaseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseItem.h; sourceTree = "<group>"; };
 		6E6ADC1B1CD8B35B00838B61 /* CDBaseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseItem.m; sourceTree = "<group>"; };
-		74A81EE738543DD0D373540C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F730A3A17A2363E4D779FF6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6E73D6401E14A516009A1072 /* SCYActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYActivityIndicator.h; sourceTree = "<group>"; };
+		6E73D6411E14A516009A1072 /* SCYActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYActivityIndicator.m; sourceTree = "<group>"; };
+		6E73D6441E14A5C8009A1072 /* SCYActivityIndicatorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYActivityIndicatorButton.h; sourceTree = "<group>"; };
+		6E73D6451E14A5C8009A1072 /* SCYActivityIndicatorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYActivityIndicatorButton.m; sourceTree = "<group>"; };
+		6E73D6481E14A5F6009A1072 /* SCYRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYRefreshControl.h; sourceTree = "<group>"; };
+		6E73D6491E14A5F6009A1072 /* SCYRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYRefreshControl.m; sourceTree = "<group>"; };
+		6E73D64C1E14A626009A1072 /* CDADLoopDisplayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDADLoopDisplayScrollView.h; sourceTree = "<group>"; };
+		6E73D64D1E14A626009A1072 /* CDADLoopDisplayScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDADLoopDisplayScrollView.m; sourceTree = "<group>"; };
+		6E73D64F1E14A780009A1072 /* CDUpImageDownTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUpImageDownTitleButton.h; sourceTree = "<group>"; };
+		6E73D6501E14A780009A1072 /* CDUpImageDownTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUpImageDownTitleButton.m; sourceTree = "<group>"; };
+		6E73D6541E14AB1D009A1072 /* ImagePickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerManager.h; sourceTree = "<group>"; };
+		6E73D6551E14AB1D009A1072 /* ImagePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerManager.m; sourceTree = "<group>"; };
+		6E73D6571E14B235009A1072 /* UITabBar+CDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+CDCategory.h"; sourceTree = "<group>"; };
+		6E73D6581E14B235009A1072 /* UITabBar+CDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+CDCategory.m"; sourceTree = "<group>"; };
+		6E73D65C1E14B4C0009A1072 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SSKeychain.strings; sourceTree = "<group>"; };
+		6E73D65D1E14B4C0009A1072 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		6E73D65E1E14B4C0009A1072 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		6E73D65F1E14B4C0009A1072 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		6E73D6601E14B4C0009A1072 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
+		6E73D6641E14FA6C009A1072 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "../../Library/Developer/Xcode/DerivedData/ShangHaiProvidentFund-aeyaomdjoyjfytflgwffsdglhtbf/Build/Products/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
+		6E73D6661E14FA70009A1072 /* libMJExtension.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMJExtension.a; path = "../../Library/Developer/Xcode/DerivedData/ShangHaiProvidentFund-aeyaomdjoyjfytflgwffsdglhtbf/Build/Products/Debug-iphoneos/MJExtension/libMJExtension.a"; sourceTree = "<group>"; };
+		6E73D6681E14FA73009A1072 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "../../Library/Developer/Xcode/DerivedData/ShangHaiProvidentFund-aeyaomdjoyjfytflgwffsdglhtbf/Build/Products/Debug-iphoneos/SDWebImage/libSDWebImage.a"; sourceTree = "<group>"; };
+		6E73D66A1E14FA77009A1072 /* libYYCache.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libYYCache.a; path = "../../Library/Developer/Xcode/DerivedData/ShangHaiProvidentFund-aeyaomdjoyjfytflgwffsdglhtbf/Build/Products/Debug-iphoneos/YYCache/libYYCache.a"; sourceTree = "<group>"; };
+		841B5A7AFA2BE502823C6019 /* Pods-ShangHaiProvidentFund.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShangHaiProvidentFund.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -431,13 +465,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A15470CCBC9E5648BBBE7CE6 /* libPods.a in Frameworks */,
+				6E73D66B1E14FA77009A1072 /* libYYCache.a in Frameworks */,
+				6E73D6691E14FA73009A1072 /* libSDWebImage.a in Frameworks */,
+				6E73D6671E14FA70009A1072 /* libMJExtension.a in Frameworks */,
+				6E73D6651E14FA6C009A1072 /* libAFNetworking.a in Frameworks */,
+				F9B7F93F7A7A135D5CEEEC72 /* libPods-ShangHaiProvidentFund.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BCB10931A68C1FA87AEF20C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01A857102742BA70C51DC31F /* Pods-ShangHaiProvidentFund.debug.xcconfig */,
+				841B5A7AFA2BE502823C6019 /* Pods-ShangHaiProvidentFund.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		14D13B4B1CE2158F00D73F1A /* GTMBase64 */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,19 +515,14 @@
 			path = Files;
 			sourceTree = "<group>";
 		};
-		20C2F7F588BFF58E9FC031E1 /* Pods */ = {
+		4D166C53BA300C5E847A1C5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2C26B27EDC9106E8977865CD /* Pods.debug.xcconfig */,
-				9F730A3A17A2363E4D779FF6 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		3E0F2F79FA0B8E69717F8258 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				74A81EE738543DD0D373540C /* libPods.a */,
+				6E73D66A1E14FA77009A1072 /* libYYCache.a */,
+				6E73D6681E14FA73009A1072 /* libSDWebImage.a */,
+				6E73D6661E14FA70009A1072 /* libMJExtension.a */,
+				6E73D6641E14FA6C009A1072 /* libAFNetworking.a */,
+				4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -835,6 +877,8 @@
 		6E66EA141CE062FC00111C2C /* CDTitleImageButton */ = {
 			isa = PBXGroup;
 			children = (
+				6E73D64F1E14A780009A1072 /* CDUpImageDownTitleButton.h */,
+				6E73D6501E14A780009A1072 /* CDUpImageDownTitleButton.m */,
 				6E66EA151CE0631700111C2C /* CDTitleImageButton.h */,
 				6E66EA161CE0631700111C2C /* CDTitleImageButton.m */,
 			);
@@ -846,8 +890,8 @@
 			children = (
 				6E6ADB0D1CD892B200838B61 /* ShangHaiProvidentFund */,
 				6E6ADB0C1CD892B200838B61 /* Products */,
-				20C2F7F588BFF58E9FC031E1 /* Pods */,
-				3E0F2F79FA0B8E69717F8258 /* Frameworks */,
+				0BCB10931A68C1FA87AEF20C /* Pods */,
+				4D166C53BA300C5E847A1C5F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -900,6 +944,7 @@
 		6E6ADB271CD89AE800838B61 /* CDVendor */ = {
 			isa = PBXGroup;
 			children = (
+				6E73D65A1E14B4C0009A1072 /* SSKeychain */,
 				14D13B4B1CE2158F00D73F1A /* GTMBase64 */,
 				6E6ADC121CD8AC9B00838B61 /* SFHFKeychainUtils */,
 				6E6ADB5B1CD89F1C00838B61 /* ODRefreshControl */,
@@ -910,6 +955,7 @@
 		6E6ADB281CD89AFE00838B61 /* CDGlobal */ = {
 			isa = PBXGroup;
 			children = (
+				6E73D6521E14AB0C009A1072 /* CDManager */,
 				6E6ADBA11CD8A0BD00838B61 /* CDCustomModule */,
 				6E6ADB9C1CD8A04E00838B61 /* CDUtilities */,
 				6E6ADB5F1CD89F7C00838B61 /* CDCategory */,
@@ -944,8 +990,6 @@
 		6E6ADB2F1CD89E8700838B61 /* CDBaseNetWorkClass */ = {
 			isa = PBXGroup;
 			children = (
-				6E6ADB301CD89E8700838B61 /* CDBaseService.h */,
-				6E6ADB311CD89E8700838B61 /* CDBaseService.m */,
 				6E6ADB321CD89E8700838B61 /* CDJSONBaseNetworkService.h */,
 				6E6ADB331CD89E8700838B61 /* CDJSONBaseNetworkService.m */,
 				6E6ADBEE1CD8A22600838B61 /* CDGlobalHTTPSessionManager.h */,
@@ -1017,6 +1061,8 @@
 				6E6ADB7D1CD89F7C00838B61 /* UIImage+CDImageAdditions.m */,
 				6E6ADB7E1CD89F7C00838B61 /* UILabel+CDLBAdditions.h */,
 				6E6ADB7F1CD89F7C00838B61 /* UILabel+CDLBAdditions.m */,
+				6E73D6571E14B235009A1072 /* UITabBar+CDCategory.h */,
+				6E73D6581E14B235009A1072 /* UITabBar+CDCategory.m */,
 				6E6ADB801CD89F7C00838B61 /* UITableView+CDTableViewAddition.h */,
 				6E6ADB811CD89F7C00838B61 /* UITableView+CDTableViewAddition.m */,
 				14FDD0B41CDDD33E0093ABC3 /* UITextField+cellIndexPath.h */,
@@ -1048,6 +1094,9 @@
 		6E6ADBA11CD8A0BD00838B61 /* CDCustomModule */ = {
 			isa = PBXGroup;
 			children = (
+				6E73D64B1E14A626009A1072 /* CDLoopDisplayScrollview */,
+				6E73D6471E14A5F6009A1072 /* SCYRefreshControl */,
+				6E73D6431E14A5C8009A1072 /* SCYActivityIndicatorButton */,
 				6E53C8461CE9CF9500202F53 /* CDSlidePageView */,
 				6E66EA141CE062FC00111C2C /* CDTitleImageButton */,
 				6E6ADBA21CD8A0BD00838B61 /* CDAutoHideMessageHUD */,
@@ -1068,6 +1117,8 @@
 		6E6ADBAA1CD8A0BD00838B61 /* CDCustomActivityIndicator */ = {
 			isa = PBXGroup;
 			children = (
+				6E73D6401E14A516009A1072 /* SCYActivityIndicator.h */,
+				6E73D6411E14A516009A1072 /* SCYActivityIndicator.m */,
 				6E6ADBAD1CD8A0BD00838B61 /* CDPointActivityIndicator.h */,
 				6E6ADBAE1CD8A0BD00838B61 /* CDPointActivityIndicator.m */,
 			);
@@ -1094,6 +1145,62 @@
 			path = CDBaseItem;
 			sourceTree = "<group>";
 		};
+		6E73D6431E14A5C8009A1072 /* SCYActivityIndicatorButton */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D6441E14A5C8009A1072 /* SCYActivityIndicatorButton.h */,
+				6E73D6451E14A5C8009A1072 /* SCYActivityIndicatorButton.m */,
+			);
+			path = SCYActivityIndicatorButton;
+			sourceTree = "<group>";
+		};
+		6E73D6471E14A5F6009A1072 /* SCYRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D6481E14A5F6009A1072 /* SCYRefreshControl.h */,
+				6E73D6491E14A5F6009A1072 /* SCYRefreshControl.m */,
+			);
+			path = SCYRefreshControl;
+			sourceTree = "<group>";
+		};
+		6E73D64B1E14A626009A1072 /* CDLoopDisplayScrollview */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D64C1E14A626009A1072 /* CDADLoopDisplayScrollView.h */,
+				6E73D64D1E14A626009A1072 /* CDADLoopDisplayScrollView.m */,
+			);
+			path = CDLoopDisplayScrollview;
+			sourceTree = "<group>";
+		};
+		6E73D6521E14AB0C009A1072 /* CDManager */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D6531E14AB1D009A1072 /* ImagePickerManager */,
+			);
+			path = CDManager;
+			sourceTree = "<group>";
+		};
+		6E73D6531E14AB1D009A1072 /* ImagePickerManager */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D6541E14AB1D009A1072 /* ImagePickerManager.h */,
+				6E73D6551E14AB1D009A1072 /* ImagePickerManager.m */,
+			);
+			path = ImagePickerManager;
+			sourceTree = "<group>";
+		};
+		6E73D65A1E14B4C0009A1072 /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D65B1E14B4C0009A1072 /* SSKeychain.strings */,
+				6E73D65D1E14B4C0009A1072 /* SSKeychain.h */,
+				6E73D65E1E14B4C0009A1072 /* SSKeychain.m */,
+				6E73D65F1E14B4C0009A1072 /* SSKeychainQuery.h */,
+				6E73D6601E14B4C0009A1072 /* SSKeychainQuery.m */,
+			);
+			path = SSKeychain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1101,12 +1208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E6ADB221CD892B200838B61 /* Build configuration list for PBXNativeTarget "ShangHaiProvidentFund" */;
 			buildPhases = (
-				0555FA837D38955BABA61715 /* Check Pods Manifest.lock */,
+				DEC81AB4FCAFC9B442D64840 /* [CP] Check Pods Manifest.lock */,
 				6E6ADB071CD892B200838B61 /* Sources */,
 				6E6ADB081CD892B200838B61 /* Frameworks */,
 				6E6ADB091CD892B200838B61 /* Resources */,
-				DDE285B90D9FA3584DA9637F /* Embed Pods Frameworks */,
-				1C75D301DF041E48BAE70915 /* Copy Pods Resources */,
+				E9FD6DD8DD4D15B5BA1100D0 /* [CP] Embed Pods Frameworks */,
+				5325D33ADE85F78EEEE124CA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1161,6 +1268,7 @@
 				6E2469211DAA35C600DDC80B /* CDButtonTableFooterView.xib in Resources */,
 				6E24695C1DAA35C600DDC80B /* CDBottomButtonView.xib in Resources */,
 				6E24693C1DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.xib in Resources */,
+				6E73D6611E14B4C0009A1072 /* SSKeychain.strings in Resources */,
 				6E6ADB1B1CD892B200838B61 /* Assets.xcassets in Resources */,
 				6E6ADB191CD892B200838B61 /* Main.storyboard in Resources */,
 				6E2469391DAA35C600DDC80B /* CDNetWorkPointCell.xib in Resources */,
@@ -1175,49 +1283,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0555FA837D38955BABA61715 /* Check Pods Manifest.lock */ = {
+		5325D33ADE85F78EEEE124CA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1C75D301DF041E48BAE70915 /* Copy Pods Resources */ = {
+		DEC81AB4FCAFC9B442D64840 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		DDE285B90D9FA3584DA9637F /* Embed Pods Frameworks */ = {
+		E9FD6DD8DD4D15B5BA1100D0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1237,10 +1345,11 @@
 				6E24694B1DAA35C600DDC80B /* CDLoginConfigureModel.m in Sources */,
 				6E2469571DAA35C600DDC80B /* CDMineAccountService.m in Sources */,
 				6E24694F1DAA35C600DDC80B /* CDQueryAccountBasicItem.m in Sources */,
+				6E73D6421E14A516009A1072 /* SCYActivityIndicator.m in Sources */,
 				6E2469421DAA35C600DDC80B /* CDLoanInfoViewController.m in Sources */,
 				6E2469621DAA35C600DDC80B /* CDQueryAccountInfoCell.m in Sources */,
 				6E2469561DAA35C600DDC80B /* CDLoginService.m in Sources */,
-				6E6ADB3A1CD89E8700838B61 /* CDBaseService.m in Sources */,
+				6E73D64A1E14A5F6009A1072 /* SCYRefreshControl.m in Sources */,
 				6E2469351DAA35C600DDC80B /* CDPayCalculatorService.m in Sources */,
 				6E67A79A1CDCA6BC00436E93 /* CDLoadMoreCell.m in Sources */,
 				6E2469671DAA35C600DDC80B /* CDNewsItem.m in Sources */,
@@ -1253,6 +1362,7 @@
 				6E6ADB9B1CD89F7C00838B61 /* UIViewController+CDVCAdditions.m in Sources */,
 				6E2469221DAA35C600DDC80B /* CDOpinionsSuggestionsFieldCell.m in Sources */,
 				6E6ADB8B1CD89F7C00838B61 /* NSData+CommonCrypto.m in Sources */,
+				6E73D6631E14B4C0009A1072 /* SSKeychainQuery.m in Sources */,
 				6E2469551DAA35C600DDC80B /* CDChangePSWService.m in Sources */,
 				6E24691A1DAA35C600DDC80B /* CDAboutUsModel.m in Sources */,
 				6E6ADB8E1CD89F7C00838B61 /* NSFileManager+CDFileManager.m in Sources */,
@@ -1265,6 +1375,7 @@
 				6E2469401DAA35C600DDC80B /* CDAccountDetailController.m in Sources */,
 				6E6ADB921CD89F7C00838B61 /* NSString+CDEncryption.m in Sources */,
 				6E6ADB931CD89F7C00838B61 /* UIBarButtonItem+CDCategory.m in Sources */,
+				6E73D6591E14B235009A1072 /* UITabBar+CDCategory.m in Sources */,
 				6E2469371DAA35C600DDC80B /* CDConvenientToolsCell.m in Sources */,
 				6E6ADB961CD89F7C00838B61 /* UIImage+CDImageAdditions.m in Sources */,
 				6E2469631DAA35C600DDC80B /* CDRegistFooterView.m in Sources */,
@@ -1278,6 +1389,7 @@
 				6E2469591DAA35C600DDC80B /* CDRegistService.m in Sources */,
 				6E2469281DAA35C600DDC80B /* CDNetworkPointController.m in Sources */,
 				6E6ADB971CD89F7C00838B61 /* UILabel+CDLBAdditions.m in Sources */,
+				6E73D6561E14AB1D009A1072 /* ImagePickerManager.m in Sources */,
 				6E2469191DAA35C600DDC80B /* CDAboutUsItem.m in Sources */,
 				6E6ADBDC1CD8A0BD00838B61 /* CDPointActivityIndicator.m in Sources */,
 				6E24693D1DAA35C600DDC80B /* SCYMortgageCalculatorSelectCell.m in Sources */,
@@ -1303,6 +1415,7 @@
 				6E6ADB581CD89E8E00838B61 /* CDTabBarController.m in Sources */,
 				6E2469161DAA35C600DDC80B /* CDAboutUsController.m in Sources */,
 				6E6ADB591CD89E8E00838B61 /* CDBaseTableViewController.m in Sources */,
+				6E73D6511E14A780009A1072 /* CDUpImageDownTitleButton.m in Sources */,
 				6E2469231DAA35C600DDC80B /* CDOpinionsSuggestionsViewCell.m in Sources */,
 				6E2469581DAA35C600DDC80B /* CDRegistGetVerCodeService.m in Sources */,
 				14FDD0B31CDDD2440093ABC3 /* CDBaseTextFieldCell.m in Sources */,
@@ -1326,6 +1439,7 @@
 				6E6ADB541CD89E8E00838B61 /* CDBaseViewController.m in Sources */,
 				6E6ADBF01CD8A22600838B61 /* CDGlobalHTTPSessionManager.m in Sources */,
 				6E24695A1DAA35C600DDC80B /* CDRepayInfoService.m in Sources */,
+				6E73D6621E14B4C0009A1072 /* SSKeychain.m in Sources */,
 				6E2469511DAA35C600DDC80B /* CDRegistConfigureModel.m in Sources */,
 				6E6ADB5E1CD89F1C00838B61 /* ODRefreshControl.m in Sources */,
 				6E2469431DAA35C600DDC80B /* CDLoanProgressController.m in Sources */,
@@ -1337,8 +1451,10 @@
 				6E24694E1DAA35C600DDC80B /* CDPayAccountItem.m in Sources */,
 				6E2469491DAA35C600DDC80B /* CDAccountInfoItem.m in Sources */,
 				6E6ADB101CD892B200838B61 /* main.m in Sources */,
+				6E73D64E1E14A626009A1072 /* CDADLoopDisplayScrollView.m in Sources */,
 				6E6ADB8C1CD89F7C00838B61 /* NSDate+CDDateAddition.m in Sources */,
 				6E2469181DAA35C600DDC80B /* CDOpinionsSuggestionsController.m in Sources */,
+				6E73D6461E14A5C8009A1072 /* SCYActivityIndicatorButton.m in Sources */,
 				6E2469661DAA35C600DDC80B /* CDNewsAndTrendsItem.m in Sources */,
 				6E2469521DAA35C600DDC80B /* CDRepayInfoBasicItem.m in Sources */,
 				6E6ADC151CD8AC9B00838B61 /* SFHFKeychainUtils.m in Sources */,
@@ -1366,6 +1482,14 @@
 				6E6ADB181CD892B200838B61 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6E73D65B1E14B4C0009A1072 /* SSKeychain.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E73D65C1E14B4C0009A1072 /* en */,
+			);
+			name = SSKeychain.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1453,7 +1577,7 @@
 		};
 		6E6ADB231CD892B200838B61 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C26B27EDC9106E8977865CD /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 01A857102742BA70C51DC31F /* Pods-ShangHaiProvidentFund.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1466,6 +1590,14 @@
 				INFOPLIST_FILE = ShangHaiProvidentFund/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AFNetworking\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MJExtension\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SDWebImage\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/YYCache\"",
+					"\"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/thirdlibs\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ProvidentFund.ShangHai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1476,7 +1608,7 @@
 		};
 		6E6ADB241CD892B200838B61 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F730A3A17A2363E4D779FF6 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 841B5A7AFA2BE502823C6019 /* Pods-ShangHaiProvidentFund.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1489,6 +1621,14 @@
 				INFOPLIST_FILE = ShangHaiProvidentFund/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AFNetworking\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MJExtension\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SDWebImage\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/YYCache\"",
+					"\"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/thirdlibs\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ProvidentFund.ShangHai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

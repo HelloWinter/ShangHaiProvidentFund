@@ -226,15 +226,15 @@ static const CGFloat topHeight=50;
 }
 
 #pragma mark - SCYBaseNetworkServiceDelegate
-- (void)requestDidFinished:(CDJSONBaseNetworkService *)service{
-    [super requestDidFinished:service];
-    if ([self.mortgageCalculatorService.returnCode isEqualToString:@"1"]) {
+- (void)serviceDidFinished:(CDJSONBaseNetworkService *)service{
+    [super serviceDidFinished:service];
+    if (self.mortgageCalculatorService.returnCode==1) {
         [self recombinationData];
     }
 }
 
-- (void)request:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
-    [super request:service didFailLoadWithError:error];
+- (void)service:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
+    [super service:service didFailLoadWithError:error];
 }
 
 #pragma mark - override

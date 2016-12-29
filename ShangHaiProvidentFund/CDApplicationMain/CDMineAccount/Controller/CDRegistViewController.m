@@ -146,8 +146,8 @@
 }
 
 #pragma mark - CDJSONBaseNetworkServiceDelegate
-- (void)requestDidFinished:(CDJSONBaseNetworkService *)service{
-    [super requestDidFinished:service];
+- (void)serviceDidFinished:(CDJSONBaseNetworkService *)service{
+    [super serviceDidFinished:service];
     if ([service isKindOfClass:[CDRegistGetVerCodeService class]]) {
         if (![self.getVerCodeService.code isEqualToString:@"0"]) {
             [CDAutoHideMessageHUD showMessage:self.getVerCodeService.msg];
@@ -157,8 +157,8 @@
     }
 }
 
-- (void)request:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
-    [super request:service didFailLoadWithError:error];
+- (void)service:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
+    [super service:service didFailLoadWithError:error];
 }
 
 #pragma mark - Notification

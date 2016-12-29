@@ -10,10 +10,7 @@
 #import "SFHFKeychainUtils.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <LocalAuthentication/LocalAuthentication.h>
-
-CGFloat CDScale() {
-    return [UIScreen mainScreen].scale;
-}
+#import "SSKeychain.h"
 
 //按角度旋转view
 void rotateView(UIView* view,int degrees,float duration){
@@ -356,6 +353,24 @@ NSString *CDKeyChainUUID(){
     }
 }
 
+NSString *CDKeyChainIDFV(){
+    NSString *userName = @"IDFVKey";
+    NSString *ServiceName = @"come.ProvidentFund.Company";
+    NSString *strIDFV=[SSKeychain passwordForService:ServiceName account:userName];
+    if (strIDFV==nil || strIDFV.length==0) {
+        NSError *setError=nil;
+        NSString *idfv = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+        BOOL saved = [SSKeychain setPassword:idfv forService:ServiceName account:userName error:&setError];
+        if (!saved) {
+            CDLog(@"保存时出错：%@", setError);
+        }
+        setError=nil;
+        return idfv;
+    }else{
+        return strIDFV;
+    }
+}
+
 NSDictionary* ProjectSettings(){
     NSString *path = [[NSBundle mainBundle] pathForResource:@"ProjectSettings" ofType:@"plist"];
     return [NSDictionary dictionaryWithContentsOfFile:path];
@@ -528,6 +543,16 @@ NSString *CDURLScheme() {
         }
     }
     return scheme;
+}
+
+void goToSettings(){
+    NSURL *url = [NSURL URLWithString:@"prefs:root=LOCATION_SERVICES"];
+    if (CDSystemVersionFloatValue>=8.0) {
+        url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    }
+    if([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
+    }
 }
 
 @implementation CDUtilities

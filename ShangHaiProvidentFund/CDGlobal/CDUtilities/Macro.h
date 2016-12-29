@@ -17,7 +17,7 @@ typedef NS_ENUM(NSUInteger, HttpRequestType) {
 
 #ifdef DEBUG //调试状态下打开LOG
 #define CDLog(...)  NSLog(__VA_ARGS__)
-
+//#define CDLog(...)  printf("%s : %s\n", __FUNCTION__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])//Xcode8使用
 #else
 #define CDLog(...)
 
@@ -230,6 +230,10 @@ description:__VA_ARGS__];                                                    \
  *  @return (CGFloat)
  */
 #define CDScreenScale ([UIScreen mainScreen].scale)
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+#define IS_RETINA  ([UIScreen mainScreen].scale >= 2.0f)
 
 #define LEFT_RIGHT_MARGIN (15)
 

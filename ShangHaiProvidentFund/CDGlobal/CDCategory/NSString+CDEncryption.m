@@ -58,6 +58,16 @@
 
 @implementation NSString (CDDateTransform)
 
++ (NSString *)cd_stringDateFromTimestamp:(NSTimeInterval)timestamp WithDateFormat:(NSString *)dateFormat{
+    if (!dateFormat) {
+        dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    }
+    NSDateFormatter *tempFormat = [[NSDateFormatter alloc] init];
+    [tempFormat setDateFormat:dateFormat];
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:timestamp];
+    return [tempFormat stringFromDate:confromTimesp];
+}
+
 - (NSDate *)cd_transformToDateWithDateFormat:(NSString *)dateFormat {
     if (!dateFormat) {
         dateFormat = @"YYYY-MM-dd HH:mm:ss";
@@ -133,6 +143,28 @@
         }
     }
     return self;
+}
+
+- (CGSize)sizeWithPreferWidth:(CGFloat)width font:(UIFont *)font{
+    if (!font) {
+        return CGSizeZero;
+    }
+    NSDictionary *dict=@{NSFontAttributeName : font};
+    CGRect rect=[self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:(NSStringDrawingUsesLineFragmentOrigin) attributes:dict context:nil];
+    CGFloat sizeWidth=ceilf(CGRectGetWidth(rect));
+    CGFloat sizeHieght=ceilf(CGRectGetHeight(rect));
+    return CGSizeMake(sizeWidth, sizeHieght);
+}
+
+- (CGSize)sizeWithpreferHeight:(CGFloat)height font:(UIFont *)font{
+    if (!font) {
+        return CGSizeZero;
+    }
+    NSDictionary *dict=@{NSFontAttributeName : font};
+    CGRect rect=[self boundingRectWithSize:CGSizeMake(MAXFLOAT, height) options:(NSStringDrawingUsesLineFragmentOrigin) attributes:dict context:nil];
+    CGFloat sizeWidth=ceilf(CGRectGetWidth(rect));
+    CGFloat sizeHieght=ceilf(CGRectGetHeight(rect));
+    return CGSizeMake(sizeWidth, sizeHieght);
 }
 
 @end

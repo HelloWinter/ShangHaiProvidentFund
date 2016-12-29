@@ -97,18 +97,18 @@
 }
 
 #pragma mark - 
-- (void)requestDidFinished:(CDJSONBaseNetworkService *)service{
-    [super requestDidFinished:service];
-    if ([self.repayInfoService.returnCode isEqualToString:@"0"]) {
+- (void)serviceDidFinished:(CDJSONBaseNetworkService *)service{
+    [super serviceDidFinished:service];
+    if (self.repayInfoService.returnCode==0) {
         [self.tableView reloadData];
-    }else if ([self.repayInfoService.returnCode isEqualToString:@"1"]){
+    }else if (self.repayInfoService.returnCode ==1){
         [CDAutoHideMessageHUD showMessage:@"没有查询到冲还贷信息"];
 //        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
-- (void)request:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
-    [super request:service didFailLoadWithError:error];
+- (void)service:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
+    [super service:service didFailLoadWithError:error];
 }
 
 

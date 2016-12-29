@@ -16,7 +16,7 @@
 
 @interface CDJSONBaseNetworkService ()
 
-@property (nonatomic, strong) NSURLSessionDataTask *task;
+@property (nonatomic, strong) NSURLSessionDataTask *currentTask;
 @property (nonatomic, strong) CDGlobalHTTPSessionManager *manager;
 @property (nonatomic, copy) NSString *cacheURLStringID;//cacheurlstring
 @property (nonatomic, strong) YYCache *cache;
@@ -34,8 +34,7 @@
         _isLoaded = NO;
         _delegate = delegate;
         _httpRequestMethod = kHttpRequestTypePOST;
-        _showLoginController=YES;
-        _isNeedCache=NO;
+        _toCacheData=NO;
         _isIgnoreCache=YES;
     }
     return self;
@@ -56,119 +55,142 @@
 }
 
 - (void)request:(NSString *)urlString params:(id)params {
-    [self.task cancel];
-    self.task=nil;
-    [CDNetworkRequestManager removeService:self];
+    if (!urlString || urlString.length == 0) { return; }
+    [self resetNetworkService];
     
-//    NSDictionary *paramsDic = [self packParameters:params];
-    
-    NSString *paramsString = params==nil ? @"" : [params cd_TransformToParamStringWithMethod:(kHttpRequestTypeGET)];
-    self.cacheURLStringID=[[NSString stringWithFormat:@"%@%@",urlString,paramsString] cd_md5HexDigest];
-    
-    if (!self.isIgnoreCache  && [self.cache containsObjectForKey:self.cacheURLStringID]) {
-        [self successfulGetResponse:[self.cache objectForKey:self.cacheURLStringID]];
-        return;
+    /**
+     *  先使用缓存数据
+     */
+    if (self.toCacheData && !self.isIgnoreCache) {
+        NSString *paramsString = (params==nil ? @"" : [params cd_TransformToParamStringWithMethod:(kHttpRequestTypeGET)]);
+        self.cacheURLStringID=[[NSString stringWithFormat:@"%@%@",urlString,paramsString] cd_md5HexDigest];
+        if ([self.cache containsObjectForKey:self.cacheURLStringID]) {
+            CDLog(@"使用缓存数据:%@",urlString);
+            _isUseCache=YES;
+            [self succeedGetResponse:[self.cache objectForKey:self.cacheURLStringID]];
+        }
     }
     
+    self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    WS(weakSelf);
     switch (_httpRequestMethod) {
         case kHttpRequestTypePOST: {
-            self.task = [self.manager POST:urlString parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+            self.currentTask = [self.manager POST:urlString parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 NSError *error=nil;
                 id responseObj=[NSJSONSerialization JSONObjectWithData:responseObject options:(NSJSONReadingMutableContainers) error:&error];
                 if (!error) {
-                    if ([self isKindOfClass:[CDJSONBaseNetworkService class]]) {
+                    if ([weakSelf isKindOfClass:[CDJSONBaseNetworkService class]]) {
                         _isLoaded = YES;
-                        [self p_taskDidFinish:task responseObject:responseObj];
+                        [weakSelf taskDidFinish:task responseObject:responseObj];
                     }
                 }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                if ([self isKindOfClass:[CDJSONBaseNetworkService class]]) {
-                    [self p_taskDidFail:task error:error];
+                if ([weakSelf isKindOfClass:[CDJSONBaseNetworkService class]]) {
+                    [weakSelf taskDidFail:task error:error];
                 }
             }];
+            
         }   break;
             
         case kHttpRequestTypeGET: {
-            self.task = [self.manager GET:urlString parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+//            NSString *str= @"http://gjj_8095.gs.9188.com/gjj/start.go?skin=2";
+            
+            self.currentTask = [self.manager GET:urlString parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 NSError *error=nil;
                 id responseObj=[NSJSONSerialization JSONObjectWithData:responseObject options:(NSJSONReadingMutableContainers) error:&error];
                 if (!error) {
-                    if ([self isKindOfClass:[CDJSONBaseNetworkService class]]) {
+                    if ([weakSelf isKindOfClass:[CDJSONBaseNetworkService class]]) {
                         _isLoaded = YES;
-                        [self p_taskDidFinish:task responseObject:responseObj];
+                        [weakSelf taskDidFinish:task responseObject:responseObj];
                     }
                 }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                if ([self isKindOfClass:[CDJSONBaseNetworkService class]]) {
-                    [self p_taskDidFail:task error:error];
+                if ([weakSelf isKindOfClass:[CDJSONBaseNetworkService class]]) {
+                    [weakSelf taskDidFail:task error:error];
                 }
             }];
+            
+//            NSString *str= @"http://person.shgjj.com/gjjManager/mobileNews";
+//            
+//            NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+//            AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+//            NSURL *URL = [NSURL URLWithString:str];
+//            NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+//            NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+//                NSLog(@"response:%@, responseObject%@", response, responseObject);
+//                
+////                if (error) {
+////                    NSLog(@"Error: %@", error);
+////                } else {
+////                    NSLog(@"response:%@, responseObject%@", response, responseObject);
+////                }
+//            }];
+//            [dataTask resume];
+            
         }   break;
     }
     
     //打印请求信息
-    NSString *requestMethod=_httpRequestMethod==kHttpRequestTypePOST ? @"POST":@"GET";
-    CDLog(@">>> %@ request url:%@",requestMethod,urlString);
-    CDLog(@">>> %@ request parameters:\n%@",requestMethod,params);
+    _isLoading=YES;
     [CDNetworkRequestManager addService:self];
+    //打印请求信息
+    CDLog(@">>> %@ Request URL: %@ Parameters:\n%@",(_httpRequestMethod==kHttpRequestTypePOST ? @"POST":@"GET"),urlString,params);
 }
 
-- (BOOL)isLoading {
-    return (self.task.state == NSURLSessionTaskStateRunning || self.task.state == NSURLSessionTaskStateSuspended);
-}
-
-/**
- *  所有接口必传的参数在此封装
- */
-- (NSMutableDictionary *)packParameters:(NSMutableDictionary *)params {
-    NSMutableDictionary *paraDic = params ? [params mutableCopy] : [[NSMutableDictionary alloc] init];
-//    [paraDic setObject:[CDUtilities cd_DefaultSource] forKey:@"source"];
-//    [paraDic setObject:CDAppVersion forKey:@"appVersion"];
-//    [paraDic setObject:(CDAccessToken() ?: @"") forKey:@"accessToken"];
-//    [paraDic setObject:(CDAppId() ?: @"") forKey:@"appId"];
-    return paraDic;
+- (NSString *)requsetURLString{
+    return self.currentTask.currentRequest.URL.absoluteString;
 }
 
 /* 请求完成 */
-- (void)p_taskDidFinish:(NSURLSessionTask *)task responseObject:(id)responseObject {
-    CDLog(@">>> URL:%@ response data:%@ ", task.currentRequest.URL,responseObject);
-    if (self.task.state == NSURLSessionTaskStateCompleted) {
-        [self successfulGetResponse:responseObject];
-        self.task = nil;
+- (void)taskDidFinish:(NSURLSessionTask *)task responseObject:(id)responseObject {
+    CDLog(@">>> URL: %@ Response Data: %@ ", task.currentRequest.URL,responseObject);
+    if (task.state == NSURLSessionTaskStateCompleted) {
+        _isLoaded = YES;
+        _isLoading=NO;
+        _isUseCache=NO;
+        [self succeedGetResponse:responseObject];
+        self.currentTask = nil;
         [CDNetworkRequestManager removeService:self];
     }
 }
 
 /* 请求失败 */
-- (void)p_taskDidFail:(NSURLSessionTask *)task error:(NSError *)error {
-    CDLog(@">>> response error:%@",[error localizedDescription]);// URL:%@ , task.currentRequest.URL
-    if (self.task.state == NSURLSessionTaskStateCompleted || self.task.state == NSURLSessionTaskStateCanceling) {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(request:didFailLoadWithError:)]) {
-            [self.delegate request:self didFailLoadWithError:error];
+- (void)taskDidFail:(NSURLSessionTask *)task error:(NSError *)error {
+    CDLog(@">>> URL: %@ Response Error: %@", task.currentRequest.URL,error.localizedDescription);
+    if (task.state == NSURLSessionTaskStateCompleted || task.state == NSURLSessionTaskStateCanceling) {
+        _isLoading=NO;
+        if (error.code==NSURLErrorBadServerResponse) {
+            if (self.toCacheData && [self.cache containsObjectForKey:self.cacheURLStringID]) {
+                CDLog(@"使用缓存数据(BadServer)%@",task.currentRequest.URL.absoluteString);
+                _isUseCache=YES;
+                [self succeedGetResponse:[self.cache objectForKey:self.cacheURLStringID]];
+            }
         }
-        self.task = nil;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(service:didFailLoadWithError:)]) {
+            [self.delegate service:self didFailLoadWithError:error];
+        }
+        self.currentTask = nil;
         [CDNetworkRequestManager removeService:self];
     }
 }
 
 - (void)cancel {
-    if (!self.task || self.task.state == NSURLSessionTaskStateCanceling || self.task.state == NSURLSessionTaskStateCompleted) {
+    if (!self.currentTask || self.currentTask.state == NSURLSessionTaskStateCanceling || self.currentTask.state == NSURLSessionTaskStateCompleted) {
         return;
     }
-    [self.task cancel];
-    if (_delegate && [_delegate respondsToSelector:@selector(requestDidCancel:)]) {
-        [_delegate requestDidCancel:self];
+    [self.currentTask cancel];
+    if (_delegate && [_delegate respondsToSelector:@selector(serviceDidCancel:)]) {
+        [_delegate serviceDidCancel:self];
     }
-    self.task=nil;
+    self.currentTask=nil;
     [CDNetworkRequestManager removeService:self];
 }
 
-- (void)successfulGetResponse:(id)responseObject{
-    _isLoaded = YES;
+- (void)succeedGetResponse:(id)responseObject{
     _rootData = responseObject;
 //    if ([_rootData isKindOfClass:[NSDictionary class]]) {
 //        id returnCode = [_rootData objectForKey:@"code"];
@@ -180,8 +202,8 @@
 //        _desc = [_rootData objectForKey:@"desc"];
 //    }
     [self requestDidFinish:_rootData];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(requestDidFinished:)]) {
-        [self.delegate requestDidFinished:self];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(serviceDidFinished:)]) {
+        [self.delegate serviceDidFinished:self];
     }
 }
 
@@ -189,12 +211,17 @@
  *  子类可覆写，把请求到的数据转换成模型
  */
 - (void)requestDidFinish:(id)rootData {
-    if (self.isNeedCache && self.cacheURLStringID) {
-        if (!self.isIgnoreCache  && [self.cache containsObjectForKey:self.cacheURLStringID]) {
-            return;
-        }
+    if (self.toCacheData && self.cacheURLStringID && _returnCode==1) {
         [self.cache setObject:rootData forKey:self.cacheURLStringID];
     }
+}
+
+- (void)resetNetworkService{
+    [self.currentTask cancel];
+    self.currentTask=nil;
+    _isLoading=NO;
+    _isUseCache=NO;
+    [CDNetworkRequestManager removeService:self];
 }
 
 @end

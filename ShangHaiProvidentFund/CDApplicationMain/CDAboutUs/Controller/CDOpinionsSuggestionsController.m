@@ -119,15 +119,15 @@
 }
 
 #pragma mark - CDJSONBaseNetworkServiceDelegate
-- (void)requestDidFinished:(CDJSONBaseNetworkService *)service{
-    [super requestDidFinished:service];
+- (void)serviceDidFinished:(CDJSONBaseNetworkService *)service{
+    [super serviceDidFinished:service];
     if ([self.commitMessageService.type isEqualToString:@"1"]) {
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
-- (void)request:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
-    [super request:service didFailLoadWithError:error];
+- (void)service:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
+    [super service:service didFailLoadWithError:error];
 }
 
 #pragma mark - Notification
