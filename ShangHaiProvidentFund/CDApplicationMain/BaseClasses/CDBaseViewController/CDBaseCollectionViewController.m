@@ -7,11 +7,11 @@
 //
 
 #import "CDBaseCollectionViewController.h"
-#import "ODRefreshControl.h"
+#import "SCYRefreshControl.h"
 
 @interface CDBaseCollectionViewController ()
 
-@property (nonatomic, strong) ODRefreshControl *refreshControl;
+@property (nonatomic, strong) SCYRefreshControl *refreshControl;
 
 @end
 
@@ -50,7 +50,7 @@
         if (!self.navigationController.navigationBarHidden) {
             [self setEdgesForExtendedLayout:UIRectEdgeLeft | UIRectEdgeBottom | UIRectEdgeRight];
         }
-        _refreshControl = [[ODRefreshControl alloc] initInScrollView:self.collectionView];
+        _refreshControl = [[SCYRefreshControl alloc] initInScrollView:self.collectionView];
         [_refreshControl addTarget:self action:@selector(startPullRefresh) forControlEvents:UIControlEventValueChanged];
     }
 }

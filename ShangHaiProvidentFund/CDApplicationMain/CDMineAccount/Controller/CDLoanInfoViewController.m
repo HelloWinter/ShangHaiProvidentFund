@@ -40,6 +40,7 @@ static const CGFloat kHeaderTitleHeight = 28;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    self.tableView.rowHeight=36;
     [self.view addSubview:self.detailHeaderView];
     self.tableView.top=self.detailHeaderView.bottom;
     self.tableView.height-=self.detailHeaderView.height+64;
@@ -106,10 +107,6 @@ static const CGFloat kHeaderTitleHeight = 28;
     return [NSString stringWithFormat:@"    %@",item.happendate ? : @"--"];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 36;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return kHeaderTitleHeight;
 }
@@ -122,14 +119,14 @@ static const CGFloat kHeaderTitleHeight = 28;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark - Events
+#pragma mark - private
 - (void)refreshArrData{
     [self.arrData removeAllObjects];
     [self.arrData addObjectsFromArray:self.loginModel.dynamicdetail];
     if (self.arrData.count==0) {
-        [self.tableView showWatermark:@"no_detail" target:nil action:nil];
+        [self.tableView cd_showWatermark:@"no_detail" target:nil action:nil];
     }else{
-        [self.tableView hideWatermark];
+        [self.tableView cd_hideWatermark];
     }
     [self.tableView reloadData];
 }

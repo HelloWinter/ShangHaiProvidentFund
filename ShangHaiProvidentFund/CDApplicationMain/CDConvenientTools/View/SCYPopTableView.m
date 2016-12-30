@@ -127,7 +127,7 @@ static const CGSize kSize = {290,658*0.5};
     self.centerX = window.width * 0.5;
     self.top = window.bottom;
 
-    [window showView:self backViewAlpha:0.5 target:nil touchAction:nil animation:^{
+    [window cd_showView:self backViewAlpha:0.5 target:nil touchAction:nil animation:^{
         self.center = CGPointMake(window.width * 0.5, (window.height) * 0.5);
     } timeInterval:(animated ? kAnimationDuration : 0) finished:^(BOOL finished) {
         
@@ -138,7 +138,7 @@ static const CGSize kSize = {290,658*0.5};
     if (!self.superview) {
         return;
     }
-    [self.superview hideView:self animation:^{
+    [self.superview cd_hideView:self animation:^{
         self.top = self.superview.bottom;
     } timeInterval:(animated ? kAnimationDuration : 0) fininshed:^(BOOL complation) {
         

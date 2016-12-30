@@ -95,7 +95,7 @@ static CGFloat const badgeViewfont = 12;
         button.frame = CGRectMake(axisX, axisY, width, height);
         
         UILabel *badgeView = self.badgeViews[idx];
-        CGSize badgeViewSize = [badgeView.text sizeWithpreferHeight:badgeViewHeight font:[UIFont systemFontOfSize:badgeViewfont]];
+        CGSize badgeViewSize = [badgeView.text cd_sizeWithPreferHeight:badgeViewHeight font:[UIFont systemFontOfSize:badgeViewfont]];
         badgeView.frame = CGRectMake(button.right - 25, button.top + 5, badgeViewSize.width + 9, badgeViewHeight);
     }
     if (CGSizeEqualToSize(_sliderSize, CGSizeZero)) {

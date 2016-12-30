@@ -14,9 +14,9 @@
 #import "CDLoginModel.h"
 #import "CDAccountInfoItem.h"
 
-static const CGFloat kAccountInfoHeight = 135;
-static const CGFloat kPageHeaderHeight = 38;
-static const CGFloat kHeaderTitleHeight = 28;
+static const CGFloat kAccountInfoHeight = 135.0;
+static const CGFloat kPageHeaderHeight = 38.0;
+static const CGFloat kHeaderTitleHeight = 28.0;
 
 @interface CDAccountDetailController ()<CDSlidePageHeaderViewDelegate>
 
@@ -46,9 +46,10 @@ static const CGFloat kHeaderTitleHeight = 28;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    self.tableView.rowHeight=36;
     [self.view addSubview:self.detailHeaderView];
     self.tableView.top=self.detailHeaderView.bottom;
-    self.tableView.height=self.tableView.height-self.detailHeaderView.height;
+    self.tableView.height-=self.detailHeaderView.height;
     [self refreshTableHeadView];
     [self refreshArrDataWithSelectIndex:self.selectIndex];
     [self refreshHeaderViewDataWithSelectIndex:self.selectIndex];
@@ -99,7 +100,7 @@ static const CGFloat kHeaderTitleHeight = 28;
         _pageHeaderView = [[CDSlidePageHeaderView alloc] initWithFrame:CGRectMake(0,0, self.view.width, kPageHeaderHeight)];
         _pageHeaderView.delegate = self;
         _pageHeaderView.normalColor=[UIColor blackColor];
-        _pageHeaderView.selectedColor=ColorFromHexRGB(0x2fa6df);
+        _pageHeaderView.selectedColor=ColorFromHexRGB(0x2d8eff);
         _pageHeaderView.itemTitles=@[@"普通公积金",@"补充公积金"];
         _pageHeaderView.sliderSize=CGSizeMake(self.pageHeaderView.width/self.pageHeaderView.itemTitles.count, 2);
         [_pageHeaderView setSelectedIndex:self.selectIndex];
@@ -124,10 +125,6 @@ static const CGFloat kHeaderTitleHeight = 28;
 }
 
 #pragma mark - UITableViewDelegate
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 36;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 0.01;
 }
@@ -149,6 +146,7 @@ static const CGFloat kHeaderTitleHeight = 28;
     }
 }
 
+#pragma mark - private
 - (void)refreshArrDataWithSelectIndex:(NSInteger)selectindex{
     [self.arrData removeAllObjects];
     if (selectindex==0) {
@@ -157,9 +155,9 @@ static const CGFloat kHeaderTitleHeight = 28;
         [self.arrData addObjectsFromArray:self.loginModel.supplypridetail];
     }
     if (self.arrData.count==0) {
-        [self.tableView showWatermark:@"no_detail" target:nil action:nil];
+        [self.tableView cd_showWatermark:@"no_detail" target:nil action:nil];
     }else{
-        [self.tableView hideWatermark];
+        [self.tableView cd_hideWatermark];
     }
     [self.tableView reloadData];
 }

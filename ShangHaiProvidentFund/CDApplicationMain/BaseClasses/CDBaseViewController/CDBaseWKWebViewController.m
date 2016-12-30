@@ -11,7 +11,7 @@
 
 static void *CDWebBrowserContext = &CDWebBrowserContext;
 
-@interface CDBaseWKWebViewController ()<WKNavigationDelegate,UIActionSheetDelegate>
+@interface CDBaseWKWebViewController ()<WKNavigationDelegate>//,UIActionSheetDelegate
 
 /**
  *  进度条颜色,默认系统TintColor

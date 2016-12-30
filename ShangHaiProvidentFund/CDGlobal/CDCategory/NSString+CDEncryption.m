@@ -81,16 +81,6 @@
     return date;
 }
 
-- (NSMutableString*) cd_detleteCharacter:(NSString*) character{
-    NSMutableString* oldString = [NSMutableString stringWithString:self];
-    NSRange subRange = [oldString rangeOfString:character];
-    while (subRange.location!=NSNotFound) {
-        [oldString deleteCharactersInRange:subRange];
-        subRange = [oldString rangeOfString:character];
-    }
-    return oldString;
-}
-
 - (NSDictionary *) cd_transformToDictionary {
     NSMutableDictionary* dic = [NSMutableDictionary dictionaryWithCapacity:0];
     NSArray* arr = [self componentsSeparatedByString:@"&"];
@@ -129,7 +119,17 @@
 
 @end
 
-@implementation NSString (NumberStringFormat)
+@implementation NSString (CDStringOperation)
+
+- (NSMutableString*) cd_detleteCharacter:(NSString*) character{
+    NSMutableString* oldString = [NSMutableString stringWithString:self];
+    NSRange subRange = [oldString rangeOfString:character];
+    while (subRange.location!=NSNotFound) {
+        [oldString deleteCharactersInRange:subRange];
+        subRange = [oldString rangeOfString:character];
+    }
+    return oldString;
+}
 
 -(NSString *)cd_numberStringFormat{
     if (self.length>0) {
@@ -145,23 +145,31 @@
     return self;
 }
 
-- (CGSize)sizeWithPreferWidth:(CGFloat)width font:(UIFont *)font{
+- (CGSize)cd_sizeWithPreferWidth:(CGFloat)width font:(UIFont *)font{
     if (!font) {
         return CGSizeZero;
     }
     NSDictionary *dict=@{NSFontAttributeName : font};
-    CGRect rect=[self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:(NSStringDrawingUsesLineFragmentOrigin) attributes:dict context:nil];
+    return [self cd_sizeWithPreferWidth:width attribute:dict];
+}
+
+- (CGSize)cd_sizeWithPreferHeight:(CGFloat)height font:(UIFont *)font{
+    if (!font) {
+        return CGSizeZero;
+    }
+    NSDictionary *dict=@{NSFontAttributeName : font};
+    return [self cd_sizeWithPreferHeight:height attribute:dict];
+}
+
+- (CGSize)cd_sizeWithPreferWidth:(CGFloat)width attribute:(NSDictionary *)attr{
+    CGRect rect=[self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:(NSStringDrawingUsesLineFragmentOrigin) attributes:attr context:nil];
     CGFloat sizeWidth=ceilf(CGRectGetWidth(rect));
     CGFloat sizeHieght=ceilf(CGRectGetHeight(rect));
     return CGSizeMake(sizeWidth, sizeHieght);
 }
 
-- (CGSize)sizeWithpreferHeight:(CGFloat)height font:(UIFont *)font{
-    if (!font) {
-        return CGSizeZero;
-    }
-    NSDictionary *dict=@{NSFontAttributeName : font};
-    CGRect rect=[self boundingRectWithSize:CGSizeMake(MAXFLOAT, height) options:(NSStringDrawingUsesLineFragmentOrigin) attributes:dict context:nil];
+- (CGSize)cd_sizeWithPreferHeight:(CGFloat)height attribute:(NSDictionary *)attr{
+    CGRect rect=[self boundingRectWithSize:CGSizeMake(MAXFLOAT, height) options:(NSStringDrawingUsesLineFragmentOrigin) attributes:attr context:nil];
     CGFloat sizeWidth=ceilf(CGRectGetWidth(rect));
     CGFloat sizeHieght=ceilf(CGRectGetHeight(rect));
     return CGSizeMake(sizeWidth, sizeHieght);

@@ -10,12 +10,30 @@
 
 @interface ImagePickerManager ()<UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
+
+
 @end
 
 @implementation ImagePickerManager
 
 - (void)selectPicture{
     if (_delgate) {
+//        WS(weakSelf);
+//        UIAlertController *controller=[UIAlertController alertControllerWithTitle:@"请选择文件来源" message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+//        UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//            
+//        }];
+//        UIAlertAction *takeApictureAction=[UIAlertAction actionWithTitle:@"拍照" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+//            
+//        }];
+//        UIAlertAction *selectApictureAction=[UIAlertAction actionWithTitle:@"从手机相册选择" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+//            
+//        }];
+//        [controller addAction:cancelAction];
+//        [controller addAction:takeApictureAction];
+//        [controller addAction:selectApictureAction];
+//        [_delgate presentViewController:controller animated:YES completion:nil];
+        
         UIActionSheet *actionSheet = [[UIActionSheet alloc]
                                       initWithTitle:@"请选择文件来源"
                                       delegate:self

@@ -152,7 +152,7 @@
     [self cancelLogin];
 }
 
-#pragma mark - Events
+#pragma mark - private
 - (void)login{
     NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
     for (CDOpinionsSuggestionsItem *item in self.loginConfigureModel.arrData) {

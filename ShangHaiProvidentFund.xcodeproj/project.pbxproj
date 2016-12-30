@@ -105,7 +105,6 @@
 		6E53C84B1CE9CF9500202F53 /* CDSlidePageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53C8481CE9CF9500202F53 /* CDSlidePageHeaderView.m */; };
 		6E53C84C1CE9CF9500202F53 /* CDSlidePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53C84A1CE9CF9500202F53 /* CDSlidePageView.m */; };
 		6E5E7D411D2A50DC00182A5B /* account_manage_cellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5E7D401D2A50DC00182A5B /* account_manage_cellBG.png */; };
-		6E66EA171CE0631700111C2C /* CDTitleImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E66EA161CE0631700111C2C /* CDTitleImageButton.m */; };
 		6E67A79A1CDCA6BC00436E93 /* CDLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E67A7991CDCA6BC00436E93 /* CDLoadMoreCell.m */; };
 		6E67A79D1CDCA72600436E93 /* CDLoadMoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E67A79C1CDCA72600436E93 /* CDLoadMoreItem.m */; };
 		6E6ADB101CD892B200838B61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB0F1CD892B200838B61 /* main.m */; };
@@ -121,7 +120,6 @@
 		6E6ADB561CD89E8E00838B61 /* CDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB491CD89E8E00838B61 /* CDNavigationController.m */; };
 		6E6ADB581CD89E8E00838B61 /* CDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB4D1CD89E8E00838B61 /* CDTabBarController.m */; };
 		6E6ADB591CD89E8E00838B61 /* CDBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB4F1CD89E8E00838B61 /* CDBaseTableViewController.m */; };
-		6E6ADB5E1CD89F1C00838B61 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB5D1CD89F1C00838B61 /* ODRefreshControl.m */; };
 		6E6ADB881CD89F7C00838B61 /* NSArray+CDArrayAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB611CD89F7C00838B61 /* NSArray+CDArrayAdditions.m */; };
 		6E6ADB891CD89F7C00838B61 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB631CD89F7C00838B61 /* NSData+Base64.m */; };
 		6E6ADB8B1CD89F7C00838B61 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB671CD89F7C00838B61 /* NSData+CommonCrypto.m */; };
@@ -143,7 +141,6 @@
 		6E6ADBD81CD8A0BD00838B61 /* CDAutoHideMessageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADBA41CD8A0BD00838B61 /* CDAutoHideMessageHUD.m */; };
 		6E6ADBDC1CD8A0BD00838B61 /* CDPointActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADBAE1CD8A0BD00838B61 /* CDPointActivityIndicator.m */; };
 		6E6ADBF01CD8A22600838B61 /* CDGlobalHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADBEF1CD8A22600838B61 /* CDGlobalHTTPSessionManager.m */; };
-		6E6ADC151CD8AC9B00838B61 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC141CD8AC9B00838B61 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6E6ADC1C1CD8B35B00838B61 /* CDBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC1B1CD8B35B00838B61 /* CDBaseItem.m */; };
 		6E73D6421E14A516009A1072 /* SCYActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6411E14A516009A1072 /* SCYActivityIndicator.m */; };
 		6E73D6461E14A5C8009A1072 /* SCYActivityIndicatorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6451E14A5C8009A1072 /* SCYActivityIndicatorButton.m */; };
@@ -353,8 +350,6 @@
 		6E53C8491CE9CF9500202F53 /* CDSlidePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDSlidePageView.h; sourceTree = "<group>"; };
 		6E53C84A1CE9CF9500202F53 /* CDSlidePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDSlidePageView.m; sourceTree = "<group>"; };
 		6E5E7D401D2A50DC00182A5B /* account_manage_cellBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account_manage_cellBG.png; sourceTree = "<group>"; };
-		6E66EA151CE0631700111C2C /* CDTitleImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDTitleImageButton.h; sourceTree = "<group>"; };
-		6E66EA161CE0631700111C2C /* CDTitleImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTitleImageButton.m; sourceTree = "<group>"; };
 		6E67A7981CDCA6BC00436E93 /* CDLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoadMoreCell.h; sourceTree = "<group>"; };
 		6E67A7991CDCA6BC00436E93 /* CDLoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLoadMoreCell.m; sourceTree = "<group>"; };
 		6E67A79B1CDCA72600436E93 /* CDLoadMoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoadMoreItem.h; sourceTree = "<group>"; };
@@ -384,8 +379,6 @@
 		6E6ADB4D1CD89E8E00838B61 /* CDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTabBarController.m; sourceTree = "<group>"; };
 		6E6ADB4E1CD89E8E00838B61 /* CDBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseTableViewController.h; sourceTree = "<group>"; };
 		6E6ADB4F1CD89E8E00838B61 /* CDBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseTableViewController.m; sourceTree = "<group>"; };
-		6E6ADB5C1CD89F1C00838B61 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
-		6E6ADB5D1CD89F1C00838B61 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		6E6ADB601CD89F7C00838B61 /* NSArray+CDArrayAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CDArrayAdditions.h"; sourceTree = "<group>"; };
 		6E6ADB611CD89F7C00838B61 /* NSArray+CDArrayAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CDArrayAdditions.m"; sourceTree = "<group>"; };
 		6E6ADB621CD89F7C00838B61 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -430,8 +423,6 @@
 		6E6ADBEE1CD8A22600838B61 /* CDGlobalHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDGlobalHTTPSessionManager.h; sourceTree = "<group>"; };
 		6E6ADBEF1CD8A22600838B61 /* CDGlobalHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDGlobalHTTPSessionManager.m; sourceTree = "<group>"; };
 		6E6ADBF11CD8A58400838B61 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		6E6ADC131CD8AC9B00838B61 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
-		6E6ADC141CD8AC9B00838B61 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		6E6ADC1A1CD8B35B00838B61 /* CDBaseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseItem.h; sourceTree = "<group>"; };
 		6E6ADC1B1CD8B35B00838B61 /* CDBaseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseItem.m; sourceTree = "<group>"; };
 		6E73D6401E14A516009A1072 /* SCYActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYActivityIndicator.h; sourceTree = "<group>"; };
@@ -597,20 +588,12 @@
 		6E24687E1DAA35C600DDC80B /* CDConvenientTools */ = {
 			isa = PBXGroup;
 			children = (
-				6E24687F1DAA35C600DDC80B /* AMapTools */,
 				6E2468801DAA35C600DDC80B /* Controller */,
 				6E24688C1DAA35C600DDC80B /* Model */,
 				6E24689F1DAA35C600DDC80B /* NetWorkService */,
 				6E2468A81DAA35C600DDC80B /* View */,
 			);
 			path = CDConvenientTools;
-			sourceTree = "<group>";
-		};
-		6E24687F1DAA35C600DDC80B /* AMapTools */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AMapTools;
 			sourceTree = "<group>";
 		};
 		6E2468801DAA35C600DDC80B /* Controller */ = {
@@ -879,8 +862,6 @@
 			children = (
 				6E73D64F1E14A780009A1072 /* CDUpImageDownTitleButton.h */,
 				6E73D6501E14A780009A1072 /* CDUpImageDownTitleButton.m */,
-				6E66EA151CE0631700111C2C /* CDTitleImageButton.h */,
-				6E66EA161CE0631700111C2C /* CDTitleImageButton.m */,
 			);
 			path = CDTitleImageButton;
 			sourceTree = "<group>";
@@ -946,8 +927,6 @@
 			children = (
 				6E73D65A1E14B4C0009A1072 /* SSKeychain */,
 				14D13B4B1CE2158F00D73F1A /* GTMBase64 */,
-				6E6ADC121CD8AC9B00838B61 /* SFHFKeychainUtils */,
-				6E6ADB5B1CD89F1C00838B61 /* ODRefreshControl */,
 			);
 			path = CDVendor;
 			sourceTree = "<group>";
@@ -1019,15 +998,6 @@
 				6E4D90AF1CDB133E0019B011 /* CDBaseCollectionViewController.m */,
 			);
 			path = CDBaseViewController;
-			sourceTree = "<group>";
-		};
-		6E6ADB5B1CD89F1C00838B61 /* ODRefreshControl */ = {
-			isa = PBXGroup;
-			children = (
-				6E6ADB5C1CD89F1C00838B61 /* ODRefreshControl.h */,
-				6E6ADB5D1CD89F1C00838B61 /* ODRefreshControl.m */,
-			);
-			path = ODRefreshControl;
 			sourceTree = "<group>";
 		};
 		6E6ADB5F1CD89F7C00838B61 /* CDCategory */ = {
@@ -1123,15 +1093,6 @@
 				6E6ADBAE1CD8A0BD00838B61 /* CDPointActivityIndicator.m */,
 			);
 			path = CDCustomActivityIndicator;
-			sourceTree = "<group>";
-		};
-		6E6ADC121CD8AC9B00838B61 /* SFHFKeychainUtils */ = {
-			isa = PBXGroup;
-			children = (
-				6E6ADC131CD8AC9B00838B61 /* SFHFKeychainUtils.h */,
-				6E6ADC141CD8AC9B00838B61 /* SFHFKeychainUtils.m */,
-			);
-			path = SFHFKeychainUtils;
 			sourceTree = "<group>";
 		};
 		6E6ADC191CD8B33D00838B61 /* CDBaseItem */ = {
@@ -1441,7 +1402,6 @@
 				6E24695A1DAA35C600DDC80B /* CDRepayInfoService.m in Sources */,
 				6E73D6621E14B4C0009A1072 /* SSKeychain.m in Sources */,
 				6E2469511DAA35C600DDC80B /* CDRegistConfigureModel.m in Sources */,
-				6E6ADB5E1CD89F1C00838B61 /* ODRefreshControl.m in Sources */,
 				6E2469431DAA35C600DDC80B /* CDLoanProgressController.m in Sources */,
 				6E2469411DAA35C600DDC80B /* CDAccountManageController.m in Sources */,
 				6E24692B1DAA35C600DDC80B /* CDConvenientToolsItem.m in Sources */,
@@ -1457,7 +1417,6 @@
 				6E73D6461E14A5C8009A1072 /* SCYActivityIndicatorButton.m in Sources */,
 				6E2469661DAA35C600DDC80B /* CDNewsAndTrendsItem.m in Sources */,
 				6E2469521DAA35C600DDC80B /* CDRepayInfoBasicItem.m in Sources */,
-				6E6ADC151CD8AC9B00838B61 /* SFHFKeychainUtils.m in Sources */,
 				6E6ADB561CD89E8E00838B61 /* CDNavigationController.m in Sources */,
 				6E6ADB551CD89E8E00838B61 /* CDBaseWKWebViewController.m in Sources */,
 				6E6ADB901CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.m in Sources */,
@@ -1468,7 +1427,6 @@
 				6E2469331DAA35C600DDC80B /* CDConvenientToolsService.m in Sources */,
 				6E2469171DAA35C600DDC80B /* CDHelpInfoViewController.m in Sources */,
 				14FDD0C11CDDF1200093ABC3 /* UITextView+CDCategory.m in Sources */,
-				6E66EA171CE0631700111C2C /* CDTitleImageButton.m in Sources */,
 				6E24692D1DAA35C600DDC80B /* CDPayCalculatorItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

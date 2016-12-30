@@ -16,8 +16,8 @@ typedef NS_ENUM(NSUInteger, HttpRequestType) {
 
 
 #ifdef DEBUG //调试状态下打开LOG
-#define CDLog(...)  NSLog(__VA_ARGS__)
-//#define CDLog(...)  printf("%s : %s\n", __FUNCTION__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])//Xcode8使用
+//#define CDLog(...)  NSLog(__VA_ARGS__)
+#define CDLog(...)  printf("%s : %s\n", __FUNCTION__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])//Xcode8使用
 #else
 #define CDLog(...)
 

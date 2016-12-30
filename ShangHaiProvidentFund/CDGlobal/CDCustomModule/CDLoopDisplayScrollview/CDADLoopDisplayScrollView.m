@@ -226,17 +226,3 @@ static const NSInteger kBehindImageTag = 500;
 }
 
 @end
-
-//    UIImageView *firstSlideImage = [[UIImageView alloc] init];
-//    firstSlideImage.tag=kFrontImageTag;
-//    [firstSlideImage sd_setImageWithURL:[NSURL URLWithString:self.arrImageLink[self.arrImageLink.count - 1]] placeholderImage:self.placeHolderImage];
-//    UITapGestureRecognizer *frontTap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(ImageClick:)];
-//    [firstSlideImage addGestureRecognizer:frontTap];
-//    [self.scrollView addSubview:firstSlideImage];
-//
-//    UIImageView *endSlideImage = [[UIImageView alloc] init];
-//    endSlideImage.tag=kBehindImageTag;
-//    [endSlideImage sd_setImageWithURL:[NSURL URLWithString:self.arrImageLink[0]] placeholderImage:self.placeHolderImage];
-//    UITapGestureRecognizer *behindTap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(ImageClick:)];
-//    [endSlideImage addGestureRecognizer:behindTap];
-//    [self.scrollView addSubview:endSlideImage];

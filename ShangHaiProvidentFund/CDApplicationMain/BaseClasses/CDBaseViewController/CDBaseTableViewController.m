@@ -88,10 +88,10 @@
     if (_tableView == nil) {
         CGRect rect=CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-64);
         _tableView = [[UITableView alloc] initWithFrame:rect style:_tableViewStyle];
-//        if (!self.hidesBottomBarWhenPushed) {
-//            _tableView.height-=49;
-//        }
-//        if (!self.navigationController.navigationBarHidden) {//self.showDragView && 
+        if (!self.hidesBottomBarWhenPushed) {
+            _tableView.height-=49;
+        }
+//        if (!self.navigationController.navigationBarHidden) {//self.showDragView &&
 //            _tableView.height-=64;
 //        }
         _tableView.dataSource=self;

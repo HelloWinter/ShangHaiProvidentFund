@@ -68,15 +68,6 @@
 - (NSDate *)cd_transformToDateWithDateFormat:(NSString *)dateFormat;
 
 /**
- *  删除字符串里的某种字符(返回新的字符串)
- *
- *  @param character 特定字符
- *
- *  @return (NSMutableString *) 删除特定字符后的字符串
- */
-- (NSMutableString*) cd_detleteCharacter:(NSString*) character;
-
-/**
  *  将NSString类型转换为NSDictionary类型
  *
  *  @return (NSDictionary *)
@@ -114,7 +105,16 @@
 
 @end
 
-@interface NSString (NumberStringFormat)
+@interface NSString (CDStringOperation)
+
+/**
+ *  删除字符串里的某种字符(返回新的字符串)
+ *
+ *  @param character 特定字符
+ *
+ *  @return (NSMutableString *) 删除特定字符后的字符串
+ */
+- (NSMutableString*) cd_detleteCharacter:(NSString*) character;
 
 /**
  *  数字字符串超过三位，每隔3位加逗号格式化
@@ -126,18 +126,38 @@
 /**
  *  给定宽度，字体，返回高度
  *
- *  @param width PreferWidth
+ *  @param width 约束宽度
  *  @param font  字体
  */
-- (CGSize)sizeWithPreferWidth:(CGFloat)width font:(UIFont *)font;
+- (CGSize)cd_sizeWithPreferWidth:(CGFloat)width font:(UIFont *)font;
 
 /**
  *  给定高度，字体，返回宽度
  *
- *  @param height 固定高度
+ *  @param height 约束高度
  *  @param font  字体
  */
-- (CGSize)sizeWithpreferHeight:(CGFloat)height font:(UIFont *)font;
+- (CGSize)cd_sizeWithPreferHeight:(CGFloat)height font:(UIFont *)font;
+
+/**
+ *  给定宽度，字符串属性，返回高度
+ *
+ *  @param width 约束宽度
+ *  @param attr  字符串属性
+ *
+ *  @return size
+ */
+- (CGSize)cd_sizeWithPreferWidth:(CGFloat)width attribute:(NSDictionary *)attr;
+
+/**
+ *  给定高度，字符串属性，返回宽度
+ *
+ *  @param height 约束高度
+ *  @param attr   字符串属性
+ *
+ *  @return size
+ */
+- (CGSize)cd_sizeWithPreferHeight:(CGFloat)height attribute:(NSDictionary *)attr;
 
 @end
 

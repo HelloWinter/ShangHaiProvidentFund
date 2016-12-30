@@ -44,7 +44,7 @@
  *  对图片做高斯模糊
  *
  *  @param radius 模糊半径，为0时不模糊,值越大越脱离原来外形(越看不出原来形状)
- *  @param iterations 模糊程度，为0时不模糊,值越大越模糊
+ *  @param iterations 模糊迭代程度，为0时不模糊,值越大越模糊
  *  @param tintColor 模糊蒙版颜色,一般设为白色
  *
  *  @return (UIImage *) 高斯模糊后的图片

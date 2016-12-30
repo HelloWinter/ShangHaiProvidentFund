@@ -155,8 +155,8 @@ static const void *kBackViewIdentifier = &kBackViewIdentifier;
 
 @implementation UIView (CDBackView)
 
-- (void)showView:(UIView *)view backViewAlpha:(CGFloat)a target:(id)target touchAction:(SEL)selector animation:(void(^)(void))animation timeInterval:(NSTimeInterval)interval finished:(void(^)(BOOL finished))fininshed{
-    [self showView:view
+- (void)cd_showView:(UIView *)view backViewAlpha:(CGFloat)a target:(id)target touchAction:(SEL)selector animation:(void(^)(void))animation timeInterval:(NSTimeInterval)interval finished:(void(^)(BOOL finished))fininshed{
+    [self cd_showView:view
      backViewAlpha:a
             target:target
        touchAction:selector];
@@ -165,7 +165,7 @@ static const void *kBackViewIdentifier = &kBackViewIdentifier;
                      completion:fininshed];
 }
 
-- (void)showView:(UIView *)view backViewAlpha:(CGFloat)a target:(id)target touchAction:(SEL)selector{
+- (void)cd_showView:(UIView *)view backViewAlpha:(CGFloat)a target:(id)target touchAction:(SEL)selector{
     UIView* backView = [[UIView alloc] initWithFrame:self.bounds];
     backView.backgroundColor=[UIColor colorWithWhite:0 alpha:a];
     UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:target action:selector];
@@ -176,18 +176,18 @@ static const void *kBackViewIdentifier = &kBackViewIdentifier;
     objc_setAssociatedObject(self, kBackViewIdentifier, backView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)hideView:(UIView *)view animation:(void(^)(void))animation timeInterval:(NSTimeInterval)interval fininshed:(void(^)(BOOL complation))fininshed{
+- (void)cd_hideView:(UIView *)view animation:(void(^)(void))animation timeInterval:(NSTimeInterval)interval fininshed:(void(^)(BOOL complation))fininshed{
     [UIView animateWithDuration:interval
                      animations:animation
                      completion:^(BOOL finish){
-                         [self hideView:view];
+                         [self cd_hideView:view];
                          if (fininshed) {
                              fininshed(finish);
                          }
                      }];
 }
 
-- (void)hideView:(UIView *)view{
+- (void)cd_hideView:(UIView *)view{
     UIView* backView = objc_getAssociatedObject(self, kBackViewIdentifier);
     [view removeFromSuperview];
     [backView removeFromSuperview];
@@ -202,11 +202,11 @@ static const void *kDefaultWatermarkKey = &kDefaultWatermarkKey;
 
 @implementation UIView (CDWatermark)
 
-- (void)showDefaultWatermarkTarget:(id)target action:(SEL)action {
-    [self showWatermark:@"nonedata" target:(id)target action:(SEL)action];
+- (void)cd_showDefaultWatermarkTarget:(id)target action:(SEL)action {
+    [self cd_showWatermark:@"nonedata" target:(id)target action:(SEL)action];
 }
 
-- (void)showWatermark:(NSString *)imageName target:(id)target action:(SEL)action {
+- (void)cd_showWatermark:(NSString *)imageName target:(id)target action:(SEL)action {
     UIImageView *watermark = [self watermark];
     if (!watermark.superview) {
         if (target && action) {
@@ -222,7 +222,7 @@ static const void *kDefaultWatermarkKey = &kDefaultWatermarkKey;
     watermark.image=image;
 }
 
-- (void)hideWatermark {
+- (void)cd_hideWatermark {
     UIImageView *watermark = [self watermark];
     if (watermark && watermark.superview) {
         if (watermark.gestureRecognizers.count!=0) {
@@ -256,7 +256,7 @@ static const void *kBadgeViewIdentifier = &kBadgeViewIdentifier;
 
 @implementation UIView (CDBadge)
 
-- (void)showBadge{
+- (void)cd_showBadge{
     UIView *badgeView=objc_getAssociatedObject(self, kBadgeViewIdentifier);
     if (badgeView==nil) {
         CGFloat badgeWidth=8;
@@ -273,7 +273,7 @@ static const void *kBadgeViewIdentifier = &kBadgeViewIdentifier;
     }
 }
 
-- (void)removeBadge{
+- (void)cd_removeBadge{
     UIView *badgeView=objc_getAssociatedObject(self, kBadgeViewIdentifier);
     if (badgeView) {
         if (badgeView.superview) {

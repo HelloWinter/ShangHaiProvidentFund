@@ -13,16 +13,16 @@
 
 @interface UIView (CDCategory)
 
-//  左边间距
+//  左边（X坐标）
 @property (nonatomic) CGFloat left;
 
-//  顶部间距
+//  顶部（Y坐标）
 @property (nonatomic) CGFloat top;
 
-//  右边间距
+//  右边
 @property (nonatomic) CGFloat right;
 
-//  底部间距
+//  底部
 @property (nonatomic) CGFloat bottom;
 
 //  左上角
@@ -62,13 +62,13 @@
 
 @interface UIView (CDBackView)
 
-- (void)showView:(UIView *)view backViewAlpha:(CGFloat)a target:(id)target touchAction:(SEL)selector animation:(void(^)(void))animation timeInterval:(NSTimeInterval)interval finished:(void(^)(BOOL finished))fininshed;
+- (void)cd_showView:(UIView *)view backViewAlpha:(CGFloat)a target:(id)target touchAction:(SEL)selector animation:(void(^)(void))animation timeInterval:(NSTimeInterval)interval finished:(void(^)(BOOL finished))fininshed;
 
-- (void)showView:(UIView *)view backViewAlpha:(CGFloat)a target:(id)target touchAction:(SEL)selector;
+- (void)cd_showView:(UIView *)view backViewAlpha:(CGFloat)a target:(id)target touchAction:(SEL)selector;
 
-- (void)hideView:(UIView *)view animation:(void(^)(void))animation timeInterval:(NSTimeInterval)interval fininshed:(void(^)(BOOL complation))fininshed;
+- (void)cd_hideView:(UIView *)view animation:(void(^)(void))animation timeInterval:(NSTimeInterval)interval fininshed:(void(^)(BOOL complation))fininshed;
 
-- (void)hideView:(UIView *)view;
+- (void)cd_hideView:(UIView *)view;
 
 @end
 
@@ -77,11 +77,11 @@
 
 @interface UIView (CDWatermark)
 
-- (void)showDefaultWatermarkTarget:(id)target action:(SEL)action;
+- (void)cd_showDefaultWatermarkTarget:(id)target action:(SEL)action;
 
-- (void)showWatermark:(NSString *)imageName target:(id)target action:(SEL)action;
+- (void)cd_showWatermark:(NSString *)imageName target:(id)target action:(SEL)action;
 
-- (void)hideWatermark;
+- (void)cd_hideWatermark;
 
 @end
 
@@ -90,8 +90,8 @@
 
 @interface UIView (CDBadge)
 
-- (void)showBadge;
+- (void)cd_showBadge;
 
-- (void)removeBadge;
+- (void)cd_removeBadge;
 
 @end

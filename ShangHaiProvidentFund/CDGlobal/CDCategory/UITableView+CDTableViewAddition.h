@@ -11,7 +11,7 @@
 @interface UITableView (CDTableViewAddition)
 
 /**
- @brief 清除tableView多余的分隔线
+ *  清除tableView多余的分隔线
  */
 - (void)cd_clearNeedlessCellLine;
 

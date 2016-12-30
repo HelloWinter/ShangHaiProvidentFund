@@ -7,12 +7,11 @@
 //
 
 #import "CDUtilities.h"
-#import "SFHFKeychainUtils.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <LocalAuthentication/LocalAuthentication.h>
 #import "SSKeychain.h"
+#import "CDAutoHideMessageHUD.h"
 
-//按角度旋转view
 void rotateView(UIView* view,int degrees,float duration){
     [UIView animateWithDuration:duration animations:^{
         view.transform = CGAffineTransformRotate(view.transform, Degrees_To_Radians(degrees));
@@ -20,12 +19,8 @@ void rotateView(UIView* view,int degrees,float duration){
 }
 
 UIViewController* CDFindTopModelViewController(UIViewController* vc){
-    if (vc.presentedViewController) {
-        while (vc.presentedViewController) {
-            vc = vc.presentedViewController;
-        }
-    }else {
-        vc = nil;
+    while (vc.presentedViewController) {
+        vc = vc.presentedViewController;
     }
     if ([vc isKindOfClass:[UINavigationController class]]) {
         vc = [(UINavigationController*)vc visibleViewController];
@@ -34,60 +29,35 @@ UIViewController* CDFindTopModelViewController(UIViewController* vc){
 }
 
 UIViewController* CDVisibalController() {
-    
     UIViewController* appRootViewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
     if ([appRootViewController isKindOfClass:[UITabBarController class]]) {
         UITabBarController* tableBarVC = (UITabBarController*)appRootViewController;
-        if (tableBarVC.presentedViewController) {
-            return CDFindTopModelViewController(tableBarVC);
-        }else {
-            UINavigationController* selectedNav = (UINavigationController*)tableBarVC.selectedViewController;
-            
-            if (selectedNav.presentedViewController) {
-                return CDFindTopModelViewController(selectedNav);
-            }else {
-                return selectedNav.topViewController;
-            }
-        }
+        UIViewController *selectController=(UIViewController *)tableBarVC.selectedViewController;
+        return CDFindTopModelViewController(selectController);
     }else {
-        if (appRootViewController.presentedViewController) {
-            return CDFindTopModelViewController(appRootViewController);
-        }else {
-            return appRootViewController;
-        }
+        return CDFindTopModelViewController(appRootViewController);
     }
-}
-
-void showAlertViewWithTitleAndMessage(NSString *title, NSString *message) {
-    if (!title || !message || message.length==0) {
-        return;
-    }
-    UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:title.length>0 ? title:@"温馨提示"
-                                                     message:message
-                                                    delegate:nil
-                                           cancelButtonTitle:@"确定"
-                                           otherButtonTitles:nil, nil];
-    [alertView show];
-}
-
-void showAlertViewWithMessage(NSString *message) {
-    showAlertViewWithTitleAndMessage(@"温馨提示", message);
 }
 
 CurrentDeviceScreenModel currentScreenModel(){
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         CGSize screenSize = [UIScreen mainScreen].bounds.size;
-        if (CGSizeEqualToSize(screenSize, CGSizeMake(320.0, 568.0))) {
+        if (CGSizeEqualToSize(screenSize, CGSizeMake(320.0, 480.0)) || CGSizeEqualToSize(screenSize, CGSizeMake(480.0, 320.0))) {
+            return CurrentDeviceScreenModel_3_5;
+        }
+        if (CGSizeEqualToSize(screenSize, CGSizeMake(320.0, 568.0)) || CGSizeEqualToSize(screenSize, CGSizeMake(568.0, 320.0))) {
             return CurrentDeviceScreenModel_4_0;
         }
-        if (CGSizeEqualToSize(screenSize, CGSizeMake(375.0, 667.0))) {
+        if (CGSizeEqualToSize(screenSize, CGSizeMake(375.0, 667.0)) || CGSizeEqualToSize(screenSize, CGSizeMake(667.0, 375.0))) {
             return CurrentDeviceScreenModel_4_7;
         }
-        if (CGSizeEqualToSize(screenSize, CGSizeMake(414.0, 736.0))) {
+        if (CGSizeEqualToSize(screenSize, CGSizeMake(414.0, 736.0)) || CGSizeEqualToSize(screenSize, CGSizeMake(736.0, 414.0))) {
             return CurrentDeviceScreenModel_5_5;
         }
+    }else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        return CurrentDeviceScreenModel_iPad;
     }
-    return CurrentDeviceScreenModel_3_5;
+    return CurrentDeviceScreenModel_Unspecified;
 }
 
 UIColor* colorForHex(NSString* hexColor){
@@ -97,6 +67,7 @@ UIColor* colorForHex(NSString* hexColor){
         
         if ([cString length] < 6) return [UIColor blackColor];
         // strip 0X if it appears
+        if ([cString hasPrefix:@"0x"]) cString = [cString substringFromIndex:2];
         if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
         if ([cString hasPrefix:@"#"]) cString = [cString substringFromIndex:1];
         if ([cString length] != 6) return [UIColor blackColor];
@@ -163,7 +134,6 @@ NSString* getCheckDigit(NSString* eighteenCardID){
 
 /**
  将15位身份证升级成18位身份证号码
- 
  @param fifteenCardID
  @return (NSString *)
  */
@@ -214,148 +184,9 @@ BOOL checkName(NSString *userName){
     return canUse;
 }
 
-NSString *pathForFileInDocumentsDirectory(NSString *filename) {
-    return [CDDocumentPath stringByAppendingPathComponent:filename];
-}
-
-void removeAllCookies(){
-    NSHTTPCookieStorage* cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    NSArray* cookies = [NSArray arrayWithArray:cookieStorage.cookies];
-    for (NSHTTPCookie* cookie in cookies) {
-        [cookieStorage deleteCookie:cookie];
-    }
-}
-
-void setTokenToCookies(NSURL* url){
-    removeAllCookies();
-    //    NSString* token = replaceString(tokenLogin_accesstoken(), @"%2B", @"+") ;//tokenLogin_accesstoken();//
-    //    NSString* appid = tokenLogin_appid();
-    NSString* token = @"";
-    NSString* appid = @"";
-    NSHTTPCookieStorage* cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    if (token&&appid) {
-        NSString* cookieValue = [NSString stringWithFormat:@"&TOKEN=%@&APPID=%@&ALLEDN",token,appid];
-        NSHTTPCookie *cookie1 = createCookieWithDomain(url.host, url.path, cookieValue, nil);
-        [cookieStorage setCookie:cookie1];
-    }
-}
-
-
-NSHTTPCookie *createCookieWithDomain(NSString* Tdomain,NSString* cookieName,NSString* cookieValue,NSDate* expiresDate){
-    
-    if (Tdomain&&cookieName&&cookieValue) {
-        NSMutableDictionary *cookieProperties = [NSMutableDictionary dictionary];
-        [cookieProperties setObject:cookieName forKey:NSHTTPCookieName];
-        [cookieProperties setObject:cookieValue forKey:NSHTTPCookieValue];
-        [cookieProperties setObject:Tdomain forKey:NSHTTPCookieDomain];
-        [cookieProperties setObject:@"/" forKey:NSHTTPCookiePath];
-        [cookieProperties setObject:@"0" forKey:NSHTTPCookieVersion];
-        if (expiresDate) {
-            [cookieProperties setObject:expiresDate forKey:NSHTTPCookieExpires];
-        }
-        NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieProperties];
-        return cookie;
-    }else {
-        return nil;
-    }
-}
-
-NSHTTPCookie *cookieForDomain(NSString* tDomain,NSString* cookieName){
-    for (NSHTTPCookie* cookie in [NSHTTPCookieStorage sharedHTTPCookieStorage].cookies) {
-        if ([cookie.domain isEqualToString:tDomain]) {
-            if ([cookie.name isEqualToString:cookieName]) {
-                return cookie;
-            }
-        }
-    }
-    return nil;
-}
-
-/**
- *清除域名下的session信息
- */
-void removeSessionWitnDomain(NSString* domain){
-    NSHTTPCookieStorage* cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    
-    NSArray* cookies = [NSArray arrayWithArray:cookieStorage.cookies];
-    
-    for (NSHTTPCookie* cookie in cookies) {
-        if ([cookie.domain isEqualToString:domain]){
-            if ([cookie.name isEqualToString:@"--------"]){
-                [cookieStorage deleteCookie:cookie];
-            }
-            if ([cookie.name isEqualToString:@"--------"]){
-                [cookieStorage deleteCookie:cookie];
-            }
-        }
-    }
-}
-/**
- *强制将登录域名下的session刷如TDomain对应的cookies里实现联合登录
- */
-void forceSetSessionToCookieWithDomain(NSString* FromDomain,NSString* Tdomain){
-     NSHTTPCookie *orginCookie1 = cookieForDomain(FromDomain,@"--------");
-     NSHTTPCookie *orginCookie2 = cookieForDomain(FromDomain,@"--------");
-     if (orginCookie1&&orginCookie2) {
-         if (Tdomain!=FromDomain) {
-             removeSessionWitnDomain(Tdomain);
-         }
-         NSHTTPCookie *cookie1 = createCookieWithDomain(Tdomain, orginCookie1.name, orginCookie1.value, orginCookie1.expiresDate);
-         NSHTTPCookie *cookie2 = createCookieWithDomain(Tdomain, orginCookie2.name, orginCookie2.value, orginCookie2.expiresDate);
- 
-         [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie1];
-         [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie2];
-     }
-}
-
-NSDictionary* sessionsForDomain(NSString* domain){
-    NSMutableDictionary* dic = [NSMutableDictionary dictionaryWithCapacity:0];
-    for (NSHTTPCookie* cookie in [NSHTTPCookieStorage sharedHTTPCookieStorage].cookies) {
-        if ([cookie.domain isEqualToString:domain]) {
-            [dic setObject:cookie.value forKey:cookie.name];
-        }
-    }
-    return dic;
-}
-
-/**
- 获取uuid
- */
-NSString* gen_uuid(){
-    CFUUIDRef uuid_ref = CFUUIDCreate(NULL);
-    CFStringRef uuid_string_ref= CFUUIDCreateString(NULL, uuid_ref);
-    CFRelease(uuid_ref);
-    NSString *uuid = [NSString stringWithString:(__bridge NSString*)uuid_string_ref];
-    CFRelease(uuid_string_ref);
-    return uuid;
-}
-
-NSString *CDKeyChainUUID(){
-    NSError *error;
-    NSString *userName = @"UUIDKey";
-    NSString *ServiceName = @"come.cd.product";
-    NSString *struuid=[SFHFKeychainUtils getPasswordForUsername:userName andServiceName:ServiceName error:&error];
-    if (struuid==nil || struuid.length==0) {
-        NSString *str=gen_uuid();
-        /* 保存uuid */
-        BOOL saved = [SFHFKeychainUtils storeUsername:userName
-                                          andPassword:str
-                                       forServiceName:ServiceName
-                                       updateExisting:YES
-                                                error:&error ];
-        if (!saved) {
-            CDLog(@"保存时出错：%@", error);
-        }
-        error = nil;
-        return str;
-    }else{
-        return struuid;
-    }
-}
-
 NSString *CDKeyChainIDFV(){
     NSString *userName = @"IDFVKey";
-    NSString *ServiceName = @"come.ProvidentFund.Company";
+    NSString *ServiceName = @"come.ProvidentFund.ShangHai";
     NSString *strIDFV=[SSKeychain passwordForService:ServiceName account:userName];
     if (strIDFV==nil || strIDFV.length==0) {
         NSError *setError=nil;
@@ -368,29 +199,6 @@ NSString *CDKeyChainIDFV(){
         return idfv;
     }else{
         return strIDFV;
-    }
-}
-
-NSDictionary* ProjectSettings(){
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"ProjectSettings" ofType:@"plist"];
-    return [NSDictionary dictionaryWithContentsOfFile:path];
-}
-
-//NSString* defaultSource(){
-//    NSDictionary* dic = ProjectSettings();
-//    if (dic){
-//        return [dic objectForKey:@"DefaultSource"];
-//    }else {
-//        return nil;
-//    }
-//}
-
-NSString* bundleAppID(){
-    NSDictionary* dic = ProjectSettings();
-    if (dic){
-        return [dic objectForKey:@"Appstore AppID"];
-    }else {
-        return nil;
     }
 }
 
@@ -433,7 +241,6 @@ void startMotion(id target,SEL action){
                         [blockTarget performSelector:action];
 #pragma clang diagnostic pop
                     }
-                    
                     //播放震动
                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
                 }
@@ -467,40 +274,22 @@ void callPhoneNum(NSString* phoneNum){
         if ([[UIApplication sharedApplication]canOpenURL:telUrl]) {
             [[UIApplication sharedApplication] openURL:telUrl];
         }else{
-            showAlertViewWithMessage(@"号码有误");
+            [CDAutoHideMessageHUD showMessage:@"号码有误"];
         }
     }else {
         NSString *strAlert=[NSString stringWithFormat:@"您的设备 %@ 不支持电话功能！",CDDeviceModel];
-        showAlertViewWithMessage(strAlert);
+        [CDAutoHideMessageHUD showMessage:strAlert];
     }
-}
-
-void commentApp(){
-    NSString* url = nil;
-    NSString* appId = bundleAppID();
-    if (CDSystemVersionFloatValue>=7.0) {
-        url = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@",appId];
-    }else {
-        url = [NSString stringWithFormat:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@",appId];
-    }
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 
 void shakeView(UIView* view){
-    
     CABasicAnimation* shake = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    
     //设置抖动幅度
     shake.fromValue = [NSNumber numberWithFloat:-0.1];
-    
     shake.toValue = [NSNumber numberWithFloat:+0.1];
-    
     shake.duration = 0.1;
-    
     shake.autoreverses = YES; //是否重复
-    
     shake.repeatCount = 4;
-    
     [view.layer addAnimation:shake forKey:@"imageView"];
 }
 
@@ -557,26 +346,6 @@ void goToSettings(){
 
 @implementation CDUtilities
 
-+ (NSString *)transformToStringDateFromTimestamp:(NSTimeInterval)timestamp WithDateFormat:(NSString *)dateFormat{
-    if (!dateFormat) {
-        dateFormat = @"YYYY-MM-dd HH:mm:ss";
-    }
-    NSDateFormatter *tempFormat = [[NSDateFormatter alloc] init];
-    [tempFormat setDateFormat:dateFormat];
-    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:timestamp];
-    return [tempFormat stringFromDate:confromTimesp];
-}
-
-+ (CGSize) sizeWithText:(NSString *)text WithFont:(UIFont *)font {
-//    if ([NSString instanceMethodForSelector:@selector(sizeWithFont:)]) {
-//        return [text sizeWithFont:font];
-//    }
-    if ([NSString instanceMethodForSelector:@selector(sizeWithAttributes:)]) {
-        return [text sizeWithAttributes:@{NSFontAttributeName:font}];
-    }
-    return CGSizeZero;
-}
-
 + (void)authenticateUserTouchID:(void (^)(void))completion{
     //初始化上下文对象
     LAContext* context = [[LAContext alloc] init];
@@ -586,7 +355,6 @@ void goToSettings(){
         //如果不设置的话,默认是"Enter Password(输入密码)",如果该属性设置为@""(空字符串),该按钮会被隐藏,只剩下取消按钮
         context.localizedFallbackTitle=@"";
         NSString* result = @"通过Home键验证已有手机指纹";
-        
         //支持指纹验证
         [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:result reply:^(BOOL success, NSError *error) {
             if (success) {

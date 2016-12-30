@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-//extern NSString *const CDBaseURLString;
-
 /**
  *  返回完整的接口地址
  *

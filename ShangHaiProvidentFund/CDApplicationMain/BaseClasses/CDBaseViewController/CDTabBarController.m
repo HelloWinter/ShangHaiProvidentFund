@@ -11,7 +11,6 @@
 #import "UIImage+CDImageAdditions.h"
 #import "CDNewsAndTrendsController.h"
 #import "CDConvenientToolsController.h"
-
 #import "CDQueryAccountInfoController.h"
 
 @interface CDTabBarController ()
@@ -22,7 +21,6 @@
 
 - (void)awakeFromNib{
     [super awakeFromNib];
-    
 }
 
 - (void)viewDidLoad {

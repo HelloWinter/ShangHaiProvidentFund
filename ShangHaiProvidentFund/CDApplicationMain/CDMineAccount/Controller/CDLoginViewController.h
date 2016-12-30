@@ -11,8 +11,14 @@
 @protocol CDLoginViewControllerDelegate <NSObject>
 
 @optional
+/**
+ *  用户已登录
+ */
 - (void)userDidLogin;
 
+/**
+ *  用户取消登录
+ */
 - (void)userCanceledLogin;
 
 @end
