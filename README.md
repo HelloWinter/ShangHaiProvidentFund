@@ -4,3 +4,5 @@
 - 接口版权归原官方APP所有，只做学习交流用，不用于商业用途.
 
 GitHub：[HelloWinter](https://github.com/HelloWinter) ｜ Blog：[http://chengdong.online/) ｜ PR is welcome，or [feedback](mailto:cdengong@gmail.com)
+
+`不定时更新 欢迎点星。`
