@@ -35,7 +35,7 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    [self.newsAndTrendsService loadNewsAndTrendsIgnoreCache:NO showIndicator:YES];
+    [self.newsAndTrendsService loadNewsAndTrendsIgnoreCache:NO showIndicator:NO];
 }
 
 - (NSMutableArray *)arrData{

@@ -13,9 +13,6 @@
 		14FDD0B61CDDD33E0093ABC3 /* UITextField+cellIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0B51CDDD33E0093ABC3 /* UITextField+cellIndexPath.m */; };
 		14FDD0C11CDDF1200093ABC3 /* UITextView+CDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */; };
 		6E1A21611CEB2AC000D21143 /* mortgageCalculator.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */; };
-		6E2468541DAA2E1C00DDC80B /* loginConfigure.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E2468531DAA2E1C00DDC80B /* loginConfigure.conf */; };
-		6E2468581DAA2F5500DDC80B /* registConfigure.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E2468571DAA2F5500DDC80B /* registConfigure.conf */; };
-		6E24685C1DAA305400DDC80B /* OpinionsSuggestionsConfigure.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E24685B1DAA305400DDC80B /* OpinionsSuggestionsConfigure.conf */; };
 		6E2469161DAA35C600DDC80B /* CDAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468601DAA35C600DDC80B /* CDAboutUsController.m */; };
 		6E2469171DAA35C600DDC80B /* CDHelpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468621DAA35C600DDC80B /* CDHelpInfoViewController.m */; };
 		6E2469181DAA35C600DDC80B /* CDOpinionsSuggestionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468641DAA35C600DDC80B /* CDOpinionsSuggestionsController.m */; };
@@ -156,6 +153,9 @@
 		6E73D6671E14FA70009A1072 /* libMJExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E73D6661E14FA70009A1072 /* libMJExtension.a */; };
 		6E73D6691E14FA73009A1072 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E73D6681E14FA73009A1072 /* libSDWebImage.a */; };
 		6E73D66B1E14FA77009A1072 /* libYYCache.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E73D66A1E14FA77009A1072 /* libYYCache.a */; };
+		6E7C17411E1BA68000433093 /* loginConfigure.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C17401E1BA68000433093 /* loginConfigure.conf */; };
+		6E7C17451E1BA76700433093 /* registConfigure.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C17441E1BA76700433093 /* registConfigure.conf */; };
+		6E7C17491E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C17481E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf */; };
 		F9B7F93F7A7A135D5CEEEC72 /* libPods-ShangHaiProvidentFund.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */; };
 /* End PBXBuildFile section */
 
@@ -174,9 +174,6 @@
 		14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+CDCategory.m"; sourceTree = "<group>"; };
 		4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShangHaiProvidentFund.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mortgageCalculator.conf; sourceTree = "<group>"; };
-		6E2468531DAA2E1C00DDC80B /* loginConfigure.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginConfigure.conf; sourceTree = "<group>"; };
-		6E2468571DAA2F5500DDC80B /* registConfigure.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = registConfigure.conf; sourceTree = "<group>"; };
-		6E24685B1DAA305400DDC80B /* OpinionsSuggestionsConfigure.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpinionsSuggestionsConfigure.conf; sourceTree = "<group>"; };
 		6E24685F1DAA35C600DDC80B /* CDAboutUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsController.h; sourceTree = "<group>"; };
 		6E2468601DAA35C600DDC80B /* CDAboutUsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsController.m; sourceTree = "<group>"; };
 		6E2468611DAA35C600DDC80B /* CDHelpInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDHelpInfoViewController.h; sourceTree = "<group>"; };
@@ -448,6 +445,9 @@
 		6E73D6661E14FA70009A1072 /* libMJExtension.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMJExtension.a; path = "../../Library/Developer/Xcode/DerivedData/ShangHaiProvidentFund-aeyaomdjoyjfytflgwffsdglhtbf/Build/Products/Debug-iphoneos/MJExtension/libMJExtension.a"; sourceTree = "<group>"; };
 		6E73D6681E14FA73009A1072 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "../../Library/Developer/Xcode/DerivedData/ShangHaiProvidentFund-aeyaomdjoyjfytflgwffsdglhtbf/Build/Products/Debug-iphoneos/SDWebImage/libSDWebImage.a"; sourceTree = "<group>"; };
 		6E73D66A1E14FA77009A1072 /* libYYCache.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libYYCache.a; path = "../../Library/Developer/Xcode/DerivedData/ShangHaiProvidentFund-aeyaomdjoyjfytflgwffsdglhtbf/Build/Products/Debug-iphoneos/YYCache/libYYCache.a"; sourceTree = "<group>"; };
+		6E7C17401E1BA68000433093 /* loginConfigure.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginConfigure.conf; sourceTree = "<group>"; };
+		6E7C17441E1BA76700433093 /* registConfigure.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = registConfigure.conf; sourceTree = "<group>"; };
+		6E7C17481E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpinionsSuggestionsConfigure.conf; sourceTree = "<group>"; };
 		841B5A7AFA2BE502823C6019 /* Pods-ShangHaiProvidentFund.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShangHaiProvidentFund.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -498,10 +498,10 @@
 		14FDD0A51CDDB38E0093ABC3 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E7C17401E1BA68000433093 /* loginConfigure.conf */,
+				6E7C17441E1BA76700433093 /* registConfigure.conf */,
+				6E7C17481E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf */,
 				6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */,
-				6E2468531DAA2E1C00DDC80B /* loginConfigure.conf */,
-				6E2468571DAA2F5500DDC80B /* registConfigure.conf */,
-				6E24685B1DAA305400DDC80B /* OpinionsSuggestionsConfigure.conf */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -1226,6 +1226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E5E7D411D2A50DC00182A5B /* account_manage_cellBG.png in Resources */,
+				6E7C17491E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf in Resources */,
 				6E2469211DAA35C600DDC80B /* CDButtonTableFooterView.xib in Resources */,
 				6E24695C1DAA35C600DDC80B /* CDBottomButtonView.xib in Resources */,
 				6E24693C1DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.xib in Resources */,
@@ -1233,11 +1234,10 @@
 				6E6ADB1B1CD892B200838B61 /* Assets.xcassets in Resources */,
 				6E6ADB191CD892B200838B61 /* Main.storyboard in Resources */,
 				6E2469391DAA35C600DDC80B /* CDNetWorkPointCell.xib in Resources */,
-				6E24685C1DAA305400DDC80B /* OpinionsSuggestionsConfigure.conf in Resources */,
+				6E7C17451E1BA76700433093 /* registConfigure.conf in Resources */,
+				6E7C17411E1BA68000433093 /* loginConfigure.conf in Resources */,
 				6E2469241DAA35C600DDC80B /* CDOpinionsSuggestionsViewCell.xib in Resources */,
-				6E2468541DAA2E1C00DDC80B /* loginConfigure.conf in Resources */,
 				6E1A21611CEB2AC000D21143 /* mortgageCalculator.conf in Resources */,
-				6E2468581DAA2F5500DDC80B /* registConfigure.conf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
