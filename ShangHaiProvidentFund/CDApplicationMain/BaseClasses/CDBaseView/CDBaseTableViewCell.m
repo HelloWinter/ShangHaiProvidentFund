@@ -34,6 +34,7 @@
     if ([self respondsToSelector:@selector(setLayoutMargins:)]) {
         [self setLayoutMargins:UIEdgeInsetsZero];
     }
+    [self setSeparatorInset:UIEdgeInsetsZero];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
