@@ -48,7 +48,7 @@
     [self.view addSubview:self.collectionView];
     if (self.showDragView) {
         if (!self.navigationController.navigationBarHidden) {
-            [self setEdgesForExtendedLayout:UIRectEdgeLeft | UIRectEdgeBottom | UIRectEdgeRight];
+            [self setEdgesForExtendedLayout:UIRectEdgeLeft | UIRectEdgeRight];
         }
         _refreshControl = [[SCYRefreshControl alloc] initInScrollView:self.collectionView];
         [_refreshControl addTarget:self action:@selector(startPullRefresh) forControlEvents:UIControlEventValueChanged];
@@ -60,13 +60,8 @@
         UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc]init];
         [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
         flowLayout.headerReferenceSize=CGSizeMake(self.view.width, 7);
-        _collectionView =[[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
-        if (!self.hidesBottomBarWhenPushed) {
-            _collectionView.height-=49;
-        }
-        if (!self.navigationController.navigationBarHidden) {//self.showDragView &&
-            _collectionView.height-=64;
-        }
+        CGRect rect=CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-64);
+        _collectionView =[[UICollectionView alloc]initWithFrame:rect collectionViewLayout:flowLayout];
         _collectionView.backgroundColor=[UIColor groupTableViewBackgroundColor];
         _collectionView.dataSource=self;
         _collectionView.delegate=self;

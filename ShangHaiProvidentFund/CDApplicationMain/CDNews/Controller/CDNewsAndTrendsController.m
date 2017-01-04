@@ -35,6 +35,7 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    self.tableView.height -= self.tabBarController.tabBar.height;
     [self.newsAndTrendsService loadNewsAndTrendsIgnoreCache:NO showIndicator:NO];
 }
 
@@ -161,7 +162,7 @@
         NSInteger subCount=self.newsAndTrendsService.arrData.count-self.arrData.count;
         [self.arrData addObjectsFromArray:[self.newsAndTrendsService.arrData subarrayWithRange:NSMakeRange(self.arrData.count,subCount>=20 ? 20 : subCount)]];
         if (subCount>20) {
-            [self.arrData addObject:[CDLoadMoreItem itemWithTitle:@"更多资讯" showIndicator:NO]];
+            [self.arrData addObject:[CDLoadMoreItem itemWithTitle:@"查看更多资讯" showIndicator:NO]];
         }
     }
 }

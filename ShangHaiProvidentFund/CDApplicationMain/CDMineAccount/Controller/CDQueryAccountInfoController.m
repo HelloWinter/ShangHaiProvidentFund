@@ -47,7 +47,7 @@ static const CGFloat headerOriginalHeight=180;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(userLoginStateChanged:) name:kUserLoginStateChangedNotification object:nil];
-    self.tableView.height+=64;
+    self.tableView.height+=20;
     self.tableView.tableHeaderView=self.headerView;
     [self.tableView insertSubview:self.zoomImageView atIndex:0];
     [self showRightBarBtn];

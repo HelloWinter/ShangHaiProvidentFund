@@ -93,7 +93,7 @@ static const CGFloat imgWidth=60;
         self.lbBalance.text=[NSString stringWithFormat:@"余额：%@",item.surplus_def];
         self.lbState.text=[NSString stringWithFormat:@"账户状态：%@",item.state];
     }else{
-        self.lbName.text=@"未登录";
+        self.lbName.text=@"待君登录";
         self.lbBalance.hidden=self.lbState.hidden=YES;
     }
 }

@@ -12,6 +12,7 @@
 #import "CDNetWorkPointCell.h"
 #import "CDMapAnnotationController.h"
 #import "CDMapRouteSearchController.h"
+#import "UIBarButtonItem+CDCategory.h"
 
 @interface CDNetworkPointController ()
 
@@ -32,6 +33,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupRightBarItem];
     [self.networkPointService loadNetworkPointIgnoreCache:NO ShowIndicator:YES];
 }
 
@@ -91,7 +93,24 @@
     [self.networkPointService loadNetworkPointIgnoreCache:YES ShowIndicator:NO];
 }
 
-#pragma mark - Events
+#pragma mark - private
+- (void)setupRightBarItem{
+    UIBarButtonItem *item=[UIBarButtonItem cd_ItemWidth:40 imageName:@"home_phone" target:self action:@selector(callThePhoneNum)];
+    self.navigationItem.rightBarButtonItem=item;
+}
+
+- (void)callThePhoneNum{
+    UIAlertController *controller=[UIAlertController alertControllerWithTitle:nil message:@"确定拨打021-12329？" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *cancel=[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    UIAlertAction *call=[UIAlertAction actionWithTitle:@"拨打" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        callPhoneNum(@"02112329");
+    }];
+    [controller addAction:cancel];
+    [controller addAction:call];
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
 /**
  *  路线规划
  */

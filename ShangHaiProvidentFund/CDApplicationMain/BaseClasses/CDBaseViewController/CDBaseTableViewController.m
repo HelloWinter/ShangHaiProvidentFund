@@ -8,14 +8,12 @@
 
 #import "CDBaseTableViewController.h"
 #import "UITableView+CDTableViewAddition.h"
-//#import "ODRefreshControl.h"
 #import "SCYRefreshControl.h"
 
 
 @interface CDBaseTableViewController ()
 
 @property (nonatomic, assign) UITableViewStyle tableViewStyle;
-//@property (nonatomic, strong) ODRefreshControl *refreshControl;
 @property (nonatomic, strong) SCYRefreshControl *refreshControl;
 
 @end
@@ -88,12 +86,6 @@
     if (_tableView == nil) {
         CGRect rect=CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-64);
         _tableView = [[UITableView alloc] initWithFrame:rect style:_tableViewStyle];
-        if (!self.hidesBottomBarWhenPushed) {
-            _tableView.height-=49;
-        }
-//        if (!self.navigationController.navigationBarHidden) {//self.showDragView &&
-//            _tableView.height-=64;
-//        }
         _tableView.dataSource=self;
         _tableView.delegate = self;
         _tableView.backgroundView = nil;
@@ -179,7 +171,6 @@
         if (!self.navigationController.navigationBarHidden) {
             [self setEdgesForExtendedLayout:UIRectEdgeLeft | UIRectEdgeRight];//UIRectEdgeBottom |
         }
-//        _refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
         _refreshControl = [[SCYRefreshControl alloc] initInScrollView:self.tableView];
         [_refreshControl addTarget:self action:@selector(startPullRefresh) forControlEvents:UIControlEventValueChanged];
     }

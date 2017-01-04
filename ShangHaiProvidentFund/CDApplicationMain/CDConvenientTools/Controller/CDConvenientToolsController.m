@@ -36,6 +36,7 @@ static NSString *cellIdentifier=@"cellIdentifier";
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor groupTableViewBackgroundColor];
+    self.collectionView.height-=self.tabBarController.tabBar.height;
     [self.collectionView registerClass:[CDConvenientToolsCell class] forCellWithReuseIdentifier:cellIdentifier];
 }
 

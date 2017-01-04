@@ -39,15 +39,14 @@ static const CGFloat klbTimeHeight=20;
     CDNewsItem *item=object;
     CGFloat lbPreferWidth=SCREEN_WIDTH-LEFT_RIGHT_MARGIN*3;
     NSString *author = [NSString stringWithFormat:@"【%@】%@",item.columnName,item.title];
-    CGSize size=[author cd_sizeWithPreferWidth:lbPreferWidth font:[UIFont systemFontOfSize:15]];//[self getlbContentRectWith:auttor preferWidth:lbPreferWidth];
+    CGSize size=[author cd_sizeWithPreferWidth:lbPreferWidth font:[UIFont systemFontOfSize:15]];
     return size.height+klbTimeHeight+kCellMargin*3;
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
     CGFloat lbPreferWidth=SCREEN_WIDTH-LEFT_RIGHT_MARGIN*3;
-//    CGFloat lbPreferWidth=self.contentView.width-LEFT_RIGHT_MARGIN*2;
-    CGSize size=[self.lbTitle.text cd_sizeWithPreferWidth:lbPreferWidth font:[UIFont systemFontOfSize:15]];//[CDNewsAndTrendsCell getlbContentRectWith:self.lbTitle.text preferWidth:lbPreferWidth];
+    CGSize size=[self.lbTitle.text cd_sizeWithPreferWidth:lbPreferWidth font:[UIFont systemFontOfSize:15]];
     self.lbTitle.frame=CGRectMake(LEFT_RIGHT_MARGIN, kCellMargin, size.width, size.height);
     
     CGFloat lbWidth=lbPreferWidth*0.5;
@@ -93,30 +92,5 @@ static const CGFloat klbTimeHeight=20;
     self.lbTime.text=item.pubDate;
     self.lbAuthor.text=item.author;
 }
-
-//+ (CGSize)getlbContentRectWith:(NSString *)str preferWidth:(CGFloat)lbContentPreferWidth{
-//    NSDictionary *dict=@{NSFontAttributeName : [UIFont systemFontOfSize:15]};
-//    CGRect rectSingleLine=[@"我" boundingRectWithSize:CGSizeMake(lbContentPreferWidth, MAXFLOAT) options:(NSStringDrawingUsesLineFragmentOrigin) attributes:dict context:nil];
-//    
-//    CGRect rect=[str boundingRectWithSize:CGSizeMake(lbContentPreferWidth, MAXFLOAT) options:(NSStringDrawingUsesLineFragmentOrigin) attributes:dict context:nil];
-//    
-//    CGFloat sizeWidth=ceilf(CGRectGetWidth(rect));
-//    
-////    CGFloat maxHeight=ceilf(CGRectGetHeight(rectSingleLine))*3;
-////    CGFloat sizeHieght=ceilf(CGRectGetHeight(rect));
-////    if (sizeHieght > maxHeight) {
-////        return CGSizeMake(sizeWidth, maxHeight);
-////    }else{
-////        return CGSizeMake(sizeWidth, sizeHieght);
-////    }
-//    
-//    CGFloat maxHeight=CGRectGetHeight(rectSingleLine)*3;//;
-//    CGFloat sizeHieght=CGRectGetHeight(rect);//);
-//    if (sizeHieght > maxHeight) {
-//        return CGSizeMake(sizeWidth, ceilf(maxHeight));
-//    }else{
-//        return CGSizeMake(sizeWidth, ceilf(sizeHieght));
-//    }
-//}
 
 @end
