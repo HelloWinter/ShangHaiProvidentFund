@@ -84,6 +84,7 @@
     }
 }
 
+#pragma mark - public
 - (void)setupWithFirstDesc:(NSString *)first secondDesc:(NSString *)second thirdDesc:(NSString *)third{
     self.lbDate.text=first;
     self.lbDescription.text=second;

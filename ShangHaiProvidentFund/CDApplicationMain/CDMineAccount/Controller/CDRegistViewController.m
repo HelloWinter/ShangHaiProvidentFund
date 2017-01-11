@@ -168,7 +168,7 @@
     cellItem.value=textField.text;
 }
 
-#pragma mark - Events
+#pragma mark - private
 - (void)pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[CDBaseWKWebViewController webViewWithURL:[NSURL URLWithString:urlstr]];
     webViewController.title=title;

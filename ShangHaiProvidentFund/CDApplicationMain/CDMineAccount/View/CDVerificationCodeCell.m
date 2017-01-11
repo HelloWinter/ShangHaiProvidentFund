@@ -34,13 +34,6 @@
     return self;
 }
 
-- (void)setupItem:(CDOpinionsSuggestionsItem *)item indexPath:(NSIndexPath *)path{
-    _textField.secureTextEntry=[item.security isEqualToString:@"1"] ? YES : NO;
-    _textField.text=item.value;
-    self.label.text=item.paramname;
-    [super setupLeftView:self.label rightView:self.getSecurityBtn placeHolder:item.hint indexPath:path];
-}
-
 - (UILabel *)label{
     if (_label==nil) {
         _label=[[UILabel alloc]init];
@@ -56,6 +49,15 @@
     self.getSecurityBtn.frame=CGRectMake(0, 0, 80, _textField.height);
 }
 
+#pragma mark - public
+- (void)setupItem:(CDOpinionsSuggestionsItem *)item indexPath:(NSIndexPath *)path{
+    _textField.secureTextEntry=[item.security isEqualToString:@"1"] ? YES : NO;
+    _textField.text=item.value;
+    self.label.text=item.paramname;
+    [super setupLeftView:self.label rightView:self.getSecurityBtn placeHolder:item.hint indexPath:path];
+}
+
+#pragma mark - private
 /* 获取验证码按钮 */
 - (UIButton *)getSecurityBtn{
     if (!_getSecurityBtn) {

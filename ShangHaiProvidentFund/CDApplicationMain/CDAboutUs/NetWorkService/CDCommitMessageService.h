@@ -10,7 +10,7 @@
 
 @interface CDCommitMessageService : CDJSONBaseNetworkService
 
-@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy, readonly) NSString *type;
 
 - (void)loadWithParams:(NSDictionary *)params showIndicator:(BOOL)show;
 

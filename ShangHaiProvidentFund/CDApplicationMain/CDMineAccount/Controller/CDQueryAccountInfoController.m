@@ -115,34 +115,9 @@ static const CGFloat headerOriginalHeight=180;
     }
     [cell setupCellItem:(CDConvenientToolsItem *)item];
     return cell;
-    
-//    if ([item isKindOfClass:[CDAccountInfoItem class]]) {
-//        static NSString *accountInfoIdentifier = @"accountInfoIdentifier";
-//        CDAccountBasicInfoCell *cell=[tableView dequeueReusableCellWithIdentifier:accountInfoIdentifier];
-//        if (!cell) {
-//            cell = [CDAccountBasicInfoCell basicInfoCell];
-//        }
-//        [cell setupCellItem:(CDAccountInfoItem *)item isLogined:CDIsUserLogined()];
-//        return cell;
-//    }else if ([item isKindOfClass:[ class]]){
-//        
-//        
-//    }
-//    return [[UITableViewCell alloc]init];
 }
 
 #pragma mark - UITableViewDelegate
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSArray *arr=[self.queryAccountInfoModel.arrData cd_safeObjectAtIndex:indexPath.section];
-//    CDBaseItem *item=[arr cd_safeObjectAtIndex:indexPath.row];
-//    if ([item isKindOfClass:[CDAccountInfoItem class]]){
-//        return [CDAccountBasicInfoCell tableView:tableView rowHeightForObject:item];
-//    }else if ([item isKindOfClass:[CDConvenientToolsItem class]]){
-//        return [CDQueryAccountInfoCell tableView:tableView rowHeightForObject:item];
-//    }
-//    return 0;
-//}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 20;
 }
@@ -197,7 +172,7 @@ static const CGFloat headerOriginalHeight=180;
     [self reloadHeaderView];
 }
 
-#pragma mark - Events{
+#pragma mark - private
 - (void)showRightBarBtn{
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     barButton.frame = CGRectMake(self.view.width-45, 20, 30, 44);

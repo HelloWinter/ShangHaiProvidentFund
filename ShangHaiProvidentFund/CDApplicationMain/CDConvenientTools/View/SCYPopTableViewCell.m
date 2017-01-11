@@ -36,10 +36,6 @@
     return _lbContent;
 }
 
-- (void)setupCellItem:(SCYLoanRateItem *)item indexPath:(NSIndexPath *)path{
-    self.lbContent.text=item.date;
-}
-
 - (void)layoutSubviews{
     [super layoutSubviews];
     self.lbContent.frame=CGRectMake(0, 0, self.contentView.width, self.contentView.height);
@@ -48,6 +44,11 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{
     [super setSelected:selected animated:animated];
     self.lbContent.textColor= selected ? NAVIGATION_COLOR : ColorFromHexRGB(0x9e9e9e);
+}
+
+#pragma mark - public
+- (void)setupCellItem:(SCYLoanRateItem *)item indexPath:(NSIndexPath *)path{
+    self.lbContent.text=item.date;
 }
 
 @end

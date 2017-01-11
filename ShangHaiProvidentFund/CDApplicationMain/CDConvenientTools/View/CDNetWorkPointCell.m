@@ -26,6 +26,7 @@
     return cell;
 }
 
+#pragma mark - public
 - (void)setupCellItem:(CDNetworkPointItem *)item{
     self.lbManagementDepartment.text=[item.districts cd_detleteCharacter:@" "];
     self.lbCurrentNum.text=[NSString stringWithFormat:@"当前人数:%@",item.num];

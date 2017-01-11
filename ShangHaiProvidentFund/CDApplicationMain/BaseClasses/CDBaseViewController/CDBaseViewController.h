@@ -27,8 +27,14 @@
  */
 @property (nonatomic, copy) NSString *backImageName;
 
+/**
+ 显示返回按钮
+ */
 - (void)cd_showBackButton;
 
+/**
+ 返回动作，子类可重写此方法拦截返回事件
+ */
 - (void)cd_backOffAction;
 
 @end

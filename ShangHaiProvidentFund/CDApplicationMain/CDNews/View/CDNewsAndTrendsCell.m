@@ -87,6 +87,7 @@ static const CGFloat klbTimeHeight=20;
     return _lbAuthor;
 }
 
+#pragma mark - public
 - (void)setupCellItem:(CDNewsItem *)item{
     self.lbTitle.text=[NSString stringWithFormat:@"【%@】%@",item.columnName,item.title];
     self.lbTime.text=item.pubDate;

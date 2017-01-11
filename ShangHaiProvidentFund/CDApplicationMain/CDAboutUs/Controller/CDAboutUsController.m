@@ -187,7 +187,7 @@
     
 }
 
-#pragma mark - Events
+#pragma mark - private
 - (void)pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[CDBaseWKWebViewController webViewWithURL:[NSURL URLWithString:urlstr]];
     webViewController.title=title;
@@ -217,7 +217,7 @@
     UIAlertAction *actionCancel=[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
     }];
     UIAlertAction *actionCall=[UIAlertAction actionWithTitle:@"拨打" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        [self callThePhoneNum:@"12329"];
+        [self callThePhoneNum:@"02112329"];
     }];
     [alert addAction:actionCancel];
     [alert addAction:actionCall];

@@ -55,7 +55,7 @@
         textWidth=size.width;
         textHeight=size.height;
     }
-    
+    self.textLabel.textColor=ColorFromHexRGB(0x9e9e9e);//ColorFromHexRGB(0x9e9e9e)
     self.textLabel.bounds = CGRectMake(0, 0, textWidth, textHeight);
     self.textLabel.center = CGPointMake(self.bounds.size.width * 0.5f, self.bounds.size.height * 0.5f);
     [self.textLabel sizeToFit];

@@ -118,7 +118,7 @@ static const CGSize kSize = {290,658*0.5};
     [self dismiss:YES];
 }
 
-#pragma mark - Events
+#pragma mark - public
 - (void)show:(BOOL)animated {
     if (self.superview) {
         return;
@@ -156,6 +156,7 @@ static const CGSize kSize = {290,658*0.5};
     [self.tableview reloadData];
 }
 
+#pragma mark - private
 - (void)closeView:(UIButton *)sender{
     [self dismiss:YES];
 }

@@ -143,7 +143,7 @@
     }
 }
 
-#pragma mark - Events
+#pragma mark - private
 - (void)CommitMessage{
     NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
     for (CDOpinionsSuggestionsItem *item in self.opinionsSuggestionsModel.arrData) {

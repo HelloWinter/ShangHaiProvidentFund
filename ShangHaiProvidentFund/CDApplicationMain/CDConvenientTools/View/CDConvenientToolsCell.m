@@ -63,6 +63,7 @@ static const CGFloat kMARGIN=4.0;
     return _lbTitle;
 }
 
+#pragma mark - public
 - (void)setupCellItem:(CDConvenientToolsItem *)item{
     self.imageView.image=[UIImage imageNamed:item.imgName];
     self.lbTitle.text=item.title ? : @"";

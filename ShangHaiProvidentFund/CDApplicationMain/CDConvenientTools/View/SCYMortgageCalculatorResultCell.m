@@ -24,6 +24,7 @@
     return cell;
 }
 
+#pragma mark - public
 - (void)setupPayAllMoney:(CGFloat)allMoney monthNumber:(NSInteger)monthNum interest:(CGFloat)interest monthPay:(CGFloat)monthPay payType:(CGFloat)paytype{
     NSString *totalRepayment=[NSString stringWithFormat:@"还款总额：%.2f元",allMoney];
     NSString *duetime=[NSString stringWithFormat:@"还款月数：%ld月",(long)monthNum];

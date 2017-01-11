@@ -212,7 +212,6 @@
 		6E2468881DAA35C600DDC80B /* CDNetworkPointController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNetworkPointController.m; sourceTree = "<group>"; };
 		6E2468891DAA35C600DDC80B /* SCYMortgageCalculatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYMortgageCalculatorController.h; sourceTree = "<group>"; };
 		6E24688A1DAA35C600DDC80B /* SCYMortgageCalculatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYMortgageCalculatorController.m; sourceTree = "<group>"; };
-		6E24688B1DAA35C600DDC80B /* ShangHaiProvidentFund-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShangHaiProvidentFund-Bridging-Header.h"; sourceTree = "<group>"; };
 		6E24688D1DAA35C600DDC80B /* CDConvenientModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientModel.h; sourceTree = "<group>"; };
 		6E24688E1DAA35C600DDC80B /* CDConvenientModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientModel.m; sourceTree = "<group>"; };
 		6E24688F1DAA35C600DDC80B /* CDConvenientToolsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientToolsItem.h; sourceTree = "<group>"; };
@@ -609,7 +608,6 @@
 				6E2468881DAA35C600DDC80B /* CDNetworkPointController.m */,
 				6E2468891DAA35C600DDC80B /* SCYMortgageCalculatorController.h */,
 				6E24688A1DAA35C600DDC80B /* SCYMortgageCalculatorController.m */,
-				6E24688B1DAA35C600DDC80B /* ShangHaiProvidentFund-Bridging-Header.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1561,6 +1559,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ShangHaiProvidentFund/CDApplicationMain/MainApplication/CDConvenientTools/Controller/ShangHaiProvidentFund-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1591,6 +1590,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ShangHaiProvidentFund/CDApplicationMain/MainApplication/CDConvenientTools/Controller/ShangHaiProvidentFund-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

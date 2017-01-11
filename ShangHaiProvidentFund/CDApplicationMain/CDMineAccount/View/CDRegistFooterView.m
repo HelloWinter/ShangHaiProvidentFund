@@ -81,10 +81,9 @@
     self.btnProtocol.frame=CGRectMake(LEFT_RIGHT_MARGIN,10, 200, 25);
     self.btnRegist.frame=CGRectMake(LEFT_RIGHT_MARGIN, self.btnProtocol.bottom+10, self.width-LEFT_RIGHT_MARGIN*2, 45);
     self.btnProblem.frame=CGRectMake(self.width-130, self.btnRegist.bottom+10, 110, 30);
-    
-//    140
 }
 
+#pragma mark - private
 - (void)btnProtocolClicked:(UIButton *)sender{
     if (self.showProtocolBlock) {
         self.showProtocolBlock();

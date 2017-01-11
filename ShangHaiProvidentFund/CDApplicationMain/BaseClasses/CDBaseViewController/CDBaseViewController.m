@@ -113,18 +113,7 @@
     }
 }
 
-#pragma mark - Events
-/**
- *  返回按钮
- */
-- (void)setupBackBarButton{
-    if (self.navigationController && [[self.navigationController viewControllers] count] > 1) {
-        if (!self.navigationItem.leftBarButtonItem) {
-            [self cd_showBackButton];
-        }
-    }
-}
-
+#pragma mark - public
 //如果自定义返回按钮
 - (void)cd_showBackButton{
     UIBarButtonItem *leftItem = [UIBarButtonItem cd_ItemWidth:20 imageName:@"navigation_backOff" target:self action:@selector(cd_backOffAction)];
@@ -139,6 +128,18 @@
     if (self.presentingViewController) {
         [self dismissViewControllerAnimated:YES completion:NULL];
         return;
+    }
+}
+
+#pragma mark - private
+/**
+ *  返回按钮
+ */
+- (void)setupBackBarButton{
+    if (self.navigationController && [[self.navigationController viewControllers] count] > 1) {
+        if (!self.navigationItem.leftBarButtonItem) {
+            [self cd_showBackButton];
+        }
     }
 }
 

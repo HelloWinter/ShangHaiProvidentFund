@@ -28,13 +28,6 @@
     return self;
 }
 
-- (void)setupItem:(CDOpinionsSuggestionsItem *)item indexPath:(NSIndexPath *)path{
-    _textField.secureTextEntry=[item.security isEqualToString:@"1"] ? YES : NO;
-    _textField.text=item.value;
-    self.label.text=item.paramname;
-    [super setupLeftView:self.label rightView:nil placeHolder:item.hint indexPath:path];
-}
-
 - (UILabel *)label{
     if (_label==nil) {
         _label=[[UILabel alloc]init];
@@ -49,6 +42,12 @@
     self.label.frame=CGRectMake(0, 0, textsize.width, _textField.height);
 }
 
-
+#pragma mark - public
+- (void)setupItem:(CDOpinionsSuggestionsItem *)item indexPath:(NSIndexPath *)path{
+    _textField.secureTextEntry=[item.security isEqualToString:@"1"] ? YES : NO;
+    _textField.text=item.value;
+    self.label.text=item.paramname;
+    [super setupLeftView:self.label rightView:nil placeHolder:item.hint indexPath:path];
+}
 
 @end

@@ -19,6 +19,7 @@
     return self;
 }
 
+#pragma mark - public
 - (void)setupCellItem:(CDConvenientToolsItem *)item{
     self.imageView.image=[UIImage imageNamed:item.imgName];
     self.textLabel.text=item.title;

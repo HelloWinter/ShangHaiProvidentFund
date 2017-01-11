@@ -32,6 +32,9 @@
  */
 - (void)startPullRefresh;
 
+/**
+ 结束下拉刷新
+ */
 - (void)endPullRefresh;
 
 - (void)keyboardWillShow:(NSNotification *)notification;

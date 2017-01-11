@@ -225,7 +225,7 @@ static const CGFloat topHeight=50;
     }
 }
 
-#pragma mark - SCYBaseNetworkServiceDelegate
+#pragma mark - CDJSONBaseNetworkServiceDelegate
 - (void)serviceDidFinished:(CDJSONBaseNetworkService *)service{
     [super serviceDidFinished:service];
     if (self.mortgageCalculatorService.returnCode==1) {

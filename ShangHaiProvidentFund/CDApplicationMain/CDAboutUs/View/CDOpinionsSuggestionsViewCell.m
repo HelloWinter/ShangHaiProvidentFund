@@ -52,6 +52,7 @@
     }
 }
 
+#pragma mark - public
 - (void)setupCellItem:(CDOpinionsSuggestionsItem *)item indexPath:(NSIndexPath *)path{
     self.lbTitleName.text=item.paramname;
     self.lbPlaceHolder.text=item.hint;

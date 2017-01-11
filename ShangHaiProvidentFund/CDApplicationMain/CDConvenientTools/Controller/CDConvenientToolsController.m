@@ -61,9 +61,8 @@ static NSString *cellIdentifier=@"cellIdentifier";
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    CGFloat cellWidth=(self.collectionView.width-20)*0.25;
-    CGFloat cellHeight=cellWidth;
-    return CGSizeMake(cellWidth, cellHeight);
+    CGFloat cellWidthHeight = (currentScreenModel()==CurrentDeviceScreenModel_iPad) ? 98.5 : (self.collectionView.width-20)*0.25;
+    return CGSizeMake(cellWidthHeight, cellWidthHeight);
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
@@ -116,7 +115,7 @@ static NSString *cellIdentifier=@"cellIdentifier";
     return YES;
 }
 
-#pragma mark - Events
+#pragma mark - private
 - (void)pushToNetworkPointController{
     CDNetworkPointController *controller=[[CDNetworkPointController alloc]init];
     [self.navigationController pushViewController:controller animated:YES];

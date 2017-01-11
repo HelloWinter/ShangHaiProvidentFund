@@ -80,6 +80,7 @@ static const CGFloat kTextLabelSize = 13;
     self.lbAccountNum.frame=CGRectMake(LEFT_RIGHT_MARGIN, self.lbMonthPay.bottom+CELL_MARGIN, self.width-LEFT_RIGHT_MARGIN*2, 20);
 }
 
+#pragma mark - public
 - (void)setupAccountInfo:(CDAccountInfoItem *)item{
     self.lbAccount.text=item.name ? : @"--";
     self.lbAccountState.text=[NSString stringWithFormat:@"账户状态:%@   账号:%@",item.state ? : @"--",item.pri_account ? : @"--"];

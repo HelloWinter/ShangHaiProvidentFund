@@ -8,13 +8,11 @@
 
 #import "CDBaseTableViewCell.h"
 
-@class SCYRowItem,SCYMortgageCalculatorCellItem;
+@class SCYMortgageCalculatorCellItem;
 
 @interface SCYMeasurementTextFieldCell : CDBaseTableViewCell
 
 - (void)setupLeftText:(NSString *)left RightText:(NSString *)right defaultText:(NSString *)defaultText IndexPath:(NSIndexPath *)path;
-
-//- (void)setupRowItem:(SCYRowItem *)item IndexPath:(NSIndexPath *)path;
 
 - (void)setupMortgageCalculatorCellItem:(SCYMortgageCalculatorCellItem *)item IndexPath:(NSIndexPath *)path;
 

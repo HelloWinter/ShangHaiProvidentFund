@@ -21,6 +21,7 @@
     return self;
 }
 
+#pragma mark - public
 - (void)setupCellItem:(SCYMortgageCalculatorCellItem *)item indexPath:(NSIndexPath *)path{
     if ([item.paramselect isEqualToString:@"1"]) {
         self.accessoryType=UITableViewCellAccessoryDisclosureIndicator;

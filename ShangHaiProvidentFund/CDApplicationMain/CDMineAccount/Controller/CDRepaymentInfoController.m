@@ -96,7 +96,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark - 
+#pragma mark - CDJSONBaseNetworkServiceDelegate
 - (void)serviceDidFinished:(CDJSONBaseNetworkService *)service{
     [super serviceDidFinished:service];
     if (self.repayInfoService.returnCode==0) {
@@ -110,7 +110,6 @@
 - (void)service:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
     [super service:service didFailLoadWithError:error];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

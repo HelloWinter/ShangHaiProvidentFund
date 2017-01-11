@@ -14,10 +14,9 @@
 
 @interface CDRepayInfoService : CDJSONBaseNetworkService
 
-//@property (nonatomic, copy) NSArray *basic;
-//@property (nonatomic, copy) NSArray *chr;
-
-@property (nonatomic, copy) NSArray *arrData;
+//@property (nonatomic, copy, readonly) NSArray *basic;
+//@property (nonatomic, copy, readonly) NSArray *chr;
+@property (nonatomic, copy, readonly) NSArray *arrData;
 
 - (void)loadWithAccountNum:(NSString *)accountNum ignoreCache:(BOOL)ignore showIndicator:(BOOL)show;
 

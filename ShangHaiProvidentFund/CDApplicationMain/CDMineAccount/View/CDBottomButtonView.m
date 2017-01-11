@@ -67,6 +67,18 @@
     return _btnRegist;
 }
 
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    CGContextRef ctx= UIGraphicsGetCurrentContext();
+    CGContextSetLineCap(ctx, kCGLineCapRound);
+    CGContextSetLineWidth(ctx, 0.5);
+    CGContextSetRGBStrokeColor(ctx, 0, 255, 200, 1.0);
+    CGContextMoveToPoint(ctx, self.width*0.5, 0);
+    CGContextAddLineToPoint(ctx, self.width*0.5, self.height);
+    CGContextStrokePath(ctx);
+}
+
+#pragma mark - private
 - (void)btnForgotPSWClick:(UIButton *)sender {
     if (self.forgotPSWBlock) {
         self.forgotPSWBlock();
@@ -77,17 +89,6 @@
     if (self.registBlock) {
         self.registBlock();
     }
-}
-
-- (void)drawRect:(CGRect)rect {
-    [super drawRect:rect];
-    CGContextRef ctx= UIGraphicsGetCurrentContext();
-    CGContextSetLineCap(ctx, kCGLineCapRound);
-    CGContextSetLineWidth(ctx, 0.5);
-    CGContextSetRGBStrokeColor(ctx, 0, 255, 200, 1.0);
-    CGContextMoveToPoint(ctx, self.width*0.5, 0);
-    CGContextAddLineToPoint(ctx, self.width*0.5, self.height);
-    CGContextStrokePath(ctx);
 }
 
 @end

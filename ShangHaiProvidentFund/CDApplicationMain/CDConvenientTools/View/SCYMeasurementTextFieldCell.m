@@ -7,7 +7,6 @@
 //
 
 #import "SCYMeasurementTextFieldCell.h"
-//#import "SCYRowItem.h"
 #import "SCYMortgageCalculatorCellItem.h"
 #import "UITextField+cellIndexPath.h"
 
@@ -33,8 +32,6 @@ static const CGFloat cellTextFontSize=15;
     }
     return self;
 }
-
-
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object{
     return 46;
@@ -69,6 +66,7 @@ static const CGFloat cellTextFontSize=15;
     return _textFieldRight;
 }
 
+#pragma mark - public
 - (void)setupLeftText:(NSString *)left RightText:(NSString *)right defaultText:(NSString *)defaultText IndexPath:(NSIndexPath *)path{
     self.textFieldRight.indexPath=path;
     self.textLabel.text=left;
@@ -85,10 +83,6 @@ static const CGFloat cellTextFontSize=15;
         self.textFieldRight.text=@"";
     }
 }
-
-//- (void)setupRowItem:(SCYRowItem *)item IndexPath:(NSIndexPath *)path{
-//    [self setupLeftText:item.itemdesc RightText:item.editunit defaultText:item.itemvalue IndexPath:path];
-//}
 
 - (void)setupMortgageCalculatorCellItem:(SCYMortgageCalculatorCellItem *)item IndexPath:(NSIndexPath *)path{
     [self setupLeftText:item.paramdesc RightText:item.paramunit defaultText:item.paramvalue IndexPath:path];

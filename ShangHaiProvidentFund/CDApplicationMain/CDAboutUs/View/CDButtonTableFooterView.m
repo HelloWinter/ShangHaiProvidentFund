@@ -28,6 +28,7 @@
     self.btnFooter.clipsToBounds=YES;
 }
 
+#pragma mark - public
 - (void)setupBtnTitle:(NSString *)title{
     [self.btnFooter setTitle:title forState:(UIControlStateNormal)];
 }
@@ -36,11 +37,11 @@
     [self.btnFooter setBackgroundColor:color];
 }
 
+#pragma mark - private
 - (IBAction)btnAction:(UIButton *)sender {
     if (self.buttonClickBlock) {
         self.buttonClickBlock(sender);
     }
 }
-
 
 @end

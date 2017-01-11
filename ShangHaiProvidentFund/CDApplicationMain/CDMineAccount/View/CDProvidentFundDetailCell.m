@@ -17,11 +17,6 @@
 @property (strong, nonatomic) UILabel *lbCompany;
 @property (strong, nonatomic) UILabel *lbMonthPay;
 
-
-//@property (nonatomic, assign) CGFloat leftWidth;
-//@property (nonatomic, assign) CGFloat centerWidth;
-//@property (nonatomic, assign) CGFloat rightWidth;
-
 @end
 
 @implementation CDProvidentFundDetailCell
@@ -66,28 +61,6 @@
     return _lbMonthPay;
 }
 
-- (void)setupAccountDetailItem:(CDAccountDetailItem *)cellItem{
-    NSString *strSubDate=cellItem.time;
-    strSubDate = [strSubDate stringByReplacingOccurrencesOfString:@"年" withString:@""];
-    strSubDate = [strSubDate stringByReplacingOccurrencesOfString:@"月" withString:@""];
-    strSubDate = [strSubDate stringByReplacingOccurrencesOfString:@"日" withString:@""];
-    NSString *strAmount=[self removeYUAN:cellItem.surplus_def_hp];
-    [self setupLeftText:strSubDate centerText:(cellItem.summary ? : @"--") rightText:strAmount];
-}
-
-- (void)setupLoanDetailItem:(CDDynamicdetailItem *)cellItem{
-    NSString *strDesc=cellItem.summary.length!=0 ? cellItem.summary : @"--";
-    NSString *strAmount=[self removeYUAN:cellItem.corpushappen];
-    NSString *strInterest=[self removeYUAN:cellItem.interesthappen];
-    [self setupLeftText:strDesc centerText:strAmount rightText:strInterest];
-}
-
-- (void)setupLeftText:(NSString *)left centerText:(NSString *)center rightText:(NSString *)right{
-    self.lbDate.text=left;
-    self.lbCompany.text=center;
-    self.lbMonthPay.text=right;
-}
-
 - (void)layoutSubviews{
     [super layoutSubviews];
     [self.lbDate.layer setBorderColor:ColorFromHexRGB(0xe0e0e0).CGColor];
@@ -105,6 +78,30 @@
         self.lbCompany.frame=CGRectMake(self.lbDate.right, 0, 70, self.height);
         self.lbMonthPay.frame=CGRectMake(self.lbCompany.right, 0, 60, self.height);
     }
+}
+
+#pragma mark - public
+- (void)setupAccountDetailItem:(CDAccountDetailItem *)cellItem{
+    NSString *strSubDate=cellItem.time;
+    strSubDate = [strSubDate stringByReplacingOccurrencesOfString:@"年" withString:@""];
+    strSubDate = [strSubDate stringByReplacingOccurrencesOfString:@"月" withString:@""];
+    strSubDate = [strSubDate stringByReplacingOccurrencesOfString:@"日" withString:@""];
+    NSString *strAmount=[self removeYUAN:cellItem.surplus_def_hp];
+    [self setupLeftText:strSubDate centerText:(cellItem.summary ? : @"--") rightText:strAmount];
+}
+
+- (void)setupLoanDetailItem:(CDDynamicdetailItem *)cellItem{
+    NSString *strDesc=cellItem.summary.length!=0 ? cellItem.summary : @"--";
+    NSString *strAmount=[self removeYUAN:cellItem.corpushappen];
+    NSString *strInterest=[self removeYUAN:cellItem.interesthappen];
+    [self setupLeftText:strDesc centerText:strAmount rightText:strInterest];
+}
+
+#pragma mark - private
+- (void)setupLeftText:(NSString *)left centerText:(NSString *)center rightText:(NSString *)right{
+    self.lbDate.text=left;
+    self.lbCompany.text=center;
+    self.lbMonthPay.text=right;
 }
 
 - (NSString *)removeYUAN:(NSString *)strAmount{
