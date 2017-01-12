@@ -67,25 +67,19 @@ static const CGFloat cellTextFontSize=15;
 }
 
 #pragma mark - public
-- (void)setupLeftText:(NSString *)left RightText:(NSString *)right defaultText:(NSString *)defaultText IndexPath:(NSIndexPath *)path{
+- (void)setupLeftText:(NSString *)left rightText:(NSString *)right defaultText:(NSString *)defaultText indexPath:(NSIndexPath *)path{
     self.textFieldRight.indexPath=path;
     self.textLabel.text=left;
     self.lbTextFieldRight.text=right;
-    
     CGSize rightLabelSize= [self.lbTextFieldRight.text sizeWithAttributes:@{NSFontAttributeName:self.lbTextFieldRight.font}];
     self.lbTextFieldRight.frame=CGRectMake(0, 0, rightLabelSize.width, self.height);
     self.textFieldRight.rightView=self.lbTextFieldRight;
     self.textFieldRight.rightViewMode=UITextFieldViewModeAlways;
-    
-    if (defaultText.length!=0) {
-        self.textFieldRight.text=defaultText;
-    }else{
-        self.textFieldRight.text=@"";
-    }
+    self.textFieldRight.text=(defaultText.length!=0) ? defaultText : @"";
 }
 
 - (void)setupMortgageCalculatorCellItem:(SCYMortgageCalculatorCellItem *)item IndexPath:(NSIndexPath *)path{
-    [self setupLeftText:item.paramdesc RightText:item.paramunit defaultText:item.paramvalue IndexPath:path];
+    [self setupLeftText:item.paramdesc rightText:item.paramunit defaultText:item.paramvalue indexPath:path];
 }
 
 - (void)setupTextFieldText:(NSString *)text{

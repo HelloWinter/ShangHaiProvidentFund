@@ -12,7 +12,7 @@
 
 @interface SCYMeasurementTextFieldCell : CDBaseTableViewCell
 
-- (void)setupLeftText:(NSString *)left RightText:(NSString *)right defaultText:(NSString *)defaultText IndexPath:(NSIndexPath *)path;
+//- (void)setupLeftText:(NSString *)left rightText:(NSString *)right defaultText:(NSString *)defaultText indexPath:(NSIndexPath *)path;
 
 - (void)setupMortgageCalculatorCellItem:(SCYMortgageCalculatorCellItem *)item IndexPath:(NSIndexPath *)path;
 
