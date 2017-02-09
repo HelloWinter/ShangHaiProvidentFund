@@ -139,6 +139,17 @@
 		6E6ADBDC1CD8A0BD00838B61 /* CDPointActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADBAE1CD8A0BD00838B61 /* CDPointActivityIndicator.m */; };
 		6E6ADBF01CD8A22600838B61 /* CDGlobalHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADBEF1CD8A22600838B61 /* CDGlobalHTTPSessionManager.m */; };
 		6E6ADC1C1CD8B35B00838B61 /* CDBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC1B1CD8B35B00838B61 /* CDBaseItem.m */; };
+		6E73367D1E4C6A330036393A /* SCYAnnualBonusCalculateResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336791E4C6A330036393A /* SCYAnnualBonusCalculateResultController.m */; };
+		6E73367E1E4C6A330036393A /* SCYAnnualBonusCalculatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73367C1E4C6A330036393A /* SCYAnnualBonusCalculatorController.m */; };
+		6E7336831E4C6AEB0036393A /* SCYAnnualBonusCalculateResultItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336801E4C6AEB0036393A /* SCYAnnualBonusCalculateResultItem.m */; };
+		6E7336841E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336821E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.m */; };
+		6E73368F1E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336861E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m */; };
+		6E7336901E4C6B1F0036393A /* SCYAnnualBonusResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336881E4C6B1F0036393A /* SCYAnnualBonusResultCell.m */; };
+		6E7336911E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73368A1E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.m */; };
+		6E7336921E4C6B1F0036393A /* SCYAnnualBonusResultTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73368C1E4C6B1F0036393A /* SCYAnnualBonusResultTableHeaderView.m */; };
+		6E7336931E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73368E1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m */; };
+		6E7336961E4C6BC80036393A /* UpDownLBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336951E4C6BC80036393A /* UpDownLBView.m */; };
+		6E7336991E4C6E040036393A /* SCYButtonTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336981E4C6E040036393A /* SCYButtonTableFooterView.m */; };
 		6E73D6421E14A516009A1072 /* SCYActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6411E14A516009A1072 /* SCYActivityIndicator.m */; };
 		6E73D6461E14A5C8009A1072 /* SCYActivityIndicatorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6451E14A5C8009A1072 /* SCYActivityIndicatorButton.m */; };
 		6E73D64A1E14A5F6009A1072 /* SCYRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6491E14A5F6009A1072 /* SCYRefreshControl.m */; };
@@ -421,6 +432,29 @@
 		6E6ADBF11CD8A58400838B61 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6E6ADC1A1CD8B35B00838B61 /* CDBaseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseItem.h; sourceTree = "<group>"; };
 		6E6ADC1B1CD8B35B00838B61 /* CDBaseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseItem.m; sourceTree = "<group>"; };
+		6E7336781E4C6A330036393A /* SCYAnnualBonusCalculateResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusCalculateResultController.h; sourceTree = "<group>"; };
+		6E7336791E4C6A330036393A /* SCYAnnualBonusCalculateResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusCalculateResultController.m; sourceTree = "<group>"; };
+		6E73367A1E4C6A330036393A /* SCYAnnualBonusCalculateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusCalculateTool.h; sourceTree = "<group>"; };
+		6E73367B1E4C6A330036393A /* SCYAnnualBonusCalculatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusCalculatorController.h; sourceTree = "<group>"; };
+		6E73367C1E4C6A330036393A /* SCYAnnualBonusCalculatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusCalculatorController.m; sourceTree = "<group>"; };
+		6E73367F1E4C6AEB0036393A /* SCYAnnualBonusCalculateResultItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusCalculateResultItem.h; sourceTree = "<group>"; };
+		6E7336801E4C6AEB0036393A /* SCYAnnualBonusCalculateResultItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusCalculateResultItem.m; sourceTree = "<group>"; };
+		6E7336811E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusCalculateRulesItem.h; sourceTree = "<group>"; };
+		6E7336821E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusCalculateRulesItem.m; sourceTree = "<group>"; };
+		6E7336851E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusCalculatorCell.h; sourceTree = "<group>"; };
+		6E7336861E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusCalculatorCell.m; sourceTree = "<group>"; };
+		6E7336871E4C6B1F0036393A /* SCYAnnualBonusResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusResultCell.h; sourceTree = "<group>"; };
+		6E7336881E4C6B1F0036393A /* SCYAnnualBonusResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusResultCell.m; sourceTree = "<group>"; };
+		6E7336891E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusResultSectionHeaderView.h; sourceTree = "<group>"; };
+		6E73368A1E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusResultSectionHeaderView.m; sourceTree = "<group>"; };
+		6E73368B1E4C6B1F0036393A /* SCYAnnualBonusResultTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusResultTableHeaderView.h; sourceTree = "<group>"; };
+		6E73368C1E4C6B1F0036393A /* SCYAnnualBonusResultTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusResultTableHeaderView.m; sourceTree = "<group>"; };
+		6E73368D1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusRulesCell.h; sourceTree = "<group>"; };
+		6E73368E1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusRulesCell.m; sourceTree = "<group>"; };
+		6E7336941E4C6BC80036393A /* UpDownLBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpDownLBView.h; sourceTree = "<group>"; };
+		6E7336951E4C6BC80036393A /* UpDownLBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpDownLBView.m; sourceTree = "<group>"; };
+		6E7336971E4C6E040036393A /* SCYButtonTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYButtonTableFooterView.h; sourceTree = "<group>"; };
+		6E7336981E4C6E040036393A /* SCYButtonTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYButtonTableFooterView.m; sourceTree = "<group>"; };
 		6E73D6401E14A516009A1072 /* SCYActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYActivityIndicator.h; sourceTree = "<group>"; };
 		6E73D6411E14A516009A1072 /* SCYActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYActivityIndicator.m; sourceTree = "<group>"; };
 		6E73D6441E14A5C8009A1072 /* SCYActivityIndicatorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYActivityIndicatorButton.h; sourceTree = "<group>"; };
@@ -598,6 +632,11 @@
 		6E2468801DAA35C600DDC80B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6E7336781E4C6A330036393A /* SCYAnnualBonusCalculateResultController.h */,
+				6E7336791E4C6A330036393A /* SCYAnnualBonusCalculateResultController.m */,
+				6E73367A1E4C6A330036393A /* SCYAnnualBonusCalculateTool.h */,
+				6E73367B1E4C6A330036393A /* SCYAnnualBonusCalculatorController.h */,
+				6E73367C1E4C6A330036393A /* SCYAnnualBonusCalculatorController.m */,
 				6E2468811DAA35C600DDC80B /* CDConvenientToolsController.h */,
 				6E2468821DAA35C600DDC80B /* CDConvenientToolsController.m */,
 				6E2468831DAA35C600DDC80B /* CDMapAnnotationController.h */,
@@ -615,6 +654,10 @@
 		6E24688C1DAA35C600DDC80B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6E73367F1E4C6AEB0036393A /* SCYAnnualBonusCalculateResultItem.h */,
+				6E7336801E4C6AEB0036393A /* SCYAnnualBonusCalculateResultItem.m */,
+				6E7336811E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.h */,
+				6E7336821E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.m */,
 				6E24688D1DAA35C600DDC80B /* CDConvenientModel.h */,
 				6E24688E1DAA35C600DDC80B /* CDConvenientModel.m */,
 				6E24688F1DAA35C600DDC80B /* CDConvenientToolsItem.h */,
@@ -655,6 +698,20 @@
 		6E2468A81DAA35C600DDC80B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6E7336971E4C6E040036393A /* SCYButtonTableFooterView.h */,
+				6E7336981E4C6E040036393A /* SCYButtonTableFooterView.m */,
+				6E7336941E4C6BC80036393A /* UpDownLBView.h */,
+				6E7336951E4C6BC80036393A /* UpDownLBView.m */,
+				6E7336851E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.h */,
+				6E7336861E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m */,
+				6E7336871E4C6B1F0036393A /* SCYAnnualBonusResultCell.h */,
+				6E7336881E4C6B1F0036393A /* SCYAnnualBonusResultCell.m */,
+				6E7336891E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.h */,
+				6E73368A1E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.m */,
+				6E73368B1E4C6B1F0036393A /* SCYAnnualBonusResultTableHeaderView.h */,
+				6E73368C1E4C6B1F0036393A /* SCYAnnualBonusResultTableHeaderView.m */,
+				6E73368D1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.h */,
+				6E73368E1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m */,
 				6E2468A91DAA35C600DDC80B /* CDConvenientToolsCell.h */,
 				6E2468AA1DAA35C600DDC80B /* CDConvenientToolsCell.m */,
 				6E2468AB1DAA35C600DDC80B /* CDNetWorkPointCell.h */,
@@ -1295,6 +1352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E6ADB991CD89F7C00838B61 /* UIView+CDViewAdditions.m in Sources */,
+				6E7336911E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.m in Sources */,
 				6E24691B1DAA35C600DDC80B /* CDBaseModel.m in Sources */,
 				6E24691F1DAA35C600DDC80B /* CDAboutUsCell.m in Sources */,
 				6E6ADB3B1CD89E8700838B61 /* CDJSONBaseNetworkService.m in Sources */,
@@ -1305,6 +1363,8 @@
 				6E2469571DAA35C600DDC80B /* CDMineAccountService.m in Sources */,
 				6E24694F1DAA35C600DDC80B /* CDQueryAccountBasicItem.m in Sources */,
 				6E73D6421E14A516009A1072 /* SCYActivityIndicator.m in Sources */,
+				6E7336921E4C6B1F0036393A /* SCYAnnualBonusResultTableHeaderView.m in Sources */,
+				6E73368F1E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m in Sources */,
 				6E2469421DAA35C600DDC80B /* CDLoanInfoViewController.m in Sources */,
 				6E2469621DAA35C600DDC80B /* CDQueryAccountInfoCell.m in Sources */,
 				6E2469561DAA35C600DDC80B /* CDLoginService.m in Sources */,
@@ -1324,6 +1384,7 @@
 				6E73D6631E14B4C0009A1072 /* SSKeychainQuery.m in Sources */,
 				6E2469551DAA35C600DDC80B /* CDChangePSWService.m in Sources */,
 				6E24691A1DAA35C600DDC80B /* CDAboutUsModel.m in Sources */,
+				6E73367E1E4C6A330036393A /* SCYAnnualBonusCalculatorController.m in Sources */,
 				6E6ADB8E1CD89F7C00838B61 /* NSFileManager+CDFileManager.m in Sources */,
 				6E2469651DAA35C600DDC80B /* CDNewsAndTrendsController.m in Sources */,
 				14FDD0B61CDDD33E0093ABC3 /* UITextField+cellIndexPath.m in Sources */,
@@ -1362,6 +1423,7 @@
 				6E2469201DAA35C600DDC80B /* CDButtonTableFooterView.m in Sources */,
 				6E24694D1DAA35C600DDC80B /* CDMineAccountModel.m in Sources */,
 				6E24694C1DAA35C600DDC80B /* CDLoginModel.m in Sources */,
+				6E7336991E4C6E040036393A /* SCYButtonTableFooterView.m in Sources */,
 				6E2469291DAA35C600DDC80B /* SCYMortgageCalculatorController.m in Sources */,
 				6E2469251DAA35C600DDC80B /* CDConvenientToolsController.m in Sources */,
 				6E24692A1DAA35C600DDC80B /* CDConvenientModel.m in Sources */,
@@ -1383,6 +1445,7 @@
 				6E2469601DAA35C600DDC80B /* CDProvidentFundDetailHeaderView.m in Sources */,
 				6E2469471DAA35C600DDC80B /* CDRepaymentInfoController.m in Sources */,
 				6E2469451DAA35C600DDC80B /* CDQueryAccountInfoController.m in Sources */,
+				6E7336841E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.m in Sources */,
 				6E24691D1DAA35C600DDC80B /* CDOpinionsSuggestionsModel.m in Sources */,
 				6E2469691DAA35C600DDC80B /* CDNewsAndTrendsCell.m in Sources */,
 				6E2469271DAA35C600DDC80B /* CDMapRouteSearchController.mm in Sources */,
@@ -1392,7 +1455,9 @@
 				6E2469441DAA35C600DDC80B /* CDLoginViewController.m in Sources */,
 				6E2469381DAA35C600DDC80B /* CDNetWorkPointCell.m in Sources */,
 				6E24696C1DAA3FF700DDC80B /* NSData+CDDataAddition.m in Sources */,
+				6E7336961E4C6BC80036393A /* UpDownLBView.m in Sources */,
 				6E2469361DAA35C600DDC80B /* SCYMortgageCalculatorService.m in Sources */,
+				6E7336931E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m in Sources */,
 				6E2469501DAA35C600DDC80B /* CDQueryAccountInfoModel.m in Sources */,
 				6E2469481DAA35C600DDC80B /* CDAccountDetailItem.m in Sources */,
 				6E6ADB541CD89E8E00838B61 /* CDBaseViewController.m in Sources */,
@@ -1402,8 +1467,10 @@
 				6E2469511DAA35C600DDC80B /* CDRegistConfigureModel.m in Sources */,
 				6E2469431DAA35C600DDC80B /* CDLoanProgressController.m in Sources */,
 				6E2469411DAA35C600DDC80B /* CDAccountManageController.m in Sources */,
+				6E73367D1E4C6A330036393A /* SCYAnnualBonusCalculateResultController.m in Sources */,
 				6E24692B1DAA35C600DDC80B /* CDConvenientToolsItem.m in Sources */,
 				6E6ADB3C1CD89E8700838B61 /* CDNetworkMonitor.m in Sources */,
+				6E7336831E4C6AEB0036393A /* SCYAnnualBonusCalculateResultItem.m in Sources */,
 				6E6ADB9A1CD89F7C00838B61 /* UIView+Genie.m in Sources */,
 				6E6ADB981CD89F7C00838B61 /* UITableView+CDTableViewAddition.m in Sources */,
 				6E24694E1DAA35C600DDC80B /* CDPayAccountItem.m in Sources */,
@@ -1416,6 +1483,7 @@
 				6E2469661DAA35C600DDC80B /* CDNewsAndTrendsItem.m in Sources */,
 				6E2469521DAA35C600DDC80B /* CDRepayInfoBasicItem.m in Sources */,
 				6E6ADB561CD89E8E00838B61 /* CDNavigationController.m in Sources */,
+				6E7336901E4C6B1F0036393A /* SCYAnnualBonusResultCell.m in Sources */,
 				6E6ADB551CD89E8E00838B61 /* CDBaseWKWebViewController.m in Sources */,
 				6E6ADB901CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.m in Sources */,
 				6E24692C1DAA35C600DDC80B /* CDNetworkPointItem.m in Sources */,

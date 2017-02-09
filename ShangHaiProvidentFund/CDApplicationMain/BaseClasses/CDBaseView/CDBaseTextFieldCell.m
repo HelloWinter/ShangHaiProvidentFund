@@ -31,30 +31,34 @@
         _textField=[[UITextField alloc]init];
         _textField.textAlignment=NSTextAlignmentRight;
         _textField.autocorrectionType = NO;
+        //        _textField.layer.borderColor = [UIColor orangeColor].CGColor;
+        //        _textField.layer.borderWidth = 0.5;
     }
     return _textField;
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.textField.frame=CGRectMake(CELL_MARGIN, CELL_MARGIN, self.width-CELL_MARGIN*2, self.height-CELL_MARGIN*2);
+    self.textField.frame=CGRectMake(CELL_MARGIN, 0, self.width-CELL_MARGIN*2, self.height);
 }
 
-- (void)setupLeftView:(UIView *)left rightView:(UIView *)right placeHolder:(NSString *)placeHolder indexPath:(NSIndexPath *)path{
+#pragma mark - public
+- (NSString *)cellText{
+    return self.textField.text;
+}
+
+- (void)setupLeftView:(UIView *)lView rightView:(UIView *)rView placeHolder:(NSString *)placeHolder defaultText:(NSString *)defText indexPath:(NSIndexPath *)path{
     self.textField.indexPath=path;
-    self.textField.leftView=left;
+    self.textField.leftView=lView;
     self.textField.leftViewMode=UITextFieldViewModeAlways;
-    self.textField.rightView=right;
+    self.textField.rightView=rView;
     self.textField.rightViewMode=UITextFieldViewModeAlways;
     self.textField.placeholder=placeHolder ? : @"";
+    self.textField.text=defText ? : @"";
 }
 
 - (void)cellTextFieldBecomeFirstResponder{
     [self.textField becomeFirstResponder];
-}
-
-- (NSString *)cellText{
-    return self.textField.text;
 }
 
 @end

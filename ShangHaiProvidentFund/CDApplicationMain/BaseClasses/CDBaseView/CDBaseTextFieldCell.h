@@ -13,10 +13,10 @@
     UITextField *_textField;
 }
 
-- (void)setupLeftView:(UIView *)left rightView:(UIView *)right placeHolder:(NSString *)placeHolder indexPath:(NSIndexPath *)path;
-
-- (void)cellTextFieldBecomeFirstResponder;
+- (void)setupLeftView:(UIView *)lView rightView:(UIView *)rView placeHolder:(NSString *)placeHolder defaultText:(NSString *)defText indexPath:(NSIndexPath *)path;
 
 - (NSString *)cellText;
+
+- (void)cellTextFieldBecomeFirstResponder;
 
 @end

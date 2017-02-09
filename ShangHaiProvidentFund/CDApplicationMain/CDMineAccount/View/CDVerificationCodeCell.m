@@ -54,7 +54,7 @@
     _textField.secureTextEntry=[item.security isEqualToString:@"1"] ? YES : NO;
     _textField.text=item.value;
     self.label.text=item.paramname;
-    [super setupLeftView:self.label rightView:self.getSecurityBtn placeHolder:item.hint indexPath:path];
+    [super setupLeftView:self.label rightView:self.getSecurityBtn placeHolder:item.hint defaultText:@"" indexPath:path];
 }
 
 #pragma mark - private

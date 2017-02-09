@@ -13,6 +13,7 @@
 #import "CDNetworkPointController.h"
 #import "CDBaseWKWebViewController.h"
 #import "SCYMortgageCalculatorController.h"
+#import "SCYAnnualBonusCalculatorController.h"
 
 static NSString *cellIdentifier=@"cellIdentifier";
 
@@ -98,6 +99,9 @@ static NSString *cellIdentifier=@"cellIdentifier";
         case 5:
             [self pushToMortgageCalculatorController];
             break;
+        case 6:
+            [self pushToAnnualBonusCalculatorController];
+            break;
         case 7:
             [self pushToWKWebViewControllerWithTitle:@"叫号信息" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/2010/mindex.html")];
             break;
@@ -130,6 +134,11 @@ static NSString *cellIdentifier=@"cellIdentifier";
 
 - (void)pushToMortgageCalculatorController{
     SCYMortgageCalculatorController *controller=[[SCYMortgageCalculatorController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)pushToAnnualBonusCalculatorController{
+    SCYAnnualBonusCalculatorController *controller=[[SCYAnnualBonusCalculatorController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
