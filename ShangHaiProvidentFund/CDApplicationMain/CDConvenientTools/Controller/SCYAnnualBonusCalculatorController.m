@@ -93,10 +93,6 @@ static const CGFloat topHeight=50;
     return 44;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//    return 10;
-//}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
@@ -138,8 +134,14 @@ static const CGFloat topHeight=50;
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+/**
+ *  计算税后结果,税后=税前-税前*税率+速算扣除
+ *
+ *  @param before 税前年终奖
+ *
+ *  @return 税后年终奖所得
+ */
 - (NSArray *)getAfterTaxBonusWithBeforeBonus:(double)before{
-    //税后=税前-税前*税率+速算扣除
     double rate=0.00;
     double addition=0.00;
     double singleMonth=before/12.00;
@@ -170,6 +172,13 @@ static const CGFloat topHeight=50;
     return [NSArray arrayWithObject:item];
 }
 
+/**
+ *  反推税前年终奖,可能有两种结果
+ *
+ *  @param after 税后年终奖
+ *
+ *  @return 税前年终奖
+ */
 - (NSMutableArray *)getBeforeBonusWithAfterTaxBonus:(double)after{
     NSMutableArray *arr=[NSMutableArray array];
     if (after<=16305.00) {
@@ -186,12 +195,11 @@ static const CGFloat topHeight=50;
         SCYAnnualBonusCalculateResultItem *item1=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before1] after:[NSNumber numberWithDouble:after]];
         [arr addObject:item1];
         
-//        return arr;
     }else if (after>17460.00 && after<=43755.00){
         double before=(after-105.00)/(1.0-0.1);
         SCYAnnualBonusCalculateResultItem *item=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before] after:[NSNumber numberWithDouble:after]];
         [arr addObject:item];
-//        return arr;
+
     }else if (after>43755.00 && after<=48705.00){
         double before0=(after-105.00)/(1.0-0.1);
         SCYAnnualBonusCalculateResultItem *item0=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before0] after:[NSNumber numberWithDouble:after]];
@@ -201,12 +209,11 @@ static const CGFloat topHeight=50;
         SCYAnnualBonusCalculateResultItem *item1=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before1] after:[NSNumber numberWithDouble:after]];
         [arr addObject:item1];
         
-//        return arr;
     }else if (after>48705.00 && after<=82005.00){
         double before=(after-555.00)/(1.0-0.2);
         SCYAnnualBonusCalculateResultItem *item=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before] after:[NSNumber numberWithDouble:after]];
         [arr addObject:item];
-//        return arr;
+
     }else if (after>82005.00 && after<=86955.00){
         double before0=(after-555.00)/(1.0-0.2);
         SCYAnnualBonusCalculateResultItem *item0=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before0] after:[NSNumber numberWithDouble:after]];
@@ -216,12 +223,11 @@ static const CGFloat topHeight=50;
         SCYAnnualBonusCalculateResultItem *item1=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before1] after:[NSNumber numberWithDouble:after]];
         [arr addObject:item1];
         
-//        return arr;
     }else if (after>86955.00 && after<=296755.00){
         double before=(after-1005.00)/(1.0-0.25);
         SCYAnnualBonusCalculateResultItem *item=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before] after:[NSNumber numberWithDouble:after]];
         [arr addObject:item];
-//        return arr;
+
     }else if (after>296755.00 && after<=316005.00){
         double before0=(after-1005.00)/(1.0-0.25);
         SCYAnnualBonusCalculateResultItem *item0=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before0] after:[NSNumber numberWithDouble:after]];
@@ -231,12 +237,11 @@ static const CGFloat topHeight=50;
         SCYAnnualBonusCalculateResultItem *item1=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before1] after:[NSNumber numberWithDouble:after]];
         [arr addObject:item1];
         
-//        return arr;
     }else if (after>316005.00 && after<=434505.00){
         double before=(after-2775.00)/(1.0-0.3);
         SCYAnnualBonusCalculateResultItem *item=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before] after:[NSNumber numberWithDouble:after]];
         [arr addObject:item];
-//        return arr;
+
     }else if (after>434505.00 && after<=464755.00){
         double before0=(after-2775.00)/(1.0-0.3);
         SCYAnnualBonusCalculateResultItem *item0=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before0] after:[NSNumber numberWithDouble:after]];
@@ -246,12 +251,11 @@ static const CGFloat topHeight=50;
         SCYAnnualBonusCalculateResultItem *item1=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before1] after:[NSNumber numberWithDouble:after]];
         [arr addObject:item1];
         
-//        return arr;
     }else if (after>464755.00 && after<=541505.00){
         double before=(after-5505.00)/(1.0-0.35);
         SCYAnnualBonusCalculateResultItem *item=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before] after:[NSNumber numberWithDouble:after]];
         [arr addObject:item];
-//        return arr;
+
     }else if (after>541505.00 && after<=629505.00){
         double before0=(after-5505.00)/(1.0-0.35);
         SCYAnnualBonusCalculateResultItem *item0=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before0] after:[NSNumber numberWithDouble:after]];
@@ -261,12 +265,11 @@ static const CGFloat topHeight=50;
         SCYAnnualBonusCalculateResultItem *item1=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before1] after:[NSNumber numberWithDouble:after]];
         [arr addObject:item1];
         
-//        return arr;
     }else if (after>629505.00){
         double before=(after-13505.00)/(1.0-0.45);
         SCYAnnualBonusCalculateResultItem *item=[SCYAnnualBonusCalculateResultItem itemWithBefore:[NSNumber numberWithDouble:before] after:[NSNumber numberWithDouble:after]];
         [arr addObject:item];
-//        return arr;
+
     }
     return arr;
 }

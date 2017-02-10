@@ -103,11 +103,7 @@
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section==0) {
-        return 188;
-    }else{
-        return 33;
-    }
+    return (indexPath.section==0) ? 188 : 33;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -125,19 +121,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section==1) {
-        return self.sectionHeaderView.height;
-    }else{
-        return 0.01;
-    }
+    return (section==1) ? self.sectionHeaderView.height : 0.01;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if (section==0) {
-        return 10;
-    }else{
-        return self.sectionFooterView.height;
-    }
+    return (section==0) ? 10 : self.sectionFooterView.height;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

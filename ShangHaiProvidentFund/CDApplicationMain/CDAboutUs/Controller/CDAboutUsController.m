@@ -84,10 +84,6 @@
 }
 
 #pragma mark - UITableViewDelegate
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 44;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 13;
 }
@@ -125,12 +121,6 @@
                 case 0:{
                     NSString *jsCode=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element" tagName:@"link"];
                     [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
-                    
-//                    NSString *jsCode1=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element" className:@"ctitle"];
-//                    NSString *jsCode2=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element1" className:@"nav"];
-////                    NSString *jsCode3=[self removeHTMLNodeWith:@"element2" tagName:@"script"];
-//                    NSString *jscode = [NSString stringWithFormat:@"%@%@",jsCode1,jsCode2];
-//                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jscode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
                 }
                     break;
                 case 1:{
@@ -150,10 +140,6 @@
                 case 1:
                     [self pushToHelpInfoController];
                     break;
-                case 2:
-//                    [self pushToMineAccountVC];
-                    break;
-                    
                 default:
                     break;
             }

@@ -48,7 +48,6 @@
     _textField.text=item.value;
     self.label.text=item.paramname;
     [super setupLeftView:self.label rightView:nil placeHolder:item.hint defaultText:@"" indexPath:path];
-//    [super setupLeftView: rightView: placeHolder: indexPath:path];
 }
 
 @end

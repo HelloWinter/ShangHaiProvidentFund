@@ -37,33 +37,24 @@
 //    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor darkGrayColor]} forState:UIControlStateNormal];//NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
 //    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor whiteColor]} forState:UIControlStateSelected];
     
-    [self setUpAllChildViewController];
+    [self setupAllChildViewController];
 }
 
-- (void)setUpAllChildViewController{
-    CDNewsAndTrendsController *oneVC = [[CDNewsAndTrendsController alloc]init];
-    [self setUpOneChildViewController:oneVC image:[UIImage imageNamed:@"tab_home_normal"] title:@"新闻动态"];
+- (void)setupAllChildViewController{
+    CDNewsAndTrendsController *newsAndTrendsController = [[CDNewsAndTrendsController alloc]init];
+    [self createAndAddChildViewController:newsAndTrendsController image:[UIImage imageNamed:@"tab_home_normal"] title:@"新闻动态"];
     
-    CDConvenientToolsController *threeVC = [[CDConvenientToolsController alloc]init];
-    [self setUpOneChildViewController:threeVC image:[UIImage imageNamed:@"tab_product_normal"] title:@"便民工具"];
+    CDConvenientToolsController *convenientToolsController = [[CDConvenientToolsController alloc]init];
+    [self createAndAddChildViewController:convenientToolsController image:[UIImage imageNamed:@"tab_product_normal"] title:@"便民工具"];
     
-    CDQueryAccountInfoController *twoVC = [[CDQueryAccountInfoController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
-    [self setUpOneChildViewController:twoVC image:[UIImage imageNamed:@"tab_mine_normal"] title:@"账户查询"];
+    CDQueryAccountInfoController *queryAccountInfoController = [[CDQueryAccountInfoController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    [self createAndAddChildViewController:queryAccountInfoController image:[UIImage imageNamed:@"tab_mine_normal"] title:@"账户查询"];
 }
 
-- (void)setupMineCenterChildViewController:(UIViewController *)viewController image:(UIImage *)image selectedImage:(UIImage *)selectimage title:(NSString *)title{
-    CDNavigationController *navC = [[CDNavigationController alloc]initWithRootViewController:viewController];
-    navC.tabBarItem.image = image;
-    navC.tabBarItem.selectedImage = selectimage;
-    viewController.navigationItem.title = title;
-    [self addChildViewController:navC];
-}
-
-- (void)setUpOneChildViewController:(UIViewController *)viewController image:(UIImage *)image title:(NSString *)title{
+- (void)createAndAddChildViewController:(UIViewController *)viewController image:(UIImage *)image title:(NSString *)title{
     CDNavigationController *navC = [[CDNavigationController alloc]initWithRootViewController:viewController];
     navC.tabBarItem.title = title;
     navC.tabBarItem.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    navC.tabBarItem.image = image;
     navC.tabBarItem.selectedImage=image;
     viewController.navigationItem.title = title;
     [self addChildViewController:navC];

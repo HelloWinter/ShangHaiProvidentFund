@@ -58,7 +58,7 @@
         [_footerView setupBtnTitle:@"提交"];
         __weak typeof(self) weakSelf=self;
         _footerView.buttonClickBlock=^(UIButton *sender){
-            [weakSelf CommitMessage];
+            [weakSelf commitMessage];
         };
     }
     return _footerView;
@@ -144,7 +144,7 @@
 }
 
 #pragma mark - private
-- (void)CommitMessage{
+- (void)commitMessage{
     NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
     for (CDOpinionsSuggestionsItem *item in self.opinionsSuggestionsModel.arrData) {
         if (item.value.length==0) {

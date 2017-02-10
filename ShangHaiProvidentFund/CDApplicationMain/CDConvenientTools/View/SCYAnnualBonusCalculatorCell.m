@@ -27,7 +27,6 @@ static const CGFloat cellTextFontSize=15.0;
         self.selectionStyle=UITableViewCellSelectionStyleNone;
         _textField.font=[UIFont systemFontOfSize:cellTextFontSize];
         _textField.keyboardType=UIKeyboardTypeNumbersAndPunctuation;
-//        _textField.delegate=self;
     }
     return self;
 }
