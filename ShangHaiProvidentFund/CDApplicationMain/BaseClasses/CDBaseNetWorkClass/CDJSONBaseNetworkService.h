@@ -43,7 +43,7 @@
 @property (nonatomic, assign) HttpRequestType httpRequestMethod;
 
 /**
- *  是否显示加载框，默认NO
+ *  是否显示网络加载提示框，默认NO
  */
 @property (nonatomic, assign) BOOL showLodingIndicator;
 
@@ -77,7 +77,7 @@
 @property (nonatomic, assign, getter=isIgnoreCache) BOOL ignoreCache;
 
 /**
- *  数据是否是缓存的数据
+ *  取到的数据是否是缓存的数据
  */
 @property (nonatomic, assign, readonly) BOOL isUseCache;
 
@@ -104,15 +104,20 @@
 - (void)cancel;
 
 /**
- *  封装参数，需要时子类可以重写此方法，但必须调用父类方法
+ *  请求完成取得数据，子类可override把数据转换为模型
+ *
+ *  @param rootData 请求到的原始数据
+ */
+- (void)requestDidFinish:(id)rootData;
+
+/**
+ *  封装所有接口必传的参数字段，需要时子类可以重写此方法，但必须调用父类方法
  *
  *  @param params 存储参数的字典
  *
  *  @return 封装好的参数字典
  */
 //- (NSMutableDictionary *)packParameters:(NSMutableDictionary *)params;
-
-- (void)requestDidFinish:(id)rootData;
 
 @end
 

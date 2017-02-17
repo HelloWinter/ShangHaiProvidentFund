@@ -146,7 +146,6 @@
 		6E73368F1E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336861E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m */; };
 		6E7336901E4C6B1F0036393A /* SCYAnnualBonusResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336881E4C6B1F0036393A /* SCYAnnualBonusResultCell.m */; };
 		6E7336911E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73368A1E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.m */; };
-		6E7336921E4C6B1F0036393A /* SCYAnnualBonusResultTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73368C1E4C6B1F0036393A /* SCYAnnualBonusResultTableHeaderView.m */; };
 		6E7336931E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73368E1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m */; };
 		6E7336961E4C6BC80036393A /* UpDownLBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336951E4C6BC80036393A /* UpDownLBView.m */; };
 		6E7336991E4C6E040036393A /* SCYButtonTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336981E4C6E040036393A /* SCYButtonTableFooterView.m */; };
@@ -447,8 +446,6 @@
 		6E7336881E4C6B1F0036393A /* SCYAnnualBonusResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusResultCell.m; sourceTree = "<group>"; };
 		6E7336891E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusResultSectionHeaderView.h; sourceTree = "<group>"; };
 		6E73368A1E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusResultSectionHeaderView.m; sourceTree = "<group>"; };
-		6E73368B1E4C6B1F0036393A /* SCYAnnualBonusResultTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusResultTableHeaderView.h; sourceTree = "<group>"; };
-		6E73368C1E4C6B1F0036393A /* SCYAnnualBonusResultTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusResultTableHeaderView.m; sourceTree = "<group>"; };
 		6E73368D1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusRulesCell.h; sourceTree = "<group>"; };
 		6E73368E1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusRulesCell.m; sourceTree = "<group>"; };
 		6E7336941E4C6BC80036393A /* UpDownLBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpDownLBView.h; sourceTree = "<group>"; };
@@ -708,8 +705,6 @@
 				6E7336881E4C6B1F0036393A /* SCYAnnualBonusResultCell.m */,
 				6E7336891E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.h */,
 				6E73368A1E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.m */,
-				6E73368B1E4C6B1F0036393A /* SCYAnnualBonusResultTableHeaderView.h */,
-				6E73368C1E4C6B1F0036393A /* SCYAnnualBonusResultTableHeaderView.m */,
 				6E73368D1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.h */,
 				6E73368E1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m */,
 				6E2468A91DAA35C600DDC80B /* CDConvenientToolsCell.h */,
@@ -1363,7 +1358,6 @@
 				6E2469571DAA35C600DDC80B /* CDMineAccountService.m in Sources */,
 				6E24694F1DAA35C600DDC80B /* CDQueryAccountBasicItem.m in Sources */,
 				6E73D6421E14A516009A1072 /* SCYActivityIndicator.m in Sources */,
-				6E7336921E4C6B1F0036393A /* SCYAnnualBonusResultTableHeaderView.m in Sources */,
 				6E73368F1E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m in Sources */,
 				6E2469421DAA35C600DDC80B /* CDLoanInfoViewController.m in Sources */,
 				6E2469621DAA35C600DDC80B /* CDQueryAccountInfoCell.m in Sources */,

@@ -116,16 +116,16 @@
     if ([item isKindOfClass:[CDNewsAndTrendsItem class]]) {
         CDNewsAndTrendsItem *newsitem = (CDNewsAndTrendsItem *)item;
         NSString *urlStr=[NSString stringWithFormat:@"/gjjManager/newsByIdServlet?id=%@",newsitem.news.newsid];
-        [self pushToWKWebViewControllerWithURLString:CDURLWithAPI(urlStr)];
+        [self p_pushToWKWebViewControllerWithURLString:CDURLWithAPI(urlStr)];
     }else if ([item isKindOfClass:[CDLoadMoreItem class]]){
-        [self refreshTableViewFromTop:NO];
+        [self p_refreshTableViewFromTop:NO];
     }
 }
 
 #pragma mark - CDJSONBaseNetworkServiceDelegate
 - (void)serviceDidFinished:(CDJSONBaseNetworkService *)service{
     [super serviceDidFinished:service];
-    [self refreshTableViewFromTop:YES];
+    [self p_refreshTableViewFromTop:YES];
 }
 
 - (void)service:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
@@ -138,14 +138,14 @@
 }
 
 #pragma mark - private
-- (void)pushToWKWebViewControllerWithURLString:(NSString *)urlstr{
+- (void)p_pushToWKWebViewControllerWithURLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[CDBaseWKWebViewController webViewWithURL:[NSURL URLWithString:urlstr]];
     webViewController.title=@"上海住房公积金网";
     webViewController.javaScriptCode=@"var element=document.getElementsByTagName('link')[0];var parentElement=element.parentNode;if(parentElement){parentElement.removeChild(element);}";
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 
-- (void)refreshTableViewFromTop:(BOOL)isFromTop{
+- (void)p_refreshTableViewFromTop:(BOOL)isFromTop{
     if (isFromTop) {
         [self.arrData removeAllObjects];
         [self.arrCellHeight removeAllObjects];
@@ -153,11 +153,11 @@
         [self.arrData removeLastObject];
         [self.arrCellHeight removeLastObject];
     }
-    [self refreshArrData];
+    [self p_refreshArrData];
     [self.tableView reloadData];
 }
 
-- (void)refreshArrData{
+- (void)p_refreshArrData{
     if (self.arrData.count<self.newsAndTrendsService.arrData.count) {
         NSInteger subCount=self.newsAndTrendsService.arrData.count-self.arrData.count;
         [self.arrData addObjectsFromArray:[self.newsAndTrendsService.arrData subarrayWithRange:NSMakeRange(self.arrData.count,subCount>=20 ? 20 : subCount)]];

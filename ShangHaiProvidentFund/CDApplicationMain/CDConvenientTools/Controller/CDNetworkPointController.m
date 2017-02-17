@@ -33,7 +33,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupRightBarItem];
+    self.tableView.rowHeight=66;
+    [self p_setupRightBarItem];
     [self.networkPointService loadNetworkPointIgnoreCache:NO ShowIndicator:YES];
 }
 
@@ -71,19 +72,15 @@
 }
 
 #pragma mark - UITableViewDelegate
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 66;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CDNetworkPointItem *item=[self.networkPointService.arrData cd_safeObjectAtIndex:indexPath.row];
     CLLocationCoordinate2D coordinate=[self transformFrom:item.point];
     if (CDUserLocation().length!=0) {
         CLLocationCoordinate2D startcoordinate = [self transformFrom:CDUserLocation()];
-        [self pushToRoutePlanningVCWithCoordinateStart:startcoordinate end:coordinate name:item.districts address:item.address];
+        [self p_pushToRoutePlanningVCWithCoordinateStart:startcoordinate end:coordinate name:item.districts address:item.address];
     }else{
-        [self pushToAnnotationVCWithCoordinate:coordinate district:item.districts address:item.address];
+        [self p_pushToAnnotationVCWithCoordinate:coordinate district:item.districts address:item.address];
     }
     
 }
@@ -94,12 +91,12 @@
 }
 
 #pragma mark - private
-- (void)setupRightBarItem{
-    UIBarButtonItem *item=[UIBarButtonItem cd_ItemWidth:40 imageName:@"home_phone" target:self action:@selector(callThePhoneNum)];
+- (void)p_setupRightBarItem{
+    UIBarButtonItem *item=[UIBarButtonItem cd_ItemWidth:40 imageName:@"home_phone" target:self action:@selector(p_callThePhoneNum)];
     self.navigationItem.rightBarButtonItem=item;
 }
 
-- (void)callThePhoneNum{
+- (void)p_callThePhoneNum{
     UIAlertController *controller=[UIAlertController alertControllerWithTitle:nil message:@"确定拨打021-12329？" preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *cancel=[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
     }];
@@ -114,7 +111,7 @@
 /**
  *  路线规划
  */
-- (void)pushToRoutePlanningVCWithCoordinateStart:(CLLocationCoordinate2D)startcoordinate end:(CLLocationCoordinate2D)coordinate name:(NSString *)name address:(NSString *)address{
+- (void)p_pushToRoutePlanningVCWithCoordinateStart:(CLLocationCoordinate2D)startcoordinate end:(CLLocationCoordinate2D)coordinate name:(NSString *)name address:(NSString *)address{
     CDMapRouteSearchController *routePlaning=[[CDMapRouteSearchController alloc]init];
     routePlaning.startCoordinate=startcoordinate;
     routePlaning.endCoordinate  = coordinate;
@@ -127,7 +124,7 @@
 /**
  *  地图标注
  */
-- (void)pushToAnnotationVCWithCoordinate:(CLLocationCoordinate2D)coordinate district:(NSString *)district address:(NSString *)address{
+- (void)p_pushToAnnotationVCWithCoordinate:(CLLocationCoordinate2D)coordinate district:(NSString *)district address:(NSString *)address{
     CDMapAnnotationController *annotationVC=[[CDMapAnnotationController alloc]init];
     annotationVC.coordinate=coordinate;
     annotationVC.districts=district;

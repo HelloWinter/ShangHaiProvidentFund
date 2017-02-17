@@ -55,7 +55,7 @@
         _btnFooter=[[SCYActivityIndicatorButton alloc]initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleWhite)];
         [_btnFooter setTitle:@"登录" forState:(UIControlStateNormal)];
         [_btnFooter setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
-        [_btnFooter addTarget:self action:@selector(btnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+        [_btnFooter addTarget:self action:@selector(p_btnAction:) forControlEvents:(UIControlEventTouchUpInside)];
         [_btnFooter setBackgroundColor:ColorFromHexRGB(0x26df77)];
         _btnFooter.titleLabel.font=[UIFont systemFontOfSize:15];
         _btnFooter.layer.cornerRadius=CORNER_RADIUS;
@@ -64,6 +64,7 @@
     return _btnFooter;
 }
 
+#pragma mark - public
 - (void)setupBtnFrame:(CGRect)frame{
     self.btnFrame=frame;
     [self setNeedsLayout];
@@ -77,12 +78,6 @@
     [self.btnFooter setBackgroundColor:color];
 }
 
-- (void)btnAction:(UIButton *)sender {
-    if (self.buttonClickBlock) {
-        self.buttonClickBlock(sender);
-    }
-}
-
 - (void)activityIndicatorStartAnimate{
     [self.btnFooter.activityIndicator startAnimating];
 }
@@ -90,5 +85,14 @@
 - (void)activityIndicatorStopAnimate{
     [self.btnFooter.activityIndicator stopAnimating];
 }
+
+#pragma mark - private
+- (void)p_btnAction:(UIButton *)sender {
+    if (self.buttonClickBlock) {
+        self.buttonClickBlock(sender);
+    }
+}
+
+
 
 @end

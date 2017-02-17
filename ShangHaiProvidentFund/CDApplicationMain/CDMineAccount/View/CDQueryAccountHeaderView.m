@@ -30,7 +30,7 @@ static const CGFloat imgWidth=60;
         [self addSubview:self.lbName];
         [self addSubview:self.lbState];
         [self addSubview:self.lbBalance];
-        UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewTapped)];
+        UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(p_viewTapped)];
         [self addGestureRecognizer:tap];
     }
     return self;
@@ -99,7 +99,7 @@ static const CGFloat imgWidth=60;
 }
 
 #pragma mark - private
-- (void)viewTapped{
+- (void)p_viewTapped{
     if (self.viewTappedBlock) {
         self.viewTappedBlock();
     }

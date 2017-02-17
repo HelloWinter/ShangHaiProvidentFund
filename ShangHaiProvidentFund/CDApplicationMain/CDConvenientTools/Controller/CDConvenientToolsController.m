@@ -79,34 +79,34 @@ static NSString *cellIdentifier=@"cellIdentifier";
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
         case 0:
-            [self pushToNetworkPointController];
+            [self p_pushToNetworkPointController];
             break;
         case 1:{
             NSString *jsCode=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element" tagName:@"link"];
-            [self pushToWKWebViewControllerWithTitle:@"业务办理" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=blgg")];
+            [self p_pushToWKWebViewControllerWithTitle:@"业务办理" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=blgg")];
         }
             break;
         case 2:{
-            [self pushToWKWebViewControllerWithTitle:@"公积金缴存额上下限/比例表" javaScriptCode:nil URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=jcll")];
+            [self p_pushToWKWebViewControllerWithTitle:@"公积金缴存额上下限/比例表" javaScriptCode:nil URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=jcll")];
         }
             break;
         case 3:
-            [self pushToWKWebViewControllerWithTitle:@"住房公积金缴存计算" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/app/wap/tools_paid_app.html")];
+            [self p_pushToWKWebViewControllerWithTitle:@"住房公积金缴存计算" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/app/wap/tools_paid_app.html")];
             break;
         case 4:
-            [self pushToWKWebViewControllerWithTitle:@"额度试算" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/app/wap/tools_ammount.html")];
+            [self p_pushToWKWebViewControllerWithTitle:@"额度试算" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/app/wap/tools_ammount.html")];
             break;
         case 5:
-            [self pushToMortgageCalculatorController];
+            [self p_pushToMortgageCalculatorController];
             break;
         case 6:
-            [self pushToAnnualBonusCalculatorController];
+            [self p_pushToAnnualBonusCalculatorController];
             break;
         case 7:
-            [self pushToWKWebViewControllerWithTitle:@"叫号信息" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/2010/mindex.html")];
+            [self p_pushToWKWebViewControllerWithTitle:@"叫号信息" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/2010/mindex.html")];
             break;
         case 8:
-            [self pushToWKWebViewControllerWithTitle:@"公益短信" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/sms/app_apply.html")];
+            [self p_pushToWKWebViewControllerWithTitle:@"公益短信" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/sms/app_apply.html")];
             break;
             
         default:
@@ -120,25 +120,25 @@ static NSString *cellIdentifier=@"cellIdentifier";
 }
 
 #pragma mark - private
-- (void)pushToNetworkPointController{
+- (void)p_pushToNetworkPointController{
     CDNetworkPointController *controller=[[CDNetworkPointController alloc]init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (void)pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
+- (void)p_pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[CDBaseWKWebViewController webViewWithURL:[NSURL URLWithString:urlstr]];
     webViewController.title=title;
     webViewController.javaScriptCode=jsCode;
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 
-- (void)pushToMortgageCalculatorController{
-    SCYMortgageCalculatorController *controller=[[SCYMortgageCalculatorController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+- (void)p_pushToMortgageCalculatorController{
+    SCYMortgageCalculatorController *controller=[[SCYMortgageCalculatorController alloc]init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (void)pushToAnnualBonusCalculatorController{
-    SCYAnnualBonusCalculatorController *controller=[[SCYAnnualBonusCalculatorController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+- (void)p_pushToAnnualBonusCalculatorController{
+    SCYAnnualBonusCalculatorController *controller=[[SCYAnnualBonusCalculatorController alloc]init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

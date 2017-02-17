@@ -10,8 +10,8 @@
 
 @interface CDConvenientToolsItem : CDBaseItem
 
-@property (nonatomic, copy) NSString *imgName;
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy, readonly) NSString *imgName;
+@property (nonatomic, copy, readonly) NSString *title;
 
 + (instancetype)itemWithImageName:(NSString *)imgname title:(NSString *)title;
 

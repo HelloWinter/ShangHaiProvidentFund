@@ -27,9 +27,10 @@ static const CGFloat topHeight=50;
 
 @implementation SCYAnnualBonusCalculatorController
 
-- (instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle{
-    self = [super initWithTableViewStyle:tableViewStyle];
+- (instancetype)init{
+    self =[super init];
     if (self) {
+        self.tableViewStyle=UITableViewStyleGrouped;
         self.title=@"年终奖计算器";
         self.showDragView=NO;
         self.hidesBottomBarWhenPushed=YES;
@@ -41,6 +42,7 @@ static const CGFloat topHeight=50;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.headerView];
+    self.tableView.rowHeight=44;
     self.tableView.frame=CGRectMake(0, topHeight, self.view.width, self.view.height-topHeight-64);
     self.tableView.tableFooterView=self.tableFooterView;
 }
@@ -66,7 +68,7 @@ static const CGFloat topHeight=50;
         [_tableFooterView setupBtnTitle:@"开始计算"];
         __weak typeof(self) weakSelf=self;
         _tableFooterView.buttonClickBlock=^(UIButton *sender){
-            [weakSelf startCalculate];
+            [weakSelf p_startCalculate];
         };
     }
     return _tableFooterView;
@@ -89,13 +91,8 @@ static const CGFloat topHeight=50;
 }
 
 #pragma mark - UITableViewDelegate
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 44;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
 }
 
 #pragma mark - private
@@ -113,20 +110,20 @@ static const CGFloat topHeight=50;
     [self.tableView reloadData];
 }
 
-- (void)startCalculate{
+- (void)p_startCalculate{
     NSIndexPath *path=[NSIndexPath indexPathForRow:0 inSection:0];
     SCYAnnualBonusCalculatorCell *cell=[self.tableView cellForRowAtIndexPath:path];
     NSString *cellT = [cell cellText];
     
-    SCYAnnualBonusCalculateResultController *controller=[[SCYAnnualBonusCalculateResultController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    SCYAnnualBonusCalculateResultController *controller=[[SCYAnnualBonusCalculateResultController alloc]init];
     controller.bonusCalculateType=self.annualBonusCalculateType;
     
     switch (self.annualBonusCalculateType) {
         case SCYAnnualBonusCalculateType1:
-            controller.arrData=[self getAfterTaxBonusWithBeforeBonus:cellT.doubleValue];
+            controller.arrData=[self p_getAfterTaxBonusWithBeforeBonus:cellT.doubleValue];
             break;
         case SCYAnnualBonusCalculateType2:
-            controller.arrData=[self getBeforeBonusWithAfterTaxBonus:cellT.doubleValue];
+            controller.arrData=[self p_getBeforeBonusWithAfterTaxBonus:cellT.doubleValue];
             break;
         default:
             break;
@@ -141,7 +138,7 @@ static const CGFloat topHeight=50;
  *
  *  @return 税后年终奖所得
  */
-- (NSArray *)getAfterTaxBonusWithBeforeBonus:(double)before{
+- (NSArray *)p_getAfterTaxBonusWithBeforeBonus:(double)before{
     double rate=0.00;
     double addition=0.00;
     double singleMonth=before/12.00;
@@ -179,7 +176,7 @@ static const CGFloat topHeight=50;
  *
  *  @return 税前年终奖
  */
-- (NSMutableArray *)getBeforeBonusWithAfterTaxBonus:(double)after{
+- (NSMutableArray *)p_getBeforeBonusWithAfterTaxBonus:(double)after{
     NSMutableArray *arr=[NSMutableArray array];
     if (after<=16305.00) {
         double before=(after-0)/(1.0-0.03);

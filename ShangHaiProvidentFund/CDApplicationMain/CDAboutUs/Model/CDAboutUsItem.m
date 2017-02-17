@@ -8,6 +8,14 @@
 
 #import "CDAboutUsItem.h"
 
+@interface CDAboutUsItem ()
+
+@property (nonatomic, copy) NSString *imgName;
+@property (nonatomic, copy) NSString *titleText;
+@property (nonatomic, copy) NSString *detailText;
+
+@end
+
 @implementation CDAboutUsItem
 
 + (instancetype)itemWithImgName:(NSString *)imgName title:(NSString *)titleText detail:(NSString *)detailText{

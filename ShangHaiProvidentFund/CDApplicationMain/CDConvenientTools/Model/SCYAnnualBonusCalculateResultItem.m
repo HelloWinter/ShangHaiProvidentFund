@@ -8,6 +8,13 @@
 
 #import "SCYAnnualBonusCalculateResultItem.h"
 
+@interface SCYAnnualBonusCalculateResultItem ()
+
+@property (nonatomic, copy) NSNumber *before;
+@property (nonatomic, copy) NSNumber *after;
+
+@end
+
 @implementation SCYAnnualBonusCalculateResultItem
 
 + (SCYAnnualBonusCalculateResultItem *)itemWithBefore:(NSNumber *)before after:(NSNumber *)after{

@@ -33,9 +33,10 @@
 
 @implementation CDLoginViewController
 
-- (instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle{
-    self = [super initWithTableViewStyle:tableViewStyle];
+- (instancetype)init{
+    self =[super init];
     if (self) {
+        self.tableViewStyle=UITableViewStyleGrouped;
         self.title=@"登录";
         self.showDragView=NO;
         self.hideKeyboradWhenTouch=YES;
@@ -78,7 +79,7 @@
         [_footerView setupBtnTitle:@"登录"];
         __weak typeof(self) weakSelf=self;
         _footerView.buttonClickBlock=^(UIButton *sender){
-            [weakSelf login];
+            [weakSelf p_login];
         };
     }
     return _footerView;
@@ -98,10 +99,10 @@
         _bottomButtonView.center=CGPointMake(self.view.width*0.5, self.tableView.bottom-30);
         __weak typeof(self) weakSelf=self;
         _bottomButtonView.forgotPSWBlock=^(){
-            [weakSelf pushToWKWebViewControllerWithTitle:@"遗忘密码" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/sms/forget-pass.html")];
+            [weakSelf p_pushToWKWebViewControllerWithTitle:@"遗忘密码" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/sms/forget-pass.html")];
         };
         _bottomButtonView.registBlock=^(){
-            [weakSelf pushToRegistViewController];
+            [weakSelf p_pushToRegistViewController];
         };
     }
     return _bottomButtonView;
@@ -132,7 +133,7 @@
 - (void)serviceDidFinished:(CDJSONBaseNetworkService *)service{
     [super serviceDidFinished:service];
     if ([self.loginService.loginModel.type isEqualToString:@"S"]) {
-        [self finishLogin];
+        [self p_finishLogin];
     }
 }
 
@@ -149,11 +150,11 @@
 
 #pragma mark - override
 - (void)cd_backOffAction{
-    [self cancelLogin];
+    [self p_cancelLogin];
 }
 
 #pragma mark - private
-- (void)login{
+- (void)p_login{
     NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
     for (CDOpinionsSuggestionsItem *item in self.loginConfigureModel.arrData) {
         if (item.value.length==0) {
@@ -172,7 +173,7 @@
     [self.loginService loadWithParams:dict showIndicator:YES];
 }
 
-- (void)finishLogin {
+- (void)p_finishLogin {
     [self dismissViewControllerAnimated:YES completion:^{
         if (_delegate && [_delegate respondsToSelector:@selector(userDidLogin)]) {
             [_delegate userDidLogin];
@@ -180,7 +181,7 @@
     }];
 }
 
-- (void)cancelLogin{
+- (void)p_cancelLogin{
     [self dismissViewControllerAnimated:YES completion:^{
         if (_delegate && [_delegate respondsToSelector:@selector(userCanceledLogin)]) {
             [_delegate userCanceledLogin];
@@ -188,15 +189,15 @@
     }];
 }
 
-- (void)pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
+- (void)p_pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[CDBaseWKWebViewController webViewWithURL:[NSURL URLWithString:urlstr]];
     webViewController.title=title;
     webViewController.javaScriptCode=jsCode;
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 
-- (void)pushToRegistViewController{
-    CDRegistViewController *controller=[[CDRegistViewController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+- (void)p_pushToRegistViewController{
+    CDRegistViewController *controller=[[CDRegistViewController alloc]init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

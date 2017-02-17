@@ -8,6 +8,14 @@
 
 #import "SCYAnnualBonusCalculateRulesItem.h"
 
+@interface SCYAnnualBonusCalculateRulesItem ()
+
+@property (nonatomic, copy) NSString *left;
+@property (nonatomic, copy) NSString *center;
+@property (nonatomic, copy) NSString *right;
+
+@end
+
 @implementation SCYAnnualBonusCalculateRulesItem
 
 + (SCYAnnualBonusCalculateRulesItem *)itemWithLeft:(NSString *)left center:(NSString *)center right:(NSString *)right{

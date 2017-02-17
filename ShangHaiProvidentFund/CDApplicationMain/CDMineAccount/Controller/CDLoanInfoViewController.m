@@ -27,9 +27,10 @@ static const CGFloat kHeaderTitleHeight = 28;
 
 @implementation CDLoanInfoViewController
 
-- (instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle{
-    self = [super initWithTableViewStyle:tableViewStyle];
+- (instancetype)init{
+    self =[super init];
     if (self) {
+        self.tableViewStyle=UITableViewStyleGrouped;
         self.hidesBottomBarWhenPushed=YES;
         self.title=@"贷款信息";
         self.showDragView=NO;
@@ -45,8 +46,8 @@ static const CGFloat kHeaderTitleHeight = 28;
     self.tableView.top=self.detailHeaderView.bottom;
     self.tableView.height-=self.detailHeaderView.height+64;
     self.tableView.tableHeaderView=self.headerTitleView;
-    [self refreshArrData];
-    [self refreshHeaderView];
+    [self p_refreshArrData];
+    [self p_refreshHeaderView];
 }
 
 - (CDLoginModel *)loginModel{
@@ -120,7 +121,7 @@ static const CGFloat kHeaderTitleHeight = 28;
 }
 
 #pragma mark - private
-- (void)refreshArrData{
+- (void)p_refreshArrData{
     [self.arrData removeAllObjects];
     [self.arrData addObjectsFromArray:self.loginModel.dynamicdetail];
     if (self.arrData.count==0) {
@@ -131,7 +132,7 @@ static const CGFloat kHeaderTitleHeight = 28;
     [self.tableView reloadData];
 }
 
-- (void)refreshHeaderView{
+- (void)p_refreshHeaderView{
     CDPayAccountItem *item=[self.loginModel.account firstObject];
     [self.detailHeaderView setupLoanInfo:item];
 }

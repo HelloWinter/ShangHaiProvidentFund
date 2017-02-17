@@ -10,9 +10,9 @@
 
 @interface CDAboutUsItem : CDBaseItem
 
-@property (nonatomic, copy) NSString *imgName;
-@property (nonatomic, copy) NSString *titleText;
-@property (nonatomic, copy) NSString *detailText;
+@property (nonatomic, copy, readonly) NSString *imgName;
+@property (nonatomic, copy, readonly) NSString *titleText;
+@property (nonatomic, copy, readonly) NSString *detailText;
 
 + (instancetype)itemWithImgName:(NSString *)imgName title:(NSString *)titleText detail:(NSString *)detailText;
 

@@ -11,7 +11,7 @@
 
 static void *CDWebBrowserContext = &CDWebBrowserContext;
 
-@interface CDBaseWKWebViewController ()<WKNavigationDelegate>//,UIActionSheetDelegate
+@interface CDBaseWKWebViewController ()<WKNavigationDelegate>
 
 /**
  *  进度条颜色,默认系统TintColor
@@ -19,14 +19,19 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
 @property (nonatomic, strong) UIColor *progressViewTintColor;
 
 /**
- *  是否在导航条显示URL,默认显示(YES)
+ *  是否在导航条显示URL,默认(NO)
  */
 @property (nonatomic, assign) BOOL showURLInNavigationBar;
 
 /**
- *  是否在导航条显示PageTitle,默认显示(YES)
+ *  是否在导航条显示PageTitle,默认(NO)
  */
 @property (nonatomic, assign) BOOL showPageTitleInNavigationBar;
+
+/**
+ *  保存前一个视图控制器navbar的显示隐藏状态
+ */
+@property (nonatomic, assign) BOOL previousNavigationBarHidden;
 
 /**
  *  UIWebView的url
@@ -34,11 +39,6 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
 @property (nonatomic, strong) NSURL *url;
 
 @property (nonatomic, strong) WKWebViewConfiguration *configuration;
-
-/**
- *  保存前一个视图控制器navbar的状态
- */
-@property (nonatomic, assign) BOOL previousNavigationBarHidden;
 
 @property (nonatomic, strong) UIProgressView *progressView;
 

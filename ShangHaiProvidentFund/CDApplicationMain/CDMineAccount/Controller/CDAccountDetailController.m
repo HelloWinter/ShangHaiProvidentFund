@@ -32,9 +32,10 @@ static const CGFloat kHeaderTitleHeight = 28.0;
 
 @implementation CDAccountDetailController
 
-- (instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle{
-    self = [super initWithTableViewStyle:tableViewStyle];
+- (instancetype)init{
+    self =[super init];
     if (self) {
+        self.tableViewStyle=UITableViewStyleGrouped;
         self.selectIndex=0;
         self.hidesBottomBarWhenPushed=YES;
         self.title=@"账户明细";
@@ -50,9 +51,9 @@ static const CGFloat kHeaderTitleHeight = 28.0;
     [self.view addSubview:self.detailHeaderView];
     self.tableView.top=self.detailHeaderView.bottom;
     self.tableView.height-=self.detailHeaderView.height;
-    [self refreshTableHeadView];
-    [self refreshArrDataWithSelectIndex:self.selectIndex];
-    [self refreshHeaderViewDataWithSelectIndex:self.selectIndex];
+    [self p_refreshTableHeadView];
+    [self p_refreshArrDataWithSelectIndex:self.selectIndex];
+    [self p_refreshHeaderViewDataWithSelectIndex:self.selectIndex];
     self.tableView.tableHeaderView=self.tableHeadView;
 }
 
@@ -141,13 +142,13 @@ static const CGFloat kHeaderTitleHeight = 28.0;
 - (void)slidePageHeaderView:(CDSlidePageHeaderView *)headerView didSelectButtonAtIndex:(NSUInteger)index{
     if (headerView==self.pageHeaderView) {
         self.selectIndex=index;
-        [self refreshArrDataWithSelectIndex:index];
-        [self refreshHeaderViewDataWithSelectIndex:index];
+        [self p_refreshArrDataWithSelectIndex:index];
+        [self p_refreshHeaderViewDataWithSelectIndex:index];
     }
 }
 
 #pragma mark - private
-- (void)refreshArrDataWithSelectIndex:(NSInteger)selectindex{
+- (void)p_refreshArrDataWithSelectIndex:(NSInteger)selectindex{
     [self.arrData removeAllObjects];
     if (selectindex==0) {
         [self.arrData addObjectsFromArray:self.loginModel.basicpridetail];
@@ -162,7 +163,7 @@ static const CGFloat kHeaderTitleHeight = 28.0;
     [self.tableView reloadData];
 }
 
-- (void)refreshHeaderViewDataWithSelectIndex:(NSInteger)selectindex{
+- (void)p_refreshHeaderViewDataWithSelectIndex:(NSInteger)selectindex{
     if (selectindex==0) {
         CDAccountInfoItem *item=[self.loginModel.basic firstObject];
         [self.detailHeaderView setupAccountInfo:item];
@@ -172,7 +173,7 @@ static const CGFloat kHeaderTitleHeight = 28.0;
     }
 }
 
-- (void)refreshTableHeadView{
+- (void)p_refreshTableHeadView{
     [self.tableHeadView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     if (self.loginModel.basic && self.loginModel.supply) {
         [self.tableHeadView addSubview:self.pageHeaderView];

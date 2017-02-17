@@ -59,7 +59,7 @@
 
 #pragma mark - private
 /* 获取验证码按钮 */
-- (UIButton *)getSecurityBtn{
+- (UIButton *)p_getSecurityBtn{
     if (!_getSecurityBtn) {
         _getSecurityBtn = [[UIButton alloc]init];
         UIImage *normalImg=[UIImage cd_imageWithColor:NAVIGATION_COLOR];
@@ -69,43 +69,43 @@
         [_getSecurityBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
         [_getSecurityBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
         [_getSecurityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_getSecurityBtn addTarget:self action:@selector(getSecurityCode) forControlEvents:UIControlEventTouchUpInside];
+        [_getSecurityBtn addTarget:self action:@selector(p_getSecurityCode) forControlEvents:UIControlEventTouchUpInside];
     }
     return _getSecurityBtn;
 }
 
-- (void)getSecurityCode{
+- (void)p_getSecurityCode{
     if (self.getVerCodeBlock) {
         BOOL shouldStart = self.getVerCodeBlock();
         if (shouldStart) {
-            [self startTimer];
+            [self p_startTimer];
         }
     }
 }
 
 /* 刷新倒计时和按钮title */
-- (void)updateCountdown{
+- (void)p_updateCountdown{
     if (_countDown > 0) {
         [self.getSecurityBtn setTitle:[NSString stringWithFormat:@"%ld秒",(long)_countDown] forState:UIControlStateDisabled];
         _countDown --;
     }else{
-        [self invalidTimer];
+        [self p_invalidTimer];
         self.getSecurityBtn.enabled=YES;
         [self.getSecurityBtn setTitle:@"重新获取" forState:UIControlStateNormal];
     }
 }
 
 /* 启动定时器，开始倒计时，在此期间不能重新获取验证码，并使按钮颜色变成灰色 */
-- (void)startTimer{
-    [self invalidTimer];
+- (void)p_startTimer{
+    [self p_invalidTimer];
     _countDown = 59;
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateCountdown) userInfo:nil repeats:YES];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(p_updateCountdown) userInfo:nil repeats:YES];
     [_timer fire];
     self.getSecurityBtn.enabled = NO;
 }
 
 /* 关闭定时器 */
-- (void)invalidTimer{
+- (void)p_invalidTimer{
     if (_timer.isValid) {
         [_timer invalidate];
         _timer = nil;

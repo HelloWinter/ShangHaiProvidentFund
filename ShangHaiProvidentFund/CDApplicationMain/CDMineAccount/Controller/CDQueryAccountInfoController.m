@@ -35,9 +35,10 @@ static const CGFloat headerOriginalHeight=180;
 
 @implementation CDQueryAccountInfoController
 
-- (instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle{
-    self = [super initWithTableViewStyle:tableViewStyle];
+- (instancetype)init{
+    self =[super init];
     if (self) {
+        self.tableViewStyle=UITableViewStyleGrouped;
         self.showDragView=NO;
         self.hidesNavigationBarWhenPushed=YES;
     }
@@ -50,8 +51,8 @@ static const CGFloat headerOriginalHeight=180;
     self.tableView.height+=20;
     self.tableView.tableHeaderView=self.headerView;
     [self.tableView insertSubview:self.zoomImageView atIndex:0];
-    [self showRightBarBtn];
-    [self reloadHeaderView];
+    [self p_showRightBarBtn];
+    [self p_reloadHeaderView];
 }
 
 - (CDQueryAccountInfoModel *)queryAccountInfoModel{
@@ -76,7 +77,7 @@ static const CGFloat headerOriginalHeight=180;
         __weak typeof(self) weakSelf=self;
         _headerView.viewTappedBlock=^(){
             if (!CDIsUserLogined()) {
-                [weakSelf presentLoginViewController];
+                [weakSelf p_presentLoginViewController];
             }
         };
     }
@@ -129,20 +130,20 @@ static const CGFloat headerOriginalHeight=180;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (!CDIsUserLogined()) {
-        [self presentLoginViewController];
+        [self p_presentLoginViewController];
         return;
     }
     switch (indexPath.section) {
         case 0:
-            [self pushToAccountDetailController];
+            [self p_pushToAccountDetailController];
             break;
         case 1:{
             switch (indexPath.row) {
                 case 0:
-                    [self pushToLoanDetailController];
+                    [self p_pushToLoanDetailController];
                     break;
                 case 1:
-                    [self pushToRepaymentInfoController];
+                    [self p_pushToRepaymentInfoController];
                     break;
                 default:
                     break;
@@ -160,7 +161,7 @@ static const CGFloat headerOriginalHeight=180;
 
 #pragma mark - CDLoginViewControllerDelegate
 - (void)userDidLogin{
-    [self reloadHeaderView];
+    [self p_reloadHeaderView];
 }
 
 - (void)userCanceledLogin{
@@ -169,30 +170,30 @@ static const CGFloat headerOriginalHeight=180;
 
 #pragma mark - NSNotification
 - (void)userLoginStateChanged:(NSNotification *)noti{
-    [self reloadHeaderView];
+    [self p_reloadHeaderView];
 }
 
 #pragma mark - private
-- (void)showRightBarBtn{
+- (void)p_showRightBarBtn{
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     barButton.frame = CGRectMake(self.view.width-45, 20, 30, 44);
     [barButton setImage:[UIImage imageNamed:@"tab_settingicon"] forState:(UIControlStateNormal)];
-    [barButton addTarget:self action:@selector(rightBarBtnClick) forControlEvents:(UIControlEventTouchUpInside)];
+    [barButton addTarget:self action:@selector(p_rightBarBtnClick) forControlEvents:(UIControlEventTouchUpInside)];
     [self.view addSubview:barButton];
 }
 
-- (void)rightBarBtnClick{
-    [self pushToAboutUsController];
+- (void)p_rightBarBtnClick{
+    [self p_pushToAboutUsController];
 }
 
-- (void)presentLoginViewController{
-    CDLoginViewController *controller=[[CDLoginViewController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+- (void)p_presentLoginViewController{
+    CDLoginViewController *controller=[[CDLoginViewController alloc]init];
     controller.delegate=self;
     CDNavigationController *nav=[[CDNavigationController alloc]initWithRootViewController:controller];
     [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 
-- (void)reloadHeaderView{
+- (void)p_reloadHeaderView{
     if (CDIsUserLogined()) {
         NSString *file=[CDAPPURLConfigure filePathforLoginInfo];
         if (file) {
@@ -205,29 +206,29 @@ static const CGFloat headerOriginalHeight=180;
     }
 }
 
-- (void)pushToAboutUsController{
-    CDAboutUsController *fourVC = [[CDAboutUsController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+- (void)p_pushToAboutUsController{
+    CDAboutUsController *fourVC = [[CDAboutUsController alloc]init];
     [self.navigationController pushViewController:fourVC animated:YES];
 }
 
-- (void)pushToAccountDetailController{
-    CDAccountDetailController *controller=[[CDAccountDetailController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+- (void)p_pushToAccountDetailController{
+    CDAccountDetailController *controller=[[CDAccountDetailController alloc]init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (void)pushToLoanDetailController{
+- (void)p_pushToLoanDetailController{
     NSString *file=[CDAPPURLConfigure filePathforLoginInfo];
     CDLoginModel *model = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
     if (model.account.count==0 || model.dynamicdetail.count==0) {
         [CDAutoHideMessageHUD showMessage:@"您没有贷款信息"];
         return;
     }
-    CDLoanInfoViewController *controller=[[CDLoanInfoViewController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    CDLoanInfoViewController *controller=[[CDLoanInfoViewController alloc]init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (void)pushToRepaymentInfoController{
-    CDRepaymentInfoController *controller= [[CDRepaymentInfoController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+- (void)p_pushToRepaymentInfoController{
+    CDRepaymentInfoController *controller= [[CDRepaymentInfoController alloc]init];
     NSString *file=[CDAPPURLConfigure filePathforLoginInfo];
     CDLoginModel *model = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
     CDAccountInfoItem *accountInfoItem=[model.basic firstObject];

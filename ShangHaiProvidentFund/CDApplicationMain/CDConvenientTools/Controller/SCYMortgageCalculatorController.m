@@ -37,9 +37,10 @@ static const CGFloat topHeight=50;
 
 @implementation SCYMortgageCalculatorController
 
-- (instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle{
-    self = [super initWithTableViewStyle:tableViewStyle];
+- (instancetype)init{
+    self =[super init];
     if (self) {
+        self.tableViewStyle=UITableViewStyleGrouped;
         self.title=@"房贷计算";
         self.mortgageType=SCYMortgageTypeProvidentFundLoan;
         self.hideKeyboradWhenTouch=YES;
@@ -87,7 +88,7 @@ static const CGFloat topHeight=50;
         [_footerView setupBtnBackgroundColor:ColorFromHexRGB(0x38ca73)];
         __weak typeof(self) weakSelf=self;
         _footerView.buttonClickBlock=^(UIButton *sender){
-            [weakSelf startCalculator];
+            [weakSelf p_startCalculator];
         };
     }
     return _footerView;
@@ -133,7 +134,7 @@ static const CGFloat topHeight=50;
          UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"公积金贷款",@"商业贷款",@"组合贷款", nil]];
         segmentControl.bounds=CGRectMake(0, 0, self.view.width-20, 30);
         segmentControl.center=CGPointMake(_headerView.width*0.5, _headerView.height*0.5);
-        [segmentControl addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
+        [segmentControl addTarget:self action:@selector(p_segmentAction:) forControlEvents:UIControlEventValueChanged];
         segmentControl.selectedSegmentIndex = 0;
         segmentControl.tintColor = NAVIGATION_COLOR;
         [_headerView addSubview:segmentControl];
@@ -229,7 +230,7 @@ static const CGFloat topHeight=50;
 - (void)serviceDidFinished:(CDJSONBaseNetworkService *)service{
     [super serviceDidFinished:service];
     if (self.mortgageCalculatorService.returnCode==1) {
-        [self recombinationData];
+        [self p_recombinationData];
     }
 }
 
@@ -252,8 +253,8 @@ static const CGFloat topHeight=50;
     }
 }
 
-#pragma mark - Events
-- (void)segmentAction:(UISegmentedControl*)sender{
+#pragma mark - private
+- (void)p_segmentAction:(UISegmentedControl*)sender{
     switch (sender.selectedSegmentIndex) {
         case 0:
             self.mortgageType=SCYMortgageTypeProvidentFundLoan;
@@ -267,13 +268,13 @@ static const CGFloat topHeight=50;
         default:
             break;
     }
-    [self refreshArrData];
+    [self p_refreshArrData];
 }
 
 /**
  *  重组数据，用动态数据修改内存中模型
  */
-- (void)recombinationData{
+- (void)p_recombinationData{
     for (SCYMortgageCalculatorCellItem *item in self.mortgageCalculatorModel.businessloan) {
         if ([item.paramkey isEqualToString:@"businessloanrate"]) {
             SCYLoanRateItem *rateItem = [self.mortgageCalculatorService.businessloan cd_safeObjectAtIndex:0];
@@ -290,10 +291,10 @@ static const CGFloat topHeight=50;
             [item.paramsubitemsdata addObjectsFromArray:self.mortgageCalculatorService.businessloan];
         }
     }
-    [self refreshArrData];
+    [self p_refreshArrData];
 }
 
-- (void)refreshArrData{
+- (void)p_refreshArrData{
     [self.arrData removeAllObjects];
     if (self.mortgageType==SCYMortgageTypeProvidentFundLoan) {
         [self.arrData addObjectsFromArray:self.mortgageCalculatorModel.providentfundloan];
@@ -306,7 +307,7 @@ static const CGFloat topHeight=50;
     [self.tableView reloadData];
 }
 
-- (void)startCalculator{
+- (void)p_startCalculator{
     [self.view endEditing:YES];
     
     SCYMortgageCalculatorSourceItem *sourceItemfund = [[SCYMortgageCalculatorSourceItem alloc]init];
@@ -351,14 +352,14 @@ static const CGFloat topHeight=50;
     
     switch (self.mortgageType) {
         case SCYMortgageTypeProvidentFundLoan:
-            self.resultItem=[self resultWithCalculateSourceItem:sourceItemfund];
+            self.resultItem=[self p_resultWithCalculateSourceItem:sourceItemfund];
             break;
         case SCYMortgageTypeCommercialLoan:
-            self.resultItem=[self resultWithCalculateSourceItem:sourceItembusiness];
+            self.resultItem=[self p_resultWithCalculateSourceItem:sourceItembusiness];
             break;
         case SCYMortgageTypeCombinedLoan:{
-            SCYMortgageCalculatorResultItem *resultItemFund = [self resultWithCalculateSourceItem:sourceItemfund];
-            SCYMortgageCalculatorResultItem *resultItemBusiness = [self resultWithCalculateSourceItem:sourceItembusiness];
+            SCYMortgageCalculatorResultItem *resultItemFund = [self p_resultWithCalculateSourceItem:sourceItemfund];
+            SCYMortgageCalculatorResultItem *resultItemBusiness = [self p_resultWithCalculateSourceItem:sourceItembusiness];
             
             self.resultItem = [[SCYMortgageCalculatorResultItem alloc]init];
             self.resultItem.capitalization=resultItemFund.capitalization+resultItemBusiness.capitalization;
@@ -380,7 +381,7 @@ static const CGFloat topHeight=50;
  *
  *  @param sourceItem 源贷款信息
  */
-- (SCYMortgageCalculatorResultItem *)resultWithCalculateSourceItem:(SCYMortgageCalculatorSourceItem *)sourceItem {
+- (SCYMortgageCalculatorResultItem *)p_resultWithCalculateSourceItem:(SCYMortgageCalculatorSourceItem *)sourceItem {
     CGFloat capitalization = sourceItem.capitalization;// * 10000
     CGFloat rateOfMonth = sourceItem.rate / 12 * 0.01;
     NSInteger months = sourceItem.duetime;//*12

@@ -10,9 +10,9 @@
 
 @interface SCYAnnualBonusCalculateRulesItem : CDBaseItem
 
-@property (nonatomic, copy) NSString *left;
-@property (nonatomic, copy) NSString *center;
-@property (nonatomic, copy) NSString *right;
+@property (nonatomic, copy, readonly) NSString *left;
+@property (nonatomic, copy, readonly) NSString *center;
+@property (nonatomic, copy, readonly) NSString *right;
 
 + (SCYAnnualBonusCalculateRulesItem *)itemWithLeft:(NSString *)left center:(NSString *)center right:(NSString *)right;
 

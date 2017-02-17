@@ -8,6 +8,13 @@
 
 #import "CDConvenientToolsItem.h"
 
+@interface CDConvenientToolsItem ()
+
+@property (nonatomic, copy) NSString *imgName;
+@property (nonatomic, copy) NSString *title;
+
+@end
+
 @implementation CDConvenientToolsItem
 
 + (instancetype)itemWithImageName:(NSString *)imgname title:(NSString *)title{

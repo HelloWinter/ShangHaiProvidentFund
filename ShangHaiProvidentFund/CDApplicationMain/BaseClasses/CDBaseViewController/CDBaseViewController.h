@@ -13,7 +13,7 @@
 @interface CDBaseViewController : UIViewController<CDJSONBaseNetworkServiceDelegate>
 
 /**
- *  状态栏是否隐藏
+ *  状态栏是否隐藏,默认为NO
  */
 @property (nonatomic, assign) BOOL statusBarHidden;
 
@@ -28,12 +28,12 @@
 @property (nonatomic, copy) NSString *backImageName;
 
 /**
- 显示返回按钮
+ *  显示返回按钮
  */
 - (void)cd_showBackButton;
 
 /**
- 返回动作，子类可重写此方法拦截返回事件
+ *  返回动作，子类可重写此方法拦截返回事件
  */
 - (void)cd_backOffAction;
 

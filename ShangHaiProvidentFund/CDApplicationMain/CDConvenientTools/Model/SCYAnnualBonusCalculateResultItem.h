@@ -10,8 +10,8 @@
 
 @interface SCYAnnualBonusCalculateResultItem : CDBaseItem
 
-@property (nonatomic, copy) NSNumber *before;
-@property (nonatomic, copy) NSNumber *after;
+@property (nonatomic, copy, readonly) NSNumber *before;
+@property (nonatomic, copy, readonly) NSNumber *after;
 
 + (SCYAnnualBonusCalculateResultItem *)itemWithBefore:(NSNumber *)before after:(NSNumber *)after;
 

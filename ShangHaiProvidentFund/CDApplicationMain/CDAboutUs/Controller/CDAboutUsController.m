@@ -26,9 +26,10 @@
 
 @implementation CDAboutUsController
 
-- (instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle{
-    self = [super initWithTableViewStyle:tableViewStyle];
+- (instancetype)init{
+    self =[super init];
     if (self) {
+        self.tableViewStyle=UITableViewStyleGrouped;
         self.title=@"关于我们";
         self.showDragView=NO;
         self.hidesBottomBarWhenPushed=YES;
@@ -187,12 +188,12 @@
 }
 
 - (void)pushToOpinionsSuggestionsController{
-    CDOpinionsSuggestionsController *controller=[[CDOpinionsSuggestionsController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    CDOpinionsSuggestionsController *controller=[[CDOpinionsSuggestionsController alloc]init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)presentLoginViewController{
-    CDLoginViewController *controller=[[CDLoginViewController alloc]initWithTableViewStyle:(UITableViewStyleGrouped)];
+    CDLoginViewController *controller=[[CDLoginViewController alloc]init];
     controller.delegate=self;
     CDNavigationController *nav=[[CDNavigationController alloc]initWithRootViewController:controller];
     [self.navigationController presentViewController:nav animated:YES completion:nil];

@@ -23,9 +23,10 @@
 
 @implementation SCYAnnualBonusCalculateResultController
 
-- (instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle{
-    self = [super initWithTableViewStyle:tableViewStyle];
+- (instancetype)init{
+    self =[super init];
     if (self) {
+        self.tableViewStyle=UITableViewStyleGrouped;
         self.title=@"年终奖计算器";
         self.showDragView=NO;
     }

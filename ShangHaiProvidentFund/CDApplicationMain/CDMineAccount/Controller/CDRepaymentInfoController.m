@@ -19,9 +19,10 @@
 
 @implementation CDRepaymentInfoController
 
-- (instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle{
-    self = [super initWithTableViewStyle:tableViewStyle];
+- (instancetype)init{
+    self =[super init];
     if (self) {
+        self.tableViewStyle=UITableViewStyleGrouped;
         self.title=@"冲还贷信息";
         self.hidesBottomBarWhenPushed=YES;
     }

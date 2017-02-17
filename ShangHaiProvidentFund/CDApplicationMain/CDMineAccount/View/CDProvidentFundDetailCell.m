@@ -86,25 +86,25 @@
     strSubDate = [strSubDate stringByReplacingOccurrencesOfString:@"年" withString:@""];
     strSubDate = [strSubDate stringByReplacingOccurrencesOfString:@"月" withString:@""];
     strSubDate = [strSubDate stringByReplacingOccurrencesOfString:@"日" withString:@""];
-    NSString *strAmount=[self removeYUAN:cellItem.surplus_def_hp];
-    [self setupLeftText:strSubDate centerText:(cellItem.summary ? : @"--") rightText:strAmount];
+    NSString *strAmount=[self p_removeYUAN:cellItem.surplus_def_hp];
+    [self p_setupLeftText:strSubDate centerText:(cellItem.summary ? : @"--") rightText:strAmount];
 }
 
 - (void)setupLoanDetailItem:(CDDynamicdetailItem *)cellItem{
     NSString *strDesc=cellItem.summary.length!=0 ? cellItem.summary : @"--";
-    NSString *strAmount=[self removeYUAN:cellItem.corpushappen];
-    NSString *strInterest=[self removeYUAN:cellItem.interesthappen];
-    [self setupLeftText:strDesc centerText:strAmount rightText:strInterest];
+    NSString *strAmount=[self p_removeYUAN:cellItem.corpushappen];
+    NSString *strInterest=[self p_removeYUAN:cellItem.interesthappen];
+    [self p_setupLeftText:strDesc centerText:strAmount rightText:strInterest];
 }
 
 #pragma mark - private
-- (void)setupLeftText:(NSString *)left centerText:(NSString *)center rightText:(NSString *)right{
+- (void)p_setupLeftText:(NSString *)left centerText:(NSString *)center rightText:(NSString *)right{
     self.lbDate.text=left;
     self.lbCompany.text=center;
     self.lbMonthPay.text=right;
 }
 
-- (NSString *)removeYUAN:(NSString *)strAmount{
+- (NSString *)p_removeYUAN:(NSString *)strAmount{
     if ([strAmount hasSuffix:@"元"]) {
         NSRange range=[strAmount rangeOfString:@"元"];
         strAmount=[strAmount substringToIndex:range.location];

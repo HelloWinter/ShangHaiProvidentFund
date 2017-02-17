@@ -30,9 +30,10 @@
 
 @implementation CDRegistViewController
 
-- (instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle{
-    self = [super initWithTableViewStyle:tableViewStyle];
+- (instancetype)init{
+    self =[super init];
     if (self) {
+        self.tableViewStyle=UITableViewStyleGrouped;
         self.title=@"个人注册";
         self.showDragView=NO;
         self.hideKeyboradWhenTouch=YES;
@@ -48,7 +49,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(controlTextDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(p_controlTextDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -89,13 +90,13 @@
         _footerView.frame=CGRectMake(0, 0, self.tableView.width, 140);
         __weak typeof(self) weakSelf=self;
         _footerView.showProtocolBlock=^(){
-            [weakSelf pushToWKWebViewControllerWithTitle:@"个人用户协议" javaScriptCode:nil URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yhxy")];
+            [weakSelf p_pushToWKWebViewControllerWithTitle:@"个人用户协议" javaScriptCode:nil URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yhxy")];
         };
         _footerView.registBlock=^(){
-            [weakSelf regist];
+            [weakSelf p_regist];
         };
         _footerView.showProblemBlock=^(){
-            [weakSelf showProbilemActionSheet];
+            [weakSelf p_showProbilemActionSheet];
         };
     }
     return _footerView;
@@ -115,7 +116,7 @@
             cell = [[CDVerificationCodeCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:vercellidentifier];
             __weak typeof(self) weakSelf=self;
             cell.getVerCodeBlock=^BOOL(){
-                return [weakSelf getVerCode];
+                return [weakSelf p_getVerCode];
             };
         }
         [cell setupItem:(item) indexPath:indexPath];
@@ -162,30 +163,30 @@
 }
 
 #pragma mark - Notification
-- (void)controlTextDidChange:(NSNotification *)noti{
+- (void)p_controlTextDidChange:(NSNotification *)noti{
     UITextField *textField = noti.object;
     CDOpinionsSuggestionsItem *cellItem = [self.registConfigureModel.arrData cd_safeObjectAtIndex:textField.indexPath.row];
     cellItem.value=textField.text;
 }
 
 #pragma mark - private
-- (void)pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
+- (void)p_pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[CDBaseWKWebViewController webViewWithURL:[NSURL URLWithString:urlstr]];
     webViewController.title=title;
     webViewController.javaScriptCode=jsCode;
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 
-- (void)showProbilemActionSheet{
+- (void)p_showProbilemActionSheet{
     UIAlertController *alert=[UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
     UIAlertAction *actionCancel=[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
     }];
     UIAlertAction *actionProbilem=[UIAlertAction actionWithTitle:@"常见问题" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         NSString *jsCode=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element" tagName:@"link"];
-        [self pushToWKWebViewControllerWithTitle:@"常见问题" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=cjwt")];
+        [self p_pushToWKWebViewControllerWithTitle:@"常见问题" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=cjwt")];
     }];
     UIAlertAction *actionQuery=[UIAlertAction actionWithTitle:@"个人公积金账号查询" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        [self pushToWKWebViewControllerWithTitle:@"个人公积金账号查询" javaScriptCode:nil URLString:@"http://m.shgjj.com/verifier/verifier/index"];
+        [self p_pushToWKWebViewControllerWithTitle:@"个人公积金账号查询" javaScriptCode:nil URLString:@"http://m.shgjj.com/verifier/verifier/index"];
     }];
     [alert addAction:actionCancel];
     [alert addAction:actionProbilem];
@@ -193,7 +194,7 @@
     [self presentViewController:alert animated:YES completion:NULL];
 }
 
-- (void)regist{
+- (void)p_regist{
     NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
     NSString *psw=nil;
     NSString *repsw=nil;
@@ -219,7 +220,7 @@
     [self.registService loadWithParams:dict showIndicator:YES];
 }
 
-- (NSString *)getMobileNum{
+- (NSString *)p_getMobileNum{
     for (CDOpinionsSuggestionsItem *item in self.registConfigureModel.arrData) {
         if ([item.paramsubmit isEqualToString:@"mobile"]) {
             if (item.value.length==0) {
@@ -232,8 +233,8 @@
     return nil;
 }
 
-- (BOOL)getVerCode{
-    NSString *mobileNum =[self getMobileNum];
+- (BOOL)p_getVerCode{
+    NSString *mobileNum =[self p_getMobileNum];
     if (!mobileNum) {
         [CDAutoHideMessageHUD showMessage:@"请输入手机号"];
         return NO;

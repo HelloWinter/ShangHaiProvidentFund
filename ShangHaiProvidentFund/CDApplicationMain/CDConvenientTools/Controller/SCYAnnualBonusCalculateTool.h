@@ -20,15 +20,4 @@ typedef NS_ENUM(NSInteger,SCYAnnualBonusCalculateType) {
     SCYAnnualBonusCalculateType2
 };
 
-typedef NS_ENUM(NSInteger,SCYPersonalIncomeTaxCalculateType) {
-    /**
-     计算税后
-     */
-    SCYPersonalIncomeTaxCalculateType1,
-    /**
-     反推税前
-     */
-    SCYPersonalIncomeTaxCalculateType2
-};
-
 #endif /* SCYAnnualBonusCalculateTool_h */

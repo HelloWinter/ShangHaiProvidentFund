@@ -13,7 +13,7 @@
 
 @interface CDBaseTableViewController ()
 
-@property (nonatomic, assign) UITableViewStyle tableViewStyle;
+
 @property (nonatomic, strong) SCYRefreshControl *refreshControl;
 
 @end
@@ -30,15 +30,7 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
-        [self setUpInitWithTableViewStyle:UITableViewStylePlain];
-    }
-    return self;
-}
-
-- (instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle{
-    self = [super init];
-    if (self) {
-        [self setUpInitWithTableViewStyle:tableViewStyle];
+        [self setUpInit];
     }
     return self;
 }
@@ -46,13 +38,13 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self setUpInitWithTableViewStyle:UITableViewStylePlain];
+        [self setUpInit];
     }
     return self;
 }
 
-- (void)setUpInitWithTableViewStyle:(UITableViewStyle)tableViewStyle{
-    _tableViewStyle= tableViewStyle;
+- (void)setUpInit{
+    self.tableViewStyle=UITableViewStylePlain;
     self.showDragView = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
@@ -79,7 +71,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
-    [self setupPullRefreshView];
+    [self p_setupPullRefreshView];
 }
 
 - (UITableView *)tableView{
@@ -166,7 +158,7 @@
 }
 
 #pragma mark - private
-- (void)setupPullRefreshView{
+- (void)p_setupPullRefreshView{
     if (self.showDragView) {
         if (!self.navigationController.navigationBarHidden) {
             [self setEdgesForExtendedLayout:UIRectEdgeLeft | UIRectEdgeRight];//UIRectEdgeBottom |

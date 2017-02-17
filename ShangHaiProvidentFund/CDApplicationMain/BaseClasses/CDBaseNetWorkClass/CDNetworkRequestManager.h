@@ -13,7 +13,7 @@
 @interface CDNetworkRequestManager : NSObject
 
 /**
- *  返回单列对象
+ *  返回单例对象
  */
 + (instancetype)sharedManager;
 

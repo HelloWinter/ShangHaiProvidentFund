@@ -54,9 +54,10 @@
     return _cache;
 }
 
+#pragma mark - public
 - (void)request:(NSString *)urlString params:(id)params {
     if (!urlString || urlString.length == 0) { return; }
-    [self resetNetworkService];
+    [self p_resetNetworkService];
     
     /**
      *  先使用缓存数据
@@ -67,7 +68,7 @@
         if ([self.cache containsObjectForKey:self.cacheURLStringID]) {
             CDLog(@"使用缓存数据:%@",urlString);
             _isUseCache=YES;
-            [self succeedGetResponse:[self.cache objectForKey:self.cacheURLStringID]];
+            [self p_succeedGetResponse:[self.cache objectForKey:self.cacheURLStringID]];
         }
     }
     
@@ -82,12 +83,12 @@
                 if (!error) {
                     if ([weakSelf isKindOfClass:[CDJSONBaseNetworkService class]]) {
                         _isLoaded = YES;
-                        [weakSelf taskDidFinish:task responseObject:responseObj];
+                        [weakSelf p_taskDidFinish:task responseObject:responseObj];
                     }
                 }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 if ([weakSelf isKindOfClass:[CDJSONBaseNetworkService class]]) {
-                    [weakSelf taskDidFail:task error:error];
+                    [weakSelf p_taskDidFail:task error:error];
                 }
             }];
             
@@ -101,12 +102,12 @@
                 if (!error) {
                     if ([weakSelf isKindOfClass:[CDJSONBaseNetworkService class]]) {
                         _isLoaded = YES;
-                        [weakSelf taskDidFinish:task responseObject:responseObj];
+                        [weakSelf p_taskDidFinish:task responseObject:responseObj];
                     }
                 }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 if ([weakSelf isKindOfClass:[CDJSONBaseNetworkService class]]) {
-                    [weakSelf taskDidFail:task error:error];
+                    [weakSelf p_taskDidFail:task error:error];
                 }
             }];
         }   break;
@@ -117,43 +118,6 @@
     [CDNetworkRequestManager addService:self];
     //打印请求信息
     CDLog(@">>> %@ Request URL: %@ Parameters:\n%@",(_httpRequestMethod==kHttpRequestTypePOST ? @"POST":@"GET"),urlString,params);
-}
-
-- (NSString *)requsetURLString{
-    return self.currentTask.currentRequest.URL.absoluteString;
-}
-
-/* 请求完成 */
-- (void)taskDidFinish:(NSURLSessionTask *)task responseObject:(id)responseObject {
-    CDLog(@">>> URL: %@ Response Data: %@ ", task.currentRequest.URL,responseObject);
-    if (task.state == NSURLSessionTaskStateCompleted) {
-        _isLoaded = YES;
-        _isLoading=NO;
-        _isUseCache=NO;
-        [self succeedGetResponse:responseObject];
-        self.currentTask = nil;
-        [CDNetworkRequestManager removeService:self];
-    }
-}
-
-/* 请求失败 */
-- (void)taskDidFail:(NSURLSessionTask *)task error:(NSError *)error {
-    CDLog(@">>> URL: %@ Response Error: %@", task.currentRequest.URL,error.localizedDescription);
-    if (task.state == NSURLSessionTaskStateCompleted || task.state == NSURLSessionTaskStateCanceling) {
-        _isLoading=NO;
-        if (error.code==NSURLErrorBadServerResponse) {
-            if (self.toCacheData && [self.cache containsObjectForKey:self.cacheURLStringID]) {
-                CDLog(@"使用缓存数据(BadServer)%@",task.currentRequest.URL.absoluteString);
-                _isUseCache=YES;
-                [self succeedGetResponse:[self.cache objectForKey:self.cacheURLStringID]];
-            }
-        }
-        if (self.delegate && [self.delegate respondsToSelector:@selector(service:didFailLoadWithError:)]) {
-            [self.delegate service:self didFailLoadWithError:error];
-        }
-        self.currentTask = nil;
-        [CDNetworkRequestManager removeService:self];
-    }
 }
 
 - (void)cancel {
@@ -168,7 +132,51 @@
     [CDNetworkRequestManager removeService:self];
 }
 
-- (void)succeedGetResponse:(id)responseObject{
+- (void)requestDidFinish:(id)rootData {
+    if (self.toCacheData && self.cacheURLStringID && _returnCode==1) {
+        [self.cache setObject:rootData forKey:self.cacheURLStringID];
+    }
+}
+
+#pragma mark - private
+- (NSString *)p_requsetURLString{
+    return self.currentTask.currentRequest.URL.absoluteString;
+}
+
+/* 请求完成 */
+- (void)p_taskDidFinish:(NSURLSessionTask *)task responseObject:(id)responseObject {
+    CDLog(@">>> URL: %@ Response Data: %@ ", task.currentRequest.URL,responseObject);
+    if (task.state == NSURLSessionTaskStateCompleted) {
+        _isLoaded = YES;
+        _isLoading=NO;
+        _isUseCache=NO;
+        [self p_succeedGetResponse:responseObject];
+        self.currentTask = nil;
+        [CDNetworkRequestManager removeService:self];
+    }
+}
+
+/* 请求失败 */
+- (void)p_taskDidFail:(NSURLSessionTask *)task error:(NSError *)error {
+    CDLog(@">>> URL: %@ Response Error: %@", task.currentRequest.URL,error.localizedDescription);
+    if (task.state == NSURLSessionTaskStateCompleted || task.state == NSURLSessionTaskStateCanceling) {
+        _isLoading=NO;
+        if (error.code==NSURLErrorBadServerResponse) {
+            if (self.toCacheData && [self.cache containsObjectForKey:self.cacheURLStringID]) {
+                CDLog(@"使用缓存数据(BadServer)%@",task.currentRequest.URL.absoluteString);
+                _isUseCache=YES;
+                [self p_succeedGetResponse:[self.cache objectForKey:self.cacheURLStringID]];
+            }
+        }
+        if (self.delegate && [self.delegate respondsToSelector:@selector(service:didFailLoadWithError:)]) {
+            [self.delegate service:self didFailLoadWithError:error];
+        }
+        self.currentTask = nil;
+        [CDNetworkRequestManager removeService:self];
+    }
+}
+
+- (void)p_succeedGetResponse:(id)responseObject{
     _rootData = responseObject;
 //    if ([_rootData isKindOfClass:[NSDictionary class]]) {
 //        id returnCode = [_rootData objectForKey:@"code"];
@@ -185,16 +193,7 @@
     }
 }
 
-/**
- *  子类可覆写，把请求到的数据转换成模型
- */
-- (void)requestDidFinish:(id)rootData {
-    if (self.toCacheData && self.cacheURLStringID && _returnCode==1) {
-        [self.cache setObject:rootData forKey:self.cacheURLStringID];
-    }
-}
-
-- (void)resetNetworkService{
+- (void)p_resetNetworkService{
     [self.currentTask cancel];
     self.currentTask=nil;
     _isLoading=NO;

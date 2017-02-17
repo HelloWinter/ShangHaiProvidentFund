@@ -26,9 +26,10 @@
 
 @implementation CDOpinionsSuggestionsController
 
-- (instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle{
-    self = [super initWithTableViewStyle:tableViewStyle];
+- (instancetype)init{
+    self =[super init];
     if (self) {
+        self.tableViewStyle=UITableViewStyleGrouped;
         self.title=@"在线留言";
         self.showDragView=NO;
         self.hideKeyboradWhenTouch=YES;
@@ -58,7 +59,7 @@
         [_footerView setupBtnTitle:@"提交"];
         __weak typeof(self) weakSelf=self;
         _footerView.buttonClickBlock=^(UIButton *sender){
-            [weakSelf commitMessage];
+            [weakSelf p_commitMessage];
         };
     }
     return _footerView;
@@ -144,7 +145,7 @@
 }
 
 #pragma mark - private
-- (void)commitMessage{
+- (void)p_commitMessage{
     NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
     for (CDOpinionsSuggestionsItem *item in self.opinionsSuggestionsModel.arrData) {
         if (item.value.length==0) {
