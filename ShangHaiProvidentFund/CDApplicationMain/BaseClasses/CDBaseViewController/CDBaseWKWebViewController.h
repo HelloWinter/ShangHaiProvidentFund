@@ -28,18 +28,21 @@
  */
 + (instancetype)webViewWithURL:(NSURL *)url;
 
-+ (instancetype)webViewWithURL:(NSURL *)url Configuration:(WKWebViewConfiguration*)configuration;
-
 /**
- *  刷新网页
+ *  快速创建网页控制器实例
  */
-- (void)refresh;
++ (instancetype)webViewWithURL:(NSURL *)url Configuration:(WKWebViewConfiguration*)configuration;
 
 /**
  *  加载网页源代码
  *
  *  @param HTMLString 网页源代码
  */
-- (void)loadHTMLString:(NSString *)HTMLString;
+- (void)loadWithHTMLString:(NSString *)HTMLString;
+
+/**
+ *  刷新网页
+ */
+- (void)refreshWebView;
 
 @end

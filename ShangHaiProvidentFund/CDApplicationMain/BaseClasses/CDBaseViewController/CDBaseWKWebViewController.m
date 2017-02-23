@@ -11,7 +11,7 @@
 
 static void *CDWebBrowserContext = &CDWebBrowserContext;
 
-@interface CDBaseWKWebViewController ()<WKNavigationDelegate>
+@interface CDBaseWKWebViewController ()<WKNavigationDelegate,WKUIDelegate,UINavigationControllerDelegate,UINavigationBarDelegate>
 
 /**
  *  进度条颜色,默认系统TintColor
@@ -29,11 +29,6 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
 @property (nonatomic, assign) BOOL showPageTitleInNavigationBar;
 
 /**
- *  保存前一个视图控制器navbar的显示隐藏状态
- */
-@property (nonatomic, assign) BOOL previousNavigationBarHidden;
-
-/**
  *  UIWebView的url
  */
 @property (nonatomic, strong) NSURL *url;
@@ -47,7 +42,6 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
 @implementation CDBaseWKWebViewController
 @synthesize webView=_webView;
 
-#pragma mark - Dealloc
 - (void)dealloc {
     [self.webView setNavigationDelegate:nil];
     [self.webView setUIDelegate:nil];
@@ -72,17 +66,16 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
         self.showPageTitleInNavigationBar = NO;
         self.hidesBottomBarWhenPushed=YES;
         self.progressViewTintColor=[UIColor greenColor];
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
     }
     return self;
 }
 
 - (void)viewDidLoad{
-    self.previousNavigationBarHidden = self.navigationController.navigationBarHidden;
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.view addSubview:self.webView];
-    if (self.url!=nil) {
-        [self loadURL:self.url];
+    if (self.url) {
+        [self loadWithURL:self.url];
     }
 }
 
@@ -93,25 +86,32 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.webView stopLoading];
+    if (self.webView.isLoading) {
+        [self.webView stopLoading];
+    }
     [self.progressView removeFromSuperview];
-    [self.navigationController setNavigationBarHidden:self.previousNavigationBarHidden animated:animated];
 }
 
 - (WKWebView *)webView{
     if (_webView==nil) {
         if (self.configuration) {
-            _webView =[[WKWebView alloc]initWithFrame:CGRectZero configuration:self.configuration];
+            _webView =[[WKWebView alloc]initWithFrame:self.view.bounds configuration:self.configuration];
         }else{
-            _webView = [[WKWebView alloc] init];
+            WKUserScript *script=[[WKUserScript alloc]initWithSource:self.javaScriptCode injectionTime:(WKUserScriptInjectionTimeAtDocumentEnd) forMainFrameOnly:YES];
+            WKUserContentController *contentController=[[WKUserContentController alloc]init];
+            [contentController addUserScript:script];
+            WKWebViewConfiguration *configure=[[WKWebViewConfiguration alloc]init];
+            configure.userContentController=contentController;
+            _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configure];
         }
-        [_webView setFrame:self.view.bounds];
         if (!self.navigationController.navigationBarHidden) {
             _webView.height-=64;
         }
-        [_webView setNavigationDelegate:self];
+        _webView.navigationDelegate=self;
+        _webView.UIDelegate=self;
         [_webView setMultipleTouchEnabled:YES];
         [_webView.scrollView setAlwaysBounceVertical:YES];
+        [_webView sizeToFit];
         [_webView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:0 context:CDWebBrowserContext];
     }
     return _webView;
@@ -130,72 +130,82 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
     return _progressView;
 }
 
-- (void)loadRequest:(NSURLRequest *)request {
-    [self.webView loadRequest:request];
-}
 
-- (void)loadURL:(NSURL *)URL {
-    [self loadRequest:[NSURLRequest requestWithURL:URL]];
-}
-
-- (void)loadURLString:(NSString *)URLString {
-    [self loadURL:[NSURL URLWithString:URLString]];
-}
-
-- (void)loadHTMLString:(NSString *)HTMLString {
-    [self.webView loadHTMLString:HTMLString baseURL:nil];
-}
-
-- (void)refresh{
-    [self.webView stopLoading];
-    [self.webView reload];
-}
 
 #pragma mark - WKNavigationDelegate
-- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
-    [self updateNavTitle];
-    [self updateNavgationLeftBtn];
-}
-
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    [self updateNavTitle];
-    [self updateNavgationLeftBtn];
-    if (self.javaScriptCode) {
-        [webView evaluateJavaScript:self.javaScriptCode completionHandler:^(id _Nullable handle, NSError * _Nullable error) {
-//            CDLog(@"js调用了");
-        }];
-    }
-}
-
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation
-      withError:(NSError *)error {
-    [self updateNavTitle];
-    [self updateNavgationLeftBtn];
-}
-
-- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation
-      withError:(NSError *)error {
-    [self updateNavTitle];
-    [self updateNavgationLeftBtn];
-}
-
+/**
+ *  决定是否允许或取消导航
+ */
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     if(webView == self.webView) {
         NSURL *URL = navigationAction.request.URL;
         if(![self isJumpToExternalAppWithURL:URL]) {
             if(!navigationAction.targetFrame) {
-                [self loadURL:URL];
+                [self loadWithURL:URL];
                 decisionHandler(WKNavigationActionPolicyCancel);
                 return;
             }
         }
-//        else if([[UIApplication sharedApplication] canOpenURL:URL]) {
-//            [self launchExternalAppWithURL:URL];
-//            decisionHandler(WKNavigationActionPolicyCancel);
-//            return;
-//        }
+        //        else if([[UIApplication sharedApplication] canOpenURL:URL]) {
+        //            [self launchExternalAppWithURL:URL];
+        //            decisionHandler(WKNavigationActionPolicyCancel);
+        //            return;
+        //        }
     }
     decisionHandler(WKNavigationActionPolicyAllow);
+}
+
+/**
+ *  确定在响应已知后是否允许或取消导航
+ */
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
+    
+}
+
+/**
+ *  main frame开始加载时调用
+ */
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
+    [self updateNavTitle];
+    [self updateNavgationLeftBtn];
+}
+
+/**
+ *  当接收到main frame的服务器重定向时调用
+ */
+- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(null_unspecified WKNavigation *)navigation{
+    
+}
+
+/**
+ *  在开始加载主框架的数据时发生错误时调用
+ */
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error{
+    [self updateNavTitle];
+    [self updateNavgationLeftBtn];
+}
+
+/**
+ *  Invoked when content starts arriving for the main frame
+ */
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
+}
+
+/**
+ *  Invoked when a main frame navigation completes
+ */
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    [self updateNavTitle];
+    [self updateNavgationLeftBtn];
+}
+
+/**
+ *  Invoked when an error occurs during a committed main frame navigation.
+ */
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation
+      withError:(NSError *)error {
+    [self updateNavTitle];
+    [self updateNavgationLeftBtn];
 }
 
 #pragma mark - Estimated Progress KVO (WKWebView)
@@ -217,12 +227,32 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
     }
 }
 
+#pragma mark - override
 - (void)cd_backOffAction {
     if (self.webView.canGoBack) {
         [self.webView goBack];
     }else{
         [super cd_backOffAction];
     }
+}
+
+#pragma mark - public
+- (void)loadWithURL:(NSURL *)URL {
+    NSURLRequest *request=[NSURLRequest requestWithURL:URL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20];
+    [self loadWithRequest:request];
+}
+
+- (void)loadWithHTMLString:(NSString *)HTMLString {
+    [self.webView loadHTMLString:HTMLString baseURL:nil];
+}
+
+- (void)refreshWebView{
+    [self.webView reload];
+}
+
+#pragma mark - private
+- (void)loadWithRequest:(NSURLRequest *)request {
+    [self.webView loadRequest:request];
 }
 
 /**
