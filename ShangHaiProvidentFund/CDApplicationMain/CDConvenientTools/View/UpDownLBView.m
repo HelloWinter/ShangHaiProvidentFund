@@ -15,14 +15,6 @@
     [self setupView];
 }
 
-- (instancetype)init{
-    self =[super init];
-    if (self) {
-        [self setupView];
-    }
-    return self;
-}
-
 - (id)initWithFrame:(CGRect)frame{
     self=[super initWithFrame:frame];
     if (self) {

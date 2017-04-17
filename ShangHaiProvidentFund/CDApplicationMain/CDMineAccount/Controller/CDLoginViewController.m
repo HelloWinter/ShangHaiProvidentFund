@@ -190,10 +190,11 @@
 }
 
 - (void)p_pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
-    CDBaseWKWebViewController *webViewController=[CDBaseWKWebViewController webViewWithURL:[NSURL URLWithString:urlstr]];
+    CDBaseWKWebViewController *webViewController=[[CDBaseWKWebViewController alloc]init];
     webViewController.title=title;
-    webViewController.javaScriptCode=jsCode;
+//    webViewController.javaScriptCode=jsCode;
     [self.navigationController pushViewController:webViewController animated:YES];
+    [webViewController loadWithURL:[NSURL URLWithString:urlstr]];
 }
 
 - (void)p_pushToRegistViewController{

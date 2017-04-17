@@ -23,8 +23,8 @@ static const CGFloat kTextLabelSize = 13;
 
 @implementation CDProvidentFundDetailHeaderView
 
-- (instancetype)init{
-    self =[super init];
+- (instancetype)initWithFrame:(CGRect)frame{
+    self =[super initWithFrame:frame];
     if (self) {
         self.backgroundColor=NAVIGATION_COLOR;
         [self addSubview:self.lbAccount];

@@ -23,8 +23,8 @@ static const CGFloat imgWidth=60;
 
 @implementation CDQueryAccountHeaderView
 
-- (instancetype)init{
-    self =[super init];
+- (instancetype)initWithFrame:(CGRect)frame{
+    self =[super initWithFrame:frame];
     if (self) {
         [self addSubview:self.imgPortrait];
         [self addSubview:self.lbName];

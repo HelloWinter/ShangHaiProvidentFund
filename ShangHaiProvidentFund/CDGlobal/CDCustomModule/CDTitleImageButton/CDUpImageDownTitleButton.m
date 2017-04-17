@@ -12,15 +12,6 @@
 
 @implementation CDUpImageDownTitleButton
 
-- (instancetype)init{
-    self =[super init];
-    if (self) {
-        self.titleLabel.textAlignment=NSTextAlignmentCenter;
-        _imgPercentage=0.7;
-    }
-    return self;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {

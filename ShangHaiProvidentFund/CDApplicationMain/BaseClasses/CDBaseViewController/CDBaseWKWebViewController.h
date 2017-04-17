@@ -18,21 +18,8 @@
 
 @property (nonatomic, strong, readonly) WKWebView *webView;
 
-/**
- *  网页加载完成后可调用执行的js代码
- */
-@property (nonatomic, copy) NSString *javaScriptCode;
 
-/**
- *  快速创建网页控制器实例
- */
-+ (instancetype)webViewWithURL:(NSURL *)url;
-
-/**
- *  快速创建网页控制器实例
- */
-+ (instancetype)webViewWithURL:(NSURL *)url Configuration:(WKWebViewConfiguration*)configuration;
-
+- (void)loadWithURL:(NSURL *)URL;
 /**
  *  加载网页源代码
  *

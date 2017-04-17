@@ -19,14 +19,6 @@
 
 @implementation SCYButtonTableFooterView
 
-- (instancetype)init{
-    self =[super init];
-    if (self) {
-        [self setupinit];
-    }
-    return self;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {

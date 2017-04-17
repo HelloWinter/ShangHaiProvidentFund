@@ -17,8 +17,8 @@
 
 @implementation SCYAnnualBonusResultSectionHeaderView
 
-- (instancetype)init{
-    self =[super init];
+- (instancetype)initWithFrame:(CGRect)frame{
+    self =[super initWithFrame:frame];
     if (self) {
         self.backgroundColor=[UIColor whiteColor];
         [self addSubview:self.lbTips];

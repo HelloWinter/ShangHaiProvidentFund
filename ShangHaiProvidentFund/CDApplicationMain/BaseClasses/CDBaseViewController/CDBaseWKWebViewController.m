@@ -11,29 +11,31 @@
 
 static void *CDWebBrowserContext = &CDWebBrowserContext;
 
-@interface CDBaseWKWebViewController ()<WKNavigationDelegate,WKUIDelegate,UINavigationControllerDelegate,UINavigationBarDelegate>
-
-/**
- *  进度条颜色,默认系统TintColor
- */
-@property (nonatomic, strong) UIColor *progressViewTintColor;
+@interface CDBaseWKWebViewController ()<WKNavigationDelegate,WKUIDelegate,UINavigationControllerDelegate,UINavigationBarDelegate,WKScriptMessageHandler>
 
 /**
  *  是否在导航条显示URL,默认(NO)
  */
-@property (nonatomic, assign) BOOL showURLInNavigationBar;
+//@property (nonatomic, assign) BOOL showURLInNavigationBar;
 
 /**
  *  是否在导航条显示PageTitle,默认(NO)
  */
-@property (nonatomic, assign) BOOL showPageTitleInNavigationBar;
+//@property (nonatomic, assign) BOOL showPageTitleInNavigationBar;
 
 /**
  *  UIWebView的url
  */
-@property (nonatomic, strong) NSURL *url;
+//@property (nonatomic, strong) NSURL *url;
 
 @property (nonatomic, strong) WKWebViewConfiguration *configuration;
+
+@property (nonatomic, copy) NSString *javaScriptCode;
+
+/**
+ *  进度条颜色
+ */
+@property (nonatomic, strong) UIColor *progressViewTintColor;
 
 @property (nonatomic, strong) UIProgressView *progressView;
 
@@ -48,22 +50,32 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
     [self.webView removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
 }
 
-+ (instancetype)webViewWithURL:(NSURL *)url{
-    return [self webViewWithURL:url Configuration:nil];
-}
-
-+ (instancetype)webViewWithURL:(NSURL *)url Configuration:(WKWebViewConfiguration *)configuration{
-    CDBaseWKWebViewController *webView=[[self alloc]init];
-    webView.url=url;
-    webView.configuration=configuration;
-    return webView;
-}
+//+ (instancetype)webViewWith{
+//    return [self webViewWithURL:url Configuration:nil];
+//}
+//
+//+ (instancetype)webViewWithConfiguration:(WKWebViewConfiguration *)configuration{
+//    CDBaseWKWebViewController *webView=[[self alloc]init];
+//    webView.configuration=configuration;
+//    return webView;
+//}
 
 - (instancetype)init{
     self =[super init];
     if (self) {
-        self.showURLInNavigationBar = NO;
-        self.showPageTitleInNavigationBar = NO;
+//        self.showURLInNavigationBar = NO;
+//        self.showPageTitleInNavigationBar = NO;
+        
+    }
+    return self;
+}
+
+- (instancetype)initWithConfiguration:(WKWebViewConfiguration *)configuration{
+    self = [super init];
+    if (self) {
+        if (configuration) {
+            self.configuration=configuration;
+        }
         self.hidesBottomBarWhenPushed=YES;
         self.progressViewTintColor=[UIColor greenColor];
         [self.navigationController setNavigationBarHidden:NO animated:YES];
@@ -73,10 +85,11 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
     [self.view addSubview:self.webView];
-    if (self.url) {
-        [self loadWithURL:self.url];
-    }
+//    if (self.url) {
+//        [self loadWithURL:self.url];
+//    }
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -97,12 +110,13 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
         if (self.configuration) {
             _webView =[[WKWebView alloc]initWithFrame:self.view.bounds configuration:self.configuration];
         }else{
-            WKUserScript *script=[[WKUserScript alloc]initWithSource:self.javaScriptCode injectionTime:(WKUserScriptInjectionTimeAtDocumentEnd) forMainFrameOnly:YES];
-            WKUserContentController *contentController=[[WKUserContentController alloc]init];
-            [contentController addUserScript:script];
-            WKWebViewConfiguration *configure=[[WKWebViewConfiguration alloc]init];
-            configure.userContentController=contentController;
-            _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configure];
+            //        WKUserScript *script=[[WKUserScript alloc]initWithSource:self.javaScriptCode injectionTime:(WKUserScriptInjectionTimeAtDocumentEnd) forMainFrameOnly:YES];
+            //        WKUserContentController *contentController=[[WKUserContentController alloc]init];
+            //        [contentController addUserScript:script];
+            //        WKWebViewConfiguration *configure=[[WKWebViewConfiguration alloc]init];
+            //        configure.userContentController=contentController;
+            _webView = [[WKWebView alloc] init];
+            _webView.frame=self.view.bounds;
         }
         if (!self.navigationController.navigationBarHidden) {
             _webView.height-=64;
@@ -130,30 +144,28 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
     return _progressView;
 }
 
-
-
 #pragma mark - WKNavigationDelegate
-/**
- *  决定是否允许或取消导航
- */
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    if(webView == self.webView) {
-        NSURL *URL = navigationAction.request.URL;
-        if(![self isJumpToExternalAppWithURL:URL]) {
-            if(!navigationAction.targetFrame) {
-                [self loadWithURL:URL];
-                decisionHandler(WKNavigationActionPolicyCancel);
-                return;
-            }
-        }
-        //        else if([[UIApplication sharedApplication] canOpenURL:URL]) {
-        //            [self launchExternalAppWithURL:URL];
-        //            decisionHandler(WKNavigationActionPolicyCancel);
-        //            return;
-        //        }
-    }
-    decisionHandler(WKNavigationActionPolicyAllow);
-}
+///**
+// *  决定是否允许或取消导航
+// */
+//- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+//    if(webView == self.webView) {
+//        NSURL *URL = navigationAction.request.URL;
+//        if(![self isJumpToExternalAppWithURL:URL]) {
+//            if(!navigationAction.targetFrame) {
+//                [self loadWithURL:URL];
+//                decisionHandler(WKNavigationActionPolicyCancel);
+//                return;
+//            }
+//        }
+//        //        else if([[UIApplication sharedApplication] canOpenURL:URL]) {
+//        //            [self launchExternalAppWithURL:URL];
+//        //            decisionHandler(WKNavigationActionPolicyCancel);
+//        //            return;
+//        //        }
+//    }
+//    decisionHandler(WKNavigationActionPolicyAllow);
+//}
 
 /**
  *  确定在响应已知后是否允许或取消导航
@@ -166,7 +178,6 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
  *  main frame开始加载时调用
  */
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
-    [self updateNavTitle];
     [self updateNavgationLeftBtn];
 }
 
@@ -181,7 +192,6 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
  *  在开始加载主框架的数据时发生错误时调用
  */
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error{
-    [self updateNavTitle];
     [self updateNavgationLeftBtn];
 }
 
@@ -195,7 +205,6 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
  *  Invoked when a main frame navigation completes
  */
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    [self updateNavTitle];
     [self updateNavgationLeftBtn];
 }
 
@@ -204,7 +213,6 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
  */
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation
       withError:(NSError *)error {
-    [self updateNavTitle];
     [self updateNavgationLeftBtn];
 }
 
@@ -239,7 +247,7 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
 #pragma mark - public
 - (void)loadWithURL:(NSURL *)URL {
     NSURLRequest *request=[NSURLRequest requestWithURL:URL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20];
-    [self loadWithRequest:request];
+    [self.webView loadRequest:request];
 }
 
 - (void)loadWithHTMLString:(NSString *)HTMLString {
@@ -251,35 +259,11 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
 }
 
 #pragma mark - private
-- (void)loadWithRequest:(NSURLRequest *)request {
-    [self.webView loadRequest:request];
-}
-
-/**
- *  更新title
- */
-- (void)updateNavTitle{
-    if(self.webView.isLoading) {
-        if(self.showURLInNavigationBar) {
-            NSString *URLString = [self.webView.URL absoluteString];
-            URLString = [URLString stringByReplacingOccurrencesOfString:@"http://" withString:@""];
-            URLString = [URLString stringByReplacingOccurrencesOfString:@"https://" withString:@""];
-            URLString = [URLString substringToIndex:[URLString length]-1];
-            self.navigationItem.title = URLString;
-        }
-    }else{
-        if(self.showPageTitleInNavigationBar) {
-            self.navigationItem.title = self.webView.title;
-        }
-    }
-}
-
 /**
  *  更新导航栏左侧按钮
  */
 - (void)updateNavgationLeftBtn{
     if (self.webView.canGoBack) {
-        
         UIBarButtonItem *leftItem = [UIBarButtonItem cd_ItemWidth:20 imageName:@"navigation_backOff" target:self action:@selector(cd_backOffAction)];
         
         UIBarButtonItem *leftItemClose = [UIBarButtonItem cd_ItemWidth:40 title:@"关闭" titleColor:[UIColor whiteColor] target:self action:@selector(backToOriginalViewController)];
@@ -301,9 +285,9 @@ static void *CDWebBrowserContext = &CDWebBrowserContext;
  *
  *  @return BOOL
  */
-- (BOOL)isJumpToExternalAppWithURL:(NSURL *)URL{
-    NSSet *validSchemes = [NSSet setWithArray:@[@"http", @"https"]];
-    return ![validSchemes containsObject:URL.scheme];
-}
+//- (BOOL)isJumpToExternalAppWithURL:(NSURL *)URL{
+//    NSSet *validSchemes = [NSSet setWithArray:@[@"http", @"https"]];
+//    return ![validSchemes containsObject:URL.scheme];
+//}
 
 @end
