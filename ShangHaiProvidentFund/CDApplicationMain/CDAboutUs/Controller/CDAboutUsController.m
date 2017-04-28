@@ -178,9 +178,9 @@
 - (void)pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[[CDBaseWKWebViewController alloc]init];
     webViewController.title=title;
-//    webViewController.javaScriptCode=jsCode;
+    [webViewController loadWebURLSring:urlstr];
     [self.navigationController pushViewController:webViewController animated:YES];
-    [webViewController loadWithURL:[NSURL URLWithString:urlstr]];
+    
 }
 
 - (void)pushToHelpInfoController{

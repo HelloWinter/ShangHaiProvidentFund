@@ -128,9 +128,9 @@ static NSString *cellIdentifier=@"cellIdentifier";
 - (void)p_pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[[CDBaseWKWebViewController alloc]init];
     webViewController.title=title;
+    [webViewController loadWebURLSring:urlstr];
 //    webViewController.javaScriptCode=jsCode;
     [self.navigationController pushViewController:webViewController animated:YES];
-    [webViewController loadWithURL:[NSURL URLWithString:urlstr]];
 }
 
 - (void)p_pushToMortgageCalculatorController{
