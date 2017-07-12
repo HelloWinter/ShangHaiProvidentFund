@@ -12,9 +12,9 @@
 @implementation CDAboutUsCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    style = UITableViewCellStyleValue1;
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        
     }
     return self;
 }

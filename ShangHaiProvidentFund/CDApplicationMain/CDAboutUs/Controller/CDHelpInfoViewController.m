@@ -28,10 +28,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupUI];
-}
-
-- (void)setupUI{
     [self.view addSubview:self.imgView];
     [self.view addSubview:self.lbVersion];
     [self.view addSubview:self.lbContent];

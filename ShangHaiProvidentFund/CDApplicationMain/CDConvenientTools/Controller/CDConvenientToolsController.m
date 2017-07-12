@@ -82,19 +82,18 @@ static NSString *cellIdentifier=@"cellIdentifier";
             [self p_pushToNetworkPointController];
             break;
         case 1:{
-            NSString *jsCode=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element" tagName:@"link"];
-            [self p_pushToWKWebViewControllerWithTitle:@"业务办理" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=blgg")];
+            [self p_pushToWKWebViewControllerWithTitle:@"业务办理" URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=blgg")];
         }
             break;
         case 2:{
-            [self p_pushToWKWebViewControllerWithTitle:@"公积金缴存额上下限/比例表" javaScriptCode:nil URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=jcll")];
+            [self p_pushToWKWebViewControllerWithTitle:@"公积金缴存额上下限/比例表" URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=jcll")];
         }
             break;
         case 3:
-            [self p_pushToWKWebViewControllerWithTitle:@"住房公积金缴存计算" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/app/wap/tools_paid_app.html")];
+            [self p_pushToWKWebViewControllerWithTitle:@"住房公积金缴存计算" URLString:CDWebURLWithAPI(@"/app/wap/tools_paid_app.html")];
             break;
         case 4:
-            [self p_pushToWKWebViewControllerWithTitle:@"额度试算" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/app/wap/tools_ammount.html")];
+            [self p_pushToWKWebViewControllerWithTitle:@"额度试算" URLString:CDWebURLWithAPI(@"/app/wap/tools_ammount.html")];
             break;
         case 5:
             [self p_pushToMortgageCalculatorController];
@@ -103,10 +102,10 @@ static NSString *cellIdentifier=@"cellIdentifier";
             [self p_pushToAnnualBonusCalculatorController];
             break;
         case 7:
-            [self p_pushToWKWebViewControllerWithTitle:@"叫号信息" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/2010/mindex.html")];
+            [self p_pushToWKWebViewControllerWithTitle:@"叫号信息" URLString:CDWebURLWithAPI(@"/static/2010/mindex.html")];
             break;
         case 8:
-            [self p_pushToWKWebViewControllerWithTitle:@"公益短信" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/sms/app_apply.html")];
+            [self p_pushToWKWebViewControllerWithTitle:@"公益短信" URLString:CDWebURLWithAPI(@"/static/sms/app_apply.html")];
             break;
             
         default:
@@ -125,11 +124,10 @@ static NSString *cellIdentifier=@"cellIdentifier";
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (void)p_pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
+- (void)p_pushToWKWebViewControllerWithTitle:(NSString *)title URLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[[CDBaseWKWebViewController alloc]init];
     webViewController.title=title;
-    [webViewController loadWebURLSring:urlstr];
-//    webViewController.javaScriptCode=jsCode;
+    webViewController.URLString=urlstr;
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 

@@ -97,9 +97,9 @@
         _bottomButtonView = [[CDBottomButtonView alloc]init];
         _bottomButtonView.frame=CGRectMake(0, 0, 160, 20);
         _bottomButtonView.center=CGPointMake(self.view.width*0.5, self.tableView.bottom-30);
-        __weak typeof(self) weakSelf=self;
+        WS(weakSelf);
         _bottomButtonView.forgotPSWBlock=^(){
-            [weakSelf p_pushToWKWebViewControllerWithTitle:@"遗忘密码" javaScriptCode:nil URLString:CDWebURLWithAPI(@"/static/sms/forget-pass.html")];
+            [weakSelf p_pushToWKWebViewControllerWithTitle:@"遗忘密码" URLString:CDWebURLWithAPI(@"/static/sms/forget-pass.html")];
         };
         _bottomButtonView.registBlock=^(){
             [weakSelf p_pushToRegistViewController];
@@ -189,11 +189,10 @@
     }];
 }
 
-- (void)p_pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
+- (void)p_pushToWKWebViewControllerWithTitle:(NSString *)title URLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[[CDBaseWKWebViewController alloc]init];
     webViewController.title=title;
-    [webViewController loadWebURLSring:urlstr];
-//    webViewController.javaScriptCode=jsCode;
+    webViewController.URLString =urlstr;
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 

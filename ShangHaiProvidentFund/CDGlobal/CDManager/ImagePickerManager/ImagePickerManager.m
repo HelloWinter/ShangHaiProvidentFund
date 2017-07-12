@@ -8,9 +8,7 @@
 
 #import "ImagePickerManager.h"
 
-@interface ImagePickerManager ()<UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
-
-
+@interface ImagePickerManager ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @end
 
@@ -18,41 +16,31 @@
 
 - (void)selectPicture{
     if (_delgate) {
-//        WS(weakSelf);
-//        UIAlertController *controller=[UIAlertController alertControllerWithTitle:@"请选择文件来源" message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
-//        UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-//            
-//        }];
-//        UIAlertAction *takeApictureAction=[UIAlertAction actionWithTitle:@"拍照" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-//            
-//        }];
-//        UIAlertAction *selectApictureAction=[UIAlertAction actionWithTitle:@"从手机相册选择" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-//            
-//        }];
-//        [controller addAction:cancelAction];
-//        [controller addAction:takeApictureAction];
-//        [controller addAction:selectApictureAction];
-//        [_delgate presentViewController:controller animated:YES completion:nil];
-        
-        UIActionSheet *actionSheet = [[UIActionSheet alloc]
-                                      initWithTitle:@"请选择文件来源"
-                                      delegate:self
-                                      cancelButtonTitle:@"取消"
-                                      destructiveButtonTitle:nil
-                                      otherButtonTitles:@"拍照",@"从手机相册选择",nil];
-        [actionSheet showInView:_delgate.view];
+        UIAlertController *controller=[UIAlertController alertControllerWithTitle:@"请选择文件来源" message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+        UIAlertAction *actionCancel=[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        [controller addAction:actionCancel];
+        UIAlertAction *actionCamera=[UIAlertAction actionWithTitle:@"拍照" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            [self p_presentUIImagePickerControllerWith:0];
+        }];
+        [controller addAction:actionCamera];
+        UIAlertAction *actionPhotoLibrary=[UIAlertAction actionWithTitle:@"从手机相册选择" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            [self p_presentUIImagePickerControllerWith:1];
+        }];
+        [controller addAction:actionPhotoLibrary];
+        controller.popoverPresentationController.sourceView = _delgate.view;
+        controller.popoverPresentationController.sourceRect = CGRectMake(_delgate.view.bounds.size.width*0.5, _delgate.view.bounds.size.height, 1.0, 1.0);
+        [_delgate presentViewController:controller animated:YES completion:nil];
     }
 }
 
-#pragma mark - UIActionSheet delegate
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex==0 || buttonIndex==1) {
-        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-        imagePicker.delegate = self;
-        imagePicker.allowsEditing = self.allowsEditing;
-        imagePicker.sourceType = (buttonIndex==0) ? UIImagePickerControllerSourceTypeCamera : UIImagePickerControllerSourceTypePhotoLibrary;
-        [_delgate presentViewController:imagePicker animated:YES completion:nil];
-    }
+#pragma mark - private
+- (void)p_presentUIImagePickerControllerWith:(NSInteger)type{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = self.allowsEditing;
+    imagePicker.sourceType = (type==0) ? UIImagePickerControllerSourceTypeCamera : UIImagePickerControllerSourceTypePhotoLibrary;
+    [_delgate presentViewController:imagePicker animated:YES completion:nil];
 }
 
 #pragma mark - UIImagePickerControllerDelegate

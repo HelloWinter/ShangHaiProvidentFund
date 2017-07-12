@@ -55,7 +55,6 @@ static const CGFloat kCircleLayerRadius=13.0;
 @implementation SCYRefreshControl
 
 - (void)dealloc{
-    //    CDLog(@"self.scrollView被释放");
     [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
     [self.scrollView removeObserver:self forKeyPath:@"contentInset"];
     self.scrollView=nil;

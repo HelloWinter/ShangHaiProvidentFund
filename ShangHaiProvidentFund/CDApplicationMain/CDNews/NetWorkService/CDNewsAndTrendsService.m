@@ -17,6 +17,7 @@
     self.isIgnoreCache=ignore;
     self.showLodingIndicator=show;
     self.httpRequestMethod=kHttpRequestTypeGET;
+    self.printLog=NO;
     [self request:CDURLWithAPI(@"/gjjManager/mobileNews?") params:nil];
 }
 

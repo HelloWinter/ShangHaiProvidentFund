@@ -141,8 +141,7 @@
 - (void)p_pushToWKWebViewControllerWithURLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[[CDBaseWKWebViewController alloc]init];
     webViewController.title=@"上海住房公积金网";
-    [webViewController loadWebURLSring:urlstr];
-//    webViewController.javaScriptCode=@"var element=document.getElementsByTagName('link')[0];var parentElement=element.parentNode;if(parentElement){parentElement.removeChild(element);}";
+    webViewController.URLString = urlstr;
     [self.navigationController pushViewController:webViewController animated:YES];
     
 }

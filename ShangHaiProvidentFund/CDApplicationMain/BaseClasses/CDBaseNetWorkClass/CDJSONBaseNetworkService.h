@@ -8,6 +8,8 @@
 
 
 #import <Foundation/Foundation.h>
+#import "HttpRequestType.h"
+
 
 /* ---------------------------------------------------------------- */
 /** 网络请求基类 **/
@@ -80,6 +82,11 @@
  *  取到的数据是否是缓存的数据
  */
 @property (nonatomic, assign, readonly) BOOL isUseCache;
+
+/**
+ 是否打印该请求日志
+ */
+@property (nonatomic, assign) BOOL printLog;
 
 /**
  *  初始化方法

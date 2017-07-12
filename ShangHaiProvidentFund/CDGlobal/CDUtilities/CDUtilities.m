@@ -98,11 +98,13 @@ UIColor* colorForHex(NSString* hexColor){
     }
 }
 
-//一. 将前面的身份证号码17位数分别乘以不同的系数。从第一位到第十七位的系数分别为：7 9 10 5 8 4 2 1 6 3 7 9 10 5 8 4 2
-//二. 将这17位数字和系数相乘的结果相加。
-//三. 用加出来和除以11，看余数是多少？
-//四. 余数只可能有0 1 2 3 4 5 6 7 8 9 10这11个数字。其分别对应的最后一位身份证的号码为1 0 X 9 8 7 6 5 4 3 2。
-//五. 通过上面得知如果余数是2，就会在身份证的第18位数字上出现罗马数字的Ⅹ。如果余数是10，身份证的最后一位号码就是2。
+/**
+ 一. 将前面的身份证号码17位数分别乘以不同的系数。从第一位到第十七位的系数分别为：7 9 10 5 8 4 2 1 6 3 7 9 10 5 8 4 2
+ 二. 将这17位数字和系数相乘的结果相加。
+ 三. 用加出来和除以11，看余数是多少？
+ 四. 余数只可能有0 1 2 3 4 5 6 7 8 9 10这11个数字。其分别对应的最后一位身份证的号码为1 0 X 9 8 7 6 5 4 3 2。
+ 五. 通过上面得知如果余数是2，就会在身份证的第18位数字上出现罗马数字的Ⅹ。如果余数是10，身份证的最后一位号码就是2。
+ */
 NSString* getCheckDigit(NSString* eighteenCardID){
     NSArray *weightArr = [NSArray arrayWithObjects:@"7", @"9", @"10", @"5", @"8", @"4", @"2", @"1", @"6", @"3", @"7", @"9", @"10", @"5", @"8", @"4", @"2", @"1", nil ];
     NSArray *checkDigitArr = [NSArray arrayWithObjects:@"1", @"0", @"X", @"9", @"8", @"7", @"6", @"5", @"4", @"3", @"2", nil];
@@ -134,8 +136,6 @@ NSString* getCheckDigit(NSString* eighteenCardID){
 
 /**
  将15位身份证升级成18位身份证号码
- @param fifteenCardID
- @return (NSString *)
  */
 NSString* update2eighteen(NSString *fifteenCardID){
     NSString *idCardStr = nil;
@@ -167,11 +167,7 @@ BOOL verifyIDCard(NSString* idcard){
 BOOL stringMatchRex(NSString* str ,NSString* rex){
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", rex];
     BOOL isMatch = [pred evaluateWithObject:str];
-    if (isMatch){
-        return YES;
-    }else {
-        return NO;
-    }
+    return isMatch;
 }
 
 BOOL checkName(NSString *userName){
@@ -259,13 +255,6 @@ void stopMotion(){
         [shareMotion() stopDeviceMotionUpdates];
         CDLog(@"motionStoped!");
     }
-}
-
-void openURLToUpdateEnterpriseEditionAPP(NSString* url,UIView* parentView){
-    UIWebView *callPhoneWebVw = [[UIWebView alloc] init];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-    [callPhoneWebVw loadRequest:request];
-    [parentView addSubview:callPhoneWebVw];
 }
 
 void callPhoneNum(NSString* phoneNum){
@@ -409,14 +398,6 @@ void goToSettings(){
         }
         CDLog(@"%@",error.localizedDescription);
     }
-}
-
-+ (NSString *)jsCodeDeleteHTMLNodeWith:(NSString *)elementName className:(NSString *)className{
-    return [NSString stringWithFormat:@"var %@ = document.getElementsByClassName('%@')[0];%@.parentNode.removeChild(%@);",elementName,className,elementName,elementName];
-}
-
-+ (NSString *)jsCodeDeleteHTMLNodeWith:(NSString *)elementName tagName:(NSString *)tagName{
-    return [NSString stringWithFormat:@"var %@ = document.getElementsByTagName('%@')[0];%@.parentNode.removeChild(%@);",elementName,tagName,elementName,elementName];
 }
 
 @end

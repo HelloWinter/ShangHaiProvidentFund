@@ -90,7 +90,7 @@
         _footerView.frame=CGRectMake(0, 0, self.tableView.width, 140);
         __weak typeof(self) weakSelf=self;
         _footerView.showProtocolBlock=^(){
-            [weakSelf p_pushToWKWebViewControllerWithTitle:@"个人用户协议" javaScriptCode:nil URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yhxy")];
+            [weakSelf p_pushToWKWebViewControllerWithTitle:@"个人用户协议" URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yhxy")];
         };
         _footerView.registBlock=^(){
             [weakSelf p_regist];
@@ -170,11 +170,10 @@
 }
 
 #pragma mark - private
-- (void)p_pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
+- (void)p_pushToWKWebViewControllerWithTitle:(NSString *)title URLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[[CDBaseWKWebViewController alloc]init];
     webViewController.title=title;
-    [webViewController loadWebURLSring:urlstr];
-//    webViewController.javaScriptCode=jsCode;
+    webViewController.URLString=urlstr;
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 
@@ -183,15 +182,16 @@
     UIAlertAction *actionCancel=[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
     }];
     UIAlertAction *actionProbilem=[UIAlertAction actionWithTitle:@"常见问题" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        NSString *jsCode=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element" tagName:@"link"];
-        [self p_pushToWKWebViewControllerWithTitle:@"常见问题" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=cjwt")];
+        [self p_pushToWKWebViewControllerWithTitle:@"常见问题" URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=cjwt")];
     }];
     UIAlertAction *actionQuery=[UIAlertAction actionWithTitle:@"个人公积金账号查询" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        [self p_pushToWKWebViewControllerWithTitle:@"个人公积金账号查询" javaScriptCode:nil URLString:@"http://m.shgjj.com/verifier/verifier/index"];
+        [self p_pushToWKWebViewControllerWithTitle:@"个人公积金账号查询" URLString:@"http://m.shgjj.com/verifier/verifier/index"];
     }];
     [alert addAction:actionCancel];
     [alert addAction:actionProbilem];
     [alert addAction:actionQuery];
+    alert.popoverPresentationController.sourceView = self.view;
+    alert.popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width*0.5, self.view.bounds.size.height, 1.0, 1.0);
     [self presentViewController:alert animated:YES completion:NULL];
 }
 

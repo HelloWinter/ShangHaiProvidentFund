@@ -32,15 +32,12 @@ static const NSInteger kBehindImageTag = 500;
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        [self setupUI];
+        self.backgroundColor = [UIColor whiteColor];
+        _placeHolderImage=@"ScrollViewDefault";
+        self.autoScrollTimeInterval=4.0f;
+        [self addSubview:self.scrollView];
     }
     return self;
-}
-
-- (void)setupUI{
-    _placeHolderImage=@"ScrollViewDefault";
-    self.autoScrollTimeInterval=4.0f;
-    [self addSubview:self.scrollView];
 }
 
 - (NSMutableArray *)arrImgViewCachePool{
@@ -80,6 +77,13 @@ static const NSInteger kBehindImageTag = 500;
         }
     }
     return _pageControl;
+}
+
+- (UIImageView *)currentImageView {
+    if (self.arrImgViewCachePool.count != 0) {
+        _currentImageView = [self.arrImgViewCachePool cd_safeObjectAtIndex:self.pageControl.currentPage];
+    }
+    return _currentImageView;
 }
 
 - (void)setArrImageLink:(NSArray *)arrImageLink{

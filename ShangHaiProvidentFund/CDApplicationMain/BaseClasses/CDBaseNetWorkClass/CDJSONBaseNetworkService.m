@@ -7,7 +7,6 @@
 //
 
 #import "CDJSONBaseNetworkService.h"
-#import "CDPointActivityIndicator.h"
 #import "CDNetworkRequestManager.h"
 #import "CDGlobalHTTPSessionManager.h"
 #import <YYCache/YYCache.h>
@@ -36,6 +35,7 @@
         _httpRequestMethod = kHttpRequestTypePOST;
         _toCacheData=NO;
         _isIgnoreCache=YES;
+        _printLog=YES;
     }
     return self;
 }
@@ -145,7 +145,9 @@
 
 /* 请求完成 */
 - (void)p_taskDidFinish:(NSURLSessionTask *)task responseObject:(id)responseObject {
-    CDLog(@">>> URL: %@ Response Data: %@ ", task.currentRequest.URL,responseObject);
+    if (self.printLog) {
+        CDLog(@">>> URL: %@ Response Data: %@ ", task.currentRequest.URL,responseObject);
+    }
     if (task.state == NSURLSessionTaskStateCompleted) {
         _isLoaded = YES;
         _isLoading=NO;
@@ -158,12 +160,16 @@
 
 /* 请求失败 */
 - (void)p_taskDidFail:(NSURLSessionTask *)task error:(NSError *)error {
-    CDLog(@">>> URL: %@ Response Error: %@", task.currentRequest.URL,error.localizedDescription);
+    if (self.printLog) {
+        CDLog(@">>> URL: %@ Response Error: %@", task.currentRequest.URL,error.localizedDescription);
+    }
     if (task.state == NSURLSessionTaskStateCompleted || task.state == NSURLSessionTaskStateCanceling) {
         _isLoading=NO;
         if (error.code==NSURLErrorBadServerResponse) {
             if (self.toCacheData && [self.cache containsObjectForKey:self.cacheURLStringID]) {
-                CDLog(@"使用缓存数据(BadServer)%@",task.currentRequest.URL.absoluteString);
+                if (self.printLog) {
+                    CDLog(@"使用缓存数据(BadServer)%@",task.currentRequest.URL.absoluteString);
+                }
                 _isUseCache=YES;
                 [self p_succeedGetResponse:[self.cache objectForKey:self.cacheURLStringID]];
             }

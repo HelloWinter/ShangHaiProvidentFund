@@ -20,8 +20,9 @@
     dispatch_once(&onceToken, ^{
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         configuration.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-        manager = [[CDGlobalHTTPSessionManager alloc] initWithBaseURL:nil sessionConfiguration:configuration];//[NSURL URLWithString:CDBaseURLString]
+        manager = [[CDGlobalHTTPSessionManager alloc] initWithBaseURL:nil sessionConfiguration:configuration];
 //        manager.securityPolicy=[CDGlobalHTTPSessionManager customSecurityPolicy];
+//        manager.securityPolicy=[AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
         manager.requestSerializer = [AFHTTPRequestSerializer serializer];
 //        manager.responseSerializer = [AFJSONResponseSerializer serializer];
         manager.responseSerializer = [AFHTTPResponseSerializer serializer];

@@ -20,16 +20,13 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setupMapManager];
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     CDTabBarController *tabBarController=[[CDTabBarController alloc]init];
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
-    
     [self startLocation];
     return YES;
 }

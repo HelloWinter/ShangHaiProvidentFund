@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HttpRequestType.h"
 
 @interface NSDictionary (CDDictionaryAdditions)
 

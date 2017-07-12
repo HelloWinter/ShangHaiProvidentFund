@@ -16,6 +16,8 @@
 #import "CDButtonTableFooterView.h"
 #import "CDCommitMessageService.h"
 
+static NSString *cellidentifier = @"cellidentifier";
+
 @interface CDOpinionsSuggestionsController ()
 
 @property (nonatomic, strong) CDOpinionsSuggestionsModel *opinionsSuggestionsModel;
@@ -40,6 +42,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.tableFooterView=self.footerView;
+    [self.tableView registerClass:[CDOpinionsSuggestionsFieldCell class] forCellReuseIdentifier:cellidentifier];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -95,10 +98,9 @@
         [cell setupCellItem:item indexPath:indexPath];
         return cell;
     }else{
-        static NSString *cellidentifier = @"cellidentifier";
         CDOpinionsSuggestionsFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:cellidentifier];
         if (nil == cell) {
-            cell = [[CDOpinionsSuggestionsFieldCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:cellidentifier];
+            cell = [[ alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:cellidentifier];
         }
         [cell setupItem:item indexPath:indexPath];
         return cell;

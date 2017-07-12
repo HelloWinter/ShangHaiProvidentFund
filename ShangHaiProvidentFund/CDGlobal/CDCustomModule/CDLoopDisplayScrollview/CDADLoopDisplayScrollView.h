@@ -49,6 +49,13 @@ typedef void (^CDImageClickBlock)(NSInteger index);
  */
 @property (nonatomic, strong) UIColor *pageCtrlNormalColor;
 
+
+/**
+ *  当前的imageView
+ */
+@property (nonatomic, strong) UIImageView *currentImageView;
+
+
 /**
  *  开始滚动
  */

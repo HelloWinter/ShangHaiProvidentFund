@@ -17,6 +17,8 @@
 #import "CDLoginViewController.h"
 #import "CDNavigationController.h"
 
+static NSString *cellidentifier = @"cellidentifier";
+
 @interface CDAboutUsController ()<CDLoginViewControllerDelegate>
 
 @property (nonatomic, strong) CDAboutUsModel *aboutUsModel;
@@ -29,10 +31,10 @@
 - (instancetype)init{
     self =[super init];
     if (self) {
-        self.tableViewStyle=UITableViewStyleGrouped;
         self.title=@"关于我们";
-        self.showDragView=NO;
         self.hidesBottomBarWhenPushed=YES;
+        self.tableViewStyle=UITableViewStyleGrouped;
+        self.showDragView=NO;
     }
     return self;
 }
@@ -40,6 +42,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.tableView.tableFooterView=self.footerView;
+    [self.tableView registerClass:[CDAboutUsCell class] forCellReuseIdentifier:cellidentifier];
 }
 
 - (CDAboutUsModel *)aboutUsModel{
@@ -73,11 +76,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellidentifier = @"cellidentifier";
     CDAboutUsCell *cell=[tableView dequeueReusableCellWithIdentifier:cellidentifier];
-    if (!cell) {
-        cell = [[CDAboutUsCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:cellidentifier];
-    }
     NSArray *arr=[self.aboutUsModel.arrData cd_safeObjectAtIndex:indexPath.section];
     CDAboutUsItem *item=[arr cd_safeObjectAtIndex:indexPath.row];
     [cell setupCellItem:item];
@@ -100,18 +99,15 @@
             switch (indexPath.row) {
                 case 0:{
                     NSString *strURL=CDWebURLWithAPI(@"/static/sms/forget-pass.html");
-                    [self pushToWKWebViewControllerWithTitle:@"遗忘密码" javaScriptCode:nil URLString:[strURL stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)]];//
-                }
-                    break;
+                    [self pushToWKWebViewControllerWithTitle:@"遗忘密码" URLString:[strURL stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)]];
+                }break;
                 case 1:{
-                    NSString *strURL=@"https://persons.shgjj.com/get-pass.html";//CDURLWithAPI(@"/get-pass.html");
-                    [self pushToWKWebViewControllerWithTitle:@"手机取回用户名和密码" javaScriptCode:nil URLString:[strURL stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)]];
-                }
-                    break;
+                    NSString *strURL=@"https://persons.shgjj.com/get-pass.html";
+                    [self pushToWKWebViewControllerWithTitle:@"手机取回用户名和密码" URLString:[strURL stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)]];
+                }break;
                 case 2:
-                    [self pushToWKWebViewControllerWithTitle:@"个人公积金账号查询" javaScriptCode:nil URLString:@"http://m.shgjj.com/verifier/verifier/index"];
+                    [self pushToWKWebViewControllerWithTitle:@"个人公积金账号查询" URLString:@"http://m.shgjj.com/verifier/verifier/index"];
                     break;
-                    
                 default:
                     break;
             }
@@ -120,14 +116,11 @@
         case 1:{
             switch (indexPath.row) {
                 case 0:{
-                    NSString *jsCode=[CDUtilities jsCodeDeleteHTMLNodeWith:@"element" tagName:@"link"];
-                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" javaScriptCode:jsCode URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
-                }
-                    break;
+                    [self pushToWKWebViewControllerWithTitle:@"隐私声明" URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
+                }break;
                 case 1:{
                     [self pushToOpinionsSuggestionsController];
-                }
-                    break;
+                }break;
                 default:
                     break;
             }
@@ -149,11 +142,9 @@
         case 3:{
             switch (indexPath.row) {
                 case 0:{
-                    NSString *strUrl=@"http://m.weibo.cn/u/3547969482";
-                    strUrl=[strUrl stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)];
-                    [self pushToWKWebViewControllerWithTitle:@"上海公积金微博" javaScriptCode:nil URLString:strUrl];
-                }
-                    break;
+                    NSString *strUrl=[@"http://m.weibo.cn/u/3547969482" stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)];
+                    [self pushToWKWebViewControllerWithTitle:@"上海公积金微博" URLString:strUrl];
+                }break;
                 default:
                     break;
             }
@@ -175,12 +166,11 @@
 }
 
 #pragma mark - private
-- (void)pushToWKWebViewControllerWithTitle:(NSString *)title javaScriptCode:(NSString *)jsCode URLString:(NSString *)urlstr{
+- (void)pushToWKWebViewControllerWithTitle:(NSString *)title URLString:(NSString *)urlstr{
     CDBaseWKWebViewController *webViewController=[[CDBaseWKWebViewController alloc]init];
     webViewController.title=title;
-    [webViewController loadWebURLSring:urlstr];
+    webViewController.URLString=urlstr;
     [self.navigationController pushViewController:webViewController animated:YES];
-    
 }
 
 - (void)pushToHelpInfoController{
@@ -205,33 +195,11 @@
     UIAlertAction *actionCancel=[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
     }];
     UIAlertAction *actionCall=[UIAlertAction actionWithTitle:@"拨打" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        [self callThePhoneNum:@"02112329"];
+        callPhoneNum(@"02112329");
     }];
     [alert addAction:actionCancel];
     [alert addAction:actionCall];
     [self presentViewController:alert animated:YES completion:NULL];
-}
-
-- (void)callThePhoneNum:(NSString *)phoneNum{
-    if ([CDDeviceModel isEqualToString:@"iPhone"]){
-        NSURL *telUrl=[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phoneNum]];
-        if ([[UIApplication sharedApplication]canOpenURL:telUrl]) {
-            [[UIApplication sharedApplication] openURL:telUrl];
-        }else{
-            [self showAlertControllerWithTitle:@"提示" message:@"号码有误"];
-        }
-    }else {
-        NSString *strAlert=[NSString stringWithFormat:@"您的设备 %@ 不支持电话功能！",CDDeviceModel];
-        [self showAlertControllerWithTitle:@"提示" message:strAlert];
-    }
-}
-
-- (void)showAlertControllerWithTitle:(NSString *)title message:(NSString *)message{
-    UIAlertController *alert=[UIAlertController alertControllerWithTitle:title message:message preferredStyle:(UIAlertControllerStyleAlert)];
-    UIAlertAction *actionCancel=[UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
-    }];
-    [alert addAction:actionCancel];
-    [CDKeyWindow.rootViewController presentViewController:alert animated:YES completion:NULL];
 }
 
 - (void)footerViewButtonClicked{

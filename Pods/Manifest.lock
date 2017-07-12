@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - BaiduMapKit (3.2.1)
+  - BaiduMapKit (3.3.2)
   - MJExtension (3.0.13)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
@@ -30,11 +30,11 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  BaiduMapKit: 9c748785aa3dddfc41dcb70c14b21ce32f680930
+  BaiduMapKit: 5118390d63b375483bd64c963e8e32a40fd9ddb5
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
 PODFILE CHECKSUM: fa5340228ad10f4d7866c4bd525e7aa2342d0103
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0

@@ -7,8 +7,8 @@
 //
 
 #import "CDNetworkRequestManager.h"
-#import "CDPointActivityIndicator.h"
 #import "CDJSONBaseNetworkService.h"
+#import "SCYActivityIndicatorView.h"
 
 @interface CDNetworkRequestManager ()
 
@@ -32,7 +32,7 @@
     CDNetworkRequestManager *manager = [CDNetworkRequestManager sharedManager];
     if (![manager.services containsObject:service]) {
         if (service.showLodingIndicator && ![manager p_hasLoadingIndicator]) {
-            [CDPointActivityIndicator startAnimating];
+            [SCYActivityIndicatorView startAnimating];
         }
         [manager.services addObject:service];
         [manager p_showNetworkIndicatorIfNeeded];
@@ -44,8 +44,8 @@
     if ([manager.services containsObject:service]) {
         [manager.services removeObject:service];
         [manager p_showNetworkIndicatorIfNeeded];
-        if (![manager p_hasLoadingIndicator]/* && service.showLodingIndicator*/) {
-            [CDPointActivityIndicator stopAnimating];
+        if (![manager p_hasLoadingIndicator]) {
+            [SCYActivityIndicatorView stopAnimating];
         }
     }
 }

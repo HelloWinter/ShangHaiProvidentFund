@@ -12,6 +12,7 @@
 		14FDD0B31CDDD2440093ABC3 /* CDBaseTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0B21CDDD2440093ABC3 /* CDBaseTextFieldCell.m */; };
 		14FDD0B61CDDD33E0093ABC3 /* UITextField+cellIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0B51CDDD33E0093ABC3 /* UITextField+cellIndexPath.m */; };
 		14FDD0C11CDDF1200093ABC3 /* UITextView+CDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */; };
+		6269613F1F16074B00C5D0D9 /* SCYActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6269613E1F16074B00C5D0D9 /* SCYActivityIndicatorView.m */; };
 		6E1A21611CEB2AC000D21143 /* mortgageCalculator.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */; };
 		6E2469161DAA35C600DDC80B /* CDAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468601DAA35C600DDC80B /* CDAboutUsController.m */; };
 		6E2469171DAA35C600DDC80B /* CDHelpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468621DAA35C600DDC80B /* CDHelpInfoViewController.m */; };
@@ -136,7 +137,6 @@
 		6E6ADB9B1CD89F7C00838B61 /* UIViewController+CDVCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB871CD89F7C00838B61 /* UIViewController+CDVCAdditions.m */; };
 		6E6ADB9F1CD8A05E00838B61 /* CDUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB9E1CD8A05E00838B61 /* CDUtilities.m */; };
 		6E6ADBD81CD8A0BD00838B61 /* CDAutoHideMessageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADBA41CD8A0BD00838B61 /* CDAutoHideMessageHUD.m */; };
-		6E6ADBDC1CD8A0BD00838B61 /* CDPointActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADBAE1CD8A0BD00838B61 /* CDPointActivityIndicator.m */; };
 		6E6ADBF01CD8A22600838B61 /* CDGlobalHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADBEF1CD8A22600838B61 /* CDGlobalHTTPSessionManager.m */; };
 		6E6ADC1C1CD8B35B00838B61 /* CDBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC1B1CD8B35B00838B61 /* CDBaseItem.m */; };
 		6E73367D1E4C6A330036393A /* SCYAnnualBonusCalculateResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336791E4C6A330036393A /* SCYAnnualBonusCalculateResultController.m */; };
@@ -149,7 +149,6 @@
 		6E7336931E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73368E1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m */; };
 		6E7336961E4C6BC80036393A /* UpDownLBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336951E4C6BC80036393A /* UpDownLBView.m */; };
 		6E7336991E4C6E040036393A /* SCYButtonTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336981E4C6E040036393A /* SCYButtonTableFooterView.m */; };
-		6E73D6421E14A516009A1072 /* SCYActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6411E14A516009A1072 /* SCYActivityIndicator.m */; };
 		6E73D6461E14A5C8009A1072 /* SCYActivityIndicatorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6451E14A5C8009A1072 /* SCYActivityIndicatorButton.m */; };
 		6E73D64A1E14A5F6009A1072 /* SCYRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6491E14A5F6009A1072 /* SCYRefreshControl.m */; };
 		6E73D64E1E14A626009A1072 /* CDADLoopDisplayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D64D1E14A626009A1072 /* CDADLoopDisplayScrollView.m */; };
@@ -183,6 +182,9 @@
 		14FDD0BF1CDDF1200093ABC3 /* UITextView+CDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+CDCategory.h"; sourceTree = "<group>"; };
 		14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+CDCategory.m"; sourceTree = "<group>"; };
 		4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShangHaiProvidentFund.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6269613D1F16074B00C5D0D9 /* SCYActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYActivityIndicatorView.h; sourceTree = "<group>"; };
+		6269613E1F16074B00C5D0D9 /* SCYActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYActivityIndicatorView.m; sourceTree = "<group>"; };
+		626961401F160E5100C5D0D9 /* HttpRequestType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequestType.h; sourceTree = "<group>"; };
 		6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mortgageCalculator.conf; sourceTree = "<group>"; };
 		6E24685F1DAA35C600DDC80B /* CDAboutUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsController.h; sourceTree = "<group>"; };
 		6E2468601DAA35C600DDC80B /* CDAboutUsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsController.m; sourceTree = "<group>"; };
@@ -424,8 +426,6 @@
 		6E6ADBA01CD8A07600838B61 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		6E6ADBA31CD8A0BD00838B61 /* CDAutoHideMessageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAutoHideMessageHUD.h; sourceTree = "<group>"; };
 		6E6ADBA41CD8A0BD00838B61 /* CDAutoHideMessageHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAutoHideMessageHUD.m; sourceTree = "<group>"; };
-		6E6ADBAD1CD8A0BD00838B61 /* CDPointActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPointActivityIndicator.h; sourceTree = "<group>"; };
-		6E6ADBAE1CD8A0BD00838B61 /* CDPointActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPointActivityIndicator.m; sourceTree = "<group>"; };
 		6E6ADBEE1CD8A22600838B61 /* CDGlobalHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDGlobalHTTPSessionManager.h; sourceTree = "<group>"; };
 		6E6ADBEF1CD8A22600838B61 /* CDGlobalHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDGlobalHTTPSessionManager.m; sourceTree = "<group>"; };
 		6E6ADBF11CD8A58400838B61 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -452,8 +452,6 @@
 		6E7336951E4C6BC80036393A /* UpDownLBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpDownLBView.m; sourceTree = "<group>"; };
 		6E7336971E4C6E040036393A /* SCYButtonTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYButtonTableFooterView.h; sourceTree = "<group>"; };
 		6E7336981E4C6E040036393A /* SCYButtonTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYButtonTableFooterView.m; sourceTree = "<group>"; };
-		6E73D6401E14A516009A1072 /* SCYActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYActivityIndicator.h; sourceTree = "<group>"; };
-		6E73D6411E14A516009A1072 /* SCYActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYActivityIndicator.m; sourceTree = "<group>"; };
 		6E73D6441E14A5C8009A1072 /* SCYActivityIndicatorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYActivityIndicatorButton.h; sourceTree = "<group>"; };
 		6E73D6451E14A5C8009A1072 /* SCYActivityIndicatorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYActivityIndicatorButton.m; sourceTree = "<group>"; };
 		6E73D6481E14A5F6009A1072 /* SCYRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYRefreshControl.h; sourceTree = "<group>"; };
@@ -1027,6 +1025,7 @@
 				6E6ADB351CD89E8700838B61 /* CDNetworkMonitor.m */,
 				6E6ADB361CD89E8700838B61 /* CDNetworkRequestManager.h */,
 				6E6ADB371CD89E8700838B61 /* CDNetworkRequestManager.m */,
+				626961401F160E5100C5D0D9 /* HttpRequestType.h */,
 			);
 			path = CDBaseNetWorkClass;
 			sourceTree = "<group>";
@@ -1137,10 +1136,8 @@
 		6E6ADBAA1CD8A0BD00838B61 /* CDCustomActivityIndicator */ = {
 			isa = PBXGroup;
 			children = (
-				6E73D6401E14A516009A1072 /* SCYActivityIndicator.h */,
-				6E73D6411E14A516009A1072 /* SCYActivityIndicator.m */,
-				6E6ADBAD1CD8A0BD00838B61 /* CDPointActivityIndicator.h */,
-				6E6ADBAE1CD8A0BD00838B61 /* CDPointActivityIndicator.m */,
+				6269613D1F16074B00C5D0D9 /* SCYActivityIndicatorView.h */,
+				6269613E1F16074B00C5D0D9 /* SCYActivityIndicatorView.m */,
 			);
 			path = CDCustomActivityIndicator;
 			sourceTree = "<group>";
@@ -1357,7 +1354,6 @@
 				6E24694B1DAA35C600DDC80B /* CDLoginConfigureModel.m in Sources */,
 				6E2469571DAA35C600DDC80B /* CDMineAccountService.m in Sources */,
 				6E24694F1DAA35C600DDC80B /* CDQueryAccountBasicItem.m in Sources */,
-				6E73D6421E14A516009A1072 /* SCYActivityIndicator.m in Sources */,
 				6E73368F1E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m in Sources */,
 				6E2469421DAA35C600DDC80B /* CDLoanInfoViewController.m in Sources */,
 				6E2469621DAA35C600DDC80B /* CDQueryAccountInfoCell.m in Sources */,
@@ -1405,7 +1401,6 @@
 				6E6ADB971CD89F7C00838B61 /* UILabel+CDLBAdditions.m in Sources */,
 				6E73D6561E14AB1D009A1072 /* ImagePickerManager.m in Sources */,
 				6E2469191DAA35C600DDC80B /* CDAboutUsItem.m in Sources */,
-				6E6ADBDC1CD8A0BD00838B61 /* CDPointActivityIndicator.m in Sources */,
 				6E24693D1DAA35C600DDC80B /* SCYMortgageCalculatorSelectCell.m in Sources */,
 				6E53C84C1CE9CF9500202F53 /* CDSlidePageView.m in Sources */,
 				6E24693E1DAA35C600DDC80B /* SCYPopTableView.m in Sources */,
@@ -1486,6 +1481,7 @@
 				6E2469301DAA35C600DDC80B /* SCYMortgageCalculatorModel.m in Sources */,
 				6E2469331DAA35C600DDC80B /* CDConvenientToolsService.m in Sources */,
 				6E2469171DAA35C600DDC80B /* CDHelpInfoViewController.m in Sources */,
+				6269613F1F16074B00C5D0D9 /* SCYActivityIndicatorView.m in Sources */,
 				14FDD0C11CDDF1200093ABC3 /* UITextView+CDCategory.m in Sources */,
 				6E24692D1DAA35C600DDC80B /* CDPayCalculatorItem.m in Sources */,
 			);

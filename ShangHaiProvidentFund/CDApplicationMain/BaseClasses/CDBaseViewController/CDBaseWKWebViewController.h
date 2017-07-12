@@ -2,8 +2,8 @@
 //  CDBaseWKWebViewController.h
 //  CDAppDemo
 //
-//  Created by cdd on 15/9/24.
-//  Copyright (c) 2015年 Cheng. All rights reserved.
+//  Created by cdd on 16/9/24.
+//  Copyright (c) 2016年 Cheng. All rights reserved.
 //
 
 /**
@@ -11,34 +11,22 @@
  */
 
 #import "CDBaseViewController.h"
+#import <WebKit/WebKit.h>
 
+typedef NS_ENUM(NSInteger,CDWebViewLoadType) {
+    CDWebViewLoadTypeURLString,
+    CDWebViewLoadTypeHTMLContentString
+};
 
 @interface CDBaseWKWebViewController : CDBaseViewController
 
-/** 是否显示Nav */
-@property (nonatomic,assign) BOOL isNavHidden;
+@property (nonatomic, strong) WKWebViewConfiguration *Configuration;
+@property (nonatomic, strong, readonly) WKWebView *wkWebView;
+@property (nonatomic, assign, readonly) CDWebViewLoadType loadType;
+@property (nonatomic, assign, getter=isNavHidden) BOOL navHidden;
+@property (nonatomic, copy) NSString *URLString;
+@property (nonatomic, copy) NSString *HTMLContentString;
 
-/**
- 加载纯外部链接网页
- 
- @param string URL地址
- */
-- (void)loadWebURLSring:(NSString *)string;
-
-/**
- 加载本地网页
- 
- @param string 本地HTML文件名
- */
-- (void)loadWebHTMLSring:(NSString *)string;
-
-/**
- 加载外部链接POST请求(注意检查 XFWKJSPOST.html 文件是否存在 )
- postData请求块 注意格式：@"\"username\":\"xxxx\",\"password\":\"xxxx\""
- 
- @param string 需要POST的URL地址
- @param postData post请求块
- */
-- (void)POSTWebURLSring:(NSString *)string postData:(NSString *)postData;
+- (void)reload;
 
 @end

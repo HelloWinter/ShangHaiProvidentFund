@@ -9,11 +9,6 @@
 #ifndef CDAppDemo_Macro_h
 #define CDAppDemo_Macro_h
 
-typedef NS_ENUM(NSUInteger, HttpRequestType) {
-    kHttpRequestTypePOST,
-    kHttpRequestTypeGET
-};
-
 
 #ifdef DEBUG //调试状态下打开LOG
 //#define CDLog(...)  NSLog(__VA_ARGS__)

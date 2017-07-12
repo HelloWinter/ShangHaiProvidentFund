@@ -27,10 +27,8 @@
 
 @property (nonatomic, assign) UITableViewStyle tableViewStyle;
 
-//- (instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle;
-
 /**
- *  开始下拉刷新，需要子类覆写
+ 开始下拉刷新，子类可覆写
  */
 - (void)startPullRefresh;
 

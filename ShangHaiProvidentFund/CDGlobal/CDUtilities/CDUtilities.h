@@ -45,6 +45,13 @@ typedef NS_ENUM(NSInteger, CurrentDeviceScreenModel){
 /* ---------------------------------------------------------------- */
 
 /**
+ *  获取当前设备屏幕类型
+ *
+ *  @return (CurrentDeviceScreenModel)
+ */
+CurrentDeviceScreenModel currentScreenModel();
+
+/**
  *  旋转视图
  *
  *  @param view     要旋转的视图
@@ -60,12 +67,6 @@ void rotateView(UIView* view,int degrees,float duration);
  */
 UIViewController* CDVisibalController();
 
-/**
- *  获取当前设备屏幕类型
- *
- *  @return (CurrentDeviceScreenModel)
- */
-CurrentDeviceScreenModel currentScreenModel();
 
 /**
  *  十六进制颜色转换
@@ -95,11 +96,6 @@ BOOL checkName(NSString *userName);
  *  @return IDFV字符串
  */
 NSString *CDKeyChainIDFV();
-
-/*!
- @brief 企业版APP直接通过URL更新
- */
-void openURLToUpdateEnterpriseEditionAPP(NSString* url,UIView* parentView);
 
 /**
  *  调用系统打电话功能
@@ -167,21 +163,5 @@ void goToSettings();
  *  @param completion 校验通过回调
  */
 + (void)authenticateUserTouchID:(void (^)(void)) completion;
-
-/**
- *  快速创建删除网页节点的JavaScript代码
- *
- *  @param elementName 要生成的元素名
- *  @param className   网页中要删除的节点的class名
- */
-+ (NSString *)jsCodeDeleteHTMLNodeWith:(NSString *)elementName className:(NSString *)className;
-
-/**
- *  快速创建删除网页节点的JavaScript代码
- *
- *  @param elementName 要生成的元素名
- *  @param tagName   网页中要删除的节点的标签名
- */
-+ (NSString *)jsCodeDeleteHTMLNodeWith:(NSString *)elementName tagName:(NSString *)tagName;
 
 @end
