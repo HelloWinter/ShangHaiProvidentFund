@@ -13,6 +13,9 @@
 #import "SCYAnnualBonusCalculateResultItem.h"
 #import "SCYAnnualBonusResultSectionHeaderView.h"
 
+static NSString *cellidentifier = @"cellidentifier";
+static NSString *ruleCellidentifier = @"ruleCellidentifier";
+
 @interface SCYAnnualBonusCalculateResultController ()
 
 @property (nonatomic, copy) NSArray *arrRules;
@@ -36,6 +39,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    [self.tableView registerClass:[SCYAnnualBonusResultCell class] forCellReuseIdentifier:cellidentifier];
+    [self.tableView registerClass:[SCYAnnualBonusRulesCell class] forCellReuseIdentifier:ruleCellidentifier];
 }
 
 - (NSArray *)arrRules{
@@ -81,20 +86,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section==0) {
-        static NSString *cellidentifier = @"cellidentifier";
         SCYAnnualBonusResultCell *cell=[tableView dequeueReusableCellWithIdentifier:cellidentifier];
-        if (!cell) {
-            cell = [[SCYAnnualBonusResultCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:cellidentifier];
-        }
         SCYAnnualBonusCalculateResultItem *item=[self.arrData cd_safeObjectAtIndex:indexPath.row];
         [cell setupWithBeforeTax:item.before.doubleValue afterTax:item.after.doubleValue type:self.bonusCalculateType showTips:(self.arrData.count!=1) indexPath:indexPath];
         return cell;
     }else{
-        static NSString *ruleCellidentifier = @"ruleCellidentifier";
         SCYAnnualBonusRulesCell *cell=[tableView dequeueReusableCellWithIdentifier:ruleCellidentifier];
-        if (!cell) {
-            cell = [[SCYAnnualBonusRulesCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:ruleCellidentifier];
-        }
         SCYAnnualBonusCalculateRulesItem *item=[self.arrRules cd_safeObjectAtIndex:indexPath.row];
         UIColor *color=(indexPath.row%2==0) ? ColorFromHexRGB(0xfcfcfc) : [UIColor whiteColor];
         [cell setupLeftText:item.left centerText:item.center rightText:item.right backgroundColor:color];

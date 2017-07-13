@@ -65,14 +65,21 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
+    CGFloat minWidth=self.width*0.25;
+    if (currentScreenModel()==CurrentDeviceScreenModel_3_5 | currentScreenModel()==CurrentDeviceScreenModel_4_0) {
+        minWidth=75;
+    }
+    if (currentScreenModel()==CurrentDeviceScreenModel_iPad) {
+        minWidth=self.width*0.3;
+    }
     if (self.cellLayoutType==CDCellLayoutTypeAccountDetail) {
-        self.lbDate.frame=CGRectMake(0, 0, 70, self.height);
-        self.lbDescription.frame=CGRectMake(self.lbDate.right, 0, self.width-130, self.height);
-        self.lbAccountChange.frame=CGRectMake(self.lbDescription.right, 0, 60, self.height);
+        self.lbDate.frame=CGRectMake(0, 0, minWidth, self.height);
+        self.lbDescription.frame=CGRectMake(self.lbDate.right, 0, self.width-minWidth*2, self.height);
+        self.lbAccountChange.frame=CGRectMake(self.lbDescription.right, 0, minWidth, self.height);
     }else if (self.cellLayoutType==CDCellLayoutTypeLoanDetail){
-        self.lbDate.frame=CGRectMake(0, 0, self.width-130, self.height);
-        self.lbDescription.frame=CGRectMake(self.lbDate.right, 0, 70, self.height);
-        self.lbAccountChange.frame=CGRectMake(self.lbDescription.right, 0, 60, self.height);
+        self.lbDate.frame=CGRectMake(0, 0, self.width-minWidth*2, self.height);
+        self.lbDescription.frame=CGRectMake(self.lbDate.right, 0, minWidth, self.height);
+        self.lbAccountChange.frame=CGRectMake(self.lbDescription.right, 0, minWidth, self.height);
     }
 }
 

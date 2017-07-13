@@ -31,8 +31,8 @@ static NSString *cellidentifier = @"cellidentifier";
 - (instancetype)init{
     self =[super init];
     if (self) {
-        self.tableViewStyle=UITableViewStyleGrouped;
         self.title=@"在线留言";
+        self.tableViewStyle=UITableViewStyleGrouped;
         self.showDragView=NO;
         self.hideKeyboradWhenTouch=YES;
     }
@@ -53,7 +53,8 @@ static NSString *cellidentifier = @"cellidentifier";
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UITextViewTextDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
 }
 
 - (CDButtonTableFooterView *)footerView{
@@ -99,9 +100,6 @@ static NSString *cellidentifier = @"cellidentifier";
         return cell;
     }else{
         CDOpinionsSuggestionsFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:cellidentifier];
-        if (nil == cell) {
-            cell = [[ alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:cellidentifier];
-        }
         [cell setupItem:item indexPath:indexPath];
         return cell;
     }

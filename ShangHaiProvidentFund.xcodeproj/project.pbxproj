@@ -12,6 +12,8 @@
 		14FDD0B31CDDD2440093ABC3 /* CDBaseTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0B21CDDD2440093ABC3 /* CDBaseTextFieldCell.m */; };
 		14FDD0B61CDDD33E0093ABC3 /* UITextField+cellIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0B51CDDD33E0093ABC3 /* UITextField+cellIndexPath.m */; };
 		14FDD0C11CDDF1200093ABC3 /* UITextView+CDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */; };
+		625A81D71F171BD30041267E /* HouseLoanRate.conf in Resources */ = {isa = PBXBuildFile; fileRef = 625A81D61F171BD30041267E /* HouseLoanRate.conf */; };
+		625A81DA1F171C150041267E /* CDHouseLoanRateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 625A81D91F171C150041267E /* CDHouseLoanRateModel.m */; };
 		6269613F1F16074B00C5D0D9 /* SCYActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6269613E1F16074B00C5D0D9 /* SCYActivityIndicatorView.m */; };
 		6E1A21611CEB2AC000D21143 /* mortgageCalculator.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */; };
 		6E2469161DAA35C600DDC80B /* CDAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468601DAA35C600DDC80B /* CDAboutUsController.m */; };
@@ -46,7 +48,6 @@
 		6E2469331DAA35C600DDC80B /* CDConvenientToolsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468A11DAA35C600DDC80B /* CDConvenientToolsService.m */; };
 		6E2469341DAA35C600DDC80B /* CDNetworkPointService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468A31DAA35C600DDC80B /* CDNetworkPointService.m */; };
 		6E2469351DAA35C600DDC80B /* CDPayCalculatorService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468A51DAA35C600DDC80B /* CDPayCalculatorService.m */; };
-		6E2469361DAA35C600DDC80B /* SCYMortgageCalculatorService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468A71DAA35C600DDC80B /* SCYMortgageCalculatorService.m */; };
 		6E2469371DAA35C600DDC80B /* CDConvenientToolsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468AA1DAA35C600DDC80B /* CDConvenientToolsCell.m */; };
 		6E2469381DAA35C600DDC80B /* CDNetWorkPointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468AC1DAA35C600DDC80B /* CDNetWorkPointCell.m */; };
 		6E2469391DAA35C600DDC80B /* CDNetWorkPointCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E2468AD1DAA35C600DDC80B /* CDNetWorkPointCell.xib */; };
@@ -182,6 +183,9 @@
 		14FDD0BF1CDDF1200093ABC3 /* UITextView+CDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+CDCategory.h"; sourceTree = "<group>"; };
 		14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+CDCategory.m"; sourceTree = "<group>"; };
 		4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShangHaiProvidentFund.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		625A81D61F171BD30041267E /* HouseLoanRate.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HouseLoanRate.conf; sourceTree = "<group>"; };
+		625A81D81F171C150041267E /* CDHouseLoanRateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDHouseLoanRateModel.h; sourceTree = "<group>"; };
+		625A81D91F171C150041267E /* CDHouseLoanRateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDHouseLoanRateModel.m; sourceTree = "<group>"; };
 		6269613D1F16074B00C5D0D9 /* SCYActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYActivityIndicatorView.h; sourceTree = "<group>"; };
 		6269613E1F16074B00C5D0D9 /* SCYActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYActivityIndicatorView.m; sourceTree = "<group>"; };
 		626961401F160E5100C5D0D9 /* HttpRequestType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequestType.h; sourceTree = "<group>"; };
@@ -248,8 +252,6 @@
 		6E2468A31DAA35C600DDC80B /* CDNetworkPointService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNetworkPointService.m; sourceTree = "<group>"; };
 		6E2468A41DAA35C600DDC80B /* CDPayCalculatorService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPayCalculatorService.h; sourceTree = "<group>"; };
 		6E2468A51DAA35C600DDC80B /* CDPayCalculatorService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPayCalculatorService.m; sourceTree = "<group>"; };
-		6E2468A61DAA35C600DDC80B /* SCYMortgageCalculatorService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYMortgageCalculatorService.h; sourceTree = "<group>"; };
-		6E2468A71DAA35C600DDC80B /* SCYMortgageCalculatorService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYMortgageCalculatorService.m; sourceTree = "<group>"; };
 		6E2468A91DAA35C600DDC80B /* CDConvenientToolsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientToolsCell.h; sourceTree = "<group>"; };
 		6E2468AA1DAA35C600DDC80B /* CDConvenientToolsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientToolsCell.m; sourceTree = "<group>"; };
 		6E2468AB1DAA35C600DDC80B /* CDNetWorkPointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNetWorkPointCell.h; sourceTree = "<group>"; };
@@ -526,6 +528,7 @@
 		14FDD0A51CDDB38E0093ABC3 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				625A81D61F171BD30041267E /* HouseLoanRate.conf */,
 				6E7C17401E1BA68000433093 /* loginConfigure.conf */,
 				6E7C17441E1BA76700433093 /* registConfigure.conf */,
 				6E7C17481E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf */,
@@ -663,6 +666,8 @@
 				6E2468941DAA35C600DDC80B /* CDPayCalculatorItem.m */,
 				6E2468951DAA35C600DDC80B /* SCYLoanRateItem.h */,
 				6E2468961DAA35C600DDC80B /* SCYLoanRateItem.m */,
+				625A81D81F171C150041267E /* CDHouseLoanRateModel.h */,
+				625A81D91F171C150041267E /* CDHouseLoanRateModel.m */,
 				6E2468971DAA35C600DDC80B /* SCYMortgageCalculatorCellItem.h */,
 				6E2468981DAA35C600DDC80B /* SCYMortgageCalculatorCellItem.m */,
 				6E2468991DAA35C600DDC80B /* SCYMortgageCalculatorModel.h */,
@@ -684,8 +689,6 @@
 				6E2468A31DAA35C600DDC80B /* CDNetworkPointService.m */,
 				6E2468A41DAA35C600DDC80B /* CDPayCalculatorService.h */,
 				6E2468A51DAA35C600DDC80B /* CDPayCalculatorService.m */,
-				6E2468A61DAA35C600DDC80B /* SCYMortgageCalculatorService.h */,
-				6E2468A71DAA35C600DDC80B /* SCYMortgageCalculatorService.m */,
 			);
 			path = NetWorkService;
 			sourceTree = "<group>";
@@ -1280,6 +1283,7 @@
 				6E73D6611E14B4C0009A1072 /* SSKeychain.strings in Resources */,
 				6E6ADB1B1CD892B200838B61 /* Assets.xcassets in Resources */,
 				6E6ADB191CD892B200838B61 /* Main.storyboard in Resources */,
+				625A81D71F171BD30041267E /* HouseLoanRate.conf in Resources */,
 				6E2469391DAA35C600DDC80B /* CDNetWorkPointCell.xib in Resources */,
 				6E7C17451E1BA76700433093 /* registConfigure.conf in Resources */,
 				6E7C17411E1BA68000433093 /* loginConfigure.conf in Resources */,
@@ -1406,6 +1410,7 @@
 				6E24693E1DAA35C600DDC80B /* SCYPopTableView.m in Sources */,
 				6E24695B1DAA35C600DDC80B /* CDBottomButtonView.m in Sources */,
 				6E6ADB8F1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.m in Sources */,
+				625A81DA1F171C150041267E /* CDHouseLoanRateModel.m in Sources */,
 				6E6ADB881CD89F7C00838B61 /* NSArray+CDArrayAdditions.m in Sources */,
 				6E24691C1DAA35C600DDC80B /* CDOpinionsSuggestionsItem.m in Sources */,
 				6E24692F1DAA35C600DDC80B /* SCYMortgageCalculatorCellItem.m in Sources */,
@@ -1445,7 +1450,6 @@
 				6E2469381DAA35C600DDC80B /* CDNetWorkPointCell.m in Sources */,
 				6E24696C1DAA3FF700DDC80B /* NSData+CDDataAddition.m in Sources */,
 				6E7336961E4C6BC80036393A /* UpDownLBView.m in Sources */,
-				6E2469361DAA35C600DDC80B /* SCYMortgageCalculatorService.m in Sources */,
 				6E7336931E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m in Sources */,
 				6E2469501DAA35C600DDC80B /* CDQueryAccountInfoModel.m in Sources */,
 				6E2469481DAA35C600DDC80B /* CDAccountDetailItem.m in Sources */,

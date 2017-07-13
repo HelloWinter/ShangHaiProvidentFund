@@ -8,7 +8,6 @@
 
 #import "SCYMortgageCalculatorController.h"
 #import "SCYLoanRateItem.h"
-#import "SCYMortgageCalculatorService.h"
 #import "SCYMortgageCalculatorModel.h"
 #import "SCYMeasurementTextFieldCell.h"
 #import "SCYMortgageCalculatorCellItem.h"
@@ -19,12 +18,13 @@
 #import "SCYMortgageCalculatorResultItem.h"
 #import "UITextField+cellIndexPath.h"
 #import "CDButtonTableFooterView.h"
+#import "NSData+CommonCrypto.h"
+#import "CDHouseLoanRateModel.h"
 
 static const CGFloat topHeight=50;
 
 @interface SCYMortgageCalculatorController ()
 
-@property (nonatomic, strong) SCYMortgageCalculatorService *mortgageCalculatorService;
 @property (nonatomic, strong) UIView *headerView;
 @property (nonatomic, assign) SCYMortgageType mortgageType;
 @property (nonatomic, strong) SCYMortgageCalculatorModel *mortgageCalculatorModel;
@@ -32,6 +32,7 @@ static const CGFloat topHeight=50;
 @property (nonatomic, strong) SCYMortgageCalculatorResultItem *resultItem;
 @property (nonatomic, strong) NSMutableArray *arrData;
 @property (nonatomic, strong) CDButtonTableFooterView *footerView;
+@property (nonatomic, strong) CDHouseLoanRateModel *houseLoanRateModel;
 
 @end
 
@@ -40,11 +41,12 @@ static const CGFloat topHeight=50;
 - (instancetype)init{
     self =[super init];
     if (self) {
-        self.tableViewStyle=UITableViewStyleGrouped;
         self.title=@"房贷计算";
+        self.hidesBottomBarWhenPushed=YES;
+        self.tableViewStyle=UITableViewStyleGrouped;
         self.mortgageType=SCYMortgageTypeProvidentFundLoan;
         self.hideKeyboradWhenTouch=YES;
-        self.hidesBottomBarWhenPushed=YES;
+        self.showDragView=NO;
     }
     return self;
 }
@@ -53,7 +55,7 @@ static const CGFloat topHeight=50;
     [super viewDidLoad];
     [self.view addSubview:self.headerView];
     self.tableView.frame=CGRectMake(0, topHeight, self.view.width, self.view.height-topHeight-64);
-    [self.mortgageCalculatorService loadWithIgnoreCache:NO showIndicator:YES];
+    [self p_recombinationData];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -63,20 +65,37 @@ static const CGFloat topHeight=50;
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    for (int i=0; i<self.arrData.count; i++) {
-        UITableViewCell *cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-        if ([cell isKindOfClass:[SCYMeasurementTextFieldCell class]]) {
-            SCYMeasurementTextFieldCell *textfieldCell=(SCYMeasurementTextFieldCell *)cell;
-            [textfieldCell textfieldBecomeFirstResponder];
-            return;
-        }
-    }
+//    for (int i=0; i<self.arrData.count; i++) {
+//        UITableViewCell *cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+//        if ([cell isKindOfClass:[SCYMeasurementTextFieldCell class]]) {
+//            SCYMeasurementTextFieldCell *textfieldCell=(SCYMeasurementTextFieldCell *)cell;
+//            [textfieldCell textfieldBecomeFirstResponder];
+//            return;
+//        }
+//    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.view endEditing:YES];
-    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
+}
+
+- (CDHouseLoanRateModel *)houseLoanRateModel{
+    if (!_houseLoanRateModel) {
+        NSString *filepath=[[NSBundle mainBundle]pathForResource:@"HouseLoanRate.conf" ofType:nil];
+        NSData *data=[NSData dataWithContentsOfFile:filepath];
+        NSError *decryptedError=nil;
+        NSData *decryptedData=[data decryptedAES256DataUsingKey:@"1234567890" error:&decryptedError];
+        if (!decryptedError) {
+            NSError *error=nil;
+            NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:decryptedData options:(NSJSONReadingMutableContainers) error:&error];
+            if (!error) {
+                _houseLoanRateModel=[CDHouseLoanRateModel mj_objectWithKeyValues:dict];
+            }
+        }
+    }
+    return _houseLoanRateModel;
 }
 
 - (CDButtonTableFooterView *)footerView{
@@ -99,13 +118,6 @@ static const CGFloat topHeight=50;
         _mortgageCalculatorModel=[[SCYMortgageCalculatorModel alloc]init];
     }
     return _mortgageCalculatorModel;
-}
-
-- (SCYMortgageCalculatorService *)mortgageCalculatorService{
-    if (_mortgageCalculatorService==nil) {
-        _mortgageCalculatorService=[[SCYMortgageCalculatorService alloc]initWithDelegate:self];
-    }
-    return _mortgageCalculatorService;
 }
 
 - (SCYPopTableView *)popTableView{
@@ -148,9 +160,6 @@ static const CGFloat topHeight=50;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (!self.mortgageCalculatorService.isLoaded) {
-        return 0;
-    }
     if (section==0) {
         return self.arrData.count;
     }else if (section==1){
@@ -192,9 +201,6 @@ static const CGFloat topHeight=50;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    if (!self.mortgageCalculatorService.isLoaded) {
-        return nil;
-    }
     return (section==0) ? self.footerView : nil;
 }
 
@@ -226,22 +232,7 @@ static const CGFloat topHeight=50;
     }
 }
 
-#pragma mark - CDJSONBaseNetworkServiceDelegate
-- (void)serviceDidFinished:(CDJSONBaseNetworkService *)service{
-    [super serviceDidFinished:service];
-    if (self.mortgageCalculatorService.returnCode==1) {
-        [self p_recombinationData];
-    }
-}
-
-- (void)service:(CDJSONBaseNetworkService *)service didFailLoadWithError:(NSError *)error{
-    [super service:service didFailLoadWithError:error];
-}
-
 #pragma mark - override
-- (void)startPullRefresh{
-    [self.mortgageCalculatorService loadWithIgnoreCache:YES showIndicator:NO];
-}
 
 #pragma mark - NSNotification
 - (void)textFieldDidChanged:(NSNotification *)noti{
@@ -277,18 +268,18 @@ static const CGFloat topHeight=50;
 - (void)p_recombinationData{
     for (SCYMortgageCalculatorCellItem *item in self.mortgageCalculatorModel.businessloan) {
         if ([item.paramkey isEqualToString:@"businessloanrate"]) {
-            SCYLoanRateItem *rateItem = [self.mortgageCalculatorService.businessloan cd_safeObjectAtIndex:0];
+            SCYLoanRateItem *rateItem = [self.houseLoanRateModel.businessloan cd_safeObjectAtIndex:0];
             item.paramvalue=rateItem.rate;
             [item.paramsubitemsdata removeAllObjects];
-            [item.paramsubitemsdata addObjectsFromArray:self.mortgageCalculatorService.businessloan];
+            [item.paramsubitemsdata addObjectsFromArray:self.houseLoanRateModel.businessloan];
         }
     }
     for (SCYMortgageCalculatorCellItem *item in self.mortgageCalculatorModel.combinedloan) {
         if ([item.paramkey isEqualToString:@"businessloanrate"]) {
-            SCYLoanRateItem *rateItem = [self.mortgageCalculatorService.businessloan cd_safeObjectAtIndex:0];
+            SCYLoanRateItem *rateItem = [self.houseLoanRateModel.businessloan cd_safeObjectAtIndex:0];
             item.paramvalue=rateItem.rate;
             [item.paramsubitemsdata removeAllObjects];
-            [item.paramsubitemsdata addObjectsFromArray:self.mortgageCalculatorService.businessloan];
+            [item.paramsubitemsdata addObjectsFromArray:self.houseLoanRateModel.businessloan];
         }
     }
     [self p_refreshArrData];
@@ -329,7 +320,7 @@ static const CGFloat topHeight=50;
             }
             sourceItemfund.duetime=[item.paramvalue floatValue] * [item.paramunitvalue floatValue];
         }else if ([item.paramkey isEqualToString:@"fundloanrate"]) {
-            sourceItemfund.rate=(sourceItemfund.duetime > 5) ? [self.mortgageCalculatorService.morefive floatValue] : [self.mortgageCalculatorService.lessfive floatValue];
+            sourceItemfund.rate=(sourceItemfund.duetime > 5) ? [self.houseLoanRateModel.morefive floatValue] : [self.houseLoanRateModel.lessfive floatValue];
         }else if ([item.paramkey isEqualToString:@"paytype"]){
             sourceItemfund.payType=[item.paramvalue floatValue];
             sourceItembusiness.payType=[item.paramvalue floatValue];
@@ -347,7 +338,7 @@ static const CGFloat topHeight=50;
     }
     
     if (self.mortgageType==SCYMortgageTypeCombinedLoan) {
-        sourceItemfund.rate=(sourceItemfund.duetime > 5) ? [self.mortgageCalculatorService.morefive floatValue] : [self.mortgageCalculatorService.lessfive floatValue];
+        sourceItemfund.rate=(sourceItemfund.duetime > 5) ? [self.houseLoanRateModel.morefive floatValue] : [self.houseLoanRateModel.lessfive floatValue];
     }
     
     switch (self.mortgageType) {
