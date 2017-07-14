@@ -103,7 +103,7 @@ static const CGFloat kHeaderTitleHeight = 28.0;
         _pageHeaderView.normalColor=[UIColor blackColor];
         _pageHeaderView.selectedColor=ColorFromHexRGB(0x2d8eff);
         _pageHeaderView.itemTitles=@[@"普通公积金",@"补充公积金"];
-        _pageHeaderView.sliderSize=CGSizeMake(self.pageHeaderView.width/self.pageHeaderView.itemTitles.count, 2);
+        _pageHeaderView.sliderSize=CGSizeMake(100, 2);
         [_pageHeaderView setSelectedIndex:self.selectIndex];
     }
     return _pageHeaderView;

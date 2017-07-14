@@ -68,8 +68,11 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
         _Configuration.processPool = [[WKProcessPool alloc] init];
         //自定义配置,一般用于 js调用oc方法(OC拦截URL中的数据做自定义操作)
         WKUserContentController * UserContentController = [[WKUserContentController alloc]init];
+//        NSString *cookie=[NSString stringWithFormat:@"document.cookie='APPID=%@';document.cookie='SOURCE=App';document.cookie='TOKEN=%@';document.cookie='VERSION=%@'",];
+//        WKUserScript *cookieScript=[[WKUserScript alloc] initWithSource:cookie injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
+//        [UserContentController addUserScript:cookieScript];
         // 添加消息处理，注意：self指代的对象需要遵守WKScriptMessageHandler协议，结束时需要移除
-//        [UserContentController addScriptMessageHandler:self name:@""];
+        [UserContentController addScriptMessageHandler:self name:@""];
         // 是否支持记忆读取
         _Configuration.suppressesIncrementalRendering = YES;
         // 允许用户更改网页的设置
@@ -125,7 +128,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
     [self updateNavigationItems];
     if ([navigationAction.request.URL.scheme hasPrefix:@"tmast"]) {
-        [CDAutoHideMessageHUD showMessage:@"不支持的网路协议"];
+        [CDAutoHideMessageHUD showMessage:@"不支持的网络协议"];
         decisionHandler(WKNavigationActionPolicyCancel);
     }
     decisionHandler(WKNavigationActionPolicyAllow);
@@ -149,7 +152,9 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
-    self.title = self.wkWebView.title;
+    if (self.wkWebView.title.length!=0) {
+        self.title = self.wkWebView.title;
+    }
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     [self updateNavigationItems];
 }
@@ -157,17 +162,42 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 - (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error{
 }
 
-//- (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler{
-//}
+- (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler{
+    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+        NSURLCredential *card = [[NSURLCredential alloc]initWithTrust:challenge.protectionSpace.serverTrust];
+        completionHandler(NSURLSessionAuthChallengeUseCredential,card);
+    }
+}
 
 #pragma mark - WKUIDelegate
 -(void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler();
+    }]];
+    [self presentViewController:alert animated:YES completion:NULL];
 }
 
 -(void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(YES);
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(NO);
+    }]];
+    [self presentViewController:alert animated:YES completion:NULL];
 }
 
 -(void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:prompt preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.text=defaultText;
+    }];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler([[alert.textFields lastObject] text]);
+    }]];
+    [self presentViewController:alert animated:YES completion:NULL];
 }
 
 #pragma mark - WKScriptMessageHandler
@@ -197,7 +227,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 - (void)loadWebView{
     switch (self.loadType) {
         case CDWebViewLoadTypeURLString:{
-            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.URLString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.URLString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20];
             [self.wkWebView loadRequest:request];
         }
             break;
@@ -217,7 +247,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 -(void)updateNavigationItems{
     UIBarButtonItem *leftItem = [UIBarButtonItem cd_ItemWidth:20 imageName:@"navigation_backOff" target:self action:@selector(scy_backOffAction)];
     if (self.wkWebView.canGoBack) {
-        UIBarButtonItem *leftItemClose = [UIBarButtonItem cd_ItemWidth:30 imageName:@"navigation_backOff" target:self action:@selector(backToOriginalViewController)];
+        UIBarButtonItem *leftItemClose = [UIBarButtonItem cd_ItemWidth:20 imageName:@"navigation_backOff" target:self action:@selector(backToOriginalViewController)];
         self.navigationItem.leftBarButtonItems = @[leftItem,leftItemClose];
     }else{
         self.navigationItem.leftBarButtonItem = leftItem;

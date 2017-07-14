@@ -36,7 +36,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.tableView.height -= self.tabBarController.tabBar.height;
-    [self.newsAndTrendsService loadNewsAndTrendsIgnoreCache:NO showIndicator:NO];
+    [self.newsAndTrendsService loadNewsAndTrendsIgnoreCache:NO showIndicator:YES];
 }
 
 - (NSMutableArray *)arrData{
@@ -70,19 +70,15 @@
     if ([item isKindOfClass:[CDNewsAndTrendsItem class]]) {
         CDNewsAndTrendsItem *newsItem =(CDNewsAndTrendsItem *)item;
         static NSString *newsCellIdentifier=@"newsCellIdentifier";
+        [tableView registerClass:[CDNewsAndTrendsCell class] forCellReuseIdentifier:newsCellIdentifier];
         CDNewsAndTrendsCell *cell=[tableView dequeueReusableCellWithIdentifier:newsCellIdentifier];
-        if (!cell) {
-            cell=[[CDNewsAndTrendsCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:newsCellIdentifier];
-        }
         [cell setupCellItem:newsItem.news];
         return cell;
     }else if([item isKindOfClass:[CDLoadMoreItem class]]){
         CDLoadMoreItem *moreItem =(CDLoadMoreItem *)item;
         static NSString *moreCellIdentifier=@"moreCellIdentifier";
+        [tableView registerClass:[CDLoadMoreCell class] forCellReuseIdentifier:moreCellIdentifier];
         CDLoadMoreCell *cell=[tableView dequeueReusableCellWithIdentifier:moreCellIdentifier];
-        if (!cell) {
-            cell=[[CDLoadMoreCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:moreCellIdentifier];
-        }
         [cell setupCellItem:moreItem];
         return cell;
     }
@@ -116,7 +112,7 @@
     if ([item isKindOfClass:[CDNewsAndTrendsItem class]]) {
         CDNewsAndTrendsItem *newsitem = (CDNewsAndTrendsItem *)item;
         NSString *urlStr=[NSString stringWithFormat:@"/gjjManager/newsByIdServlet?id=%@",newsitem.news.newsid];
-        [self p_pushToWKWebViewControllerWithURLString:CDURLWithAPI(urlStr)];
+        [self p_pushToWKWebViewControllerWithURLString:CDURLWithAPI(urlStr) title:newsitem.news.title];
     }else if ([item isKindOfClass:[CDLoadMoreItem class]]){
         [self p_refreshTableViewFromTop:NO];
     }
@@ -138,12 +134,14 @@
 }
 
 #pragma mark - private
-- (void)p_pushToWKWebViewControllerWithURLString:(NSString *)urlstr{
+- (void)p_pushToWKWebViewControllerWithURLString:(NSString *)urlstr title:(NSString *)title{
+    if (!urlstr || urlstr.length==0) {
+        return;
+    }
     CDBaseWKWebViewController *webViewController=[[CDBaseWKWebViewController alloc]init];
-    webViewController.title=@"上海住房公积金网";
+    webViewController.title=title;
     webViewController.URLString = urlstr;
     [self.navigationController pushViewController:webViewController animated:YES];
-    
 }
 
 - (void)p_refreshTableViewFromTop:(BOOL)isFromTop{
