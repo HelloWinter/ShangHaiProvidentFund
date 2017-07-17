@@ -13,6 +13,7 @@
 #import "CDAccountInfoItem.h"
 //#import "CDAccountBasicInfoCell.h"
 #import "CDAccountDetailController.h"
+#import "CDUserManagerController.h"
 #import "CDLoginViewController.h"
 #import "CDNavigationController.h"
 #import "CDLoginModel.h"
@@ -148,10 +149,13 @@ static const CGFloat headerOriginalHeight=180;
                 default:
                     break;
             }
-        }
-            break;
-        case 2:
-            break;
+        }break;
+        case 2:{
+            [CDAutoHideMessageHUD showMessage:@"暂时无法查询"];
+        }break;
+        case 3:{
+            [self p_pushToAboutUsController];
+        }break;
             
         default:
             break;

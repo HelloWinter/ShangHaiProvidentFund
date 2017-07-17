@@ -30,9 +30,10 @@
     
     CDConvenientToolsItem *item4=[CDConvenientToolsItem itemWithImageName:@"mine_account5" title:@"贷款进度"];
 //    CDConvenientToolsItem *item3=[CDConvenientToolsItem itemWithImageName:@"mine_account4" title:@"模拟查询"];
-//    CDConvenientToolsItem *item5=[CDConvenientToolsItem itemWithImageName:@"mine_account6" title:@"用户管理"];
     
-    [self.arrData addObjectsFromArray:@[@[item1],@[item2,item7],@[item4]]];//@[item0],
+    CDConvenientToolsItem *item5=[CDConvenientToolsItem itemWithImageName:@"mine_account6" title:@"关于我们"];
+    
+    [self.arrData addObjectsFromArray:@[@[item1],@[item2,item7],@[item4],@[item5]]];//@[item0],
 }
 
 @end

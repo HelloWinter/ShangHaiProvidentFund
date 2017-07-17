@@ -15,6 +15,8 @@
 		625A81D71F171BD30041267E /* HouseLoanRate.conf in Resources */ = {isa = PBXBuildFile; fileRef = 625A81D61F171BD30041267E /* HouseLoanRate.conf */; };
 		625A81DA1F171C150041267E /* CDHouseLoanRateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 625A81D91F171C150041267E /* CDHouseLoanRateModel.m */; };
 		6269613F1F16074B00C5D0D9 /* SCYActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6269613E1F16074B00C5D0D9 /* SCYActivityIndicatorView.m */; };
+		6286FBF31F1C9A8E00794FC5 /* CDUserManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6286FBF21F1C9A8E00794FC5 /* CDUserManagerController.m */; };
+		6286FBF61F1CB1DD00794FC5 /* CDUserManagerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6286FBF51F1CB1DD00794FC5 /* CDUserManagerModel.m */; };
 		6E1A21611CEB2AC000D21143 /* mortgageCalculator.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */; };
 		6E2469161DAA35C600DDC80B /* CDAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468601DAA35C600DDC80B /* CDAboutUsController.m */; };
 		6E2469171DAA35C600DDC80B /* CDHelpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468621DAA35C600DDC80B /* CDHelpInfoViewController.m */; };
@@ -189,6 +191,10 @@
 		6269613D1F16074B00C5D0D9 /* SCYActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYActivityIndicatorView.h; sourceTree = "<group>"; };
 		6269613E1F16074B00C5D0D9 /* SCYActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYActivityIndicatorView.m; sourceTree = "<group>"; };
 		626961401F160E5100C5D0D9 /* HttpRequestType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequestType.h; sourceTree = "<group>"; };
+		6286FBF11F1C9A8E00794FC5 /* CDUserManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUserManagerController.h; sourceTree = "<group>"; };
+		6286FBF21F1C9A8E00794FC5 /* CDUserManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUserManagerController.m; sourceTree = "<group>"; };
+		6286FBF41F1CB1DD00794FC5 /* CDUserManagerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUserManagerModel.h; sourceTree = "<group>"; };
+		6286FBF51F1CB1DD00794FC5 /* CDUserManagerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUserManagerModel.m; sourceTree = "<group>"; };
 		6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mortgageCalculator.conf; sourceTree = "<group>"; };
 		6E24685F1DAA35C600DDC80B /* CDAboutUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsController.h; sourceTree = "<group>"; };
 		6E2468601DAA35C600DDC80B /* CDAboutUsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsController.m; sourceTree = "<group>"; };
@@ -758,6 +764,8 @@
 				6E2468C81DAA35C600DDC80B /* CDRegistViewController.m */,
 				6E2468C91DAA35C600DDC80B /* CDRepaymentInfoController.h */,
 				6E2468CA1DAA35C600DDC80B /* CDRepaymentInfoController.m */,
+				6286FBF11F1C9A8E00794FC5 /* CDUserManagerController.h */,
+				6286FBF21F1C9A8E00794FC5 /* CDUserManagerController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -791,6 +799,8 @@
 				6E2468E31DAA35C600DDC80B /* CDRepayInfoChrItem.m */,
 				6E2468E41DAA35C600DDC80B /* CDRepayInfoModel.h */,
 				6E2468E51DAA35C600DDC80B /* CDRepayInfoModel.m */,
+				6286FBF41F1CB1DD00794FC5 /* CDUserManagerModel.h */,
+				6286FBF51F1CB1DD00794FC5 /* CDUserManagerModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1431,6 +1441,7 @@
 				6E2469161DAA35C600DDC80B /* CDAboutUsController.m in Sources */,
 				6E6ADB591CD89E8E00838B61 /* CDBaseTableViewController.m in Sources */,
 				6E73D6511E14A780009A1072 /* CDUpImageDownTitleButton.m in Sources */,
+				6286FBF61F1CB1DD00794FC5 /* CDUserManagerModel.m in Sources */,
 				6E2469231DAA35C600DDC80B /* CDOpinionsSuggestionsViewCell.m in Sources */,
 				6E2469581DAA35C600DDC80B /* CDRegistGetVerCodeService.m in Sources */,
 				14FDD0B31CDDD2440093ABC3 /* CDBaseTextFieldCell.m in Sources */,
@@ -1470,6 +1481,7 @@
 				6E2469491DAA35C600DDC80B /* CDAccountInfoItem.m in Sources */,
 				6E6ADB101CD892B200838B61 /* main.m in Sources */,
 				6E73D64E1E14A626009A1072 /* CDADLoopDisplayScrollView.m in Sources */,
+				6286FBF31F1C9A8E00794FC5 /* CDUserManagerController.m in Sources */,
 				6E6ADB8C1CD89F7C00838B61 /* NSDate+CDDateAddition.m in Sources */,
 				6E2469181DAA35C600DDC80B /* CDOpinionsSuggestionsController.m in Sources */,
 				6E73D6461E14A5C8009A1072 /* SCYActivityIndicatorButton.m in Sources */,

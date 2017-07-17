@@ -1,14 +1,14 @@
 //
-//  CDAboutUsController.m
+//  CDUserManagerController.m
 //  ShangHaiProvidentFund
 //
-//  Created by cdd on 16/5/3.
-//  Copyright © 2016年 cheng dong. All rights reserved.
+//  Created by cd on 2017/7/17.
+//  Copyright © 2017年 cheng dong. All rights reserved.
 //
 
-#import "CDAboutUsController.h"
+#import "CDUserManagerController.h"
 #import "CDAboutUsItem.h"
-#import "CDAboutUsModel.h"
+#import "CDUserManagerModel.h"
 #import "CDAboutUsCell.h"
 #import "CDBaseWKWebViewController.h"
 #import "CDButtonTableFooterView.h"
@@ -19,14 +19,14 @@
 
 static NSString *cellidentifier = @"cellidentifier";
 
-@interface CDAboutUsController ()<CDLoginViewControllerDelegate>
+@interface CDUserManagerController ()<CDLoginViewControllerDelegate>
 
-@property (nonatomic, strong) CDAboutUsModel *aboutUsModel;
+@property (nonatomic, strong) CDUserManagerModel *aboutUsModel;
 @property (nonatomic, strong) CDButtonTableFooterView *footerView;
 
 @end
 
-@implementation CDAboutUsController
+@implementation CDUserManagerController
 
 - (instancetype)init{
     self =[super init];
@@ -41,13 +41,13 @@ static NSString *cellidentifier = @"cellidentifier";
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-//    self.tableView.tableFooterView=self.footerView;
+    self.tableView.tableFooterView=self.footerView;
     [self.tableView registerClass:[CDAboutUsCell class] forCellReuseIdentifier:cellidentifier];
 }
 
-- (CDAboutUsModel *)aboutUsModel{
+- (CDUserManagerModel *)aboutUsModel{
     if (_aboutUsModel==nil) {
-        _aboutUsModel=[[CDAboutUsModel alloc]init];
+        _aboutUsModel=[[CDUserManagerModel alloc]init];
     }
     return _aboutUsModel;
 }
@@ -95,18 +95,21 @@ static NSString *cellidentifier = @"cellidentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.section) {
-            /*
         case 0:{
             switch (indexPath.row) {
                 case 0:{
+                    CDIsUserLogined();
+#warning TODO
+                }break;
+                case 1:{
                     NSString *strURL=CDWebURLWithAPI(@"/static/sms/forget-pass.html");
                     [self pushToWKWebViewControllerWithTitle:@"遗忘密码" URLString:[strURL stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)]];
                 }break;
-                case 1:{
+                case 2:{
                     NSString *strURL=@"https://persons.shgjj.com/get-pass.html";
                     [self pushToWKWebViewControllerWithTitle:@"手机取回用户名和密码" URLString:[strURL stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)]];
                 }break;
-                case 2:
+                case 3:
                     [self pushToWKWebViewControllerWithTitle:@"个人公积金账号查询" URLString:@"http://m.shgjj.com/verifier/verifier/index"];
                     break;
                 default:
@@ -114,9 +117,8 @@ static NSString *cellidentifier = @"cellidentifier";
             }
         }
             break;
-             */
-            
-        case 0:{
+            /*
+        case 1:{
             switch (indexPath.row) {
                 case 0:{
                     [self pushToWKWebViewControllerWithTitle:@"隐私声明" URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=yssm")];
@@ -129,7 +131,7 @@ static NSString *cellidentifier = @"cellidentifier";
             }
         }
             break;
-        case 1:{
+        case 2:{
             switch (indexPath.row) {
                 case 0:
                     [self showCallTelephoneAlert];
@@ -142,7 +144,7 @@ static NSString *cellidentifier = @"cellidentifier";
             }
         }
             break;
-        case 2:{
+        case 3:{
             switch (indexPath.row) {
                 case 0:{
                     NSString *strUrl=[@"http://m.weibo.cn/u/3547969482" stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)];
@@ -153,6 +155,7 @@ static NSString *cellidentifier = @"cellidentifier";
             }
         }
             break;
+             */
         default:
             break;
     }
