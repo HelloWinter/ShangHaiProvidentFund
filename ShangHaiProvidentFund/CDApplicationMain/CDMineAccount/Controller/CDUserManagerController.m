@@ -98,8 +98,12 @@ static NSString *cellidentifier = @"cellidentifier";
         case 0:{
             switch (indexPath.row) {
                 case 0:{
-                    CDIsUserLogined();
-#warning TODO
+                    if (!CDIsUserLogined() && indexPath.section!=3) {
+                        [self p_presentLoginViewController];
+                    }else{
+#warning TODO 修改密码
+                        
+                    }
                 }break;
                 case 1:{
                     NSString *strURL=CDWebURLWithAPI(@"/static/sms/forget-pass.html");
@@ -217,6 +221,13 @@ static NSString *cellidentifier = @"cellidentifier";
     }else{
         [self presentLoginViewController];
     }
+}
+
+- (void)p_presentLoginViewController{
+    CDLoginViewController *controller=[[CDLoginViewController alloc]init];
+    controller.delegate=self;
+    CDNavigationController *nav=[[CDNavigationController alloc]initWithRootViewController:controller];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)refreshFooterView{

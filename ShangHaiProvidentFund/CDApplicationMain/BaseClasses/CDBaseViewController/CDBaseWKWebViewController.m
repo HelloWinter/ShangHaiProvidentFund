@@ -61,23 +61,28 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 - (WKWebView *)wkWebView{
     if (!_wkWebView) {
         //设置网页的配置文件
-        _Configuration = [[WKWebViewConfiguration alloc]init];
+        _configuration = [[WKWebViewConfiguration alloc]init];
         // 允许在线播放
-        _Configuration.allowsInlineMediaPlayback = YES;
+        _configuration.allowsInlineMediaPlayback = YES;
         // web内容处理池
-        _Configuration.processPool = [[WKProcessPool alloc] init];
+        _configuration.processPool = [[WKProcessPool alloc] init];
+        // 是否支持记忆读取
+        _configuration.suppressesIncrementalRendering = YES;
         //自定义配置,一般用于 js调用oc方法(OC拦截URL中的数据做自定义操作)
-        WKUserContentController * UserContentController = [[WKUserContentController alloc]init];
+        WKUserContentController * userContentController = [[WKUserContentController alloc]init];
 //        NSString *cookie=[NSString stringWithFormat:@"document.cookie='APPID=%@';document.cookie='SOURCE=App';document.cookie='TOKEN=%@';document.cookie='VERSION=%@'",];
 //        WKUserScript *cookieScript=[[WKUserScript alloc] initWithSource:cookie injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
-//        [UserContentController addUserScript:cookieScript];
+//        [userContentController addUserScript:cookieScript];
+        NSString *document=@"metaEl=window.document.createElement('meta');metaEl.setAttribute('name','viewport');window.document.head.appendChild(metaEl);metaEl.setAttribute('content','width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1');";
+        WKUserScript *documentScript=[[WKUserScript alloc] initWithSource:document injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:NO];
+        [userContentController addUserScript:documentScript];
+        
         // 添加消息处理，注意：self指代的对象需要遵守WKScriptMessageHandler协议，结束时需要移除
-        [UserContentController addScriptMessageHandler:self name:@""];
-        // 是否支持记忆读取
-        _Configuration.suppressesIncrementalRendering = YES;
+//        [userContentController addScriptMessageHandler:self name:@""];
+        
         // 允许用户更改网页的设置
-        _Configuration.userContentController = UserContentController;
-        _wkWebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-64) configuration:_Configuration];
+        _configuration.userContentController = userContentController;
+        _wkWebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-64) configuration:_configuration];
         _wkWebView.backgroundColor = [UIColor colorWithRed:240.0/255 green:240.0/255 blue:240.0/255 alpha:1];
         // 设置代理
         _wkWebView.navigationDelegate = self;
@@ -152,7 +157,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
-    if (self.wkWebView.title.length!=0) {
+    if (self.title.length==0 && self.wkWebView.title.length!=0) {
         self.title = self.wkWebView.title;
     }
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];

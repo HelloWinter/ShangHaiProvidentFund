@@ -12,27 +12,27 @@
 		14FDD0B31CDDD2440093ABC3 /* CDBaseTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0B21CDDD2440093ABC3 /* CDBaseTextFieldCell.m */; };
 		14FDD0B61CDDD33E0093ABC3 /* UITextField+cellIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0B51CDDD33E0093ABC3 /* UITextField+cellIndexPath.m */; };
 		14FDD0C11CDDF1200093ABC3 /* UITextView+CDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */; };
+		6211FC5D1F20838400F6F8F2 /* CDAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC581F20838400F6F8F2 /* CDAboutUsController.m */; };
+		6211FC5E1F20838400F6F8F2 /* CDHelpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC5A1F20838400F6F8F2 /* CDHelpInfoViewController.m */; };
+		6211FC5F1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC5C1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m */; };
+		6211FC6A1F20839E00F6F8F2 /* CDAboutUsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC611F20839E00F6F8F2 /* CDAboutUsItem.m */; };
+		6211FC6B1F20839E00F6F8F2 /* CDAboutUsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC631F20839E00F6F8F2 /* CDAboutUsModel.m */; };
+		6211FC6C1F20839E00F6F8F2 /* CDBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC651F20839E00F6F8F2 /* CDBaseModel.m */; };
+		6211FC6D1F20839E00F6F8F2 /* CDOpinionsSuggestionsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC671F20839E00F6F8F2 /* CDOpinionsSuggestionsItem.m */; };
+		6211FC6E1F20839E00F6F8F2 /* CDOpinionsSuggestionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC691F20839E00F6F8F2 /* CDOpinionsSuggestionsModel.m */; };
+		6211FC711F2083A700F6F8F2 /* CDCommitMessageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC701F2083A700F6F8F2 /* CDCommitMessageService.m */; };
+		6211FC7C1F2083B500F6F8F2 /* CDAboutUsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC731F2083B500F6F8F2 /* CDAboutUsCell.m */; };
+		6211FC7D1F2083B500F6F8F2 /* CDButtonTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC751F2083B500F6F8F2 /* CDButtonTableFooterView.m */; };
+		6211FC7E1F2083B500F6F8F2 /* CDButtonTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6211FC761F2083B500F6F8F2 /* CDButtonTableFooterView.xib */; };
+		6211FC7F1F2083B500F6F8F2 /* CDOpinionsSuggestionsFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC781F2083B500F6F8F2 /* CDOpinionsSuggestionsFieldCell.m */; };
+		6211FC801F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC7A1F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.m */; };
+		6211FC811F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6211FC7B1F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.xib */; };
 		625A81D71F171BD30041267E /* HouseLoanRate.conf in Resources */ = {isa = PBXBuildFile; fileRef = 625A81D61F171BD30041267E /* HouseLoanRate.conf */; };
 		625A81DA1F171C150041267E /* CDHouseLoanRateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 625A81D91F171C150041267E /* CDHouseLoanRateModel.m */; };
 		6269613F1F16074B00C5D0D9 /* SCYActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6269613E1F16074B00C5D0D9 /* SCYActivityIndicatorView.m */; };
 		6286FBF31F1C9A8E00794FC5 /* CDUserManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6286FBF21F1C9A8E00794FC5 /* CDUserManagerController.m */; };
 		6286FBF61F1CB1DD00794FC5 /* CDUserManagerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6286FBF51F1CB1DD00794FC5 /* CDUserManagerModel.m */; };
 		6E1A21611CEB2AC000D21143 /* mortgageCalculator.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */; };
-		6E2469161DAA35C600DDC80B /* CDAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468601DAA35C600DDC80B /* CDAboutUsController.m */; };
-		6E2469171DAA35C600DDC80B /* CDHelpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468621DAA35C600DDC80B /* CDHelpInfoViewController.m */; };
-		6E2469181DAA35C600DDC80B /* CDOpinionsSuggestionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468641DAA35C600DDC80B /* CDOpinionsSuggestionsController.m */; };
-		6E2469191DAA35C600DDC80B /* CDAboutUsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468671DAA35C600DDC80B /* CDAboutUsItem.m */; };
-		6E24691A1DAA35C600DDC80B /* CDAboutUsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468691DAA35C600DDC80B /* CDAboutUsModel.m */; };
-		6E24691B1DAA35C600DDC80B /* CDBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24686B1DAA35C600DDC80B /* CDBaseModel.m */; };
-		6E24691C1DAA35C600DDC80B /* CDOpinionsSuggestionsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24686D1DAA35C600DDC80B /* CDOpinionsSuggestionsItem.m */; };
-		6E24691D1DAA35C600DDC80B /* CDOpinionsSuggestionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24686F1DAA35C600DDC80B /* CDOpinionsSuggestionsModel.m */; };
-		6E24691E1DAA35C600DDC80B /* CDCommitMessageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468721DAA35C600DDC80B /* CDCommitMessageService.m */; };
-		6E24691F1DAA35C600DDC80B /* CDAboutUsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468751DAA35C600DDC80B /* CDAboutUsCell.m */; };
-		6E2469201DAA35C600DDC80B /* CDButtonTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468771DAA35C600DDC80B /* CDButtonTableFooterView.m */; };
-		6E2469211DAA35C600DDC80B /* CDButtonTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E2468781DAA35C600DDC80B /* CDButtonTableFooterView.xib */; };
-		6E2469221DAA35C600DDC80B /* CDOpinionsSuggestionsFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24687A1DAA35C600DDC80B /* CDOpinionsSuggestionsFieldCell.m */; };
-		6E2469231DAA35C600DDC80B /* CDOpinionsSuggestionsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24687C1DAA35C600DDC80B /* CDOpinionsSuggestionsViewCell.m */; };
-		6E2469241DAA35C600DDC80B /* CDOpinionsSuggestionsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E24687D1DAA35C600DDC80B /* CDOpinionsSuggestionsViewCell.xib */; };
 		6E2469251DAA35C600DDC80B /* CDConvenientToolsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468821DAA35C600DDC80B /* CDConvenientToolsController.m */; };
 		6E2469261DAA35C600DDC80B /* CDMapAnnotationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468841DAA35C600DDC80B /* CDMapAnnotationController.mm */; };
 		6E2469271DAA35C600DDC80B /* CDMapRouteSearchController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468861DAA35C600DDC80B /* CDMapRouteSearchController.mm */; };
@@ -185,6 +185,34 @@
 		14FDD0BF1CDDF1200093ABC3 /* UITextView+CDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+CDCategory.h"; sourceTree = "<group>"; };
 		14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+CDCategory.m"; sourceTree = "<group>"; };
 		4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShangHaiProvidentFund.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6211FC571F20838400F6F8F2 /* CDAboutUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsController.h; sourceTree = "<group>"; };
+		6211FC581F20838400F6F8F2 /* CDAboutUsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsController.m; sourceTree = "<group>"; };
+		6211FC591F20838400F6F8F2 /* CDHelpInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDHelpInfoViewController.h; sourceTree = "<group>"; };
+		6211FC5A1F20838400F6F8F2 /* CDHelpInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDHelpInfoViewController.m; sourceTree = "<group>"; };
+		6211FC5B1F20838400F6F8F2 /* CDOpinionsSuggestionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpinionsSuggestionsController.h; sourceTree = "<group>"; };
+		6211FC5C1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpinionsSuggestionsController.m; sourceTree = "<group>"; };
+		6211FC601F20839E00F6F8F2 /* CDAboutUsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsItem.h; sourceTree = "<group>"; };
+		6211FC611F20839E00F6F8F2 /* CDAboutUsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsItem.m; sourceTree = "<group>"; };
+		6211FC621F20839E00F6F8F2 /* CDAboutUsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsModel.h; sourceTree = "<group>"; };
+		6211FC631F20839E00F6F8F2 /* CDAboutUsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsModel.m; sourceTree = "<group>"; };
+		6211FC641F20839E00F6F8F2 /* CDBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseModel.h; sourceTree = "<group>"; };
+		6211FC651F20839E00F6F8F2 /* CDBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseModel.m; sourceTree = "<group>"; };
+		6211FC661F20839E00F6F8F2 /* CDOpinionsSuggestionsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpinionsSuggestionsItem.h; sourceTree = "<group>"; };
+		6211FC671F20839E00F6F8F2 /* CDOpinionsSuggestionsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpinionsSuggestionsItem.m; sourceTree = "<group>"; };
+		6211FC681F20839E00F6F8F2 /* CDOpinionsSuggestionsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpinionsSuggestionsModel.h; sourceTree = "<group>"; };
+		6211FC691F20839E00F6F8F2 /* CDOpinionsSuggestionsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpinionsSuggestionsModel.m; sourceTree = "<group>"; };
+		6211FC6F1F2083A700F6F8F2 /* CDCommitMessageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCommitMessageService.h; sourceTree = "<group>"; };
+		6211FC701F2083A700F6F8F2 /* CDCommitMessageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCommitMessageService.m; sourceTree = "<group>"; };
+		6211FC721F2083B500F6F8F2 /* CDAboutUsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsCell.h; sourceTree = "<group>"; };
+		6211FC731F2083B500F6F8F2 /* CDAboutUsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsCell.m; sourceTree = "<group>"; };
+		6211FC741F2083B500F6F8F2 /* CDButtonTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDButtonTableFooterView.h; sourceTree = "<group>"; };
+		6211FC751F2083B500F6F8F2 /* CDButtonTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDButtonTableFooterView.m; sourceTree = "<group>"; };
+		6211FC761F2083B500F6F8F2 /* CDButtonTableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDButtonTableFooterView.xib; sourceTree = "<group>"; };
+		6211FC771F2083B500F6F8F2 /* CDOpinionsSuggestionsFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpinionsSuggestionsFieldCell.h; sourceTree = "<group>"; };
+		6211FC781F2083B500F6F8F2 /* CDOpinionsSuggestionsFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpinionsSuggestionsFieldCell.m; sourceTree = "<group>"; };
+		6211FC791F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpinionsSuggestionsViewCell.h; sourceTree = "<group>"; };
+		6211FC7A1F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpinionsSuggestionsViewCell.m; sourceTree = "<group>"; };
+		6211FC7B1F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDOpinionsSuggestionsViewCell.xib; sourceTree = "<group>"; };
 		625A81D61F171BD30041267E /* HouseLoanRate.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HouseLoanRate.conf; sourceTree = "<group>"; };
 		625A81D81F171C150041267E /* CDHouseLoanRateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDHouseLoanRateModel.h; sourceTree = "<group>"; };
 		625A81D91F171C150041267E /* CDHouseLoanRateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDHouseLoanRateModel.m; sourceTree = "<group>"; };
@@ -196,34 +224,6 @@
 		6286FBF41F1CB1DD00794FC5 /* CDUserManagerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUserManagerModel.h; sourceTree = "<group>"; };
 		6286FBF51F1CB1DD00794FC5 /* CDUserManagerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUserManagerModel.m; sourceTree = "<group>"; };
 		6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mortgageCalculator.conf; sourceTree = "<group>"; };
-		6E24685F1DAA35C600DDC80B /* CDAboutUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsController.h; sourceTree = "<group>"; };
-		6E2468601DAA35C600DDC80B /* CDAboutUsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsController.m; sourceTree = "<group>"; };
-		6E2468611DAA35C600DDC80B /* CDHelpInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDHelpInfoViewController.h; sourceTree = "<group>"; };
-		6E2468621DAA35C600DDC80B /* CDHelpInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDHelpInfoViewController.m; sourceTree = "<group>"; };
-		6E2468631DAA35C600DDC80B /* CDOpinionsSuggestionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpinionsSuggestionsController.h; sourceTree = "<group>"; };
-		6E2468641DAA35C600DDC80B /* CDOpinionsSuggestionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpinionsSuggestionsController.m; sourceTree = "<group>"; };
-		6E2468661DAA35C600DDC80B /* CDAboutUsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsItem.h; sourceTree = "<group>"; };
-		6E2468671DAA35C600DDC80B /* CDAboutUsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsItem.m; sourceTree = "<group>"; };
-		6E2468681DAA35C600DDC80B /* CDAboutUsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsModel.h; sourceTree = "<group>"; };
-		6E2468691DAA35C600DDC80B /* CDAboutUsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsModel.m; sourceTree = "<group>"; };
-		6E24686A1DAA35C600DDC80B /* CDBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseModel.h; sourceTree = "<group>"; };
-		6E24686B1DAA35C600DDC80B /* CDBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseModel.m; sourceTree = "<group>"; };
-		6E24686C1DAA35C600DDC80B /* CDOpinionsSuggestionsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpinionsSuggestionsItem.h; sourceTree = "<group>"; };
-		6E24686D1DAA35C600DDC80B /* CDOpinionsSuggestionsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpinionsSuggestionsItem.m; sourceTree = "<group>"; };
-		6E24686E1DAA35C600DDC80B /* CDOpinionsSuggestionsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpinionsSuggestionsModel.h; sourceTree = "<group>"; };
-		6E24686F1DAA35C600DDC80B /* CDOpinionsSuggestionsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpinionsSuggestionsModel.m; sourceTree = "<group>"; };
-		6E2468711DAA35C600DDC80B /* CDCommitMessageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCommitMessageService.h; sourceTree = "<group>"; };
-		6E2468721DAA35C600DDC80B /* CDCommitMessageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCommitMessageService.m; sourceTree = "<group>"; };
-		6E2468741DAA35C600DDC80B /* CDAboutUsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsCell.h; sourceTree = "<group>"; };
-		6E2468751DAA35C600DDC80B /* CDAboutUsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsCell.m; sourceTree = "<group>"; };
-		6E2468761DAA35C600DDC80B /* CDButtonTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDButtonTableFooterView.h; sourceTree = "<group>"; };
-		6E2468771DAA35C600DDC80B /* CDButtonTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDButtonTableFooterView.m; sourceTree = "<group>"; };
-		6E2468781DAA35C600DDC80B /* CDButtonTableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDButtonTableFooterView.xib; sourceTree = "<group>"; };
-		6E2468791DAA35C600DDC80B /* CDOpinionsSuggestionsFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpinionsSuggestionsFieldCell.h; sourceTree = "<group>"; };
-		6E24687A1DAA35C600DDC80B /* CDOpinionsSuggestionsFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpinionsSuggestionsFieldCell.m; sourceTree = "<group>"; };
-		6E24687B1DAA35C600DDC80B /* CDOpinionsSuggestionsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpinionsSuggestionsViewCell.h; sourceTree = "<group>"; };
-		6E24687C1DAA35C600DDC80B /* CDOpinionsSuggestionsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpinionsSuggestionsViewCell.m; sourceTree = "<group>"; };
-		6E24687D1DAA35C600DDC80B /* CDOpinionsSuggestionsViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDOpinionsSuggestionsViewCell.xib; sourceTree = "<group>"; };
 		6E2468811DAA35C600DDC80B /* CDConvenientToolsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientToolsController.h; sourceTree = "<group>"; };
 		6E2468821DAA35C600DDC80B /* CDConvenientToolsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientToolsController.m; sourceTree = "<group>"; };
 		6E2468831DAA35C600DDC80B /* CDMapAnnotationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMapAnnotationController.h; sourceTree = "<group>"; };
@@ -555,73 +555,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6E24685D1DAA35C600DDC80B /* CDAboutUs */ = {
-			isa = PBXGroup;
-			children = (
-				6E24685E1DAA35C600DDC80B /* Controller */,
-				6E2468651DAA35C600DDC80B /* Model */,
-				6E2468701DAA35C600DDC80B /* NetWorkService */,
-				6E2468731DAA35C600DDC80B /* View */,
-			);
-			path = CDAboutUs;
-			sourceTree = "<group>";
-		};
-		6E24685E1DAA35C600DDC80B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				6E24685F1DAA35C600DDC80B /* CDAboutUsController.h */,
-				6E2468601DAA35C600DDC80B /* CDAboutUsController.m */,
-				6E2468611DAA35C600DDC80B /* CDHelpInfoViewController.h */,
-				6E2468621DAA35C600DDC80B /* CDHelpInfoViewController.m */,
-				6E2468631DAA35C600DDC80B /* CDOpinionsSuggestionsController.h */,
-				6E2468641DAA35C600DDC80B /* CDOpinionsSuggestionsController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		6E2468651DAA35C600DDC80B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6E2468661DAA35C600DDC80B /* CDAboutUsItem.h */,
-				6E2468671DAA35C600DDC80B /* CDAboutUsItem.m */,
-				6E2468681DAA35C600DDC80B /* CDAboutUsModel.h */,
-				6E2468691DAA35C600DDC80B /* CDAboutUsModel.m */,
-				6E24686A1DAA35C600DDC80B /* CDBaseModel.h */,
-				6E24686B1DAA35C600DDC80B /* CDBaseModel.m */,
-				6E24686C1DAA35C600DDC80B /* CDOpinionsSuggestionsItem.h */,
-				6E24686D1DAA35C600DDC80B /* CDOpinionsSuggestionsItem.m */,
-				6E24686E1DAA35C600DDC80B /* CDOpinionsSuggestionsModel.h */,
-				6E24686F1DAA35C600DDC80B /* CDOpinionsSuggestionsModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6E2468701DAA35C600DDC80B /* NetWorkService */ = {
-			isa = PBXGroup;
-			children = (
-				6E2468711DAA35C600DDC80B /* CDCommitMessageService.h */,
-				6E2468721DAA35C600DDC80B /* CDCommitMessageService.m */,
-			);
-			path = NetWorkService;
-			sourceTree = "<group>";
-		};
-		6E2468731DAA35C600DDC80B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				6E2468741DAA35C600DDC80B /* CDAboutUsCell.h */,
-				6E2468751DAA35C600DDC80B /* CDAboutUsCell.m */,
-				6E2468761DAA35C600DDC80B /* CDButtonTableFooterView.h */,
-				6E2468771DAA35C600DDC80B /* CDButtonTableFooterView.m */,
-				6E2468781DAA35C600DDC80B /* CDButtonTableFooterView.xib */,
-				6E2468791DAA35C600DDC80B /* CDOpinionsSuggestionsFieldCell.h */,
-				6E24687A1DAA35C600DDC80B /* CDOpinionsSuggestionsFieldCell.m */,
-				6E24687B1DAA35C600DDC80B /* CDOpinionsSuggestionsViewCell.h */,
-				6E24687C1DAA35C600DDC80B /* CDOpinionsSuggestionsViewCell.m */,
-				6E24687D1DAA35C600DDC80B /* CDOpinionsSuggestionsViewCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		6E24687E1DAA35C600DDC80B /* CDConvenientTools */ = {
 			isa = PBXGroup;
 			children = (
@@ -748,6 +681,12 @@
 		6E2468BA1DAA35C600DDC80B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6211FC571F20838400F6F8F2 /* CDAboutUsController.h */,
+				6211FC581F20838400F6F8F2 /* CDAboutUsController.m */,
+				6211FC591F20838400F6F8F2 /* CDHelpInfoViewController.h */,
+				6211FC5A1F20838400F6F8F2 /* CDHelpInfoViewController.m */,
+				6211FC5B1F20838400F6F8F2 /* CDOpinionsSuggestionsController.h */,
+				6211FC5C1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m */,
 				6E2468BB1DAA35C600DDC80B /* CDAccountDetailController.h */,
 				6E2468BC1DAA35C600DDC80B /* CDAccountDetailController.m */,
 				6E2468BD1DAA35C600DDC80B /* CDAccountManageController.h */,
@@ -773,6 +712,16 @@
 		6E2468CB1DAA35C600DDC80B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6211FC601F20839E00F6F8F2 /* CDAboutUsItem.h */,
+				6211FC611F20839E00F6F8F2 /* CDAboutUsItem.m */,
+				6211FC621F20839E00F6F8F2 /* CDAboutUsModel.h */,
+				6211FC631F20839E00F6F8F2 /* CDAboutUsModel.m */,
+				6211FC641F20839E00F6F8F2 /* CDBaseModel.h */,
+				6211FC651F20839E00F6F8F2 /* CDBaseModel.m */,
+				6211FC661F20839E00F6F8F2 /* CDOpinionsSuggestionsItem.h */,
+				6211FC671F20839E00F6F8F2 /* CDOpinionsSuggestionsItem.m */,
+				6211FC681F20839E00F6F8F2 /* CDOpinionsSuggestionsModel.h */,
+				6211FC691F20839E00F6F8F2 /* CDOpinionsSuggestionsModel.m */,
 				6E2468CC1DAA35C600DDC80B /* CDAccountDetailItem.h */,
 				6E2468CD1DAA35C600DDC80B /* CDAccountDetailItem.m */,
 				6E2468CE1DAA35C600DDC80B /* CDAccountInfoItem.h */,
@@ -808,6 +757,8 @@
 		6E2468E61DAA35C600DDC80B /* NetWorkService */ = {
 			isa = PBXGroup;
 			children = (
+				6211FC6F1F2083A700F6F8F2 /* CDCommitMessageService.h */,
+				6211FC701F2083A700F6F8F2 /* CDCommitMessageService.m */,
 				6E2468E71DAA35C600DDC80B /* CDChangePSWService.h */,
 				6E2468E81DAA35C600DDC80B /* CDChangePSWService.m */,
 				6E2468E91DAA35C600DDC80B /* CDLoginService.h */,
@@ -827,6 +778,16 @@
 		6E2468F31DAA35C600DDC80B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6211FC721F2083B500F6F8F2 /* CDAboutUsCell.h */,
+				6211FC731F2083B500F6F8F2 /* CDAboutUsCell.m */,
+				6211FC741F2083B500F6F8F2 /* CDButtonTableFooterView.h */,
+				6211FC751F2083B500F6F8F2 /* CDButtonTableFooterView.m */,
+				6211FC761F2083B500F6F8F2 /* CDButtonTableFooterView.xib */,
+				6211FC771F2083B500F6F8F2 /* CDOpinionsSuggestionsFieldCell.h */,
+				6211FC781F2083B500F6F8F2 /* CDOpinionsSuggestionsFieldCell.m */,
+				6211FC791F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.h */,
+				6211FC7A1F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.m */,
+				6211FC7B1F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.xib */,
 				6E2468F41DAA35C600DDC80B /* CDBottomButtonView.h */,
 				6E2468F51DAA35C600DDC80B /* CDBottomButtonView.m */,
 				6E2468F61DAA35C600DDC80B /* CDBottomButtonView.xib */,
@@ -974,7 +935,6 @@
 		6E6ADB251CD89A9600838B61 /* CDApplicationMain */ = {
 			isa = PBXGroup;
 			children = (
-				6E24685D1DAA35C600DDC80B /* CDAboutUs */,
 				6E24687E1DAA35C600DDC80B /* CDConvenientTools */,
 				6E2468B91DAA35C600DDC80B /* CDMineAccount */,
 				6E2469071DAA35C600DDC80B /* CDNews */,
@@ -1287,17 +1247,17 @@
 			files = (
 				6E5E7D411D2A50DC00182A5B /* account_manage_cellBG.png in Resources */,
 				6E7C17491E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf in Resources */,
-				6E2469211DAA35C600DDC80B /* CDButtonTableFooterView.xib in Resources */,
 				6E24695C1DAA35C600DDC80B /* CDBottomButtonView.xib in Resources */,
+				6211FC7E1F2083B500F6F8F2 /* CDButtonTableFooterView.xib in Resources */,
 				6E24693C1DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.xib in Resources */,
 				6E73D6611E14B4C0009A1072 /* SSKeychain.strings in Resources */,
 				6E6ADB1B1CD892B200838B61 /* Assets.xcassets in Resources */,
 				6E6ADB191CD892B200838B61 /* Main.storyboard in Resources */,
+				6211FC811F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.xib in Resources */,
 				625A81D71F171BD30041267E /* HouseLoanRate.conf in Resources */,
 				6E2469391DAA35C600DDC80B /* CDNetWorkPointCell.xib in Resources */,
 				6E7C17451E1BA76700433093 /* registConfigure.conf in Resources */,
 				6E7C17411E1BA68000433093 /* loginConfigure.conf in Resources */,
-				6E2469241DAA35C600DDC80B /* CDOpinionsSuggestionsViewCell.xib in Resources */,
 				6E1A21611CEB2AC000D21143 /* mortgageCalculator.conf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1359,8 +1319,6 @@
 			files = (
 				6E6ADB991CD89F7C00838B61 /* UIView+CDViewAdditions.m in Sources */,
 				6E7336911E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.m in Sources */,
-				6E24691B1DAA35C600DDC80B /* CDBaseModel.m in Sources */,
-				6E24691F1DAA35C600DDC80B /* CDAboutUsCell.m in Sources */,
 				6E6ADB3B1CD89E8700838B61 /* CDJSONBaseNetworkService.m in Sources */,
 				6E6ADB2E1CD89E7C00838B61 /* CDBaseTableViewCell.m in Sources */,
 				6E2469321DAA35C600DDC80B /* SCYMortgageCalculatorSourceItem.m in Sources */,
@@ -1369,9 +1327,11 @@
 				6E2469571DAA35C600DDC80B /* CDMineAccountService.m in Sources */,
 				6E24694F1DAA35C600DDC80B /* CDQueryAccountBasicItem.m in Sources */,
 				6E73368F1E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m in Sources */,
+				6211FC711F2083A700F6F8F2 /* CDCommitMessageService.m in Sources */,
 				6E2469421DAA35C600DDC80B /* CDLoanInfoViewController.m in Sources */,
 				6E2469621DAA35C600DDC80B /* CDQueryAccountInfoCell.m in Sources */,
 				6E2469561DAA35C600DDC80B /* CDLoginService.m in Sources */,
+				6211FC6A1F20839E00F6F8F2 /* CDAboutUsItem.m in Sources */,
 				6E73D64A1E14A5F6009A1072 /* SCYRefreshControl.m in Sources */,
 				6E2469351DAA35C600DDC80B /* CDPayCalculatorService.m in Sources */,
 				6E67A79A1CDCA6BC00436E93 /* CDLoadMoreCell.m in Sources */,
@@ -1383,20 +1343,18 @@
 				6E4D90B01CDB133E0019B011 /* CDBaseCollectionViewController.m in Sources */,
 				6E24695E1DAA35C600DDC80B /* CDMineAccountCell.m in Sources */,
 				6E6ADB9B1CD89F7C00838B61 /* UIViewController+CDVCAdditions.m in Sources */,
-				6E2469221DAA35C600DDC80B /* CDOpinionsSuggestionsFieldCell.m in Sources */,
 				6E6ADB8B1CD89F7C00838B61 /* NSData+CommonCrypto.m in Sources */,
 				6E73D6631E14B4C0009A1072 /* SSKeychainQuery.m in Sources */,
 				6E2469551DAA35C600DDC80B /* CDChangePSWService.m in Sources */,
-				6E24691A1DAA35C600DDC80B /* CDAboutUsModel.m in Sources */,
 				6E73367E1E4C6A330036393A /* SCYAnnualBonusCalculatorController.m in Sources */,
 				6E6ADB8E1CD89F7C00838B61 /* NSFileManager+CDFileManager.m in Sources */,
 				6E2469651DAA35C600DDC80B /* CDNewsAndTrendsController.m in Sources */,
 				14FDD0B61CDDD33E0093ABC3 /* UITextField+cellIndexPath.m in Sources */,
-				6E24691E1DAA35C600DDC80B /* CDCommitMessageService.m in Sources */,
 				6E24693F1DAA35C600DDC80B /* SCYPopTableViewCell.m in Sources */,
 				6E6ADB3D1CD89E8700838B61 /* CDNetworkRequestManager.m in Sources */,
 				6E6ADB9F1CD8A05E00838B61 /* CDUtilities.m in Sources */,
 				6E2469401DAA35C600DDC80B /* CDAccountDetailController.m in Sources */,
+				6211FC801F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.m in Sources */,
 				6E6ADB921CD89F7C00838B61 /* NSString+CDEncryption.m in Sources */,
 				6E6ADB931CD89F7C00838B61 /* UIBarButtonItem+CDCategory.m in Sources */,
 				6E73D6591E14B235009A1072 /* UITabBar+CDCategory.m in Sources */,
@@ -1414,35 +1372,36 @@
 				6E2469281DAA35C600DDC80B /* CDNetworkPointController.m in Sources */,
 				6E6ADB971CD89F7C00838B61 /* UILabel+CDLBAdditions.m in Sources */,
 				6E73D6561E14AB1D009A1072 /* ImagePickerManager.m in Sources */,
-				6E2469191DAA35C600DDC80B /* CDAboutUsItem.m in Sources */,
 				6E24693D1DAA35C600DDC80B /* SCYMortgageCalculatorSelectCell.m in Sources */,
 				6E53C84C1CE9CF9500202F53 /* CDSlidePageView.m in Sources */,
 				6E24693E1DAA35C600DDC80B /* SCYPopTableView.m in Sources */,
 				6E24695B1DAA35C600DDC80B /* CDBottomButtonView.m in Sources */,
 				6E6ADB8F1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.m in Sources */,
 				625A81DA1F171C150041267E /* CDHouseLoanRateModel.m in Sources */,
+				6211FC7C1F2083B500F6F8F2 /* CDAboutUsCell.m in Sources */,
 				6E6ADB881CD89F7C00838B61 /* NSArray+CDArrayAdditions.m in Sources */,
-				6E24691C1DAA35C600DDC80B /* CDOpinionsSuggestionsItem.m in Sources */,
 				6E24692F1DAA35C600DDC80B /* SCYMortgageCalculatorCellItem.m in Sources */,
-				6E2469201DAA35C600DDC80B /* CDButtonTableFooterView.m in Sources */,
 				6E24694D1DAA35C600DDC80B /* CDMineAccountModel.m in Sources */,
 				6E24694C1DAA35C600DDC80B /* CDLoginModel.m in Sources */,
 				6E7336991E4C6E040036393A /* SCYButtonTableFooterView.m in Sources */,
 				6E2469291DAA35C600DDC80B /* SCYMortgageCalculatorController.m in Sources */,
 				6E2469251DAA35C600DDC80B /* CDConvenientToolsController.m in Sources */,
 				6E24692A1DAA35C600DDC80B /* CDConvenientModel.m in Sources */,
+				6211FC6C1F20839E00F6F8F2 /* CDBaseModel.m in Sources */,
 				6E24695F1DAA35C600DDC80B /* CDProvidentFundDetailCell.m in Sources */,
 				6E24693A1DAA35C600DDC80B /* SCYMeasurementTextFieldCell.m in Sources */,
+				6211FC5D1F20838400F6F8F2 /* CDAboutUsController.m in Sources */,
 				6E24692E1DAA35C600DDC80B /* SCYLoanRateItem.m in Sources */,
 				6E2469641DAA35C600DDC80B /* CDVerificationCodeCell.m in Sources */,
 				6E2469341DAA35C600DDC80B /* CDNetworkPointService.m in Sources */,
+				6211FC6D1F20839E00F6F8F2 /* CDOpinionsSuggestionsItem.m in Sources */,
 				6E2469531DAA35C600DDC80B /* CDRepayInfoChrItem.m in Sources */,
 				6E6ADB581CD89E8E00838B61 /* CDTabBarController.m in Sources */,
-				6E2469161DAA35C600DDC80B /* CDAboutUsController.m in Sources */,
+				6211FC5F1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m in Sources */,
 				6E6ADB591CD89E8E00838B61 /* CDBaseTableViewController.m in Sources */,
+				6211FC7D1F2083B500F6F8F2 /* CDButtonTableFooterView.m in Sources */,
 				6E73D6511E14A780009A1072 /* CDUpImageDownTitleButton.m in Sources */,
 				6286FBF61F1CB1DD00794FC5 /* CDUserManagerModel.m in Sources */,
-				6E2469231DAA35C600DDC80B /* CDOpinionsSuggestionsViewCell.m in Sources */,
 				6E2469581DAA35C600DDC80B /* CDRegistGetVerCodeService.m in Sources */,
 				14FDD0B31CDDD2440093ABC3 /* CDBaseTextFieldCell.m in Sources */,
 				6E2469611DAA35C600DDC80B /* CDQueryAccountHeaderView.m in Sources */,
@@ -1451,7 +1410,6 @@
 				6E2469471DAA35C600DDC80B /* CDRepaymentInfoController.m in Sources */,
 				6E2469451DAA35C600DDC80B /* CDQueryAccountInfoController.m in Sources */,
 				6E7336841E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.m in Sources */,
-				6E24691D1DAA35C600DDC80B /* CDOpinionsSuggestionsModel.m in Sources */,
 				6E2469691DAA35C600DDC80B /* CDNewsAndTrendsCell.m in Sources */,
 				6E2469271DAA35C600DDC80B /* CDMapRouteSearchController.mm in Sources */,
 				6E6ADB131CD892B200838B61 /* AppDelegate.m in Sources */,
@@ -1463,6 +1421,8 @@
 				6E7336961E4C6BC80036393A /* UpDownLBView.m in Sources */,
 				6E7336931E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m in Sources */,
 				6E2469501DAA35C600DDC80B /* CDQueryAccountInfoModel.m in Sources */,
+				6211FC5E1F20838400F6F8F2 /* CDHelpInfoViewController.m in Sources */,
+				6211FC7F1F2083B500F6F8F2 /* CDOpinionsSuggestionsFieldCell.m in Sources */,
 				6E2469481DAA35C600DDC80B /* CDAccountDetailItem.m in Sources */,
 				6E6ADB541CD89E8E00838B61 /* CDBaseViewController.m in Sources */,
 				6E6ADBF01CD8A22600838B61 /* CDGlobalHTTPSessionManager.m in Sources */,
@@ -1482,8 +1442,8 @@
 				6E6ADB101CD892B200838B61 /* main.m in Sources */,
 				6E73D64E1E14A626009A1072 /* CDADLoopDisplayScrollView.m in Sources */,
 				6286FBF31F1C9A8E00794FC5 /* CDUserManagerController.m in Sources */,
+				6211FC6B1F20839E00F6F8F2 /* CDAboutUsModel.m in Sources */,
 				6E6ADB8C1CD89F7C00838B61 /* NSDate+CDDateAddition.m in Sources */,
-				6E2469181DAA35C600DDC80B /* CDOpinionsSuggestionsController.m in Sources */,
 				6E73D6461E14A5C8009A1072 /* SCYActivityIndicatorButton.m in Sources */,
 				6E2469661DAA35C600DDC80B /* CDNewsAndTrendsItem.m in Sources */,
 				6E2469521DAA35C600DDC80B /* CDRepayInfoBasicItem.m in Sources */,
@@ -1491,12 +1451,12 @@
 				6E7336901E4C6B1F0036393A /* SCYAnnualBonusResultCell.m in Sources */,
 				6E6ADB551CD89E8E00838B61 /* CDBaseWKWebViewController.m in Sources */,
 				6E6ADB901CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.m in Sources */,
+				6211FC6E1F20839E00F6F8F2 /* CDOpinionsSuggestionsModel.m in Sources */,
 				6E24692C1DAA35C600DDC80B /* CDNetworkPointItem.m in Sources */,
 				6E67A79D1CDCA72600436E93 /* CDLoadMoreItem.m in Sources */,
 				6E2469461DAA35C600DDC80B /* CDRegistViewController.m in Sources */,
 				6E2469301DAA35C600DDC80B /* SCYMortgageCalculatorModel.m in Sources */,
 				6E2469331DAA35C600DDC80B /* CDConvenientToolsService.m in Sources */,
-				6E2469171DAA35C600DDC80B /* CDHelpInfoViewController.m in Sources */,
 				6269613F1F16074B00C5D0D9 /* SCYActivityIndicatorView.m in Sources */,
 				14FDD0C11CDDF1200093ABC3 /* UITextView+CDCategory.m in Sources */,
 				6E24692D1DAA35C600DDC80B /* CDPayCalculatorItem.m in Sources */,

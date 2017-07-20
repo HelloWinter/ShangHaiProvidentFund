@@ -130,7 +130,7 @@ static const CGFloat headerOriginalHeight=180;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (!CDIsUserLogined()) {
+    if (!CDIsUserLogined() && indexPath.section!=3) {
         [self p_presentLoginViewController];
         return;
     }
@@ -187,7 +187,7 @@ static const CGFloat headerOriginalHeight=180;
 }
 
 - (void)p_rightBarBtnClick{
-    [self p_pushToAboutUsController];
+    [self p_pushToUserManagerController];
 }
 
 - (void)p_presentLoginViewController{
@@ -237,6 +237,11 @@ static const CGFloat headerOriginalHeight=180;
     CDLoginModel *model = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
     CDAccountInfoItem *accountInfoItem=[model.basic firstObject];
     controller.accountNum=accountInfoItem.pri_account;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)p_pushToUserManagerController{
+    CDUserManagerController *controller=[[CDUserManagerController alloc]init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

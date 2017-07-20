@@ -55,19 +55,13 @@
 
 #pragma mark - BMKGeneralDelegate
 - (void)onGetNetworkState:(int)iError{
-    if (0 == iError) {
-        CDLog(@"联网成功");
-    }else{
-        CDLog(@"onGetNetworkState %d",iError);
-    }
+    NSString *errorMsg=(0 == iError) ? @"联网成功" : [NSString stringWithFormat:@"onGetNetworkState %d",iError];
+    CDLog(@"%@",errorMsg);
 }
 
 - (void)onGetPermissionState:(int)iError{
-    if (0 == iError) {
-        CDLog(@"授权成功");
-    }else {
-        CDLog(@"onGetPermissionState %d",iError);
-    }
+    NSString *errorMsg=(0 == iError) ? @"授权成功" : [NSString stringWithFormat:@"onGetPermissionState %d",iError];
+    CDLog(@"%@",errorMsg);
 }
 
 #pragma mark - BMKLocationServiceDelegate

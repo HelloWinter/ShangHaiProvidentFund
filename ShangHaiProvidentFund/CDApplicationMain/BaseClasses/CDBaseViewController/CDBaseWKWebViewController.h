@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger,CDWebViewLoadType) {
 
 @interface CDBaseWKWebViewController : CDBaseViewController
 
-@property (nonatomic, strong) WKWebViewConfiguration *Configuration;
+@property (nonatomic, strong, readonly) WKWebViewConfiguration *configuration;
 @property (nonatomic, strong, readonly) WKWebView *wkWebView;
 @property (nonatomic, assign, readonly) CDWebViewLoadType loadType;
 @property (nonatomic, assign, getter=isNavHidden) BOOL navHidden;
