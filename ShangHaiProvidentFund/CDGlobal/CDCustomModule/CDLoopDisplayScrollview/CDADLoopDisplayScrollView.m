@@ -36,6 +36,7 @@ static const NSInteger kBehindImageTag = 500;
         _placeHolderImage=@"ScrollViewDefault";
         self.autoScrollTimeInterval=4.0f;
         [self addSubview:self.scrollView];
+        [self addSubview:self.pageControl];
     }
     return self;
 }
@@ -60,21 +61,24 @@ static const NSInteger kBehindImageTag = 500;
 
 - (void)setShowPageControl:(BOOL)showPageControl{
     _showPageControl=showPageControl;
-    if (_showPageControl) {
-        [self addSubview:self.pageControl];
-    }
+    self.pageControl.hidden=!self.showPageControl;
+}
+
+- (void)setPageCtrlSelectColor:(UIColor *)pageCtrlSelectColor{
+    _pageCtrlSelectColor=pageCtrlSelectColor;
+    self.pageControl.currentPageIndicatorTintColor = self.pageCtrlSelectColor;
+}
+
+- (void)setPageCtrlNormalColor:(UIColor *)pageCtrlNormalColor{
+    _pageCtrlNormalColor=pageCtrlNormalColor;
+    self.pageControl.pageIndicatorTintColor = self.pageCtrlNormalColor;
 }
 
 - (UIPageControl *)pageControl{
     if (!_pageControl) {
         _pageControl = [[UIPageControl alloc]init];
+        _pageControl.hidden=YES;
         _pageControl.hidesForSinglePage=YES;
-        if (self.pageCtrlSelectColor) {
-            _pageControl.currentPageIndicatorTintColor = self.pageCtrlSelectColor;
-        }
-        if (self.pageCtrlNormalColor) {
-            _pageControl.pageIndicatorTintColor = self.pageCtrlNormalColor;
-        }
     }
     return _pageControl;
 }
@@ -149,9 +153,7 @@ static const NSInteger kBehindImageTag = 500;
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    if (self.isOpenAutoScroll) {
-        [self startTimer];
-    }
+    [self startScroll];
 }
 
 #pragma mark - public
@@ -181,10 +183,8 @@ static const NSInteger kBehindImageTag = 500;
 }
 
 - (void)invalidateTimer{
-    if (_timer.valid) {
-        [_timer invalidate];
-        _timer=nil;
-    }
+    [_timer invalidate];
+    _timer=nil;
 }
 
 - (void)layoutScrollViewSubviews{

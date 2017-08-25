@@ -9,9 +9,6 @@
 #import "CDQueryAccountHeaderView.h"
 #import "CDAccountInfoItem.h"
 
-static const CGFloat leftRightMargin=15;
-static const CGFloat imgWidth=60;
-
 @interface CDQueryAccountHeaderView ()
 
 @property (nonatomic, strong) UIImageView *imgPortrait;
@@ -78,6 +75,8 @@ static const CGFloat imgWidth=60;
 
 - (void)layoutSubviews{
     [super layoutSubviews];
+    CGFloat leftRightMargin=15;
+    CGFloat imgWidth=60;
     self.imgPortrait.frame=CGRectMake(0, 0, imgWidth, imgWidth);
     self.imgPortrait.center=CGPointMake(self.width*0.5, self.height*0.5-20);
     self.lbName.frame=CGRectMake(leftRightMargin, self.imgPortrait.bottom+10, self.width-leftRightMargin*2, 20);

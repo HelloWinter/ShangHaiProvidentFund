@@ -106,10 +106,8 @@
 
 /* 关闭定时器 */
 - (void)p_invalidTimer{
-    if (_timer.isValid) {
-        [_timer invalidate];
-        _timer = nil;
-    }
+    [_timer invalidate];
+    _timer = nil;
 }
 
 @end

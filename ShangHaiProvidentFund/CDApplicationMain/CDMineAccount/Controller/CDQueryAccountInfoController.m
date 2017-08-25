@@ -181,7 +181,7 @@ static const CGFloat headerOriginalHeight=180;
 - (void)p_showRightBarBtn{
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     barButton.frame = CGRectMake(self.view.width-45, 20, 30, 44);
-    [barButton setImage:[UIImage imageNamed:@"tab_settingicon"] forState:(UIControlStateNormal)];
+    [barButton setImage:[UIImage imageNamed:@"mine_account_settingicon"] forState:(UIControlStateNormal)];
     [barButton addTarget:self action:@selector(p_rightBarBtnClick) forControlEvents:(UIControlEventTouchUpInside)];
     [self.view addSubview:barButton];
 }

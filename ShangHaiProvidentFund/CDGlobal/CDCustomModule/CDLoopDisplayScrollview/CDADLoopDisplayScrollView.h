@@ -12,10 +12,13 @@ typedef void (^CDImageClickBlock)(NSInteger index);
 
 @interface CDADLoopDisplayScrollView : UIView
 
+/**
+ 占位图片名
+ */
 @property (nonatomic, copy) NSString *placeHolderImage;
 
 /**
- *  广告位图片链接
+ *  广告位图片链接数组
  */
 @property (nonatomic, copy) NSArray *arrImageLink;
 

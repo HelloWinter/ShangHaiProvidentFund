@@ -19,10 +19,7 @@
 #import "CDBaseWKWebViewController.h"
 #import "CDRegistViewController.h"
 
-@interface CDLoginViewController (){
-    NSTimer *_timer;                       // 倒计时定时器
-    NSInteger _countDown;                  // 倒计时时限
-}
+@interface CDLoginViewController ()
 
 @property (nonatomic, strong) CDButtonTableFooterView *footerView;
 @property (nonatomic, strong) CDLoginConfigureModel *loginConfigureModel;
