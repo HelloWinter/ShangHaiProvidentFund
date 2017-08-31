@@ -131,12 +131,13 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 
 #pragma mark - WKNavigationDelegate
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
-    [self updateNavigationItems];
-    if ([navigationAction.request.URL.scheme hasPrefix:@"tmast"]) {
-        [CDAutoHideMessageHUD showMessage:@"不支持的网络协议"];
+    if([self isJumpToExternalAppWithURL:navigationAction.request.URL] && [[UIApplication sharedApplication] canOpenURL:navigationAction.request.URL]) {
+        [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
         decisionHandler(WKNavigationActionPolicyCancel);
+    }else{
+        [self updateNavigationItems];
+        decisionHandler(WKNavigationActionPolicyAllow);
     }
-    decisionHandler(WKNavigationActionPolicyAllow);
 }
 
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation{
@@ -252,11 +253,19 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 -(void)updateNavigationItems{
     UIBarButtonItem *leftItem = [UIBarButtonItem cd_ItemWidth:20 imageName:@"navigation_backOff" target:self action:@selector(scy_backOffAction)];
     if (self.wkWebView.canGoBack) {
-        UIBarButtonItem *leftItemClose = [UIBarButtonItem cd_ItemWidth:20 imageName:@"navigation_backOff" target:self action:@selector(backToOriginalViewController)];
+        UIBarButtonItem *leftItemClose = [UIBarButtonItem cd_ItemWidth:20 imageName:@"navgation_close" target:self action:@selector(backToOriginalViewController)];
         self.navigationItem.leftBarButtonItems = @[leftItem,leftItemClose];
     }else{
         self.navigationItem.leftBarButtonItem = leftItem;
     }
+}
+
+/**
+ *  url是否是跳转APP类型的
+ */
+- (BOOL)isJumpToExternalAppWithURL:(NSURL *)URL{
+    NSSet *validSchemes = [NSSet setWithArray:@[@"http", @"https"]];
+    return ![validSchemes containsObject:URL.scheme];
 }
 
 @end
