@@ -1,0 +1,26 @@
+[
+  {
+    "paramsubmit" : "old_pwd",
+    "value" : "",
+    "hint" : "请输入原密码",
+    "type" : "0",
+    "security" : "1",
+    "paramname" : "原  密  码:"
+  },
+  {
+    "paramsubmit" : "new_pwd",
+    "value" : "",
+    "hint" : "请输入6-15位密码",
+    "type" : "0",
+    "security" : "1",
+    "paramname" : "新  密  码:"
+  },
+  {
+    "paramsubmit" : "repwd",
+    "value" : "",
+    "hint" : "请重复输入密码",
+    "type" : "0",
+    "security" : "1",
+    "paramname" : "确认密码:"
+  }
+]

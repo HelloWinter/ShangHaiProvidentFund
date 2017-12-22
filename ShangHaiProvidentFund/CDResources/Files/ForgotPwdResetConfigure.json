@@ -1,0 +1,42 @@
+[
+  {
+    "paramname" : "用  户  名:",
+    "value" : "",
+    "hint" : "用户名只能为英文字母或阿拉伯数字",
+    "type" : "0",
+    "security" : "0",
+    "paramsubmit" : "userid"
+  },
+  {
+    "paramname" : "公积金账号:",
+    "value" : "",
+    "hint" : "0或1开头9位或12位的公积金账号",
+    "type" : "0",
+    "security" : "0",
+    "paramsubmit" : "pri_account"
+  },
+  {
+    "paramname" : "身份证号:",
+    "value" : "",
+    "hint" : "请输入18位身份证号",
+    "type" : "0",
+    "security" : "0",
+    "paramsubmit" : "id_card_num"
+  },
+  {
+    "paramname" : "新  密  码:",
+    "value" : "",
+    "hint" : "请输入6-15位字母和数字组合",
+    "type" : "0",
+    "security" : "1",
+    "paramsubmit" : "newpwd_md5"
+  },
+  {
+    "paramname" : "确认密码:",
+    "value" : "",
+    "hint" : "请重复输入6-15位字母或和数字组合",
+    "type" : "0",
+    "security" : "1",
+    "paramsubmit" : "repwd"
+  }
+]

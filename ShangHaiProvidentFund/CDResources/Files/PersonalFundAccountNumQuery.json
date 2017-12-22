@@ -1,0 +1,74 @@
+[{
+  "paramname" : "姓名:",
+  "type" : "0",
+  "value" : "",
+  "hint" : "请输入您的姓名",
+ "security" : "0",
+  "paramsubmit" : "realName"
+},
+{
+  "paramname" : "证件号:",
+  "type" : "0",
+  "value" : "",
+  "hint" : "请输入证件号",
+ "security" : "0",
+  "paramsubmit" : "cardNo"
+},
+{
+  "paramname" : "认证机构:",
+  "type" : "3",
+  "value" : "1",
+  "hint" : "",
+ "security" : "0",
+  "paramsubmit" : "authOrg",
+  "paramsubitemsdata" : [
+            {
+              "itemValue" : "1",
+              "itemDesc" : "中国建设银行"
+            },
+            {
+              "itemValue" : "2",
+              "itemDesc" : "中国电信上海公司"
+            },
+            //{
+              //"itemValue" : "3",
+              //"itemDesc" : "中国移动"
+            //},
+            {
+              "itemValue" : "5",
+              "itemDesc" : "中国工商银行上海分行"
+            },
+            {
+              "itemValue" : "6",
+              "itemDesc" : "上海农商银行"
+            },
+            {
+              "itemValue" : "7",
+              "itemDesc" : "浦东发展银行上海分行"
+            },
+             {
+                 "itemValue" : "8",
+                 "itemDesc" : "中国邮政储蓄银行上海分行"
+             },
+             {
+                 "itemValue" : "9",
+                 "itemDesc" : "招商银行"
+             }
+          ]
+},
+{
+  "paramname" : "手机号:",
+  "type" : "0",
+  "value" : "",
+  "hint" : "输入与该机构绑定和实名认证的手机号",
+ "security" : "0",
+  "paramsubmit" : "mobileNo"
+},
+{
+  "paramname" : "验证码:",
+  "type" : "2",
+  "value" : "",
+  "hint" : "请输入验证码",
+ "security" : "0",
+  "paramsubmit" : "checkCode"
+}]

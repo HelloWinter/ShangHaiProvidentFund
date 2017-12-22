@@ -1,0 +1,1782 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		140BE9CD1CDF4B8700577831 /* CDAPPURLConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 140BE9CC1CDF4B8700577831 /* CDAPPURLConfigure.m */; };
+		14D13B4F1CE2158F00D73F1A /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D13B4D1CE2158F00D73F1A /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14D275D21F516EB6001EE3BB /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D275D11F516EB6001EE3BB /* libGDTMobSDK.a */; };
+		14FDD0B31CDDD2440093ABC3 /* CDBaseTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0B21CDDD2440093ABC3 /* CDBaseTextFieldCell.m */; };
+		14FDD0B61CDDD33E0093ABC3 /* UITextField+cellIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0B51CDDD33E0093ABC3 /* UITextField+cellIndexPath.m */; };
+		14FDD0C11CDDF1200093ABC3 /* UITextView+CDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */; };
+		6211FC5D1F20838400F6F8F2 /* CDAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC581F20838400F6F8F2 /* CDAboutUsController.m */; };
+		6211FC5E1F20838400F6F8F2 /* CDHelpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC5A1F20838400F6F8F2 /* CDHelpInfoViewController.m */; };
+		6211FC5F1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC5C1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m */; };
+		6211FC6A1F20839E00F6F8F2 /* CDAboutUsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC611F20839E00F6F8F2 /* CDAboutUsItem.m */; };
+		6211FC6B1F20839E00F6F8F2 /* CDAboutUsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC631F20839E00F6F8F2 /* CDAboutUsModel.m */; };
+		6211FC6C1F20839E00F6F8F2 /* CDBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC651F20839E00F6F8F2 /* CDBaseModel.m */; };
+		6211FC6E1F20839E00F6F8F2 /* CDOpinionsSuggestionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC691F20839E00F6F8F2 /* CDOpinionsSuggestionsModel.m */; };
+		6211FC711F2083A700F6F8F2 /* CDCommitMessageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC701F2083A700F6F8F2 /* CDCommitMessageService.m */; };
+		6211FC7C1F2083B500F6F8F2 /* CDAboutUsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC731F2083B500F6F8F2 /* CDAboutUsCell.m */; };
+		6211FC7D1F2083B500F6F8F2 /* CDButtonTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC751F2083B500F6F8F2 /* CDButtonTableFooterView.m */; };
+		6211FC7E1F2083B500F6F8F2 /* CDButtonTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6211FC761F2083B500F6F8F2 /* CDButtonTableFooterView.xib */; };
+		6211FC7F1F2083B500F6F8F2 /* CDOpinionsSuggestionsFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC781F2083B500F6F8F2 /* CDOpinionsSuggestionsFieldCell.m */; };
+		6211FC801F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC7A1F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.m */; };
+		6211FC811F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6211FC7B1F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.xib */; };
+		62593AC01F21AADF001687BC /* CDChangePasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62593ABF1F21AADF001687BC /* CDChangePasswordController.m */; };
+		625A81D71F171BD30041267E /* HouseLoanRate.conf in Resources */ = {isa = PBXBuildFile; fileRef = 625A81D61F171BD30041267E /* HouseLoanRate.conf */; };
+		625A81DA1F171C150041267E /* CDHouseLoanRateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 625A81D91F171C150041267E /* CDHouseLoanRateModel.m */; };
+		626352831F74C264004997A7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 626352821F74C264004997A7 /* Launch Screen.storyboard */; };
+		6269613F1F16074B00C5D0D9 /* SCYActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6269613E1F16074B00C5D0D9 /* SCYActivityIndicatorView.m */; };
+		627B02CA1F78FF0700ED4662 /* UserProtocol.html in Resources */ = {isa = PBXBuildFile; fileRef = 627B02C91F78FA8800ED4662 /* UserProtocol.html */; };
+		628247E21F67DB6B003C8EC1 /* ForgotPwdResetConfigure.json in Resources */ = {isa = PBXBuildFile; fileRef = 628247E11F67DB6B003C8EC1 /* ForgotPwdResetConfigure.json */; };
+		628247E51F67DC59003C8EC1 /* CDForgotPasswordResetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628247E41F67DC58003C8EC1 /* CDForgotPasswordResetController.m */; };
+		628247E81F67DC82003C8EC1 /* CDForgotPasswordResetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 628247E71F67DC82003C8EC1 /* CDForgotPasswordResetModel.m */; };
+		6286FBF31F1C9A8E00794FC5 /* CDUserManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6286FBF21F1C9A8E00794FC5 /* CDUserManagerController.m */; };
+		6286FBF61F1CB1DD00794FC5 /* CDUserManagerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6286FBF51F1CB1DD00794FC5 /* CDUserManagerModel.m */; };
+		6290DF6B1F66394A00273AE5 /* CDForgotPWDResetService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6290DF6A1F66394A00273AE5 /* CDForgotPWDResetService.m */; };
+		6290DF6F1F667ADA00273AE5 /* SCYFindUserNamePasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6290DF6E1F667ADA00273AE5 /* SCYFindUserNamePasswordController.m */; };
+		6290DF721F6685AD00273AE5 /* CDNormalTextFieldConfigureItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6290DF711F6685AD00273AE5 /* CDNormalTextFieldConfigureItem.m */; };
+		6290DF761F668FA000273AE5 /* FindUserNamePassword.json in Resources */ = {isa = PBXBuildFile; fileRef = 6290DF731F668FA000273AE5 /* FindUserNamePassword.json */; };
+		6290DF771F668FA000273AE5 /* PersonalFundAccountNumQuery.json in Resources */ = {isa = PBXBuildFile; fileRef = 6290DF741F668FA000273AE5 /* PersonalFundAccountNumQuery.json */; };
+		6290DF781F668FA000273AE5 /* registConfigure.json in Resources */ = {isa = PBXBuildFile; fileRef = 6290DF751F668FA000273AE5 /* registConfigure.json */; };
+		6290DF7B1F6698B300273AE5 /* CDChangePasswordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6290DF7A1F6698B300273AE5 /* CDChangePasswordModel.m */; };
+		6290DF7D1F669AAB00273AE5 /* ChangPwd.json in Resources */ = {isa = PBXBuildFile; fileRef = 6290DF7C1F669AAB00273AE5 /* ChangPwd.json */; };
+		6E1A21611CEB2AC000D21143 /* mortgageCalculator.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */; };
+		6E2469251DAA35C600DDC80B /* CDConvenientToolsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468821DAA35C600DDC80B /* CDConvenientToolsController.m */; };
+		6E2469261DAA35C600DDC80B /* CDMapAnnotationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468841DAA35C600DDC80B /* CDMapAnnotationController.mm */; };
+		6E2469271DAA35C600DDC80B /* CDMapRouteSearchController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468861DAA35C600DDC80B /* CDMapRouteSearchController.mm */; };
+		6E2469281DAA35C600DDC80B /* CDNetworkPointController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468881DAA35C600DDC80B /* CDNetworkPointController.m */; };
+		6E2469291DAA35C600DDC80B /* SCYMortgageCalculatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24688A1DAA35C600DDC80B /* SCYMortgageCalculatorController.m */; };
+		6E24692A1DAA35C600DDC80B /* CDConvenientModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24688E1DAA35C600DDC80B /* CDConvenientModel.m */; };
+		6E24692B1DAA35C600DDC80B /* CDConvenientToolsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468901DAA35C600DDC80B /* CDConvenientToolsItem.m */; };
+		6E24692C1DAA35C600DDC80B /* CDNetworkPointItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468921DAA35C600DDC80B /* CDNetworkPointItem.m */; };
+		6E24692D1DAA35C600DDC80B /* CDPayCalculatorItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468941DAA35C600DDC80B /* CDPayCalculatorItem.m */; };
+		6E24692E1DAA35C600DDC80B /* SCYLoanRateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468961DAA35C600DDC80B /* SCYLoanRateItem.m */; };
+		6E24692F1DAA35C600DDC80B /* SCYMortgageCalculatorCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468981DAA35C600DDC80B /* SCYMortgageCalculatorCellItem.m */; };
+		6E2469301DAA35C600DDC80B /* SCYMortgageCalculatorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24689A1DAA35C600DDC80B /* SCYMortgageCalculatorModel.m */; };
+		6E2469311DAA35C600DDC80B /* SCYMortgageCalculatorResultItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24689C1DAA35C600DDC80B /* SCYMortgageCalculatorResultItem.m */; };
+		6E2469321DAA35C600DDC80B /* SCYMortgageCalculatorSourceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24689E1DAA35C600DDC80B /* SCYMortgageCalculatorSourceItem.m */; };
+		6E2469331DAA35C600DDC80B /* CDConvenientToolsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468A11DAA35C600DDC80B /* CDConvenientToolsService.m */; };
+		6E2469341DAA35C600DDC80B /* CDNetworkPointService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468A31DAA35C600DDC80B /* CDNetworkPointService.m */; };
+		6E2469351DAA35C600DDC80B /* CDPayCalculatorService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468A51DAA35C600DDC80B /* CDPayCalculatorService.m */; };
+		6E2469371DAA35C600DDC80B /* CDConvenientToolsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468AA1DAA35C600DDC80B /* CDConvenientToolsCell.m */; };
+		6E2469381DAA35C600DDC80B /* CDNetWorkPointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468AC1DAA35C600DDC80B /* CDNetWorkPointCell.m */; };
+		6E2469391DAA35C600DDC80B /* CDNetWorkPointCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E2468AD1DAA35C600DDC80B /* CDNetWorkPointCell.xib */; };
+		6E24693A1DAA35C600DDC80B /* SCYMeasurementTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468AF1DAA35C600DDC80B /* SCYMeasurementTextFieldCell.m */; };
+		6E24693B1DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468B11DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.m */; };
+		6E24693C1DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E2468B21DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.xib */; };
+		6E24693D1DAA35C600DDC80B /* SCYMortgageCalculatorSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468B41DAA35C600DDC80B /* SCYMortgageCalculatorSelectCell.m */; };
+		6E24693E1DAA35C600DDC80B /* SCYPopTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468B61DAA35C600DDC80B /* SCYPopTableView.m */; };
+		6E24693F1DAA35C600DDC80B /* SCYPopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468B81DAA35C600DDC80B /* SCYPopTableViewCell.m */; };
+		6E2469401DAA35C600DDC80B /* CDAccountDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468BC1DAA35C600DDC80B /* CDAccountDetailController.m */; };
+		6E2469411DAA35C600DDC80B /* CDAccountManageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468BE1DAA35C600DDC80B /* CDAccountManageController.m */; };
+		6E2469421DAA35C600DDC80B /* CDLoanInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468C01DAA35C600DDC80B /* CDLoanInfoViewController.m */; };
+		6E2469431DAA35C600DDC80B /* CDLoanProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468C21DAA35C600DDC80B /* CDLoanProgressController.m */; };
+		6E2469441DAA35C600DDC80B /* CDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468C41DAA35C600DDC80B /* CDLoginViewController.m */; };
+		6E2469451DAA35C600DDC80B /* CDQueryAccountInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468C61DAA35C600DDC80B /* CDQueryAccountInfoController.m */; };
+		6E2469461DAA35C600DDC80B /* CDRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468C81DAA35C600DDC80B /* CDRegistViewController.m */; };
+		6E2469471DAA35C600DDC80B /* CDRepaymentInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468CA1DAA35C600DDC80B /* CDRepaymentInfoController.m */; };
+		6E2469481DAA35C600DDC80B /* CDAccountDetailItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468CD1DAA35C600DDC80B /* CDAccountDetailItem.m */; };
+		6E2469491DAA35C600DDC80B /* CDAccountInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468CF1DAA35C600DDC80B /* CDAccountInfoItem.m */; };
+		6E24694A1DAA35C600DDC80B /* CDDynamicdetailItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468D11DAA35C600DDC80B /* CDDynamicdetailItem.m */; };
+		6E24694B1DAA35C600DDC80B /* CDLoginConfigureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468D31DAA35C600DDC80B /* CDLoginConfigureModel.m */; };
+		6E24694C1DAA35C600DDC80B /* CDLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468D51DAA35C600DDC80B /* CDLoginModel.m */; };
+		6E24694D1DAA35C600DDC80B /* CDMineAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468D71DAA35C600DDC80B /* CDMineAccountModel.m */; };
+		6E24694E1DAA35C600DDC80B /* CDPayAccountItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468D91DAA35C600DDC80B /* CDPayAccountItem.m */; };
+		6E24694F1DAA35C600DDC80B /* CDQueryAccountBasicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468DB1DAA35C600DDC80B /* CDQueryAccountBasicItem.m */; };
+		6E2469501DAA35C600DDC80B /* CDQueryAccountInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468DD1DAA35C600DDC80B /* CDQueryAccountInfoModel.m */; };
+		6E2469511DAA35C600DDC80B /* CDRegistConfigureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468DF1DAA35C600DDC80B /* CDRegistConfigureModel.m */; };
+		6E2469521DAA35C600DDC80B /* CDRepayInfoBasicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468E11DAA35C600DDC80B /* CDRepayInfoBasicItem.m */; };
+		6E2469531DAA35C600DDC80B /* CDRepayInfoChrItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468E31DAA35C600DDC80B /* CDRepayInfoChrItem.m */; };
+		6E2469541DAA35C600DDC80B /* CDRepayInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468E51DAA35C600DDC80B /* CDRepayInfoModel.m */; };
+		6E2469551DAA35C600DDC80B /* CDChangePSWService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468E81DAA35C600DDC80B /* CDChangePSWService.m */; };
+		6E2469561DAA35C600DDC80B /* CDLoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468EA1DAA35C600DDC80B /* CDLoginService.m */; };
+		6E2469571DAA35C600DDC80B /* CDMineAccountService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468EC1DAA35C600DDC80B /* CDMineAccountService.m */; };
+		6E2469581DAA35C600DDC80B /* CDRegistGetVerCodeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468EE1DAA35C600DDC80B /* CDRegistGetVerCodeService.m */; };
+		6E2469591DAA35C600DDC80B /* CDRegistService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468F01DAA35C600DDC80B /* CDRegistService.m */; };
+		6E24695A1DAA35C600DDC80B /* CDRepayInfoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468F21DAA35C600DDC80B /* CDRepayInfoService.m */; };
+		6E24695B1DAA35C600DDC80B /* CDBottomButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468F51DAA35C600DDC80B /* CDBottomButtonView.m */; };
+		6E24695C1DAA35C600DDC80B /* CDBottomButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E2468F61DAA35C600DDC80B /* CDBottomButtonView.xib */; };
+		6E24695D1DAA35C600DDC80B /* CDHeaderTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468F81DAA35C600DDC80B /* CDHeaderTitleView.m */; };
+		6E24695E1DAA35C600DDC80B /* CDMineAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468FA1DAA35C600DDC80B /* CDMineAccountCell.m */; };
+		6E24695F1DAA35C600DDC80B /* CDProvidentFundDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468FC1DAA35C600DDC80B /* CDProvidentFundDetailCell.m */; };
+		6E2469601DAA35C600DDC80B /* CDProvidentFundDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468FE1DAA35C600DDC80B /* CDProvidentFundDetailHeaderView.m */; };
+		6E2469611DAA35C600DDC80B /* CDQueryAccountHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2469001DAA35C600DDC80B /* CDQueryAccountHeaderView.m */; };
+		6E2469621DAA35C600DDC80B /* CDQueryAccountInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2469021DAA35C600DDC80B /* CDQueryAccountInfoCell.m */; };
+		6E2469631DAA35C600DDC80B /* CDRegistFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2469041DAA35C600DDC80B /* CDRegistFooterView.m */; };
+		6E2469641DAA35C600DDC80B /* CDVerificationCodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2469061DAA35C600DDC80B /* CDVerificationCodeCell.m */; };
+		6E2469651DAA35C600DDC80B /* CDNewsAndTrendsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24690A1DAA35C600DDC80B /* CDNewsAndTrendsController.m */; };
+		6E2469661DAA35C600DDC80B /* CDNewsAndTrendsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24690D1DAA35C600DDC80B /* CDNewsAndTrendsItem.m */; };
+		6E2469671DAA35C600DDC80B /* CDNewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24690F1DAA35C600DDC80B /* CDNewsItem.m */; };
+		6E2469681DAA35C600DDC80B /* CDNewsAndTrendsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2469121DAA35C600DDC80B /* CDNewsAndTrendsService.m */; };
+		6E2469691DAA35C600DDC80B /* CDNewsAndTrendsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2469151DAA35C600DDC80B /* CDNewsAndTrendsCell.m */; };
+		6E24696C1DAA3FF700DDC80B /* NSData+CDDataAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E24696B1DAA3FF700DDC80B /* NSData+CDDataAddition.m */; };
+		6E4D90B01CDB133E0019B011 /* CDBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D90AF1CDB133E0019B011 /* CDBaseCollectionViewController.m */; };
+		6E53C84B1CE9CF9500202F53 /* CDSlidePageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53C8481CE9CF9500202F53 /* CDSlidePageHeaderView.m */; };
+		6E53C84C1CE9CF9500202F53 /* CDSlidePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E53C84A1CE9CF9500202F53 /* CDSlidePageView.m */; };
+		6E5E7D411D2A50DC00182A5B /* account_manage_cellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5E7D401D2A50DC00182A5B /* account_manage_cellBG.png */; };
+		6E67A79A1CDCA6BC00436E93 /* CDLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E67A7991CDCA6BC00436E93 /* CDLoadMoreCell.m */; };
+		6E67A79D1CDCA72600436E93 /* CDLoadMoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E67A79C1CDCA72600436E93 /* CDLoadMoreItem.m */; };
+		6E6ADB101CD892B200838B61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB0F1CD892B200838B61 /* main.m */; };
+		6E6ADB131CD892B200838B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB121CD892B200838B61 /* AppDelegate.m */; };
+		6E6ADB191CD892B200838B61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6ADB171CD892B200838B61 /* Main.storyboard */; };
+		6E6ADB1B1CD892B200838B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E6ADB1A1CD892B200838B61 /* Assets.xcassets */; };
+		6E6ADB2E1CD89E7C00838B61 /* CDBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB2D1CD89E7C00838B61 /* CDBaseTableViewCell.m */; };
+		6E6ADB3B1CD89E8700838B61 /* CDJSONBaseNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB331CD89E8700838B61 /* CDJSONBaseNetworkService.m */; };
+		6E6ADB3C1CD89E8700838B61 /* CDNetworkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB351CD89E8700838B61 /* CDNetworkMonitor.m */; };
+		6E6ADB3D1CD89E8700838B61 /* CDNetworkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB371CD89E8700838B61 /* CDNetworkRequestManager.m */; };
+		6E6ADB541CD89E8E00838B61 /* CDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB451CD89E8E00838B61 /* CDBaseViewController.m */; };
+		6E6ADB551CD89E8E00838B61 /* CDBaseWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB471CD89E8E00838B61 /* CDBaseWKWebViewController.m */; };
+		6E6ADB561CD89E8E00838B61 /* CDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB491CD89E8E00838B61 /* CDNavigationController.m */; };
+		6E6ADB581CD89E8E00838B61 /* CDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB4D1CD89E8E00838B61 /* CDTabBarController.m */; };
+		6E6ADB591CD89E8E00838B61 /* CDBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB4F1CD89E8E00838B61 /* CDBaseTableViewController.m */; };
+		6E6ADB881CD89F7C00838B61 /* NSArray+CDArrayAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB611CD89F7C00838B61 /* NSArray+CDArrayAdditions.m */; };
+		6E6ADB891CD89F7C00838B61 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB631CD89F7C00838B61 /* NSData+Base64.m */; };
+		6E6ADB8B1CD89F7C00838B61 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB671CD89F7C00838B61 /* NSData+CommonCrypto.m */; };
+		6E6ADB8C1CD89F7C00838B61 /* NSDate+CDDateAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB691CD89F7C00838B61 /* NSDate+CDDateAddition.m */; };
+		6E6ADB8D1CD89F7C00838B61 /* NSDictionary+CDDictionaryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB6B1CD89F7C00838B61 /* NSDictionary+CDDictionaryAdditions.m */; };
+		6E6ADB8E1CD89F7C00838B61 /* NSFileManager+CDFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB6D1CD89F7C00838B61 /* NSFileManager+CDFileManager.m */; };
+		6E6ADB8F1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB6F1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.m */; };
+		6E6ADB901CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB711CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.m */; };
+		6E6ADB911CD89F7C00838B61 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB731CD89F7C00838B61 /* NSString+Base64.m */; };
+		6E6ADB921CD89F7C00838B61 /* NSString+CDEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB751CD89F7C00838B61 /* NSString+CDEncryption.m */; };
+		6E6ADB931CD89F7C00838B61 /* UIBarButtonItem+CDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB771CD89F7C00838B61 /* UIBarButtonItem+CDCategory.m */; };
+		6E6ADB961CD89F7C00838B61 /* UIImage+CDImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB7D1CD89F7C00838B61 /* UIImage+CDImageAdditions.m */; };
+		6E6ADB971CD89F7C00838B61 /* UILabel+CDLBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB7F1CD89F7C00838B61 /* UILabel+CDLBAdditions.m */; };
+		6E6ADB981CD89F7C00838B61 /* UITableView+CDTableViewAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB811CD89F7C00838B61 /* UITableView+CDTableViewAddition.m */; };
+		6E6ADB991CD89F7C00838B61 /* UIView+CDViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB831CD89F7C00838B61 /* UIView+CDViewAdditions.m */; };
+		6E6ADB9A1CD89F7C00838B61 /* UIView+Genie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB851CD89F7C00838B61 /* UIView+Genie.m */; };
+		6E6ADB9B1CD89F7C00838B61 /* UIViewController+CDVCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB871CD89F7C00838B61 /* UIViewController+CDVCAdditions.m */; };
+		6E6ADB9F1CD8A05E00838B61 /* CDUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB9E1CD8A05E00838B61 /* CDUtilities.m */; };
+		6E6ADBD81CD8A0BD00838B61 /* CDAutoHideMessageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADBA41CD8A0BD00838B61 /* CDAutoHideMessageHUD.m */; };
+		6E6ADBF01CD8A22600838B61 /* CDGlobalHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADBEF1CD8A22600838B61 /* CDGlobalHTTPSessionManager.m */; };
+		6E6ADC1C1CD8B35B00838B61 /* CDBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADC1B1CD8B35B00838B61 /* CDBaseItem.m */; };
+		6E73367D1E4C6A330036393A /* SCYAnnualBonusCalculateResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336791E4C6A330036393A /* SCYAnnualBonusCalculateResultController.m */; };
+		6E73367E1E4C6A330036393A /* SCYAnnualBonusCalculatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73367C1E4C6A330036393A /* SCYAnnualBonusCalculatorController.m */; };
+		6E7336831E4C6AEB0036393A /* SCYAnnualBonusCalculateResultItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336801E4C6AEB0036393A /* SCYAnnualBonusCalculateResultItem.m */; };
+		6E7336841E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336821E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.m */; };
+		6E73368F1E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336861E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m */; };
+		6E7336901E4C6B1F0036393A /* SCYAnnualBonusResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336881E4C6B1F0036393A /* SCYAnnualBonusResultCell.m */; };
+		6E7336911E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73368A1E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.m */; };
+		6E7336931E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73368E1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m */; };
+		6E7336961E4C6BC80036393A /* UpDownLBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336951E4C6BC80036393A /* UpDownLBView.m */; };
+		6E7336991E4C6E040036393A /* SCYButtonTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7336981E4C6E040036393A /* SCYButtonTableFooterView.m */; };
+		6E73D6461E14A5C8009A1072 /* SCYActivityIndicatorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6451E14A5C8009A1072 /* SCYActivityIndicatorButton.m */; };
+		6E73D64A1E14A5F6009A1072 /* SCYRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6491E14A5F6009A1072 /* SCYRefreshControl.m */; };
+		6E73D64E1E14A626009A1072 /* CDADLoopDisplayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D64D1E14A626009A1072 /* CDADLoopDisplayScrollView.m */; };
+		6E73D6511E14A780009A1072 /* CDUpImageDownTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6501E14A780009A1072 /* CDUpImageDownTitleButton.m */; };
+		6E73D6561E14AB1D009A1072 /* ImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6551E14AB1D009A1072 /* ImagePickerManager.m */; };
+		6E73D6591E14B235009A1072 /* UITabBar+CDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6581E14B235009A1072 /* UITabBar+CDCategory.m */; };
+		6E73D6611E14B4C0009A1072 /* SSKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E73D65B1E14B4C0009A1072 /* SSKeychain.strings */; };
+		6E73D6621E14B4C0009A1072 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D65E1E14B4C0009A1072 /* SSKeychain.m */; };
+		6E73D6631E14B4C0009A1072 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6601E14B4C0009A1072 /* SSKeychainQuery.m */; };
+		6E73D6651E14FA6C009A1072 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E73D6641E14FA6C009A1072 /* libAFNetworking.a */; };
+		6E73D6671E14FA70009A1072 /* libMJExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E73D6661E14FA70009A1072 /* libMJExtension.a */; };
+		6E73D6691E14FA73009A1072 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E73D6681E14FA73009A1072 /* libSDWebImage.a */; };
+		6E73D66B1E14FA77009A1072 /* libYYCache.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E73D66A1E14FA77009A1072 /* libYYCache.a */; };
+		6E7C17411E1BA68000433093 /* loginConfigure.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C17401E1BA68000433093 /* loginConfigure.conf */; };
+		6E7C17451E1BA76700433093 /* registConfigure.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C17441E1BA76700433093 /* registConfigure.conf */; };
+		6E7C17491E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C17481E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf */; };
+		F9B7F93F7A7A135D5CEEEC72 /* libPods-ShangHaiProvidentFund.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		01A857102742BA70C51DC31F /* Pods-ShangHaiProvidentFund.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShangHaiProvidentFund.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.debug.xcconfig"; sourceTree = "<group>"; };
+		140BE9CB1CDF4B8700577831 /* CDAPPURLConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAPPURLConfigure.h; sourceTree = "<group>"; };
+		140BE9CC1CDF4B8700577831 /* CDAPPURLConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAPPURLConfigure.m; sourceTree = "<group>"; };
+		14D13B4C1CE2158F00D73F1A /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		14D13B4D1CE2158F00D73F1A /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		14D13B4E1CE2158F00D73F1A /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		14D275CA1F516EB6001EE3BB /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
+		14D275CB1F516EB6001EE3BB /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
+		14D275CC1F516EB6001EE3BB /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
+		14D275CD1F516EB6001EE3BB /* GDTNativeExpressAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAd.h; sourceTree = "<group>"; };
+		14D275CE1F516EB6001EE3BB /* GDTNativeExpressAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAdView.h; sourceTree = "<group>"; };
+		14D275CF1F516EB6001EE3BB /* GDTSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAd.h; sourceTree = "<group>"; };
+		14D275D01F516EB6001EE3BB /* GDTTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTTrack.h; sourceTree = "<group>"; };
+		14D275D11F516EB6001EE3BB /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
+		14FDD0B11CDDD2440093ABC3 /* CDBaseTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseTextFieldCell.h; sourceTree = "<group>"; };
+		14FDD0B21CDDD2440093ABC3 /* CDBaseTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseTextFieldCell.m; sourceTree = "<group>"; };
+		14FDD0B41CDDD33E0093ABC3 /* UITextField+cellIndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+cellIndexPath.h"; sourceTree = "<group>"; };
+		14FDD0B51CDDD33E0093ABC3 /* UITextField+cellIndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+cellIndexPath.m"; sourceTree = "<group>"; };
+		14FDD0BF1CDDF1200093ABC3 /* UITextView+CDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+CDCategory.h"; sourceTree = "<group>"; };
+		14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+CDCategory.m"; sourceTree = "<group>"; };
+		4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShangHaiProvidentFund.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6211FC571F20838400F6F8F2 /* CDAboutUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsController.h; sourceTree = "<group>"; };
+		6211FC581F20838400F6F8F2 /* CDAboutUsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsController.m; sourceTree = "<group>"; };
+		6211FC591F20838400F6F8F2 /* CDHelpInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDHelpInfoViewController.h; sourceTree = "<group>"; };
+		6211FC5A1F20838400F6F8F2 /* CDHelpInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDHelpInfoViewController.m; sourceTree = "<group>"; };
+		6211FC5B1F20838400F6F8F2 /* CDOpinionsSuggestionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpinionsSuggestionsController.h; sourceTree = "<group>"; };
+		6211FC5C1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpinionsSuggestionsController.m; sourceTree = "<group>"; };
+		6211FC601F20839E00F6F8F2 /* CDAboutUsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsItem.h; sourceTree = "<group>"; };
+		6211FC611F20839E00F6F8F2 /* CDAboutUsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsItem.m; sourceTree = "<group>"; };
+		6211FC621F20839E00F6F8F2 /* CDAboutUsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsModel.h; sourceTree = "<group>"; };
+		6211FC631F20839E00F6F8F2 /* CDAboutUsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsModel.m; sourceTree = "<group>"; };
+		6211FC641F20839E00F6F8F2 /* CDBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseModel.h; sourceTree = "<group>"; };
+		6211FC651F20839E00F6F8F2 /* CDBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseModel.m; sourceTree = "<group>"; };
+		6211FC681F20839E00F6F8F2 /* CDOpinionsSuggestionsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpinionsSuggestionsModel.h; sourceTree = "<group>"; };
+		6211FC691F20839E00F6F8F2 /* CDOpinionsSuggestionsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpinionsSuggestionsModel.m; sourceTree = "<group>"; };
+		6211FC6F1F2083A700F6F8F2 /* CDCommitMessageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCommitMessageService.h; sourceTree = "<group>"; };
+		6211FC701F2083A700F6F8F2 /* CDCommitMessageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCommitMessageService.m; sourceTree = "<group>"; };
+		6211FC721F2083B500F6F8F2 /* CDAboutUsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsCell.h; sourceTree = "<group>"; };
+		6211FC731F2083B500F6F8F2 /* CDAboutUsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsCell.m; sourceTree = "<group>"; };
+		6211FC741F2083B500F6F8F2 /* CDButtonTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDButtonTableFooterView.h; sourceTree = "<group>"; };
+		6211FC751F2083B500F6F8F2 /* CDButtonTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDButtonTableFooterView.m; sourceTree = "<group>"; };
+		6211FC761F2083B500F6F8F2 /* CDButtonTableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDButtonTableFooterView.xib; sourceTree = "<group>"; };
+		6211FC771F2083B500F6F8F2 /* CDOpinionsSuggestionsFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpinionsSuggestionsFieldCell.h; sourceTree = "<group>"; };
+		6211FC781F2083B500F6F8F2 /* CDOpinionsSuggestionsFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpinionsSuggestionsFieldCell.m; sourceTree = "<group>"; };
+		6211FC791F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpinionsSuggestionsViewCell.h; sourceTree = "<group>"; };
+		6211FC7A1F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpinionsSuggestionsViewCell.m; sourceTree = "<group>"; };
+		6211FC7B1F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDOpinionsSuggestionsViewCell.xib; sourceTree = "<group>"; };
+		62593ABE1F21AADF001687BC /* CDChangePasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDChangePasswordController.h; sourceTree = "<group>"; };
+		62593ABF1F21AADF001687BC /* CDChangePasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDChangePasswordController.m; sourceTree = "<group>"; };
+		625A81D61F171BD30041267E /* HouseLoanRate.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HouseLoanRate.conf; sourceTree = "<group>"; };
+		625A81D81F171C150041267E /* CDHouseLoanRateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDHouseLoanRateModel.h; sourceTree = "<group>"; };
+		625A81D91F171C150041267E /* CDHouseLoanRateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDHouseLoanRateModel.m; sourceTree = "<group>"; };
+		626352821F74C264004997A7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		6269613D1F16074B00C5D0D9 /* SCYActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYActivityIndicatorView.h; sourceTree = "<group>"; };
+		6269613E1F16074B00C5D0D9 /* SCYActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYActivityIndicatorView.m; sourceTree = "<group>"; };
+		626961401F160E5100C5D0D9 /* HttpRequestType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequestType.h; sourceTree = "<group>"; };
+		627B02C91F78FA8800ED4662 /* UserProtocol.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = UserProtocol.html; sourceTree = "<group>"; };
+		628247E11F67DB6B003C8EC1 /* ForgotPwdResetConfigure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ForgotPwdResetConfigure.json; sourceTree = "<group>"; };
+		628247E31F67DC58003C8EC1 /* CDForgotPasswordResetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDForgotPasswordResetController.h; sourceTree = "<group>"; };
+		628247E41F67DC58003C8EC1 /* CDForgotPasswordResetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDForgotPasswordResetController.m; sourceTree = "<group>"; };
+		628247E61F67DC82003C8EC1 /* CDForgotPasswordResetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDForgotPasswordResetModel.h; sourceTree = "<group>"; };
+		628247E71F67DC82003C8EC1 /* CDForgotPasswordResetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDForgotPasswordResetModel.m; sourceTree = "<group>"; };
+		6286FBF11F1C9A8E00794FC5 /* CDUserManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUserManagerController.h; sourceTree = "<group>"; };
+		6286FBF21F1C9A8E00794FC5 /* CDUserManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUserManagerController.m; sourceTree = "<group>"; };
+		6286FBF41F1CB1DD00794FC5 /* CDUserManagerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUserManagerModel.h; sourceTree = "<group>"; };
+		6286FBF51F1CB1DD00794FC5 /* CDUserManagerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUserManagerModel.m; sourceTree = "<group>"; };
+		6290DF691F66394A00273AE5 /* CDForgotPWDResetService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDForgotPWDResetService.h; sourceTree = "<group>"; };
+		6290DF6A1F66394A00273AE5 /* CDForgotPWDResetService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDForgotPWDResetService.m; sourceTree = "<group>"; };
+		6290DF6D1F667ADA00273AE5 /* SCYFindUserNamePasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYFindUserNamePasswordController.h; sourceTree = "<group>"; };
+		6290DF6E1F667ADA00273AE5 /* SCYFindUserNamePasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYFindUserNamePasswordController.m; sourceTree = "<group>"; };
+		6290DF701F6685AD00273AE5 /* CDNormalTextFieldConfigureItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNormalTextFieldConfigureItem.h; sourceTree = "<group>"; };
+		6290DF711F6685AD00273AE5 /* CDNormalTextFieldConfigureItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNormalTextFieldConfigureItem.m; sourceTree = "<group>"; };
+		6290DF731F668FA000273AE5 /* FindUserNamePassword.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FindUserNamePassword.json; sourceTree = "<group>"; };
+		6290DF741F668FA000273AE5 /* PersonalFundAccountNumQuery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PersonalFundAccountNumQuery.json; sourceTree = "<group>"; };
+		6290DF751F668FA000273AE5 /* registConfigure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = registConfigure.json; sourceTree = "<group>"; };
+		6290DF791F6698B300273AE5 /* CDChangePasswordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDChangePasswordModel.h; sourceTree = "<group>"; };
+		6290DF7A1F6698B300273AE5 /* CDChangePasswordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDChangePasswordModel.m; sourceTree = "<group>"; };
+		6290DF7C1F669AAB00273AE5 /* ChangPwd.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ChangPwd.json; sourceTree = "<group>"; };
+		6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mortgageCalculator.conf; sourceTree = "<group>"; };
+		6E2468811DAA35C600DDC80B /* CDConvenientToolsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientToolsController.h; sourceTree = "<group>"; };
+		6E2468821DAA35C600DDC80B /* CDConvenientToolsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientToolsController.m; sourceTree = "<group>"; };
+		6E2468831DAA35C600DDC80B /* CDMapAnnotationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMapAnnotationController.h; sourceTree = "<group>"; };
+		6E2468841DAA35C600DDC80B /* CDMapAnnotationController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CDMapAnnotationController.mm; sourceTree = "<group>"; };
+		6E2468851DAA35C600DDC80B /* CDMapRouteSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMapRouteSearchController.h; sourceTree = "<group>"; };
+		6E2468861DAA35C600DDC80B /* CDMapRouteSearchController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CDMapRouteSearchController.mm; sourceTree = "<group>"; };
+		6E2468871DAA35C600DDC80B /* CDNetworkPointController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNetworkPointController.h; sourceTree = "<group>"; };
+		6E2468881DAA35C600DDC80B /* CDNetworkPointController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNetworkPointController.m; sourceTree = "<group>"; };
+		6E2468891DAA35C600DDC80B /* SCYMortgageCalculatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYMortgageCalculatorController.h; sourceTree = "<group>"; };
+		6E24688A1DAA35C600DDC80B /* SCYMortgageCalculatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYMortgageCalculatorController.m; sourceTree = "<group>"; };
+		6E24688D1DAA35C600DDC80B /* CDConvenientModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientModel.h; sourceTree = "<group>"; };
+		6E24688E1DAA35C600DDC80B /* CDConvenientModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientModel.m; sourceTree = "<group>"; };
+		6E24688F1DAA35C600DDC80B /* CDConvenientToolsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientToolsItem.h; sourceTree = "<group>"; };
+		6E2468901DAA35C600DDC80B /* CDConvenientToolsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientToolsItem.m; sourceTree = "<group>"; };
+		6E2468911DAA35C600DDC80B /* CDNetworkPointItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNetworkPointItem.h; sourceTree = "<group>"; };
+		6E2468921DAA35C600DDC80B /* CDNetworkPointItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNetworkPointItem.m; sourceTree = "<group>"; };
+		6E2468931DAA35C600DDC80B /* CDPayCalculatorItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPayCalculatorItem.h; sourceTree = "<group>"; };
+		6E2468941DAA35C600DDC80B /* CDPayCalculatorItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPayCalculatorItem.m; sourceTree = "<group>"; };
+		6E2468951DAA35C600DDC80B /* SCYLoanRateItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYLoanRateItem.h; sourceTree = "<group>"; };
+		6E2468961DAA35C600DDC80B /* SCYLoanRateItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYLoanRateItem.m; sourceTree = "<group>"; };
+		6E2468971DAA35C600DDC80B /* SCYMortgageCalculatorCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYMortgageCalculatorCellItem.h; sourceTree = "<group>"; };
+		6E2468981DAA35C600DDC80B /* SCYMortgageCalculatorCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYMortgageCalculatorCellItem.m; sourceTree = "<group>"; };
+		6E2468991DAA35C600DDC80B /* SCYMortgageCalculatorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYMortgageCalculatorModel.h; sourceTree = "<group>"; };
+		6E24689A1DAA35C600DDC80B /* SCYMortgageCalculatorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYMortgageCalculatorModel.m; sourceTree = "<group>"; };
+		6E24689B1DAA35C600DDC80B /* SCYMortgageCalculatorResultItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYMortgageCalculatorResultItem.h; sourceTree = "<group>"; };
+		6E24689C1DAA35C600DDC80B /* SCYMortgageCalculatorResultItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYMortgageCalculatorResultItem.m; sourceTree = "<group>"; };
+		6E24689D1DAA35C600DDC80B /* SCYMortgageCalculatorSourceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYMortgageCalculatorSourceItem.h; sourceTree = "<group>"; };
+		6E24689E1DAA35C600DDC80B /* SCYMortgageCalculatorSourceItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYMortgageCalculatorSourceItem.m; sourceTree = "<group>"; };
+		6E2468A01DAA35C600DDC80B /* CDConvenientToolsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientToolsService.h; sourceTree = "<group>"; };
+		6E2468A11DAA35C600DDC80B /* CDConvenientToolsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientToolsService.m; sourceTree = "<group>"; };
+		6E2468A21DAA35C600DDC80B /* CDNetworkPointService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNetworkPointService.h; sourceTree = "<group>"; };
+		6E2468A31DAA35C600DDC80B /* CDNetworkPointService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNetworkPointService.m; sourceTree = "<group>"; };
+		6E2468A41DAA35C600DDC80B /* CDPayCalculatorService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPayCalculatorService.h; sourceTree = "<group>"; };
+		6E2468A51DAA35C600DDC80B /* CDPayCalculatorService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPayCalculatorService.m; sourceTree = "<group>"; };
+		6E2468A91DAA35C600DDC80B /* CDConvenientToolsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConvenientToolsCell.h; sourceTree = "<group>"; };
+		6E2468AA1DAA35C600DDC80B /* CDConvenientToolsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDConvenientToolsCell.m; sourceTree = "<group>"; };
+		6E2468AB1DAA35C600DDC80B /* CDNetWorkPointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNetWorkPointCell.h; sourceTree = "<group>"; };
+		6E2468AC1DAA35C600DDC80B /* CDNetWorkPointCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNetWorkPointCell.m; sourceTree = "<group>"; };
+		6E2468AD1DAA35C600DDC80B /* CDNetWorkPointCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDNetWorkPointCell.xib; sourceTree = "<group>"; };
+		6E2468AE1DAA35C600DDC80B /* SCYMeasurementTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYMeasurementTextFieldCell.h; sourceTree = "<group>"; };
+		6E2468AF1DAA35C600DDC80B /* SCYMeasurementTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYMeasurementTextFieldCell.m; sourceTree = "<group>"; };
+		6E2468B01DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYMortgageCalculatorResultCell.h; sourceTree = "<group>"; };
+		6E2468B11DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYMortgageCalculatorResultCell.m; sourceTree = "<group>"; };
+		6E2468B21DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCYMortgageCalculatorResultCell.xib; sourceTree = "<group>"; };
+		6E2468B31DAA35C600DDC80B /* SCYMortgageCalculatorSelectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYMortgageCalculatorSelectCell.h; sourceTree = "<group>"; };
+		6E2468B41DAA35C600DDC80B /* SCYMortgageCalculatorSelectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYMortgageCalculatorSelectCell.m; sourceTree = "<group>"; };
+		6E2468B51DAA35C600DDC80B /* SCYPopTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYPopTableView.h; sourceTree = "<group>"; };
+		6E2468B61DAA35C600DDC80B /* SCYPopTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYPopTableView.m; sourceTree = "<group>"; };
+		6E2468B71DAA35C600DDC80B /* SCYPopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYPopTableViewCell.h; sourceTree = "<group>"; };
+		6E2468B81DAA35C600DDC80B /* SCYPopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYPopTableViewCell.m; sourceTree = "<group>"; };
+		6E2468BB1DAA35C600DDC80B /* CDAccountDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAccountDetailController.h; sourceTree = "<group>"; };
+		6E2468BC1DAA35C600DDC80B /* CDAccountDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAccountDetailController.m; sourceTree = "<group>"; };
+		6E2468BD1DAA35C600DDC80B /* CDAccountManageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAccountManageController.h; sourceTree = "<group>"; };
+		6E2468BE1DAA35C600DDC80B /* CDAccountManageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAccountManageController.m; sourceTree = "<group>"; };
+		6E2468BF1DAA35C600DDC80B /* CDLoanInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoanInfoViewController.h; sourceTree = "<group>"; };
+		6E2468C01DAA35C600DDC80B /* CDLoanInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLoanInfoViewController.m; sourceTree = "<group>"; };
+		6E2468C11DAA35C600DDC80B /* CDLoanProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoanProgressController.h; sourceTree = "<group>"; };
+		6E2468C21DAA35C600DDC80B /* CDLoanProgressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLoanProgressController.m; sourceTree = "<group>"; };
+		6E2468C31DAA35C600DDC80B /* CDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoginViewController.h; sourceTree = "<group>"; };
+		6E2468C41DAA35C600DDC80B /* CDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLoginViewController.m; sourceTree = "<group>"; };
+		6E2468C51DAA35C600DDC80B /* CDQueryAccountInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQueryAccountInfoController.h; sourceTree = "<group>"; };
+		6E2468C61DAA35C600DDC80B /* CDQueryAccountInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQueryAccountInfoController.m; sourceTree = "<group>"; };
+		6E2468C71DAA35C600DDC80B /* CDRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRegistViewController.h; sourceTree = "<group>"; };
+		6E2468C81DAA35C600DDC80B /* CDRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRegistViewController.m; sourceTree = "<group>"; };
+		6E2468C91DAA35C600DDC80B /* CDRepaymentInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRepaymentInfoController.h; sourceTree = "<group>"; };
+		6E2468CA1DAA35C600DDC80B /* CDRepaymentInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRepaymentInfoController.m; sourceTree = "<group>"; };
+		6E2468CC1DAA35C600DDC80B /* CDAccountDetailItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAccountDetailItem.h; sourceTree = "<group>"; };
+		6E2468CD1DAA35C600DDC80B /* CDAccountDetailItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAccountDetailItem.m; sourceTree = "<group>"; };
+		6E2468CE1DAA35C600DDC80B /* CDAccountInfoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAccountInfoItem.h; sourceTree = "<group>"; };
+		6E2468CF1DAA35C600DDC80B /* CDAccountInfoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAccountInfoItem.m; sourceTree = "<group>"; };
+		6E2468D01DAA35C600DDC80B /* CDDynamicdetailItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDDynamicdetailItem.h; sourceTree = "<group>"; };
+		6E2468D11DAA35C600DDC80B /* CDDynamicdetailItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDDynamicdetailItem.m; sourceTree = "<group>"; };
+		6E2468D21DAA35C600DDC80B /* CDLoginConfigureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoginConfigureModel.h; sourceTree = "<group>"; };
+		6E2468D31DAA35C600DDC80B /* CDLoginConfigureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLoginConfigureModel.m; sourceTree = "<group>"; };
+		6E2468D41DAA35C600DDC80B /* CDLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoginModel.h; sourceTree = "<group>"; };
+		6E2468D51DAA35C600DDC80B /* CDLoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLoginModel.m; sourceTree = "<group>"; };
+		6E2468D61DAA35C600DDC80B /* CDMineAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMineAccountModel.h; sourceTree = "<group>"; };
+		6E2468D71DAA35C600DDC80B /* CDMineAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMineAccountModel.m; sourceTree = "<group>"; };
+		6E2468D81DAA35C600DDC80B /* CDPayAccountItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPayAccountItem.h; sourceTree = "<group>"; };
+		6E2468D91DAA35C600DDC80B /* CDPayAccountItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPayAccountItem.m; sourceTree = "<group>"; };
+		6E2468DA1DAA35C600DDC80B /* CDQueryAccountBasicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQueryAccountBasicItem.h; sourceTree = "<group>"; };
+		6E2468DB1DAA35C600DDC80B /* CDQueryAccountBasicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQueryAccountBasicItem.m; sourceTree = "<group>"; };
+		6E2468DC1DAA35C600DDC80B /* CDQueryAccountInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQueryAccountInfoModel.h; sourceTree = "<group>"; };
+		6E2468DD1DAA35C600DDC80B /* CDQueryAccountInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQueryAccountInfoModel.m; sourceTree = "<group>"; };
+		6E2468DE1DAA35C600DDC80B /* CDRegistConfigureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRegistConfigureModel.h; sourceTree = "<group>"; };
+		6E2468DF1DAA35C600DDC80B /* CDRegistConfigureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRegistConfigureModel.m; sourceTree = "<group>"; };
+		6E2468E01DAA35C600DDC80B /* CDRepayInfoBasicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRepayInfoBasicItem.h; sourceTree = "<group>"; };
+		6E2468E11DAA35C600DDC80B /* CDRepayInfoBasicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRepayInfoBasicItem.m; sourceTree = "<group>"; };
+		6E2468E21DAA35C600DDC80B /* CDRepayInfoChrItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRepayInfoChrItem.h; sourceTree = "<group>"; };
+		6E2468E31DAA35C600DDC80B /* CDRepayInfoChrItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRepayInfoChrItem.m; sourceTree = "<group>"; };
+		6E2468E41DAA35C600DDC80B /* CDRepayInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRepayInfoModel.h; sourceTree = "<group>"; };
+		6E2468E51DAA35C600DDC80B /* CDRepayInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRepayInfoModel.m; sourceTree = "<group>"; };
+		6E2468E71DAA35C600DDC80B /* CDChangePSWService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDChangePSWService.h; sourceTree = "<group>"; };
+		6E2468E81DAA35C600DDC80B /* CDChangePSWService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDChangePSWService.m; sourceTree = "<group>"; };
+		6E2468E91DAA35C600DDC80B /* CDLoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoginService.h; sourceTree = "<group>"; };
+		6E2468EA1DAA35C600DDC80B /* CDLoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLoginService.m; sourceTree = "<group>"; };
+		6E2468EB1DAA35C600DDC80B /* CDMineAccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMineAccountService.h; sourceTree = "<group>"; };
+		6E2468EC1DAA35C600DDC80B /* CDMineAccountService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMineAccountService.m; sourceTree = "<group>"; };
+		6E2468ED1DAA35C600DDC80B /* CDRegistGetVerCodeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRegistGetVerCodeService.h; sourceTree = "<group>"; };
+		6E2468EE1DAA35C600DDC80B /* CDRegistGetVerCodeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRegistGetVerCodeService.m; sourceTree = "<group>"; };
+		6E2468EF1DAA35C600DDC80B /* CDRegistService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRegistService.h; sourceTree = "<group>"; };
+		6E2468F01DAA35C600DDC80B /* CDRegistService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRegistService.m; sourceTree = "<group>"; };
+		6E2468F11DAA35C600DDC80B /* CDRepayInfoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRepayInfoService.h; sourceTree = "<group>"; };
+		6E2468F21DAA35C600DDC80B /* CDRepayInfoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRepayInfoService.m; sourceTree = "<group>"; };
+		6E2468F41DAA35C600DDC80B /* CDBottomButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBottomButtonView.h; sourceTree = "<group>"; };
+		6E2468F51DAA35C600DDC80B /* CDBottomButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBottomButtonView.m; sourceTree = "<group>"; };
+		6E2468F61DAA35C600DDC80B /* CDBottomButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDBottomButtonView.xib; sourceTree = "<group>"; };
+		6E2468F71DAA35C600DDC80B /* CDHeaderTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDHeaderTitleView.h; sourceTree = "<group>"; };
+		6E2468F81DAA35C600DDC80B /* CDHeaderTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDHeaderTitleView.m; sourceTree = "<group>"; };
+		6E2468F91DAA35C600DDC80B /* CDMineAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMineAccountCell.h; sourceTree = "<group>"; };
+		6E2468FA1DAA35C600DDC80B /* CDMineAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMineAccountCell.m; sourceTree = "<group>"; };
+		6E2468FB1DAA35C600DDC80B /* CDProvidentFundDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDProvidentFundDetailCell.h; sourceTree = "<group>"; };
+		6E2468FC1DAA35C600DDC80B /* CDProvidentFundDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDProvidentFundDetailCell.m; sourceTree = "<group>"; };
+		6E2468FD1DAA35C600DDC80B /* CDProvidentFundDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDProvidentFundDetailHeaderView.h; sourceTree = "<group>"; };
+		6E2468FE1DAA35C600DDC80B /* CDProvidentFundDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDProvidentFundDetailHeaderView.m; sourceTree = "<group>"; };
+		6E2468FF1DAA35C600DDC80B /* CDQueryAccountHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQueryAccountHeaderView.h; sourceTree = "<group>"; };
+		6E2469001DAA35C600DDC80B /* CDQueryAccountHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQueryAccountHeaderView.m; sourceTree = "<group>"; };
+		6E2469011DAA35C600DDC80B /* CDQueryAccountInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDQueryAccountInfoCell.h; sourceTree = "<group>"; };
+		6E2469021DAA35C600DDC80B /* CDQueryAccountInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDQueryAccountInfoCell.m; sourceTree = "<group>"; };
+		6E2469031DAA35C600DDC80B /* CDRegistFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRegistFooterView.h; sourceTree = "<group>"; };
+		6E2469041DAA35C600DDC80B /* CDRegistFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRegistFooterView.m; sourceTree = "<group>"; };
+		6E2469051DAA35C600DDC80B /* CDVerificationCodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVerificationCodeCell.h; sourceTree = "<group>"; };
+		6E2469061DAA35C600DDC80B /* CDVerificationCodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDVerificationCodeCell.m; sourceTree = "<group>"; };
+		6E2469091DAA35C600DDC80B /* CDNewsAndTrendsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNewsAndTrendsController.h; sourceTree = "<group>"; };
+		6E24690A1DAA35C600DDC80B /* CDNewsAndTrendsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNewsAndTrendsController.m; sourceTree = "<group>"; };
+		6E24690C1DAA35C600DDC80B /* CDNewsAndTrendsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNewsAndTrendsItem.h; sourceTree = "<group>"; };
+		6E24690D1DAA35C600DDC80B /* CDNewsAndTrendsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNewsAndTrendsItem.m; sourceTree = "<group>"; };
+		6E24690E1DAA35C600DDC80B /* CDNewsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNewsItem.h; sourceTree = "<group>"; };
+		6E24690F1DAA35C600DDC80B /* CDNewsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNewsItem.m; sourceTree = "<group>"; };
+		6E2469111DAA35C600DDC80B /* CDNewsAndTrendsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNewsAndTrendsService.h; sourceTree = "<group>"; };
+		6E2469121DAA35C600DDC80B /* CDNewsAndTrendsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNewsAndTrendsService.m; sourceTree = "<group>"; };
+		6E2469141DAA35C600DDC80B /* CDNewsAndTrendsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNewsAndTrendsCell.h; sourceTree = "<group>"; };
+		6E2469151DAA35C600DDC80B /* CDNewsAndTrendsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNewsAndTrendsCell.m; sourceTree = "<group>"; };
+		6E24696A1DAA3FF700DDC80B /* NSData+CDDataAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CDDataAddition.h"; sourceTree = "<group>"; };
+		6E24696B1DAA3FF700DDC80B /* NSData+CDDataAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CDDataAddition.m"; sourceTree = "<group>"; };
+		6E4D90AE1CDB133E0019B011 /* CDBaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseCollectionViewController.h; sourceTree = "<group>"; };
+		6E4D90AF1CDB133E0019B011 /* CDBaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseCollectionViewController.m; sourceTree = "<group>"; };
+		6E53C8471CE9CF9500202F53 /* CDSlidePageHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDSlidePageHeaderView.h; sourceTree = "<group>"; };
+		6E53C8481CE9CF9500202F53 /* CDSlidePageHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDSlidePageHeaderView.m; sourceTree = "<group>"; };
+		6E53C8491CE9CF9500202F53 /* CDSlidePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDSlidePageView.h; sourceTree = "<group>"; };
+		6E53C84A1CE9CF9500202F53 /* CDSlidePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDSlidePageView.m; sourceTree = "<group>"; };
+		6E5E7D401D2A50DC00182A5B /* account_manage_cellBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account_manage_cellBG.png; sourceTree = "<group>"; };
+		6E67A7981CDCA6BC00436E93 /* CDLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoadMoreCell.h; sourceTree = "<group>"; };
+		6E67A7991CDCA6BC00436E93 /* CDLoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLoadMoreCell.m; sourceTree = "<group>"; };
+		6E67A79B1CDCA72600436E93 /* CDLoadMoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLoadMoreItem.h; sourceTree = "<group>"; };
+		6E67A79C1CDCA72600436E93 /* CDLoadMoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLoadMoreItem.m; sourceTree = "<group>"; };
+		6E6ADB0B1CD892B200838B61 /* ShangHaiProvidentFund.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShangHaiProvidentFund.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E6ADB0F1CD892B200838B61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6E6ADB111CD892B200838B61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6E6ADB121CD892B200838B61 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6E6ADB181CD892B200838B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6E6ADB1A1CD892B200838B61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6E6ADB1F1CD892B200838B61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E6ADB2C1CD89E7C00838B61 /* CDBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseTableViewCell.h; sourceTree = "<group>"; };
+		6E6ADB2D1CD89E7C00838B61 /* CDBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseTableViewCell.m; sourceTree = "<group>"; };
+		6E6ADB321CD89E8700838B61 /* CDJSONBaseNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDJSONBaseNetworkService.h; sourceTree = "<group>"; };
+		6E6ADB331CD89E8700838B61 /* CDJSONBaseNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDJSONBaseNetworkService.m; sourceTree = "<group>"; };
+		6E6ADB341CD89E8700838B61 /* CDNetworkMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNetworkMonitor.h; sourceTree = "<group>"; };
+		6E6ADB351CD89E8700838B61 /* CDNetworkMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNetworkMonitor.m; sourceTree = "<group>"; };
+		6E6ADB361CD89E8700838B61 /* CDNetworkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNetworkRequestManager.h; sourceTree = "<group>"; };
+		6E6ADB371CD89E8700838B61 /* CDNetworkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNetworkRequestManager.m; sourceTree = "<group>"; };
+		6E6ADB441CD89E8E00838B61 /* CDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseViewController.h; sourceTree = "<group>"; };
+		6E6ADB451CD89E8E00838B61 /* CDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseViewController.m; sourceTree = "<group>"; };
+		6E6ADB461CD89E8E00838B61 /* CDBaseWKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseWKWebViewController.h; sourceTree = "<group>"; };
+		6E6ADB471CD89E8E00838B61 /* CDBaseWKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseWKWebViewController.m; sourceTree = "<group>"; };
+		6E6ADB481CD89E8E00838B61 /* CDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNavigationController.h; sourceTree = "<group>"; };
+		6E6ADB491CD89E8E00838B61 /* CDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNavigationController.m; sourceTree = "<group>"; };
+		6E6ADB4C1CD89E8E00838B61 /* CDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDTabBarController.h; sourceTree = "<group>"; };
+		6E6ADB4D1CD89E8E00838B61 /* CDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTabBarController.m; sourceTree = "<group>"; };
+		6E6ADB4E1CD89E8E00838B61 /* CDBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseTableViewController.h; sourceTree = "<group>"; };
+		6E6ADB4F1CD89E8E00838B61 /* CDBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseTableViewController.m; sourceTree = "<group>"; };
+		6E6ADB601CD89F7C00838B61 /* NSArray+CDArrayAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CDArrayAdditions.h"; sourceTree = "<group>"; };
+		6E6ADB611CD89F7C00838B61 /* NSArray+CDArrayAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CDArrayAdditions.m"; sourceTree = "<group>"; };
+		6E6ADB621CD89F7C00838B61 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		6E6ADB631CD89F7C00838B61 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		6E6ADB661CD89F7C00838B61 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		6E6ADB671CD89F7C00838B61 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		6E6ADB681CD89F7C00838B61 /* NSDate+CDDateAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CDDateAddition.h"; sourceTree = "<group>"; };
+		6E6ADB691CD89F7C00838B61 /* NSDate+CDDateAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CDDateAddition.m"; sourceTree = "<group>"; };
+		6E6ADB6A1CD89F7C00838B61 /* NSDictionary+CDDictionaryAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+CDDictionaryAdditions.h"; sourceTree = "<group>"; };
+		6E6ADB6B1CD89F7C00838B61 /* NSDictionary+CDDictionaryAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CDDictionaryAdditions.m"; sourceTree = "<group>"; };
+		6E6ADB6C1CD89F7C00838B61 /* NSFileManager+CDFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CDFileManager.h"; sourceTree = "<group>"; };
+		6E6ADB6D1CD89F7C00838B61 /* NSFileManager+CDFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CDFileManager.m"; sourceTree = "<group>"; };
+		6E6ADB6E1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+CDMutableArrAdditions.h"; sourceTree = "<group>"; };
+		6E6ADB6F1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+CDMutableArrAdditions.m"; sourceTree = "<group>"; };
+		6E6ADB701CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+CDMutableDictAdditions.h"; sourceTree = "<group>"; };
+		6E6ADB711CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CDMutableDictAdditions.m"; sourceTree = "<group>"; };
+		6E6ADB721CD89F7C00838B61 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		6E6ADB731CD89F7C00838B61 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		6E6ADB741CD89F7C00838B61 /* NSString+CDEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CDEncryption.h"; sourceTree = "<group>"; };
+		6E6ADB751CD89F7C00838B61 /* NSString+CDEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CDEncryption.m"; sourceTree = "<group>"; };
+		6E6ADB761CD89F7C00838B61 /* UIBarButtonItem+CDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+CDCategory.h"; sourceTree = "<group>"; };
+		6E6ADB771CD89F7C00838B61 /* UIBarButtonItem+CDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+CDCategory.m"; sourceTree = "<group>"; };
+		6E6ADB7C1CD89F7C00838B61 /* UIImage+CDImageAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CDImageAdditions.h"; sourceTree = "<group>"; };
+		6E6ADB7D1CD89F7C00838B61 /* UIImage+CDImageAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CDImageAdditions.m"; sourceTree = "<group>"; };
+		6E6ADB7E1CD89F7C00838B61 /* UILabel+CDLBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CDLBAdditions.h"; sourceTree = "<group>"; };
+		6E6ADB7F1CD89F7C00838B61 /* UILabel+CDLBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CDLBAdditions.m"; sourceTree = "<group>"; };
+		6E6ADB801CD89F7C00838B61 /* UITableView+CDTableViewAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CDTableViewAddition.h"; sourceTree = "<group>"; };
+		6E6ADB811CD89F7C00838B61 /* UITableView+CDTableViewAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CDTableViewAddition.m"; sourceTree = "<group>"; };
+		6E6ADB821CD89F7C00838B61 /* UIView+CDViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CDViewAdditions.h"; sourceTree = "<group>"; };
+		6E6ADB831CD89F7C00838B61 /* UIView+CDViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CDViewAdditions.m"; sourceTree = "<group>"; };
+		6E6ADB841CD89F7C00838B61 /* UIView+Genie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Genie.h"; sourceTree = "<group>"; };
+		6E6ADB851CD89F7C00838B61 /* UIView+Genie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Genie.m"; sourceTree = "<group>"; };
+		6E6ADB861CD89F7C00838B61 /* UIViewController+CDVCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CDVCAdditions.h"; sourceTree = "<group>"; };
+		6E6ADB871CD89F7C00838B61 /* UIViewController+CDVCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CDVCAdditions.m"; sourceTree = "<group>"; };
+		6E6ADB9D1CD8A05E00838B61 /* CDUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUtilities.h; sourceTree = "<group>"; };
+		6E6ADB9E1CD8A05E00838B61 /* CDUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUtilities.m; sourceTree = "<group>"; };
+		6E6ADBA01CD8A07600838B61 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		6E6ADBA31CD8A0BD00838B61 /* CDAutoHideMessageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAutoHideMessageHUD.h; sourceTree = "<group>"; };
+		6E6ADBA41CD8A0BD00838B61 /* CDAutoHideMessageHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAutoHideMessageHUD.m; sourceTree = "<group>"; };
+		6E6ADBEE1CD8A22600838B61 /* CDGlobalHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDGlobalHTTPSessionManager.h; sourceTree = "<group>"; };
+		6E6ADBEF1CD8A22600838B61 /* CDGlobalHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDGlobalHTTPSessionManager.m; sourceTree = "<group>"; };
+		6E6ADBF11CD8A58400838B61 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		6E6ADC1A1CD8B35B00838B61 /* CDBaseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseItem.h; sourceTree = "<group>"; };
+		6E6ADC1B1CD8B35B00838B61 /* CDBaseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseItem.m; sourceTree = "<group>"; };
+		6E7336781E4C6A330036393A /* SCYAnnualBonusCalculateResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusCalculateResultController.h; sourceTree = "<group>"; };
+		6E7336791E4C6A330036393A /* SCYAnnualBonusCalculateResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusCalculateResultController.m; sourceTree = "<group>"; };
+		6E73367A1E4C6A330036393A /* SCYAnnualBonusCalculateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusCalculateTool.h; sourceTree = "<group>"; };
+		6E73367B1E4C6A330036393A /* SCYAnnualBonusCalculatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusCalculatorController.h; sourceTree = "<group>"; };
+		6E73367C1E4C6A330036393A /* SCYAnnualBonusCalculatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusCalculatorController.m; sourceTree = "<group>"; };
+		6E73367F1E4C6AEB0036393A /* SCYAnnualBonusCalculateResultItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusCalculateResultItem.h; sourceTree = "<group>"; };
+		6E7336801E4C6AEB0036393A /* SCYAnnualBonusCalculateResultItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusCalculateResultItem.m; sourceTree = "<group>"; };
+		6E7336811E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusCalculateRulesItem.h; sourceTree = "<group>"; };
+		6E7336821E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusCalculateRulesItem.m; sourceTree = "<group>"; };
+		6E7336851E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusCalculatorCell.h; sourceTree = "<group>"; };
+		6E7336861E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusCalculatorCell.m; sourceTree = "<group>"; };
+		6E7336871E4C6B1F0036393A /* SCYAnnualBonusResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusResultCell.h; sourceTree = "<group>"; };
+		6E7336881E4C6B1F0036393A /* SCYAnnualBonusResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusResultCell.m; sourceTree = "<group>"; };
+		6E7336891E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusResultSectionHeaderView.h; sourceTree = "<group>"; };
+		6E73368A1E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusResultSectionHeaderView.m; sourceTree = "<group>"; };
+		6E73368D1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYAnnualBonusRulesCell.h; sourceTree = "<group>"; };
+		6E73368E1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYAnnualBonusRulesCell.m; sourceTree = "<group>"; };
+		6E7336941E4C6BC80036393A /* UpDownLBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpDownLBView.h; sourceTree = "<group>"; };
+		6E7336951E4C6BC80036393A /* UpDownLBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpDownLBView.m; sourceTree = "<group>"; };
+		6E7336971E4C6E040036393A /* SCYButtonTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYButtonTableFooterView.h; sourceTree = "<group>"; };
+		6E7336981E4C6E040036393A /* SCYButtonTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYButtonTableFooterView.m; sourceTree = "<group>"; };
+		6E73D6441E14A5C8009A1072 /* SCYActivityIndicatorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYActivityIndicatorButton.h; sourceTree = "<group>"; };
+		6E73D6451E14A5C8009A1072 /* SCYActivityIndicatorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYActivityIndicatorButton.m; sourceTree = "<group>"; };
+		6E73D6481E14A5F6009A1072 /* SCYRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYRefreshControl.h; sourceTree = "<group>"; };
+		6E73D6491E14A5F6009A1072 /* SCYRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYRefreshControl.m; sourceTree = "<group>"; };
+		6E73D64C1E14A626009A1072 /* CDADLoopDisplayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDADLoopDisplayScrollView.h; sourceTree = "<group>"; };
+		6E73D64D1E14A626009A1072 /* CDADLoopDisplayScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDADLoopDisplayScrollView.m; sourceTree = "<group>"; };
+		6E73D64F1E14A780009A1072 /* CDUpImageDownTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUpImageDownTitleButton.h; sourceTree = "<group>"; };
+		6E73D6501E14A780009A1072 /* CDUpImageDownTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUpImageDownTitleButton.m; sourceTree = "<group>"; };
+		6E73D6541E14AB1D009A1072 /* ImagePickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerManager.h; sourceTree = "<group>"; };
+		6E73D6551E14AB1D009A1072 /* ImagePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerManager.m; sourceTree = "<group>"; };
+		6E73D6571E14B235009A1072 /* UITabBar+CDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+CDCategory.h"; sourceTree = "<group>"; };
+		6E73D6581E14B235009A1072 /* UITabBar+CDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+CDCategory.m"; sourceTree = "<group>"; };
+		6E73D65C1E14B4C0009A1072 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SSKeychain.strings; sourceTree = "<group>"; };
+		6E73D65D1E14B4C0009A1072 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		6E73D65E1E14B4C0009A1072 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		6E73D65F1E14B4C0009A1072 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		6E73D6601E14B4C0009A1072 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
+		6E73D6641E14FA6C009A1072 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "../../Library/Developer/Xcode/DerivedData/ShangHaiProvidentFund-aeyaomdjoyjfytflgwffsdglhtbf/Build/Products/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
+		6E73D6661E14FA70009A1072 /* libMJExtension.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMJExtension.a; path = "../../Library/Developer/Xcode/DerivedData/ShangHaiProvidentFund-aeyaomdjoyjfytflgwffsdglhtbf/Build/Products/Debug-iphoneos/MJExtension/libMJExtension.a"; sourceTree = "<group>"; };
+		6E73D6681E14FA73009A1072 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "../../Library/Developer/Xcode/DerivedData/ShangHaiProvidentFund-aeyaomdjoyjfytflgwffsdglhtbf/Build/Products/Debug-iphoneos/SDWebImage/libSDWebImage.a"; sourceTree = "<group>"; };
+		6E73D66A1E14FA77009A1072 /* libYYCache.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libYYCache.a; path = "../../Library/Developer/Xcode/DerivedData/ShangHaiProvidentFund-aeyaomdjoyjfytflgwffsdglhtbf/Build/Products/Debug-iphoneos/YYCache/libYYCache.a"; sourceTree = "<group>"; };
+		6E7C17401E1BA68000433093 /* loginConfigure.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginConfigure.conf; sourceTree = "<group>"; };
+		6E7C17441E1BA76700433093 /* registConfigure.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = registConfigure.conf; sourceTree = "<group>"; };
+		6E7C17481E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpinionsSuggestionsConfigure.conf; sourceTree = "<group>"; };
+		841B5A7AFA2BE502823C6019 /* Pods-ShangHaiProvidentFund.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShangHaiProvidentFund.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E6ADB081CD892B200838B61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E73D66B1E14FA77009A1072 /* libYYCache.a in Frameworks */,
+				6E73D6691E14FA73009A1072 /* libSDWebImage.a in Frameworks */,
+				6E73D6671E14FA70009A1072 /* libMJExtension.a in Frameworks */,
+				6E73D6651E14FA6C009A1072 /* libAFNetworking.a in Frameworks */,
+				F9B7F93F7A7A135D5CEEEC72 /* libPods-ShangHaiProvidentFund.a in Frameworks */,
+				14D275D21F516EB6001EE3BB /* libGDTMobSDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0BCB10931A68C1FA87AEF20C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01A857102742BA70C51DC31F /* Pods-ShangHaiProvidentFund.debug.xcconfig */,
+				841B5A7AFA2BE502823C6019 /* Pods-ShangHaiProvidentFund.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		14D13B4B1CE2158F00D73F1A /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				14D13B4C1CE2158F00D73F1A /* GTMBase64.h */,
+				14D13B4D1CE2158F00D73F1A /* GTMBase64.m */,
+				14D13B4E1CE2158F00D73F1A /* GTMDefines.h */,
+			);
+			path = GTMBase64;
+			sourceTree = "<group>";
+		};
+		14D275C91F516EA3001EE3BB /* GDTAdlib */ = {
+			isa = PBXGroup;
+			children = (
+				14D275CA1F516EB6001EE3BB /* GDTMobBannerView.h */,
+				14D275CB1F516EB6001EE3BB /* GDTMobInterstitial.h */,
+				14D275CC1F516EB6001EE3BB /* GDTNativeAd.h */,
+				14D275CD1F516EB6001EE3BB /* GDTNativeExpressAd.h */,
+				14D275CE1F516EB6001EE3BB /* GDTNativeExpressAdView.h */,
+				14D275CF1F516EB6001EE3BB /* GDTSplashAd.h */,
+				14D275D01F516EB6001EE3BB /* GDTTrack.h */,
+				14D275D11F516EB6001EE3BB /* libGDTMobSDK.a */,
+			);
+			path = GDTAdlib;
+			sourceTree = "<group>";
+		};
+		14FDD0A41CDDB3790093ABC3 /* CDResources */ = {
+			isa = PBXGroup;
+			children = (
+				6E5E7D3F1D2A50CE00182A5B /* Images */,
+				14FDD0A51CDDB38E0093ABC3 /* Files */,
+			);
+			path = CDResources;
+			sourceTree = "<group>";
+		};
+		14FDD0A51CDDB38E0093ABC3 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				627B02C91F78FA8800ED4662 /* UserProtocol.html */,
+				628247E11F67DB6B003C8EC1 /* ForgotPwdResetConfigure.json */,
+				6290DF731F668FA000273AE5 /* FindUserNamePassword.json */,
+				6290DF741F668FA000273AE5 /* PersonalFundAccountNumQuery.json */,
+				6290DF751F668FA000273AE5 /* registConfigure.json */,
+				6290DF7C1F669AAB00273AE5 /* ChangPwd.json */,
+				625A81D61F171BD30041267E /* HouseLoanRate.conf */,
+				6E7C17401E1BA68000433093 /* loginConfigure.conf */,
+				6E7C17441E1BA76700433093 /* registConfigure.conf */,
+				6E7C17481E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf */,
+				6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		4D166C53BA300C5E847A1C5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D66A1E14FA77009A1072 /* libYYCache.a */,
+				6E73D6681E14FA73009A1072 /* libSDWebImage.a */,
+				6E73D6661E14FA70009A1072 /* libMJExtension.a */,
+				6E73D6641E14FA6C009A1072 /* libAFNetworking.a */,
+				4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6290DF6C1F667ABF00273AE5 /* FindUserNameAndPassword */ = {
+			isa = PBXGroup;
+			children = (
+				6290DF6D1F667ADA00273AE5 /* SCYFindUserNamePasswordController.h */,
+				6290DF6E1F667ADA00273AE5 /* SCYFindUserNamePasswordController.m */,
+			);
+			path = FindUserNameAndPassword;
+			sourceTree = "<group>";
+		};
+		6E24687E1DAA35C600DDC80B /* CDConvenientTools */ = {
+			isa = PBXGroup;
+			children = (
+				6E2468801DAA35C600DDC80B /* Controller */,
+				6E24688C1DAA35C600DDC80B /* Model */,
+				6E24689F1DAA35C600DDC80B /* NetWorkService */,
+				6E2468A81DAA35C600DDC80B /* View */,
+			);
+			path = CDConvenientTools;
+			sourceTree = "<group>";
+		};
+		6E2468801DAA35C600DDC80B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6E7336781E4C6A330036393A /* SCYAnnualBonusCalculateResultController.h */,
+				6E7336791E4C6A330036393A /* SCYAnnualBonusCalculateResultController.m */,
+				6E73367A1E4C6A330036393A /* SCYAnnualBonusCalculateTool.h */,
+				6E73367B1E4C6A330036393A /* SCYAnnualBonusCalculatorController.h */,
+				6E73367C1E4C6A330036393A /* SCYAnnualBonusCalculatorController.m */,
+				6E2468811DAA35C600DDC80B /* CDConvenientToolsController.h */,
+				6E2468821DAA35C600DDC80B /* CDConvenientToolsController.m */,
+				6E2468831DAA35C600DDC80B /* CDMapAnnotationController.h */,
+				6E2468841DAA35C600DDC80B /* CDMapAnnotationController.mm */,
+				6E2468851DAA35C600DDC80B /* CDMapRouteSearchController.h */,
+				6E2468861DAA35C600DDC80B /* CDMapRouteSearchController.mm */,
+				6E2468871DAA35C600DDC80B /* CDNetworkPointController.h */,
+				6E2468881DAA35C600DDC80B /* CDNetworkPointController.m */,
+				6E2468891DAA35C600DDC80B /* SCYMortgageCalculatorController.h */,
+				6E24688A1DAA35C600DDC80B /* SCYMortgageCalculatorController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6E24688C1DAA35C600DDC80B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E73367F1E4C6AEB0036393A /* SCYAnnualBonusCalculateResultItem.h */,
+				6E7336801E4C6AEB0036393A /* SCYAnnualBonusCalculateResultItem.m */,
+				6E7336811E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.h */,
+				6E7336821E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.m */,
+				6E24688D1DAA35C600DDC80B /* CDConvenientModel.h */,
+				6E24688E1DAA35C600DDC80B /* CDConvenientModel.m */,
+				6E24688F1DAA35C600DDC80B /* CDConvenientToolsItem.h */,
+				6E2468901DAA35C600DDC80B /* CDConvenientToolsItem.m */,
+				6E2468911DAA35C600DDC80B /* CDNetworkPointItem.h */,
+				6E2468921DAA35C600DDC80B /* CDNetworkPointItem.m */,
+				6E2468931DAA35C600DDC80B /* CDPayCalculatorItem.h */,
+				6E2468941DAA35C600DDC80B /* CDPayCalculatorItem.m */,
+				6E2468951DAA35C600DDC80B /* SCYLoanRateItem.h */,
+				6E2468961DAA35C600DDC80B /* SCYLoanRateItem.m */,
+				625A81D81F171C150041267E /* CDHouseLoanRateModel.h */,
+				625A81D91F171C150041267E /* CDHouseLoanRateModel.m */,
+				6E2468971DAA35C600DDC80B /* SCYMortgageCalculatorCellItem.h */,
+				6E2468981DAA35C600DDC80B /* SCYMortgageCalculatorCellItem.m */,
+				6E2468991DAA35C600DDC80B /* SCYMortgageCalculatorModel.h */,
+				6E24689A1DAA35C600DDC80B /* SCYMortgageCalculatorModel.m */,
+				6E24689B1DAA35C600DDC80B /* SCYMortgageCalculatorResultItem.h */,
+				6E24689C1DAA35C600DDC80B /* SCYMortgageCalculatorResultItem.m */,
+				6E24689D1DAA35C600DDC80B /* SCYMortgageCalculatorSourceItem.h */,
+				6E24689E1DAA35C600DDC80B /* SCYMortgageCalculatorSourceItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6E24689F1DAA35C600DDC80B /* NetWorkService */ = {
+			isa = PBXGroup;
+			children = (
+				6E2468A01DAA35C600DDC80B /* CDConvenientToolsService.h */,
+				6E2468A11DAA35C600DDC80B /* CDConvenientToolsService.m */,
+				6E2468A21DAA35C600DDC80B /* CDNetworkPointService.h */,
+				6E2468A31DAA35C600DDC80B /* CDNetworkPointService.m */,
+				6E2468A41DAA35C600DDC80B /* CDPayCalculatorService.h */,
+				6E2468A51DAA35C600DDC80B /* CDPayCalculatorService.m */,
+			);
+			path = NetWorkService;
+			sourceTree = "<group>";
+		};
+		6E2468A81DAA35C600DDC80B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6E7336971E4C6E040036393A /* SCYButtonTableFooterView.h */,
+				6E7336981E4C6E040036393A /* SCYButtonTableFooterView.m */,
+				6E7336941E4C6BC80036393A /* UpDownLBView.h */,
+				6E7336951E4C6BC80036393A /* UpDownLBView.m */,
+				6E7336851E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.h */,
+				6E7336861E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m */,
+				6E7336871E4C6B1F0036393A /* SCYAnnualBonusResultCell.h */,
+				6E7336881E4C6B1F0036393A /* SCYAnnualBonusResultCell.m */,
+				6E7336891E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.h */,
+				6E73368A1E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.m */,
+				6E73368D1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.h */,
+				6E73368E1E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m */,
+				6E2468A91DAA35C600DDC80B /* CDConvenientToolsCell.h */,
+				6E2468AA1DAA35C600DDC80B /* CDConvenientToolsCell.m */,
+				6E2468AB1DAA35C600DDC80B /* CDNetWorkPointCell.h */,
+				6E2468AC1DAA35C600DDC80B /* CDNetWorkPointCell.m */,
+				6E2468AD1DAA35C600DDC80B /* CDNetWorkPointCell.xib */,
+				6E2468AE1DAA35C600DDC80B /* SCYMeasurementTextFieldCell.h */,
+				6E2468AF1DAA35C600DDC80B /* SCYMeasurementTextFieldCell.m */,
+				6E2468B01DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.h */,
+				6E2468B11DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.m */,
+				6E2468B21DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.xib */,
+				6E2468B31DAA35C600DDC80B /* SCYMortgageCalculatorSelectCell.h */,
+				6E2468B41DAA35C600DDC80B /* SCYMortgageCalculatorSelectCell.m */,
+				6E2468B51DAA35C600DDC80B /* SCYPopTableView.h */,
+				6E2468B61DAA35C600DDC80B /* SCYPopTableView.m */,
+				6E2468B71DAA35C600DDC80B /* SCYPopTableViewCell.h */,
+				6E2468B81DAA35C600DDC80B /* SCYPopTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6E2468B91DAA35C600DDC80B /* CDMineAccount */ = {
+			isa = PBXGroup;
+			children = (
+				6290DF6C1F667ABF00273AE5 /* FindUserNameAndPassword */,
+				6E2468BA1DAA35C600DDC80B /* Controller */,
+				6E2468CB1DAA35C600DDC80B /* Model */,
+				6E2468E61DAA35C600DDC80B /* NetWorkService */,
+				6E2468F31DAA35C600DDC80B /* View */,
+			);
+			path = CDMineAccount;
+			sourceTree = "<group>";
+		};
+		6E2468BA1DAA35C600DDC80B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6E2468C51DAA35C600DDC80B /* CDQueryAccountInfoController.h */,
+				6E2468C61DAA35C600DDC80B /* CDQueryAccountInfoController.m */,
+				6211FC571F20838400F6F8F2 /* CDAboutUsController.h */,
+				6211FC581F20838400F6F8F2 /* CDAboutUsController.m */,
+				6211FC591F20838400F6F8F2 /* CDHelpInfoViewController.h */,
+				6211FC5A1F20838400F6F8F2 /* CDHelpInfoViewController.m */,
+				6211FC5B1F20838400F6F8F2 /* CDOpinionsSuggestionsController.h */,
+				6211FC5C1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m */,
+				6E2468BB1DAA35C600DDC80B /* CDAccountDetailController.h */,
+				6E2468BC1DAA35C600DDC80B /* CDAccountDetailController.m */,
+				6E2468BD1DAA35C600DDC80B /* CDAccountManageController.h */,
+				6E2468BE1DAA35C600DDC80B /* CDAccountManageController.m */,
+				6E2468BF1DAA35C600DDC80B /* CDLoanInfoViewController.h */,
+				6E2468C01DAA35C600DDC80B /* CDLoanInfoViewController.m */,
+				6E2468C11DAA35C600DDC80B /* CDLoanProgressController.h */,
+				6E2468C21DAA35C600DDC80B /* CDLoanProgressController.m */,
+				6E2468C31DAA35C600DDC80B /* CDLoginViewController.h */,
+				6E2468C41DAA35C600DDC80B /* CDLoginViewController.m */,
+				6E2468C71DAA35C600DDC80B /* CDRegistViewController.h */,
+				6E2468C81DAA35C600DDC80B /* CDRegistViewController.m */,
+				6E2468C91DAA35C600DDC80B /* CDRepaymentInfoController.h */,
+				6E2468CA1DAA35C600DDC80B /* CDRepaymentInfoController.m */,
+				6286FBF11F1C9A8E00794FC5 /* CDUserManagerController.h */,
+				6286FBF21F1C9A8E00794FC5 /* CDUserManagerController.m */,
+				62593ABE1F21AADF001687BC /* CDChangePasswordController.h */,
+				62593ABF1F21AADF001687BC /* CDChangePasswordController.m */,
+				628247E31F67DC58003C8EC1 /* CDForgotPasswordResetController.h */,
+				628247E41F67DC58003C8EC1 /* CDForgotPasswordResetController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6E2468CB1DAA35C600DDC80B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6211FC601F20839E00F6F8F2 /* CDAboutUsItem.h */,
+				6211FC611F20839E00F6F8F2 /* CDAboutUsItem.m */,
+				6211FC621F20839E00F6F8F2 /* CDAboutUsModel.h */,
+				6211FC631F20839E00F6F8F2 /* CDAboutUsModel.m */,
+				6211FC641F20839E00F6F8F2 /* CDBaseModel.h */,
+				6211FC651F20839E00F6F8F2 /* CDBaseModel.m */,
+				6211FC681F20839E00F6F8F2 /* CDOpinionsSuggestionsModel.h */,
+				6211FC691F20839E00F6F8F2 /* CDOpinionsSuggestionsModel.m */,
+				6E2468CC1DAA35C600DDC80B /* CDAccountDetailItem.h */,
+				6E2468CD1DAA35C600DDC80B /* CDAccountDetailItem.m */,
+				6E2468CE1DAA35C600DDC80B /* CDAccountInfoItem.h */,
+				6E2468CF1DAA35C600DDC80B /* CDAccountInfoItem.m */,
+				6E2468D01DAA35C600DDC80B /* CDDynamicdetailItem.h */,
+				6E2468D11DAA35C600DDC80B /* CDDynamicdetailItem.m */,
+				6E2468D21DAA35C600DDC80B /* CDLoginConfigureModel.h */,
+				6E2468D31DAA35C600DDC80B /* CDLoginConfigureModel.m */,
+				6E2468D41DAA35C600DDC80B /* CDLoginModel.h */,
+				6E2468D51DAA35C600DDC80B /* CDLoginModel.m */,
+				6E2468D61DAA35C600DDC80B /* CDMineAccountModel.h */,
+				6E2468D71DAA35C600DDC80B /* CDMineAccountModel.m */,
+				6E2468D81DAA35C600DDC80B /* CDPayAccountItem.h */,
+				6E2468D91DAA35C600DDC80B /* CDPayAccountItem.m */,
+				6E2468DA1DAA35C600DDC80B /* CDQueryAccountBasicItem.h */,
+				6E2468DB1DAA35C600DDC80B /* CDQueryAccountBasicItem.m */,
+				6E2468DC1DAA35C600DDC80B /* CDQueryAccountInfoModel.h */,
+				6E2468DD1DAA35C600DDC80B /* CDQueryAccountInfoModel.m */,
+				6E2468DE1DAA35C600DDC80B /* CDRegistConfigureModel.h */,
+				6E2468DF1DAA35C600DDC80B /* CDRegistConfigureModel.m */,
+				6E2468E01DAA35C600DDC80B /* CDRepayInfoBasicItem.h */,
+				6E2468E11DAA35C600DDC80B /* CDRepayInfoBasicItem.m */,
+				6E2468E21DAA35C600DDC80B /* CDRepayInfoChrItem.h */,
+				6E2468E31DAA35C600DDC80B /* CDRepayInfoChrItem.m */,
+				6E2468E41DAA35C600DDC80B /* CDRepayInfoModel.h */,
+				6E2468E51DAA35C600DDC80B /* CDRepayInfoModel.m */,
+				6286FBF41F1CB1DD00794FC5 /* CDUserManagerModel.h */,
+				6286FBF51F1CB1DD00794FC5 /* CDUserManagerModel.m */,
+				6290DF791F6698B300273AE5 /* CDChangePasswordModel.h */,
+				6290DF7A1F6698B300273AE5 /* CDChangePasswordModel.m */,
+				628247E61F67DC82003C8EC1 /* CDForgotPasswordResetModel.h */,
+				628247E71F67DC82003C8EC1 /* CDForgotPasswordResetModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6E2468E61DAA35C600DDC80B /* NetWorkService */ = {
+			isa = PBXGroup;
+			children = (
+				6211FC6F1F2083A700F6F8F2 /* CDCommitMessageService.h */,
+				6211FC701F2083A700F6F8F2 /* CDCommitMessageService.m */,
+				6E2468E71DAA35C600DDC80B /* CDChangePSWService.h */,
+				6E2468E81DAA35C600DDC80B /* CDChangePSWService.m */,
+				6E2468E91DAA35C600DDC80B /* CDLoginService.h */,
+				6E2468EA1DAA35C600DDC80B /* CDLoginService.m */,
+				6E2468EB1DAA35C600DDC80B /* CDMineAccountService.h */,
+				6E2468EC1DAA35C600DDC80B /* CDMineAccountService.m */,
+				6E2468ED1DAA35C600DDC80B /* CDRegistGetVerCodeService.h */,
+				6E2468EE1DAA35C600DDC80B /* CDRegistGetVerCodeService.m */,
+				6E2468EF1DAA35C600DDC80B /* CDRegistService.h */,
+				6E2468F01DAA35C600DDC80B /* CDRegistService.m */,
+				6E2468F11DAA35C600DDC80B /* CDRepayInfoService.h */,
+				6E2468F21DAA35C600DDC80B /* CDRepayInfoService.m */,
+				6290DF691F66394A00273AE5 /* CDForgotPWDResetService.h */,
+				6290DF6A1F66394A00273AE5 /* CDForgotPWDResetService.m */,
+			);
+			path = NetWorkService;
+			sourceTree = "<group>";
+		};
+		6E2468F31DAA35C600DDC80B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6211FC721F2083B500F6F8F2 /* CDAboutUsCell.h */,
+				6211FC731F2083B500F6F8F2 /* CDAboutUsCell.m */,
+				6211FC741F2083B500F6F8F2 /* CDButtonTableFooterView.h */,
+				6211FC751F2083B500F6F8F2 /* CDButtonTableFooterView.m */,
+				6211FC761F2083B500F6F8F2 /* CDButtonTableFooterView.xib */,
+				6211FC771F2083B500F6F8F2 /* CDOpinionsSuggestionsFieldCell.h */,
+				6211FC781F2083B500F6F8F2 /* CDOpinionsSuggestionsFieldCell.m */,
+				6211FC791F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.h */,
+				6211FC7A1F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.m */,
+				6211FC7B1F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.xib */,
+				6E2468F41DAA35C600DDC80B /* CDBottomButtonView.h */,
+				6E2468F51DAA35C600DDC80B /* CDBottomButtonView.m */,
+				6E2468F61DAA35C600DDC80B /* CDBottomButtonView.xib */,
+				6E2468F71DAA35C600DDC80B /* CDHeaderTitleView.h */,
+				6E2468F81DAA35C600DDC80B /* CDHeaderTitleView.m */,
+				6E2468F91DAA35C600DDC80B /* CDMineAccountCell.h */,
+				6E2468FA1DAA35C600DDC80B /* CDMineAccountCell.m */,
+				6E2468FB1DAA35C600DDC80B /* CDProvidentFundDetailCell.h */,
+				6E2468FC1DAA35C600DDC80B /* CDProvidentFundDetailCell.m */,
+				6E2468FD1DAA35C600DDC80B /* CDProvidentFundDetailHeaderView.h */,
+				6E2468FE1DAA35C600DDC80B /* CDProvidentFundDetailHeaderView.m */,
+				6E2468FF1DAA35C600DDC80B /* CDQueryAccountHeaderView.h */,
+				6E2469001DAA35C600DDC80B /* CDQueryAccountHeaderView.m */,
+				6E2469011DAA35C600DDC80B /* CDQueryAccountInfoCell.h */,
+				6E2469021DAA35C600DDC80B /* CDQueryAccountInfoCell.m */,
+				6E2469031DAA35C600DDC80B /* CDRegistFooterView.h */,
+				6E2469041DAA35C600DDC80B /* CDRegistFooterView.m */,
+				6E2469051DAA35C600DDC80B /* CDVerificationCodeCell.h */,
+				6E2469061DAA35C600DDC80B /* CDVerificationCodeCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6E2469071DAA35C600DDC80B /* CDNews */ = {
+			isa = PBXGroup;
+			children = (
+				6E2469081DAA35C600DDC80B /* Controller */,
+				6E24690B1DAA35C600DDC80B /* Model */,
+				6E2469101DAA35C600DDC80B /* NetWorkService */,
+				6E2469131DAA35C600DDC80B /* View */,
+			);
+			path = CDNews;
+			sourceTree = "<group>";
+		};
+		6E2469081DAA35C600DDC80B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6E2469091DAA35C600DDC80B /* CDNewsAndTrendsController.h */,
+				6E24690A1DAA35C600DDC80B /* CDNewsAndTrendsController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6E24690B1DAA35C600DDC80B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E24690C1DAA35C600DDC80B /* CDNewsAndTrendsItem.h */,
+				6E24690D1DAA35C600DDC80B /* CDNewsAndTrendsItem.m */,
+				6E24690E1DAA35C600DDC80B /* CDNewsItem.h */,
+				6E24690F1DAA35C600DDC80B /* CDNewsItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6E2469101DAA35C600DDC80B /* NetWorkService */ = {
+			isa = PBXGroup;
+			children = (
+				6E2469111DAA35C600DDC80B /* CDNewsAndTrendsService.h */,
+				6E2469121DAA35C600DDC80B /* CDNewsAndTrendsService.m */,
+			);
+			path = NetWorkService;
+			sourceTree = "<group>";
+		};
+		6E2469131DAA35C600DDC80B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6E2469141DAA35C600DDC80B /* CDNewsAndTrendsCell.h */,
+				6E2469151DAA35C600DDC80B /* CDNewsAndTrendsCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6E53C8461CE9CF9500202F53 /* CDSlidePageView */ = {
+			isa = PBXGroup;
+			children = (
+				6E53C8471CE9CF9500202F53 /* CDSlidePageHeaderView.h */,
+				6E53C8481CE9CF9500202F53 /* CDSlidePageHeaderView.m */,
+				6E53C8491CE9CF9500202F53 /* CDSlidePageView.h */,
+				6E53C84A1CE9CF9500202F53 /* CDSlidePageView.m */,
+			);
+			path = CDSlidePageView;
+			sourceTree = "<group>";
+		};
+		6E5E7D3F1D2A50CE00182A5B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6E5E7D401D2A50DC00182A5B /* account_manage_cellBG.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		6E66EA141CE062FC00111C2C /* CDTitleImageButton */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D64F1E14A780009A1072 /* CDUpImageDownTitleButton.h */,
+				6E73D6501E14A780009A1072 /* CDUpImageDownTitleButton.m */,
+			);
+			path = CDTitleImageButton;
+			sourceTree = "<group>";
+		};
+		6E6ADB021CD892B200838B61 = {
+			isa = PBXGroup;
+			children = (
+				6E6ADB0D1CD892B200838B61 /* ShangHaiProvidentFund */,
+				6E6ADB0C1CD892B200838B61 /* Products */,
+				0BCB10931A68C1FA87AEF20C /* Pods */,
+				4D166C53BA300C5E847A1C5F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6E6ADB0C1CD892B200838B61 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E6ADB0B1CD892B200838B61 /* ShangHaiProvidentFund.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E6ADB0D1CD892B200838B61 /* ShangHaiProvidentFund */ = {
+			isa = PBXGroup;
+			children = (
+				6E6ADB111CD892B200838B61 /* AppDelegate.h */,
+				6E6ADB121CD892B200838B61 /* AppDelegate.m */,
+				6E6ADB1A1CD892B200838B61 /* Assets.xcassets */,
+				6E6ADB171CD892B200838B61 /* Main.storyboard */,
+				626352821F74C264004997A7 /* Launch Screen.storyboard */,
+				14FDD0A41CDDB3790093ABC3 /* CDResources */,
+				6E6ADB281CD89AFE00838B61 /* CDGlobal */,
+				6E6ADB271CD89AE800838B61 /* CDVendor */,
+				6E6ADB251CD89A9600838B61 /* CDApplicationMain */,
+				6E6ADB0E1CD892B200838B61 /* Supporting Files */,
+			);
+			path = ShangHaiProvidentFund;
+			sourceTree = "<group>";
+		};
+		6E6ADB0E1CD892B200838B61 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E6ADB1F1CD892B200838B61 /* Info.plist */,
+				6E6ADBF11CD8A58400838B61 /* PrefixHeader.pch */,
+				6E6ADB0F1CD892B200838B61 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E6ADB251CD89A9600838B61 /* CDApplicationMain */ = {
+			isa = PBXGroup;
+			children = (
+				6E24687E1DAA35C600DDC80B /* CDConvenientTools */,
+				6E2468B91DAA35C600DDC80B /* CDMineAccount */,
+				6E2469071DAA35C600DDC80B /* CDNews */,
+				6E6ADB2A1CD89E3000838B61 /* BaseClasses */,
+			);
+			path = CDApplicationMain;
+			sourceTree = "<group>";
+		};
+		6E6ADB271CD89AE800838B61 /* CDVendor */ = {
+			isa = PBXGroup;
+			children = (
+				14D275C91F516EA3001EE3BB /* GDTAdlib */,
+				6E73D65A1E14B4C0009A1072 /* SSKeychain */,
+				14D13B4B1CE2158F00D73F1A /* GTMBase64 */,
+			);
+			path = CDVendor;
+			sourceTree = "<group>";
+		};
+		6E6ADB281CD89AFE00838B61 /* CDGlobal */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D6521E14AB0C009A1072 /* CDManager */,
+				6E6ADBA11CD8A0BD00838B61 /* CDCustomModule */,
+				6E6ADB9C1CD8A04E00838B61 /* CDUtilities */,
+				6E6ADB5F1CD89F7C00838B61 /* CDCategory */,
+			);
+			path = CDGlobal;
+			sourceTree = "<group>";
+		};
+		6E6ADB2A1CD89E3000838B61 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				6E6ADC191CD8B33D00838B61 /* CDBaseItem */,
+				6E6ADB3F1CD89E8E00838B61 /* CDBaseViewController */,
+				6E6ADB2F1CD89E8700838B61 /* CDBaseNetWorkClass */,
+				6E6ADB2B1CD89E7C00838B61 /* CDBaseView */,
+			);
+			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		6E6ADB2B1CD89E7C00838B61 /* CDBaseView */ = {
+			isa = PBXGroup;
+			children = (
+				6E6ADB2C1CD89E7C00838B61 /* CDBaseTableViewCell.h */,
+				6E6ADB2D1CD89E7C00838B61 /* CDBaseTableViewCell.m */,
+				6E67A7981CDCA6BC00436E93 /* CDLoadMoreCell.h */,
+				6E67A7991CDCA6BC00436E93 /* CDLoadMoreCell.m */,
+				14FDD0B11CDDD2440093ABC3 /* CDBaseTextFieldCell.h */,
+				14FDD0B21CDDD2440093ABC3 /* CDBaseTextFieldCell.m */,
+			);
+			path = CDBaseView;
+			sourceTree = "<group>";
+		};
+		6E6ADB2F1CD89E8700838B61 /* CDBaseNetWorkClass */ = {
+			isa = PBXGroup;
+			children = (
+				6E6ADB321CD89E8700838B61 /* CDJSONBaseNetworkService.h */,
+				6E6ADB331CD89E8700838B61 /* CDJSONBaseNetworkService.m */,
+				6E6ADBEE1CD8A22600838B61 /* CDGlobalHTTPSessionManager.h */,
+				6E6ADBEF1CD8A22600838B61 /* CDGlobalHTTPSessionManager.m */,
+				6E6ADB341CD89E8700838B61 /* CDNetworkMonitor.h */,
+				6E6ADB351CD89E8700838B61 /* CDNetworkMonitor.m */,
+				6E6ADB361CD89E8700838B61 /* CDNetworkRequestManager.h */,
+				6E6ADB371CD89E8700838B61 /* CDNetworkRequestManager.m */,
+				626961401F160E5100C5D0D9 /* HttpRequestType.h */,
+			);
+			path = CDBaseNetWorkClass;
+			sourceTree = "<group>";
+		};
+		6E6ADB3F1CD89E8E00838B61 /* CDBaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6E6ADB441CD89E8E00838B61 /* CDBaseViewController.h */,
+				6E6ADB451CD89E8E00838B61 /* CDBaseViewController.m */,
+				6E6ADB461CD89E8E00838B61 /* CDBaseWKWebViewController.h */,
+				6E6ADB471CD89E8E00838B61 /* CDBaseWKWebViewController.m */,
+				6E6ADB481CD89E8E00838B61 /* CDNavigationController.h */,
+				6E6ADB491CD89E8E00838B61 /* CDNavigationController.m */,
+				6E6ADB4C1CD89E8E00838B61 /* CDTabBarController.h */,
+				6E6ADB4D1CD89E8E00838B61 /* CDTabBarController.m */,
+				6E6ADB4E1CD89E8E00838B61 /* CDBaseTableViewController.h */,
+				6E6ADB4F1CD89E8E00838B61 /* CDBaseTableViewController.m */,
+				6E4D90AE1CDB133E0019B011 /* CDBaseCollectionViewController.h */,
+				6E4D90AF1CDB133E0019B011 /* CDBaseCollectionViewController.m */,
+			);
+			path = CDBaseViewController;
+			sourceTree = "<group>";
+		};
+		6E6ADB5F1CD89F7C00838B61 /* CDCategory */ = {
+			isa = PBXGroup;
+			children = (
+				6E6ADB601CD89F7C00838B61 /* NSArray+CDArrayAdditions.h */,
+				6E6ADB611CD89F7C00838B61 /* NSArray+CDArrayAdditions.m */,
+				6E6ADB621CD89F7C00838B61 /* NSData+Base64.h */,
+				6E6ADB631CD89F7C00838B61 /* NSData+Base64.m */,
+				6E24696A1DAA3FF700DDC80B /* NSData+CDDataAddition.h */,
+				6E24696B1DAA3FF700DDC80B /* NSData+CDDataAddition.m */,
+				6E6ADB661CD89F7C00838B61 /* NSData+CommonCrypto.h */,
+				6E6ADB671CD89F7C00838B61 /* NSData+CommonCrypto.m */,
+				6E6ADB681CD89F7C00838B61 /* NSDate+CDDateAddition.h */,
+				6E6ADB691CD89F7C00838B61 /* NSDate+CDDateAddition.m */,
+				6E6ADB6A1CD89F7C00838B61 /* NSDictionary+CDDictionaryAdditions.h */,
+				6E6ADB6B1CD89F7C00838B61 /* NSDictionary+CDDictionaryAdditions.m */,
+				6E6ADB6C1CD89F7C00838B61 /* NSFileManager+CDFileManager.h */,
+				6E6ADB6D1CD89F7C00838B61 /* NSFileManager+CDFileManager.m */,
+				6E6ADB6E1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.h */,
+				6E6ADB6F1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.m */,
+				6E6ADB701CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.h */,
+				6E6ADB711CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.m */,
+				6E6ADB721CD89F7C00838B61 /* NSString+Base64.h */,
+				6E6ADB731CD89F7C00838B61 /* NSString+Base64.m */,
+				6E6ADB741CD89F7C00838B61 /* NSString+CDEncryption.h */,
+				6E6ADB751CD89F7C00838B61 /* NSString+CDEncryption.m */,
+				6E6ADB761CD89F7C00838B61 /* UIBarButtonItem+CDCategory.h */,
+				6E6ADB771CD89F7C00838B61 /* UIBarButtonItem+CDCategory.m */,
+				6E6ADB7C1CD89F7C00838B61 /* UIImage+CDImageAdditions.h */,
+				6E6ADB7D1CD89F7C00838B61 /* UIImage+CDImageAdditions.m */,
+				6E6ADB7E1CD89F7C00838B61 /* UILabel+CDLBAdditions.h */,
+				6E6ADB7F1CD89F7C00838B61 /* UILabel+CDLBAdditions.m */,
+				6E73D6571E14B235009A1072 /* UITabBar+CDCategory.h */,
+				6E73D6581E14B235009A1072 /* UITabBar+CDCategory.m */,
+				6E6ADB801CD89F7C00838B61 /* UITableView+CDTableViewAddition.h */,
+				6E6ADB811CD89F7C00838B61 /* UITableView+CDTableViewAddition.m */,
+				14FDD0B41CDDD33E0093ABC3 /* UITextField+cellIndexPath.h */,
+				14FDD0B51CDDD33E0093ABC3 /* UITextField+cellIndexPath.m */,
+				14FDD0BF1CDDF1200093ABC3 /* UITextView+CDCategory.h */,
+				14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */,
+				6E6ADB821CD89F7C00838B61 /* UIView+CDViewAdditions.h */,
+				6E6ADB831CD89F7C00838B61 /* UIView+CDViewAdditions.m */,
+				6E6ADB841CD89F7C00838B61 /* UIView+Genie.h */,
+				6E6ADB851CD89F7C00838B61 /* UIView+Genie.m */,
+				6E6ADB861CD89F7C00838B61 /* UIViewController+CDVCAdditions.h */,
+				6E6ADB871CD89F7C00838B61 /* UIViewController+CDVCAdditions.m */,
+			);
+			path = CDCategory;
+			sourceTree = "<group>";
+		};
+		6E6ADB9C1CD8A04E00838B61 /* CDUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				6E6ADB9D1CD8A05E00838B61 /* CDUtilities.h */,
+				6E6ADB9E1CD8A05E00838B61 /* CDUtilities.m */,
+				140BE9CB1CDF4B8700577831 /* CDAPPURLConfigure.h */,
+				140BE9CC1CDF4B8700577831 /* CDAPPURLConfigure.m */,
+				6E6ADBA01CD8A07600838B61 /* Macro.h */,
+			);
+			path = CDUtilities;
+			sourceTree = "<group>";
+		};
+		6E6ADBA11CD8A0BD00838B61 /* CDCustomModule */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D64B1E14A626009A1072 /* CDLoopDisplayScrollview */,
+				6E73D6471E14A5F6009A1072 /* SCYRefreshControl */,
+				6E73D6431E14A5C8009A1072 /* SCYActivityIndicatorButton */,
+				6E53C8461CE9CF9500202F53 /* CDSlidePageView */,
+				6E66EA141CE062FC00111C2C /* CDTitleImageButton */,
+				6E6ADBA21CD8A0BD00838B61 /* CDAutoHideMessageHUD */,
+				6E6ADBAA1CD8A0BD00838B61 /* CDCustomActivityIndicator */,
+			);
+			path = CDCustomModule;
+			sourceTree = "<group>";
+		};
+		6E6ADBA21CD8A0BD00838B61 /* CDAutoHideMessageHUD */ = {
+			isa = PBXGroup;
+			children = (
+				6E6ADBA31CD8A0BD00838B61 /* CDAutoHideMessageHUD.h */,
+				6E6ADBA41CD8A0BD00838B61 /* CDAutoHideMessageHUD.m */,
+			);
+			path = CDAutoHideMessageHUD;
+			sourceTree = "<group>";
+		};
+		6E6ADBAA1CD8A0BD00838B61 /* CDCustomActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				6269613D1F16074B00C5D0D9 /* SCYActivityIndicatorView.h */,
+				6269613E1F16074B00C5D0D9 /* SCYActivityIndicatorView.m */,
+			);
+			path = CDCustomActivityIndicator;
+			sourceTree = "<group>";
+		};
+		6E6ADC191CD8B33D00838B61 /* CDBaseItem */ = {
+			isa = PBXGroup;
+			children = (
+				6E6ADC1A1CD8B35B00838B61 /* CDBaseItem.h */,
+				6E6ADC1B1CD8B35B00838B61 /* CDBaseItem.m */,
+				6E67A79B1CDCA72600436E93 /* CDLoadMoreItem.h */,
+				6E67A79C1CDCA72600436E93 /* CDLoadMoreItem.m */,
+				6290DF701F6685AD00273AE5 /* CDNormalTextFieldConfigureItem.h */,
+				6290DF711F6685AD00273AE5 /* CDNormalTextFieldConfigureItem.m */,
+			);
+			path = CDBaseItem;
+			sourceTree = "<group>";
+		};
+		6E73D6431E14A5C8009A1072 /* SCYActivityIndicatorButton */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D6441E14A5C8009A1072 /* SCYActivityIndicatorButton.h */,
+				6E73D6451E14A5C8009A1072 /* SCYActivityIndicatorButton.m */,
+			);
+			path = SCYActivityIndicatorButton;
+			sourceTree = "<group>";
+		};
+		6E73D6471E14A5F6009A1072 /* SCYRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D6481E14A5F6009A1072 /* SCYRefreshControl.h */,
+				6E73D6491E14A5F6009A1072 /* SCYRefreshControl.m */,
+			);
+			path = SCYRefreshControl;
+			sourceTree = "<group>";
+		};
+		6E73D64B1E14A626009A1072 /* CDLoopDisplayScrollview */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D64C1E14A626009A1072 /* CDADLoopDisplayScrollView.h */,
+				6E73D64D1E14A626009A1072 /* CDADLoopDisplayScrollView.m */,
+			);
+			path = CDLoopDisplayScrollview;
+			sourceTree = "<group>";
+		};
+		6E73D6521E14AB0C009A1072 /* CDManager */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D6531E14AB1D009A1072 /* ImagePickerManager */,
+			);
+			path = CDManager;
+			sourceTree = "<group>";
+		};
+		6E73D6531E14AB1D009A1072 /* ImagePickerManager */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D6541E14AB1D009A1072 /* ImagePickerManager.h */,
+				6E73D6551E14AB1D009A1072 /* ImagePickerManager.m */,
+			);
+			path = ImagePickerManager;
+			sourceTree = "<group>";
+		};
+		6E73D65A1E14B4C0009A1072 /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				6E73D65B1E14B4C0009A1072 /* SSKeychain.strings */,
+				6E73D65D1E14B4C0009A1072 /* SSKeychain.h */,
+				6E73D65E1E14B4C0009A1072 /* SSKeychain.m */,
+				6E73D65F1E14B4C0009A1072 /* SSKeychainQuery.h */,
+				6E73D6601E14B4C0009A1072 /* SSKeychainQuery.m */,
+			);
+			path = SSKeychain;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E6ADB0A1CD892B200838B61 /* ShangHaiProvidentFund */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E6ADB221CD892B200838B61 /* Build configuration list for PBXNativeTarget "ShangHaiProvidentFund" */;
+			buildPhases = (
+				DEC81AB4FCAFC9B442D64840 /* [CP] Check Pods Manifest.lock */,
+				6E6ADB071CD892B200838B61 /* Sources */,
+				6E6ADB081CD892B200838B61 /* Frameworks */,
+				6E6ADB091CD892B200838B61 /* Resources */,
+				E9FD6DD8DD4D15B5BA1100D0 /* [CP] Embed Pods Frameworks */,
+				5325D33ADE85F78EEEE124CA /* [CP] Copy Pods Resources */,
+				627B02CB1F7903C900ED4662 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShangHaiProvidentFund;
+			productName = ShangHaiProvidentFund;
+			productReference = 6E6ADB0B1CD892B200838B61 /* ShangHaiProvidentFund.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E6ADB031CD892B200838B61 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CD;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "cheng dong";
+				TargetAttributes = {
+					6E6ADB0A1CD892B200838B61 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 5XQR9H4MR9;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 6E6ADB061CD892B200838B61 /* Build configuration list for PBXProject "ShangHaiProvidentFund" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6E6ADB021CD892B200838B61;
+			productRefGroup = 6E6ADB0C1CD892B200838B61 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E6ADB0A1CD892B200838B61 /* ShangHaiProvidentFund */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E6ADB091CD892B200838B61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E5E7D411D2A50DC00182A5B /* account_manage_cellBG.png in Resources */,
+				6E7C17491E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf in Resources */,
+				628247E21F67DB6B003C8EC1 /* ForgotPwdResetConfigure.json in Resources */,
+				6E24695C1DAA35C600DDC80B /* CDBottomButtonView.xib in Resources */,
+				6211FC7E1F2083B500F6F8F2 /* CDButtonTableFooterView.xib in Resources */,
+				6E24693C1DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.xib in Resources */,
+				6E73D6611E14B4C0009A1072 /* SSKeychain.strings in Resources */,
+				6E6ADB1B1CD892B200838B61 /* Assets.xcassets in Resources */,
+				6E6ADB191CD892B200838B61 /* Main.storyboard in Resources */,
+				6290DF771F668FA000273AE5 /* PersonalFundAccountNumQuery.json in Resources */,
+				6211FC811F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.xib in Resources */,
+				625A81D71F171BD30041267E /* HouseLoanRate.conf in Resources */,
+				6E2469391DAA35C600DDC80B /* CDNetWorkPointCell.xib in Resources */,
+				6290DF781F668FA000273AE5 /* registConfigure.json in Resources */,
+				6290DF7D1F669AAB00273AE5 /* ChangPwd.json in Resources */,
+				627B02CA1F78FF0700ED4662 /* UserProtocol.html in Resources */,
+				6290DF761F668FA000273AE5 /* FindUserNamePassword.json in Resources */,
+				6E7C17451E1BA76700433093 /* registConfigure.conf in Resources */,
+				6E7C17411E1BA68000433093 /* loginConfigure.conf in Resources */,
+				626352831F74C264004997A7 /* Launch Screen.storyboard in Resources */,
+				6E1A21611CEB2AC000D21143 /* mortgageCalculator.conf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5325D33ADE85F78EEEE124CA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund-resources.sh",
+				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		627B02CB1F7903C900ED4662 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $CONFIGURATION == Release ]; then\necho \"Bumping build number...\"\nplist=${PROJECT_DIR}/${INFOPLIST_FILE}\n#increment the build number (ie 115 to 116)\nbuildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number in $plist\"\nexit 2\nfi\nbuildnum=$(expr $buildnum + 1)\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Bumped build number to $buildnum\"\n\nelse\necho $CONFIGURATION \" build - Not bumping build number.\"\nfi";
+		};
+		DEC81AB4FCAFC9B442D64840 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShangHaiProvidentFund-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9FD6DD8DD4D15B5BA1100D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E6ADB071CD892B200838B61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E6ADB991CD89F7C00838B61 /* UIView+CDViewAdditions.m in Sources */,
+				6E7336911E4C6B1F0036393A /* SCYAnnualBonusResultSectionHeaderView.m in Sources */,
+				6E6ADB3B1CD89E8700838B61 /* CDJSONBaseNetworkService.m in Sources */,
+				6E6ADB2E1CD89E7C00838B61 /* CDBaseTableViewCell.m in Sources */,
+				6E2469321DAA35C600DDC80B /* SCYMortgageCalculatorSourceItem.m in Sources */,
+				6E24693B1DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.m in Sources */,
+				6E24694B1DAA35C600DDC80B /* CDLoginConfigureModel.m in Sources */,
+				6E2469571DAA35C600DDC80B /* CDMineAccountService.m in Sources */,
+				6E24694F1DAA35C600DDC80B /* CDQueryAccountBasicItem.m in Sources */,
+				6E73368F1E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m in Sources */,
+				6211FC711F2083A700F6F8F2 /* CDCommitMessageService.m in Sources */,
+				6E2469421DAA35C600DDC80B /* CDLoanInfoViewController.m in Sources */,
+				6E2469621DAA35C600DDC80B /* CDQueryAccountInfoCell.m in Sources */,
+				6E2469561DAA35C600DDC80B /* CDLoginService.m in Sources */,
+				6211FC6A1F20839E00F6F8F2 /* CDAboutUsItem.m in Sources */,
+				6E73D64A1E14A5F6009A1072 /* SCYRefreshControl.m in Sources */,
+				6E2469351DAA35C600DDC80B /* CDPayCalculatorService.m in Sources */,
+				6E67A79A1CDCA6BC00436E93 /* CDLoadMoreCell.m in Sources */,
+				6E2469671DAA35C600DDC80B /* CDNewsItem.m in Sources */,
+				6E24695D1DAA35C600DDC80B /* CDHeaderTitleView.m in Sources */,
+				6E6ADBD81CD8A0BD00838B61 /* CDAutoHideMessageHUD.m in Sources */,
+				6290DF7B1F6698B300273AE5 /* CDChangePasswordModel.m in Sources */,
+				6E2469261DAA35C600DDC80B /* CDMapAnnotationController.mm in Sources */,
+				6E6ADB891CD89F7C00838B61 /* NSData+Base64.m in Sources */,
+				6E4D90B01CDB133E0019B011 /* CDBaseCollectionViewController.m in Sources */,
+				6E24695E1DAA35C600DDC80B /* CDMineAccountCell.m in Sources */,
+				6E6ADB9B1CD89F7C00838B61 /* UIViewController+CDVCAdditions.m in Sources */,
+				6E6ADB8B1CD89F7C00838B61 /* NSData+CommonCrypto.m in Sources */,
+				6E73D6631E14B4C0009A1072 /* SSKeychainQuery.m in Sources */,
+				6E2469551DAA35C600DDC80B /* CDChangePSWService.m in Sources */,
+				6E73367E1E4C6A330036393A /* SCYAnnualBonusCalculatorController.m in Sources */,
+				6E6ADB8E1CD89F7C00838B61 /* NSFileManager+CDFileManager.m in Sources */,
+				6E2469651DAA35C600DDC80B /* CDNewsAndTrendsController.m in Sources */,
+				14FDD0B61CDDD33E0093ABC3 /* UITextField+cellIndexPath.m in Sources */,
+				6E24693F1DAA35C600DDC80B /* SCYPopTableViewCell.m in Sources */,
+				6E6ADB3D1CD89E8700838B61 /* CDNetworkRequestManager.m in Sources */,
+				6E6ADB9F1CD8A05E00838B61 /* CDUtilities.m in Sources */,
+				6E2469401DAA35C600DDC80B /* CDAccountDetailController.m in Sources */,
+				6211FC801F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.m in Sources */,
+				6E6ADB921CD89F7C00838B61 /* NSString+CDEncryption.m in Sources */,
+				6E6ADB931CD89F7C00838B61 /* UIBarButtonItem+CDCategory.m in Sources */,
+				6E73D6591E14B235009A1072 /* UITabBar+CDCategory.m in Sources */,
+				6E2469371DAA35C600DDC80B /* CDConvenientToolsCell.m in Sources */,
+				6E6ADB961CD89F7C00838B61 /* UIImage+CDImageAdditions.m in Sources */,
+				6E2469631DAA35C600DDC80B /* CDRegistFooterView.m in Sources */,
+				6E24694A1DAA35C600DDC80B /* CDDynamicdetailItem.m in Sources */,
+				6E2469681DAA35C600DDC80B /* CDNewsAndTrendsService.m in Sources */,
+				14D13B4F1CE2158F00D73F1A /* GTMBase64.m in Sources */,
+				6E6ADB911CD89F7C00838B61 /* NSString+Base64.m in Sources */,
+				6E2469311DAA35C600DDC80B /* SCYMortgageCalculatorResultItem.m in Sources */,
+				6E2469541DAA35C600DDC80B /* CDRepayInfoModel.m in Sources */,
+				140BE9CD1CDF4B8700577831 /* CDAPPURLConfigure.m in Sources */,
+				6E2469591DAA35C600DDC80B /* CDRegistService.m in Sources */,
+				6E2469281DAA35C600DDC80B /* CDNetworkPointController.m in Sources */,
+				6E6ADB971CD89F7C00838B61 /* UILabel+CDLBAdditions.m in Sources */,
+				6E73D6561E14AB1D009A1072 /* ImagePickerManager.m in Sources */,
+				6E24693D1DAA35C600DDC80B /* SCYMortgageCalculatorSelectCell.m in Sources */,
+				6E53C84C1CE9CF9500202F53 /* CDSlidePageView.m in Sources */,
+				6E24693E1DAA35C600DDC80B /* SCYPopTableView.m in Sources */,
+				6E24695B1DAA35C600DDC80B /* CDBottomButtonView.m in Sources */,
+				6E6ADB8F1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.m in Sources */,
+				625A81DA1F171C150041267E /* CDHouseLoanRateModel.m in Sources */,
+				628247E51F67DC59003C8EC1 /* CDForgotPasswordResetController.m in Sources */,
+				6211FC7C1F2083B500F6F8F2 /* CDAboutUsCell.m in Sources */,
+				6E6ADB881CD89F7C00838B61 /* NSArray+CDArrayAdditions.m in Sources */,
+				6E24692F1DAA35C600DDC80B /* SCYMortgageCalculatorCellItem.m in Sources */,
+				6E24694D1DAA35C600DDC80B /* CDMineAccountModel.m in Sources */,
+				6E24694C1DAA35C600DDC80B /* CDLoginModel.m in Sources */,
+				6E7336991E4C6E040036393A /* SCYButtonTableFooterView.m in Sources */,
+				6E2469291DAA35C600DDC80B /* SCYMortgageCalculatorController.m in Sources */,
+				6E2469251DAA35C600DDC80B /* CDConvenientToolsController.m in Sources */,
+				6E24692A1DAA35C600DDC80B /* CDConvenientModel.m in Sources */,
+				6211FC6C1F20839E00F6F8F2 /* CDBaseModel.m in Sources */,
+				6E24695F1DAA35C600DDC80B /* CDProvidentFundDetailCell.m in Sources */,
+				6E24693A1DAA35C600DDC80B /* SCYMeasurementTextFieldCell.m in Sources */,
+				6211FC5D1F20838400F6F8F2 /* CDAboutUsController.m in Sources */,
+				6E24692E1DAA35C600DDC80B /* SCYLoanRateItem.m in Sources */,
+				6E2469641DAA35C600DDC80B /* CDVerificationCodeCell.m in Sources */,
+				6E2469341DAA35C600DDC80B /* CDNetworkPointService.m in Sources */,
+				6E2469531DAA35C600DDC80B /* CDRepayInfoChrItem.m in Sources */,
+				6E6ADB581CD89E8E00838B61 /* CDTabBarController.m in Sources */,
+				6211FC5F1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m in Sources */,
+				6E6ADB591CD89E8E00838B61 /* CDBaseTableViewController.m in Sources */,
+				6211FC7D1F2083B500F6F8F2 /* CDButtonTableFooterView.m in Sources */,
+				6E73D6511E14A780009A1072 /* CDUpImageDownTitleButton.m in Sources */,
+				6286FBF61F1CB1DD00794FC5 /* CDUserManagerModel.m in Sources */,
+				6E2469581DAA35C600DDC80B /* CDRegistGetVerCodeService.m in Sources */,
+				14FDD0B31CDDD2440093ABC3 /* CDBaseTextFieldCell.m in Sources */,
+				6E2469611DAA35C600DDC80B /* CDQueryAccountHeaderView.m in Sources */,
+				6E53C84B1CE9CF9500202F53 /* CDSlidePageHeaderView.m in Sources */,
+				6E2469601DAA35C600DDC80B /* CDProvidentFundDetailHeaderView.m in Sources */,
+				6E2469471DAA35C600DDC80B /* CDRepaymentInfoController.m in Sources */,
+				6E2469451DAA35C600DDC80B /* CDQueryAccountInfoController.m in Sources */,
+				6E7336841E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.m in Sources */,
+				6E2469691DAA35C600DDC80B /* CDNewsAndTrendsCell.m in Sources */,
+				6E2469271DAA35C600DDC80B /* CDMapRouteSearchController.mm in Sources */,
+				6E6ADB131CD892B200838B61 /* AppDelegate.m in Sources */,
+				6E6ADB8D1CD89F7C00838B61 /* NSDictionary+CDDictionaryAdditions.m in Sources */,
+				6E6ADC1C1CD8B35B00838B61 /* CDBaseItem.m in Sources */,
+				6E2469441DAA35C600DDC80B /* CDLoginViewController.m in Sources */,
+				6E2469381DAA35C600DDC80B /* CDNetWorkPointCell.m in Sources */,
+				6E24696C1DAA3FF700DDC80B /* NSData+CDDataAddition.m in Sources */,
+				6E7336961E4C6BC80036393A /* UpDownLBView.m in Sources */,
+				6290DF721F6685AD00273AE5 /* CDNormalTextFieldConfigureItem.m in Sources */,
+				6E7336931E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m in Sources */,
+				6E2469501DAA35C600DDC80B /* CDQueryAccountInfoModel.m in Sources */,
+				6211FC5E1F20838400F6F8F2 /* CDHelpInfoViewController.m in Sources */,
+				6211FC7F1F2083B500F6F8F2 /* CDOpinionsSuggestionsFieldCell.m in Sources */,
+				6E2469481DAA35C600DDC80B /* CDAccountDetailItem.m in Sources */,
+				6E6ADB541CD89E8E00838B61 /* CDBaseViewController.m in Sources */,
+				6E6ADBF01CD8A22600838B61 /* CDGlobalHTTPSessionManager.m in Sources */,
+				6E24695A1DAA35C600DDC80B /* CDRepayInfoService.m in Sources */,
+				6E73D6621E14B4C0009A1072 /* SSKeychain.m in Sources */,
+				6E2469511DAA35C600DDC80B /* CDRegistConfigureModel.m in Sources */,
+				6E2469431DAA35C600DDC80B /* CDLoanProgressController.m in Sources */,
+				6E2469411DAA35C600DDC80B /* CDAccountManageController.m in Sources */,
+				6E73367D1E4C6A330036393A /* SCYAnnualBonusCalculateResultController.m in Sources */,
+				6E24692B1DAA35C600DDC80B /* CDConvenientToolsItem.m in Sources */,
+				6E6ADB3C1CD89E8700838B61 /* CDNetworkMonitor.m in Sources */,
+				6E7336831E4C6AEB0036393A /* SCYAnnualBonusCalculateResultItem.m in Sources */,
+				6E6ADB9A1CD89F7C00838B61 /* UIView+Genie.m in Sources */,
+				6E6ADB981CD89F7C00838B61 /* UITableView+CDTableViewAddition.m in Sources */,
+				6E24694E1DAA35C600DDC80B /* CDPayAccountItem.m in Sources */,
+				6E2469491DAA35C600DDC80B /* CDAccountInfoItem.m in Sources */,
+				6E6ADB101CD892B200838B61 /* main.m in Sources */,
+				6E73D64E1E14A626009A1072 /* CDADLoopDisplayScrollView.m in Sources */,
+				6286FBF31F1C9A8E00794FC5 /* CDUserManagerController.m in Sources */,
+				6290DF6F1F667ADA00273AE5 /* SCYFindUserNamePasswordController.m in Sources */,
+				6211FC6B1F20839E00F6F8F2 /* CDAboutUsModel.m in Sources */,
+				6E6ADB8C1CD89F7C00838B61 /* NSDate+CDDateAddition.m in Sources */,
+				6E73D6461E14A5C8009A1072 /* SCYActivityIndicatorButton.m in Sources */,
+				6E2469661DAA35C600DDC80B /* CDNewsAndTrendsItem.m in Sources */,
+				6E2469521DAA35C600DDC80B /* CDRepayInfoBasicItem.m in Sources */,
+				6E6ADB561CD89E8E00838B61 /* CDNavigationController.m in Sources */,
+				6E7336901E4C6B1F0036393A /* SCYAnnualBonusResultCell.m in Sources */,
+				6E6ADB551CD89E8E00838B61 /* CDBaseWKWebViewController.m in Sources */,
+				628247E81F67DC82003C8EC1 /* CDForgotPasswordResetModel.m in Sources */,
+				6E6ADB901CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.m in Sources */,
+				6211FC6E1F20839E00F6F8F2 /* CDOpinionsSuggestionsModel.m in Sources */,
+				6E24692C1DAA35C600DDC80B /* CDNetworkPointItem.m in Sources */,
+				6E67A79D1CDCA72600436E93 /* CDLoadMoreItem.m in Sources */,
+				6E2469461DAA35C600DDC80B /* CDRegistViewController.m in Sources */,
+				6290DF6B1F66394A00273AE5 /* CDForgotPWDResetService.m in Sources */,
+				6E2469301DAA35C600DDC80B /* SCYMortgageCalculatorModel.m in Sources */,
+				62593AC01F21AADF001687BC /* CDChangePasswordController.m in Sources */,
+				6E2469331DAA35C600DDC80B /* CDConvenientToolsService.m in Sources */,
+				6269613F1F16074B00C5D0D9 /* SCYActivityIndicatorView.m in Sources */,
+				14FDD0C11CDDF1200093ABC3 /* UITextView+CDCategory.m in Sources */,
+				6E24692D1DAA35C600DDC80B /* CDPayCalculatorItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6E6ADB171CD892B200838B61 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E6ADB181CD892B200838B61 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6E73D65B1E14B4C0009A1072 /* SSKeychain.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E73D65C1E14B4C0009A1072 /* en */,
+			);
+			name = SSKeychain.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6E6ADB201CD892B200838B61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6E6ADB211CD892B200838B61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6E6ADB231CD892B200838B61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01A857102742BA70C51DC31F /* Pods-ShangHaiProvidentFund.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XQR9H4MR9;
+				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ShangHaiProvidentFund/PrefixHeader.pch";
+				INFOPLIST_FILE = ShangHaiProvidentFund/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AFNetworking\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MJExtension\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SDWebImage\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/YYCache\"",
+					"\"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/thirdlibs\"",
+					"$(PROJECT_DIR)/ShangHaiProvidentFund/CDVendor/GDTAdlib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ProvidentFund.ShangHai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "96c8a258-17f8-4718-86f0-53fe03f42651";
+				PROVISIONING_PROFILE_SPECIFIER = ShangHaiProvidentFundDev;
+				SWIFT_OBJC_BRIDGING_HEADER = "ShangHaiProvidentFund/CDApplicationMain/MainApplication/CDConvenientTools/Controller/ShangHaiProvidentFund-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		6E6ADB241CD892B200838B61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 841B5A7AFA2BE502823C6019 /* Pods-ShangHaiProvidentFund.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XQR9H4MR9;
+				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ShangHaiProvidentFund/PrefixHeader.pch";
+				INFOPLIST_FILE = ShangHaiProvidentFund/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AFNetworking\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MJExtension\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SDWebImage\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/YYCache\"",
+					"\"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/thirdlibs\"",
+					"$(PROJECT_DIR)/ShangHaiProvidentFund/CDVendor/GDTAdlib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ProvidentFund.ShangHai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "96c8a258-17f8-4718-86f0-53fe03f42651";
+				PROVISIONING_PROFILE_SPECIFIER = ShangHaiProvidentFundDev;
+				SWIFT_OBJC_BRIDGING_HEADER = "ShangHaiProvidentFund/CDApplicationMain/MainApplication/CDConvenientTools/Controller/ShangHaiProvidentFund-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E6ADB061CD892B200838B61 /* Build configuration list for PBXProject "ShangHaiProvidentFund" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E6ADB201CD892B200838B61 /* Debug */,
+				6E6ADB211CD892B200838B61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E6ADB221CD892B200838B61 /* Build configuration list for PBXNativeTarget "ShangHaiProvidentFund" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E6ADB231CD892B200838B61 /* Debug */,
+				6E6ADB241CD892B200838B61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E6ADB031CD892B200838B61 /* Project object */;
+}
