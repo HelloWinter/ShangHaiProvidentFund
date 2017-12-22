@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		140BE9CD1CDF4B8700577831 /* CDAPPURLConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 140BE9CC1CDF4B8700577831 /* CDAPPURLConfigure.m */; };
 		14D13B4F1CE2158F00D73F1A /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D13B4D1CE2158F00D73F1A /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		14D275D21F516EB6001EE3BB /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D275D11F516EB6001EE3BB /* libGDTMobSDK.a */; };
 		14FDD0B31CDDD2440093ABC3 /* CDBaseTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0B21CDDD2440093ABC3 /* CDBaseTextFieldCell.m */; };
 		14FDD0B61CDDD33E0093ABC3 /* UITextField+cellIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0B51CDDD33E0093ABC3 /* UITextField+cellIndexPath.m */; };
 		14FDD0C11CDDF1200093ABC3 /* UITextView+CDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */; };
@@ -192,14 +191,6 @@
 		14D13B4C1CE2158F00D73F1A /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		14D13B4D1CE2158F00D73F1A /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		14D13B4E1CE2158F00D73F1A /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		14D275CA1F516EB6001EE3BB /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
-		14D275CB1F516EB6001EE3BB /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
-		14D275CC1F516EB6001EE3BB /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
-		14D275CD1F516EB6001EE3BB /* GDTNativeExpressAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAd.h; sourceTree = "<group>"; };
-		14D275CE1F516EB6001EE3BB /* GDTNativeExpressAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAdView.h; sourceTree = "<group>"; };
-		14D275CF1F516EB6001EE3BB /* GDTSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAd.h; sourceTree = "<group>"; };
-		14D275D01F516EB6001EE3BB /* GDTTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTTrack.h; sourceTree = "<group>"; };
-		14D275D11F516EB6001EE3BB /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
 		14FDD0B11CDDD2440093ABC3 /* CDBaseTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseTextFieldCell.h; sourceTree = "<group>"; };
 		14FDD0B21CDDD2440093ABC3 /* CDBaseTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseTextFieldCell.m; sourceTree = "<group>"; };
 		14FDD0B41CDDD33E0093ABC3 /* UITextField+cellIndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+cellIndexPath.h"; sourceTree = "<group>"; };
@@ -538,7 +529,6 @@
 				6E73D6671E14FA70009A1072 /* libMJExtension.a in Frameworks */,
 				6E73D6651E14FA6C009A1072 /* libAFNetworking.a in Frameworks */,
 				F9B7F93F7A7A135D5CEEEC72 /* libPods-ShangHaiProvidentFund.a in Frameworks */,
-				14D275D21F516EB6001EE3BB /* libGDTMobSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,21 +552,6 @@
 				14D13B4E1CE2158F00D73F1A /* GTMDefines.h */,
 			);
 			path = GTMBase64;
-			sourceTree = "<group>";
-		};
-		14D275C91F516EA3001EE3BB /* GDTAdlib */ = {
-			isa = PBXGroup;
-			children = (
-				14D275CA1F516EB6001EE3BB /* GDTMobBannerView.h */,
-				14D275CB1F516EB6001EE3BB /* GDTMobInterstitial.h */,
-				14D275CC1F516EB6001EE3BB /* GDTNativeAd.h */,
-				14D275CD1F516EB6001EE3BB /* GDTNativeExpressAd.h */,
-				14D275CE1F516EB6001EE3BB /* GDTNativeExpressAdView.h */,
-				14D275CF1F516EB6001EE3BB /* GDTSplashAd.h */,
-				14D275D01F516EB6001EE3BB /* GDTTrack.h */,
-				14D275D11F516EB6001EE3BB /* libGDTMobSDK.a */,
-			);
-			path = GDTAdlib;
 			sourceTree = "<group>";
 		};
 		14FDD0A41CDDB3790093ABC3 /* CDResources */ = {
@@ -1028,7 +1003,6 @@
 		6E6ADB271CD89AE800838B61 /* CDVendor */ = {
 			isa = PBXGroup;
 			children = (
-				14D275C91F516EA3001EE3BB /* GDTAdlib */,
 				6E73D65A1E14B4C0009A1072 /* SSKeychain */,
 				14D13B4B1CE2158F00D73F1A /* GTMBase64 */,
 			);

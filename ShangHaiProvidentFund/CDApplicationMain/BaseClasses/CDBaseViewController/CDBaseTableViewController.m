@@ -13,7 +13,6 @@
 
 @interface CDBaseTableViewController ()
 
-
 @property (nonatomic, strong) SCYRefreshControl *refreshControl;
 
 @end
