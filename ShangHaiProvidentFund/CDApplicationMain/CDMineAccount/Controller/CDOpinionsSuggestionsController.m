@@ -134,6 +134,31 @@ static NSString *cellidentifier = @"cellidentifier";
     [super service:service didFailLoadWithError:error];
 }
 
+#pragma mark - override
+- (void)keyboardWillShow:(NSNotification *)notification{
+    [super keyboardWillShow:notification];
+    UIEdgeInsets insets=self.tableView.contentInset;
+    insets.bottom=_keyboardBounds.size.height;
+    self.tableView.contentInset = insets;
+    self.tableView.scrollIndicatorInsets = insets;
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification{
+    [super keyboardWillHide:notification];
+    [UIView animateWithDuration:_keybardAnmiatedTimeinterval animations:^{
+        UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+        self.tableView.contentInset = contentInsets;
+        self.tableView.scrollIndicatorInsets = contentInsets;
+    }];
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+    if (velocity.y<0) {
+        [self.tableView endEditing:YES];
+    }
+}
+
 #pragma mark - Notification
 - (void)controlTextDidChange:(NSNotification *)noti{
     if ([noti.object isKindOfClass:[UITextField class]]) {

@@ -22,12 +22,10 @@
 }
 
 - (CGRect)imageRectForContentRect:(CGRect)contentRect{
-    //    CDLog(@"imageRect%@",NSStringFromCGRect(contentRect));
     return CGRectMake(0, topMargin, CGRectGetWidth(contentRect), (CGRectGetHeight(contentRect)-topMargin)*_imgPercentage);
 }
 
 - (CGRect)titleRectForContentRect:(CGRect)contentRect{
-//    CDLog(@"titleRect%@",NSStringFromCGRect(contentRect));
     return CGRectMake(0, (CGRectGetHeight(contentRect)-topMargin)*_imgPercentage+topMargin, CGRectGetWidth(contentRect), (CGRectGetHeight(contentRect)-topMargin)*(1-_imgPercentage));
 }
 

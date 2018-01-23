@@ -242,7 +242,5 @@ description:__VA_ARGS__];                                                    \
 
 //百度地图Key
 #define AMapKey @"KrRRUyLkF7Pr2of2FFX8v2LZ3XkAP32E"
-//腾讯广告联盟Key
-#define GDTAdAppKey @"1105344611"
 
 #endif

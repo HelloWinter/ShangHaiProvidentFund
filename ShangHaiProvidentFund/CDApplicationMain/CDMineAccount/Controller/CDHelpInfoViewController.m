@@ -55,9 +55,7 @@
         _lbVersion.textColor=[UIColor darkGrayColor];
         _lbVersion.textAlignment=NSTextAlignmentCenter;
         _lbVersion.font=[UIFont systemFontOfSize:13];
-#warning TEST
-        _lbVersion.text=@"当前版本 V1.0.0";
-//        _lbVersion.text=[NSString stringWithFormat:@"当前版本 V%@",CDAppVersion];
+        _lbVersion.text=[NSString stringWithFormat:@"当前版本 V%@",CDAppVersion];
     }
     return _lbVersion;
 }
