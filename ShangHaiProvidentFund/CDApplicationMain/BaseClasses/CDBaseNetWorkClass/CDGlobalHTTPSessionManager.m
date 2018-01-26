@@ -21,6 +21,7 @@
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         configuration.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
         manager = [[CDGlobalHTTPSessionManager alloc] initWithBaseURL:nil sessionConfiguration:configuration];
+        //HTTPS请求设置证书
 //        manager.securityPolicy=[CDGlobalHTTPSessionManager customSecurityPolicy];
 //        manager.securityPolicy=[AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
         manager.requestSerializer = [AFHTTPRequestSerializer serializer];
@@ -55,6 +56,9 @@
     return manager;
 }
 
+/**
+ *  HTTPS请求管理证书
+ */
 + (AFSecurityPolicy*)customSecurityPolicy{
     // /先导入证书
     NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"rainbow" ofType:@"cer"];//证书的路径

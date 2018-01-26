@@ -60,7 +60,7 @@
 - (void)uploadImageData:(NSData *)data params:(id)params toURL:(NSString *)url;
 
 /**
- *  多图上传
+ *  多图上传（默认压缩质量0.5）
  *  images : 多图数组
  *  name : 服务器端处理文件的字段
  *  mimeType ：上传的文件的类型

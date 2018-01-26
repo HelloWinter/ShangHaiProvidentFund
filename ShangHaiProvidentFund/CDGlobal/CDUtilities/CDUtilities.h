@@ -71,7 +71,6 @@ void rotateView(UIView* view,int degrees,float duration);
  */
 UIViewController* CDVisibalController();
 
-
 /**
  *  十六进制颜色转换
  *
@@ -109,7 +108,7 @@ NSString *CDKeyChainIDFV();
 void callPhoneNum(NSString* phoneNum);
 
 /**
- *  开始摇一摇
+ *  开始摇一摇监听
  *
  *  @param target
  *  @param action
@@ -117,7 +116,7 @@ void callPhoneNum(NSString* phoneNum);
 void startMotion(id target,SEL action);
 
 /**
- *  停止摇一摇
+ *  停止摇一摇监听
  */
 void stopMotion();
 
@@ -129,7 +128,7 @@ void stopMotion();
 void shakeView(UIView* view);
 
 /**
- *  视图左右摇动
+ *  视图左右抖动效果
  *
  *  @param view 要左右摇动的视图
  */

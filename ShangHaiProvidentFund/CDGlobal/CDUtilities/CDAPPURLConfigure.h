@@ -16,7 +16,13 @@
  *  @return (NSString *)
  */
 NSString* CDURLWithAPI(NSString* api);
-
+/**
+ *  返回完整的网页地址
+ *
+ *  @param api 接口路径
+ *
+ *  @return (NSString *)
+ */
 NSString* CDWebURLWithAPI(NSString* api);
 
 ///////////////////////////////////////////////////

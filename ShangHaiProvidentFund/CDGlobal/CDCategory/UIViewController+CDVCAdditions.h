@@ -17,9 +17,11 @@
 
 @property (nonatomic, strong) UIColor *navigationBarColor;
 
-
 @end
 
+/**
+ *  不添加基类对所有控制器添加统计
+ */
 @interface UIViewController (Statistics)
 
 @end
