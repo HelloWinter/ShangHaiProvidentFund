@@ -20,17 +20,17 @@ typedef void (^CDImageClickBlock)(NSInteger index);
 /**
  *  广告位图片链接数组
  */
-@property (nonatomic, copy) NSArray *arrImageLink;
+@property (nonatomic, copy) NSArray<NSString *> *arrImageLink;
+
+/**
+ *  是否打开自动滚动，默认关闭
+ */
+@property (nonatomic, getter=isOpenAutoScroll) BOOL openAutoScroll;
 
 /**
  *  自动滚动间隔时间,默认4s
  */
-@property (nonatomic, assign) NSInteger autoScrollTimeInterval;
-
-/**
- *  自动滚动，默认关闭
- */
-@property (nonatomic, getter=isOpenAutoScroll) BOOL openAutoScroll;
+@property (nonatomic, assign) NSTimeInterval autoScrollTimeInterval;
 
 /**
  *  图片点击回调
@@ -52,12 +52,10 @@ typedef void (^CDImageClickBlock)(NSInteger index);
  */
 @property (nonatomic, strong) UIColor *pageCtrlNormalColor;
 
-
 /**
  *  当前的imageView
  */
-@property (nonatomic, strong) UIImageView *currentImageView;
-
+@property (nonatomic, strong, readonly) UIImageView *currentImageView;
 
 /**
  *  开始滚动

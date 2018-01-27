@@ -24,6 +24,7 @@ static const NSInteger kBehindImageTag = 500;
 @end
 
 @implementation CDADLoopDisplayScrollView
+@synthesize currentImageView = _currentImageView;
 
 - (void)dealloc{
     [self invalidateTimer];

@@ -18,8 +18,14 @@
 
 @property (nonatomic, weak) UIViewController<ImagePickerManagerDelegate> *delgate;
 
+/**
+ 是否允许编辑
+ */
 @property (nonatomic, assign) BOOL allowsEditing;
 
+/**
+ 选择图片
+ */
 - (void)selectPicture;
 
 @end
