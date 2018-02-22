@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UILabel (textSize)
+@interface UILabel (CDTextSize)
 
 /**
  根据UILabel字体和内容返回textSize

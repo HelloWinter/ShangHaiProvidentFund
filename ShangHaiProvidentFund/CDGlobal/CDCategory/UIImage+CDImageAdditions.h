@@ -72,6 +72,6 @@
 /**
  对view截图
  */
-+ (UIImage *)cd_imageFromView:(UIView *)view
++ (UIImage *)cd_imageFromView:(UIView *)view;
 
 @end

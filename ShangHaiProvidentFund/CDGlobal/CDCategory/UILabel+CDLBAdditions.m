@@ -8,7 +8,7 @@
 
 #import "UILabel+CDLBAdditions.h"
 
-@implementation UILabel (textSize)
+@implementation UILabel (CDTextSize)
 
 - (CGSize)cd_textSize {
     if ([NSString instanceMethodForSelector:@selector(sizeWithAttributes:)]) {

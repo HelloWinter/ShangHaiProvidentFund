@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (HideNavBar)
+@interface UIViewController (CDHideNavBar)
 
 /**
  *  推入导航控制器栈时是否隐藏导航栏
@@ -22,6 +22,6 @@
 /**
  *  不设基类对所有控制器添加统计代码
  */
-@interface UIViewController (Statistics)
+@interface UIViewController (CDStatistics)
 
 @end

@@ -12,7 +12,7 @@
 static char kHideNavBarKey;
 static char kNavigationBarColorKey;
 
-@implementation UIViewController (HideNavBar)
+@implementation UIViewController (CDHideNavBar)
 
 - (void)setHidesNavigationBarWhenPushed:(BOOL)hidesNavigationBarWhenPushed {
     objc_setAssociatedObject(self, &kHideNavBarKey, @(hidesNavigationBarWhenPushed), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -32,7 +32,7 @@ static char kNavigationBarColorKey;
 
 @end
 
-@implementation UIViewController (Statistics)
+@implementation UIViewController (CDStatistics)
 
 + (void)load{
     static dispatch_once_t onceToken;
