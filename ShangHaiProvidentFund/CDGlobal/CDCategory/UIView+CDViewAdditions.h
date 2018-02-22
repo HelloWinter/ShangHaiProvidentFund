@@ -90,8 +90,24 @@
 
 @interface UIView (CDBadge)
 
+/**
+ 在右上角显示小红点
+ */
 - (void)cd_showBadge;
 
+/**
+ 移除右上角小红点
+ */
 - (void)cd_removeBadge;
+
+/**
+ 右上角显示文字
+ */
+- (void)cd_showBadgeString:(NSString *)str;
+
+/**
+ 移除右上角文字
+ */
+- (void)cd_removeBadgeString;
 
 @end

@@ -37,6 +37,8 @@
 		628247E81F67DC82003C8EC1 /* CDForgotPasswordResetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 628247E71F67DC82003C8EC1 /* CDForgotPasswordResetModel.m */; };
 		6286FBF31F1C9A8E00794FC5 /* CDUserManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6286FBF21F1C9A8E00794FC5 /* CDUserManagerController.m */; };
 		6286FBF61F1CB1DD00794FC5 /* CDUserManagerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6286FBF51F1CB1DD00794FC5 /* CDUserManagerModel.m */; };
+		6289AF9B203EA6C0003A1E99 /* UIWebView+TS_JavaScriptContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 6289AF9A203EA6C0003A1E99 /* UIWebView+TS_JavaScriptContext.m */; };
+		6289AF9E203EB37F003A1E99 /* CALayer+CDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6289AF9D203EB37F003A1E99 /* CALayer+CDCategory.m */; };
 		6290DF6B1F66394A00273AE5 /* CDForgotPWDResetService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6290DF6A1F66394A00273AE5 /* CDForgotPWDResetService.m */; };
 		6290DF6F1F667ADA00273AE5 /* SCYFindUserNamePasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6290DF6E1F667ADA00273AE5 /* SCYFindUserNamePasswordController.m */; };
 		6290DF721F6685AD00273AE5 /* CDNormalTextFieldConfigureItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6290DF711F6685AD00273AE5 /* CDNormalTextFieldConfigureItem.m */; };
@@ -245,6 +247,10 @@
 		6286FBF21F1C9A8E00794FC5 /* CDUserManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUserManagerController.m; sourceTree = "<group>"; };
 		6286FBF41F1CB1DD00794FC5 /* CDUserManagerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUserManagerModel.h; sourceTree = "<group>"; };
 		6286FBF51F1CB1DD00794FC5 /* CDUserManagerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUserManagerModel.m; sourceTree = "<group>"; };
+		6289AF99203EA6C0003A1E99 /* UIWebView+TS_JavaScriptContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+TS_JavaScriptContext.h"; sourceTree = "<group>"; };
+		6289AF9A203EA6C0003A1E99 /* UIWebView+TS_JavaScriptContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+TS_JavaScriptContext.m"; sourceTree = "<group>"; };
+		6289AF9C203EB37F003A1E99 /* CALayer+CDCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+CDCategory.h"; sourceTree = "<group>"; };
+		6289AF9D203EB37F003A1E99 /* CALayer+CDCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+CDCategory.m"; sourceTree = "<group>"; };
 		6290DF691F66394A00273AE5 /* CDForgotPWDResetService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDForgotPWDResetService.h; sourceTree = "<group>"; };
 		6290DF6A1F66394A00273AE5 /* CDForgotPWDResetService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDForgotPWDResetService.m; sourceTree = "<group>"; };
 		6290DF6D1F667ADA00273AE5 /* SCYFindUserNamePasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYFindUserNamePasswordController.h; sourceTree = "<group>"; };
@@ -1101,12 +1107,12 @@
 			children = (
 				6E6ADB601CD89F7C00838B61 /* NSArray+CDArrayAdditions.h */,
 				6E6ADB611CD89F7C00838B61 /* NSArray+CDArrayAdditions.m */,
-				6E6ADB621CD89F7C00838B61 /* NSData+Base64.h */,
 				6E6ADB631CD89F7C00838B61 /* NSData+Base64.m */,
-				6E24696A1DAA3FF700DDC80B /* NSData+CDDataAddition.h */,
-				6E24696B1DAA3FF700DDC80B /* NSData+CDDataAddition.m */,
+				6E6ADB621CD89F7C00838B61 /* NSData+Base64.h */,
 				6E6ADB661CD89F7C00838B61 /* NSData+CommonCrypto.h */,
 				6E6ADB671CD89F7C00838B61 /* NSData+CommonCrypto.m */,
+				6E24696A1DAA3FF700DDC80B /* NSData+CDDataAddition.h */,
+				6E24696B1DAA3FF700DDC80B /* NSData+CDDataAddition.m */,
 				6E6ADB681CD89F7C00838B61 /* NSDate+CDDateAddition.h */,
 				6E6ADB691CD89F7C00838B61 /* NSDate+CDDateAddition.m */,
 				6E6ADB6A1CD89F7C00838B61 /* NSDictionary+CDDictionaryAdditions.h */,
@@ -1125,6 +1131,8 @@
 				6E6ADB771CD89F7C00838B61 /* UIBarButtonItem+CDCategory.m */,
 				6E6ADB7C1CD89F7C00838B61 /* UIImage+CDImageAdditions.h */,
 				6E6ADB7D1CD89F7C00838B61 /* UIImage+CDImageAdditions.m */,
+				6289AF9C203EB37F003A1E99 /* CALayer+CDCategory.h */,
+				6289AF9D203EB37F003A1E99 /* CALayer+CDCategory.m */,
 				6E6ADB7E1CD89F7C00838B61 /* UILabel+CDLBAdditions.h */,
 				6E6ADB7F1CD89F7C00838B61 /* UILabel+CDLBAdditions.m */,
 				6E73D6571E14B235009A1072 /* UITabBar+CDCategory.h */,
@@ -1141,6 +1149,8 @@
 				6E6ADB851CD89F7C00838B61 /* UIView+Genie.m */,
 				6E6ADB861CD89F7C00838B61 /* UIViewController+CDVCAdditions.h */,
 				6E6ADB871CD89F7C00838B61 /* UIViewController+CDVCAdditions.m */,
+				6289AF99203EA6C0003A1E99 /* UIWebView+TS_JavaScriptContext.h */,
+				6289AF9A203EA6C0003A1E99 /* UIWebView+TS_JavaScriptContext.m */,
 			);
 			path = CDCategory;
 			sourceTree = "<group>";
@@ -1496,6 +1506,7 @@
 				6E2469291DAA35C600DDC80B /* SCYMortgageCalculatorController.m in Sources */,
 				6E2469251DAA35C600DDC80B /* CDConvenientToolsController.m in Sources */,
 				6E24692A1DAA35C600DDC80B /* CDConvenientModel.m in Sources */,
+				6289AF9E203EB37F003A1E99 /* CALayer+CDCategory.m in Sources */,
 				6211FC6C1F20839E00F6F8F2 /* CDBaseModel.m in Sources */,
 				6E24695F1DAA35C600DDC80B /* CDProvidentFundDetailCell.m in Sources */,
 				6E24693A1DAA35C600DDC80B /* SCYMeasurementTextFieldCell.m in Sources */,
@@ -1548,6 +1559,7 @@
 				6E6ADB981CD89F7C00838B61 /* UITableView+CDTableViewAddition.m in Sources */,
 				6E24694E1DAA35C600DDC80B /* CDPayAccountItem.m in Sources */,
 				6E2469491DAA35C600DDC80B /* CDAccountInfoItem.m in Sources */,
+				6289AF9B203EA6C0003A1E99 /* UIWebView+TS_JavaScriptContext.m in Sources */,
 				6E6ADB101CD892B200838B61 /* main.m in Sources */,
 				6E73D64E1E14A626009A1072 /* CDADLoopDisplayScrollView.m in Sources */,
 				6286FBF31F1C9A8E00794FC5 /* CDUserManagerController.m in Sources */,

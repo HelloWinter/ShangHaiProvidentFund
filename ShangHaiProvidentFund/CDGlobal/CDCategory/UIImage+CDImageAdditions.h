@@ -61,12 +61,17 @@
 - (UIImage*)cd_imageRotatedByDegrees:(CGFloat)degrees;
 
 /**
- *  裁剪生成圆角图片
+ *  裁剪生成圆角图片(圆角图片过多时，防止离屏渲染造成性能问题)
  *
  *  @param radius 圆角半径
  *
  *  @return 新的图片
  */
 - (UIImage *)cd_imageWithCornerRadius:(CGFloat)radius;
+
+/**
+ 对view截图
+ */
++ (UIImage *)cd_imageFromView:(UIView *)view
 
 @end

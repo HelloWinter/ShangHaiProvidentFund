@@ -56,7 +56,7 @@
 
 @end
 
-@implementation NSString (CDDateTransform)
+@implementation NSString (CDTransform)
 
 + (NSString *)cd_stringDateFromTimestamp:(NSTimeInterval)timestamp WithDateFormat:(NSString *)dateFormat{
     if (!dateFormat) {
@@ -102,6 +102,12 @@
     return (self!=nil && self.length!=0);
 }
 
+- (BOOL)cd_isEmail{
+    NSString  *emailRegex = @"^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$";
+    NSPredicate  *pred = [NSPredicate predicateWithFormat : @"SELF MATCHES%@",emailRegex];
+    return  [pred evaluateWithObject:self];
+}
+
 - (BOOL)cd_matchingWithRules:(NSString *)rules{
     NSCharacterSet*cs = [[NSCharacterSet characterSetWithCharactersInString:rules] invertedSet];
     NSString*filtered =[[self componentsSeparatedByCharactersInSet:cs]componentsJoinedByString:@""];
@@ -145,6 +151,10 @@
     return self;
 }
 
+@end
+
+@implementation NSString (CDCalculateSize)
+
 - (CGSize)cd_sizeWithPreferWidth:(CGFloat)width font:(UIFont *)font{
     if (!font) {
         return CGSizeZero;
@@ -176,3 +186,5 @@
 }
 
 @end
+
+

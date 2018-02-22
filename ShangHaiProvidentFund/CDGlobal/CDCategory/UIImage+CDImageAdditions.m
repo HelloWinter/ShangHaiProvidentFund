@@ -8,6 +8,7 @@
 
 #import "UIImage+CDImageAdditions.h"
 #import <Accelerate/Accelerate.h>
+#import "CALayer+CDCategory.h"
 
 @implementation UIImage (CDImageAdditions)
 
@@ -129,6 +130,23 @@
     [self drawInRect:rect];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    return image;
+}
+
++ (UIImage *)cd_imageFromView:(UIView *)view {
+    UIImage *image = nil;
+    if ([view.class isSubclassOfClass:[UIScrollView class]]) {
+        UIScrollView *scroolView = (UIScrollView *)view;
+        CGPoint tempContentOffset = scroolView.contentOffset;
+        CGRect tempFrame = scroolView.frame;
+        scroolView.contentOffset = CGPointZero;
+        scroolView.frame = CGRectMake(0, 0, scroolView.contentSize.width, scroolView.contentSize.height);
+        image = [scroolView.layer cd_captureWithSize:scroolView.frame.size opaque:YES];
+        scroolView.contentOffset = tempContentOffset;
+        scroolView.frame = tempFrame;
+    } else {
+        image = [view.layer cd_captureWithSize:view.frame.size opaque:YES];
+    }
     return image;
 }
 

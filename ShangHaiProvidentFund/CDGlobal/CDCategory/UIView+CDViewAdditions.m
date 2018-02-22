@@ -253,6 +253,7 @@ static const void *kDefaultWatermarkKey = &kDefaultWatermarkKey;
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 static const void *kBadgeViewIdentifier = &kBadgeViewIdentifier;
+static const void *kBadgeStringViewIdentifier = &kBadgeStringViewIdentifier;
 
 @implementation UIView (CDBadge)
 
@@ -281,7 +282,40 @@ static const void *kBadgeViewIdentifier = &kBadgeViewIdentifier;
         }
         objc_setAssociatedObject(self, kBadgeViewIdentifier, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+- (void)cd_showBadgeString:(NSString *)str{
+    UILabel *label=objc_getAssociatedObject(self, kBadgeStringViewIdentifier);
+    if (label==nil) {
+        label=[[UILabel alloc]init];
+        label.textColor=[UIColor whiteColor];
+        label.backgroundColor=[UIColor redColor];
+        label.font=[UIFont systemFontOfSize:10];
+        label.textAlignment=NSTextAlignmentCenter;
+        objc_setAssociatedObject(self, kBadgeStringViewIdentifier, label, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    CGSize size = [str sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:8]}];
+    CGFloat labelWidth=size.width+size.height;
+    CGFloat labelHeight=size.height+2;
+    label.size = CGSizeMake(labelWidth, labelHeight);
+    label.center=CGPointMake(self.width-labelWidth*0.5, labelHeight*0.5);
+    label.layer.cornerRadius = labelHeight*0.5;
+    label.layer.masksToBounds=YES;
+    label.text=str;
+    if (!label.superview) {
+        [self addSubview:label];
+        [self bringSubviewToFront:label];
+    }
+}
+
+- (void)cd_removeBadgeString{
+    UILabel *label=objc_getAssociatedObject(self, kBadgeStringViewIdentifier);
+    if (label) {
+        if (label.superview) {
+            [label removeFromSuperview];
+        }
+        objc_setAssociatedObject(self, kBadgeStringViewIdentifier, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
 }
 
 @end

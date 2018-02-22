@@ -46,7 +46,7 @@
 
 @end
 
-@interface NSString (CDDateTransform)
+@interface NSString (CDTransform)
 
 /**
  *  将时间戳按照给定的格式转换成时间字符串
@@ -86,6 +86,13 @@
 - (BOOL)cd_isNonEmpty;
 
 /**
+ *  判断是否是邮箱
+ *  邮箱校验规则有很多种写法，具体可根据自己情况修改正则表达式
+ *  @return BOOL
+ */
+- (BOOL)cd_isEmail;
+
+/**
  *  输入字符内容匹配(主要用于过滤用户输入内容)
  *
  *  @param rules 匹配规则(例如:身份证@"0123456789xX")
@@ -122,6 +129,10 @@
  *  @return (NSString *)格式化后的数字字符串
  */
 -(NSString *)cd_numberStringFormat;
+
+@end
+
+@interface NSString (CDCalculateSize)
 
 /**
  *  给定宽度，字体，返回高度

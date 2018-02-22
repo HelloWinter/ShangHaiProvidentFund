@@ -16,7 +16,7 @@
 - (NSArray *)cd_reversedArray;
 
 /**
- *  NSArray objectAtIndex:的安全方法，避免数组越界造成的崩溃
+ *  NSArray objectAtIndex:的安全方法，避免下标越界造成的崩溃
  */
 - (id)cd_safeObjectAtIndex:(NSUInteger)index;
 

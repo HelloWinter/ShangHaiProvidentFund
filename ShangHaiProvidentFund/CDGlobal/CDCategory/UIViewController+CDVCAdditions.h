@@ -20,7 +20,7 @@
 @end
 
 /**
- *  不添加基类对所有控制器添加统计
+ *  不设基类对所有控制器添加统计代码
  */
 @interface UIViewController (Statistics)
 
