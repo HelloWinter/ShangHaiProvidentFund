@@ -41,8 +41,6 @@
 	<string>请点击“允许”以允许访问。若不允许，将无法为您提供到公积金管理部的路线规划</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>此App需要您的同意,才能访问相册</string>
-	<key>UILaunchStoryboardName</key>
-	<string>Launch Screen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
