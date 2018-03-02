@@ -52,16 +52,17 @@ static const CGFloat kCircleLayerRadius=13.0;
 - (void)dealloc{
     [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
     [self.scrollView removeObserver:self forKeyPath:@"contentInset"];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
     _scrollView=nil;
 }
 
 - (id)initInScrollView:(UIScrollView *)scrollView{
     self = [super initWithFrame:CGRectMake(0, -(kControlHeight+scrollView.contentInset.top), scrollView.bounds.size.width, kControlHeight)];
     if (self) {
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         _scrollView = scrollView;
         self.originalContentInset = scrollView.contentInset;
         self.originalContentOffset = scrollView.contentOffset;
-        self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         self.pullDistance = kControlHeight;
         [scrollView addSubview:self];
         [scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
@@ -69,6 +70,7 @@ static const CGFloat kCircleLayerRadius=13.0;
         [self.layer addSublayer:self.shapeLayer];
         [self.layer addSublayer:self.circleLayer];
         self.lineColor=NAVIGATION_COLOR;//[UIColor lightGrayColor]
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(resetAnimation:) name:UIApplicationDidBecomeActiveNotification object:nil];
     }
     return self;
 }
@@ -140,25 +142,36 @@ static const CGFloat kCircleLayerRadius=13.0;
     }
 }
 
+-(void)resetAnimation:(NSNotification *)notify{
+    if (_refreshing) {
+        [_circleLayer removeAllAnimations];
+        [self startCircleLayerAnimation];
+    }
+}
+
 #pragma mark - public
 - (void)beginRefreshing{
     if (!_refreshing) {
+        _refreshing = YES;
         self.originalContentInset = self.scrollView.contentInset;
         self.originalContentOffset = self.scrollView.contentOffset;
         [self.scrollView setContentOffset:CGPointMake(0, -self.pullDistance-_originalContentInset.top) animated:YES];
-        _refreshing = YES;
-        [CATransaction begin];
-        [CATransaction setDisableActions:YES];
-        CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-        rotationAnimation.toValue = @(M_PI * 2.0);
-        rotationAnimation.duration = 0.8f;
-        rotationAnimation.repeatCount = MAXFLOAT;
-        rotationAnimation.removedOnCompletion=NO;//切换视图,动画不移除
-        rotationAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-        [_circleLayer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
-        [CATransaction commit];
+        [self startCircleLayerAnimation];
         [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
+}
+
+- (void)startCircleLayerAnimation{
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
+    CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = @(M_PI * 2.0);
+    rotationAnimation.duration = 1.0f;
+    rotationAnimation.repeatCount = MAXFLOAT;
+    rotationAnimation.removedOnCompletion=NO;//切换视图,动画不移除
+    rotationAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    [_circleLayer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    [CATransaction commit];
 }
 
 - (void)endRefreshing{
@@ -249,17 +262,7 @@ static const CGFloat kCircleLayerRadius=13.0;
                         notTracking = YES;
                         _refreshing = YES;
                         _shapeLayer.strokeEnd=_circleLayer.strokeEnd=1;
-                        
-                        [CATransaction begin];
-                        [CATransaction setDisableActions:YES];
-                        CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-                        rotationAnimation.toValue = @(M_PI * 2.0);
-                        rotationAnimation.duration = 0.8f;
-                        rotationAnimation.repeatCount = MAXFLOAT;
-                        rotationAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-                        [_circleLayer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
-                        [CATransaction commit];
-                        
+                        [self startCircleLayerAnimation];
                         [self sendActionsForControlEvents:UIControlEventValueChanged];
                     }
                 }
@@ -272,4 +275,3 @@ static const CGFloat kCircleLayerRadius=13.0;
 }
 
 @end
-

@@ -15,8 +15,14 @@
  */
 @property (nonatomic, assign, readonly) UIScrollView *scrollView;
 
+/**
+ *  是否正在刷新
+ */
 @property (nonatomic, readonly, getter=isRefreshing) BOOL refreshing;
 
+/**
+ *  刷新控件颜色
+ */
 @property (nonatomic, strong) UIColor *lineColor;
 
 /**
@@ -39,4 +45,3 @@
 - (void)endRefreshing;
 
 @end
-
