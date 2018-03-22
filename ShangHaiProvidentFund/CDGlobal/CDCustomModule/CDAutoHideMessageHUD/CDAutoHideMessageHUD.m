@@ -52,6 +52,7 @@ static void * CDAutoHideMessageHUDKey = (void *)@"CDAutoHideMessageHUDKey";
         }
         [view bringSubviewToFront:label];
         
+        //设置label的frame
         CGSize vwSize = view.bounds.size;
         CGRect rect = [msg boundingRectWithSize:CGSizeMake(kVIEW_MAX_WIDTH-20, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:klbTextFont]} context:nil];
         //        CGFloat lbWidth = MIN(kVIEW_MAX_WIDTH, MAX(kVIEW_MIN_WIDTH, CGRectGetWidth(rect)+20));
@@ -60,7 +61,7 @@ static void * CDAutoHideMessageHUDKey = (void *)@"CDAutoHideMessageHUDKey";
         label.bounds = CGRectMake(0, 0, ceilf(lbWidth), ceilf(lbHeight));
         label.center = CGPointMake(vwSize.width * 0.5f, vwSize.height * 0.5f);
         label.text = msg;
-        
+        //显示&消失
         __weak __typeof(UILabel *) weakLabel=label;
         [UIView animateWithDuration:kANIMATION_DURATION_SEC animations:^{
             weakLabel.alpha=1;
@@ -82,7 +83,8 @@ static void * CDAutoHideMessageHUDKey = (void *)@"CDAutoHideMessageHUDKey";
 @implementation CDNewLabel
 
 - (void)drawTextInRect:(CGRect)rect{
-    [super drawTextInRect:CGRectMake(10, 10, self.width-20, self.height-20)];
+    [super drawTextInRect:CGRectMake(10, 10, self.frame.size.width-20, self.frame.size.height-20)];
 }
 
 @end
+

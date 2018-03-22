@@ -103,7 +103,7 @@
 }
 
 - (BOOL)cd_isEmail{
-    NSString  *emailRegex = @"^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$";
+    NSString  *emailRegex = @"^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(.[a-zA-Z0-9_-]+)+$";
     NSPredicate  *pred = [NSPredicate predicateWithFormat : @"SELF MATCHES%@",emailRegex];
     return  [pred evaluateWithObject:self];
 }

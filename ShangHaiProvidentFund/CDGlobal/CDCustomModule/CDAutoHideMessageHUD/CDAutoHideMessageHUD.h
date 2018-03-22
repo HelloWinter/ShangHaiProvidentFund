@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 Cheng. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface CDAutoHideMessageHUD : NSObject
 
