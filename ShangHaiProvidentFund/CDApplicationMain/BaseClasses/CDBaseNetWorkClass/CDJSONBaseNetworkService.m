@@ -34,7 +34,7 @@
         _toCacheData=NO;
         _delegate = delegate;
         _httpRequestMethod = kHttpRequestTypePOST;
-        _isIgnoreCache=YES;
+        _ignoreCache=NO;
         _printLog=YES;
         _autoJSONDataSerializer=YES;
     }

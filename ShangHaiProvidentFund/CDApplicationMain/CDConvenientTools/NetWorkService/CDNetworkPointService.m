@@ -14,7 +14,7 @@
 - (void)loadNetworkPointIgnoreCache:(BOOL)ignore ShowIndicator:(BOOL)show{
     self.showLodingIndicator=show;
     self.toCacheData=YES;
-    self.isIgnoreCache=ignore;
+    self.ignoreCache=ignore;
     self.httpRequestMethod=kHttpRequestTypeGET;
     [self request:CDURLWithAPI(@"/gjjManager/point") params:nil];
 }

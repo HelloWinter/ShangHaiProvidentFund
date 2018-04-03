@@ -22,7 +22,7 @@
 - (void)loadWithAccountNum:(NSString *)accountNum ignoreCache:(BOOL)ignore showIndicator:(BOOL)show{
     self.showLodingIndicator=show;
     self.toCacheData=YES;
-    self.isIgnoreCache=ignore;
+    self.ignoreCache=ignore;
     self.httpRequestMethod=kHttpRequestTypeGET;
     NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
     [dict cd_safeSetObject:accountNum forKey:@"pri_account"];

@@ -14,7 +14,7 @@
 
 - (void)loadNewsAndTrendsIgnoreCache:(BOOL)ignore showIndicator:(BOOL)show{
     self.toCacheData=YES;
-    self.isIgnoreCache=ignore;
+    self.ignoreCache=ignore;
     self.showLodingIndicator=show;
     self.httpRequestMethod=kHttpRequestTypeGET;
     self.printLog=NO;

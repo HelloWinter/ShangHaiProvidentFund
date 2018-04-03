@@ -64,11 +64,6 @@
 @property (nonatomic, readonly) BOOL isLoading;
 
 /**
- *  是否忽略缓存,重新请求,默认YES
- */
-@property (nonatomic, assign) BOOL isIgnoreCache;
-
-/**
  *  是否缓存数据（默认NO不缓存）
  */
 @property (nonatomic, assign) BOOL toCacheData;
