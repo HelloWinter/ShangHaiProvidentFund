@@ -9,5 +9,3 @@
 scheme "ShangHaiProvidentFund"
 
 # sdk "iPhoneOS11.2"
-
-output_directory "./"

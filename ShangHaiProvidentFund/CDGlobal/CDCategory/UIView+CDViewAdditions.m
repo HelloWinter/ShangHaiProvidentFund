@@ -35,7 +35,7 @@
 }
 
 - (CGFloat)right {
-    return self.frame.origin.x + self.frame.size.width;
+    return CGRectGetMaxX(self.frame);
 }
 
 - (void)setRight:(CGFloat)right {
@@ -45,7 +45,7 @@
 }
 
 - (CGFloat)bottom {
-    return self.frame.origin.y + self.frame.size.height;
+    return CGRectGetMaxY(self.frame);
 }
 
 - (void)setBottom:(CGFloat)bottom {

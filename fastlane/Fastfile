@@ -18,8 +18,9 @@ default_platform(:ios)
 platform :ios do
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
-    cocoapods
     # cocoapods
+    increment_build_number
+    # increment_build_number_in_plist(target: "ShangHaiProvidentFund")
   end
 
   desc "Runs all the tests"
@@ -31,7 +32,14 @@ platform :ios do
   desc "This will also make sure the profile is up to date"
   lane :beta do
     # sync_code_signing(type: "appstore") # more information: https://codesigning.guide
-    build_app(scheme: "AFNetworking") # more options available
+    
+    build_app(
+      scheme: "ShangHaiProvidentFund",
+      output_directory: "./build",
+      export_method:"ad-hoc",
+      archive_path:"./Archive",
+      codesigning_identity: "iPhone Distribution: DongDong Cheng (5XQR9H4MR9)"
+    ) # more options available
     upload_to_testflight
 
     # sh "your_script.sh"
@@ -41,17 +49,29 @@ platform :ios do
   desc "Deploy a new version to the App Store"
   lane :release do
     # sync_code_signing(type: "appstore")
-    capture_screenshots
-    build_app(scheme: "AFNetworking") # more options available
-    upload_to_app_store(force: true)
+    # capture_screenshots
+    build_app(
+      scheme: "ShangHaiProvidentFund",
+      output_directory: "./build",
+      export_method:"app-store",
+      archive_path:"./Archive",
+      codesigning_identity: "iPhone Distribution: DongDong Cheng (5XQR9H4MR9)"
+    ) # more options available
+
+    # upload_to_app_store(force: true)
+    deliver(
+    	skip_screenshots:true,
+    	skip_metadata:true,
+    	force:true
+    )
     # frame_screenshots
+
   end
 
   # You can define as many lanes as you want
 
   after_all do |lane|
     # This block is called, only if the executed lane was successful
-
     # slack(
     #   message: "Successfully deployed new App Update."
     # )

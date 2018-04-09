@@ -25,6 +25,8 @@ xcuserdata/
 *.hmap
 *.ipa
 *.xcbkptlist
+*.zip
+*.xcarchive
 
 # CocoaPods
 #
