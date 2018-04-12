@@ -25,7 +25,6 @@ xcuserdata/
 *.hmap
 *.ipa
 *.xcbkptlist
-*.zip
 *.xcarchive
 
 # CocoaPods
@@ -53,4 +52,3 @@ Carthage/Build
 fastlane/report.xml
 fastlane/screenshots
 
-*.xcbkptlist
