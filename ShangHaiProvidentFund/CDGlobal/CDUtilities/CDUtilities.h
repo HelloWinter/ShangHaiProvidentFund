@@ -65,7 +65,7 @@ CurrentDeviceScreenModel currentScreenModel();
 void rotateView(UIView* view,int degrees,float duration);
 
 /**
- *  返回当前控制器
+ *  返回当前的控制器
  *
  *  @return (UIViewController *)
  */

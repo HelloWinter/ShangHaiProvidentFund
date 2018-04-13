@@ -1697,8 +1697,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: DongDong Cheng (5XQR9H4MR9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: DongDong Cheng (5XQR9H4MR9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
 				CURRENT_PROJECT_VERSION = 16;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5XQR9H4MR9;
@@ -1718,8 +1718,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ProvidentFund.ShangHai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1e09edc4-772f-4949-856c-73ec7b73fda9";
-				PROVISIONING_PROFILE_SPECIFIER = ShangHaiProvidentFundDis;
+				PROVISIONING_PROFILE = "5701a97b-125f-4793-a170-4f70f59e4ea1";
+				PROVISIONING_PROFILE_SPECIFIER = ShangHaiProvidentFundDev;
 				SWIFT_OBJC_BRIDGING_HEADER = "ShangHaiProvidentFund/CDApplicationMain/MainApplication/CDConvenientTools/Controller/ShangHaiProvidentFund-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1734,8 +1734,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: DongDong Cheng (5XQR9H4MR9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: DongDong Cheng (5XQR9H4MR9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
 				CURRENT_PROJECT_VERSION = 16;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5XQR9H4MR9;
@@ -1755,8 +1755,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ProvidentFund.ShangHai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1e09edc4-772f-4949-856c-73ec7b73fda9";
-				PROVISIONING_PROFILE_SPECIFIER = ShangHaiProvidentFundDis;
+				PROVISIONING_PROFILE = "5701a97b-125f-4793-a170-4f70f59e4ea1";
+				PROVISIONING_PROFILE_SPECIFIER = ShangHaiProvidentFundDev;
 				SWIFT_OBJC_BRIDGING_HEADER = "ShangHaiProvidentFund/CDApplicationMain/MainApplication/CDConvenientTools/Controller/ShangHaiProvidentFund-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
