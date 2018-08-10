@@ -75,7 +75,7 @@ typedef enum {
 /// 当前地图的中心点，改变该值时，地图的比例尺级别不会发生变化
 @property (nonatomic) CLLocationCoordinate2D centerCoordinate;
 
-/// 地图比例尺级别，在手机上当前可使用的级别为3-21级
+/// 地图比例尺级别，在手机上当前可使用的级别为4-21级
 @property (nonatomic) float zoomLevel;
 /// 地图的自定义最小比例尺级别
 @property (nonatomic) float minZoomLevel;
@@ -136,10 +136,20 @@ typedef enum {
 ///设置mapPadding时，地图中心(屏幕坐标：BMKMapStatus.targetScreenPt)是否跟着改变，默认YES
 @property (nonatomic) BOOL updateTargetScreenPtWhenMapPaddingChanged;
 
-///设定地图View能否支持以手势中心点为轴进行旋转和缩放
+/**
+ 设定双指手势操作时，BMKMapView的旋转和缩放效果的中心点。
+ 设置为YES时，以手势的中心点（二个指头的中心点）为中心进行旋转和缩放，地图中心点会改变；
+ 设置为NO时，以当前地图的中心点为中心进行旋转和缩放，地图中心点不变；
+ 默认值为NO。
+ */
 @property(nonatomic, getter=isChangeWithTouchPointCenterEnabled) BOOL ChangeWithTouchPointCenterEnabled;
 
-///双击手势放大地图时, 设置为YES, 地图中心点移动至点击处; 设置为NO，地图中心点不变；默认为YES;
+/**
+ 设定双击手势放大地图时，BMKMapView的放大效果的中心点。
+ 设置为YES时，以双击的位置为中心点进行放大，地图中心点会改变；
+ 设置为NO时，以当前地图的中心点为中心进行放大，地图中心点不变；
+ 默认值为YES。
+ */
 @property(nonatomic, getter=isChangeCenterWithDoubleTouchPointEnabled) BOOL ChangeCenterWithDoubleTouchPointEnabled;
 
 /**
@@ -153,6 +163,17 @@ typedef enum {
  *@param enable 自定义地图样式是否生效
  */
 + (void)enableCustomMapStyle:(BOOL) enable;
+
+/**
+ 自定义路况颜色。注意：如果需要自定义路况颜色，必须4种路况全都设置。4个参数全部合法时，自定义颜色才有效；否则全部使用默认的。
+ 
+ @param smooth 路况畅通对应的颜色
+ @param slow 路况缓行对应的颜色
+ @param congestion 路况拥堵对应的颜色
+ @param severeCongestion 路况严重拥堵对应的颜色
+ @return 自定义颜色合法返回true，非法返回false
+ */
+- (BOOL)setCustomTrafficColorForSmooth:(UIColor *)smooth slow:(UIColor *)slow congestion:(UIColor *)congestion severeCongestion:(UIColor *)severeCongestion;
 
 /**
  * 2.10.0起废弃，空实现，逻辑由地图SDK控制
