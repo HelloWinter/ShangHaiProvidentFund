@@ -1,0 +1,20 @@
+//
+//  test.xcconfig
+//  ShangHaiProvidentFund
+//
+//  Created by dongdong.cheng on 2019/3/21.
+//  Copyright © 2019 cheng dong. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.test.xcconfig"
+
+api_server_base_url = @"http:\/\/person.shgjj.com"
+api_web_url = @"http:\/\/www.shgjj.com"
+
+IS_DEV = 0
+IS_TEST = 1
+IS_RELEASE = 0
+
+#include "generic.xcconfig"

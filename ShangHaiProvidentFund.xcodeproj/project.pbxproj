@@ -12,6 +12,11 @@
 		14FDD0B31CDDD2440093ABC3 /* CDBaseTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0B21CDDD2440093ABC3 /* CDBaseTextFieldCell.m */; };
 		14FDD0B61CDDD33E0093ABC3 /* UITextField+cellIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0B51CDDD33E0093ABC3 /* UITextField+cellIndexPath.m */; };
 		14FDD0C11CDDF1200093ABC3 /* UITextView+CDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */; };
+		370F42AC2243962C004B5E7D /* generic.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 370F42AB2243962C004B5E7D /* generic.xcconfig */; };
+		370F42AE22439650004B5E7D /* dev.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 370F42AD22439650004B5E7D /* dev.xcconfig */; };
+		370F42B022439667004B5E7D /* test.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 370F42AF22439667004B5E7D /* test.xcconfig */; };
+		370F42B222439680004B5E7D /* release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 370F42B122439680004B5E7D /* release.xcconfig */; };
+		370F42B92244BF22004B5E7D /* CDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 370F42B82244BF22004B5E7D /* CDLog.m */; };
 		6211FC5D1F20838400F6F8F2 /* CDAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC581F20838400F6F8F2 /* CDAboutUsController.m */; };
 		6211FC5E1F20838400F6F8F2 /* CDHelpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC5A1F20838400F6F8F2 /* CDHelpInfoViewController.m */; };
 		6211FC5F1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC5C1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m */; };
@@ -201,6 +206,16 @@
 		14FDD0B51CDDD33E0093ABC3 /* UITextField+cellIndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+cellIndexPath.m"; sourceTree = "<group>"; };
 		14FDD0BF1CDDF1200093ABC3 /* UITextView+CDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+CDCategory.h"; sourceTree = "<group>"; };
 		14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+CDCategory.m"; sourceTree = "<group>"; };
+		370F42AB2243962C004B5E7D /* generic.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = generic.xcconfig; sourceTree = "<group>"; };
+		370F42AD22439650004B5E7D /* dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = dev.xcconfig; sourceTree = "<group>"; };
+		370F42AF22439667004B5E7D /* test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = test.xcconfig; sourceTree = "<group>"; };
+		370F42B122439680004B5E7D /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
+		370F42B32244BD04004B5E7D /* CDKeyConfigMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDKeyConfigMacro.h; sourceTree = "<group>"; };
+		370F42B52244BDD1004B5E7D /* CDUIConfigMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDUIConfigMacro.h; sourceTree = "<group>"; };
+		370F42B62244BE49004B5E7D /* CDNotificationDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDNotificationDefine.h; sourceTree = "<group>"; };
+		370F42B72244BF22004B5E7D /* CDLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDLog.h; sourceTree = "<group>"; };
+		370F42B82244BF22004B5E7D /* CDLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDLog.m; sourceTree = "<group>"; };
+		370F42BA2244C0E8004B5E7D /* CDAPIDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDAPIDefine.h; sourceTree = "<group>"; };
 		4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShangHaiProvidentFund.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6211FC571F20838400F6F8F2 /* CDAboutUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsController.h; sourceTree = "<group>"; };
 		6211FC581F20838400F6F8F2 /* CDAboutUsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsController.m; sourceTree = "<group>"; };
@@ -529,6 +544,7 @@
 		6E7C17441E1BA76700433093 /* registConfigure.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = registConfigure.conf; sourceTree = "<group>"; };
 		6E7C17481E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpinionsSuggestionsConfigure.conf; sourceTree = "<group>"; };
 		841B5A7AFA2BE502823C6019 /* Pods-ShangHaiProvidentFund.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShangHaiProvidentFund.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.release.xcconfig"; sourceTree = "<group>"; };
+		FF429A1A54C53FB72AD63FBF /* Pods-ShangHaiProvidentFund.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShangHaiProvidentFund.test.xcconfig"; path = "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.test.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -552,6 +568,7 @@
 			children = (
 				01A857102742BA70C51DC31F /* Pods-ShangHaiProvidentFund.debug.xcconfig */,
 				841B5A7AFA2BE502823C6019 /* Pods-ShangHaiProvidentFund.release.xcconfig */,
+				FF429A1A54C53FB72AD63FBF /* Pods-ShangHaiProvidentFund.test.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -569,6 +586,7 @@
 		14FDD0A41CDDB3790093ABC3 /* CDResources */ = {
 			isa = PBXGroup;
 			children = (
+				370F42AA2243962C004B5E7D /* XCConfig */,
 				6E5E7D3F1D2A50CE00182A5B /* Images */,
 				14FDD0A51CDDB38E0093ABC3 /* Files */,
 			);
@@ -591,6 +609,29 @@
 				6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */,
 			);
 			path = Files;
+			sourceTree = "<group>";
+		};
+		370F42AA2243962C004B5E7D /* XCConfig */ = {
+			isa = PBXGroup;
+			children = (
+				370F42AB2243962C004B5E7D /* generic.xcconfig */,
+				370F42AD22439650004B5E7D /* dev.xcconfig */,
+				370F42AF22439667004B5E7D /* test.xcconfig */,
+				370F42B122439680004B5E7D /* release.xcconfig */,
+			);
+			path = XCConfig;
+			sourceTree = "<group>";
+		};
+		370F42B42244BD98004B5E7D /* CDMacro */ = {
+			isa = PBXGroup;
+			children = (
+				6E6ADBA01CD8A07600838B61 /* Macro.h */,
+				370F42B32244BD04004B5E7D /* CDKeyConfigMacro.h */,
+				370F42B52244BDD1004B5E7D /* CDUIConfigMacro.h */,
+				370F42B62244BE49004B5E7D /* CDNotificationDefine.h */,
+				370F42BA2244C0E8004B5E7D /* CDAPIDefine.h */,
+			);
+			path = CDMacro;
 			sourceTree = "<group>";
 		};
 		4D166C53BA300C5E847A1C5F /* Frameworks */ = {
@@ -617,8 +658,8 @@
 		629B59AA20173A9D00847284 /* UserScreenshotManager */ = {
 			isa = PBXGroup;
 			children = (
-				629B59AB20173A9D00847284 /* SCYUserScreenshotManager.m */,
 				629B59AC20173A9D00847284 /* SCYUserScreenshotManager.h */,
+				629B59AB20173A9D00847284 /* SCYUserScreenshotManager.m */,
 			);
 			path = UserScreenshotManager;
 			sourceTree = "<group>";
@@ -1033,6 +1074,7 @@
 		6E6ADB281CD89AFE00838B61 /* CDGlobal */ = {
 			isa = PBXGroup;
 			children = (
+				370F42B42244BD98004B5E7D /* CDMacro */,
 				6E73D6521E14AB0C009A1072 /* CDManager */,
 				6E6ADBA11CD8A0BD00838B61 /* CDCustomModule */,
 				6E6ADB9C1CD8A04E00838B61 /* CDUtilities */,
@@ -1162,7 +1204,8 @@
 				6E6ADB9E1CD8A05E00838B61 /* CDUtilities.m */,
 				140BE9CB1CDF4B8700577831 /* CDAPPURLConfigure.h */,
 				140BE9CC1CDF4B8700577831 /* CDAPPURLConfigure.m */,
-				6E6ADBA01CD8A07600838B61 /* Macro.h */,
+				370F42B72244BF22004B5E7D /* CDLog.h */,
+				370F42B82244BF22004B5E7D /* CDLog.m */,
 			);
 			path = CDUtilities;
 			sourceTree = "<group>";
@@ -1343,7 +1386,9 @@
 				6E6ADB1B1CD892B200838B61 /* Assets.xcassets in Resources */,
 				6E6ADB191CD892B200838B61 /* Main.storyboard in Resources */,
 				6290DF771F668FA000273AE5 /* PersonalFundAccountNumQuery.json in Resources */,
+				370F42AC2243962C004B5E7D /* generic.xcconfig in Resources */,
 				6211FC811F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.xib in Resources */,
+				370F42B022439667004B5E7D /* test.xcconfig in Resources */,
 				625A81D71F171BD30041267E /* HouseLoanRate.conf in Resources */,
 				6E2469391DAA35C600DDC80B /* CDNetWorkPointCell.xib in Resources */,
 				6290DF781F668FA000273AE5 /* registConfigure.json in Resources */,
@@ -1352,8 +1397,10 @@
 				6290DF761F668FA000273AE5 /* FindUserNamePassword.json in Resources */,
 				6E7C17451E1BA76700433093 /* registConfigure.conf in Resources */,
 				6E7C17411E1BA68000433093 /* loginConfigure.conf in Resources */,
+				370F42AE22439650004B5E7D /* dev.xcconfig in Resources */,
 				626352831F74C264004997A7 /* Launch Screen.storyboard in Resources */,
 				6E1A21611CEB2AC000D21143 /* mortgageCalculator.conf in Resources */,
+				370F42B222439680004B5E7D /* release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1366,8 +1413,8 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund-resources.sh",
-				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund-resources.sh",
+				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/mapapi.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -1375,7 +1422,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		627B02CB1F7903C900ED4662 /* ShellScript */ = {
@@ -1455,6 +1502,7 @@
 				6E6ADB9F1CD8A05E00838B61 /* CDUtilities.m in Sources */,
 				6E2469401DAA35C600DDC80B /* CDAccountDetailController.m in Sources */,
 				6211FC801F2083B500F6F8F2 /* CDOpinionsSuggestionsViewCell.m in Sources */,
+				370F42B92244BF22004B5E7D /* CDLog.m in Sources */,
 				6E6ADB921CD89F7C00838B61 /* NSString+CDEncryption.m in Sources */,
 				6E6ADB931CD89F7C00838B61 /* UIBarButtonItem+CDCategory.m in Sources */,
 				6E73D6591E14B235009A1072 /* UITabBar+CDCategory.m in Sources */,
@@ -1594,6 +1642,86 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		370F42A62243953E004B5E7D /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Test;
+		};
+		370F42A72243953E004B5E7D /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 370F42AF22439667004B5E7D /* test.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
+				CURRENT_PROJECT_VERSION = 16;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XQR9H4MR9;
+				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ShangHaiProvidentFund/PrefixHeader.pch";
+				INFOPLIST_FILE = ShangHaiProvidentFund/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AFNetworking\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MJExtension\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SDWebImage\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/YYCache\"",
+					"\"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/thirdlibs\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ProvidentFund.ShangHai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5701a97b-125f-4793-a170-4f70f59e4ea1";
+				PROVISIONING_PROFILE_SPECIFIER = ShangHaiProvidentFundDev;
+				SWIFT_OBJC_BRIDGING_HEADER = "ShangHaiProvidentFund/CDApplicationMain/MainApplication/CDConvenientTools/Controller/ShangHaiProvidentFund-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Test;
+		};
 		6E6ADB201CD892B200838B61 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1676,7 +1804,7 @@
 		};
 		6E6ADB231CD892B200838B61 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 01A857102742BA70C51DC31F /* Pods-ShangHaiProvidentFund.debug.xcconfig */;
+			baseConfigurationReference = 370F42AD22439650004B5E7D /* dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1713,7 +1841,7 @@
 		};
 		6E6ADB241CD892B200838B61 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 841B5A7AFA2BE502823C6019 /* Pods-ShangHaiProvidentFund.release.xcconfig */;
+			baseConfigurationReference = 370F42B122439680004B5E7D /* release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1754,6 +1882,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E6ADB201CD892B200838B61 /* Debug */,
+				370F42A62243953E004B5E7D /* Test */,
 				6E6ADB211CD892B200838B61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1763,6 +1892,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E6ADB231CD892B200838B61 /* Debug */,
+				370F42A72243953E004B5E7D /* Test */,
 				6E6ADB241CD892B200838B61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

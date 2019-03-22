@@ -14,7 +14,9 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - BaiduMapKit (4.1.1)
+  - BaiduMapKit (4.3.0)
+  - BMKLocationKit (1.4.0)
+  - FLEX (2.4.0)
   - MJExtension (3.0.15.1)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
@@ -24,6 +26,8 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - BaiduMapKit
+  - BMKLocationKit
+  - FLEX
   - MJExtension
   - SDWebImage (~> 3.7)
   - YYCache
@@ -32,17 +36,21 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - BaiduMapKit
+    - BMKLocationKit
+    - FLEX
     - MJExtension
     - SDWebImage
     - YYCache
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  BaiduMapKit: 51bba432a28316680676b4d453a70e5031f3a7eb
+  BaiduMapKit: 63575d9236b4112c4ff76391df637f2a6dc1ada8
+  BMKLocationKit: ca1343eea19b2f2e999d1ad51bd6a1f1220f3456
+  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: fa5340228ad10f4d7866c4bd525e7aa2342d0103
+PODFILE CHECKSUM: 3327fd033a08bf9ecc8cad866f9eb18aeff2cc34
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0

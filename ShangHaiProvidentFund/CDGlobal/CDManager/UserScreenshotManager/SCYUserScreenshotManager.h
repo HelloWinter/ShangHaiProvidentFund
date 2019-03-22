@@ -28,6 +28,4 @@ typedef void(^SCYUserDidTakeScreenshotBlock)(UIImage *);
 
 @end
 
-@interface SCYScreentshotButton : UIButton
 
-@end

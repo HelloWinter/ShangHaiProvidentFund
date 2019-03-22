@@ -8,6 +8,22 @@
 
 #import "SCYUserScreenshotManager.h"
 
+@interface SCYScreentshotButton : UIButton
+
+@end
+
+@implementation SCYScreentshotButton
+
+- (CGRect)imageRectForContentRect:(CGRect)contentRect{
+    return CGRectMake(3, 3, CGRectGetWidth(contentRect) - 6, CGRectGetHeight(contentRect) - 25 - 3);
+}
+
+- (CGRect)titleRectForContentRect:(CGRect)contentRect{
+    return CGRectMake(3, CGRectGetHeight(contentRect) - 25, CGRectGetWidth(contentRect) - 6, 25);
+}
+
+@end
+
 @interface SCYUserScreenshotManager()<NSCopying>
 
 @property (nonatomic, strong) SCYScreentshotButton *btn;
@@ -120,14 +136,4 @@ static id _manager;
 
 @end
 
-@implementation SCYScreentshotButton
 
-- (CGRect)imageRectForContentRect:(CGRect)contentRect{
-    return CGRectMake(3, 3, CGRectGetWidth(contentRect) - 6, CGRectGetHeight(contentRect) - 25 - 3);
-}
-
-- (CGRect)titleRectForContentRect:(CGRect)contentRect{
-    return CGRectMake(3, CGRectGetHeight(contentRect) - 25, CGRectGetWidth(contentRect) - 6, 25);
-}
-
-@end
