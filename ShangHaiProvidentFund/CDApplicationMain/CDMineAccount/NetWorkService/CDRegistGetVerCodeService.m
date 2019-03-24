@@ -16,7 +16,7 @@
     NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
     [dict cd_safeSetObject:mobileNum forKey:@"mobile"];
     [dict cd_safeSetObject:@"7" forKey:@"sourcetype"];
-    [self request:CDURLWithAPI(@"/SendSmsServlet") params:dict];
+    [self request:KSendSmsServlet params:dict];//CDURLWithAPI(@"/SendSmsServlet")
 }
 
 - (void)requestDidFinish:(id)rootData{

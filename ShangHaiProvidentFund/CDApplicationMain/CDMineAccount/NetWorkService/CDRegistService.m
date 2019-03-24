@@ -15,7 +15,7 @@
     NSMutableDictionary *dict=[params mutableCopy];
     [dict cd_safeSetObject:@"I" forKey:@"userlevel"];
     [dict cd_safeSetObject:@"5" forKey:@"sourcetype"];
-    [self request:CDURLWithAPI(@"/gjjManager/register1") params:dict];
+    [self request:KRegister params:dict];//CDURLWithAPI(@"/gjjManager/register1")
 }
 
 - (void)requestDidFinish:(id)rootData{

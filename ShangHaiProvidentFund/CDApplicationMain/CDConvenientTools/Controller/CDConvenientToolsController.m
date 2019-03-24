@@ -82,7 +82,7 @@ static NSString *cellIdentifier=@"cellIdentifier";
             [self p_pushToNetworkPointController];
             break;
         case 1:{
-            [self p_pushToWKWebVCWithTitle:@"业务办理" url:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=blgg") showProgress:NO jsCode:nil];
+            [self p_pushToWKWebVCWithTitle:@"业务办理" url:KNoticeByIdServlet showProgress:NO jsCode:nil];//CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=blgg")
         }
             break;
         case 2:{

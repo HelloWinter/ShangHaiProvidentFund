@@ -18,7 +18,8 @@
     self.showLodingIndicator=show;
     self.httpRequestMethod=kHttpRequestTypeGET;
     self.printLog=NO;
-    [self request:CDURLWithAPI(@"/gjjManager/mobileNews?") params:nil];
+    CDLog(@"%@",KMobileNews);
+    [self request:KMobileNews params:nil];//CDURLWithAPI(@"/gjjManager/mobileNews?")
 }
 
 - (void)requestDidFinish:(id)rootData{

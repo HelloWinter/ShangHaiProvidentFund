@@ -26,7 +26,7 @@
     self.httpRequestMethod=kHttpRequestTypeGET;
     NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
     [dict cd_safeSetObject:accountNum forKey:@"pri_account"];
-    [self request:CDURLWithAPI(@"/gjjManager/CHDSearchServlet") params:dict];
+    [self request:KCHDSearchServlet params:dict];//CDURLWithAPI(@"/gjjManager/CHDSearchServlet")
 }
 
 - (NSDictionary *)dict{

@@ -14,7 +14,7 @@
     self.showLodingIndicator=show;
     NSMutableDictionary *dict=[params mutableCopy];
     [dict cd_safeSetObject:@"I" forKey:@"userlevel"];
-    [self request:CDURLWithAPI(@"/gjjManager/feedBackServlet") params:dict];
+    [self request:KFeedBackServlet params:dict];//CDURLWithAPI(@"/gjjManager/feedBackServlet")
 }
 
 - (void)requestDidFinish:(id)rootData{

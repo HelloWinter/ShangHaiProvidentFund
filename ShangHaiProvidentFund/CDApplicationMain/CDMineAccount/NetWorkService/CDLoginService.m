@@ -14,7 +14,7 @@
 - (void)loadWithParams:(NSDictionary *)params showIndicator:(BOOL)show{
     self.showLodingIndicator=show;
 //    self.httpRequestMethod=kHttpRequestTypeGET;
-    [self request:CDURLWithAPI(@"/gjjManager/privateBasic") params:params];
+    [self request:KPrivateBasic params:params];//CDURLWithAPI(@"/gjjManager/privateBasic")
 }
 
 - (void)requestDidFinish:(id)rootData{
