@@ -16,7 +16,7 @@
     self.toCacheData=YES;
     self.ignoreCache=ignore;
     self.httpRequestMethod=kHttpRequestTypeGET;
-    [self request:KGjjManagerPoint params:nil];//CDURLWithAPI(@"/gjjManager/point")
+    [self request:KGjjManagerPoint params:nil];
 }
 
 - (void)requestDidFinish:(id)rootData{

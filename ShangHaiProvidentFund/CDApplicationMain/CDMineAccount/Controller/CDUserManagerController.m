@@ -105,11 +105,11 @@ static NSString *cellidentifier = @"cellidentifier";
                     }
                 }break;
                 case 1:{
-                    NSString *strURL=CDWebURLWithAPI(@"/static/sms/forget-pass.html");
-                    [self pushToWKWebViewControllerWithTitle:@"遗忘密码" URLString:[strURL stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)] jsCode:nil];
+//                    NSString *strURL=CDWebURLWithAPI(@"/static/sms/forget-pass.html");
+                    [self pushToWKWebViewControllerWithTitle:@"遗忘密码" URLString:[KH5ForgetPass stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)] jsCode:nil];
                 }break;
                 case 2:{
-                    NSString *strURL=@"http://persons.shgjj.com/get-pass.html";//CDURLWithAPI(@"");//
+                    NSString *strURL=@"http://persons.shgjj.com/get-pass.html";
                     [self pushToWKWebViewControllerWithTitle:@"手机取回用户名和密码" URLString:[strURL stringByAddingPercentEscapesUsingEncoding:(NSUTF8StringEncoding)] jsCode:nil];
                 }break;
                 case 3:{

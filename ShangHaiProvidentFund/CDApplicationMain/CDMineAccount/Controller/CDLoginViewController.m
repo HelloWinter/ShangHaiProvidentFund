@@ -97,7 +97,7 @@
         _bottomButtonView.center=CGPointMake(self.view.width*0.5, self.tableView.bottom-40);
         WS(weakSelf);
         _bottomButtonView.forgotPSWBlock=^(){
-            [weakSelf p_pushToWKWebViewControllerWithTitle:@"遗忘密码" URLString:CDWebURLWithAPI(@"/static/sms/forget-pass.html")];
+            [weakSelf p_pushToWKWebViewControllerWithTitle:@"遗忘密码" URLString:KH5ForgetPass];//CDWebURLWithAPI(@"/static/sms/forget-pass.html")
         };
         _bottomButtonView.registBlock=^(){
             [weakSelf p_pushToRegistViewController];

@@ -120,7 +120,7 @@ static NSString *moreCellIdentifier=@"moreCellIdentifier";
     if ([item isKindOfClass:[CDNewsAndTrendsItem class]]) {
         CDNewsAndTrendsItem *newsitem = (CDNewsAndTrendsItem *)item;
         NSString *urlStr=[NSString stringWithFormat:@"/gjjManager/newsByIdServlet?id=%@",newsitem.news.newsid];
-        [self p_pushToWKWebViewControllerWithURLString:CDURLWithAPI(urlStr) title:newsitem.news.title];
+        [self p_pushToWKWebViewControllerWithURLString:KApiStr(urlStr) title:newsitem.news.title];
     }else if ([item isKindOfClass:[CDLoadMoreItem class]]){
         [self p_refreshTableViewFromTop:NO];
     }

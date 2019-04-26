@@ -23,6 +23,6 @@
 #import "NSArray+CDArrayAdditions.h"
 #import "NSMutableDictionary+CDMutableDictAdditions.h"
 #import "CDAutoHideMessageHUD.h"
-#import "CDAPPURLConfigure.h"
+#import "CDCacheManager.h"
 
 #endif

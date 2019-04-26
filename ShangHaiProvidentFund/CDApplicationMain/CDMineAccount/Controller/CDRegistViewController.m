@@ -197,7 +197,7 @@
     UIAlertAction *actionCancel=[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
     }];
     UIAlertAction *actionProblem=[UIAlertAction actionWithTitle:@"常见问题" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        [self p_pushToWKWebViewControllerWithTitle:@"常见问题" URLString:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=cjwt") jsCode:nil];
+        [self p_pushToWKWebViewControllerWithTitle:@"常见问题" URLString:KH5CJWT jsCode:nil];
     }];
     UIAlertAction *actionQuery=[UIAlertAction actionWithTitle:@"个人公积金账号查询" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         NSString *str=@"var element=document.getElementsByClassName('notes')[1];var parentElement=element.parentNode;if(parentElement){parentElement.removeChild(element);}";

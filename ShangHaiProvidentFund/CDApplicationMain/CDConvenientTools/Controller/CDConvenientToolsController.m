@@ -82,20 +82,20 @@ static NSString *cellIdentifier=@"cellIdentifier";
             [self p_pushToNetworkPointController];
             break;
         case 1:{
-            [self p_pushToWKWebVCWithTitle:@"业务办理" url:KNoticeByIdServlet showProgress:NO jsCode:nil];//CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=blgg")
+            [self p_pushToWKWebVCWithTitle:@"业务办理" url:KNoticeByIdServlet showProgress:NO jsCode:nil];
         }
             break;
         case 2:{
-            [self p_pushToWKWebVCWithTitle:@"公积金缴存额上下限/比例表" url:CDURLWithAPI(@"/gjjManager/noticeByIdServlet?id=jcll") showProgress:NO jsCode:nil];
+            [self p_pushToWKWebVCWithTitle:@"公积金缴存额上下限/比例表" url:KH5JCLL showProgress:NO jsCode:nil];
         }
             break;
         case 3:{
             NSString *str=@"document.querySelector('.nav').remove();";
-            [self p_pushToWKWebVCWithTitle:@"住房公积金缴存计算" url:CDWebURLWithAPI(@"/app/wap/tools_paid_app.html") showProgress:YES jsCode:str];
+            [self p_pushToWKWebVCWithTitle:@"住房公积金缴存计算" url:kH5ToolsPaidApp showProgress:YES jsCode:str];
         }
             break;
         case 4:
-            [self p_pushToWKWebVCWithTitle:@"额度试算" url:CDWebURLWithAPI(@"/app/wap/tools_ammount.html") showProgress:NO jsCode:nil];
+            [self p_pushToWKWebVCWithTitle:@"额度试算" url:KH5ToolsAmmount showProgress:NO jsCode:nil];
             break;
         case 5:
             [self p_pushToMortgageCalculatorController];
@@ -104,10 +104,10 @@ static NSString *cellIdentifier=@"cellIdentifier";
             [self p_pushToAnnualBonusCalculatorController];
             break;
         case 7:
-            [self p_pushToWKWebVCWithTitle:@"叫号信息" url:CDWebURLWithAPI(@"/static/2010/mindex.html") showProgress:NO jsCode:nil];
+            [self p_pushToWKWebVCWithTitle:@"叫号信息" url:KH5Mindex showProgress:NO jsCode:nil];
             break;
         case 8:
-            [self p_pushToWKWebVCWithTitle:@"公益短信" url:CDWebURLWithAPI(@"/static/sms/app_apply.html") showProgress:YES jsCode:nil];
+            [self p_pushToWKWebVCWithTitle:@"公益短信" url:KH5AppApply showProgress:YES jsCode:nil];
             break;
             
         default:

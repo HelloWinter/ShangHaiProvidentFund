@@ -22,7 +22,7 @@
     _loginModel=[CDLoginModel mj_objectWithKeyValues:rootData];
     if ([_loginModel.type isEqualToString:@"S"]) {
         CDSaveUserLogined(YES);
-        NSString *file = [CDAPPURLConfigure filePathforLoginInfo];
+        NSString *file = [CDCacheManager filePathforLoginInfo];
         [NSKeyedArchiver archiveRootObject:_loginModel toFile:file];
     }
 }

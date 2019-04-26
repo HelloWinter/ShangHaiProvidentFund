@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		140BE9CD1CDF4B8700577831 /* CDAPPURLConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 140BE9CC1CDF4B8700577831 /* CDAPPURLConfigure.m */; };
 		14D13B4F1CE2158F00D73F1A /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D13B4D1CE2158F00D73F1A /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14FDD0B31CDDD2440093ABC3 /* CDBaseTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0B21CDDD2440093ABC3 /* CDBaseTextFieldCell.m */; };
 		14FDD0B61CDDD33E0093ABC3 /* UITextField+cellIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDD0B51CDDD33E0093ABC3 /* UITextField+cellIndexPath.m */; };
@@ -17,6 +16,7 @@
 		370F42B022439667004B5E7D /* test.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 370F42AF22439667004B5E7D /* test.xcconfig */; };
 		370F42B222439680004B5E7D /* release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 370F42B122439680004B5E7D /* release.xcconfig */; };
 		370F42B92244BF22004B5E7D /* CDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 370F42B82244BF22004B5E7D /* CDLog.m */; };
+		37465D872272F5D100CCAEAA /* CDCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37465D862272F5D100CCAEAA /* CDCacheManager.m */; };
 		6211FC5D1F20838400F6F8F2 /* CDAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC581F20838400F6F8F2 /* CDAboutUsController.m */; };
 		6211FC5E1F20838400F6F8F2 /* CDHelpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC5A1F20838400F6F8F2 /* CDHelpInfoViewController.m */; };
 		6211FC5F1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC5C1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m */; };
@@ -195,8 +195,6 @@
 
 /* Begin PBXFileReference section */
 		01A857102742BA70C51DC31F /* Pods-ShangHaiProvidentFund.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShangHaiProvidentFund.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.debug.xcconfig"; sourceTree = "<group>"; };
-		140BE9CB1CDF4B8700577831 /* CDAPPURLConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAPPURLConfigure.h; sourceTree = "<group>"; };
-		140BE9CC1CDF4B8700577831 /* CDAPPURLConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAPPURLConfigure.m; sourceTree = "<group>"; };
 		14D13B4C1CE2158F00D73F1A /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		14D13B4D1CE2158F00D73F1A /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		14D13B4E1CE2158F00D73F1A /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -216,6 +214,8 @@
 		370F42B72244BF22004B5E7D /* CDLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDLog.h; sourceTree = "<group>"; };
 		370F42B82244BF22004B5E7D /* CDLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDLog.m; sourceTree = "<group>"; };
 		370F42BA2244C0E8004B5E7D /* CDAPIDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDAPIDefine.h; sourceTree = "<group>"; };
+		37465D852272F5D100CCAEAA /* CDCacheManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDCacheManager.h; sourceTree = "<group>"; };
+		37465D862272F5D100CCAEAA /* CDCacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDCacheManager.m; sourceTree = "<group>"; };
 		4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShangHaiProvidentFund.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6211FC571F20838400F6F8F2 /* CDAboutUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsController.h; sourceTree = "<group>"; };
 		6211FC581F20838400F6F8F2 /* CDAboutUsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsController.m; sourceTree = "<group>"; };
@@ -632,6 +632,15 @@
 				370F42BA2244C0E8004B5E7D /* CDAPIDefine.h */,
 			);
 			path = CDMacro;
+			sourceTree = "<group>";
+		};
+		37465D842272F5B900CCAEAA /* CacheManager */ = {
+			isa = PBXGroup;
+			children = (
+				37465D852272F5D100CCAEAA /* CDCacheManager.h */,
+				37465D862272F5D100CCAEAA /* CDCacheManager.m */,
+			);
+			path = CacheManager;
 			sourceTree = "<group>";
 		};
 		4D166C53BA300C5E847A1C5F /* Frameworks */ = {
@@ -1202,8 +1211,6 @@
 			children = (
 				6E6ADB9D1CD8A05E00838B61 /* CDUtilities.h */,
 				6E6ADB9E1CD8A05E00838B61 /* CDUtilities.m */,
-				140BE9CB1CDF4B8700577831 /* CDAPPURLConfigure.h */,
-				140BE9CC1CDF4B8700577831 /* CDAPPURLConfigure.m */,
 				370F42B72244BF22004B5E7D /* CDLog.h */,
 				370F42B82244BF22004B5E7D /* CDLog.m */,
 			);
@@ -1285,6 +1292,7 @@
 		6E73D6521E14AB0C009A1072 /* CDManager */ = {
 			isa = PBXGroup;
 			children = (
+				37465D842272F5B900CCAEAA /* CacheManager */,
 				629B59AA20173A9D00847284 /* UserScreenshotManager */,
 				6E73D6531E14AB1D009A1072 /* ImagePickerManager */,
 			);
@@ -1358,6 +1366,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1436,7 +1445,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION == Release ]; then\necho \"Bumping build number...\"\nplist=${PROJECT_DIR}/${INFOPLIST_FILE}\n#increment the build number (ie 115 to 116)\nbuildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number in $plist\"\nexit 2\nfi\nbuildnum=$(expr $buildnum + 1)\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Bumped build number to $buildnum\"\n\nelse\necho $CONFIGURATION \" build - Not bumping build number.\"\nfi";
+			shellScript = "if [ $CONFIGURATION == Release ]; then\necho \"Bumping build number...\"\nplist=${PROJECT_DIR}/${INFOPLIST_FILE}\n#increment the build number (ie 115 to 116)\nbuildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number in $plist\"\nexit 2\nfi\nbuildnum=$(expr $buildnum + 1)\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Bumped build number to $buildnum\"\n\nelse\necho $CONFIGURATION \" build - Not bumping build number.\"\nfi\n";
 		};
 		DEC81AB4FCAFC9B442D64840 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1516,7 +1525,6 @@
 				6E2469311DAA35C600DDC80B /* SCYMortgageCalculatorResultItem.m in Sources */,
 				6E2469541DAA35C600DDC80B /* CDRepayInfoModel.m in Sources */,
 				629B59A72017187800847284 /* CDUploadImageService.m in Sources */,
-				140BE9CD1CDF4B8700577831 /* CDAPPURLConfigure.m in Sources */,
 				6E2469591DAA35C600DDC80B /* CDRegistService.m in Sources */,
 				6E2469281DAA35C600DDC80B /* CDNetworkPointController.m in Sources */,
 				6E6ADB971CD89F7C00838B61 /* UILabel+CDLBAdditions.m in Sources */,
@@ -1544,6 +1552,7 @@
 				6E24693A1DAA35C600DDC80B /* SCYMeasurementTextFieldCell.m in Sources */,
 				6211FC5D1F20838400F6F8F2 /* CDAboutUsController.m in Sources */,
 				6E24692E1DAA35C600DDC80B /* SCYLoanRateItem.m in Sources */,
+				37465D872272F5D100CCAEAA /* CDCacheManager.m in Sources */,
 				6E2469641DAA35C600DDC80B /* CDVerificationCodeCell.m in Sources */,
 				6E2469341DAA35C600DDC80B /* CDNetworkPointService.m in Sources */,
 				6E2469531DAA35C600DDC80B /* CDRepayInfoChrItem.m in Sources */,

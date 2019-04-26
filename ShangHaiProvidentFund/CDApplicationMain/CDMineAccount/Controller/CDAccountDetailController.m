@@ -59,7 +59,7 @@ static const CGFloat kHeaderTitleHeight = 28.0;
 
 - (CDLoginModel *)loginModel{
     if (_loginModel==nil) {
-        NSString *file=[CDAPPURLConfigure filePathforLoginInfo];
+        NSString *file=[CDCacheManager filePathforLoginInfo];
         _loginModel=[NSKeyedUnarchiver unarchiveObjectWithFile:file];
     }
     return _loginModel;

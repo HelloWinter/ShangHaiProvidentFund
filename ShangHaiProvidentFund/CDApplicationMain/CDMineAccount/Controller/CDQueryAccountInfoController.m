@@ -261,7 +261,7 @@ static const CGFloat headerOriginalHeight=180;
 }
 
 - (void)p_pushToLoanDetailController{
-    NSString *file=[CDAPPURLConfigure filePathforLoginInfo];
+    NSString *file=[CDCacheManager filePathforLoginInfo];
     CDLoginModel *model = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
     if (model.account.count==0 || model.dynamicdetail.count==0) {
         [CDAutoHideMessageHUD showMessage:@"没有查询到贷款信息"];
@@ -273,7 +273,7 @@ static const CGFloat headerOriginalHeight=180;
 
 - (void)p_pushToRepaymentInfoController{
     CDRepaymentInfoController *controller= [[CDRepaymentInfoController alloc]init];
-    NSString *file=[CDAPPURLConfigure filePathforLoginInfo];
+    NSString *file=[CDCacheManager filePathforLoginInfo];
     CDLoginModel *model = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
     CDAccountInfoItem *accountInfoItem=[model.basic firstObject];
     controller.accountNum=accountInfoItem.pri_account;
@@ -308,7 +308,7 @@ static const CGFloat headerOriginalHeight=180;
 
 - (void)p_reloadHeaderView{
     if (CDIsUserLogined()) {
-        NSString *file=[CDAPPURLConfigure filePathforLoginInfo];
+        NSString *file=[CDCacheManager filePathforLoginInfo];
         if (file) {
             CDLoginModel *model = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
             CDAccountInfoItem *accountInfoItem=[model.basic firstObject];

@@ -1,29 +1,12 @@
 //
-//  CDAPPURLConfigure.h
+//  CDCacheManager.h
 //  ShangHaiProvidentFund
 //
-//  Created by Cheng on 16/5/8.
-//  Copyright © 2016年 cheng dong. All rights reserved.
+//  Created by dongdong.cheng on 2019/4/26.
+//  Copyright © 2019 cheng dong. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-
-/**
- *  返回完整的接口地址
- *
- *  @param api 接口路径
- *
- *  @return (NSString *)
- */
-NSString* CDURLWithAPI(NSString* api);
-/**
- *  返回完整的网页地址
- *
- *  @param api 接口路径
- *
- *  @return (NSString *)
- */
-NSString* CDWebURLWithAPI(NSString* api);
 
 ///////////////////////////////////////////////////
 void CDSaveUserLogined(BOOL logined);
@@ -45,7 +28,7 @@ void CDRemoveUserNickName();
 
 ///////////////////////////////////////////////////
 
-@interface CDAPPURLConfigure : NSObject
+@interface CDCacheManager : NSObject
 
 /**
  *  账户信息路径
@@ -53,3 +36,4 @@ void CDRemoveUserNickName();
 + (NSString *)filePathforLoginInfo;
 
 @end
+

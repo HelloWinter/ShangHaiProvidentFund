@@ -31,4 +31,18 @@
 
 #define KNoticeByIdServlet KApiStr(@"/gjjManager/noticeByIdServlet?id=blgg")
 
+#define KH5JCLL KApiStr(@"/gjjManager/noticeByIdServlet?id=jcll")
+
+#define KH5CJWT KApiStr(@"/gjjManager/noticeByIdServlet?id=cjwt")
+
+#define kH5ToolsPaidApp KWebApiStr(@"/app/wap/tools_paid_app.html")
+
+#define KH5ToolsAmmount KWebApiStr(@"/app/wap/tools_ammount.html")
+
+#define KH5Mindex KWebApiStr(@"/static/2010/mindex.html")
+
+#define KH5AppApply KWebApiStr(@"/static/sms/app_apply.html")
+
+#define KH5ForgetPass KWebApiStr(@"/static/sms/forget-pass.html")
+
 #endif /* CDAPIDefine_h */
