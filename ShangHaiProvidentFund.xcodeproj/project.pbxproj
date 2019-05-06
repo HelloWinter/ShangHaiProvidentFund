@@ -16,6 +16,9 @@
 		370F42B022439667004B5E7D /* test.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 370F42AF22439667004B5E7D /* test.xcconfig */; };
 		370F42B222439680004B5E7D /* release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 370F42B122439680004B5E7D /* release.xcconfig */; };
 		370F42B92244BF22004B5E7D /* CDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 370F42B82244BF22004B5E7D /* CDLog.m */; };
+		371853112275866600A9E90E /* CDNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 371853102275866600A9E90E /* CDNetworkClient.m */; };
+		371853142275869600A9E90E /* CDRequestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 371853132275869600A9E90E /* CDRequestObject.m */; };
+		37185317227586C200A9E90E /* CDResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 37185316227586C200A9E90E /* CDResponseObject.m */; };
 		37465D872272F5D100CCAEAA /* CDCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37465D862272F5D100CCAEAA /* CDCacheManager.m */; };
 		6211FC5D1F20838400F6F8F2 /* CDAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC581F20838400F6F8F2 /* CDAboutUsController.m */; };
 		6211FC5E1F20838400F6F8F2 /* CDHelpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC5A1F20838400F6F8F2 /* CDHelpInfoViewController.m */; };
@@ -214,6 +217,12 @@
 		370F42B72244BF22004B5E7D /* CDLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDLog.h; sourceTree = "<group>"; };
 		370F42B82244BF22004B5E7D /* CDLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDLog.m; sourceTree = "<group>"; };
 		370F42BA2244C0E8004B5E7D /* CDAPIDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDAPIDefine.h; sourceTree = "<group>"; };
+		3718530F2275866600A9E90E /* CDNetworkClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDNetworkClient.h; sourceTree = "<group>"; };
+		371853102275866600A9E90E /* CDNetworkClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDNetworkClient.m; sourceTree = "<group>"; };
+		371853122275869600A9E90E /* CDRequestObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDRequestObject.h; sourceTree = "<group>"; };
+		371853132275869600A9E90E /* CDRequestObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDRequestObject.m; sourceTree = "<group>"; };
+		37185315227586C200A9E90E /* CDResponseObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDResponseObject.h; sourceTree = "<group>"; };
+		37185316227586C200A9E90E /* CDResponseObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDResponseObject.m; sourceTree = "<group>"; };
 		37465D852272F5D100CCAEAA /* CDCacheManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDCacheManager.h; sourceTree = "<group>"; };
 		37465D862272F5D100CCAEAA /* CDCacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDCacheManager.m; sourceTree = "<group>"; };
 		4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShangHaiProvidentFund.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -632,6 +641,19 @@
 				370F42BA2244C0E8004B5E7D /* CDAPIDefine.h */,
 			);
 			path = CDMacro;
+			sourceTree = "<group>";
+		};
+		3718530E2275864000A9E90E /* CDNetworkClient */ = {
+			isa = PBXGroup;
+			children = (
+				3718530F2275866600A9E90E /* CDNetworkClient.h */,
+				371853102275866600A9E90E /* CDNetworkClient.m */,
+				371853122275869600A9E90E /* CDRequestObject.h */,
+				371853132275869600A9E90E /* CDRequestObject.m */,
+				37185315227586C200A9E90E /* CDResponseObject.h */,
+				37185316227586C200A9E90E /* CDResponseObject.m */,
+			);
+			path = CDNetworkClient;
 			sourceTree = "<group>";
 		};
 		37465D842272F5B900CCAEAA /* CacheManager */ = {
@@ -1119,6 +1141,7 @@
 		6E6ADB2F1CD89E8700838B61 /* CDBaseNetWorkClass */ = {
 			isa = PBXGroup;
 			children = (
+				3718530E2275864000A9E90E /* CDNetworkClient */,
 				629B59A62017187800847284 /* CDUploadImageService.h */,
 				629B59A52017187700847284 /* CDUploadImageService.m */,
 				6E6ADB321CD89E8700838B61 /* CDJSONBaseNetworkService.h */,
@@ -1480,6 +1503,7 @@
 				6E24693B1DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.m in Sources */,
 				6E24694B1DAA35C600DDC80B /* CDLoginConfigureModel.m in Sources */,
 				6E2469571DAA35C600DDC80B /* CDMineAccountService.m in Sources */,
+				37185317227586C200A9E90E /* CDResponseObject.m in Sources */,
 				6E24694F1DAA35C600DDC80B /* CDQueryAccountBasicItem.m in Sources */,
 				6E73368F1E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m in Sources */,
 				6211FC711F2083A700F6F8F2 /* CDCommitMessageService.m in Sources */,
@@ -1491,6 +1515,7 @@
 				6E2469351DAA35C600DDC80B /* CDPayCalculatorService.m in Sources */,
 				6E67A79A1CDCA6BC00436E93 /* CDLoadMoreCell.m in Sources */,
 				6E2469671DAA35C600DDC80B /* CDNewsItem.m in Sources */,
+				371853142275869600A9E90E /* CDRequestObject.m in Sources */,
 				6E24695D1DAA35C600DDC80B /* CDHeaderTitleView.m in Sources */,
 				6E6ADBD81CD8A0BD00838B61 /* CDAutoHideMessageHUD.m in Sources */,
 				6290DF7B1F6698B300273AE5 /* CDChangePasswordModel.m in Sources */,
@@ -1567,6 +1592,7 @@
 				6E2469611DAA35C600DDC80B /* CDQueryAccountHeaderView.m in Sources */,
 				6E53C84B1CE9CF9500202F53 /* CDSlidePageHeaderView.m in Sources */,
 				6E2469601DAA35C600DDC80B /* CDProvidentFundDetailHeaderView.m in Sources */,
+				371853112275866600A9E90E /* CDNetworkClient.m in Sources */,
 				6E2469471DAA35C600DDC80B /* CDRepaymentInfoController.m in Sources */,
 				6E2469451DAA35C600DDC80B /* CDQueryAccountInfoController.m in Sources */,
 				6E7336841E4C6AEB0036393A /* SCYAnnualBonusCalculateRulesItem.m in Sources */,
