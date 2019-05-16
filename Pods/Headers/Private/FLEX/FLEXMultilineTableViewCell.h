@@ -1,1 +1,1 @@
-../../../FLEX/Classes/Utility/FLEXMultilineTableViewCell.h
+../../../FLEX/Classes/ObjectExplorers/Views/FLEXMultilineTableViewCell.h

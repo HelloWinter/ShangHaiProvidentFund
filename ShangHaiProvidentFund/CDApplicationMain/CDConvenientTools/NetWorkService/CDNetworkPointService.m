@@ -16,6 +16,7 @@
     self.toCacheData=YES;
     self.ignoreCache=ignore;
     self.httpRequestMethod=kHttpRequestTypeGET;
+    CDLog(@"KGjjManagerPoint : %@",KGjjManagerPoint);
     [self request:KGjjManagerPoint params:nil];
 }
 
