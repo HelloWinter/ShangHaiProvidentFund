@@ -81,6 +81,7 @@ static const CGFloat topHeight=50;
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
 }
 
+#pragma mark - lazyload
 - (CDHouseLoanRateModel *)houseLoanRateModel{
     if (!_houseLoanRateModel) {
         NSString *filepath=[[NSBundle mainBundle]pathForResource:@"HouseLoanRate.conf" ofType:nil];

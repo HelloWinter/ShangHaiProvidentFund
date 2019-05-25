@@ -43,6 +43,7 @@ static NSString *ruleCellidentifier = @"ruleCellidentifier";
     [self.tableView registerClass:[SCYAnnualBonusRulesCell class] forCellReuseIdentifier:ruleCellidentifier];
 }
 
+#pragma mark - lazyload
 - (NSArray *)arrRules{
     if (_arrRules==nil) {
         SCYAnnualBonusCalculateRulesItem *item0=[SCYAnnualBonusCalculateRulesItem itemWithLeft:@"税前/12" center:@"税率" right:@"速算扣除"];
@@ -105,17 +106,11 @@ static NSString *ruleCellidentifier = @"ruleCellidentifier";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    if (section==1) {
-        return self.sectionHeaderView;
-    }
-    return nil;
+    return section==1 ? self.sectionHeaderView : nil;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    if (section==1) {
-        return self.sectionFooterView;
-    }
-    return nil;
+    return section==1 ? self.sectionFooterView : nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

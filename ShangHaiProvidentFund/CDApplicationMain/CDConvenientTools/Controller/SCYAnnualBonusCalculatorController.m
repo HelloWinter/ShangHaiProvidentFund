@@ -13,7 +13,7 @@
 #import "SCYAnnualBonusCalculateTool.h"
 #import "SCYAnnualBonusCalculateResultItem.h"
 
-//计算可优化
+
 
 static const CGFloat topHeight=50;
 
