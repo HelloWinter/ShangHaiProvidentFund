@@ -1,0 +1,19 @@
+[INFO] output of locale.getdefaultlocale(): ('zh_CN', 'UTF-8')
+[INFO] encoding we chose in the end: UTF-8
+[INFO] Running command /usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../lib/python/infer.py -j 8 --project-root /Users/dongdong.cheng/Documents/GitHub/ShangHaiProvidentFund --out /Users/dongdong.cheng/Documents/GitHub/ShangHaiProvidentFund/infer-out -- xcodebuild -workspace ShangHaiProvidentFund.xcworkspace -scheme ShangHaiProvidentFund -configuration Debug -sdk iphonesimulator
+[INFO] Path to infer script /usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../lib/python/infer.py (/usr/local/Cellar/infer/0.15.0/lib/infer/infer/lib/python/infer.py)
+[INFO] Platform: Darwin-18.6.0-x86_64-i386-64bit
+[INFO] PATH=/Users/dongdong.cheng/.fastlane/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/Users/dongdong.cheng/Library/Android/sdk/tools:/Users/dongdong.cheng/Library/Android/sdk/platform-tools:/Users/dongdong.cheng/development/flutter/bin
+[INFO] SHELL=/bin/bash
+[INFO] PWD=/Users/dongdong.cheng/Documents/GitHub/ShangHaiProvidentFund
+[INFO] Xcode version:
+Xcode 10.2.1
+Build version 10E1001
+
+[INFO] clang version:
+Apple LLVM version 10.0.1 (clang-1001.0.46.4)
+Target: x86_64-apple-darwin18.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+[INFO] Capture phase was successful

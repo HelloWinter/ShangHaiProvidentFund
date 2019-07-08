@@ -96,7 +96,7 @@ static NSString *moreCellIdentifier=@"moreCellIdentifier";
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSNumber *height = [self.arrCellHeight cd_safeObjectAtIndex:indexPath.row];
-    if (height) {
+    if (height != nil) {
         return [height floatValue];
     }else{
         CDBaseItem *item = [self.arrData cd_safeObjectAtIndex:indexPath.row];

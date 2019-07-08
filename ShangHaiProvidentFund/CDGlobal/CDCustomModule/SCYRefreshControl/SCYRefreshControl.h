@@ -13,7 +13,7 @@
 /**
  *  关联的scrollview
  */
-@property (nonatomic, assign, readonly) UIScrollView *scrollView;
+@property (nonatomic, weak, readonly) UIScrollView *scrollView;
 
 /**
  *  是否正在刷新

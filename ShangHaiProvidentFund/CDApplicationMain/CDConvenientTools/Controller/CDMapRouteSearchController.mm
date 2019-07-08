@@ -225,7 +225,6 @@ static const CGFloat topHeight=50;
         if (plan.wayPoints) {
             for (BMKPlanNode* tempNode in plan.wayPoints) {
                 RouteAnnotation* item = [[RouteAnnotation alloc]init];
-                item = [[RouteAnnotation alloc]init];
                 item.coordinate = tempNode.pt;
                 item.type = 5;
                 item.title = tempNode.name;

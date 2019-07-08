@@ -127,8 +127,7 @@ static const NSInteger kBehindImageTag = 500;
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat pageWith = self.scrollView.frame.size.width;
-    NSInteger page = floor((self.scrollView.contentOffset.x - pageWith/([self.arrImageLink count]+2))/pageWith) + 1;
-    self.pageControl.currentPage = --page;
+    self.pageControl.currentPage = floor((self.scrollView.contentOffset.x - pageWith/([self.arrImageLink count]+2))/pageWith);
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
