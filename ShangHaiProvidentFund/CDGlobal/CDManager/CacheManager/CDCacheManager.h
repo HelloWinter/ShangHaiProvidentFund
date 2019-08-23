@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <YYCache.h>
 
 ///////////////////////////////////////////////////
 void CDSaveUserLogined(BOOL logined);
@@ -29,7 +30,10 @@ void CDRemoveUserNickName();
 ///////////////////////////////////////////////////
 
 @interface CDCacheManager : NSObject
+AS_SINGLETON(CDCacheManager)
 
+@property (nonatomic, strong, readonly) YYCache *cache;
+@property (nonatomic, strong, readonly) YYMemoryCache *memorycache;
 /**
  *  账户信息路径
  */

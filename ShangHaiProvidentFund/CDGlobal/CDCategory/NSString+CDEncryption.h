@@ -121,14 +121,14 @@
  *
  *  @return (NSMutableString *) 删除特定字符后的字符串
  */
-- (NSMutableString*) cd_detleteCharacter:(NSString*) character;
+- (NSMutableString*)cd_detleteCharacter:(NSString*) character;
 
 /**
  *  数字字符串超过三位，每隔3位加逗号格式化
  *
  *  @return (NSString *)格式化后的数字字符串
  */
--(NSString *)cd_numberStringFormat;
+- (NSString *)cd_numberStringFormat;
 
 @end
 

@@ -14,7 +14,7 @@
 - (void)loadResetServiceWithParams:(NSDictionary *)dict{
     self.autoJSONDataSerializer=NO;
     self.httpRequestMethod=kHttpRequestTypeGET;
-    NSString *str=[dict cd_TransformToParamStringWithMethod:(kHttpRequestTypeGET)];
+    NSString *str=[dict cd_transformToParamStringWithMethod:(kHttpRequestTypeGET)];
     //@"https://persons.shgjj.com/MainServlet?ID=21&id_card_num=411082199003055430&newpwd_md5=e10adc3949ba59abbe56e057f20f883e&pri_account=158489445205&userid=HelloWinter"
     NSString *strurl=[NSString stringWithFormat:@"https://persons.shgjj.com/MainServlet%@",str];
     [self request:strurl params:nil];

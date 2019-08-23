@@ -13,7 +13,7 @@
 
 - (void)loadChangePWDWith:(NSDictionary *)params{
     self.httpRequestMethod=kHttpRequestTypeGET;
-    NSString *strParam=[params cd_TransformToParamStringWithMethod:(kHttpRequestTypeGET)];
+    NSString *strParam=[params cd_transformToParamStringWithMethod:(kHttpRequestTypeGET)];
     NSString *strURL=[NSString stringWithFormat:@"%@%@",KChangePwdServlet,strParam];//CDURLWithAPI(@"/gjjManager/ChangePwdServlet")
     self.showLodingIndicator=YES;
     [self request:strURL params:nil];

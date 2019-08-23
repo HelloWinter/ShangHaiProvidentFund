@@ -21,9 +21,9 @@
  */
 - (id)cd_safeObjectForKey:(id <NSCopying>)key;
 
-/**
- *  网络请求参数形式转换
+/*
+ *  待移除
  */
-- (NSString *)cd_TransformToParamStringWithMethod:(HttpRequestType)method;
+- (NSString *)cd_transformToParamStringWithMethod:(HttpRequestType)method;
 
 @end

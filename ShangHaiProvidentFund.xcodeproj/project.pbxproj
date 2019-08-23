@@ -45,7 +45,6 @@
 		628247E81F67DC82003C8EC1 /* CDForgotPasswordResetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 628247E71F67DC82003C8EC1 /* CDForgotPasswordResetModel.m */; };
 		6286FBF31F1C9A8E00794FC5 /* CDUserManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6286FBF21F1C9A8E00794FC5 /* CDUserManagerController.m */; };
 		6286FBF61F1CB1DD00794FC5 /* CDUserManagerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6286FBF51F1CB1DD00794FC5 /* CDUserManagerModel.m */; };
-		6289AF9B203EA6C0003A1E99 /* UIWebView+TS_JavaScriptContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 6289AF9A203EA6C0003A1E99 /* UIWebView+TS_JavaScriptContext.m */; };
 		6289AF9E203EB37F003A1E99 /* CALayer+CDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6289AF9D203EB37F003A1E99 /* CALayer+CDCategory.m */; };
 		6290DF6B1F66394A00273AE5 /* CDForgotPWDResetService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6290DF6A1F66394A00273AE5 /* CDForgotPWDResetService.m */; };
 		6290DF6F1F667ADA00273AE5 /* SCYFindUserNamePasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6290DF6E1F667ADA00273AE5 /* SCYFindUserNamePasswordController.m */; };
@@ -193,6 +192,7 @@
 		6E7C17411E1BA68000433093 /* loginConfigure.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C17401E1BA68000433093 /* loginConfigure.conf */; };
 		6E7C17451E1BA76700433093 /* registConfigure.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C17441E1BA76700433093 /* registConfigure.conf */; };
 		6E7C17491E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C17481E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf */; };
+		A654FBE32310144200C466F4 /* CDUIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A654FBE22310144200C466F4 /* CDUIUtil.m */; };
 		F9B7F93F7A7A135D5CEEEC72 /* libPods-ShangHaiProvidentFund.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */; };
 /* End PBXBuildFile section */
 
@@ -271,8 +271,6 @@
 		6286FBF21F1C9A8E00794FC5 /* CDUserManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUserManagerController.m; sourceTree = "<group>"; };
 		6286FBF41F1CB1DD00794FC5 /* CDUserManagerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUserManagerModel.h; sourceTree = "<group>"; };
 		6286FBF51F1CB1DD00794FC5 /* CDUserManagerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUserManagerModel.m; sourceTree = "<group>"; };
-		6289AF99203EA6C0003A1E99 /* UIWebView+TS_JavaScriptContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+TS_JavaScriptContext.h"; sourceTree = "<group>"; };
-		6289AF9A203EA6C0003A1E99 /* UIWebView+TS_JavaScriptContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+TS_JavaScriptContext.m"; sourceTree = "<group>"; };
 		6289AF9C203EB37F003A1E99 /* CALayer+CDCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+CDCategory.h"; sourceTree = "<group>"; };
 		6289AF9D203EB37F003A1E99 /* CALayer+CDCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+CDCategory.m"; sourceTree = "<group>"; };
 		6290DF691F66394A00273AE5 /* CDForgotPWDResetService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDForgotPWDResetService.h; sourceTree = "<group>"; };
@@ -553,6 +551,8 @@
 		6E7C17441E1BA76700433093 /* registConfigure.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = registConfigure.conf; sourceTree = "<group>"; };
 		6E7C17481E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpinionsSuggestionsConfigure.conf; sourceTree = "<group>"; };
 		841B5A7AFA2BE502823C6019 /* Pods-ShangHaiProvidentFund.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShangHaiProvidentFund.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.release.xcconfig"; sourceTree = "<group>"; };
+		A654FBE12310144200C466F4 /* CDUIUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDUIUtil.h; sourceTree = "<group>"; };
+		A654FBE22310144200C466F4 /* CDUIUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDUIUtil.m; sourceTree = "<group>"; };
 		FF429A1A54C53FB72AD63FBF /* Pods-ShangHaiProvidentFund.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShangHaiProvidentFund.test.xcconfig"; path = "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.test.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1223,8 +1223,6 @@
 				6E6ADB851CD89F7C00838B61 /* UIView+Genie.m */,
 				6E6ADB861CD89F7C00838B61 /* UIViewController+CDVCAdditions.h */,
 				6E6ADB871CD89F7C00838B61 /* UIViewController+CDVCAdditions.m */,
-				6289AF99203EA6C0003A1E99 /* UIWebView+TS_JavaScriptContext.h */,
-				6289AF9A203EA6C0003A1E99 /* UIWebView+TS_JavaScriptContext.m */,
 			);
 			path = CDCategory;
 			sourceTree = "<group>";
@@ -1236,6 +1234,8 @@
 				6E6ADB9E1CD8A05E00838B61 /* CDUtilities.m */,
 				370F42B72244BF22004B5E7D /* CDLog.h */,
 				370F42B82244BF22004B5E7D /* CDLog.m */,
+				A654FBE12310144200C466F4 /* CDUIUtil.h */,
+				A654FBE22310144200C466F4 /* CDUIUtil.m */,
 			);
 			path = CDUtilities;
 			sourceTree = "<group>";
@@ -1603,6 +1603,7 @@
 				6E2469441DAA35C600DDC80B /* CDLoginViewController.m in Sources */,
 				6E2469381DAA35C600DDC80B /* CDNetWorkPointCell.m in Sources */,
 				6E24696C1DAA3FF700DDC80B /* NSData+CDDataAddition.m in Sources */,
+				A654FBE32310144200C466F4 /* CDUIUtil.m in Sources */,
 				6E7336961E4C6BC80036393A /* UpDownLBView.m in Sources */,
 				6290DF721F6685AD00273AE5 /* CDNormalTextFieldConfigureItem.m in Sources */,
 				6E7336931E4C6B1F0036393A /* SCYAnnualBonusRulesCell.m in Sources */,
@@ -1625,7 +1626,6 @@
 				6E6ADB981CD89F7C00838B61 /* UITableView+CDTableViewAddition.m in Sources */,
 				6E24694E1DAA35C600DDC80B /* CDPayAccountItem.m in Sources */,
 				6E2469491DAA35C600DDC80B /* CDAccountInfoItem.m in Sources */,
-				6289AF9B203EA6C0003A1E99 /* UIWebView+TS_JavaScriptContext.m in Sources */,
 				6E6ADB101CD892B200838B61 /* main.m in Sources */,
 				6E73D64E1E14A626009A1072 /* CDADLoopDisplayScrollView.m in Sources */,
 				6286FBF31F1C9A8E00794FC5 /* CDUserManagerController.m in Sources */,

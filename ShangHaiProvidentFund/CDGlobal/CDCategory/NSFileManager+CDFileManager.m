@@ -14,6 +14,10 @@
     return NSSearchPathForDirectoriesInDomains(directory, NSUserDomainMask, YES)[0];
 }
 
++ (NSString *)cd_documentPath{
+    return [self pathForDirectory:NSDocumentDirectory];
+}
+
 + (NSString *)cd_libraryPath{
     return [self pathForDirectory:NSLibraryDirectory];
 }

@@ -7,6 +7,7 @@
 //
 
 #import "CDCacheManager.h"
+#import "NSFileManager+CDFileManager.h"
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -59,10 +60,26 @@ void CDRemoveUserNickName(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
+@interface CDCacheManager ()
+
+@property (nonatomic, strong, readwrite) YYCache *cache;
+@property (nonatomic, strong, readwrite) YYMemoryCache *memorycache;
+
+@end
+
 @implementation CDCacheManager
+DEF_SINGLETON(CDCacheManager)
+
+- (YYCache *)cache{
+    if (_cache==nil) {
+        NSString *docPath = [[NSFileManager cd_documentPath] stringByAppendingString:[NSString stringWithFormat:@"/%@",CDAppBundleID]];
+        _cache=[YYCache cacheWithPath:docPath];
+    }
+    return _cache;
+}
 
 + (NSString *)filePathforLoginInfo{
-    return [CDCachesPath stringByAppendingPathComponent:@"info.data"];
+    return [[NSFileManager cd_cachesPath] stringByAppendingPathComponent:@"info.data"];
 }
 
 //+ (NSString *)getIPWithHostName:(NSString *)hostName {

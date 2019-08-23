@@ -61,7 +61,7 @@
         [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
         flowLayout.headerReferenceSize=CGSizeMake(self.view.width, 7);
         CGFloat top_margin = 64;
-        if (currentScreenModel() == CurrentDeviceScreenModel_X) {
+        if ([CDUIUtil currentScreenType] == CurrentDeviceScreenType_X) {
             top_margin = 88;
         }
         CGRect rect=CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-top_margin);

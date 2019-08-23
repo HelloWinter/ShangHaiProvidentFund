@@ -64,7 +64,7 @@
      *  先使用缓存数据
      */
     if (self.toCacheData && !self.isIgnoreCache) {
-        NSString *paramsString = (params==nil ? @"" : [params cd_TransformToParamStringWithMethod:(kHttpRequestTypeGET)]);
+        NSString *paramsString = (params==nil ? @"" : [params cd_transformToParamStringWithMethod:kHttpRequestTypeGET]);
         self.cacheURLStringID=[[NSString stringWithFormat:@"%@%@",urlString,paramsString] cd_md5HexDigest];
         if ([self.cache containsObjectForKey:self.cacheURLStringID]) {
             CDLog(@"使用缓存数据:%@",urlString);
@@ -230,5 +230,7 @@
     _isUseCache=NO;
     [CDNetworkRequestManager removeService:self];
 }
+
+
 
 @end

@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.tabBar.barTintColor=colorForHex(@"#01b2d3");
-    [self.tabBar setTintColor:colorForHex(@"#2d8eff")];
+    [self.tabBar setTintColor:ColorFromHexRGB(0x2d8eff)];
     //去除顶部的线
 //    [self.tabBar setShadowImage:[UIImage new]];
 //    [self.tabBar setBackgroundImage:[UIImage cd_imageWithColor:NAVIGATION_COLOR]];

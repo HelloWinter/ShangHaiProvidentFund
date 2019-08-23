@@ -62,7 +62,7 @@ static NSString *cellIdentifier=@"cellIdentifier";
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    CGFloat cellWidthHeight = (currentScreenModel()==CurrentDeviceScreenModel_iPad) ? 98.5 : (self.collectionView.width-20)*0.25;
+    CGFloat cellWidthHeight = ([CDUIUtil currentScreenType]==CurrentDeviceScreenType_iPad) ? 98.5 : (self.collectionView.width-20)*0.25;
     return CGSizeMake(cellWidthHeight, cellWidthHeight);
 }
 

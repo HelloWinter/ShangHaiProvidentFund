@@ -48,7 +48,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor=colorForHex(@"#f5f5f5");
+    self.view.backgroundColor=ColorFromHexRGB(0xF5F5F5);
     [self p_addTapGestureRecognizerIfNeeded];
     [self p_setupBackBarButton];
 }

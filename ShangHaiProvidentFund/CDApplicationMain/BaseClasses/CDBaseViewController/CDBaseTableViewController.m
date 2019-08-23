@@ -75,7 +75,7 @@
 
 - (UITableView *)tableView{
     if (_tableView == nil) {
-        CGFloat barHeight=currentScreenModel()==CurrentDeviceScreenModel_X ? 88 : 64;
+        CGFloat barHeight=[CDUIUtil currentScreenType]==CurrentDeviceScreenType_X ? 88 : 64;
         CGRect rect=CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-barHeight);//
         _tableView = [[UITableView alloc] initWithFrame:rect style:_tableViewStyle];
         _tableView.dataSource=self;

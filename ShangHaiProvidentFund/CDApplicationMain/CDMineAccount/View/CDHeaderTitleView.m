@@ -66,10 +66,10 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
     CGFloat minWidth=self.width*0.25;
-    if (currentScreenModel()==CurrentDeviceScreenModel_3_5 | currentScreenModel()==CurrentDeviceScreenModel_4_0) {
+    if ([CDUIUtil currentScreenType]==CurrentDeviceScreenType_3_5 | [CDUIUtil currentScreenType]==CurrentDeviceScreenType_4_0) {
         minWidth=75;
     }
-    if (currentScreenModel()==CurrentDeviceScreenModel_iPad) {
+    if ([CDUIUtil currentScreenType]==CurrentDeviceScreenType_iPad) {
         minWidth=self.width*0.3;
     }
     if (self.cellLayoutType==CDCellLayoutTypeAccountDetail) {

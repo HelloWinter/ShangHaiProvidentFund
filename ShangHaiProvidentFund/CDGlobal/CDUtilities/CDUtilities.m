@@ -10,96 +10,8 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <LocalAuthentication/LocalAuthentication.h>
 #import "SSKeychain.h"
-#import "CDAutoHideMessageHUD.h"
 
-void rotateView(UIView* view,int degrees,float duration){
-    [UIView animateWithDuration:duration animations:^{
-        view.transform = CGAffineTransformRotate(view.transform, Degrees_To_Radians(degrees));
-    }];
-}
 
-UIViewController* CDFindTopModelViewController(UIViewController* vc){
-    while (vc.presentedViewController) {
-        vc = vc.presentedViewController;
-    }
-    if ([vc isKindOfClass:[UINavigationController class]]) {
-        vc = [(UINavigationController*)vc visibleViewController];
-    }
-    return vc;
-}
-
-UIViewController* CDVisibalController() {
-    UIViewController* appRootViewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
-    if ([appRootViewController isKindOfClass:[UITabBarController class]]) {
-        UITabBarController* tableBarVC = (UITabBarController*)appRootViewController;
-        UIViewController *selectController=(UIViewController *)tableBarVC.selectedViewController;
-        return CDFindTopModelViewController(selectController);
-    }else {
-        return CDFindTopModelViewController(appRootViewController);
-    }
-}
-
-CurrentDeviceScreenModel currentScreenModel(){
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        CGSize screenSize = [UIScreen mainScreen].bounds.size;
-        if (CGSizeEqualToSize(screenSize, CGSizeMake(320.0, 480.0)) || CGSizeEqualToSize(screenSize, CGSizeMake(480.0, 320.0))) {
-            return CurrentDeviceScreenModel_3_5;
-        }
-        if (CGSizeEqualToSize(screenSize, CGSizeMake(320.0, 568.0)) || CGSizeEqualToSize(screenSize, CGSizeMake(568.0, 320.0))) {
-            return CurrentDeviceScreenModel_4_0;
-        }
-        if (CGSizeEqualToSize(screenSize, CGSizeMake(375.0, 667.0)) || CGSizeEqualToSize(screenSize, CGSizeMake(667.0, 375.0))) {
-            return CurrentDeviceScreenModel_4_7;
-        }
-        if (CGSizeEqualToSize(screenSize, CGSizeMake(414.0, 736.0)) || CGSizeEqualToSize(screenSize, CGSizeMake(736.0, 414.0))) {
-            return CurrentDeviceScreenModel_5_5;
-        }
-        if (CGSizeEqualToSize(screenSize, CGSizeMake(375.0, 812.0)) || CGSizeEqualToSize(screenSize, CGSizeMake(812.0, 375.0))) {
-            return CurrentDeviceScreenModel_X;
-        }
-    }else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-        return CurrentDeviceScreenModel_iPad;
-    }
-    return CurrentDeviceScreenModel_Unspecified;
-}
-
-UIColor* colorForHex(NSString* hexColor){
-    if (hexColor.length) {
-        NSString *cString = [[hexColor stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
-        // String should be 6 or 8 characters
-        
-        if ([cString length] < 6) return [UIColor blackColor];
-        // strip 0X if it appears
-        if ([cString hasPrefix:@"0x"]) cString = [cString substringFromIndex:2];
-        if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
-        if ([cString hasPrefix:@"#"]) cString = [cString substringFromIndex:1];
-        if ([cString length] != 6) return [UIColor blackColor];
-        
-        // Separate into r, g, b substrings
-        
-        NSRange range;
-        range.location = 0;
-        range.length = 2;
-        NSString *rString = [cString substringWithRange:range];
-        range.location = 2;
-        NSString *gString = [cString substringWithRange:range];
-        range.location = 4;
-        NSString *bString = [cString substringWithRange:range];
-        // Scan values
-        unsigned int r, g, b;
-        
-        [[NSScanner scannerWithString:rString] scanHexInt:&r];
-        [[NSScanner scannerWithString:gString] scanHexInt:&g];
-        [[NSScanner scannerWithString:bString] scanHexInt:&b];
-        
-        return [UIColor colorWithRed:((float) r / 255.0f)
-                               green:((float) g / 255.0f)
-                                blue:((float) b / 255.0f)
-                               alpha:1.0f];
-    }else {
-        return nil;
-    }
-}
 
 /**
  一. 将前面的身份证号码17位数分别乘以不同的系数。从第一位到第十七位的系数分别为：7 9 10 5 8 4 2 1 6 3 7 9 10 5 8 4 2
@@ -260,43 +172,6 @@ void stopMotion(){
     }
 }
 
-void callPhoneNum(NSString* phoneNum){
-    if ([CDDeviceModel isEqualToString:@"iPhone"]){
-        NSURL *telUrl=[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phoneNum]];
-        if ([[UIApplication sharedApplication]canOpenURL:telUrl]) {
-            [[UIApplication sharedApplication] openURL:telUrl];
-        }else{
-            [CDAutoHideMessageHUD showMessage:@"号码有误"];
-        }
-    }else {
-        NSString *strAlert=[NSString stringWithFormat:@"您的设备 %@ 不支持电话功能！",CDDeviceModel];
-        [CDAutoHideMessageHUD showMessage:strAlert];
-    }
-}
-
-void shakeView(UIView* view){
-    CABasicAnimation* shake = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    //设置抖动幅度
-    shake.fromValue = [NSNumber numberWithFloat:-0.1];
-    shake.toValue = [NSNumber numberWithFloat:+0.1];
-    shake.duration = 0.1;
-    shake.autoreverses = YES; //是否重复
-    shake.repeatCount = 4;
-    [view.layer addAnimation:shake forKey:@"imageView"];
-}
-
-void shakeLeftAndRightWithView(UIView *view) {
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
-    animation.duration = 0.3;
-    NSMutableArray *values = [[NSMutableArray alloc] initWithCapacity:8];
-    for (int idx = 0; idx < 4; idx ++) {
-        [values addObject:[NSValue valueWithCGPoint:CGPointMake(view.centerX - 15, view.centerY)]];
-        [values addObject:[NSValue valueWithCGPoint:CGPointMake(view.centerX + 15, view.centerY)]];
-    }
-    animation.values = values;
-    [view.layer addAnimation:animation forKey:nil];
-}
-
 BOOL isFirstLaunch() {
     NSUserDefaults* userDefault = [NSUserDefaults standardUserDefaults];
     NSString *versionKey = CDAppVersion;
@@ -327,13 +202,8 @@ NSString *CDURLScheme() {
 }
 
 void goToSettings(){
-    NSURL *url = [NSURL URLWithString:@"prefs:root=LOCATION_SERVICES"];
-    if (CDSystemVersionFloatValue>=8.0) {
-        url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-    }
-    if([[UIApplication sharedApplication] canOpenURL:url]) {
-        [[UIApplication sharedApplication] openURL:url];
-    }
+    NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 @implementation CDUtilities

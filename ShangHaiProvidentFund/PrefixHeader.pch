@@ -13,6 +13,7 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #import "CDUtilities.h"
+#import "CDUIUtil.h"
 #import "Macro.h"
 #import "CDKeyConfigMacro.h"
 #import "CDUIConfigMacro.h"
@@ -24,5 +25,6 @@
 #import "NSMutableDictionary+CDMutableDictAdditions.h"
 #import "CDAutoHideMessageHUD.h"
 #import "CDCacheManager.h"
+#import "CDLog.h"
 
 #endif
