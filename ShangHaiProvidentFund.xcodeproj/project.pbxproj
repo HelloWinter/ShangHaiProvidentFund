@@ -1754,7 +1754,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "ShangHaiProvidentFund/CDApplicationMain/MainApplication/CDConvenientTools/Controller/ShangHaiProvidentFund-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "../**";
+				USER_HEADER_SEARCH_PATHS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Test;
@@ -1874,7 +1874,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "ShangHaiProvidentFund/CDApplicationMain/MainApplication/CDConvenientTools/Controller/ShangHaiProvidentFund-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "../**";
+				USER_HEADER_SEARCH_PATHS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1913,7 +1913,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ShangHaiProvidentFund/CDApplicationMain/MainApplication/CDConvenientTools/Controller/ShangHaiProvidentFund-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "../**";
+				USER_HEADER_SEARCH_PATHS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
