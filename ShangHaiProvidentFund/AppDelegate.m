@@ -90,13 +90,13 @@
     [_locationManager requestLocationWithReGeocode:YES withNetworkState:YES completionBlock:^(BMKLocation * _Nullable location, BMKLocationNetworkState state, NSError * _Nullable error) {
         if (error){
             NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
-            CDRemoveUserLocation();
+            [CDCacheManager removeUserLocation];
         }
         if (location) {//得到定位信息，添加annotation
             if (location.location) {
                 NSLog(@"LOC = %@",location.location);
                 NSString *strCoordinate=[NSString stringWithFormat:@"%f,%f",location.location.coordinate.latitude,location.location.coordinate.longitude];
-                CDSaveUserLocation(strCoordinate);
+                [CDCacheManager saveUserLocation:strCoordinate];
             }
             if (location.rgcData) {
                 NSLog(@"rgc = %@",[location.rgcData description]);

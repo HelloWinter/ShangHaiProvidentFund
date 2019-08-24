@@ -82,7 +82,7 @@ static const CGFloat headerOriginalHeight=180;
         _headerView.frame=CGRectMake(0, 0, self.view.width, headerOriginalHeight);
         __weak typeof(self) weakSelf=self;
         _headerView.viewTappedBlock=^(){
-            if (!CDIsUserLogined()) {
+            if (![CDCacheManager isUserLogined]) {
                 [weakSelf p_presentLoginViewController];
             }
         };
@@ -93,8 +93,8 @@ static const CGFloat headerOriginalHeight=180;
 - (CDButtonTableFooterView *)footerView{
     if (_footerView==nil) {
         _footerView=[CDButtonTableFooterView footerView];
-        [_footerView setupBtnTitle:(CDIsUserLogined() ? @"退出登录" : @"登录")];
-        [_footerView setupBtnBackgroundColor:(CDIsUserLogined() ? ColorFromHexRGB(0xfe6565) : ColorFromHexRGB(0x36c362))];
+        [_footerView setupBtnTitle:([CDCacheManager isUserLogined] ? @"退出登录" : @"登录")];
+        [_footerView setupBtnBackgroundColor:([CDCacheManager isUserLogined] ? ColorFromHexRGB(0xfe6565) : ColorFromHexRGB(0x36c362))];
         __weak typeof(self) weakSelf=self;
         _footerView.buttonClickBlock=^(UIButton *sender){
             [weakSelf footerViewButtonClicked];
@@ -152,7 +152,7 @@ static const CGFloat headerOriginalHeight=180;
     switch (indexPath.section) {
         case 0:
         {
-            if (!CDIsUserLogined()) {
+            if (![CDCacheManager isUserLogined]) {
                 [self p_presentLoginViewController];
                 return;
             }
@@ -160,7 +160,7 @@ static const CGFloat headerOriginalHeight=180;
         }
             break;
         case 1:{
-            if (!CDIsUserLogined()) {
+            if (![CDCacheManager isUserLogined]) {
                 [self p_presentLoginViewController];
                 return;
             }
@@ -182,7 +182,7 @@ static const CGFloat headerOriginalHeight=180;
             switch (indexPath.row) {
                 case 0://修改密码需要登录
                 {
-                    if (!CDIsUserLogined()) {
+                    if (![CDCacheManager isUserLogined]) {
                         [self p_presentLoginViewController];
                         return;
                     }
@@ -298,8 +298,8 @@ static const CGFloat headerOriginalHeight=180;
 }
 
 - (void)footerViewButtonClicked{
-    if (CDIsUserLogined()) {
-        CDSaveUserLogined(NO);
+    if ([CDCacheManager isUserLogined]) {
+        [CDCacheManager saveUserLogined:NO];
         [self refreshHeaderAndFooterView];
     }else{
         [self p_presentLoginViewController];
@@ -307,21 +307,21 @@ static const CGFloat headerOriginalHeight=180;
 }
 
 - (void)p_reloadHeaderView{
-    if (CDIsUserLogined()) {
+    if ([CDCacheManager isUserLogined]) {
         NSString *file=[CDCacheManager filePathforLoginInfo];
         if (file) {
             CDLoginModel *model = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
             CDAccountInfoItem *accountInfoItem=[model.basic firstObject];
-            [self.headerView setupViewItem:accountInfoItem isLogined:CDIsUserLogined()];
+            [self.headerView setupViewItem:accountInfoItem isLogined:[CDCacheManager isUserLogined]];
         }
     }else{
-        [self.headerView setupViewItem:nil isLogined:CDIsUserLogined()];
+        [self.headerView setupViewItem:nil isLogined:[CDCacheManager isUserLogined]];
     }
 }
 
 - (void)refreshFooterView{
-    [self.footerView setupBtnTitle:(CDIsUserLogined() ? @"退出登录" : @"登录")];
-    [self.footerView setupBtnBackgroundColor:(CDIsUserLogined() ? ColorFromHexRGB(0xfe6565) : ColorFromHexRGB(0x36c362))];
+    [self.footerView setupBtnTitle:([CDCacheManager isUserLogined] ? @"退出登录" : @"登录")];
+    [self.footerView setupBtnBackgroundColor:([CDCacheManager isUserLogined] ? ColorFromHexRGB(0xfe6565) : ColorFromHexRGB(0x36c362))];
 }
 
 - (void)refreshHeaderAndFooterView{
@@ -331,7 +331,7 @@ static const CGFloat headerOriginalHeight=180;
 
 - (void)p_pushToChangePWDController{
     CDChangePasswordController *controller=[[CDChangePasswordController alloc]init];
-    controller.userName=CDUserNickName();
+    controller.userName=[CDCacheManager userNickName];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

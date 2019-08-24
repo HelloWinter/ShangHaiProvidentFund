@@ -9,56 +9,6 @@
 #import "CDCacheManager.h"
 #import "NSFileManager+CDFileManager.h"
 
-////////////////////////////////////////////////////////////////////////////////////////////
-
-static NSString *const kUserLoginedKey = @"kUserLoginedKey";
-
-void CDSaveUserLogined(BOOL logined) {
-    [[NSUserDefaults standardUserDefaults] setBool:logined forKey:kUserLoginedKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-BOOL CDIsUserLogined() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:kUserLoginedKey];
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////
-
-static NSString *const kUserLocationKey = @"kUserLocationKey";
-
-void CDSaveUserLocation(NSString *location) {
-    [[NSUserDefaults standardUserDefaults] setObject:location forKey:kUserLocationKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-NSString *CDUserLocation() {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:kUserLocationKey];
-}
-
-void CDRemoveUserLocation(){
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserLocationKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////
-
-static NSString *const kUserNickNameKey = @"kUserNickNameKey";
-
-void CDSaveUserNickName(NSString *nickname) {
-    [[NSUserDefaults standardUserDefaults] setObject:nickname forKey:kUserNickNameKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-NSString *CDUserNickName() {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:kUserNickNameKey];
-}
-
-void CDRemoveUserNickName(){
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserNickNameKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////
 
 @interface CDCacheManager ()
 
@@ -78,9 +28,66 @@ DEF_SINGLETON(CDCacheManager)
     return _cache;
 }
 
+- (YYMemoryCache *)memorycache{
+    if (_memorycache == nil) {
+        _memorycache = [[YYMemoryCache alloc]init];
+        _memorycache.name = @"KCDCacheManagerMemoryCache";
+        _memorycache.shouldRemoveAllObjectsOnMemoryWarning = NO;
+        _memorycache.shouldRemoveAllObjectsWhenEnteringBackground = NO;
+    }
+    return _memorycache;
+}
+
 + (NSString *)filePathforLoginInfo{
     return [[NSFileManager cd_cachesPath] stringByAppendingPathComponent:@"info.data"];
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+static NSString *const kUserLoginedKey = @"kUserLoginedKey";
+
++ (void)saveUserLogined:(BOOL)logined {
+    [[CDCacheManager sharedInstance].cache setObject:@(logined) forKey:kUserLoginedKey];
+}
+
++ (BOOL)isUserLogined {
+    NSNumber *num = (NSNumber *)[[CDCacheManager sharedInstance].cache objectForKey:kUserLoginedKey];
+    return num.boolValue;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+static NSString *const kUserLocationKey = @"kUserLocationKey";
+
++ (void)saveUserLocation:(NSString *)location {
+    [[CDCacheManager sharedInstance].cache setObject:location forKey:kUserLocationKey];
+}
+
++ (NSString *)userLocation {
+    return (NSString *)[[CDCacheManager sharedInstance].cache objectForKey:kUserLocationKey];
+}
+
++ (void)removeUserLocation{
+    [[CDCacheManager sharedInstance].cache removeObjectForKey:kUserLocationKey];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+static NSString *const kUserNickNameKey = @"kUserNickNameKey";
+
++ (void)saveUserNickName:(NSString *)nickname {
+    [[CDCacheManager sharedInstance].cache setObject:nickname forKey:kUserNickNameKey];
+}
+
++ (NSString *)userNickName {
+    return (NSString *)[[CDCacheManager sharedInstance].cache objectForKey:kUserNickNameKey];
+}
+
++ (void)removeUserNickName{
+    [[CDCacheManager sharedInstance].cache removeObjectForKey:kUserNickNameKey];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
 
 //+ (NSString *)getIPWithHostName:(NSString *)hostName {
 //    const char * c_ip = [hostName UTF8String];

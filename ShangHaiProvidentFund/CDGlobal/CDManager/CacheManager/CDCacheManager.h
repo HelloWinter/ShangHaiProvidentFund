@@ -9,31 +9,28 @@
 #import <Foundation/Foundation.h>
 #import <YYCache.h>
 
-///////////////////////////////////////////////////
-void CDSaveUserLogined(BOOL logined);
-
-BOOL CDIsUserLogined();
-///////////////////////////////////////////////////
-void CDSaveUserLocation(NSString *location);
-
-NSString *CDUserLocation();
-
-void CDRemoveUserLocation();
-///////////////////////////////////////////////////
-
-void CDSaveUserNickName(NSString *nickname);
-
-NSString *CDUserNickName();
-
-void CDRemoveUserNickName();
-
-///////////////////////////////////////////////////
-
 @interface CDCacheManager : NSObject
 AS_SINGLETON(CDCacheManager)
 
 @property (nonatomic, strong, readonly) YYCache *cache;
 @property (nonatomic, strong, readonly) YYMemoryCache *memorycache;
+
++ (void)saveUserLogined:(BOOL)logined;
+
++ (BOOL)isUserLogined;
+
++ (void)saveUserLocation:(NSString *)location;
+
++ (NSString *)userLocation;
+
++ (void)removeUserLocation;
+
++ (void)saveUserNickName:(NSString *)nickname;
+
++ (NSString *)userNickName;
+
++ (void)removeUserNickName;
+
 /**
  *  账户信息路径
  */

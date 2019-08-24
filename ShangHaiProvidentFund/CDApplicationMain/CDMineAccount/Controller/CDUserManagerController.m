@@ -55,8 +55,8 @@ static NSString *cellidentifier = @"cellidentifier";
 - (CDButtonTableFooterView *)footerView{
     if (_footerView==nil) {
         _footerView=[CDButtonTableFooterView footerView];
-        [_footerView setupBtnTitle:(CDIsUserLogined() ? @"退出登录" : @"登录")];
-        [_footerView setupBtnBackgroundColor:(CDIsUserLogined() ? ColorFromHexRGB(0xfe6565) : ColorFromHexRGB(0x36c362))];
+        [_footerView setupBtnTitle:([CDCacheManager isUserLogined] ? @"退出登录" : @"登录")];
+        [_footerView setupBtnBackgroundColor:([CDCacheManager isUserLogined] ? ColorFromHexRGB(0xfe6565) : ColorFromHexRGB(0x36c362))];
         __weak typeof(self) weakSelf=self;
         _footerView.buttonClickBlock=^(UIButton *sender){
             [weakSelf footerViewButtonClicked];
@@ -98,7 +98,7 @@ static NSString *cellidentifier = @"cellidentifier";
         case 0:{
             switch (indexPath.row) {
                 case 0:{
-                    if (!CDIsUserLogined() && indexPath.section!=3) {
+                    if (![CDCacheManager isUserLogined] && indexPath.section!=3) {
                         [self p_presentLoginViewController];
                     }else{
                         
@@ -218,8 +218,8 @@ static NSString *cellidentifier = @"cellidentifier";
 }
 
 - (void)footerViewButtonClicked{
-    if (CDIsUserLogined()) {
-        CDSaveUserLogined(NO);
+    if ([CDCacheManager isUserLogined]) {
+        [CDCacheManager saveUserLogined:NO];
         [[NSNotificationCenter defaultCenter]postNotificationName:kUserLoginStateChangedNotification object:nil];
         [self.navigationController popViewControllerAnimated:YES];
         [self refreshFooterView];
@@ -236,8 +236,8 @@ static NSString *cellidentifier = @"cellidentifier";
 }
 
 - (void)refreshFooterView{
-    [self.footerView setupBtnTitle:(CDIsUserLogined() ? @"退出登录" : @"登录")];
-    [self.footerView setupBtnBackgroundColor:(CDIsUserLogined() ? ColorFromHexRGB(0xfe6565) : ColorFromHexRGB(0x36c362))];
+    [self.footerView setupBtnTitle:([CDCacheManager isUserLogined] ? @"退出登录" : @"登录")];
+    [self.footerView setupBtnBackgroundColor:([CDCacheManager isUserLogined] ? ColorFromHexRGB(0xfe6565) : ColorFromHexRGB(0x36c362))];
 }
 
 @end

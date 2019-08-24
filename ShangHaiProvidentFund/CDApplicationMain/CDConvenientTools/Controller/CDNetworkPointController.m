@@ -83,8 +83,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CDNetworkPointItem *item=[self.networkPointService.arrData cd_safeObjectAtIndex:indexPath.row];
     CLLocationCoordinate2D coordinate=[self transformFrom:item.point];
-    if (CDUserLocation().length!=0) {
-        CLLocationCoordinate2D startcoordinate = [self transformFrom:CDUserLocation()];
+    
+    if ([CDCacheManager userLocation].length!=0) {
+        CLLocationCoordinate2D startcoordinate = [self transformFrom:[CDCacheManager userLocation]];
         [self p_pushToRoutePlanningVCWithCoordinateStart:startcoordinate end:coordinate name:item.districts address:item.address];
     }else{
         [self p_pushToAnnotationVCWithCoordinate:coordinate district:item.districts address:item.address];

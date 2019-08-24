@@ -10,8 +10,8 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 #include "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.debug.xcconfig"
 
-api_server_base_url = @"http:\/\/person.shgjj.com"
-api_web_url = @"http:\/\/www.shgjj.com"
+api_server_base_url = @"http:\/\/person.shgjj.com\/"
+api_web_url = @"http:\/\/www.shgjj.com\/"
 
 IS_DEV = 1
 IS_TEST = 0

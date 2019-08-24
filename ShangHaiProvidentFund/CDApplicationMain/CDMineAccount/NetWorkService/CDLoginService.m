@@ -21,7 +21,7 @@
     [super requestDidFinish:rootData];
     _loginModel=[CDLoginModel mj_objectWithKeyValues:rootData];
     if ([_loginModel.type isEqualToString:@"S"]) {
-        CDSaveUserLogined(YES);
+        [CDCacheManager saveUserLogined:YES];
         NSString *file = [CDCacheManager filePathforLoginInfo];
         [NSKeyedArchiver archiveRootObject:_loginModel toFile:file];
     }

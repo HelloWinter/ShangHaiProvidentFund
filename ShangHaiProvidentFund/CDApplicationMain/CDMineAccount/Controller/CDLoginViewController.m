@@ -178,7 +178,7 @@
 
 - (void)p_finishLogin {
     if (self.userNickName) {
-        CDSaveUserNickName(self.userNickName);
+        [CDCacheManager saveUserNickName:self.userNickName];
     }
     [self dismissViewControllerAnimated:YES completion:^{
         if (_delegate && [_delegate respondsToSelector:@selector(userDidLogin)]) {
