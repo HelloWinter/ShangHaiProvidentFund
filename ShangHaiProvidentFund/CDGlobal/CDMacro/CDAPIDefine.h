@@ -9,6 +9,17 @@
 #ifndef CDAPIDefine_h
 #define CDAPIDefine_h
 
+#if IS_DEV
+#define api_server_base_url  @"http://person.shgjj.com/"
+#define api_web_url  @"http://www.shgjj.com/"
+#elif IS_TEST
+#define api_server_base_url @"http://person.shgjj.com/"
+#define api_web_url @"http://www.shgjj.com/"
+#else
+#define api_server_base_url @"http://person.shgjj.com/"
+#define api_web_url @"http://www.shgjj.com/"
+#endif
+
 #define KApiStr(api) [NSString stringWithFormat:@"%@%@", api_server_base_url, api]
 #define KWebApiStr(api) [NSString stringWithFormat:@"%@%@", api_web_url, api]
 

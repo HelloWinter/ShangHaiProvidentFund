@@ -8,4 +8,4 @@
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) api_server_base_url='$(api_server_base_url)' api_web_url='$(api_web_url)' IS_DEV='$(IS_DEV)' IS_TEST='$(IS_TEST)' IS_RELEASE='$(IS_RELEASE)'
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) IS_DEV='$(IS_DEV)' IS_TEST='$(IS_TEST)' IS_RELEASE='$(IS_RELEASE)'

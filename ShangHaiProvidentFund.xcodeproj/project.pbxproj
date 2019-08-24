@@ -1723,6 +1723,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 370F42AF22439667004B5E7D /* test.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
@@ -1753,6 +1754,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "ShangHaiProvidentFund/CDApplicationMain/MainApplication/CDConvenientTools/Controller/ShangHaiProvidentFund-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "../**";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Test;
@@ -1841,6 +1843,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 370F42AD22439650004B5E7D /* dev.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
@@ -1871,6 +1874,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "ShangHaiProvidentFund/CDApplicationMain/MainApplication/CDConvenientTools/Controller/ShangHaiProvidentFund-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "../**";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1879,6 +1883,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 370F42B122439680004B5E7D /* release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
@@ -1908,6 +1913,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ShangHaiProvidentFund/CDApplicationMain/MainApplication/CDConvenientTools/Controller/ShangHaiProvidentFund-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "../**";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
