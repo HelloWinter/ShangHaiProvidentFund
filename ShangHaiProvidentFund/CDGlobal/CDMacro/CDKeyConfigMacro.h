@@ -10,6 +10,6 @@
 #define CDKeyConfigMacro_h
 
 //百度地图Key
-#define AMapKey @"KrRRUyLkF7Pr2of2FFX8v2LZ3XkAP32E"
+#define MapKey @"KrRRUyLkF7Pr2of2FFX8v2LZ3XkAP32E"
 
 #endif /* CDKeyConfigMacro_h */

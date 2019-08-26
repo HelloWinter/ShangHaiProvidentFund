@@ -19,6 +19,19 @@ static const CGFloat klbTextFont = 14;
 
 static void * CDAutoHideMessageHUDKey = (void *)@"CDAutoHideMessageHUDKey";
 
+
+@interface CDNewLabel : UILabel
+
+@end
+
+@implementation CDNewLabel
+
+- (void)drawTextInRect:(CGRect)rect{
+    [super drawTextInRect:CGRectMake(10, 10, self.frame.size.width-20, self.frame.size.height-20)];
+}
+
+@end
+
 @implementation CDAutoHideMessageHUD
 
 + (void)showMessage:(NSString *)msg{
@@ -80,11 +93,5 @@ static void * CDAutoHideMessageHUDKey = (void *)@"CDAutoHideMessageHUDKey";
 
 @end
 
-@implementation CDNewLabel
 
-- (void)drawTextInRect:(CGRect)rect{
-    [super drawTextInRect:CGRectMake(10, 10, self.frame.size.width-20, self.frame.size.height-20)];
-}
-
-@end
 

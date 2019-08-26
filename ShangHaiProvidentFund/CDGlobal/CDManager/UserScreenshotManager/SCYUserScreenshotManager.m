@@ -63,6 +63,7 @@ static id _manager;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+#pragma mark - lazyload
 - (SCYScreentshotButton *)btn{
     if (!_btn) {
         CGFloat btnWidth = 80;
@@ -78,8 +79,9 @@ static id _manager;
     return _btn;
 }
 
+#pragma mark - Notification
 - (void)userDidTakeScreenshotNotification:(NSNotification *)notification{
-    UIImage *image = [self imageFromScreenshot];
+    UIImage *image = [self p_imageFromScreenshot];
     [self.btn setImage:image forState:(UIControlStateNormal)];
     if (!self.btn.superview) {
         [CDKeyWindow addSubview:self.btn];
@@ -89,7 +91,8 @@ static id _manager;
     });
 }
 
-- (UIImage *)imageFromScreenshot{
+#pragma mark - private
+- (UIImage *)p_imageFromScreenshot{
     CGSize imageSize = CGSizeZero;
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     if (UIInterfaceOrientationIsPortrait(orientation)) {
@@ -126,7 +129,7 @@ static id _manager;
     return image;
 }
 
-#pragma mark - private
+#pragma mark - ACTION
 - (void)screenShotClick:(UIButton *)sender{
     if (self.screenshotBlock) {
         self.screenshotBlock(sender.currentImage);

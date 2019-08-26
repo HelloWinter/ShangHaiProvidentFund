@@ -8,28 +8,28 @@
 
 #import "AppDelegate.h"
 #import "CDTabBarController.h"
-#import <BMKLocationKit/BMKLocationComponent.h>
+#import "CDBMKLocationManager.h"
 #if IS_TEST
 #import "FLEXManager.h"
 #endif
 
-@interface AppDelegate ()<BMKLocationAuthDelegate,BMKLocationManagerDelegate>{
-    BMKLocationManager *_locationManager;
-}
+@interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self p_setupMapManager];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     CDTabBarController *tabBarController=[[CDTabBarController alloc]init];
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
     
-    [self p_startLocation];
+#if IS_TEST
+    [[FLEXManager sharedManager] showExplorer];
+#endif
+    [[CDBMKLocationManager sharedInstance] startLocation];
     
     return YES;
 }
@@ -54,56 +54,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-#pragma mark - Events
-- (void)p_setupMapManager{
-    [[BMKLocationAuth sharedInstance] checkPermisionWithKey:AMapKey authDelegate:self];
-    
-#if IS_TEST
-    [[FLEXManager sharedManager] showExplorer];
-#endif
-    
-    //初始化实例
-    _locationManager = [[BMKLocationManager alloc] init];
-    //设置delegate
-    _locationManager.delegate = self;
-    //设置返回位置的坐标系类型
-    _locationManager.coordinateType = BMKLocationCoordinateTypeBMK09LL;
-    //设置距离过滤参数
-    _locationManager.distanceFilter = kCLDistanceFilterNone;
-    //设置预期精度参数
-    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    //设置应用位置类型
-    _locationManager.activityType = CLActivityTypeAutomotiveNavigation;
-    //设置是否自动停止位置更新
-    _locationManager.pausesLocationUpdatesAutomatically = NO;
-    //设置是否允许后台定位
-    //_locationManager.allowsBackgroundLocationUpdates = YES;
-    //设置位置获取超时时间
-    _locationManager.locationTimeout = 10;
-    //设置获取地址信息超时时间
-    _locationManager.reGeocodeTimeout = 10;
-}
-
-- (void)p_startLocation{
-    [_locationManager requestLocationWithReGeocode:YES withNetworkState:YES completionBlock:^(BMKLocation * _Nullable location, BMKLocationNetworkState state, NSError * _Nullable error) {
-        if (error){
-            NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
-            [CDCacheManager removeUserLocation];
-        }
-        if (location) {//得到定位信息，添加annotation
-            if (location.location) {
-                NSLog(@"LOC = %@",location.location);
-                NSString *strCoordinate=[NSString stringWithFormat:@"%f,%f",location.location.coordinate.latitude,location.location.coordinate.longitude];
-                [CDCacheManager saveUserLocation:strCoordinate];
-            }
-            if (location.rgcData) {
-                NSLog(@"rgc = %@",[location.rgcData description]);
-            }
-        }
-        NSLog(@"netstate = %d",state);
-    }];
 }
 
 @end

@@ -75,6 +75,10 @@ void callPhoneNum(NSString* phoneNum);
 /**
  最简单的AlertView
  */
-+ (void)showAlertWithTitle:(NSString *)title message:(NSString *)msg cancelButton:(NSString *)cancel action:(void(^)(UIAlertAction *))action;
++ (void)showAlertWithTitle:(NSString *)title message:(NSString *)msg;
+
++ (void)showAlertWithTitle:(NSString *)title message:(NSString *)msg cancelButton:(NSString *)cancelTitle cancelHandler:(void(^)(UIAlertAction *))cancel;
+
++ (void)showAlertWithTitle:(NSString *)title message:(NSString *)msg cancelButton:(NSString *)cancelTitle cancelHandler:(void(^)(UIAlertAction *))cancel sureButton:(NSString *)sureTitle sureHandler:(void(^)(UIAlertAction *))sure;
 
 @end

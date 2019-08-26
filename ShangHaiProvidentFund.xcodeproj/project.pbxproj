@@ -194,6 +194,8 @@
 		6E7C17491E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C17481E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf */; };
 		A654FBE32310144200C466F4 /* CDUIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A654FBE22310144200C466F4 /* CDUIUtil.m */; };
 		F9B7F93F7A7A135D5CEEEC72 /* libPods-ShangHaiProvidentFund.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */; };
+		FFDFD09A2311396100F148DE /* CDTitleImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDFD0992311396100F148DE /* CDTitleImageButton.m */; };
+		FFDFD09E23113B2B00F148DE /* CDBMKLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDFD09D23113B2B00F148DE /* CDBMKLocationManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -554,6 +556,10 @@
 		A654FBE12310144200C466F4 /* CDUIUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDUIUtil.h; sourceTree = "<group>"; };
 		A654FBE22310144200C466F4 /* CDUIUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDUIUtil.m; sourceTree = "<group>"; };
 		FF429A1A54C53FB72AD63FBF /* Pods-ShangHaiProvidentFund.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShangHaiProvidentFund.test.xcconfig"; path = "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.test.xcconfig"; sourceTree = "<group>"; };
+		FFDFD0982311396100F148DE /* CDTitleImageButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDTitleImageButton.h; sourceTree = "<group>"; };
+		FFDFD0992311396100F148DE /* CDTitleImageButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDTitleImageButton.m; sourceTree = "<group>"; };
+		FFDFD09C23113B2B00F148DE /* CDBMKLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDBMKLocationManager.h; sourceTree = "<group>"; };
+		FFDFD09D23113B2B00F148DE /* CDBMKLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDBMKLocationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1033,6 +1039,8 @@
 			children = (
 				6E73D64F1E14A780009A1072 /* CDUpImageDownTitleButton.h */,
 				6E73D6501E14A780009A1072 /* CDUpImageDownTitleButton.m */,
+				FFDFD0982311396100F148DE /* CDTitleImageButton.h */,
+				FFDFD0992311396100F148DE /* CDTitleImageButton.m */,
 			);
 			path = CDTitleImageButton;
 			sourceTree = "<group>";
@@ -1315,6 +1323,7 @@
 		6E73D6521E14AB0C009A1072 /* CDManager */ = {
 			isa = PBXGroup;
 			children = (
+				FFDFD09B23113AB400F148DE /* BMKManager */,
 				37465D842272F5B900CCAEAA /* CacheManager */,
 				629B59AA20173A9D00847284 /* UserScreenshotManager */,
 				6E73D6531E14AB1D009A1072 /* ImagePickerManager */,
@@ -1341,6 +1350,15 @@
 				6E73D6601E14B4C0009A1072 /* SSKeychainQuery.m */,
 			);
 			path = SSKeychain;
+			sourceTree = "<group>";
+		};
+		FFDFD09B23113AB400F148DE /* BMKManager */ = {
+			isa = PBXGroup;
+			children = (
+				FFDFD09C23113B2B00F148DE /* CDBMKLocationManager.h */,
+				FFDFD09D23113B2B00F148DE /* CDBMKLocationManager.m */,
+			);
+			path = BMKManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1499,11 +1517,13 @@
 				6E6ADB3B1CD89E8700838B61 /* CDJSONBaseNetworkService.m in Sources */,
 				6E6ADB2E1CD89E7C00838B61 /* CDBaseTableViewCell.m in Sources */,
 				6E2469321DAA35C600DDC80B /* SCYMortgageCalculatorSourceItem.m in Sources */,
+				FFDFD09A2311396100F148DE /* CDTitleImageButton.m in Sources */,
 				6E24693B1DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.m in Sources */,
 				6E24694B1DAA35C600DDC80B /* CDLoginConfigureModel.m in Sources */,
 				6E2469571DAA35C600DDC80B /* CDMineAccountService.m in Sources */,
 				37185317227586C200A9E90E /* CDResponseObject.m in Sources */,
 				6E24694F1DAA35C600DDC80B /* CDQueryAccountBasicItem.m in Sources */,
+				FFDFD09E23113B2B00F148DE /* CDBMKLocationManager.m in Sources */,
 				6E73368F1E4C6B1F0036393A /* SCYAnnualBonusCalculatorCell.m in Sources */,
 				6211FC711F2083A700F6F8F2 /* CDCommitMessageService.m in Sources */,
 				6E2469421DAA35C600DDC80B /* CDLoanInfoViewController.m in Sources */,

@@ -16,6 +16,4 @@
 
 @end
 
-@interface CDNewLabel : UILabel
 
-@end

@@ -8,24 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol ImagePickerManagerDelegate <NSObject>
-
-- (void)imagePickerManagerdidFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info;
-
-@end
+typedef void(^CDFinishPickingMedia)(NSDictionary *info);
 
 @interface ImagePickerManager : NSObject
 
-@property (nonatomic, weak) UIViewController<ImagePickerManagerDelegate> *delgate;
 
-/**
- 是否允许编辑
- */
-@property (nonatomic, assign) BOOL allowsEditing;
-
-/**
- 选择图片
- */
-- (void)selectPicture;
+- (void)selectFromViewController:(UIViewController *)controller allowsEditing:(BOOL)allowsEdit canSelectAlbum:(BOOL)canSelectAlbum finifsh:(CDFinishPickingMedia)finish;
 
 @end

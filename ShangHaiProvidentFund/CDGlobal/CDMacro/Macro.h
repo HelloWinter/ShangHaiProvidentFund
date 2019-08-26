@@ -29,9 +29,6 @@ description:__VA_ARGS__];                                                    \
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 /**
- @brief rgb颜色转换（）
- */
-/**
  *  16进制格式颜色表示方式e.g.0xFF00FF
  *
  *  @param rgbValue 16进制颜色值
@@ -105,8 +102,6 @@ description:__VA_ARGS__];                                                    \
  */
 #define CDAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
-
-
 /**
  *  返回keyWindow属性
  */
@@ -119,6 +114,9 @@ description:__VA_ARGS__];                                                    \
 #define WS(weakSelf) __weak __typeof(&*self) weakSelf = self;
 #endif
 
+/**
+ 是否是（超）视网膜屏
+ */
 #define IS_RETINA  ([UIScreen mainScreen].scale >= 2.0f)
 
 /**

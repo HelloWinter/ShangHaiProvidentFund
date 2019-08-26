@@ -105,10 +105,26 @@ void callPhoneNum(NSString* phoneNum){
     }
 }
 
-+ (void)showAlertWithTitle:(NSString *)title message:(NSString *)msg cancelButton:(NSString *)cancel action:(void(^)(UIAlertAction *))action{
++ (void)showAlertWithTitle:(NSString *)title message:(NSString *)msg{
+    [self showAlertWithTitle:title message:msg cancelButton:@"取消" cancelHandler:nil];
+}
+
++ (void)showAlertWithTitle:(NSString *)title message:(NSString *)msg cancelButton:(NSString *)cancelTitle cancelHandler:(void(^)(UIAlertAction *))cancel{
+    [self showAlertWithTitle:title message:msg cancelButton:cancelTitle cancelHandler:cancel sureButton:nil sureHandler:nil];
+}
+
++ (void)showAlertWithTitle:(NSString *)title message:(NSString *)msg cancelButton:(NSString *)cancelTitle cancelHandler:(void(^)(UIAlertAction *))cancel sureButton:(NSString *)sureTitle sureHandler:(void(^)(UIAlertAction *))sure{
+    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:(UIAlertControllerStyleAlert)];
-    UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:cancel style:(UIAlertActionStyleCancel) handler:action];
+    
+    UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:cancelTitle style:(UIAlertActionStyleCancel) handler:cancel];
     [alertController addAction:actionCancel];
+    
+    if (sureTitle && sure) {
+        UIAlertAction *actionSure = [UIAlertAction actionWithTitle:sureTitle style:(UIAlertActionStyleDefault) handler:sure];
+        [alertController addAction:actionSure];
+    }
+    
     alertController.popoverPresentationController.sourceView = [self visibleController].view;
     alertController.popoverPresentationController.sourceRect = CGRectMake([self visibleController].view.bounds.size.width*0.5, [self visibleController].view.bounds.size.height, 1.0, 1.0);
     [[self visibleController] presentViewController:alertController animated:YES completion:^{
