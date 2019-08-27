@@ -95,7 +95,7 @@ static const CGFloat topHeight=50;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark - private
+#pragma mark - ACTION
 - (void)segmentAction:(UISegmentedControl*)sender{
     switch (sender.selectedSegmentIndex) {
         case 0:
@@ -110,6 +110,7 @@ static const CGFloat topHeight=50;
     [self.tableView reloadData];
 }
 
+#pragma mark - private
 - (void)p_startCalculate{
     NSIndexPath *path=[NSIndexPath indexPathForRow:0 inSection:0];
     SCYAnnualBonusCalculatorCell *cell=[self.tableView cellForRowAtIndexPath:path];

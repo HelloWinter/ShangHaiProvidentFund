@@ -1403,10 +1403,9 @@
 			};
 			buildConfigurationList = 6E6ADB061CD892B200838B61 /* Build configuration list for PBXProject "ShangHaiProvidentFund" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
