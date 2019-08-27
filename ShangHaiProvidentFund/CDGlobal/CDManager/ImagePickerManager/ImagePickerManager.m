@@ -19,6 +19,7 @@
 @end
 
 @implementation ImagePickerManager
+DEF_SINGLETON(ImagePickerManager)
 
 - (instancetype)init{
     self = [super init];
@@ -50,7 +51,7 @@
     }
     alertController.popoverPresentationController.sourceView = controller.view;
     alertController.popoverPresentationController.sourceRect = CGRectMake(controller.view.bounds.size.width*0.5, controller.view.bounds.size.height, 1.0, 1.0);
-    [controller presentViewController:controller animated:YES completion:nil];
+    [controller presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - private

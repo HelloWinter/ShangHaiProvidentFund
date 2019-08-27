@@ -11,7 +11,7 @@
 typedef void(^CDFinishPickingMedia)(NSDictionary *info);
 
 @interface ImagePickerManager : NSObject
-
+AS_SINGLETON(ImagePickerManager)
 
 - (void)selectFromViewController:(UIViewController *)controller allowsEditing:(BOOL)allowsEdit canSelectAlbum:(BOOL)canSelectAlbum finifsh:(CDFinishPickingMedia)finish;
 
