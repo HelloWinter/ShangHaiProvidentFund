@@ -7,6 +7,12 @@
 //
 
 #import "CDNetworkClient.h"
+#import <MJExtension.h>
+
+@interface CDNetworkClient ()
+
+
+@end
 
 @implementation CDNetworkClient
 

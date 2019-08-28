@@ -8,10 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface CDRequestObject : NSObject
 
-@end
+/**
+ 请求链接
+ */
+@property (nonatomic, copy) NSString *URLString;
 
-NS_ASSUME_NONNULL_END
+/**
+ 请求参数
+ */
+@property (nonatomic, strong) id parameters;
+
+/**
+ 是否添加通用参数(默认为YES)
+ */
+@property (nonatomic, assign, getter=isAddCommonParam) BOOL addCommonParam;
+
+@end

@@ -97,7 +97,7 @@ BOOL checkName(NSString *userName){
 
 NSString *CDKeyChainIDFV(){
     NSString *userName = @"IDFVKey";
-    NSString *ServiceName = @"come.ProvidentFund.ShangHai";
+    NSString *ServiceName = CDAppBundleID;
     NSString *strIDFV=[SSKeychain passwordForService:ServiceName account:userName];
     if (strIDFV==nil || strIDFV.length==0) {
         NSError *setError=nil;
