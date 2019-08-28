@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^CDShowProtocolBlock)();
-typedef void(^CDRegistBlock)();
-typedef void(^CDShowProblemBlock)();
+typedef void(^CDShowProtocolBlock)(void);
+typedef void(^CDRegistBlock)(void);
+typedef void(^CDShowProblemBlock)(void);
 
 @interface CDRegistFooterView : UIView
 

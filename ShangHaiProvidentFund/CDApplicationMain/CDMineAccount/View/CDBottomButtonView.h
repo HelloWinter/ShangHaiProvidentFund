@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^CDForgotPSWBlock)();
-typedef void(^CDRegistBlock)();
+typedef void(^CDForgotPSWBlock)(void);
+typedef void(^CDRegistBlock)(void);
 
 @interface CDBottomButtonView : UIView
 

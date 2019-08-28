@@ -30,7 +30,7 @@ BOOL checkName(NSString *userName);
  *
  *  @return IDFV字符串
  */
-NSString *CDKeyChainIDFV();
+NSString *CDKeyChainIDFV(void);
 
 /**
  *  开始摇一摇监听
@@ -43,26 +43,26 @@ void startMotion(id target,SEL action);
 /**
  *  停止摇一摇监听
  */
-void stopMotion();
+void stopMotion(void);
 
 /**
  *  APP是否是第一次启动
  *
  *  @return BOOL
  */
-BOOL isFirstLaunch();
+BOOL isFirstLaunch(void);
 
 /**
  *  启动次数增加
  */
-void addLaunchTimes();
+void addLaunchTimes(void);
 
 /**
  *  URLScheme
  *
  *  @return (NSString *)
  */
-NSString *CDURLScheme();
+NSString *CDURLScheme(void);
 
 @interface CDUtilities : NSObject
 

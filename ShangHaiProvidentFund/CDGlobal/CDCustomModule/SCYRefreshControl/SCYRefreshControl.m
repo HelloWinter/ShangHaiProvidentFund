@@ -180,16 +180,16 @@ static const CGFloat kCircleLayerRadius=13.0;
         _refreshing = NO;
         __block UIScrollView *blockScrollView = self.scrollView;
         [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            _ignoreInset = YES;
+            self->_ignoreInset = YES;
             blockScrollView.contentInset = self.originalContentInset;
-            _ignoreInset = NO;
+            self->_ignoreInset = NO;
         } completion:^(BOOL finished) {
             blockScrollView.contentOffset=self.originalContentOffset;
-            willEnd = NO;
-            notTracking = NO;
-            [_circleLayer removeAllAnimations];
-            _circleLayer.strokeEnd=_shapeLayer.strokeEnd=0.0;
-            _circleLayer.transform = CATransform3DIdentity;
+            self->willEnd = NO;
+            self->notTracking = NO;
+            [self->_circleLayer removeAllAnimations];
+            self->_circleLayer.strokeEnd=self->_shapeLayer.strokeEnd=0.0;
+            self->_circleLayer.transform = CATransform3DIdentity;
         }];
     }
 }

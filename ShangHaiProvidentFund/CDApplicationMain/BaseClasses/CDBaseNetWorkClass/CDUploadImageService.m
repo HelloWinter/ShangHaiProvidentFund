@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) NSURLSessionDataTask *uploadOperation;
 @property (nonatomic, copy) id responseData;
+@property (nonatomic, assign, readwrite) BOOL isUploading;
 
 @end
 
@@ -39,14 +40,15 @@
     NSDictionary *paraDic = [self packParameters:params];
     CDGlobalHTTPSessionManager *manager=[CDGlobalHTTPSessionManager sharedManager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    WS(weakSelf);
     self.uploadOperation = [manager POST:url parameters:paraDic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData){
         [formData appendPartWithFileData:data name:@"image" fileName:fileName mimeType:@"image/jpeg"];
     } progress:^(NSProgress * _Nonnull uploadProgress) {
-        if (_delegate && [_delegate respondsToSelector:@selector(service:uploadImageProgress:)]) {
-            [_delegate service:self uploadImageProgress:uploadProgress];
+        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(service:uploadImageProgress:)]) {
+            [weakSelf.delegate service:self uploadImageProgress:uploadProgress];
         }
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        _isUploading=NO;
+        self->_isUploading=NO;
         [SCYActivityIndicatorView stopAnimating];
         NSError *error=nil;
         _responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:&error];

@@ -8,7 +8,7 @@
 
 #import "CDBaseTextFieldCell.h"
 
-typedef BOOL(^CDGetVerCodeBlock)();
+typedef BOOL(^CDGetVerCodeBlock)(void);
 
 @class CDNormalTextFieldConfigureItem;
 

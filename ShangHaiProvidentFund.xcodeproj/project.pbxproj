@@ -16,6 +16,7 @@
 		371853142275869600A9E90E /* CDRequestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 371853132275869600A9E90E /* CDRequestObject.m */; };
 		37185317227586C200A9E90E /* CDResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 37185316227586C200A9E90E /* CDResponseObject.m */; };
 		37465D872272F5D100CCAEAA /* CDCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37465D862272F5D100CCAEAA /* CDCacheManager.m */; };
+		374A51B82316213D001A4785 /* UIView+CDBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 374A51B72316213D001A4785 /* UIView+CDBorder.m */; };
 		6211FC5D1F20838400F6F8F2 /* CDAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC581F20838400F6F8F2 /* CDAboutUsController.m */; };
 		6211FC5E1F20838400F6F8F2 /* CDHelpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC5A1F20838400F6F8F2 /* CDHelpInfoViewController.m */; };
 		6211FC5F1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC5C1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m */; };
@@ -142,7 +143,6 @@
 		6E6ADB581CD89E8E00838B61 /* CDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB4D1CD89E8E00838B61 /* CDTabBarController.m */; };
 		6E6ADB591CD89E8E00838B61 /* CDBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB4F1CD89E8E00838B61 /* CDBaseTableViewController.m */; };
 		6E6ADB881CD89F7C00838B61 /* NSArray+CDArrayAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB611CD89F7C00838B61 /* NSArray+CDArrayAdditions.m */; };
-		6E6ADB891CD89F7C00838B61 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB631CD89F7C00838B61 /* NSData+Base64.m */; };
 		6E6ADB8B1CD89F7C00838B61 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB671CD89F7C00838B61 /* NSData+CommonCrypto.m */; };
 		6E6ADB8C1CD89F7C00838B61 /* NSDate+CDDateAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB691CD89F7C00838B61 /* NSDate+CDDateAddition.m */; };
 		6E6ADB8D1CD89F7C00838B61 /* NSDictionary+CDDictionaryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB6B1CD89F7C00838B61 /* NSDictionary+CDDictionaryAdditions.m */; };
@@ -156,7 +156,6 @@
 		6E6ADB971CD89F7C00838B61 /* UILabel+CDLBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB7F1CD89F7C00838B61 /* UILabel+CDLBAdditions.m */; };
 		6E6ADB981CD89F7C00838B61 /* UITableView+CDTableViewAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB811CD89F7C00838B61 /* UITableView+CDTableViewAddition.m */; };
 		6E6ADB991CD89F7C00838B61 /* UIView+CDViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB831CD89F7C00838B61 /* UIView+CDViewAdditions.m */; };
-		6E6ADB9A1CD89F7C00838B61 /* UIView+Genie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB851CD89F7C00838B61 /* UIView+Genie.m */; };
 		6E6ADB9B1CD89F7C00838B61 /* UIViewController+CDVCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB871CD89F7C00838B61 /* UIViewController+CDVCAdditions.m */; };
 		6E6ADB9F1CD8A05E00838B61 /* CDUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB9E1CD8A05E00838B61 /* CDUtilities.m */; };
 		6E6ADBD81CD8A0BD00838B61 /* CDAutoHideMessageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADBA41CD8A0BD00838B61 /* CDAutoHideMessageHUD.m */; };
@@ -223,6 +222,8 @@
 		37185316227586C200A9E90E /* CDResponseObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDResponseObject.m; sourceTree = "<group>"; };
 		37465D852272F5D100CCAEAA /* CDCacheManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDCacheManager.h; sourceTree = "<group>"; };
 		37465D862272F5D100CCAEAA /* CDCacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDCacheManager.m; sourceTree = "<group>"; };
+		374A51B62316213D001A4785 /* UIView+CDBorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CDBorder.h"; sourceTree = "<group>"; };
+		374A51B72316213D001A4785 /* UIView+CDBorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CDBorder.m"; sourceTree = "<group>"; };
 		4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShangHaiProvidentFund.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6211FC571F20838400F6F8F2 /* CDAboutUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsController.h; sourceTree = "<group>"; };
 		6211FC581F20838400F6F8F2 /* CDAboutUsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsController.m; sourceTree = "<group>"; };
@@ -461,8 +462,6 @@
 		6E6ADB4F1CD89E8E00838B61 /* CDBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseTableViewController.m; sourceTree = "<group>"; };
 		6E6ADB601CD89F7C00838B61 /* NSArray+CDArrayAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CDArrayAdditions.h"; sourceTree = "<group>"; };
 		6E6ADB611CD89F7C00838B61 /* NSArray+CDArrayAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CDArrayAdditions.m"; sourceTree = "<group>"; };
-		6E6ADB621CD89F7C00838B61 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		6E6ADB631CD89F7C00838B61 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		6E6ADB661CD89F7C00838B61 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
 		6E6ADB671CD89F7C00838B61 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		6E6ADB681CD89F7C00838B61 /* NSDate+CDDateAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CDDateAddition.h"; sourceTree = "<group>"; };
@@ -489,8 +488,6 @@
 		6E6ADB811CD89F7C00838B61 /* UITableView+CDTableViewAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CDTableViewAddition.m"; sourceTree = "<group>"; };
 		6E6ADB821CD89F7C00838B61 /* UIView+CDViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CDViewAdditions.h"; sourceTree = "<group>"; };
 		6E6ADB831CD89F7C00838B61 /* UIView+CDViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CDViewAdditions.m"; sourceTree = "<group>"; };
-		6E6ADB841CD89F7C00838B61 /* UIView+Genie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Genie.h"; sourceTree = "<group>"; };
-		6E6ADB851CD89F7C00838B61 /* UIView+Genie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Genie.m"; sourceTree = "<group>"; };
 		6E6ADB861CD89F7C00838B61 /* UIViewController+CDVCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CDVCAdditions.h"; sourceTree = "<group>"; };
 		6E6ADB871CD89F7C00838B61 /* UIViewController+CDVCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CDVCAdditions.m"; sourceTree = "<group>"; };
 		6E6ADB9D1CD8A05E00838B61 /* CDUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUtilities.h; sourceTree = "<group>"; };
@@ -1185,8 +1182,6 @@
 			children = (
 				6E6ADB601CD89F7C00838B61 /* NSArray+CDArrayAdditions.h */,
 				6E6ADB611CD89F7C00838B61 /* NSArray+CDArrayAdditions.m */,
-				6E6ADB631CD89F7C00838B61 /* NSData+Base64.m */,
-				6E6ADB621CD89F7C00838B61 /* NSData+Base64.h */,
 				6E6ADB661CD89F7C00838B61 /* NSData+CommonCrypto.h */,
 				6E6ADB671CD89F7C00838B61 /* NSData+CommonCrypto.m */,
 				6E24696A1DAA3FF700DDC80B /* NSData+CDDataAddition.h */,
@@ -1223,8 +1218,8 @@
 				14FDD0C01CDDF1200093ABC3 /* UITextView+CDCategory.m */,
 				6E6ADB821CD89F7C00838B61 /* UIView+CDViewAdditions.h */,
 				6E6ADB831CD89F7C00838B61 /* UIView+CDViewAdditions.m */,
-				6E6ADB841CD89F7C00838B61 /* UIView+Genie.h */,
-				6E6ADB851CD89F7C00838B61 /* UIView+Genie.m */,
+				374A51B62316213D001A4785 /* UIView+CDBorder.h */,
+				374A51B72316213D001A4785 /* UIView+CDBorder.m */,
 				6E6ADB861CD89F7C00838B61 /* UIViewController+CDVCAdditions.h */,
 				6E6ADB871CD89F7C00838B61 /* UIViewController+CDVCAdditions.m */,
 			);
@@ -1530,7 +1525,6 @@
 				6E6ADBD81CD8A0BD00838B61 /* CDAutoHideMessageHUD.m in Sources */,
 				6290DF7B1F6698B300273AE5 /* CDChangePasswordModel.m in Sources */,
 				6E2469261DAA35C600DDC80B /* CDMapAnnotationController.mm in Sources */,
-				6E6ADB891CD89F7C00838B61 /* NSData+Base64.m in Sources */,
 				6E4D90B01CDB133E0019B011 /* CDBaseCollectionViewController.m in Sources */,
 				6E24695E1DAA35C600DDC80B /* CDMineAccountCell.m in Sources */,
 				6E6ADB9B1CD89F7C00838B61 /* UIViewController+CDVCAdditions.m in Sources */,
@@ -1601,6 +1595,7 @@
 				14FDD0B31CDDD2440093ABC3 /* CDBaseTextFieldCell.m in Sources */,
 				6E2469611DAA35C600DDC80B /* CDQueryAccountHeaderView.m in Sources */,
 				6E53C84B1CE9CF9500202F53 /* CDSlidePageHeaderView.m in Sources */,
+				374A51B82316213D001A4785 /* UIView+CDBorder.m in Sources */,
 				6E2469601DAA35C600DDC80B /* CDProvidentFundDetailHeaderView.m in Sources */,
 				371853112275866600A9E90E /* CDNetworkClient.m in Sources */,
 				6E2469471DAA35C600DDC80B /* CDRepaymentInfoController.m in Sources */,
@@ -1633,7 +1628,6 @@
 				6E24692B1DAA35C600DDC80B /* CDConvenientToolsItem.m in Sources */,
 				6E6ADB3C1CD89E8700838B61 /* CDNetworkMonitor.m in Sources */,
 				6E7336831E4C6AEB0036393A /* SCYAnnualBonusCalculateResultItem.m in Sources */,
-				6E6ADB9A1CD89F7C00838B61 /* UIView+Genie.m in Sources */,
 				6E6ADB981CD89F7C00838B61 /* UITableView+CDTableViewAddition.m in Sources */,
 				6E24694E1DAA35C600DDC80B /* CDPayAccountItem.m in Sources */,
 				6E2469491DAA35C600DDC80B /* CDAccountInfoItem.m in Sources */,
@@ -1748,6 +1742,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
 				CODE_SIGN_STYLE = Manual;
@@ -1888,6 +1883,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
 				CODE_SIGN_STYLE = Manual;
@@ -1928,6 +1924,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
 				CODE_SIGN_STYLE = Manual;
