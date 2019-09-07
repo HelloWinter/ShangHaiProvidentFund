@@ -17,6 +17,7 @@
 		37185317227586C200A9E90E /* CDResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 37185316227586C200A9E90E /* CDResponseObject.m */; };
 		37465D872272F5D100CCAEAA /* CDCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37465D862272F5D100CCAEAA /* CDCacheManager.m */; };
 		374A51B82316213D001A4785 /* UIView+CDBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 374A51B72316213D001A4785 /* UIView+CDBorder.m */; };
+		37A6E5ED23239FBF0037A5C5 /* CDHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A6E5EC23239FBF0037A5C5 /* CDHud.m */; };
 		6211FC5D1F20838400F6F8F2 /* CDAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC581F20838400F6F8F2 /* CDAboutUsController.m */; };
 		6211FC5E1F20838400F6F8F2 /* CDHelpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC5A1F20838400F6F8F2 /* CDHelpInfoViewController.m */; };
 		6211FC5F1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211FC5C1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m */; };
@@ -224,6 +225,8 @@
 		37465D862272F5D100CCAEAA /* CDCacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDCacheManager.m; sourceTree = "<group>"; };
 		374A51B62316213D001A4785 /* UIView+CDBorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CDBorder.h"; sourceTree = "<group>"; };
 		374A51B72316213D001A4785 /* UIView+CDBorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CDBorder.m"; sourceTree = "<group>"; };
+		37A6E5EB23239FBF0037A5C5 /* CDHud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDHud.h; sourceTree = "<group>"; };
+		37A6E5EC23239FBF0037A5C5 /* CDHud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDHud.m; sourceTree = "<group>"; };
 		4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShangHaiProvidentFund.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6211FC571F20838400F6F8F2 /* CDAboutUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAboutUsController.h; sourceTree = "<group>"; };
 		6211FC581F20838400F6F8F2 /* CDAboutUsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAboutUsController.m; sourceTree = "<group>"; };
@@ -662,6 +665,15 @@
 				37465D862272F5D100CCAEAA /* CDCacheManager.m */,
 			);
 			path = CacheManager;
+			sourceTree = "<group>";
+		};
+		37A6E5EA23239FAC0037A5C5 /* CDHud */ = {
+			isa = PBXGroup;
+			children = (
+				37A6E5EB23239FBF0037A5C5 /* CDHud.h */,
+				37A6E5EC23239FBF0037A5C5 /* CDHud.m */,
+			);
+			path = CDHud;
 			sourceTree = "<group>";
 		};
 		4D166C53BA300C5E847A1C5F /* Frameworks */ = {
@@ -1242,6 +1254,7 @@
 		6E6ADBA11CD8A0BD00838B61 /* CDCustomModule */ = {
 			isa = PBXGroup;
 			children = (
+				37A6E5EA23239FAC0037A5C5 /* CDHud */,
 				6E73D64B1E14A626009A1072 /* CDLoopDisplayScrollview */,
 				6E73D6471E14A5F6009A1072 /* SCYRefreshControl */,
 				6E73D6431E14A5C8009A1072 /* SCYActivityIndicatorButton */,
@@ -1448,7 +1461,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund-resources.sh",
 				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/mapapi.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -1457,7 +1470,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		627B02CB1F7903C900ED4662 /* ShellScript */ = {
@@ -1633,6 +1646,7 @@
 				6E2469491DAA35C600DDC80B /* CDAccountInfoItem.m in Sources */,
 				6E6ADB101CD892B200838B61 /* main.m in Sources */,
 				6E73D64E1E14A626009A1072 /* CDADLoopDisplayScrollView.m in Sources */,
+				37A6E5ED23239FBF0037A5C5 /* CDHud.m in Sources */,
 				6286FBF31F1C9A8E00794FC5 /* CDUserManagerController.m in Sources */,
 				6290DF6F1F667ADA00273AE5 /* SCYFindUserNamePasswordController.m in Sources */,
 				6211FC6B1F20839E00F6F8F2 /* CDAboutUsModel.m in Sources */,

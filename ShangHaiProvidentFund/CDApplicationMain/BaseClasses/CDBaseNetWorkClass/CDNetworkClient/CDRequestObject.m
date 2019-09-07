@@ -19,6 +19,7 @@
         self.addCommonParam = YES;
         self.URLString = nil;
         self.parameters = nil;
+        self.printLog = YES;
     }
     return self;
 }
