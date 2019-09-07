@@ -53,10 +53,6 @@
     return _cache;
 }
 
-+ (NSURLSessionDataTask *)sendPostRequest:(void(^)(CDRequestObject *requestObject))request model:(id)modelClass success:(void(^)(NSURLSessionDataTask *task, CDResponseObject *responseObject)) success{
-    return [CDNetworkClient sendPostRequest:request model:modelClass success:success failure:nil];
-}
-
 /** POST请求，上传数据(监测上传进度) */
 + (NSURLSessionDataTask *)uploadRequest:(void(^)(CDRequestObject *requestObject))request
                               dataBlock:(void (^)(id <AFMultipartFormData> formData))block
@@ -96,6 +92,10 @@
     }];
     
     return task;
+}
+
++ (NSURLSessionDataTask *)sendPostRequest:(void(^)(CDRequestObject *requestObject))request model:(id)modelClass success:(void(^)(NSURLSessionDataTask *task, CDResponseObject *responseObject)) success{
+    return [CDNetworkClient sendPostRequest:request model:modelClass success:success failure:nil];
 }
 
 + (NSURLSessionDataTask *)sendPostRequest:(void(^)(CDRequestObject *requestObject))request model:(id)modelClass success:(void(^)(NSURLSessionDataTask *task, CDResponseObject *responseObject)) success failure:(nullable void(^)(NSURLSessionDataTask *task, NSError *error)) failure{
@@ -194,8 +194,6 @@
     }];
     return task;
 }
-
-
 
 #pragma mark - private
 /**

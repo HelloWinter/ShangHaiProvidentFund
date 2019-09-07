@@ -153,15 +153,15 @@ static CGFloat const badgeViewfont = 12;
         [UIView animateWithDuration:0.25 animations:^{
             for (int idx = 0; idx < self.itemTitles.count; idx ++) {
                 UIButton *button = [self.buttons cd_safeObjectAtIndex:idx];
-                button.selected = idx == _selectedIndex;
+                button.selected = idx == self->_selectedIndex;
                 if (button.selected) {
                     self.sliderView.centerX = button.centerX;
                     [self.scrollView scrollRectToVisible:button.frame animated:YES];
                 }
             }
         } completion:^(BOOL finished) {
-            if (_delegate && [_delegate respondsToSelector:@selector(slidePageHeaderView:didSelectButtonAtIndex:)]) {
-                [_delegate slidePageHeaderView:self didSelectButtonAtIndex:_selectedIndex];
+            if (self->_delegate && [self->_delegate respondsToSelector:@selector(slidePageHeaderView:didSelectButtonAtIndex:)]) {
+                [self->_delegate slidePageHeaderView:self didSelectButtonAtIndex:self->_selectedIndex];
             }
         }];
     }

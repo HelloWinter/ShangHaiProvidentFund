@@ -52,7 +52,6 @@
 		6290DF781F668FA000273AE5 /* registConfigure.json in Resources */ = {isa = PBXBuildFile; fileRef = 6290DF751F668FA000273AE5 /* registConfigure.json */; };
 		6290DF7B1F6698B300273AE5 /* CDChangePasswordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6290DF7A1F6698B300273AE5 /* CDChangePasswordModel.m */; };
 		6290DF7D1F669AAB00273AE5 /* ChangPwd.json in Resources */ = {isa = PBXBuildFile; fileRef = 6290DF7C1F669AAB00273AE5 /* ChangPwd.json */; };
-		629B59A72017187800847284 /* CDUploadImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 629B59A52017187700847284 /* CDUploadImageService.m */; };
 		629B59AD20173A9D00847284 /* SCYUserScreenshotManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 629B59AB20173A9D00847284 /* SCYUserScreenshotManager.m */; };
 		6E1A21611CEB2AC000D21143 /* mortgageCalculator.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */; };
 		6E2469251DAA35C600DDC80B /* CDConvenientToolsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2468821DAA35C600DDC80B /* CDConvenientToolsController.m */; };
@@ -287,8 +286,6 @@
 		6290DF791F6698B300273AE5 /* CDChangePasswordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDChangePasswordModel.h; sourceTree = "<group>"; };
 		6290DF7A1F6698B300273AE5 /* CDChangePasswordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDChangePasswordModel.m; sourceTree = "<group>"; };
 		6290DF7C1F669AAB00273AE5 /* ChangPwd.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ChangPwd.json; sourceTree = "<group>"; };
-		629B59A52017187700847284 /* CDUploadImageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUploadImageService.m; sourceTree = "<group>"; };
-		629B59A62017187800847284 /* CDUploadImageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUploadImageService.h; sourceTree = "<group>"; };
 		629B59AB20173A9D00847284 /* SCYUserScreenshotManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCYUserScreenshotManager.m; sourceTree = "<group>"; };
 		629B59AC20173A9D00847284 /* SCYUserScreenshotManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCYUserScreenshotManager.h; sourceTree = "<group>"; };
 		6E1A21601CEB2AC000D21143 /* mortgageCalculator.conf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mortgageCalculator.conf; sourceTree = "<group>"; };
@@ -1155,8 +1152,6 @@
 			isa = PBXGroup;
 			children = (
 				3718530E2275864000A9E90E /* CDNetworkClient */,
-				629B59A62017187800847284 /* CDUploadImageService.h */,
-				629B59A52017187700847284 /* CDUploadImageService.m */,
 				6E6ADB321CD89E8700838B61 /* CDJSONBaseNetworkService.h */,
 				6E6ADB331CD89E8700838B61 /* CDJSONBaseNetworkService.m */,
 				6E6ADBEE1CD8A22600838B61 /* CDGlobalHTTPSessionManager.h */,
@@ -1566,7 +1561,6 @@
 				6E6ADB911CD89F7C00838B61 /* NSString+Base64.m in Sources */,
 				6E2469311DAA35C600DDC80B /* SCYMortgageCalculatorResultItem.m in Sources */,
 				6E2469541DAA35C600DDC80B /* CDRepayInfoModel.m in Sources */,
-				629B59A72017187800847284 /* CDUploadImageService.m in Sources */,
 				6E2469591DAA35C600DDC80B /* CDRegistService.m in Sources */,
 				6E2469281DAA35C600DDC80B /* CDNetworkPointController.m in Sources */,
 				6E6ADB971CD89F7C00838B61 /* UILabel+CDLBAdditions.m in Sources */,

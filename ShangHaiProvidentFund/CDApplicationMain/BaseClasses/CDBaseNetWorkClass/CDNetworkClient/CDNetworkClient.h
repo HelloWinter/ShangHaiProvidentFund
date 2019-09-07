@@ -11,7 +11,6 @@
 #import "CDRequestObject.h"
 #import "CDResponseObject.h"
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface CDNetworkClient : NSObject
 
@@ -65,4 +64,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END

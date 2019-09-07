@@ -581,8 +581,8 @@ static const CGFloat topHeight=50;
         return;
     }
     BMKMapPoint pt = polyLine.points[0];
-    ltX = pt.x, ltY = pt.y;
-    rbX = pt.x, rbY = pt.y;
+    static_cast<void>(ltX = pt.x), ltY = pt.y;
+    static_cast<void>(rbX = pt.x), rbY = pt.y;
     for (int i = 1; i < polyLine.pointCount; i++) {
         BMKMapPoint pt = polyLine.points[i];
         if (pt.x < ltX) {

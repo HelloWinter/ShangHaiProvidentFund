@@ -181,16 +181,16 @@
         [CDCacheManager saveUserNickName:self.userNickName];
     }
     [self dismissViewControllerAnimated:YES completion:^{
-        if (_delegate && [_delegate respondsToSelector:@selector(userDidLogin)]) {
-            [_delegate userDidLogin];
+        if (self->_delegate && [self->_delegate respondsToSelector:@selector(userDidLogin)]) {
+            [self->_delegate userDidLogin];
         }
     }];
 }
 
 - (void)p_cancelLogin{
     [self dismissViewControllerAnimated:YES completion:^{
-        if (_delegate && [_delegate respondsToSelector:@selector(userCanceledLogin)]) {
-            [_delegate userCanceledLogin];
+        if (self->_delegate && [self->_delegate respondsToSelector:@selector(userCanceledLogin)]) {
+            [self->_delegate userCanceledLogin];
         }
     }];
 }

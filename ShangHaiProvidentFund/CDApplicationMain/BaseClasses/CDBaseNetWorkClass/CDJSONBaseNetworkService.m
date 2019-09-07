@@ -80,7 +80,7 @@
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 if ([weakSelf isKindOfClass:[CDJSONBaseNetworkService class]]) {
-                    if (_autoJSONDataSerializer) {
+                    if (weakSelf.autoJSONDataSerializer) {
                         NSError *error=nil;
                         id responseObj=[NSJSONSerialization JSONObjectWithData:responseObject options:(NSJSONReadingMutableContainers) error:&error];
                         if (!error) {
@@ -106,7 +106,7 @@
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 if ([weakSelf isKindOfClass:[CDJSONBaseNetworkService class]]) {
-                    if (_autoJSONDataSerializer) {
+                    if (weakSelf.autoJSONDataSerializer) {
                         NSError *error=nil;
                         id responseObj=[NSJSONSerialization JSONObjectWithData:responseObject options:(NSJSONReadingMutableContainers) error:&error];
                         if (!error) {
