@@ -188,6 +188,7 @@
 		6E7C17451E1BA76700433093 /* registConfigure.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C17441E1BA76700433093 /* registConfigure.conf */; };
 		6E7C17491E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C17481E1BA88F00433093 /* OpinionsSuggestionsConfigure.conf */; };
 		A654FBE32310144200C466F4 /* CDUIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A654FBE22310144200C466F4 /* CDUIUtil.m */; };
+		A66819062324B0FE00C861FA /* CDNetworkMessageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A66819052324B0FE00C861FA /* CDNetworkMessageHUD.m */; };
 		F9B7F93F7A7A135D5CEEEC72 /* libPods-ShangHaiProvidentFund.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4726D60F716F51CC110036BD /* libPods-ShangHaiProvidentFund.a */; };
 		FFDFD09A2311396100F148DE /* CDTitleImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDFD0992311396100F148DE /* CDTitleImageButton.m */; };
 		FFDFD09E23113B2B00F148DE /* CDBMKLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDFD09D23113B2B00F148DE /* CDBMKLocationManager.m */; };
@@ -548,6 +549,8 @@
 		841B5A7AFA2BE502823C6019 /* Pods-ShangHaiProvidentFund.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShangHaiProvidentFund.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.release.xcconfig"; sourceTree = "<group>"; };
 		A654FBE12310144200C466F4 /* CDUIUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDUIUtil.h; sourceTree = "<group>"; };
 		A654FBE22310144200C466F4 /* CDUIUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDUIUtil.m; sourceTree = "<group>"; };
+		A66819042324B0FE00C861FA /* CDNetworkMessageHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDNetworkMessageHUD.h; sourceTree = "<group>"; };
+		A66819052324B0FE00C861FA /* CDNetworkMessageHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDNetworkMessageHUD.m; sourceTree = "<group>"; };
 		FF429A1A54C53FB72AD63FBF /* Pods-ShangHaiProvidentFund.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShangHaiProvidentFund.test.xcconfig"; path = "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.test.xcconfig"; sourceTree = "<group>"; };
 		FFDFD0982311396100F148DE /* CDTitleImageButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDTitleImageButton.h; sourceTree = "<group>"; };
 		FFDFD0992311396100F148DE /* CDTitleImageButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDTitleImageButton.m; sourceTree = "<group>"; };
@@ -651,6 +654,8 @@
 				371853132275869600A9E90E /* CDRequestObject.m */,
 				37185315227586C200A9E90E /* CDResponseObject.h */,
 				37185316227586C200A9E90E /* CDResponseObject.m */,
+				A66819042324B0FE00C861FA /* CDNetworkMessageHUD.h */,
+				A66819052324B0FE00C861FA /* CDNetworkMessageHUD.m */,
 			);
 			path = CDNetworkClient;
 			sourceTree = "<group>";
@@ -1594,6 +1599,7 @@
 				6E2469531DAA35C600DDC80B /* CDRepayInfoChrItem.m in Sources */,
 				6E6ADB581CD89E8E00838B61 /* CDTabBarController.m in Sources */,
 				6211FC5F1F20838400F6F8F2 /* CDOpinionsSuggestionsController.m in Sources */,
+				A66819062324B0FE00C861FA /* CDNetworkMessageHUD.m in Sources */,
 				6E6ADB591CD89E8E00838B61 /* CDBaseTableViewController.m in Sources */,
 				6211FC7D1F2083B500F6F8F2 /* CDButtonTableFooterView.m in Sources */,
 				6E73D6511E14A780009A1072 /* CDUpImageDownTitleButton.m in Sources */,

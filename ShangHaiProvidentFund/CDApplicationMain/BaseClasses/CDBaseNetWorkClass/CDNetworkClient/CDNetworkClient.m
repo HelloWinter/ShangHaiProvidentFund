@@ -9,7 +9,7 @@
 #import "CDNetworkClient.h"
 #import <MJExtension.h>
 #import <YYCache.h>
-#import "CDHud.h"
+
 
 @interface CDNetworkClient ()
 
@@ -77,14 +77,14 @@
             progress(uploadProgress);
         }
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [weakSelf p_hideActivityToastWith:requestObject.hudTitle];
+        [CDNetworkMessageHUD hideActivityToastWith:requestObject.hudTitle];
         //解析数据
         CDResponseObject *response = [weakSelf parseResponse:responseObject model:nil fromURL:task.currentRequest.URL.absoluteString method:@"POST" isCacheData:NO isPrintLog:requestObject.isPrintLog];
         if (success) {
             success(task,response);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [weakSelf p_hideActivityToastWith:requestObject.hudTitle];
+        [CDNetworkMessageHUD hideActivityToastWith:requestObject.hudTitle];
         [weakSelf dealFailureInfoWithTask:task method:@"POST" error:error showNoNetworkTips:requestObject.isShowNoNetworkTips showServerError:requestObject.isShowServerError];
         if (failure) {
             failure(task,error);
@@ -116,16 +116,16 @@
     
     CDLog(@">>> [POST] Request URL: %@ Headers:\n%@ Parameters:\n%@",requestObject.URLString,client.manager.requestSerializer.HTTPRequestHeaders,requestObject.parameters);
     //显示ActivityToast
-    [client p_showActivityToastWith:requestObject.hudTitle];
+    [CDNetworkMessageHUD showActivityToastWith:requestObject.hudTitle];
     //POST请求
     __weak __typeof(CDNetworkClient *)weakSelf = client;
     NSURLSessionDataTask *task = [client.manager POST:requestObject.URLString parameters:requestObject.parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [weakSelf p_hideActivityToastWith:requestObject.hudTitle];
+        [CDNetworkMessageHUD hideActivityToastWith:requestObject.hudTitle];
         //解析数据
         CDResponseObject *response = [weakSelf parseResponse:responseObject model:modelClass fromURL:task.currentRequest.URL.absoluteString method:@"POST" isCacheData:NO isPrintLog:requestObject.isPrintLog];
         //数据错误提示
         if (!response.isSucceed && requestObject.isShowErrorMessage && requestObject.hudTitle && requestObject.hudTitle.length!=0) {
-            [weakSelf showErrorMessage:response.msg];
+            [CDNetworkMessageHUD showErrorMessage:response.msg];
         }
         //缓存数据
         if (requestObject.doCacheData && response.isSucceed) {
@@ -137,7 +137,7 @@
             success(task,response);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [weakSelf p_hideActivityToastWith:requestObject.hudTitle];
+        [CDNetworkMessageHUD hideActivityToastWith:requestObject.hudTitle];
         [weakSelf dealFailureInfoWithTask:task method:@"POST" error:error showNoNetworkTips:requestObject.isShowNoNetworkTips showServerError:requestObject.isShowServerError];
         if (failure) {
             failure(task,error);
@@ -168,16 +168,16 @@
     //设置请求序列化
     CDLog(@">>> [GET] Request URL: %@ Headers:\n%@ Parameters:\n%@",requestObject.URLString,client.manager.requestSerializer.HTTPRequestHeaders,requestObject.parameters);
     //显示ActivityToast
-    [client p_showActivityToastWith:requestObject.hudTitle];
+    [CDNetworkMessageHUD showActivityToastWith:requestObject.hudTitle];
     //GET请求
     __weak __typeof(CDNetworkClient *)weakSelf = client;
     NSURLSessionDataTask *task = [client.manager GET:requestObject.URLString parameters:requestObject.parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [weakSelf p_hideActivityToastWith:requestObject.hudTitle];
+        [CDNetworkMessageHUD hideActivityToastWith:requestObject.hudTitle];
         //解析数据
         CDResponseObject *response = [weakSelf parseResponse:responseObject model:modelClass fromURL:task.currentRequest.URL.absoluteString method:@"GET" isCacheData:NO isPrintLog:requestObject.isPrintLog];
         //数据错误提示
         if (!response.isSucceed && requestObject.isShowErrorMessage  && requestObject.hudTitle && requestObject.hudTitle.length!=0) {
-            [weakSelf showErrorMessage:response.msg];
+            [CDNetworkMessageHUD showErrorMessage:response.msg];
         }
         //缓存数据
         if (requestObject.doCacheData && response.isSucceed) {
@@ -186,7 +186,7 @@
         //回调
         success(task,response);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [weakSelf p_hideActivityToastWith:requestObject.hudTitle];
+        [CDNetworkMessageHUD hideActivityToastWith:requestObject.hudTitle];
         [weakSelf dealFailureInfoWithTask:task method:@"GET" error:error showNoNetworkTips:requestObject.isShowNoNetworkTips showServerError:requestObject.isShowServerError];
         if (failure) {
             failure(task,error);
@@ -264,10 +264,10 @@
     CDLog(@">>> [%@] Request URL: %@ Error:\n%@",method, task.currentRequest.URL.absoluteString, error.localizedDescription);
     if (![error.localizedDescription isEqualToString:@"已取消"]) {
         if (error.code == NSURLErrorNotConnectedToInternet && show) {
-            [CDHud showToast:[CDNetworkClient messageFromError:error]];
+            [CDNetworkMessageHUD showServerErrorToast:error];
         }
         if (error.code != NSURLErrorNotConnectedToInternet && serverError) {
-            [CDHud showToast:[CDNetworkClient messageFromError:error]];
+            [CDNetworkMessageHUD showServerErrorToast:error];
         }
     }
 }
@@ -314,43 +314,6 @@
         }
     }];
     [downLoadTask resume];
-}
-
-/**
- 显示ActivityToast指示器
- */
-- (void)p_showActivityToastWith:(NSString *)hudTitle{
-    if (hudTitle && hudTitle.length!=0) {
-        [CDHud showIndicatorWithTitle:hudTitle];
-    }
-}
-
-/**
- 隐藏ActivityToast指示器
- */
-- (void)p_hideActivityToastWith:(NSString *)hudTitle{
-    if (hudTitle && hudTitle.length!=0) {
-        [CDHud hideIndicatorForTitle:hudTitle];
-    }
-}
-
-/**
- 请求成功，但数据不正常提示
- */
-- (void)showErrorMessage:(NSString *)errorMsg{
-    NSString *message = (errorMsg && errorMsg.length > 0) ? errorMsg : @"请求失败";
-    [CDHud showToast:message];
-}
-
-/**
- 常见错误个性化描述
- */
-+ (NSString *)messageFromError:(NSError *)error {
-    if (error.code == NSURLErrorNotConnectedToInternet) {
-        return @"当前网络不可用";//您的网络未连接，请连接后再试
-    } else  {
-        return @"请求失败";
-    }
 }
 
 @end

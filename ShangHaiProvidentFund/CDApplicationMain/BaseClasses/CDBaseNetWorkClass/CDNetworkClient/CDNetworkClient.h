@@ -10,7 +10,7 @@
 #import <AFNetworking.h>
 #import "CDRequestObject.h"
 #import "CDResponseObject.h"
-
+#import "CDNetworkMessageHUD.h"
 
 @interface CDNetworkClient : NSObject
 
