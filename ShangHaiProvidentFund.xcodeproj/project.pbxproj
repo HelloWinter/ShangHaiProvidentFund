@@ -149,11 +149,9 @@
 		6E6ADB8E1CD89F7C00838B61 /* NSFileManager+CDFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB6D1CD89F7C00838B61 /* NSFileManager+CDFileManager.m */; };
 		6E6ADB8F1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB6F1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.m */; };
 		6E6ADB901CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB711CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.m */; };
-		6E6ADB911CD89F7C00838B61 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB731CD89F7C00838B61 /* NSString+Base64.m */; };
 		6E6ADB921CD89F7C00838B61 /* NSString+CDEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB751CD89F7C00838B61 /* NSString+CDEncryption.m */; };
 		6E6ADB931CD89F7C00838B61 /* UIBarButtonItem+CDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB771CD89F7C00838B61 /* UIBarButtonItem+CDCategory.m */; };
 		6E6ADB961CD89F7C00838B61 /* UIImage+CDImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB7D1CD89F7C00838B61 /* UIImage+CDImageAdditions.m */; };
-		6E6ADB971CD89F7C00838B61 /* UILabel+CDLBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB7F1CD89F7C00838B61 /* UILabel+CDLBAdditions.m */; };
 		6E6ADB981CD89F7C00838B61 /* UITableView+CDTableViewAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB811CD89F7C00838B61 /* UITableView+CDTableViewAddition.m */; };
 		6E6ADB991CD89F7C00838B61 /* UIView+CDViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB831CD89F7C00838B61 /* UIView+CDViewAdditions.m */; };
 		6E6ADB9B1CD89F7C00838B61 /* UIViewController+CDVCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6ADB871CD89F7C00838B61 /* UIViewController+CDVCAdditions.m */; };
@@ -475,16 +473,12 @@
 		6E6ADB6F1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+CDMutableArrAdditions.m"; sourceTree = "<group>"; };
 		6E6ADB701CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+CDMutableDictAdditions.h"; sourceTree = "<group>"; };
 		6E6ADB711CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CDMutableDictAdditions.m"; sourceTree = "<group>"; };
-		6E6ADB721CD89F7C00838B61 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
-		6E6ADB731CD89F7C00838B61 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 		6E6ADB741CD89F7C00838B61 /* NSString+CDEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CDEncryption.h"; sourceTree = "<group>"; };
 		6E6ADB751CD89F7C00838B61 /* NSString+CDEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CDEncryption.m"; sourceTree = "<group>"; };
 		6E6ADB761CD89F7C00838B61 /* UIBarButtonItem+CDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+CDCategory.h"; sourceTree = "<group>"; };
 		6E6ADB771CD89F7C00838B61 /* UIBarButtonItem+CDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+CDCategory.m"; sourceTree = "<group>"; };
 		6E6ADB7C1CD89F7C00838B61 /* UIImage+CDImageAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CDImageAdditions.h"; sourceTree = "<group>"; };
 		6E6ADB7D1CD89F7C00838B61 /* UIImage+CDImageAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CDImageAdditions.m"; sourceTree = "<group>"; };
-		6E6ADB7E1CD89F7C00838B61 /* UILabel+CDLBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CDLBAdditions.h"; sourceTree = "<group>"; };
-		6E6ADB7F1CD89F7C00838B61 /* UILabel+CDLBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CDLBAdditions.m"; sourceTree = "<group>"; };
 		6E6ADB801CD89F7C00838B61 /* UITableView+CDTableViewAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CDTableViewAddition.h"; sourceTree = "<group>"; };
 		6E6ADB811CD89F7C00838B61 /* UITableView+CDTableViewAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CDTableViewAddition.m"; sourceTree = "<group>"; };
 		6E6ADB821CD89F7C00838B61 /* UIView+CDViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CDViewAdditions.h"; sourceTree = "<group>"; };
@@ -1208,8 +1202,6 @@
 				6E6ADB6F1CD89F7C00838B61 /* NSMutableArray+CDMutableArrAdditions.m */,
 				6E6ADB701CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.h */,
 				6E6ADB711CD89F7C00838B61 /* NSMutableDictionary+CDMutableDictAdditions.m */,
-				6E6ADB721CD89F7C00838B61 /* NSString+Base64.h */,
-				6E6ADB731CD89F7C00838B61 /* NSString+Base64.m */,
 				6E6ADB741CD89F7C00838B61 /* NSString+CDEncryption.h */,
 				6E6ADB751CD89F7C00838B61 /* NSString+CDEncryption.m */,
 				6E6ADB761CD89F7C00838B61 /* UIBarButtonItem+CDCategory.h */,
@@ -1218,8 +1210,6 @@
 				6E6ADB7D1CD89F7C00838B61 /* UIImage+CDImageAdditions.m */,
 				6289AF9C203EB37F003A1E99 /* CALayer+CDCategory.h */,
 				6289AF9D203EB37F003A1E99 /* CALayer+CDCategory.m */,
-				6E6ADB7E1CD89F7C00838B61 /* UILabel+CDLBAdditions.h */,
-				6E6ADB7F1CD89F7C00838B61 /* UILabel+CDLBAdditions.m */,
 				6E73D6571E14B235009A1072 /* UITabBar+CDCategory.h */,
 				6E73D6581E14B235009A1072 /* UITabBar+CDCategory.m */,
 				6E6ADB801CD89F7C00838B61 /* UITableView+CDTableViewAddition.h */,
@@ -1563,12 +1553,10 @@
 				6E24694A1DAA35C600DDC80B /* CDDynamicdetailItem.m in Sources */,
 				6E2469681DAA35C600DDC80B /* CDNewsAndTrendsService.m in Sources */,
 				14D13B4F1CE2158F00D73F1A /* GTMBase64.m in Sources */,
-				6E6ADB911CD89F7C00838B61 /* NSString+Base64.m in Sources */,
 				6E2469311DAA35C600DDC80B /* SCYMortgageCalculatorResultItem.m in Sources */,
 				6E2469541DAA35C600DDC80B /* CDRepayInfoModel.m in Sources */,
 				6E2469591DAA35C600DDC80B /* CDRegistService.m in Sources */,
 				6E2469281DAA35C600DDC80B /* CDNetworkPointController.m in Sources */,
-				6E6ADB971CD89F7C00838B61 /* UILabel+CDLBAdditions.m in Sources */,
 				6E73D6561E14AB1D009A1072 /* ImagePickerManager.m in Sources */,
 				6E24693D1DAA35C600DDC80B /* SCYMortgageCalculatorSelectCell.m in Sources */,
 				6E53C84C1CE9CF9500202F53 /* CDSlidePageView.m in Sources */,

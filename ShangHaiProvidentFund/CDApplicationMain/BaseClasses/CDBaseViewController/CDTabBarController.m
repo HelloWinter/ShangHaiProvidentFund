@@ -27,16 +27,8 @@
     [super viewDidLoad];
 //    self.tabBar.barTintColor=colorForHex(@"#01b2d3");
     [self.tabBar setTintColor:ColorFromHexRGB(0x2d8eff)];
-    //去除顶部的线
-//    [self.tabBar setShadowImage:[UIImage new]];
-//    [self.tabBar setBackgroundImage:[UIImage cd_imageWithColor:NAVIGATION_COLOR]];
-//    [[UITabBar appearance]setShadowImage:[UIImage new]];
-//    [[UITabBar appearance]setBackgroundImage:[UIImage imageNamed:@"minecenter_headbackground"]];
-    
-    //设置UITabBarItem Title颜色
-//    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor darkGrayColor]} forState:UIControlStateNormal];//NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
-//    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor whiteColor]} forState:UIControlStateSelected];
-    
+    [self.tabBar setShadowImage:[UIImage new]];
+    [self.tabBar setBackgroundImage:[UIImage cd_imageWithColor:[UIColor whiteColor]]];
     [self p_setupAllChildViewController];
 }
 
