@@ -18,11 +18,6 @@ typedef void (^CDImageClickBlock)(NSInteger index);
 @property (nonatomic, copy) NSString *placeHolderImage;
 
 /**
- *  广告位图片链接数组
- */
-@property (nonatomic, copy) NSArray<NSString *> *arrImageLink;
-
-/**
  *  是否打开自动滚动，默认关闭
  */
 @property (nonatomic, getter=isOpenAutoScroll) BOOL openAutoScroll;
@@ -56,6 +51,11 @@ typedef void (^CDImageClickBlock)(NSInteger index);
  *  当前的imageView
  */
 @property (nonatomic, strong, readonly) UIImageView *currentImageView;
+
+/**
+ *  广告位图片链接数组
+ */
+- (void)setupImageLinkArray:(NSArray *)imageLinkArray;
 
 /**
  *  开始滚动
