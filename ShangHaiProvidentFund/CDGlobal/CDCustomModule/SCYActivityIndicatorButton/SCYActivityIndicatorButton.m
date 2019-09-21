@@ -15,6 +15,14 @@
     [self.activityIndicator stopAnimating];
 }
 
+- (instancetype)init{
+    @throw [NSException exceptionWithName:(NSInternalInconsistencyException) reason:@"Must use \"- initWithActivityIndicatorStyle:\"" userInfo:nil];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame{
+    @throw [NSException exceptionWithName:(NSInternalInconsistencyException) reason:@"Must use \"- initWithActivityIndicatorStyle:\"" userInfo:nil];
+}
+
 - (instancetype)initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style{
     self = [super init];
     if (self) {

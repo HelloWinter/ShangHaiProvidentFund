@@ -50,10 +50,18 @@ static const CGFloat kCircleLayerRadius=13.0;
 @synthesize scrollView=_scrollView;
 
 - (void)dealloc{
-    [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
-    [self.scrollView removeObserver:self forKeyPath:@"contentInset"];
+    [_scrollView removeObserver:self forKeyPath:@"contentOffset"];
+    [_scrollView removeObserver:self forKeyPath:@"contentInset"];
     [[NSNotificationCenter defaultCenter]removeObserver:self];
     _scrollView=nil;
+}
+
+- (instancetype)init{
+    @throw [NSException exceptionWithName:(NSInternalInconsistencyException) reason:@"Must use \"- (id)initInScrollView:(UIScrollView *)scrollView\"" userInfo:nil];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame{
+    @throw [NSException exceptionWithName:(NSInternalInconsistencyException) reason:@"Must use \"- (id)initInScrollView:(UIScrollView *)scrollView\"" userInfo:nil];
 }
 
 - (id)initInScrollView:(UIScrollView *)scrollView{

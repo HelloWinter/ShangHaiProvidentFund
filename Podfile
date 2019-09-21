@@ -17,6 +17,8 @@ pod 'BMKLocationKit', :inhibit_warnings => true
 
 pod 'MBProgressHUD', :inhibit_warnings => true
 
+pod 'SAMKeychain'
+
 pod 'FLEX', :inhibit_warnings => true #:configurations => ['Test']
 pod 'MLeaksFinder', :inhibit_warnings => true
 

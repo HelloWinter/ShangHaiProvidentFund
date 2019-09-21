@@ -175,9 +175,6 @@
 		6E73D6511E14A780009A1072 /* CDUpImageDownTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6501E14A780009A1072 /* CDUpImageDownTitleButton.m */; };
 		6E73D6561E14AB1D009A1072 /* ImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6551E14AB1D009A1072 /* ImagePickerManager.m */; };
 		6E73D6591E14B235009A1072 /* UITabBar+CDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6581E14B235009A1072 /* UITabBar+CDCategory.m */; };
-		6E73D6611E14B4C0009A1072 /* SSKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E73D65B1E14B4C0009A1072 /* SSKeychain.strings */; };
-		6E73D6621E14B4C0009A1072 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D65E1E14B4C0009A1072 /* SSKeychain.m */; };
-		6E73D6631E14B4C0009A1072 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E73D6601E14B4C0009A1072 /* SSKeychainQuery.m */; };
 		6E73D6651E14FA6C009A1072 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E73D6641E14FA6C009A1072 /* libAFNetworking.a */; };
 		6E73D6671E14FA70009A1072 /* libMJExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E73D6661E14FA70009A1072 /* libMJExtension.a */; };
 		6E73D6691E14FA73009A1072 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E73D6681E14FA73009A1072 /* libSDWebImage.a */; };
@@ -528,11 +525,6 @@
 		6E73D6551E14AB1D009A1072 /* ImagePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerManager.m; sourceTree = "<group>"; };
 		6E73D6571E14B235009A1072 /* UITabBar+CDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+CDCategory.h"; sourceTree = "<group>"; };
 		6E73D6581E14B235009A1072 /* UITabBar+CDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+CDCategory.m"; sourceTree = "<group>"; };
-		6E73D65C1E14B4C0009A1072 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SSKeychain.strings; sourceTree = "<group>"; };
-		6E73D65D1E14B4C0009A1072 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
-		6E73D65E1E14B4C0009A1072 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
-		6E73D65F1E14B4C0009A1072 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
-		6E73D6601E14B4C0009A1072 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		6E73D6641E14FA6C009A1072 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "../../Library/Developer/Xcode/DerivedData/ShangHaiProvidentFund-aeyaomdjoyjfytflgwffsdglhtbf/Build/Products/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
 		6E73D6661E14FA70009A1072 /* libMJExtension.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMJExtension.a; path = "../../Library/Developer/Xcode/DerivedData/ShangHaiProvidentFund-aeyaomdjoyjfytflgwffsdglhtbf/Build/Products/Debug-iphoneos/MJExtension/libMJExtension.a"; sourceTree = "<group>"; };
 		6E73D6681E14FA73009A1072 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "../../Library/Developer/Xcode/DerivedData/ShangHaiProvidentFund-aeyaomdjoyjfytflgwffsdglhtbf/Build/Products/Debug-iphoneos/SDWebImage/libSDWebImage.a"; sourceTree = "<group>"; };
@@ -1105,7 +1097,6 @@
 		6E6ADB271CD89AE800838B61 /* CDVendor */ = {
 			isa = PBXGroup;
 			children = (
-				6E73D65A1E14B4C0009A1072 /* SSKeychain */,
 				14D13B4B1CE2158F00D73F1A /* GTMBase64 */,
 			);
 			path = CDVendor;
@@ -1334,18 +1325,6 @@
 			path = ImagePickerManager;
 			sourceTree = "<group>";
 		};
-		6E73D65A1E14B4C0009A1072 /* SSKeychain */ = {
-			isa = PBXGroup;
-			children = (
-				6E73D65B1E14B4C0009A1072 /* SSKeychain.strings */,
-				6E73D65D1E14B4C0009A1072 /* SSKeychain.h */,
-				6E73D65E1E14B4C0009A1072 /* SSKeychain.m */,
-				6E73D65F1E14B4C0009A1072 /* SSKeychainQuery.h */,
-				6E73D6601E14B4C0009A1072 /* SSKeychainQuery.m */,
-			);
-			path = SSKeychain;
-			sourceTree = "<group>";
-		};
 		FFDFD09B23113AB400F148DE /* BMKManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1424,7 +1403,6 @@
 				6E24695C1DAA35C600DDC80B /* CDBottomButtonView.xib in Resources */,
 				6211FC7E1F2083B500F6F8F2 /* CDButtonTableFooterView.xib in Resources */,
 				6E24693C1DAA35C600DDC80B /* SCYMortgageCalculatorResultCell.xib in Resources */,
-				6E73D6611E14B4C0009A1072 /* SSKeychain.strings in Resources */,
 				6E6ADB1B1CD892B200838B61 /* Assets.xcassets in Resources */,
 				6E6ADB191CD892B200838B61 /* Main.storyboard in Resources */,
 				6290DF771F668FA000273AE5 /* PersonalFundAccountNumQuery.json in Resources */,
@@ -1453,10 +1431,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund-resources.sh",
 				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/mapapi.bundle",
+				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mapapi.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1532,7 +1512,6 @@
 				6E24695E1DAA35C600DDC80B /* CDMineAccountCell.m in Sources */,
 				6E6ADB9B1CD89F7C00838B61 /* UIViewController+CDVCAdditions.m in Sources */,
 				6E6ADB8B1CD89F7C00838B61 /* NSData+CommonCrypto.m in Sources */,
-				6E73D6631E14B4C0009A1072 /* SSKeychainQuery.m in Sources */,
 				6E2469551DAA35C600DDC80B /* CDChangePSWService.m in Sources */,
 				6E73367E1E4C6A330036393A /* SCYAnnualBonusCalculatorController.m in Sources */,
 				6E6ADB8E1CD89F7C00838B61 /* NSFileManager+CDFileManager.m in Sources */,
@@ -1621,7 +1600,6 @@
 				6E6ADB541CD89E8E00838B61 /* CDBaseViewController.m in Sources */,
 				6E6ADBF01CD8A22600838B61 /* CDGlobalHTTPSessionManager.m in Sources */,
 				6E24695A1DAA35C600DDC80B /* CDRepayInfoService.m in Sources */,
-				6E73D6621E14B4C0009A1072 /* SSKeychain.m in Sources */,
 				6E2469511DAA35C600DDC80B /* CDRegistConfigureModel.m in Sources */,
 				6E2469431DAA35C600DDC80B /* CDLoanProgressController.m in Sources */,
 				6E2469411DAA35C600DDC80B /* CDAccountManageController.m in Sources */,
@@ -1670,14 +1648,6 @@
 				6E6ADB181CD892B200838B61 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		6E73D65B1E14B4C0009A1072 /* SSKeychain.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6E73D65C1E14B4C0009A1072 /* en */,
-			);
-			name = SSKeychain.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

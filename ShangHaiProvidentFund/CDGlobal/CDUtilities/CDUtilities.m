@@ -9,8 +9,7 @@
 #import "CDUtilities.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <LocalAuthentication/LocalAuthentication.h>
-#import "SSKeychain.h"
-
+#import <SAMKeychain.h>
 
 
 /**
@@ -98,11 +97,11 @@ BOOL checkName(NSString *userName){
 NSString *CDKeyChainIDFV(){
     NSString *userName = @"IDFVKey";
     NSString *ServiceName = CDAppBundleID;
-    NSString *strIDFV=[SSKeychain passwordForService:ServiceName account:userName];
+    NSString *strIDFV=[SAMKeychain passwordForService:ServiceName account:userName];
     if (strIDFV==nil || strIDFV.length==0) {
         NSError *setError=nil;
         NSString *idfv = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-        BOOL saved = [SSKeychain setPassword:idfv forService:ServiceName account:userName error:&setError];
+        BOOL saved = [SAMKeychain setPassword:idfv forService:ServiceName account:userName error:&setError];
         if (!saved) {
             CDLog(@"保存时出错：%@", setError);
         }
