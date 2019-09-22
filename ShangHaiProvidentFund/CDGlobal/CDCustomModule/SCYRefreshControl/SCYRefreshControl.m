@@ -83,12 +83,14 @@ static const CGFloat kCircleLayerRadius=13.0;
     return self;
 }
 
+#pragma mark - override
 - (void)setLineColor:(UIColor *)lineColor{
     _lineColor=lineColor;
-    _circleLayer.strokeColor=lineColor.CGColor;
-    _shapeLayer.strokeColor=lineColor.CGColor;
+    self.circleLayer.strokeColor=lineColor.CGColor;
+    self.shapeLayer.strokeColor=lineColor.CGColor;
 }
 
+#pragma mark - lazyload
 - (CAShapeLayer *)circleLayer{
     if(_circleLayer == nil){
         _circleLayer = [CAShapeLayer layer];
@@ -150,10 +152,11 @@ static const CGFloat kCircleLayerRadius=13.0;
     }
 }
 
--(void)resetAnimation:(NSNotification *)notify{
+#pragma mark - Notification Action
+- (void)resetAnimation:(NSNotification *)notify{
     if (_refreshing) {
         [_circleLayer removeAllAnimations];
-        [self startCircleLayerAnimation];
+        [self p_startCircleLayerAnimation];
     }
 }
 
@@ -164,22 +167,9 @@ static const CGFloat kCircleLayerRadius=13.0;
         self.originalContentInset = self.scrollView.contentInset;
         self.originalContentOffset = self.scrollView.contentOffset;
         [self.scrollView setContentOffset:CGPointMake(0, -self.pullDistance-_originalContentInset.top) animated:YES];
-        [self startCircleLayerAnimation];
+        [self p_startCircleLayerAnimation];
         [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
-}
-
-- (void)startCircleLayerAnimation{
-    [CATransaction begin];
-    [CATransaction setDisableActions:YES];
-    CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotationAnimation.toValue = @(M_PI * 2.0);
-    rotationAnimation.duration = 1.0f;
-    rotationAnimation.repeatCount = MAXFLOAT;
-    rotationAnimation.removedOnCompletion=NO;//切换视图,动画不移除
-    rotationAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    [_circleLayer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
-    [CATransaction commit];
 }
 
 - (void)endRefreshing{
@@ -200,6 +190,20 @@ static const CGFloat kCircleLayerRadius=13.0;
             self->_circleLayer.transform = CATransform3DIdentity;
         }];
     }
+}
+
+#pragma mark - private
+- (void)p_startCircleLayerAnimation{
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
+    CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = @(M_PI * 2.0);
+    rotationAnimation.duration = 1.0f;
+    rotationAnimation.repeatCount = MAXFLOAT;
+    rotationAnimation.removedOnCompletion=NO;//切换视图,动画不移除
+    rotationAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    [_circleLayer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    [CATransaction commit];
 }
 
 #pragma mark - KVO
@@ -270,7 +274,7 @@ static const CGFloat kCircleLayerRadius=13.0;
                         notTracking = YES;
                         _refreshing = YES;
                         _shapeLayer.strokeEnd=_circleLayer.strokeEnd=1;
-                        [self startCircleLayerAnimation];
+                        [self p_startCircleLayerAnimation];
                         [self sendActionsForControlEvents:UIControlEventValueChanged];
                     }
                 }

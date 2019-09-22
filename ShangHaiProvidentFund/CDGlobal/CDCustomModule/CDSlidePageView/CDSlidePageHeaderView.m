@@ -31,22 +31,22 @@ static CGFloat const badgeViewfont = 12;
         _selectedIndex=0;
         _itemWidth=0;
         _fontSize = 15;
-        [self addSubview:self.scrollView];
-        [self.scrollView addSubview:self.sliderView];
+        [self addSubview:({
+            _scrollView=[[UIScrollView alloc]init];
+            _scrollView.showsVerticalScrollIndicator=NO;
+            _scrollView.showsHorizontalScrollIndicator=NO;
+            _scrollView.bounces=NO;
+            _scrollView;
+        })];
+        [_scrollView addSubview:({
+            _sliderView=[[UIView alloc]init];
+            _sliderView;
+        })];
     }
     return self;
 }
 
-- (UIScrollView *)scrollView{
-    if (!_scrollView) {
-        _scrollView=[[UIScrollView alloc]init];
-        _scrollView.showsVerticalScrollIndicator=NO;
-        _scrollView.showsHorizontalScrollIndicator=NO;
-        _scrollView.bounces=NO;
-    }
-    return _scrollView;
-}
-
+#pragma MARK - lazyload
 - (NSMutableArray *)badgeViews{
     if (_badgeViews==nil) {
         _badgeViews=[[NSMutableArray alloc]init];
@@ -61,11 +61,14 @@ static CGFloat const badgeViewfont = 12;
     return _buttons;
 }
 
-- (UIView *)sliderView{
-    if (_sliderView==nil) {
-        _sliderView=[[UIView alloc]init];
-    }
-    return _sliderView;
+#pragma mark - override
+- (void)setItemTitles:(NSArray<NSString *> *)itemTitles{
+    _itemTitles=[itemTitles copy];
+    [self reload];
+}
+
+- (CGSize)contentSize{
+    return self.scrollView.contentSize;
 }
 
 - (void)setSelectedColor:(UIColor *)selectedColor{
@@ -73,7 +76,30 @@ static CGFloat const badgeViewfont = 12;
     self.sliderView.backgroundColor=_selectedColor;
 }
 
-#pragma mark - override
+- (void)setSelectedIndex:(NSUInteger)selectedIndex {
+    if (selectedIndex >= self.itemTitles.count) { return; }
+    if (_selectedIndex != selectedIndex) {
+        _selectedIndex = selectedIndex;
+        if (_delegate && [_delegate respondsToSelector:@selector(slidePageHeaderView:willSelectButtonAtIndex:)]) {
+            [_delegate slidePageHeaderView:self willSelectButtonAtIndex:_selectedIndex];
+        }
+        [UIView animateWithDuration:0.25 animations:^{
+            for (int idx = 0; idx < self.itemTitles.count; idx ++) {
+                UIButton *button = [self.buttons cd_safeObjectAtIndex:idx];
+                button.selected = idx == self->_selectedIndex;
+                if (button.selected) {
+                    self.sliderView.centerX = button.centerX;
+                    [self.scrollView scrollRectToVisible:button.frame animated:YES];
+                }
+            }
+        } completion:^(BOOL finished) {
+            if (self->_delegate && [self->_delegate respondsToSelector:@selector(slidePageHeaderView:didSelectButtonAtIndex:)]) {
+                [self->_delegate slidePageHeaderView:self didSelectButtonAtIndex:self->_selectedIndex];
+            }
+        }];
+    }
+}
+
 - (void)willMoveToSuperview:(UIView *)newSuperview{
     [self reload];
 }
@@ -115,27 +141,18 @@ static CGFloat const badgeViewfont = 12;
 }
 
 #pragma mark - public
-- (void)setItemTitles:(NSArray<NSString *> *)itemTitles{
-    _itemTitles=[itemTitles copy];
-    [self reload];
-}
-
-- (CGSize)contentSize{
-    return self.scrollView.contentSize;
-}
-
-#pragma mark - private
 - (void)reload {
     [self.buttons makeObjectsPerformSelector:@selector(removeFromSuperview)];
     if (self.itemTitles.count!=0) {
         for (int idx = 0; idx < self.itemTitles.count; idx++) {
-            [self createButtonWithIndex:idx];
-            [self createBadgeViewWithIndex:idx];
+            [self p_createButtonWithIndex:idx];
+            [self p_createBadgeViewWithIndex:idx];
         }
     }
     [self setNeedsLayout];
 }
 
+#pragma mark - private
 - (void)p_titleButtonAction:(UIButton *)button {
     if ([self.buttons containsObject:button]) {
         NSUInteger selectedIndex = [self.buttons indexOfObject:button];
@@ -143,33 +160,8 @@ static CGFloat const badgeViewfont = 12;
     }
 }
 
-- (void)setSelectedIndex:(NSUInteger)selectedIndex {
-    if (selectedIndex >= self.itemTitles.count) { return; }
-    if (_selectedIndex != selectedIndex) {
-        _selectedIndex = selectedIndex;
-        if (_delegate && [_delegate respondsToSelector:@selector(slidePageHeaderView:willSelectButtonAtIndex:)]) {
-            [_delegate slidePageHeaderView:self willSelectButtonAtIndex:_selectedIndex];
-        }
-        [UIView animateWithDuration:0.25 animations:^{
-            for (int idx = 0; idx < self.itemTitles.count; idx ++) {
-                UIButton *button = [self.buttons cd_safeObjectAtIndex:idx];
-                button.selected = idx == self->_selectedIndex;
-                if (button.selected) {
-                    self.sliderView.centerX = button.centerX;
-                    [self.scrollView scrollRectToVisible:button.frame animated:YES];
-                }
-            }
-        } completion:^(BOOL finished) {
-            if (self->_delegate && [self->_delegate respondsToSelector:@selector(slidePageHeaderView:didSelectButtonAtIndex:)]) {
-                [self->_delegate slidePageHeaderView:self didSelectButtonAtIndex:self->_selectedIndex];
-            }
-        }];
-    }
-}
-
-#pragma mark - private
 /// 创建按钮
-- (void)createButtonWithIndex:(NSInteger)idx{
+- (void)p_createButtonWithIndex:(NSInteger)idx{
     UIButton *button=[self.buttons cd_safeObjectAtIndex:idx];
     if (!button) {
         button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -190,7 +182,7 @@ static CGFloat const badgeViewfont = 12;
 }
 
 /// 创建badgeView
-- (void)createBadgeViewWithIndex:(NSInteger)idx{
+- (void)p_createBadgeViewWithIndex:(NSInteger)idx{
     UILabel *badgeView = [self.badgeViews cd_safeObjectAtIndex:idx];
     if (!badgeView) {
         badgeView = [[UILabel alloc] init];
@@ -208,5 +200,6 @@ static CGFloat const badgeViewfont = 12;
     badgeView.text = badge.integerValue > 99 ? @"99+" : badge;
     [self.scrollView addSubview:badgeView];
 }
+
 @end
 

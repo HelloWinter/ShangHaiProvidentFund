@@ -37,8 +37,20 @@ static const NSInteger kBehindImageTag = 500;
         self.backgroundColor = [UIColor whiteColor];
         _placeHolderImage=@"ScrollViewDefault";
         _autoScrollTimeInterval=4.0f;
-        [self addSubview:self.scrollView];
-        [self addSubview:self.pageControl];
+        [self addSubview:({
+            _scrollView = [[UIScrollView alloc]init];
+            _scrollView.pagingEnabled = YES;
+            _scrollView.delegate = self;
+            _scrollView.showsHorizontalScrollIndicator = NO;
+            _scrollView.showsVerticalScrollIndicator = NO;
+            _scrollView;
+        })];
+        [self addSubview:({
+            _pageControl = [[UIPageControl alloc]init];
+            _pageControl.hidden=YES;
+            _pageControl.hidesForSinglePage=YES;
+            _pageControl;
+        })];
     }
     return self;
 }
@@ -79,8 +91,6 @@ static const NSInteger kBehindImageTag = 500;
     _pageCtrlSelectColor=pageCtrlSelectColor;
     self.pageControl.currentPageIndicatorTintColor = self.pageCtrlSelectColor;
 }
-
-
 
 - (UIImageView *)currentImageView {
     if (self.arrImgViewCachePool.count != 0) {
@@ -210,26 +220,6 @@ static const NSInteger kBehindImageTag = 500;
         _arrImgViewCachePool=[[NSMutableArray alloc]init];
     }
     return _arrImgViewCachePool;
-}
-
-- (UIScrollView *)scrollView{
-    if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc]init];
-        _scrollView.pagingEnabled = YES;
-        _scrollView.delegate = self;
-        _scrollView.showsHorizontalScrollIndicator = NO;
-        _scrollView.showsVerticalScrollIndicator = NO;
-    }
-    return _scrollView;
-}
-
-- (UIPageControl *)pageControl{
-    if (!_pageControl) {
-        _pageControl = [[UIPageControl alloc]init];
-        _pageControl.hidden=YES;
-        _pageControl.hidesForSinglePage=YES;
-    }
-    return _pageControl;
 }
 
 @end

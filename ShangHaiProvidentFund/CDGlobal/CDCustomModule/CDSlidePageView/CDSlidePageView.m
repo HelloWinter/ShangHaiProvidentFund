@@ -31,35 +31,28 @@
 }
 
 - (void)setupUI{
-    [self addSubview:self.headerView];
-    [self addSubview:self.bodyView];
-}
-
-- (NSMutableArray *)contentViews{
-    if (_contentViews==nil) {
-        _contentViews=[[NSMutableArray alloc]init];
-    }
-    return _contentViews;
-}
-
-- (CDSlidePageHeaderView *)headerView{
-    if (_headerView==nil) {
+    [self addSubview:({
         _headerView=[[CDSlidePageHeaderView alloc]init];
         _headerView.delegate=self;
-    }
-    return _headerView;
-}
-
-- (UIScrollView *)bodyView{
-    if (_bodyView==nil) {
+        _headerView;
+    })];
+    [self addSubview:({
         _bodyView=[[UIScrollView alloc]init];
         _bodyView.pagingEnabled = YES;
         _bodyView.delegate = self;
         _bodyView.showsHorizontalScrollIndicator = NO;
         _bodyView.showsVerticalScrollIndicator = NO;
         _bodyView.bounces = NO;
+        _bodyView;
+    })];
+}
+
+#pragma mark - lazyload
+- (NSMutableArray *)contentViews{
+    if (_contentViews==nil) {
+        _contentViews=[[NSMutableArray alloc]init];
     }
-    return _bodyView;
+    return _contentViews;
 }
 
 - (void)layoutSubviews{
@@ -85,6 +78,7 @@
     }
 }
 
+#pragma mark - public
 - (void)reload {
     self.numberOfPages = 0;
     [self.contentViews makeObjectsPerformSelector:@selector(removeFromSuperview)];

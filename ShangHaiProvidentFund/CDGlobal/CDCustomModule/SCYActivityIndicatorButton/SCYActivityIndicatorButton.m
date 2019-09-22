@@ -26,24 +26,20 @@
 - (instancetype)initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style{
     self = [super init];
     if (self) {
-        [self addSubview:self.activityIndicator];
-        self.activityIndicator.activityIndicatorViewStyle=style;
+        [self addSubview:({
+            _activityIndicator=[[UIActivityIndicatorView alloc]init];
+            _activityIndicator.activityIndicatorViewStyle=style;
+            _activityIndicator;
+        })];
     }
     return self;
-}
-
-- (UIActivityIndicatorView *)activityIndicator{
-    if (_activityIndicator==nil) {
-        _activityIndicator=[[UIActivityIndicatorView alloc]init];
-    }
-    return _activityIndicator;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     CGFloat space = 20.0f;
-    self.activityIndicator.right = self.titleLabel.left-space;
-    self.activityIndicator.centerY =self.bounds.size.height * 0.5f;
+    _activityIndicator.right = self.titleLabel.left-space;
+    _activityIndicator.centerY =self.bounds.size.height * 0.5f;
 }
 
 @end

@@ -537,6 +537,7 @@
 		A654FBE22310144200C466F4 /* CDUIUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDUIUtil.m; sourceTree = "<group>"; };
 		A66819042324B0FE00C861FA /* CDNetworkMessageHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDNetworkMessageHUD.h; sourceTree = "<group>"; };
 		A66819052324B0FE00C861FA /* CDNetworkMessageHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDNetworkMessageHUD.m; sourceTree = "<group>"; };
+		A6D8A64B233624DD00E83B1C /* ShangHaiProvidentFund.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShangHaiProvidentFund.entitlements; sourceTree = "<group>"; };
 		FF429A1A54C53FB72AD63FBF /* Pods-ShangHaiProvidentFund.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShangHaiProvidentFund.test.xcconfig"; path = "Pods/Target Support Files/Pods-ShangHaiProvidentFund/Pods-ShangHaiProvidentFund.test.xcconfig"; sourceTree = "<group>"; };
 		FFDFD0982311396100F148DE /* CDTitleImageButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDTitleImageButton.h; sourceTree = "<group>"; };
 		FFDFD0992311396100F148DE /* CDTitleImageButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDTitleImageButton.m; sourceTree = "<group>"; };
@@ -1059,6 +1060,7 @@
 		6E6ADB0D1CD892B200838B61 /* ShangHaiProvidentFund */ = {
 			isa = PBXGroup;
 			children = (
+				A6D8A64B233624DD00E83B1C /* ShangHaiProvidentFund.entitlements */,
 				6E6ADB111CD892B200838B61 /* AppDelegate.h */,
 				6E6ADB121CD892B200838B61 /* AppDelegate.m */,
 				6E6ADB1A1CD892B200838B61 /* Assets.xcassets */,
@@ -1371,6 +1373,11 @@
 					6E6ADB0A1CD892B200838B61 = {
 						CreatedOnToolsVersion = 7.2;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1715,6 +1722,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CODE_SIGN_ENTITLEMENTS = ShangHaiProvidentFund/ShangHaiProvidentFund.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
 				CODE_SIGN_STYLE = Manual;
@@ -1856,6 +1864,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CODE_SIGN_ENTITLEMENTS = ShangHaiProvidentFund/ShangHaiProvidentFund.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
 				CODE_SIGN_STYLE = Manual;
@@ -1897,6 +1906,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CODE_SIGN_ENTITLEMENTS = ShangHaiProvidentFund/ShangHaiProvidentFund.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: DongDong Cheng (V87V83JJ4D)";
 				CODE_SIGN_STYLE = Manual;
