@@ -63,6 +63,7 @@
 - (UILabel *)lbContent{
     if(_lbContent == nil){
         _lbContent = [[UILabel alloc]init];
+        _lbContent.textColor = [UIColor darkGrayColor];
         _lbContent.font=[UIFont systemFontOfSize:15];
         _lbContent.text=[NSString stringWithFormat:@"\t%@专注于提供个人账户公积金缴存明细查询，贷款信息查询，政策资讯，贷款额度测算，以及其他辅助功能服务，帮助您更方便地管理公积金。",CDAppName];//更多查询请登录 www.shgjj.com\n\n\t上海住房公积金热线：12329 电话接待时间：周一至周六9:00-17:00 (除法定节假日外)
         CGRect rect=[_lbContent.text boundingRectWithSize:CGSizeMake(self.view.width-LEFT_RIGHT_MARGIN*2, MAXFLOAT) options:(NSStringDrawingUsesLineFragmentOrigin) attributes:@{NSFontAttributeName:_lbContent.font} context:nil];
