@@ -50,7 +50,11 @@ static const CGFloat topHeight=50;
 - (UIView*)headerView{
     if (!_headerView) {
         _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, topHeight)];
-        _headerView.backgroundColor = [UIColor whiteColor];
+        UIColor *bgColor = [UIColor whiteColor];
+        if (@available(iOS 13.0, *)) {
+            bgColor = [UIColor systemBackgroundColor];
+        }
+        _headerView.backgroundColor = bgColor;
         UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"计算税后",@"反推税前", nil]];
         segmentControl.bounds=CGRectMake(0, 0, self.view.width-20, 30);
         segmentControl.center=CGPointMake(_headerView.width*0.5, _headerView.height*0.5);

@@ -103,7 +103,11 @@ static const CGFloat topHeight=50;
     if (_footerView==nil) {
         _footerView=[CDButtonTableFooterView footerView];
         _footerView.size=CGSizeMake(self.tableView.width, 82);
-        _footerView.backgroundColor=[UIColor whiteColor];
+        UIColor *bgColor = [UIColor whiteColor];
+        if (@available(iOS 13.0, *)) {
+            bgColor = [UIColor systemBackgroundColor];
+        }
+        _footerView.backgroundColor=bgColor;
         [_footerView setupBtnTitle:@"开始计算"];
         [_footerView setupBtnBackgroundColor:ColorFromHexRGB(0x38ca73)];
         __weak typeof(self) weakSelf=self;
@@ -143,7 +147,11 @@ static const CGFloat topHeight=50;
 - (UIView*)headerView{
     if (!_headerView) {
         _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, topHeight)];
-        _headerView.backgroundColor = [UIColor whiteColor];
+        UIColor *bgColor = [UIColor whiteColor];
+        if (@available(iOS 13.0, *)) {
+            bgColor = [UIColor systemBackgroundColor];
+        }
+        _headerView.backgroundColor = bgColor;
          UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"公积金贷款",@"商业贷款",@"组合贷款", nil]];
         segmentControl.bounds=CGRectMake(0, 0, self.view.width-20, 30);
         segmentControl.center=CGPointMake(_headerView.width*0.5, _headerView.height*0.5);
