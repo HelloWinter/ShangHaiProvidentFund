@@ -25,12 +25,22 @@ static const CGFloat kMARGIN=4.0;
 - (instancetype)initWithFrame:(CGRect)frame{
     self =[super initWithFrame:frame];
     if (self) {
-//        self.layer.borderColor=[UIColor redColor].CGColor;
-//        self.layer.borderWidth=0.5;
-//        self.backgroundColor=[UIColor whiteColor];
-        
-        [self.contentView addSubview:self.imageView];
-        [self.contentView addSubview:self.lbTitle];
+        [self.contentView addSubview:({
+            _imageView=[[UIImageView alloc]init];
+            _imageView.contentMode=UIViewContentModeScaleAspectFit;
+            _imageView;
+        })];
+        [self.contentView addSubview:({
+            _lbTitle = [[UILabel alloc]init];
+            UIColor *textColor = ColorFromHexRGB(0x212121);
+            if (@available(iOS 13.0, *)) {
+                textColor = [UIColor labelColor];
+            }
+            _lbTitle.textColor=textColor;
+            _lbTitle.font=[UIFont systemFontOfSize:12];
+            _lbTitle.textAlignment=NSTextAlignmentCenter;
+            _lbTitle;
+        })];
     }
     return self;
 }
@@ -39,28 +49,6 @@ static const CGFloat kMARGIN=4.0;
     [super layoutSubviews];
     self.imageView.frame=CGRectMake(kMARGIN, kMARGIN, self.width-kMARGIN*2, (self.width-kMARGIN*2)*3*0.25);
     self.lbTitle.frame=CGRectMake(kMARGIN, self.imageView.bottom, self.width-kMARGIN*2, 18);
-}
-
-- (UIImageView *)imageView{
-    if (_imageView==nil) {
-        _imageView=[[UIImageView alloc]init];
-        _imageView.contentMode=UIViewContentModeScaleAspectFit;
-//        _imageView.layer.borderColor=[UIColor blackColor].CGColor;
-//        _imageView.layer.borderWidth=0.5;
-    }
-    return _imageView;
-}
-
-- (UILabel *)lbTitle{
-    if (_lbTitle==nil) {
-        _lbTitle = [[UILabel alloc]init];
-        _lbTitle.textColor=ColorFromHexRGB(0x212121);
-        _lbTitle.font=[UIFont systemFontOfSize:12];
-        _lbTitle.textAlignment=NSTextAlignmentCenter;
-//        _lbTitle.layer.borderColor=[UIColor blueColor].CGColor;
-//        _lbTitle.layer.borderWidth=0.5;
-    }
-    return _lbTitle;
 }
 
 #pragma mark - public

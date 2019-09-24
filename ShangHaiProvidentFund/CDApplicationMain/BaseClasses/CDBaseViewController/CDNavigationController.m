@@ -29,7 +29,11 @@
 }
 
 - (void)cd_setupNavBar{
-    [self cd_setupNavBarWithTintColor:NAVIGATION_COLOR titleTextColor:RGBCOLOR(119, 119, 119) backgroundColor:[UIColor whiteColor]];
+    UIColor *bgColor = [UIColor whiteColor];
+    if (@available(iOS 13.0, *)) {
+        bgColor = [UIColor systemBackgroundColor];
+    }
+    [self cd_setupNavBarWithTintColor:NAVIGATION_COLOR titleTextColor:RGBCOLOR(119, 119, 119) backgroundColor:bgColor];
 }
 
 - (void)cd_setupNavBarWithTintColor:(UIColor *)tintColor titleTextColor:(UIColor *)titleTextColor backgroundColor:(UIColor *)backgroundColor{

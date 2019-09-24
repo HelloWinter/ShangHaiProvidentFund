@@ -24,7 +24,7 @@
 }
 
 - (instancetype)initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style{
-    self = [super init];
+    self = [super initWithFrame:CGRectZero];
     if (self) {
         [self addSubview:({
             _activityIndicator=[[UIActivityIndicatorView alloc]init];

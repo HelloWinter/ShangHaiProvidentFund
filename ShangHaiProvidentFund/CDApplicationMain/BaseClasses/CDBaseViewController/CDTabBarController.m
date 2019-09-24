@@ -28,7 +28,11 @@
 //    self.tabBar.barTintColor=colorForHex(@"#01b2d3");
     [self.tabBar setTintColor:ColorFromHexRGB(0x2d8eff)];
     [self.tabBar setShadowImage:[UIImage new]];
-    [self.tabBar setBackgroundImage:[UIImage cd_imageWithColor:[UIColor whiteColor]]];
+    UIColor *bgColor = [UIColor whiteColor];
+    if (@available(iOS 13.0, *)) {
+        bgColor = [UIColor systemBackgroundColor];
+    }
+    [self.tabBar setBackgroundImage:[UIImage cd_imageWithColor:bgColor]];
     [self p_setupAllChildViewController];
 }
 
