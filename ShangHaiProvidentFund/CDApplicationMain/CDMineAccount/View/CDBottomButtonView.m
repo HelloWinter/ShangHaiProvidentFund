@@ -20,43 +20,31 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        [self setupUI];
+        self.backgroundColor=[UIColor clearColor];
+        [self addSubview:({
+            _btnForgetPSW = [[UIButton alloc]init];
+            _btnForgetPSW.titleLabel.font=[UIFont systemFontOfSize:13];
+            [_btnForgetPSW setTitleColor:NAVIGATION_COLOR forState:(UIControlStateNormal)];
+            [_btnForgetPSW setTitle:@"忘记密码" forState:(UIControlStateNormal)];
+            [_btnForgetPSW addTarget:self action:@selector(btnForgotPSWClick:) forControlEvents:(UIControlEventTouchUpInside)];
+            _btnForgetPSW;
+        })];
+        [self addSubview:({
+            _btnRegist = [[UIButton alloc]init];
+            _btnRegist.titleLabel.font=[UIFont systemFontOfSize:13];
+            [_btnRegist setTitleColor:NAVIGATION_COLOR forState:(UIControlStateNormal)];
+            [_btnRegist setTitle:@"个人注册" forState:(UIControlStateNormal)];
+            [_btnRegist addTarget:self action:@selector(btnRegistClick:) forControlEvents:(UIControlEventTouchUpInside)];
+            _btnRegist;
+        })];
     }
     return self;
 }
 
-- (void)setupUI{
-    self.backgroundColor=[UIColor clearColor];
-    [self addSubview:self.btnForgetPSW];
-    [self addSubview:self.btnRegist];
-}
-
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.btnForgetPSW.frame=CGRectMake(0, 0, self.width*0.5, self.height);
-    self.btnRegist.frame=CGRectMake(self.btnForgetPSW.right, 0, self.width*0.5, self.height);
-}
-
-- (UIButton *)btnForgetPSW{
-    if(_btnForgetPSW == nil){
-        _btnForgetPSW = [[UIButton alloc]init];
-        _btnForgetPSW.titleLabel.font=[UIFont systemFontOfSize:13];
-        [_btnForgetPSW setTitleColor:NAVIGATION_COLOR forState:(UIControlStateNormal)];
-        [_btnForgetPSW setTitle:@"忘记密码" forState:(UIControlStateNormal)];
-        [_btnForgetPSW addTarget:self action:@selector(btnForgotPSWClick:) forControlEvents:(UIControlEventTouchUpInside)];
-    }
-    return _btnForgetPSW;
-}
-
-- (UIButton *)btnRegist{
-    if(_btnRegist == nil){
-        _btnRegist = [[UIButton alloc]init];
-        _btnRegist.titleLabel.font=[UIFont systemFontOfSize:13];
-        [_btnRegist setTitleColor:NAVIGATION_COLOR forState:(UIControlStateNormal)];
-        [_btnRegist setTitle:@"个人注册" forState:(UIControlStateNormal)];
-        [_btnRegist addTarget:self action:@selector(btnRegistClick:) forControlEvents:(UIControlEventTouchUpInside)];
-    }
-    return _btnRegist;
+    _btnForgetPSW.frame=CGRectMake(0, 0, self.width*0.5, self.height);
+    _btnRegist.frame=CGRectMake(_btnForgetPSW.right, 0, self.width*0.5, self.height);
 }
 
 - (void)drawRect:(CGRect)rect {

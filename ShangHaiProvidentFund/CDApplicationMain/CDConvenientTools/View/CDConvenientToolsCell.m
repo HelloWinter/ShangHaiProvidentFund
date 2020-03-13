@@ -47,14 +47,14 @@ static const CGFloat kMARGIN=4.0;
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.imageView.frame=CGRectMake(kMARGIN, kMARGIN, self.width-kMARGIN*2, (self.width-kMARGIN*2)*3*0.25);
-    self.lbTitle.frame=CGRectMake(kMARGIN, self.imageView.bottom, self.width-kMARGIN*2, 18);
+    _imageView.frame=CGRectMake(kMARGIN, kMARGIN, self.width-kMARGIN*2, (self.width-kMARGIN*2)*3*0.25);
+    _lbTitle.frame=CGRectMake(kMARGIN, _imageView.bottom, self.width-kMARGIN*2, 18);
 }
 
 #pragma mark - public
 - (void)setupCellItem:(CDConvenientToolsItem *)item{
-    self.imageView.image=[UIImage imageNamed:item.imgName];
-    self.lbTitle.text=item.title ? : @"";
+    _imageView.image=[UIImage imageNamed:item.imgName];
+    _lbTitle.text=item.title ? : @"";
 }
 
 @end

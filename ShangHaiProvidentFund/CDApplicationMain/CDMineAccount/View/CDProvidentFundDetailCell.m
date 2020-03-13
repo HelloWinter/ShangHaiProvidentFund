@@ -24,52 +24,40 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self.contentView addSubview:self.lbDate];
-        [self.contentView addSubview:self.lbCompany];
-        [self.contentView addSubview:self.lbMonthPay];
+        [self.contentView addSubview:({
+            _lbDate = [[UILabel alloc]init];
+            _lbDate.font=[UIFont systemFontOfSize:13];
+            _lbDate.textAlignment=NSTextAlignmentCenter;
+            _lbDate.adjustsFontSizeToFitWidth=YES;
+            _lbDate;
+        })];
+        [self.contentView addSubview:({
+            _lbCompany = [[UILabel alloc]init];
+            _lbCompany.font=[UIFont systemFontOfSize:13];
+            _lbCompany.textAlignment=NSTextAlignmentCenter;
+            _lbCompany.numberOfLines=0;
+            _lbCompany.lineBreakMode=NSLineBreakByWordWrapping;
+            _lbCompany;
+        })];
+        [self.contentView addSubview:({
+            _lbMonthPay = [[UILabel alloc]init];
+            _lbMonthPay.font=[UIFont systemFontOfSize:13];
+            _lbMonthPay.textAlignment=NSTextAlignmentCenter;
+            _lbMonthPay.adjustsFontSizeToFitWidth=YES;
+            _lbMonthPay;
+        })];
     }
     return self;
 }
 
-- (UILabel *)lbDate{
-    if(_lbDate == nil){
-        _lbDate = [[UILabel alloc]init];
-        _lbDate.font=[UIFont systemFontOfSize:13];
-        _lbDate.textAlignment=NSTextAlignmentCenter;
-        _lbDate.adjustsFontSizeToFitWidth=YES;
-    }
-    return _lbDate;
-}
-
-- (UILabel *)lbCompany{
-    if(_lbCompany == nil){
-        _lbCompany = [[UILabel alloc]init];
-        _lbCompany.font=[UIFont systemFontOfSize:13];
-        _lbCompany.textAlignment=NSTextAlignmentCenter;
-        _lbCompany.numberOfLines=0;
-        _lbCompany.lineBreakMode=NSLineBreakByWordWrapping;
-    }
-    return _lbCompany;
-}
-
-- (UILabel *)lbMonthPay{
-    if(_lbMonthPay == nil){
-        _lbMonthPay = [[UILabel alloc]init];
-        _lbMonthPay.font=[UIFont systemFontOfSize:13];
-        _lbMonthPay.textAlignment=NSTextAlignmentCenter;
-        _lbMonthPay.adjustsFontSizeToFitWidth=YES;
-    }
-    return _lbMonthPay;
-}
-
 - (void)layoutSubviews{
     [super layoutSubviews];
-    [self.lbDate.layer setBorderColor:ColorFromHexRGB(0xe0e0e0).CGColor];
-    [self.lbDate.layer setBorderWidth:0.5f];
-    [self.lbCompany.layer setBorderColor:ColorFromHexRGB(0xe0e0e0).CGColor];
-    [self.lbCompany.layer setBorderWidth:0.5f];
-    [self.lbMonthPay.layer setBorderColor:ColorFromHexRGB(0xe0e0e0).CGColor];
-    [self.lbMonthPay.layer setBorderWidth:0.5f];
+    [_lbDate.layer setBorderColor:ColorFromHexRGB(0xe0e0e0).CGColor];
+    [_lbDate.layer setBorderWidth:0.5f];
+    [_lbCompany.layer setBorderColor:ColorFromHexRGB(0xe0e0e0).CGColor];
+    [_lbCompany.layer setBorderWidth:0.5f];
+    [_lbMonthPay.layer setBorderColor:ColorFromHexRGB(0xe0e0e0).CGColor];
+    [_lbMonthPay.layer setBorderWidth:0.5f];
     
     CGFloat minWidth=self.width*0.25;
     
@@ -80,13 +68,13 @@
         minWidth=self.width*0.3;
     }
     if (self.cellLayoutType==CDCellLayoutTypeAccountDetail) {
-        self.lbDate.frame=CGRectMake(0, 0, minWidth, self.height);
-        self.lbCompany.frame=CGRectMake(self.lbDate.right, 0, self.contentView.width-minWidth*2, self.height);
-        self.lbMonthPay.frame=CGRectMake(self.lbCompany.right, 0, minWidth, self.height);
+        _lbDate.frame=CGRectMake(0, 0, minWidth, self.height);
+        _lbCompany.frame=CGRectMake(_lbDate.right, 0, self.contentView.width-minWidth*2, self.height);
+        _lbMonthPay.frame=CGRectMake(_lbCompany.right, 0, minWidth, self.height);
     }else if (self.cellLayoutType==CDCellLayoutTypeLoanDetail){
-        self.lbDate.frame=CGRectMake(0, 0, self.contentView.width-minWidth*2, self.height);
-        self.lbCompany.frame=CGRectMake(self.lbDate.right, 0, minWidth, self.height);
-        self.lbMonthPay.frame=CGRectMake(self.lbCompany.right, 0, minWidth, self.height);
+        _lbDate.frame=CGRectMake(0, 0, self.contentView.width-minWidth*2, self.height);
+        _lbCompany.frame=CGRectMake(_lbDate.right, 0, minWidth, self.height);
+        _lbMonthPay.frame=CGRectMake(_lbCompany.right, 0, minWidth, self.height);
     }
 }
 
@@ -109,9 +97,9 @@
 
 #pragma mark - private
 - (void)p_setupLeftText:(NSString *)left centerText:(NSString *)center rightText:(NSString *)right{
-    self.lbDate.text=left;
-    self.lbCompany.text=center;
-    self.lbMonthPay.text=right;
+    _lbDate.text=left;
+    _lbCompany.text=center;
+    _lbMonthPay.text=right;
 }
 
 - (NSString *)p_removeYUAN:(NSString *)strAmount{

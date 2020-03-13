@@ -21,30 +21,22 @@
     self =[super initWithFrame:frame];
     if (self) {
         self.backgroundColor=[UIColor whiteColor];
-        [self addSubview:self.lbTips];
-        [self addSubview:self.lbFormula];
+        [self addSubview:({
+            _lbTips=[[UILabel alloc]init];
+            _lbTips.text=@"年终奖计算方法";
+            _lbTips.textColor=ColorFromHexRGB(0x666666);
+            _lbTips.font=[UIFont systemFontOfSize:13];
+            _lbTips;
+        })];
+        [self addSubview:({
+            _lbFormula=[[UILabel alloc]init];
+            _lbFormula.text=@"税后=税前-税前*税率+速算扣除";
+            _lbFormula.textColor=ColorFromHexRGB(0x2c2c2c);
+            _lbFormula.font=[UIFont systemFontOfSize:13];
+            _lbFormula;
+        })];
     }
     return self;
-}
-
-- (UILabel *)lbTips{
-    if (_lbTips==nil) {
-        _lbTips=[[UILabel alloc]init];
-        _lbTips.text=@"年终奖计算方法";
-        _lbTips.textColor=ColorFromHexRGB(0x666666);
-        _lbTips.font=[UIFont systemFontOfSize:13];
-    }
-    return _lbTips;
-}
-
-- (UILabel *)lbFormula{
-    if (_lbFormula==nil) {
-        _lbFormula=[[UILabel alloc]init];
-        _lbFormula.text=@"税后=税前-税前*税率+速算扣除";
-        _lbFormula.textColor=ColorFromHexRGB(0x2c2c2c);
-        _lbFormula.font=[UIFont systemFontOfSize:13];
-    }
-    return _lbFormula;
 }
 
 - (void)layoutSubviews{
@@ -52,8 +44,8 @@
     CGFloat leftRightMargin=25;
     CGFloat lbWidth=self.width-leftRightMargin*2;
     CGFloat lbHeight=18;
-    self.lbTips.frame=CGRectMake(leftRightMargin, 20, lbWidth, lbHeight);
-    self.lbFormula.frame=CGRectMake(self.lbTips.left, self.lbTips.bottom+4, lbWidth, lbHeight);
+    _lbTips.frame=CGRectMake(leftRightMargin, 20, lbWidth, lbHeight);
+    _lbFormula.frame=CGRectMake(_lbTips.left, _lbTips.bottom+4, lbWidth, lbHeight);
 }
 
 @end

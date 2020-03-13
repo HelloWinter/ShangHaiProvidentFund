@@ -21,14 +21,6 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 @implementation CDBaseWKWebViewController
 @synthesize wkWebView=_wkWebView;
 
-- (instancetype)init{
-    self = [super init];
-    if (self) {
-        self.hidesBottomBarWhenPushed = YES;
-    }
-    return self;
-}
-
 - (void)dealloc{
     [self.wkWebView removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
     //    [self.wkWebView.configuration.userContentController removeScriptMessageHandlerForName:@""];
@@ -37,6 +29,14 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     if ([SCYActivityIndicatorView isAnimating]) {
         [SCYActivityIndicatorView stopAnimating];
     }
+}
+
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.hidesBottomBarWhenPushed = YES;
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
@@ -205,7 +205,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 }
 
 #pragma mark - WKUIDelegate
--(void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         completionHandler();
@@ -213,7 +213,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     [self presentViewController:alert animated:YES completion:NULL];
 }
 
--(void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler{
+- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         completionHandler(YES);
@@ -224,7 +224,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     [self presentViewController:alert animated:YES completion:NULL];
 }
 
--(void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler{
+- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:prompt preferredStyle:UIAlertControllerStyleAlert];
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.text=defaultText;
@@ -283,7 +283,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     [super cd_backOffAction];
 }
 
--(void)updateNavigationItems{
+- (void)updateNavigationItems{
     UIBarButtonItem *leftItem = [UIBarButtonItem cd_ItemWidth:20 imageName:@"navigation_blue_backOff" target:self action:@selector(scy_backOffAction)];
     if (self.wkWebView.canGoBack) {
         UIBarButtonItem *leftItemClose = [UIBarButtonItem cd_ItemWidth:20 imageName:@"navgation_blue_close" target:self action:@selector(backToOriginalViewController)];

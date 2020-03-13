@@ -27,8 +27,6 @@ static const CGFloat cellTextFontSize=15;
         self.accessoryView=self.textFieldRight;
         self.selectionStyle=UITableViewCellSelectionStyleNone;
         self.textLabel.font=[UIFont systemFontOfSize:cellTextFontSize];
-//        self.textLabel.layer.borderColor=[UIColor redColor].CGColor;
-//        self.textLabel.layer.borderWidth=0.5f;
     }
     return self;
 }
@@ -41,7 +39,7 @@ static const CGFloat cellTextFontSize=15;
     [super layoutSubviews];
     CGSize size= [self.textLabel.text sizeWithAttributes:@{NSFontAttributeName:self.textLabel.font}];
     self.textLabel.width=size.width;
-    self.textFieldRight.frame=CGRectMake(size.width+LEFT_RIGHT_MARGIN*2,0, self.width-size.width-LEFT_RIGHT_MARGIN*3, self.height);
+    _textFieldRight.frame=CGRectMake(size.width+LEFT_RIGHT_MARGIN*2,0, self.width-size.width-LEFT_RIGHT_MARGIN*3, self.height);
 }
 
 - (UILabel *)lbTextFieldRight{
@@ -68,14 +66,14 @@ static const CGFloat cellTextFontSize=15;
 
 #pragma mark - public
 - (void)setupLeftText:(NSString *)left rightText:(NSString *)right defaultText:(NSString *)defaultText indexPath:(NSIndexPath *)path{
-    self.textFieldRight.indexPath=path;
+    _textFieldRight.indexPath=path;
     self.textLabel.text=left;
-    self.lbTextFieldRight.text=right;
-    CGSize rightLabelSize= [self.lbTextFieldRight.text sizeWithAttributes:@{NSFontAttributeName:self.lbTextFieldRight.font}];
-    self.lbTextFieldRight.frame=CGRectMake(0, 0, rightLabelSize.width, self.height);
-    self.textFieldRight.rightView=self.lbTextFieldRight;
-    self.textFieldRight.rightViewMode=UITextFieldViewModeAlways;
-    self.textFieldRight.text=(defaultText.length!=0) ? defaultText : @"";
+    _lbTextFieldRight.text=right;
+    CGSize rightLabelSize= [_lbTextFieldRight.text sizeWithAttributes:@{NSFontAttributeName:_lbTextFieldRight.font}];
+    _lbTextFieldRight.frame=CGRectMake(0, 0, rightLabelSize.width, self.height);
+    _textFieldRight.rightView=_lbTextFieldRight;
+    _textFieldRight.rightViewMode=UITextFieldViewModeAlways;
+    _textFieldRight.text=(defaultText.length!=0) ? defaultText : @"";
 }
 
 - (void)setupMortgageCalculatorCellItem:(SCYMortgageCalculatorCellItem *)item IndexPath:(NSIndexPath *)path{
@@ -83,15 +81,15 @@ static const CGFloat cellTextFontSize=15;
 }
 
 - (void)setupTextFieldText:(NSString *)text{
-    self.textFieldRight.text=text;
+    _textFieldRight.text=text;
 }
 
 - (NSString *)cellText{
-    return self.textFieldRight.text;
+    return _textFieldRight.text;
 }
 
 - (void)textfieldBecomeFirstResponder{
-    [self.textFieldRight becomeFirstResponder];
+    [_textFieldRight becomeFirstResponder];
 }
 
 @end

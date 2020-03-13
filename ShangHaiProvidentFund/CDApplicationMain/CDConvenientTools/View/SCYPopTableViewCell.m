@@ -20,35 +20,31 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self.contentView addSubview:self.lbContent];
+        [self.contentView addSubview:({
+            _lbContent=[[UILabel alloc]init];
+            _lbContent.textAlignment=NSTextAlignmentCenter;
+            _lbContent.textColor=ColorFromHexRGB(0x9e9e9e);
+            _lbContent.font=[UIFont systemFontOfSize:15];
+            _lbContent;
+        })];
         self.selectionStyle=UITableViewCellSelectionStyleNone;
     }
     return self;
 }
 
-- (UILabel *)lbContent{
-    if (_lbContent==nil) {
-        _lbContent=[[UILabel alloc]init];
-        _lbContent.textAlignment=NSTextAlignmentCenter;
-        _lbContent.textColor=ColorFromHexRGB(0x9e9e9e);
-        _lbContent.font=[UIFont systemFontOfSize:15];
-    }
-    return _lbContent;
-}
-
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.lbContent.frame=CGRectMake(0, 0, self.contentView.width, self.contentView.height);
+    _lbContent.frame=CGRectMake(0, 0, self.contentView.width, self.contentView.height);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{
     [super setSelected:selected animated:animated];
-    self.lbContent.textColor= selected ? NAVIGATION_COLOR : ColorFromHexRGB(0x9e9e9e);
+    _lbContent.textColor= selected ? NAVIGATION_COLOR : ColorFromHexRGB(0x9e9e9e);
 }
 
 #pragma mark - public
 - (void)setupCellItem:(SCYLoanRateItem *)item indexPath:(NSIndexPath *)path{
-    self.lbContent.text=item.date;
+    _lbContent.text=item.date;
 }
 
 @end
