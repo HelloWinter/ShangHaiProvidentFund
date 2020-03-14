@@ -100,41 +100,41 @@ static const CGFloat lbTipsHeight=20;
 - (void)layoutSubviews{
     [super layoutSubviews];
     
-    self.lbTopView.frame=CGRectMake(0, 18, self.width, 100);
+    _lbTopView.frame=CGRectMake(0, 18, self.width, 100);
     CGFloat lbWidth=self.width*0.5;
     CGFloat lbHeight=50;
-    self.lbBottomLeftView.frame=CGRectMake(0, self.lbTopView.bottom+10, lbWidth, lbHeight);
-    self.lbBottomRightView.frame=CGRectMake(self.lbBottomLeftView.right, self.lbBottomLeftView.top, lbWidth, lbHeight);
+    _lbBottomLeftView.frame=CGRectMake(0, _lbTopView.bottom+10, lbWidth, lbHeight);
+    _lbBottomRightView.frame=CGRectMake(_lbBottomLeftView.right, _lbBottomLeftView.top, lbWidth, lbHeight);
     
-    self.lbTips.frame=CGRectMake(15, 18, 50, lbTipsHeight);
-    self.lineView.frame=CGRectMake(0, self.contentView.height-0.5, self.contentView.width, 0.5);
+    _lbTips.frame=CGRectMake(15, 18, 50, lbTipsHeight);
+    _lineView.frame=CGRectMake(0, self.contentView.height-0.5, self.contentView.width, 0.5);
 }
 
 - (void)setupWithBeforeTax:(double)before afterTax:(double)after type:(SCYAnnualBonusCalculateType)type showTips:(BOOL)show indexPath:(NSIndexPath *)path{
     NSString *strTop=[NSString stringWithFormat:@"%.2f 元",(type==SCYAnnualBonusCalculateType1 ? after : before)];
     NSMutableAttributedString *aStrTop=[[NSMutableAttributedString alloc]initWithString:strTop];
     [aStrTop addAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]} range:[strTop rangeOfString:@"元"]];
-    self.lbTopView.lbUp.attributedText=aStrTop;
-    self.lbTopView.lbDown.text=(type==SCYAnnualBonusCalculateType1) ? @"税后年终奖" : @"税前年终奖";
-    self.lbBottomLeftView.lbUp.text=[NSString stringWithFormat:@"%.2f 元",(type==SCYAnnualBonusCalculateType1 ? before : after)];
-    self.lbBottomLeftView.lbDown.text=(type==SCYAnnualBonusCalculateType1) ? @"税前" : @"税后";
+    _lbTopView.lbUp.attributedText=aStrTop;
+    _lbTopView.lbDown.text=(type==SCYAnnualBonusCalculateType1) ? @"税后年终奖" : @"税前年终奖";
+    _lbBottomLeftView.lbUp.text=[NSString stringWithFormat:@"%.2f 元",(type==SCYAnnualBonusCalculateType1 ? before : after)];
+    _lbBottomLeftView.lbDown.text=(type==SCYAnnualBonusCalculateType1) ? @"税前" : @"税后";
     CGFloat tax=before-after;
-    self.lbBottomRightView.lbUp.text=[NSString stringWithFormat:@"%.2f 元",tax];
+    _lbBottomRightView.lbUp.text=[NSString stringWithFormat:@"%.2f 元",tax];
     if (show) {
-        self.lbTips.hidden=NO;
+        _lbTips.hidden=NO;
         if (path.row==0) {
-            self.lbTips.text=@"结果一";
-            self.lineView.hidden=NO;
+            _lbTips.text=@"结果一";
+            _lineView.hidden=NO;
         }else if (path.row==1){
-            self.lbTips.text=@"结果二";
-            self.lineView.hidden=YES;
+            _lbTips.text=@"结果二";
+            _lineView.hidden=YES;
         }else{
-            self.lbTips.hidden=YES;
-            self.lineView.hidden=YES;
+            _lbTips.hidden=YES;
+            _lineView.hidden=YES;
         }
     }else{
-        self.lbTips.hidden=YES;
-        self.lineView.hidden=YES;
+        _lbTips.hidden=YES;
+        _lineView.hidden=YES;
     }
 }
 

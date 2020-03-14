@@ -28,9 +28,27 @@ static const CGFloat klbTimeHeight=20;
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-        [self.contentView addSubview:self.lbTitle];
-        [self.contentView addSubview:self.lbAuthor];
-        [self.contentView addSubview:self.lbTime];
+        [self.contentView addSubview:({
+            _lbTitle=[[UILabel alloc]init];
+            _lbTitle.numberOfLines=0;
+            _lbTitle.lineBreakMode=NSLineBreakByWordWrapping;
+            _lbTitle.font=[UIFont systemFontOfSize:15];
+            _lbTitle.textColor=[UIColor darkGrayColor];
+            _lbTitle;
+        })];
+        [self.contentView addSubview:({
+            _lbAuthor=[[UILabel alloc]init];
+            _lbAuthor.font=[UIFont systemFontOfSize:13];
+            _lbAuthor.textColor=[UIColor lightGrayColor];
+            _lbAuthor;
+        })];
+        [self.contentView addSubview:({
+            _lbTime=[[UILabel alloc]init];
+            _lbTime.font=[UIFont systemFontOfSize:13];
+            _lbTime.textColor=[UIColor lightGrayColor];
+            _lbTime.textAlignment=NSTextAlignmentRight;
+            _lbTime;
+        })];
     }
     return self;
 }
@@ -46,52 +64,19 @@ static const CGFloat klbTimeHeight=20;
 - (void)layoutSubviews{
     [super layoutSubviews];
     CGFloat lbPreferWidth=SCREEN_WIDTH-LEFT_RIGHT_MARGIN*3;
-    CGSize size=[self.lbTitle.text cd_sizeWithPreferWidth:lbPreferWidth font:[UIFont systemFontOfSize:15]];
-    self.lbTitle.frame=CGRectMake(LEFT_RIGHT_MARGIN, kCellMargin, size.width, size.height);
+    CGSize size=[_lbTitle.text cd_sizeWithPreferWidth:lbPreferWidth font:[UIFont systemFontOfSize:15]];
+    _lbTitle.frame=CGRectMake(LEFT_RIGHT_MARGIN, kCellMargin, size.width, size.height);
     
     CGFloat lbWidth=lbPreferWidth*0.5;
-    self.lbAuthor.frame=CGRectMake(LEFT_RIGHT_MARGIN, self.lbTitle.bottom+kCellMargin, lbWidth, klbTimeHeight);
-    self.lbTime.frame=CGRectMake(self.lbAuthor.right, self.lbAuthor.top, lbWidth, klbTimeHeight);
-}
-
-- (UILabel *)lbTitle{
-    if (_lbTitle==nil) {
-        _lbTitle=[[UILabel alloc]init];
-        _lbTitle.numberOfLines=0;
-        _lbTitle.lineBreakMode=NSLineBreakByWordWrapping;
-        _lbTitle.font=[UIFont systemFontOfSize:15];
-        _lbTitle.textColor=[UIColor darkGrayColor];
-//        _lbTitle.backgroundColor=[UIColor yellowColor];
-    }
-    return _lbTitle;
-}
-
-- (UILabel *)lbTime{
-    if (_lbTime==nil) {
-        _lbTime=[[UILabel alloc]init];
-        _lbTime.font=[UIFont systemFontOfSize:13];
-        _lbTime.textColor=[UIColor lightGrayColor];
-        _lbTime.textAlignment=NSTextAlignmentRight;
-//        _lbTime.backgroundColor=[UIColor yellowColor];
-    }
-    return _lbTime;
-}
-
-- (UILabel *)lbAuthor{
-    if (_lbAuthor==nil) {
-        _lbAuthor=[[UILabel alloc]init];
-        _lbAuthor.font=[UIFont systemFontOfSize:13];
-        _lbAuthor.textColor=[UIColor lightGrayColor];
-        //        _lbTime.backgroundColor=[UIColor yellowColor];
-    }
-    return _lbAuthor;
+    _lbAuthor.frame=CGRectMake(LEFT_RIGHT_MARGIN, _lbTitle.bottom+kCellMargin, lbWidth, klbTimeHeight);
+    _lbTime.frame=CGRectMake(_lbAuthor.right, _lbAuthor.top, lbWidth, klbTimeHeight);
 }
 
 #pragma mark - public
 - (void)setupCellItem:(CDNewsItem *)item{
-    self.lbTitle.text=[NSString stringWithFormat:@"【%@】%@",item.columnName,item.title];
-    self.lbTime.text=item.pubDate;
-    self.lbAuthor.text=item.author;
+    _lbTitle.text=[NSString stringWithFormat:@"【%@】%@",item.columnName,item.title];
+    _lbTime.text=item.pubDate;
+    _lbAuthor.text=item.author;
 }
 
 @end

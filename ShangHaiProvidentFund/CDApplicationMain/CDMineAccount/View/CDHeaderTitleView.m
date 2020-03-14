@@ -21,46 +21,30 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        [self setupUI];
+        self.backgroundColor=ColorFromHexRGB(0xf0f5f8);
+        [self addSubview:({
+            _lbDate=[[UILabel alloc]init];
+            _lbDate.textColor=[UIColor blackColor];
+            _lbDate.font=[UIFont systemFontOfSize:12];
+            _lbDate.textAlignment=NSTextAlignmentCenter;
+            _lbDate;
+        })];
+        [self addSubview:({
+            _lbDescription=[[UILabel alloc]init];
+            _lbDescription.textColor=[UIColor blackColor];
+            _lbDescription.font=[UIFont systemFontOfSize:12];
+            _lbDescription.textAlignment=NSTextAlignmentCenter;
+            _lbDescription;
+        })];
+        [self addSubview:({
+            _lbAccountChange=[[UILabel alloc]init];
+            _lbAccountChange.textColor=[UIColor blackColor];
+            _lbAccountChange.font=[UIFont systemFontOfSize:12];
+            _lbAccountChange.textAlignment=NSTextAlignmentCenter;
+            _lbAccountChange;
+        })];
     }
     return self;
-}
-
-- (void)setupUI{
-    self.backgroundColor=ColorFromHexRGB(0xf0f5f8);
-    [self addSubview:self.lbDate];
-    [self addSubview:self.lbDescription];
-    [self addSubview:self.lbAccountChange];
-}
-
-- (UILabel *)lbDate{
-    if (_lbDate==nil) {
-        _lbDate=[[UILabel alloc]init];
-        _lbDate.textColor=[UIColor blackColor];
-        _lbDate.font=[UIFont systemFontOfSize:12];
-        _lbDate.textAlignment=NSTextAlignmentCenter;
-    }
-    return _lbDate;
-}
-
-- (UILabel *)lbDescription{
-    if (_lbDescription==nil) {
-        _lbDescription=[[UILabel alloc]init];
-        _lbDescription.textColor=[UIColor blackColor];
-        _lbDescription.font=[UIFont systemFontOfSize:12];
-        _lbDescription.textAlignment=NSTextAlignmentCenter;
-    }
-    return _lbDescription;
-}
-
-- (UILabel *)lbAccountChange{
-    if (_lbAccountChange==nil) {
-        _lbAccountChange=[[UILabel alloc]init];
-        _lbAccountChange.textColor=[UIColor blackColor];
-        _lbAccountChange.font=[UIFont systemFontOfSize:12];
-        _lbAccountChange.textAlignment=NSTextAlignmentCenter;
-    }
-    return _lbAccountChange;
 }
 
 - (void)layoutSubviews{
@@ -73,21 +57,21 @@
         minWidth=self.width*0.3;
     }
     if (self.cellLayoutType==CDCellLayoutTypeAccountDetail) {
-        self.lbDate.frame=CGRectMake(0, 0, minWidth, self.height);
-        self.lbDescription.frame=CGRectMake(self.lbDate.right, 0, self.width-minWidth*2, self.height);
-        self.lbAccountChange.frame=CGRectMake(self.lbDescription.right, 0, minWidth, self.height);
+        _lbDate.frame=CGRectMake(0, 0, minWidth, self.height);
+        _lbDescription.frame=CGRectMake(_lbDate.right, 0, self.width-minWidth*2, self.height);
+        _lbAccountChange.frame=CGRectMake(_lbDescription.right, 0, minWidth, self.height);
     }else if (self.cellLayoutType==CDCellLayoutTypeLoanDetail){
-        self.lbDate.frame=CGRectMake(0, 0, self.width-minWidth*2, self.height);
-        self.lbDescription.frame=CGRectMake(self.lbDate.right, 0, minWidth, self.height);
-        self.lbAccountChange.frame=CGRectMake(self.lbDescription.right, 0, minWidth, self.height);
+        _lbDate.frame=CGRectMake(0, 0, self.width-minWidth*2, self.height);
+        _lbDescription.frame=CGRectMake(_lbDate.right, 0, minWidth, self.height);
+        _lbAccountChange.frame=CGRectMake(_lbDescription.right, 0, minWidth, self.height);
     }
 }
 
 #pragma mark - public
 - (void)setupWithFirstDesc:(NSString *)first secondDesc:(NSString *)second thirdDesc:(NSString *)third{
-    self.lbDate.text=first;
-    self.lbDescription.text=second;
-    self.lbAccountChange.text=third;
+    _lbDate.text=first;
+    _lbDescription.text=second;
+    _lbAccountChange.text=third;
 }
 
 @end

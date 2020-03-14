@@ -66,19 +66,19 @@
 }
 
 - (void)setupLeftText:(NSString *)left centerText:(NSString *)center rightText:(NSString *)right backgroundColor:(UIColor *)color{
-    self.lbLeft.text=left;
-    self.lbCenter.text=center;
-    self.lbRight.text=right;
-    self.lbLeft.backgroundColor=self.lbCenter.backgroundColor=self.lbRight.backgroundColor=color;
+    _lbLeft.text=left;
+    _lbCenter.text=center;
+    _lbRight.text=right;
+    _lbLeft.backgroundColor=_lbCenter.backgroundColor=_lbRight.backgroundColor=color;
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
     CGFloat leftRightMargin=25;
     CGFloat lbWidth=(self.contentView.width-leftRightMargin*2)*0.5;
-    self.lbLeft.frame=CGRectMake(leftRightMargin, 0, lbWidth, self.contentView.height);
-    self.lbCenter.frame=CGRectMake(self.lbLeft.right, 0, lbWidth*0.5, self.contentView.height);
-    self.lbRight.frame=CGRectMake(self.lbCenter.right, 0, lbWidth*0.5, self.contentView.height);
+    _lbLeft.frame=CGRectMake(leftRightMargin, 0, lbWidth, self.contentView.height);
+    _lbCenter.frame=CGRectMake(_lbLeft.right, 0, lbWidth*0.5, self.contentView.height);
+    _lbRight.frame=CGRectMake(_lbCenter.right, 0, lbWidth*0.5, self.contentView.height);
 }
 
 @end
