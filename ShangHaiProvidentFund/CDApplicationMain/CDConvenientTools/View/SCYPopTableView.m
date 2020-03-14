@@ -47,9 +47,9 @@ static const CGSize kSize = {290,658*0.5};
         _lbTitle.textAlignment=NSTextAlignmentCenter;
         _lbTitle.textColor=NAVIGATION_COLOR;
         UIColor *bgColor = ColorFromHexRGB(0xf5f5f5);
-        if (@available(iOS 13.0, *)) {
-            bgColor = [UIColor systemBackgroundColor];
-        }
+//        if (@available(iOS 13.0, *)) {
+//            bgColor = [UIColor systemBackgroundColor];
+//        }
         _lbTitle.backgroundColor=bgColor;
     }
     return _lbTitle;

@@ -33,9 +33,9 @@ static const CGFloat kMARGIN=4.0;
         [self.contentView addSubview:({
             _lbTitle = [[UILabel alloc]init];
             UIColor *textColor = ColorFromHexRGB(0x212121);
-            if (@available(iOS 13.0, *)) {
-                textColor = [UIColor labelColor];
-            }
+//            if (@available(iOS 13.0, *)) {
+//                textColor = [UIColor labelColor];
+//            }
             _lbTitle.textColor=textColor;
             _lbTitle.font=[UIFont systemFontOfSize:12];
             _lbTitle.textAlignment=NSTextAlignmentCenter;

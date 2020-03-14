@@ -37,9 +37,9 @@
 //    self.lbPlaceHolder.layer.borderColor=[UIColor yellowColor].CGColor;
 //    self.lbPlaceHolder.layer.borderWidth=0.5;
     UIColor *bgColor = [UIColor whiteColor];
-    if (@available(iOS 13.0, *)) {
-        bgColor = [UIColor systemBackgroundColor];
-    }
+//    if (@available(iOS 13.0, *)) {
+//        bgColor = [UIColor systemBackgroundColor];
+//    }
     self.tvLeaveMessage.backgroundColor = bgColor;
     self.tvLeaveMessage.delegate=self;
 }
